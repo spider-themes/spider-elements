@@ -118,55 +118,13 @@ final class Spider_Elements {
 		}
 
 		// Register Widget Scripts
-		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_elementor_editor_styles' ] );
-		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'enqueue_widget_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_core_styles' ] );
 
-		// Editor Styles
-		add_action( 'enqueue_block_editor_assets', [ $this, 'gutenberg_editor_scripts' ] );
-
-		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_styles'] );
 
 		// Once we get here, We have passed all validation checks so we can safely include our plugin
 		require_once( 'plugin.php' );
 	}
 
-	/**
-	 * Add new Elementor Categories
-	 *
-	 * Register new widget categories for Docy Core widgets.
-	 *
-	 * @since 1.0.0
-	 * @since 1.7.1 The method moved to this class.
-	 *
-	 * @access public
-	 */
-	public function add_elementor_category() {
-		\Elementor\Plugin::instance()->elements_manager->add_category( 'spider-elements', [
-			'title' => __( 'Spider Elements', 'spider-element' ),
-		], 1 );
-	}
-
-	/**
-	 * Register Widget Styles
-	 *
-	 * Register custom styles required to run Docy Core.
-	 *
-	 * @access public
-	 */
-	public function enqueue_widget_styles() {
-		wp_register_style( 'ionicons', 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', '', '2.0.1' );
-		wp_register_style( 'prism', plugins_url( 'assets/vendors/prism/prism.min.css', __FILE__ ) );
-		wp_register_style( 'nice-select', plugins_url( 'assets/vendors/niceselectpicker/nice-select.css', __FILE__ ) );
-		wp_register_style( 'simple-line-icon', plugins_url( 'assets/vendors/simple-line-icon/simple-line-icons.css', __FILE__ ) );
-		wp_register_style( 'animated', plugins_url( 'assets/vendors/slick/animated.css', __FILE__ ) );
-		wp_register_style( 'slick', plugins_url( 'assets/vendors/slick/slick.css', __FILE__ ) );
-		wp_register_style( 'slick-theme', plugins_url( 'assets/vendors/slick/slick-theme.css', __FILE__ ) );
-		wp_register_style( 'elegant-icon', plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ ) );
-		wp_register_style( 'video-js', plugins_url( 'assets/vendors/video/videojs.min.css', __FILE__ ) );
-		wp_register_style( 'video-js-theaterMode', plugins_url( 'assets/vendors/video/videojs.theaterMode.css', __FILE__ ) );
-	}
-	
 	/**
 	 * Register scripts & styles
 	 *
@@ -175,56 +133,6 @@ final class Spider_Elements {
 	public function enqueue_core_styles(){
 		wp_enqueue_style( 'sp-core-style', plugins_url( 'assets/css/style.css', __FILE__ ) );
 		wp_enqueue_script( 'sp-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
-	}
-
-	/**
-	 * Register Widget Scripts
-	 *
-	 * Register custom scripts required to run Docy Core.
-	 *
-	 * @access public
-	 */
-	public function register_widget_scripts() {
-		wp_register_script( 'ajax-chimp', plugins_url( 'assets/js/ajax-chimp.js', __FILE__ ), 'jquery', '1.0', true );
-		wp_register_script( 'prism', plugins_url( 'assets/vendors/prism/prism.js', __FILE__ ), array( 'jquery' ), '1.17.1', true );
-		wp_register_script( 'tooltipster', plugins_url( 'assets/vendors/tooltipster/js/tooltipster.bundle.min.js', __FILE__ ), array( 'jquery' ), '4.2.8', true );
-		wp_register_script( 'parallaxie', plugins_url( 'assets/js/parallaxie.js', __FILE__ ), array( 'jquery' ), '0.5', true );
-		wp_register_script( 'nice-select', plugins_url( 'assets/vendors/niceselectpicker/jquery.nice-select.min.js', __FILE__ ), 'jquery', '1.0', true );
-		wp_register_script( 'floatThead', plugins_url( 'assets/js/jquery.floatThead.min.js', __FILE__ ), array( 'jquery' ), '2.1.4', true );
-		wp_register_script( 'counterup', plugins_url( 'assets/vendors/counterup/jquery.counterup.min.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
-		wp_register_script( 'waypoints', plugins_url( 'assets/vendors/counterup/jquery.waypoints.min.js', __FILE__ ), array( 'jquery' ), '4.0.1', true );
-		wp_register_script( 'tweenmax', plugins_url( 'assets/js/TweenMax.min.js', __FILE__ ), array( 'jquery' ), '2.0.0', true );
-		wp_register_script( 'wavify', plugins_url( 'assets/js/jquery.wavify.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
-		wp_register_script( 'chart', plugins_url( 'assets/js/Chart.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
-		wp_register_script( 'slick', plugins_url( 'assets/vendors/slick/slick.min.js', __FILE__ ), array( 'jquery' ), '1.9.0', true );
-		wp_register_script( 'wow', plugins_url( 'assets/vendors/wow/wow.min.js', __FILE__ ), array( 'jquery' ), '1.9.0', true );
-		wp_register_script( 'artplayer', plugins_url( 'assets/vendors/video/artplayer.js', __FILE__ ), array( 'jquery' ), '3.5.26', true );
-		wp_register_script( 'mcustomscrollbar', plugins_url( 'assets/vendors/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js', __FILE__ ), array( 'jquery' ), '3.1.13', true );
-		wp_register_script( 'parallax-scroll', plugins_url( 'assets/js/jquery.parallax-scroll.js', __FILE__ ), array( 'jquery' ), '3.1.13', true );
-		wp_register_script( 'video-js', plugins_url( 'assets/vendors/video/video.min.js', __FILE__ ), array( 'jquery' ), '7.6.0', true );
-		wp_register_script( 'video-js-nuevo', plugins_url( 'assets/vendors/video/nuevo.min.js', __FILE__ ), array( 'jquery' ), '7.6.0', true );
-	}
-
-	public function enqueue_elementor_editor_styles() {
-		wp_enqueue_style( 'docy-elementor-editor', plugins_url( 'assets/css/elementor-editor.css', __FILE__ ) );
-	}
-
-	public function enqueue_scripts() {
-		wp_deregister_style( 'elementor-animations' );
-		wp_deregister_style( 'e-animations' );
-		if ( is_post_type_archive( 'topic' ) ) {
-			wp_deregister_style( 'bbp-default' );
-		}
-		//wp_deregister_script('wedocs-anchorjs');
-	}
-
-	public function register_admin_styles() {
-		wp_enqueue_style( 'docy-gutenberg-editor', plugins_url( 'assets/css/gutenberg-editor.css', __FILE__ ) );
-		//wp_enqueue_style( 'docy_core_admin', plugins_url( 'assets/css/spider-elements-admin.css', __FILE__ ) );
-	}
-
-	public function gutenberg_editor_scripts() {
-		wp_enqueue_style( 'docy-gutenberg-editor', plugins_url( 'assets/css/gutenberg-editor.css', __FILE__ ) );
 	}
 
 
@@ -314,5 +222,5 @@ final class Spider_Elements {
 	}
 }
 
-// Instantiate Elementor_Hello_World.
+// Instantiate Spider_Elements.
 new Spider_Elements();
