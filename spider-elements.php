@@ -124,6 +124,7 @@ final class Spider_Elements {
 		// Once we get here, We have passed all validation checks so we can safely include our plugin
 		require_once( 'plugin.php' );
 	}
+	
 
 	/**
 	 * Register scripts & styles
@@ -132,6 +133,7 @@ final class Spider_Elements {
 	 */
 	public function enqueue_core_styles(){
 		wp_enqueue_style( 'sp-core-style', plugins_url( 'assets/css/style.css', __FILE__ ) );
+		wp_enqueue_style( 'sp-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
 		wp_enqueue_script( 'sp-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
 	}
 

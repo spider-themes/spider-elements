@@ -19,8 +19,8 @@ wp_enqueue_script('video-js-nuevo');
         //echo '<pre>'.print_r($video, 1).'</pre>';
         ?>
         <div class="item">
-            <div class="row">
-                <div class="col-lg-7">
+            <div class="row video2_wrapper">
+                <div class="col-lg-7 player_wrapper">
                     <video id="player_<?php the_ID(); ?>" class="video-js vjs-fluid vjs-default-skin"
                            controls preload playsinline
                            poster="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'docy_671x411') ?>">

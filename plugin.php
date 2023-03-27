@@ -48,11 +48,76 @@ class Plugin {
 	 * @access public
 	 */
 	public function widget_scripts() {
-		// wp_register_script( 'Spider_Elements_Assets', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'Spider_Elements_Assets', plugins_url( '/assets/js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_enqueue_script( 'ionicons', 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js', '', '5.4.0', true );
+
 		// wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' );
 		// wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', [ 'jquery' ], false, true );
 
 	}
+
+	/**
+	 * elementor style
+	 *
+	 * Load required plugin core files.
+	 *
+	 * @since 1.2.0
+	 * @access public
+	 */
+	public function elementor_style() {
+		wp_enqueue_style( 'sp-video-widgets_style', plugins_url( '/assets/css/elementor-editor.css', __FILE__ ) );
+
+	}
+
+	/***
+	* Added Custom Font Icon Integrated Elementor Icon Library
+	*/
+		public function sp_font_icons( $custom_fonts ) {
+			$css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
+			$json_data = plugins_url( 'assets/vendors/elegant-icon/eleganticons.json', __FILE__ );
+
+			$custom_fonts['elegant-icon'] = [
+				'name'          => 'elegant-icon',
+				'label'         => esc_html__( 'Elegant Icons', 'docy' ),
+				'url'           => $css_data,
+				'prefix'        => '',
+				'displayPrefix' => '',
+				'labelIcon'     => 'icon_star',
+				'ver'           => '',
+				'fetchJson'     => $json_data,
+				'native'        => true,
+			];
+
+			return $custom_fonts;
+		}
+
+		public static function generate_custom_font_icons() {
+			$css_source = '';
+			global $wp_filesystem;
+			require_once( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem();
+			$css_file = DOCY_PATH . '/assets/vendors/elegant-icon/style.css';
+			if ( $wp_filesystem->exists( $css_file ) ) {
+				$css_source = $wp_filesystem->get_contents( $css_file );
+			}
+			preg_match_all( "/\.(.*?):\w*?\s*?{/", $css_source, $matches, PREG_SET_ORDER, 0 );
+			$iconList = [];
+			foreach ( $matches as $match ) {
+				$icon       = str_replace( '', '', $match[1] );
+				$icons      = explode( ' ', $icon );
+				$iconList[] = current( $icons );
+			}
+			$icons        = new \stdClass();
+			$icons->icons = $iconList;
+			$icon_data    = json_encode( $icons );
+			$js_file      = DOCY_PATH . '/assets/vendors/elegant-icon/eleganticons.json';
+			global $wp_filesystem;
+			require_once( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem();
+			if ( $wp_filesystem->exists( $js_file ) ) {
+				$content = $wp_filesystem->put_contents( $js_file, $icon_data );
+			}
+		}
 
 		/**
 		 * Register Widget Styles
@@ -190,6 +255,7 @@ class Plugin {
 
 		// Extra functions
 		require_once __DIR__ . '/inc/extra.php';
+		require_once __DIR__ . '/inc/icons.php';
 		//require_once __DIR__ . '/inc/notices.php';
 	}
 
@@ -202,6 +268,12 @@ class Plugin {
 	 * @access public
 	 */
 	public function __construct() {
+
+		// Register Icon
+		add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'sp_font_icons' ] );
+
+		//  Register elementor Style
+		add_action( 'elementor/editor/before_enqueue_scripts',  [ $this, 'elementor_style' ]   );
 
 		// Register widget scripts
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
@@ -224,6 +296,7 @@ class Plugin {
 		$this->add_page_settings_controls();
 	}
 }
+
 
 // Instantiate Plugin Class
 Plugin::instance();

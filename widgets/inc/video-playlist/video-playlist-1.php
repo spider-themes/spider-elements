@@ -74,7 +74,7 @@ wp_enqueue_script('mcustomscrollbar');
                                         </button>
                                     </div>
 
-                                    <div id="<?php echo  $cat_slug; ?>" class="collapse <?php echo $index == 0 ? 'show' : '' ?>" aria-labelledby="<?php echo $cat->slug.'-tab'; ?>" data-parent="#accordionExample">
+                                    <div id="<?php echo  $cat_slug; ?>" class="collapse <?php echo $index == 0 ? 'show' : '' ?>" aria-labelledby="<?php echo $cat_slug.'-tab'; ?>" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <ul class="nav nav-tabs" role="tablist">
                                                 <?php
