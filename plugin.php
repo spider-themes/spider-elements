@@ -221,11 +221,21 @@ class Plugin {
 	public function register_widgets( $widgets_manager ) {
 		// Its is now safe to include Widgets files
 		require_once( __DIR__ . '/widgets/Tabs.php' );
-		require_once( __DIR__ . '/widgets/Video_playlist.php' );
+		// require_once( __DIR__ . '/widgets/Video_playlist.php' );
+		require_once( __DIR__ . '/widgets/Alerts_box.php' );
+		require_once( __DIR__ . '/widgets/Accordion_article.php' );
+		require_once( __DIR__ . '/widgets/Accordion.php' );
+		require_once( __DIR__ . '/widgets/Testimonial.php' );
+		require_once( __DIR__ . '/widgets/Quote.php' );
 
 		// Register Widgets
 		$widgets_manager->register( new widgets\Tabs() );
-		$widgets_manager->register( new widgets\Video_playlist() );
+		// $widgets_manager->register( new widgets\Video_playlist() );
+		$widgets_manager->register( new widgets\Alerts_box() );
+		$widgets_manager->register( new widgets\Accordion_article() );
+		$widgets_manager->register( new widgets\Accordion() );
+		$widgets_manager->register( new widgets\Testimonial() );
+		$widgets_manager->register( new widgets\Quote() );
 	}
 
 	  // Register category
