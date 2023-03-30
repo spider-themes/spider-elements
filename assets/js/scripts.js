@@ -22,4 +22,68 @@
         
     })
   })(jQuery)
+
+
+
+//   ==== Tabs1 JS ======= //
+
+jQuery(document).ready(function($) {
+
+  // Define the variables
+  var $tab_shortcode = $('.tab_shortcode');
+  var $tab_titles = $tab_shortcode.find('.nav-link');
+  var $tab_contents = $tab_shortcode.find('.tab-pane');
+
+  // Hide all tab contents except the first one
+  $tab_contents.not(':first').hide();
+
+  // Add click event listener to the tab titles
+  $tab_titles.on('click', function(e) {
+      e.preventDefault();
+
+      // Remove active class from all tab titles
+      $tab_titles.removeClass('active');
+
+      // Add active class to the clicked tab title
+      $(this).addClass('active');
+
+      // Hide all tab contents
+      $tab_contents.hide();
+
+      // Show the corresponding tab content
+      var target = $(this).attr('href');
+      $(target).show();
+  });
+
+});
+
+
+//   ==== Tabs2 JS ======= //
+
+jQuery(document).ready(function($) {
+  var tabItems = $('.header_tab_items .nav-link');
+  var tabContent = $('.header_tab_content .tab-pane');
+
+  // Hide all tab content except the first one
+  tabContent.not(':first').hide();
+
+  // Add click event handler to tab items
+  tabItems.on('click', function() {
+      var $this = $(this);
+
+      // Remove active class from all tab items and add it to the clicked one
+      tabItems.removeClass('active');
+      $this.addClass('active');
+
+      // Hide all tab content and show the corresponding one
+      tabContent.hide();
+      $( $this.attr('href') ).show();
+
+      return false;
+  });
+});
+
+
+
+  
   

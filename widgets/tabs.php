@@ -73,6 +73,14 @@ class Tabs extends Widget_Base {
 		return [ 'spider-elements' ];
 	}
 
+    public function get_style_depends() {
+        return [ 'se-main-style' ];
+    }
+    
+    public function get_script_depends() {
+        return [ 'sp-core-script' ];
+    }
+
 	/**
 	 * Register the widget controls.
 	 *

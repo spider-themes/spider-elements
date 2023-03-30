@@ -1,0 +1,129 @@
+.toggle_shortcode {
+    padding-bottom: 60px;
+  }
+  
+  .toggle_btn {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black_800);
+    background: var(--black_25);
+    text-align: left;
+    border-radius: 4px;
+    padding: 12px 30px;
+    position: relative;
+    text-decoration: none !important;
+    &:not(.collapsed) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: var(--brand_color)
+    }
+    &:before {
+      content: "\43";
+      position: absolute;
+      font-size: 18px;
+      font-family: eleganticons;
+      right: 30px;
+      transform: rotate(180deg);
+      transition: all 0.2s linear;
+      color: var(--brand_color);
+    }
+    &.collapsed {
+      &:before {
+        transform: rotate(0deg);
+        color: var(--black_800);
+      }
+    }
+  }
+  
+  .toggle_body {
+    border: 1px solid var(--black_50);
+    padding: 18px 30px 24px 30px;
+    border-radius: 0 0 4px 4px;
+    line-height: 26px;
+    background: var(--bs-white);
+  }
+  
+  .doc_accordion {
+    border: 0;
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .card-header {
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      .title {
+        padding: 0;
+      }
+      button {
+        padding: 12px 30px;
+        border-radius: 4px 4px 0 0;
+        text-align: left;
+        width: 100%;
+        font-size: 16px;
+        color: var(--brand_color);
+        font-weight: 500;
+        background: var(--black_25);
+        text-decoration: none;
+        position: relative;
+        svg {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          display: none;
+          transition: all 0.2s linear;
+          & + svg {
+            display: block;
+          }
+        }
+        &.collapsed {
+          color: var(--black_800);
+          border-radius: 4px;
+          svg {
+            display: block;
+            color: var(--p_color);
+            & + svg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .accordion-article-wrap {
+    .toggle_btn {
+      font-weight: 400;
+    }
+    .accordion-article-item {
+      border: 1px solid var(--border_on_white);
+      padding: 20px;
+      margin: 12px 0;
+      min-height: 230px;
+  
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+  
+        &:hover {
+          color: var(--brand_color);
+        }
+      }
+  
+      .post-meta {
+        margin-bottom: 0;
+  
+        li {
+          display: inline-block;
+          margin-right: 5px;
+          font-size: 14px !important;
+          color: var(--black_400);
+        }
+      }
+    }
+  }

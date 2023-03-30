@@ -1,7 +1,7 @@
 /*
 Docy Footnotes
 */
-.video2_wrapper {
+/* .video2_wrapper {
   display: flex;
 }
 .row>* {
@@ -18,9 +18,9 @@ Docy Footnotes
 
 .col-lg-5 {
   width: 41.66666667%;
-} 
+}  */
 /* tabs design */
-.tab_shortcode {
+/* .tab_shortcode {
   margin-bottom: 50px;
 }
 .tab_shortcode .nav-tabs {
@@ -117,11 +117,11 @@ body.admin-bar .header_tabs_area.tab_fixed .header_tab_items {
   transition: transform 500ms ease, background 500ms ease, -webkit-transform 500ms ease;
   -webkit-transition: transform 500ms ease, background 500ms ease;
   z-index: 30;
-}
+} */
 
 
 /*----------------- Video Playlist Widget CSS  */
-.ycp .belah .luhur span.about {
+/* .ycp .belah .luhur span.about {
   display: none;
 }
 
@@ -382,13 +382,13 @@ body.admin-bar .header_tabs_area.tab_fixed .header_tab_items {
 
 .art-control.art-control-control13.art-control-onlyText {
   display: none;
-}
+} */
 
 /* End Video Area css
 ============================================================================================ */
 /* End Video Area css
 ============================================================================================ */
-.video_slider_area .container {
+/* .video_slider_area .container {
   position: relative;
 }
 .video_slider_area.theatermode .col-lg-7 {
@@ -1389,13 +1389,13 @@ body.admin-bar .header_tabs_area.tab_fixed .header_tab_items {
 }
 .video_slider_area .video-js:hover .vjs-control-bar {
   transform: translateY(0);
-}
+} */
 
 /* End Video Area css
 ============================================================================================ */
 /* 3d video Slider Area css
 ============================================================================================ */
-.flipvideo_area .slider-wrapper.no-padding .js-slider--main {
+/* .flipvideo_area .slider-wrapper.no-padding .js-slider--main {
   padding-top: 7px;
 }
 .flipvideo_area .slider-wrapper.no-padding .js-slider--main .swiper-slide-shadow-left,
@@ -1978,5 +1978,5 @@ button.swiper-pagination-bullet {
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   width: 12px;
-}
+} */
 

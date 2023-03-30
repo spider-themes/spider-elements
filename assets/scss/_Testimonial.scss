@@ -1,0 +1,139 @@
+/*============= doc_testimonial_area css  ================*/
+
+.doc_testimonial_area {
+    padding: 160px 0 135px;
+  }
+  .doc_testimonial_slider {
+    padding-right: 100px;
+    .item {
+      padding-left: 15px;
+      position: relative;
+      padding-top: 10px;
+      &:before {
+        content: "“";
+        font-family: $rob;
+        font-weight: 400;
+        font-size: 150px;
+        color: var(--brand_color);
+        opacity: 0.1;
+        position: absolute;
+        left: -5px;
+        width: 38px;
+        height: 38px;
+        line-height: 130px;
+        top: 0;
+        z-index: 1;
+      }
+      h3 {
+        font-size: 34px;
+        line-height: 52px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
+      .name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--black_500);
+        margin-bottom: 20px;
+        h5 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 0;
+        text-transform: capitalize;
+        }
+        span {
+          font-weight: 400;
+        }
+      }
+      .sign {
+        display: inline-block;
+      }
+    }
+    .slick-dots {
+      position: relative;
+      bottom: 0;
+      text-align: left;
+      margin-top: 30px;
+      li {
+        width: auto;
+        height: auto;
+        button {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #dbdbfc;
+          transition: all 0.2s;
+          &:before {
+            display: none;
+          }
+        }
+        &:nth-child(even) {
+          button {
+            background: #a5a5f8;
+          }
+        }
+        &.slick-active {
+          button {
+            background: var(--brand_color);
+          }
+        }
+      }
+    }
+  }
+  .doc_img_slider {
+    .item {
+      text-align: center;
+      position: relative;
+      padding-bottom: 25px;
+      z-index: 1;
+      img {
+        display: inline-block;
+        border-radius: 20px;
+      }
+      .dot {
+        border-radius: 0;
+        position: absolute;
+        left: 60px;
+        bottom: 0;
+        z-index: -1;
+      }
+      .round {
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        &.one {
+          width: 150px;
+          height: 150px;
+          right: 60px;
+          top: 60px;
+          background-image: linear-gradient(
+            50deg,
+            rgb(87, 54, 254) 0%,
+            rgb(253, 64, 110) 100%
+          );
+          opacity: 0.1;
+        }
+        &.two {
+          width: 280px;
+          height: 280px;
+          right: 0;
+          top: 50%;
+          margin-top: -140px;
+          background-image: linear-gradient(
+            50deg,
+            rgb(87, 54, 254) 0%,
+            rgb(253, 64, 110) 100%
+          );
+        }
+      }
+      &.slick-active {
+        .one {
+          animation: zoomIn 0.8s linear both 0.4s;
+        }
+        .two {
+          animation: zoomIn 0.8s linear both 0.5s;
+        }
+      }
+    }
+  }
