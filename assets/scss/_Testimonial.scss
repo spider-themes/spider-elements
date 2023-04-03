@@ -14,7 +14,7 @@
         font-family: $rob;
         font-weight: 400;
         font-size: 150px;
-        color: var(--brand_color);
+        color: #4c4cf1;
         opacity: 0.1;
         position: absolute;
         left: -5px;
@@ -75,7 +75,7 @@
         }
         &.slick-active {
           button {
-            background: var(--brand_color);
+            background: #4c4cf1;
           }
         }
       }

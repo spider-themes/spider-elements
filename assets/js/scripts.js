@@ -83,6 +83,31 @@ jQuery(document).ready(function($) {
   });
 });
 
+// ======= Pricing Table Tabs ======= //
+
+// get all the tab buttons and content sections
+const tabButtons = document.querySelectorAll('.nav-link');
+const tabContents = document.querySelectorAll('.tab-pane');
+
+// add an event listener to each tab button
+tabButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // remove the "active" class from all tab buttons and content sections
+    tabButtons.forEach((button) => button.classList.remove('active',));
+    tabContents.forEach((content) => content.classList.remove('show', 'active'));
+    
+    // add the "active" class to the clicked button and its associated content section
+    const targetContent = document.querySelector(button.dataset.bsTarget);
+    button.classList.add('active');
+    targetContent.classList.add('show', 'active');
+  });
+});
+
+
+// ======= Pricing Table Switcher ======= //
+
+
+
 
 
   

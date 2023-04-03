@@ -2,7 +2,7 @@
 use Elementor\Plugin;
 ?>
 <div class="tab_shortcode">
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs d-flex" role="tablist">
         <?php
         $i = 0.2;
         foreach ( $tabs as $index => $item ) :

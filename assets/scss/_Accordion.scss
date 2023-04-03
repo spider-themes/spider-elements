@@ -16,7 +16,7 @@
     &:not(.collapsed) {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      color: var(--brand_color)
+      color: #4c4cf1;
     }
     &:before {
       content: "\43";
@@ -26,7 +26,7 @@
       right: 30px;
       transform: rotate(180deg);
       transition: all 0.2s linear;
-      color: var(--brand_color);
+      color: #4c4cf1;
     }
     &.collapsed {
       &:before {
@@ -64,7 +64,7 @@
         text-align: left;
         width: 100%;
         font-size: 16px;
-        color: var(--brand_color);
+        color: #4c4cf1;
         font-weight: 500;
         background: var(--black_25);
         text-decoration: none;
@@ -111,7 +111,7 @@
         line-height: 22px;
   
         &:hover {
-          color: var(--brand_color);
+          color: #4c4cf1;
         }
       }
   

@@ -227,6 +227,8 @@ class Plugin {
 		require_once( __DIR__ . '/widgets/Accordion.php' );
 		require_once( __DIR__ . '/widgets/Testimonial.php' );
 		require_once( __DIR__ . '/widgets/Quote.php' );
+		require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
+		require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
 
 		// Register Widgets
 		$widgets_manager->register( new widgets\Tabs() );
@@ -236,6 +238,8 @@ class Plugin {
 		$widgets_manager->register( new widgets\Accordion() );
 		$widgets_manager->register( new widgets\Testimonial() );
 		$widgets_manager->register( new widgets\Quote() );
+		$widgets_manager->register( new widgets\Pricing_Table_Tabs() );
+		$widgets_manager->register( new widgets\Pricing_Table_Switcher() );
 	}
 
 	  // Register category
@@ -265,6 +269,7 @@ class Plugin {
 
 		// Extra functions
 		require_once __DIR__ . '/inc/extra.php';
+		require_once __DIR__ . '/inc/se_helper.php';
 		require_once __DIR__ . '/inc/icons.php';
 		//require_once __DIR__ . '/inc/notices.php';
 	}

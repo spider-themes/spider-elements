@@ -78,7 +78,7 @@ class Tabs extends Widget_Base {
     }
     
     public function get_script_depends() {
-        return [ 'sp-core-script' ];
+        return [ 'se-core-script' ];
     }
 
 	/**

@@ -85,7 +85,7 @@
       letter-spacing: 0.8px;
       background: #0ed193;
       &.improve {
-        background: var(--brand_color);
+        background: #4c4cf1;
       }
       &.update {
         background: #ffa100;
@@ -110,7 +110,7 @@
         margin-right: 5px;
       }
       &:hover {
-        color: var(--brand_color);
+        color: #4c4cf1;
       }
       & + .changelog_btn {
         margin-left: 28px;
@@ -199,7 +199,7 @@
     }
     h5 {
       margin-bottom: 0;
-      color: var(--brand_color);
+      color: #4c4cf1;
     }
   }
   

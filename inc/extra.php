@@ -52,3 +52,42 @@ function docy_cat_ids(){
 function spider_excerpt($settings_key, $limit = 10) {
     echo wp_trim_words( wpautop( get_the_excerpt( $settings_key ) ), $limit, '');
 }
+
+
+/**
+ * Event Tab data
+ * @param $getCats
+ * @param $event_schedule_cats
+ * @return array
+ */
+function return_tab_data( $getCats, $event_schedule_cats ) {
+    $y = [];
+    foreach ( $getCats as $val ) {
+
+        $t = [];
+        foreach( $event_schedule_cats as $data ) {
+            if( $data['tab_title'] == $val ) {
+                $t[] = $data;
+            }
+        }
+        $y[$val] = $t;
+    }
+
+    return $y;
+}
+
+/**
+ * Get Default Image Elementor
+ * @param $settins_key
+ * @param string $class
+ * @param string $alt
+ */
+function landpagy_el_image( $settings_key = '', $alt = '', $class = '' ) {
+    if ( !empty($settings_key['id']) ) {
+        echo wp_get_attachment_image($settings_key['id'], 'full', '', array( 'class' => $class ));
+    }
+    elseif ( !empty($settings_key['url']) && empty($settings_key['id']) ) {
+        $class = !empty($class) ? "class='$class'" : '';
+        echo "<img src='{$settings_key['url']}' $class alt='$alt'>";
+    }
+}
