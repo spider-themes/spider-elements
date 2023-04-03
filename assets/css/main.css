@@ -1608,6 +1608,7 @@ ul.nav.nav-tabs {
   bottom: 0;
   text-align: left;
   margin-top: 30px;
+  padding-left: 30px;
 }
 .doc_testimonial_slider .slick-dots li {
   width: auto;
@@ -1675,8 +1676,8 @@ ul.nav.nav-tabs {
   animation: zoomIn 0.8s linear both 0.5s;
 }
 
-body {
-  background-color: red;
+.col-lg-6 {
+  padding: 0px 15px;
 }
 
 /*=========== message_alert Shortcode css ========*/
@@ -4542,6 +4543,79 @@ button {
   right: 20%;
   bottom: 12%;
   position: absolute;
+}
+
+.steps-panel {
+  box-shadow: 0 3px 6px 0 rgba(4, 73, 89, 0.02);
+  border: 1px solid rgb(235, 235, 235);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  padding-right: 10px;
+}
+
+ul.ordered-list li::before {
+  content: "h";
+  font-family: "ElegantIcons";
+  font-size: 10px;
+}
+
+.ordered-list {
+  position: relative;
+  list-style: none;
+  padding-left: 20px;
+  margin: 30px 0;
+}
+.ordered-list::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #c4cdd5;
+}
+.ordered-list::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #c4cdd5;
+}
+.ordered-list li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 16px 0;
+  position: relative;
+  padding-left: 35px;
+  counter-increment: a;
+  z-index: 1;
+}
+.ordered-list li::before {
+  content: counter(a);
+  position: absolute;
+  color: #fff;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: 12px;
+  background-color: rgb(76, 76, 241);
+  text-align: center;
+  line-height: 23px;
+  top: -4px;
+  left: -4px;
+  border: 5px solid #ffffff;
+}
+.ordered-list li:last-child {
+  padding-bottom: 0;
+}
+
+.site-content {
+  padding: 100px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

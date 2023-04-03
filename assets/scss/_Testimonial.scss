@@ -55,6 +55,7 @@
       bottom: 0;
       text-align: left;
       margin-top: 30px;
+      padding-left: 30px;
       li {
         width: auto;
         height: auto;
@@ -137,6 +138,6 @@
       }
     }
   }
-body{
-  background-color: red;
+.col-lg-6{
+  padding: 0px 15px;
 }
