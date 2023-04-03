@@ -352,7 +352,7 @@ button:focus {
 }
 @media (max-width: 576px) {
   .bbp-shortcode fieldset.bbp-form, .blog_info .blog_body,
-.main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
+  .main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
     padding: 30px 20px !important;
   }
 }
@@ -1672,6 +1672,10 @@ ul.nav.nav-tabs {
   animation: zoomIn 0.8s linear both 0.5s;
 }
 
+body {
+  background-color: red;
+}
+
 /*=========== message_alert Shortcode css ========*/
 .message_alert {
   border: 1px solid var(--black_50);
@@ -2172,4 +2176,4 @@ ul.nav.nav-tabs {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
