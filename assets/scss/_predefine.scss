@@ -35,7 +35,6 @@ a {
   &:focus {
     text-decoration: none;
     outline: none;
-    color: var(--brand_color);
   }
 }
 
@@ -54,7 +53,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 a {
-  color: var(--brand_color);
   transition: all .3s;
     &:not(.elementor-button-link):hover {
       text-decoration-color: var(--brand_color);
@@ -342,60 +340,7 @@ ul.list-style li:last-child {
 }
 
 /** === Back to Top Button === **/
-#back-to-top {
-  display: inline-block;
-  background-color: rgba(220, 220, 220, 0.8);
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
-  text-decoration: none;
-  &.left {
-    left: 50px;
-    right: auto;
-  }
-}
-#back-to-top::after {
-  content: "\32";
-  font-family: eleganticons;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #000;
-}
-#back-to-top:hover {
-  cursor: pointer;
-  background-color: #333;
-}
-#back-to-top:hover::after {
-  color: #fff;
-}
-#back-to-top:active {
-  background-color: #555;
-}
-#back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
 
-.search-focused {
-  .click_capture {
-    opacity: 1;
-    visibility: visible;
-  }
-  .banner_search_form {
-    position: relative;
-    z-index: 999 !important;
-  }
-}
 @media (min-width: 1500px) {
   .custom_container2 {
     max-width: 1470px;
@@ -445,20 +390,6 @@ ul.list-style li:last-child {
   color: #fff;
 }
 
-/* Title Area css
-============================================================================================ */
-.main_title {
-  margin-bottom: 60px;
-  h2 {
-    font-size: 30px;
-    color: var(--secondary_color);
-    margin-bottom: 0;
-  }
-  p {
-    margin-bottom: 0;
-    margin-top: 12px;
-  }
-}
 
 /** === Dot Separator === **/
 .dot-sep {
@@ -477,18 +408,4 @@ ul.list-style li:last-child {
   background-color: var(--black_400);
   border-radius: 50%;
   margin: 0 6px;
-}
-
-/** === Litespeed Lazy-load Images === **/
-/* PART 1 - Before Lazy Load */
-img[data-lazyloaded]{
-  opacity: 0;
-}
-
-/* PART 2 - Upon Lazy Load */
-img.litespeed-loaded{
-  -webkit-transition: opacity .5s linear 0.2s;
-  -moz-transition: opacity .5s linear 0.2s;
-  transition: opacity .5s linear 0.2s;
-  opacity: 1;
 }

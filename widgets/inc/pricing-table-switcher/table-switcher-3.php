@@ -11,7 +11,7 @@
             </button>
         </div>
     </nav>
-    <div class="tab-content">
+    <div class="tab-content d-flex">
         <div class="tab-pane fade show active" id="cloud-monthly" role="tabpanel" aria-labelledby="cloud-monthly-tab">
             <?php
             $delay_time = 0.1;
