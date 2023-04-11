@@ -1091,13 +1091,60 @@ a{
 } */
 
 
+.video_list_area{}
 
+.video_tabs .artplayer-app {
+  height: 500px; /* set the height to 500 pixels */
+}
+.art-video-player .art-mask .art-state {
+  width: 80px !important;
+  height: 80px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  top: 0px !important;
+  margin: auto;
+  overflow: hidden;
+  transform: unset !important;
+}
+.art-video-player .art-mask .art-state i svg {
+  fill: white;
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+.accordion-panel .accordion-content.show {
+  height: unset;
+}
+.accordion-panel .accordion-header.active::before {
+  content: "-";
+}
+.accordion-panel .accordion-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
 
+.accordion-panel.active .accordion-content {
+  height: auto;
+  transition: height 0.3s ease-in;
+}
 
+.accordion-header {
+  cursor: pointer;
+}
 
+.accordion-panel .accordion-header.collapsed::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 10px;
+}
 
-
-
+.accordion-panel .accordion-header::before {
+  content: "-";
+  display: inline-block;
+  margin-right: 10px;
+}
 
 
 

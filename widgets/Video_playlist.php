@@ -166,154 +166,42 @@ class Video_playlist extends Widget_Base {
 		$repeater = new Repeater();
 
 		$repeater->add_control(
-			'type',
-			[
-				'label' => esc_html__( 'Type', 'spider-elements' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => 'youtube',
-				'options' => [
-					'youtube' => esc_html__( 'YouTube', 'spider-elements' ),
-					'vimeo' => esc_html__( 'Vimeo', 'spider-elements' ),
-					'hosted' => esc_html__( 'Self Hosted', 'spider-elements' ),
-					'section' => esc_html__( 'Section', 'spider-elements' ),
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'youtube_url',
-			[
-				'label' => esc_html__( 'Link', 'spider-elements' ),
-				'type' => Controls_Manager::TEXT,
-				'dynamic' => [
-					'active' => true,
-				],
-				'placeholder' => esc_html__( 'Paste URL', 'spider-elements' ) . ' (YouTube)',
-				'label_block' => true,
-				'condition' => [
-					'type' => 'youtube',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'vimeo_url',
-			[
-				'label' => esc_html__( 'Link', 'spider-elements' ),
-				'type' => Controls_Manager::TEXT,
-				'dynamic' => [
-					'active' => true,
-					'categories' => [
-						TagsModule::POST_META_CATEGORY,
-						TagsModule::URL_CATEGORY,
-					],
-				],
-				'placeholder' => esc_html__( 'Enter your URL', 'spider-elements' ) . ' (Vimeo)',
-				'default' => 'https://vimeo.com/235215203',
-				'label_block' => true,
-				'condition' => [
-					'type' => 'vimeo',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'vimeo_fetch_data',
-			[
-				'type' => Controls_Manager::BUTTON,
-				'label_block' => true,
-				'text' => esc_html__( 'Get Video Data', 'spider-elements' ),
-				'separator' => 'none',
-				'event' => 'elementorPlaylistWidget:fetchVideoData',
-				'condition' => [
-					'type' => [ 'youtube', 'vimeo' ],
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'is_external_url',
-			[
-				'label' => esc_html__( 'External URL', 'spider-elements' ),
-				'type' => Controls_Manager::SWITCHER,
-				'condition' => [
-					'type' => 'hosted',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hosted_url',
-			[
-				'label' => esc_html__( 'Choose File', 'spider-elements' ),
-				'type' => Controls_Manager::MEDIA,
-				'dynamic' => [
-					'active' => true,
-					'categories' => [
-						TagsModule::MEDIA_CATEGORY,
-					],
-				],
-				'media_type' => 'video',
-				'condition' => [
-					'type' => 'hosted',
-					'is_external_url' => '',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'external_url',
-			[
-				'label' => esc_html__( 'URL', 'spider-elements' ),
-				'type' => Controls_Manager::URL,
-				'autocomplete' => false,
-				'options' => false,
-				'label_block' => true,
-				'show_label' => false,
-				'dynamic' => [
-					'active' => true,
-					'categories' => [
-						TagsModule::POST_META_CATEGORY,
-						TagsModule::URL_CATEGORY,
-					],
-				],
-				'media_type' => 'video',
-				'placeholder' => esc_html__( 'Enter your URL', 'spider-elements' ),
-				'condition' => [
-					'type' => 'hosted',
-					'is_external_url' => 'yes',
-				],
-			]
-		);
-
-		$repeater->add_control(
 			'title',
 			[
-				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'label' => esc_html__( 'Heading', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
 				'default' => esc_html__( 'Title', 'spider-elements' ),
-				'placeholder' => esc_html__( 'Add Your Text Here', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Tab Title Text Here', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
-
-		$repeater->add_control(
-			'duration',
+		
+		$repeater2 = new repeater();
+		$repeater2->add_control(
+			'title2',
 			[
-				'label' => esc_html__( 'Duration', 'spider-elements' ),
+				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => '1:05',
-				'default' => '',
-				'condition' => [
-					'type!' => 'section',
-				],
+				'label_block' => true,
 			]
 		);
-
-		$repeater->add_control(
+		
+		// video upload
+		$repeater2->add_control(
+			'video_upload',
+			[
+				'label' => esc_html__( 'Video Upload', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+				 
+				'media_type' => 'video',
+				
+			]
+		);
+		
+		$repeater2->add_control(
 			'thumbnail',
 			[
 				'label' => esc_html__( 'Thumbnail', 'spider-elements' ),
@@ -323,96 +211,47 @@ class Video_playlist extends Widget_Base {
 				],
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
-				],
-				'condition' => [
-					'type!' => 'section',
-				],
+				]
 			]
 		);
 
-		$repeater->add_control(
-			'inner_tab_is_content_visible',
-			[
-				'label' => esc_html__( 'Contents Tabs ', 'spider-elements' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'spider-elements' ),
-				'label_off' => esc_html__( 'Hide', 'spider-elements' ),
-				'return_value' => 'show',
-				'default' => '',
-				'condition' => [
-					'type' => [ 'youtube', 'hosted', 'vimeo' ],
-				],
-			]
-		);
-
-		$repeater->start_controls_tabs( 'video_tabs' );
-		$repeater2 = new repeater();
 		$repeater2->add_control(
-			'title2',
+			'current_author',
 			[
-				'label' => esc_html__( 'Thumbnail', 'spider-elements' ),
-				'type' => Controls_Manager::TEXT,
+				'label' => esc_html__( 'Author', 'spider-elements' ),
+				'type' => Controls_Manager::HIDDEN,
+				// current login user name
+				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : '',
+				
 			]
+		);
+		// CURRENT DATE control
+		$repeater2->add_control(
+			'current_date',
+			[
+				'label' => esc_html__( 'Current Date', 'spider-elements' ),
+				'type' => Controls_Manager::HIDDEN,
+				// DEFAULT CURRENT DATE
+				'default' => date( 'F d, Y' ),
+				]
 		);
 
 		$repeater->add_control(
-			'tabs2',
+			'se-video-upload',
 			[
 				'label' => esc_html__( 'Playlist Items', 'spider-elements' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater2->get_controls(),
 				'default' => [
 					[
-						'title2' =>  'Hello',
-					],
+						'title2' => esc_html__( 'Add Video', 'spider-elements' ),
+					]
 				],
 				'frontend_available' => true,
-				'title_field' => '{{{ title2 }}}',
+				'title_field' => '{{{ title2 }}}'
 			]
 		);
-
-		$repeater->add_control(
-			'inner_tab_content_1',
-			[
-				'label' => '',
-				'type' => Controls_Manager::WYSIWYG,
-				'default' => '<p>' . esc_html__( 'Add some content for each one of your videos, like a description, transcript or external links.To add, remove or edit tab names, go to Tabs.', 'spider-elements' ) . '</p>',
-				'condition' => [
-					'type' => [ 'youtube', 'hosted', 'vimeo' ],
-					'inner_tab_is_content_visible' => 'show',
-				],
-			]
-		);
-
-		$repeater->end_controls_tab();
-
-		$repeater->start_controls_tab(
-			'inner_tab_2',
-			[
-				'label' => esc_html__( 'Tab #2', 'spider-elements' ),
-				'condition' => [
-					'type' => [ 'youtube', 'hosted', 'vimeo' ],
-					'inner_tab_is_content_visible' => 'show',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'inner_tab_content_2',
-			[
-				'label' => '',
-				'type' => Controls_Manager::WYSIWYG,
-				'condition' => [
-					'type' => [ 'youtube', 'hosted', 'vimeo' ],
-					'inner_tab_is_content_visible' => 'show',
-				],
-			]
-		);
-
-		$repeater->end_controls_tab();
-
-		$repeater->end_controls_tabs();
-
+		
 		$this->add_control(
 			'tabs',
 			[
@@ -421,23 +260,8 @@ class Video_playlist extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'title' => esc_html__( 'Sample Video', 'spider-elements' ),
-						'youtube_url' => 'https://www.youtube.com/watch?v=XHOmBV4js_E',
-						'duration' => '0:16',
-						'thumbnail' => [ 'url' => 'https://img.youtube.com/vi/XHOmBV4js_E/maxresdefault.jpg' ],
-					],
-					[
-						'title' => esc_html__( 'Sample Video', 'spider-elements' ),
-						'youtube_url' => 'https://www.youtube.com/watch?v=XHOmBV4js_E',
-						'duration' => '0:16',
-						'thumbnail' => [ 'url' => 'https://img.youtube.com/vi/XHOmBV4js_E/maxresdefault.jpg' ],
-					],
-					[
-						'title' => esc_html__( 'Sample Video', 'spider-elements' ),
-						'youtube_url' => 'https://www.youtube.com/watch?v=XHOmBV4js_E',
-						'duration' => '0:16',
-						'thumbnail' => [ 'url' => 'https://img.youtube.com/vi/XHOmBV4js_E/maxresdefault.jpg' ],
-					],
+						'title' => esc_html__( 'Insert Video', 'spider-elements' ),
+					]
 				],
 				'frontend_available' => true,
 				'title_field' => '{{{ title }}}',
@@ -1243,8 +1067,6 @@ class Video_playlist extends Widget_Base {
         ));
 
         include( "inc/video-playlist/video-playlist-{$settings['style']}.php" );
-
-		// Video markup
-			
+	
     }
 }
