@@ -15,20 +15,25 @@ template.
 Table of Content:
 01/ Accordian_article
 92/ Accordion
-03/ Tabs
-04/ Testimonial
-05/ Video
-06/ search
-07/ Alerts_box
+03/ Alerts_box
+04/ Animation
+05/ List_Item
+06/ Predefine
+07/ Pricing_Table_Switcher
 08/ Pricing_Table
-08/ Animation
+09/ Quote
+10/ Responsive
+11/ Tabs
+12/ Testimonial
+13/ variable
+14/ Video
 
 
 
 =====================================================================*/
 @import "variables";
 
-@import "predefine";
+@import "Predefine";
 
 @import "Accordion_article";
 
@@ -51,6 +56,9 @@ Table of Content:
 @import "Animation";
 
 @import "List_item";
+
+@import "Responsive";
+
 
 
 

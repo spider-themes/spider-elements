@@ -42,6 +42,27 @@
 
 
 
+ //======================== Counter Up =========================== //
+
+  //=============== Pricing Table 06 =========================== //
+  const tableSwitcher1 = document.querySelectorAll('.pricing-switcher-2 .nav-link');
+
+  if (tableSwitcher1.length > 0) {
+    tableSwitcher1.forEach((switcher) => {
+      switcher.addEventListener('click', () => {
+        const monthlyTab = document.querySelector('#monthly-tab');
+        const switcherBg = document.querySelector('.switcher-bg');
+  
+        if (monthlyTab.classList.contains('active')) {
+          switcherBg.classList.remove('right');
+        } else {
+          switcherBg.classList.add('right');
+        }
+      });
+    });
+  }
+  
+
 
 
 
@@ -153,7 +174,11 @@
 // });
 
 
-// // ======= Pricing Table Switcher ======= //
+
+
+
+
+
 
 
 

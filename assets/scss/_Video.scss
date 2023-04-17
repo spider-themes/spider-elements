@@ -1,16 +1,16 @@
-
-/*----------------- Video Playlist Widget CSS  */
-
+/*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
     display: flex;
   }
-  .row>* {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: 15px;    
-    margin-top: 15px;
-}
+
+  
+// .row>* {
+//     flex-shrink: 0;
+//     width: 100%;
+//     max-width: 100%;
+//     padding-right: 15px;    
+//     margin-top: 15px;
+// }
 
 .ycp .belah .luhur span.about {
   display: none;
@@ -138,7 +138,7 @@
 .video_list .video_list_inner .card {
   border: none;
   border-radius: 5px !important;
-  background-color: var(--bs-white);
+  background-color: #fff;
   margin-bottom: 10px;
 }
 .video_list .video_list_inner .card:last-child {
@@ -149,6 +149,12 @@
   background: transparent;
   padding: 0;
 }
+
+.video_list .video_list_inner .card .card-header .title {
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
 .video_list .video_list_inner .card .card-header button {
   padding: 14px 30px;
   font-size: 18px;
@@ -170,7 +176,7 @@
   top: 2px;
   margin-left: 22px;
 }
-.video_list .video_list_inner .card .card-header button .collapsed i + i {
+.video_list .video_list_inner .card .card-header button .collapsed #minus {
   display: none;
 }
 .video_list .video_list_inner .card .card-header button .plus-minus {
@@ -178,14 +184,66 @@
   right: 20px;
   position: absolute;
 }
-.video_list .video_list_inner .card .card-header button .plus-minus i {
+.video_list .video_list_inner .card .card-header button .plus-minus svg {
   line-height: 26px;
   display: none;
   color:#425466;
 }
-.video_list .video_list_inner .card .card-header button .plus-minus i + i {
+.video_list .video_list_inner .card .card-header button .plus-minus #plus {
   display: inline-block;
 }
+
+
+
+
+
+
+
+// ChatGpt
+// .video_list .video_list_inner .card .card-header button .plus-minus #plus {
+//   display: inline-block;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed + button#plus {
+//   display: inline-block;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed + button#minus {
+//   display: none;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed #plus {
+//   display: none;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed #minus {
+//   display: inline-block;
+// }
+
+// Chat2
+// .video_list .video_list_inner .card .card-header button .plus-minus #plus {
+//   display: inline-block;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed + button#plus {
+//   display: none;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed + button#minus {
+//   display: inline-block;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed #plus {
+//   display: none;
+// }
+
+// .video_list .video_list_inner .card .card-header button.collapsed #minus {
+//   display: inline-block;
+// }
+
+
+// 
+
 .video_list .video_list_inner .card .card-body {
   padding: 8px 35px 25px 35px;
 }
@@ -1870,3 +1928,73 @@ button.swiper-pagination-bullet {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   width: 12px;
 } 
+
+
+
+
+.video_tabs .artplayer-app {
+  height: 500px; /* set the height to 500 pixels */
+}
+.art-video-player .art-mask .art-state {
+  width: 80px !important;
+  height: 80px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  top: 0px !important;
+  margin: auto;
+  overflow: hidden;
+  transform: unset !important;
+}
+.art-video-player .art-mask .art-state i svg {
+  fill: white;
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+.accordion-panel .accordion-content.show {
+  height: unset;
+}
+.accordion-panel .accordion-header.active::before {
+  content: "-";
+}
+.accordion-panel .accordion-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.accordion-panel.active .accordion-content {
+  height: auto;
+  transition: height 0.3s ease-in;
+}
+
+.accordion-header {
+  cursor: pointer;
+}
+
+.accordion-panel .accordion-header.collapsed::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 10px;
+  display: none;
+}
+
+.accordion-panel .accordion-header::before {
+  content: "-";
+  display: inline-block;
+  margin-right: 10px;
+  display: none;
+}
+
+.art-undercover {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  opacity: .9;
+  z-index: 10;
+}
