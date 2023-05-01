@@ -1501,6 +1501,10 @@ ul.nav.nav-tabs {
   margin-bottom: 0;
 }
 
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
 /*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
   display: flex;
