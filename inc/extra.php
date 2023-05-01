@@ -91,3 +91,50 @@ function landpagy_el_image( $settings_key = '', $alt = '', $class = '' ) {
         echo "<img src='{$settings_key['url']}' $class alt='$alt'>";
     }
 }
+/**
+ * Elementor URL field output
+ * @param $settings_key
+ * @param bool $echo
+ * @return string
+ */
+function docy_el_btn( $settings_key, $echo = true ) {
+    if ( $echo == true ) {
+        echo $settings_key['is_external'] == true ? 'target="_blank"' : '';
+        echo $settings_key['nofollow'] == true ? 'rel="nofollow"' : '';
+        echo !empty($settings_key['url']) ? 'href="'.esc_url($settings_key['url']).'"' : '';
+    } else {
+        $output = $settings_key['is_external'] == true ? 'target="_blank"' : '';
+        $output .= $settings_key['nofollow'] == true ? 'rel="nofollow"' : '';
+        $output .= !empty($settings_key['url']) ? 'href="'.esc_url($settings_key['url']).'"' : '';
+        return $output;
+    }
+}
+
+// Arrow icon left right position
+function docycore_arrow_left_right() {
+    $arrow_icon = is_rtl() ? 'arrow_left' : 'arrow_right';
+    echo esc_attr($arrow_icon);
+}
+
+/**
+ * Get Default Image Elementor
+ * @param $settins_key
+ * @param string $class
+ * @param string $alt
+ */
+function docy_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
+    if ( !empty($settings_key['id']) ) {
+        echo wp_get_attachment_image( $settings_key['id'], 'full', '', array('class' => $class) );
+    }
+    elseif ( !empty($settings_key['url']) && empty($settings_key['id']) ) {
+        $class = !empty($class) ? "class='$class'" : '';
+        $attss = '';
+        //echo print_r($atts);
+        if ( !empty($atts) ) {
+            foreach ( $atts as $k => $att ) {
+                $attss .= "$k=". "'$att'";
+            }
+        }
+        echo "<img src='{$settings_key['url']}' $class alt='$alt' $attss>";
+    }
+}

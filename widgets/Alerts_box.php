@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Alerts_box extends Widget_Base {
     public function get_name() {
-        return 'docly_alerts_box';
+        return 'spider_alerts_box';
     }
 
     public function get_title() {

@@ -135,7 +135,7 @@ final class Spider_Elements {
 		// wp_enqueue_style( 'sp-core-style', plugins_url( 'assets/css/style.css', __FILE__ ) );
 		wp_enqueue_style( 'se-main-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
 		wp_enqueue_style( 'sp-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
-		wp_enqueue_script( 'sp-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
+        //wp_enqueue_script( 'sp-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
 	}
 
 

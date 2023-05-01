@@ -5,10 +5,10 @@ html {
 body {
   color: var(--p_color);
   line-height: 1.8;
-  font-size: 16px;
+  font-size:20px;
   height: 100%;
   font-family: $rob;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.15px;
   &.topic, &.forum-archive, &.search, &.single-post, &.topic-edit, &.forum, &.forum-search, &.blog, &.reply-edit {
     .body_wrapper {
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 a {
-  color: var(--brand_color);
+  color: rgb(76 76 241);
   transition: all .3s;
     &:not(.elementor-button-link):hover {
       text-decoration-color: var(--brand_color);
