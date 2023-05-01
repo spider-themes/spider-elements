@@ -119,7 +119,7 @@ final class Spider_Elements {
 
 		// Register Widget Scripts
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_core_styles' ] );
-
+		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'se_elementor_enqueue_scripts' ] );
 
 		// Once we get here, We have passed all validation checks so we can safely include our plugin
 		require_once( 'plugin.php' );
@@ -134,10 +134,18 @@ final class Spider_Elements {
 	public function enqueue_core_styles(){
 		// wp_enqueue_style( 'sp-core-style', plugins_url( 'assets/css/style.css', __FILE__ ) );
 		wp_enqueue_style( 'se-main-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
-		wp_enqueue_style( 'sp-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
-        //wp_enqueue_script( 'sp-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
+		wp_enqueue_style( 'se-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
+		wp_enqueue_script( 'se-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
+		// wp localize scripts
+		wp_localize_script( 'se-core-script', 'se_ajax', array(
+			'ajax_url' 	=> admin_url( 'admin-ajax.php' ),
+			'nonce' 	=> wp_create_nonce( 'se_ajax_nonce' )
+		) );
+		
 	}
-
+	public function se_elementor_enqueue_scripts() {
+		wp_enqueue_script( 'se-elementor', plugins_url( 'assets/js/se-elementor.js', __FILE__ ), array( 'jquery' ), false, true );
+	}
 
 	/**
 	 * Clone

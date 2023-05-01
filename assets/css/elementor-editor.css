@@ -218,3 +218,14 @@
     background-size: cover;
     background-position: top;
 }
+/* Video Playlist widget CSS */
+.elementor-control-se-video-upload > .elementor-control-content > .elementor-button-wrapper{
+    display: none;
+}
+
+ 
+.elementor-control-se-video-upload > .elementor-control-content > .elementor-repeater-fields-wrapper > .elementor-repeater-fields:not(:first-child)> .elementor-repeater-row-tools > .elementor-repeater-tool-remove { 
+    display: table-cell; 
+}
+
+/* Video Playlist widget CSS */

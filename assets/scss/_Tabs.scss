@@ -329,14 +329,14 @@
     }
   }
   
-  .header_tab_content {
-    .tab-pane {
+.header_tab_content {
+  .tab-pane {
       padding: 0;
     }
   }
 
-  // == common 
-  ul.nav.nav-tabs {
+  
+ul.nav.nav-tabs {
     flex-wrap: wrap;
     padding-left: 0;
     margin-bottom: 0;
@@ -354,11 +354,6 @@
 
 .tab-content>.active {
   display: block;
-}
-
-
-.fade {
-  transition: opacity .15s linear;
 }
 
 .toggle_body p:last-child,

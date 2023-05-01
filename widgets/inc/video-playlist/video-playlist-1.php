@@ -1,222 +1,157 @@
-<?php
-wp_enqueue_script('artplayer');
-wp_enqueue_script('mcustomscrollbar');
-?>
-<section class="video_list_area p_125 video-playlist">
+<section class="video_list_area">
     <div class="container">
         <div class="row justify-content-sm-between">
             <div class="col-lg-7">
-                <div class="tab-content video_tabs" id="myTabContent2">
-                    <?php
-                    $i = 0;
-                    while ( $videos->have_posts() ) : $videos->the_post();
-                        $active = ($i == 0) ? 'show active' : '';
-                        //echo '<pre>'.print_r($video, 1).'</pre>';
-                        ?>
-                        <div class="tab-pane fade <?php echo esc_attr($active) ?>" id="video<?php the_ID(); ?>" role="tabpanel" aria-labelledby="video<?php the_ID(); ?>-tab">
-                            <div class="artplayer-app<?php the_ID(); ?>"></div>
-                        </div>
+                <div class="video_player">
+
+                    <div class="tab-content video_tabs" id="<?php echo the_ID(); ?>">
                         <?php
-                        ++$i;
-                    endwhile;
-                    wp_reset_postdata();
+            $all_videos         = $settings['tabs'] ?? '';
+            $i                  = '0';
+            $active             = '';
+            foreach( $all_videos as $videos ){
+                $child_videos   = $videos['se-video-upload'] ?? '';
+                        
+                foreach( $child_videos as $child_video ) :
                     ?>
+                        <div class="tab-pane fade pt-0 <?php echo esc_attr( $active ); ?>"
+                            id="video_<?php echo esc_attr( $i++ ); ?>">
+                            <div class="artplayer-app"
+                                data-src="<?php echo esc_url($child_video['video_upload']['url']); ?>"></div>
+                        </div>
+                        <?php 
+                endforeach;
+            }
+            wp_reset_postdata();
+            ?>
+                    </div>
                 </div>
             </div>
+
+
             <div class="col-lg-5">
                 <div class="video_list">
-                    <?php
-                    $title_tag = !empty($settings['title_tag']) ? $settings['title_tag'] : 'h3';
-                    echo !empty($settings['title']) ? sprintf('<%1$s class="title" data-animation="wow fadeInUp" data-wow-delay="0.2s"> %2$s </%1$s>', $title_tag, nl2br($settings['title'])) : '';
-                    ?>
+
+
+                    <h3 class="title" data-animation="wow fadeInUp" data-wow-delay="0.2s">
+                        <?php 
+            $title_tag = $settings['title_tag'] ?? 'h3';
+            echo '<'.$title_tag.' class="title">' . esc_html( $settings['title'] ) . '</'.$title_tag.'>';
+            ?>
+                    </h3>
                     <div class="video_list_inner scroll">
                         <div class="accordion" id="accordionExample">
-                            <?php
-                            foreach ( $cats as $index => $cat ) :
-                                $cat_videos_i = 0;
-                                $cat_slug     = $cat->slug ?? '';
-                                $cat_name     = $cat->name ?? '';
-                                $cat_videos = new \WP_Query( array (
-                                    'post_type' => 'video',
-                                    'posts_per_page' => -1,
-                                    'tax_query' => array (
-                                        array(
-                                            'taxonomy' => 'video_cat',
-                                            'field'    => 'slug',
-                                            'terms'    =>  $cat_slug,
-                                        ),
-                                    ),
-                                ));
 
-                                $cat_videos_count = $cat_videos_i < 10 ? '0'.$cat_videos->post_count : $cat_videos->post_count;
+                            <?php 
+             $all_videos        = $settings['tabs'] ?? '';
+             $i                 = '0';
+             $count = '0';
+             $collapse = '';
+             foreach( $all_videos as $videos ) :
+                $count++;
+                 $child_videos  = $videos['se-video-upload'] ?? '';
+                 
+                $total_item = count($child_videos);
+                $total_item = $total_item - 0;
+                
+                if ( $total_item < 10 ) {
+                    $total_item = '0'.$total_item;
+                }
+                
+                ?>
 
-                                $tab_count = (int)$index + 1;
-                                $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', '', $index );
-                                $cat_coll = $tab_count == 1 ? '' : 'collapsed';
-                                $this->add_render_attribute( $tab_content_setting_key, [
-                                    'class' => [ 'btn btn-link btn-block text-left', $cat_coll ],
-                                    'data-bs-toggle' => 'collapse',
-                                    'data-bs-target' => '#'. $cat_slug,
-                                    'aria-expanded' => $index == 0 ? 'true' : 'false',
-                                    'aria-controls' =>  $cat_slug,
-                                    'type' => 'button'
-                                ]);
-                                ?>
+                            <div class="card accordion-panel">
                                 <div class="card">
-                                    <div class="card-header" id="<?php echo esc_attr($cat_slug.'-tab') ?>">
-                                        <button <?php echo $this->get_render_attribute_string($tab_content_setting_key); ?>>
-                                            <span class="title"> <?php echo $cat_name; ?> </span>
-                                            <span class="count">(<?php echo $cat_videos_count; ?>)</span>
+                                    <div class="card-header">
+                                        <button class="text-left accordion-header" data-bs-toggle="collapse"
+                                            data-bs-target="#configuration<?php echo $count; ?>" aria-expanded="true"
+                                            aria-controls="configuration<?php echo $count; ?>" type="button">
+                                            <span class="title"> <?php echo esc_html( $videos['title'] ); ?> </span>
+                                            <span class="count">(<?php echo esc_html( $total_item ); ?>)</span>
                                             <span class="plus-minus">
-                                                <i class="icon_plus"></i>
-                                                <i class="icon_minus-06"></i>
+                                                <!-- <i class="icon_plus"></i> -->
+                                                <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24"
+                                                    id="plus" data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon line-color">
+                                                    <path id="primary" d="M5,12H19M12,5V19"
+                                                        style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                    </path>
+                                                </svg>
+                                                <!-- <i class="icon_minus-06"></i> -->
+                                                <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24"
+                                                    id="minus" data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon line-color">
+                                                    <line id="primary" x1="19" y1="12" x2="5" y2="12"
+                                                        style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                    </line>
+                                                </svg>
                                             </span>
                                         </button>
                                     </div>
+                                </div>
+                                <div id="configuration<?php echo $count; ?>"
+                                    class="accordion-content <?php if ( $count == 1 ) { echo 'collapse show'; } ?>"
+                                    aria-labelledby="configuration<?php echo $count; ?>-tab"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs" role="tablist">
 
-                                    <div id="<?php echo  $cat_slug; ?>" class="collapse <?php echo $index == 0 ? 'show' : '' ?>" aria-labelledby="<?php echo $cat_slug.'-tab'; ?>" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <ul class="nav nav-tabs" role="tablist">
-                                                <?php
-                                                while ( $cat_videos->have_posts() ) : $cat_videos->the_post();
-                                                    $active = $cat_videos_i == 0 && $index == 0 ? ' active' : '';
-                                                    ?>
-                                                    <li class="nav-item" role="presentation">
-                                                        <a class="nav-link<?php echo $active; ?>" id="video<?php the_ID(); ?>-tab" data-bs-toggle="tab" href="#video<?php the_ID(); ?>" role="tab" aria-controls="video<?php the_ID(); ?>" aria-selected="true">
-                                                            <div class="media d-flex">
-                                                                <?php if ( has_post_thumbnail(get_the_ID()) ) : ?>
-                                                                    <div class="d-flex">
-                                                                        <div class="video_tab_img">
-                                                                            <?php the_post_thumbnail('docy_60x40'); ?>
-                                                                        </div>
-                                                                    </div>
-                                                                <?php endif; ?>
-                                                                <div class="media-body">
-                                                                    <h4><?php the_title() ?></h4>
-                                                                    <div class="list">
-                                                                        <div><ion-icon name="person-outline"></ion-icon> <?php the_author_meta('display_name'); ?> </div>
-                                                                        <div><ion-icon name="calendar-clear-outline"></ion-icon> <?php the_time(get_option('date_format')); ?> </div>
-                                                                    </div>
+                                            <?php                                    
+                                    foreach( $child_videos as $child_video ) :
+                                        ?>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link <?php if ( $i == 0 ) { echo 'active'; } ?>"
+                                                    data-bs-toggle="tab" href="#video_<?php echo esc_attr($i++); ?>">
+                                                    <div class="media d-flex">
+                                                        <div class="d-flex">
+                                                            <div class="video_tab_img">
+                                                                <img loading="lazy" width="60" height="40"
+                                                                    src="<?php echo $child_video['thumbnail']['url'] ?? ''; ?>" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4><?php echo esc_html( $child_video['title2'] ); ?></h4>
+                                                            <div class="list">
+                                                                <div>
+                                                                    <ion-icon name="person-outline" role="img"
+                                                                        class="md hydrated" aria-label="person outline">
+                                                                    </ion-icon>
+                                                                    <?php 
+                                                                $author = $child_video['current_author'] ?? '';
+                                                                echo ucwords($author);
+                                                                ?>
+                                                                </div>
+                                                                <div>
+                                                                    <ion-icon name="calendar-clear-outline" role="img"
+                                                                        class="md hydrated"
+                                                                        aria-label="calendar clear outline"></ion-icon>
+                                                                    <?php echo $child_video['current_date'] ?? ''; ?>
                                                                 </div>
                                                             </div>
-                                                        </a>
-                                                    </li>
-                                                    <?php
-                                                    ++$cat_videos_i;
-                                                endwhile;
-                                                wp_reset_postdata();
-                                                ?>
-                                            </ul>
-                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <?php 
+                                    endforeach; 
+                                    wp_reset_postdata();
+                                    ?>
+
+                                        </ul>
                                     </div>
                                 </div>
-                            <?php
-                            endforeach;
-                            ?>
+                            </div>
+
+                            <?php 
+                endforeach;
+                wp_reset_postdata();
+                ?>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
-
-<script>
-    (function ($) {
-        "use strict";
-        $(document).ready(function () {
-            const list = [
-                <?php
-                while ( $videos->have_posts() ) : $videos->the_post();
-                    $video = function_exists('get_field') ? get_field('video') : '';
-                    ?>
-                    {
-                        className: ".artplayer-app<?php the_ID(); ?>",
-                        url: "<?php echo esc_js($video['url'])  ?>",
-                        title: "<?php the_title() ?>",
-                        poster: "<?php the_post_thumbnail_url(); ?>",
-                    },
-                    <?php
-                endwhile;
-                wp_reset_postdata();
-                ?>
-            ];
-
-            list.forEach(function (e) {
-                var art = new Artplayer({
-                    container: e.className,
-                    url: e.url,
-                    title: e.title,
-                    poster: e.poster,
-                    volume: 0.5,
-                    muted: false,
-                    autoplay: false,
-                    pip: true,
-                    autoSize: true,
-                    autoMini: false,
-                    screenshot: true,
-                    setting: true,
-                    loop: true,
-                    flip: true,
-                    rotate: true,
-                    playbackRate: true,
-                    aspectRatio: false,
-                    fullscreen: true,
-                    fullscreenWeb: true,
-                    subtitleOffset: true,
-                    miniProgressBar: true,
-                    localVideo: true,
-                    localSubtitle: true,
-                    networkMonitor: false,
-                    mutex: true,
-                    light: true,
-                    backdrop: true,
-                    isLive: false,
-                    theme: "#10b3d6",
-                    lang: navigator.language.toLowerCase(),
-                    // moreVideoAttr: {
-                    //   crossOrigin: "anonymous",
-                    // },
-                    contextmenu: [
-                        {
-                            html: "Custom menu",
-                            click: function (contextmenu) {
-                                console.info("You clicked on the custom menu");
-                                contextmenu.show = false;
-                            },
-                        },
-                    ],
-                    controls: [
-                        {
-                            position: "right",
-                            html: "Control",
-                            index: 10,
-                            click: function () {
-                                console.info("You clicked on the custom control");
-                            },
-                        },
-                    ],
-                    icons: {
-                        loading: '<img src="<?php echo plugins_url('images/ploading.gif', __FILE__) ?>">',
-                        state: '<ion-icon name="play"></ion-icon>',
-                    },
-                });
-            });
-
-            $(document).on("click", function (e) {
-                var el = e.target.nodeName,
-                    parent = e.target.parentNode;
-                if (
-                    (el === "path" && videoControlClassCheck(parent.parentNode)) ||
-                    (el === "svg" && videoControlClassCheck(parent))
-                ) {
-                    $(".video_list_area").toggleClass("theatermode");
-                }
-            });
-
-            function videoControlClassCheck(parent) {
-                return parent.className.indexOf("art-icon-fullscreenWeb") !== -1;
-            }
-        })
-    })(jQuery);
-</script>
