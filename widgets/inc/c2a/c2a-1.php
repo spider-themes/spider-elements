@@ -14,7 +14,7 @@
                 <?php endif; ?>
             </div>
             <div class="right">
-                <?php docy_el_image($settings['featured_image'], 'call to action background shape'); ?>
+                <?php se_el_image($settings['featured_image'], 'call to action background shape'); ?>
             </div>
         </div>
     </div>

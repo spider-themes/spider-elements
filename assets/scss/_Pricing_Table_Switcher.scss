@@ -1208,216 +1208,240 @@ button {
 }
 
 .app-pricing-item.active {
-  position: relative;
+	position: relative;
+	.popular-shape {
+		top: -13%;
+		right: -18%;
+		position: absolute;
+		z-index: 1;
+	}
 }
-.app-pricing-item.active .popular-shape {
-  top: -13%;
-  right: -18%;
-  position: absolute;
-  z-index: 1;
-}
-.app-pricing-item:hover {
-  box-shadow: 0 20px 50px 0 rgba(23, 23, 23, 0.08);
-}
-.app-pricing-item .item-title {
-  font-size: 30px;
-  line-height: 36px;
-  margin-bottom: 14px;
-}
-.app-pricing-item .item-label {
-  font-size: 20px;
-  line-height: 1.2;
-  margin-bottom: 18px;
-}
-.app-pricing-item .item-price {
-  margin-bottom: 33px;
-}
-.app-pricing-item .item-price .dollar {
-  color: #EC595A;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  position: relative;
-}
-.app-pricing-item .item-price .dollar svg {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-}
-.app-pricing-item .item-price .time {
-  color: #9199A1;
-  font-size: 18px;
-  line-height: 36px;
-}
-.app-pricing-item .item-price .border-shape {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  width: 41px;
-}
-.app-pricing-item ul {
-  border-top: 1px solid #f0f0f0;
-  padding-top: 33px;
-  margin-bottom: 45px;
-}
-.app-pricing-item ul li {
-  font-size: 15px;
-  line-height: 40px;
-}
-.app-pricing-item .btn {
-  border-color: #EC595A;
-  color: #EC595A;
-}
-.app-pricing-item .btn:hover {
-  background: #EC595A;
-  color: #fff;
-  text-decoration: none;
+.app-pricing-item {
+	&:hover {
+		box-shadow: 0 20px 50px 0 rgba(23, 23, 23, 0.08);
+	}
+	.item-title {
+		font-size: 30px;
+		line-height: 36px;
+		margin-bottom: 14px;
+	}
+	.item-label {
+		font-size: 20px;
+		line-height: 1.2;
+		margin-bottom: 18px;
+	}
+	.item-price {
+		margin-bottom: 33px;
+		.dollar {
+			color: #EC595A;
+			font-size: 30px;
+			line-height: 36px;
+			font-weight: 700;
+			position: relative;
+			svg {
+				bottom: 0;
+				left: 0;
+				position: absolute;
+			}
+		}
+		.time {
+			color: #9199A1;
+			font-size: 18px;
+			line-height: 36px;
+		}
+		.border-shape {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			width: 41px;
+		}
+	}
+	ul {
+		border-top: 1px solid #f0f0f0;
+		padding-top: 33px;
+		margin-bottom: 45px;
+		li {
+			font-size: 15px;
+			line-height: 40px;
+		}
+	}
+	.btn {
+		border-color: #EC595A;
+		color: #EC595A;
+		&:hover {
+			background: #EC595A;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
 }
 
-.app-pricing-question .question-title {
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.5px;
+
+.app-pricing-question {
+	.question-title {
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 30px;
+		letter-spacing: 0.5px;
+	}
+	.question-text {
+		color: #171717;
+		padding: 0 15px;
+		a {
+			color: #EC595A;
+			text-decoration: underline;
+		}
+	}
 }
-.app-pricing-question .question-text {
-  color: #171717;
-  padding: 0 15px;
-}
-.app-pricing-question .question-text a {
-  color: #EC595A;
-  text-decoration: underline;
-}
+
 
 
 // ==== Choose plan area three style ===== //
 .choose-plan-area-three {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.choose-plan-area-three .section-title-center {
-  padding-bottom: 45px;
-}
-.choose-plan-area-three .section-title-center p {
-  color: #4f4f4f;
-  width: 100%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	.section-title-center {
+		padding-bottom: 45px;
+		p {
+			color: #4f4f4f;
+			width: 100%;
+		}
+	}
+	.pricing-switcher {
+		padding-bottom: 80px;
+		.nav-link {
+			&::after {
+				background: #435bcc;
+			}
+		}
+	}
+	.tab-pane {
+		padding-top: 0;
+	}
+	.pricing-item {
+		border-radius: 15px;
+		background-color: #fff;
+		box-shadow: 0 5px 16px 0 rgba(32, 32, 32, 0.1);
+		padding: 65px 50px 70px;
+		margin-top: 0;
+		border: none;
+		transition: all 0.3s linear;
+		&:hover {
+			box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1);
+			transform: translateY(-20px);
+			border: none;
+			h4 {
+				color: #3c73f0;
+			}
+			.btn {
+				color: #fff;
+				background-color: #356eef;
+			}
+		}
+		h4 {
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 1.25;
+			letter-spacing: 0.5px;
+			margin-bottom: 20px;
+			transition: all 0.3s linear;
+			font-family: "poppins", sans-serif;
+		}
+		.price {
+			font-size: 40px;
+			font-family: "Poppins", sans-serif;
+			font-weight: 500;
+			line-height: 1.2;
+			margin-bottom: 40px;
+			margin-top: 0;
+			color: #171717;
+			span {
+				color: #8d8d8d;
+				font-size: 20px;
+			}
+		}
+		.list-wrapp {
+			margin-bottom: 50px;
+			.list-title {
+				font-size: 18px;
+				line-height: 160%;
+				font-weight: 700;
+				color: #171717;
+				margin-bottom: 20px;
+			}
+			ul {
+				padding-top: 0;
+				li {
+					display: flex;
+					font-size: 17px;
+					line-height: 1;
+					color: var(--text-color-2);
+					text-align: left;
+					padding: 0;
+					margin-bottom: 20px;
+					.icon-check {
+						color: #45c260;
+						margin-right: 10px;
+						font-size: 20px;
+					}
+					.icon-close {
+						color: #c1c1c1;
+						margin-right: 10px;
+						font-size: 20px;
+					}
+				}
+				li.disable {
+					color: rgba(23, 23, 23, 0.5);
+				}
+			}
+		}
+		.btn {
+			border: 1px solid #356eef;
+			border-radius: 26px;
+			padding: 10px 0;
+			font-family: "Poppins", sans-serif;
+			color: #171717;
+			font-size: 20px;
+			font-weight: 600;
+			line-height: 30px;
+			letter-spacing: 0.5px;
+			display: block;
+			height: 52px;
+			width: 190px;
+			margin: 0 auto;
+			text-align: center;
+			transition: all 0.3s linear;
+			&:hover {
+				color: #fff;
+				background-color: #356eef;
+				text-decoration: none;
+			}
+		}
+	}
+	.pricing-item.active {
+		box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1);
+		transform: translateY(-20px);
+		border: none;
+		h4 {
+			color: #3c73f0;
+		}
+		.btn {
+			color: #fff;
+			background-color: #356eef;
+		}
+	}
 }
 @media screen and (min-width: 992px) {
-  .choose-plan-area-three .section-title-center p {
-    width: 55%;
-  }
+	.choose-plan-area-three {
+		.section-title-center {
+			p {
+				width: 55%;
+			}
+		}
+	}
 }
-.choose-plan-area-three .pricing-switcher {
-  padding-bottom: 80px;
-}
-.choose-plan-area-three .pricing-switcher .nav-link::after {
-  background: #435bcc;
-}
-.choose-plan-area-three .tab-pane {
-  padding-top: 0;
-}
-.choose-plan-area-three .pricing-item {
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 5px 16px 0 rgba(32, 32, 32, 0.1);
-  padding: 65px 50px 70px;
-  margin-top: 0;
-  border: none;
-  transition: all 0.3s linear;
-}
-.choose-plan-area-three .pricing-item.active, .choose-plan-area-three .pricing-item:hover {
-  box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1);
-  transform: translateY(-20px);
-  border: none;
-}
-.choose-plan-area-three .pricing-item.active h4, .choose-plan-area-three .pricing-item:hover h4 {
-  color: #3c73f0;
-}
-.choose-plan-area-three .pricing-item.active .btn, .choose-plan-area-three .pricing-item:hover .btn {
-  color: #fff;
-  background-color: #356eef;
-}
-.choose-plan-area-three .pricing-item h4 {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
-  transition: all 0.3s linear;
-  font-family: "poppins", sans-serif;
-}
-.choose-plan-area-three .pricing-item .price {
-  font-size: 40px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 40px;
-  margin-top: 0;
-  color: #171717;
-}
-.choose-plan-area-three .pricing-item .price span {
-  color: #8d8d8d;
-  font-size: 20px;
-}
-.choose-plan-area-three .pricing-item .list-wrapp {
-  margin-bottom: 50px;
-}
-.choose-plan-area-three .pricing-item .list-wrapp .list-title {
-  font-size: 18px;
-  line-height: 160%;
-  font-weight: 700;
-  color: #171717;
-  margin-bottom: 20px;
-}
-.choose-plan-area-three .pricing-item .list-wrapp ul {
-  padding-top: 0;
-}
-.choose-plan-area-three .pricing-item .list-wrapp ul li {
-  display: flex;
-  font-size: 17px;
-  line-height: 1;
-  color: var(--text-color-2);
-  text-align: left;
-  padding: 0;
-  margin-bottom: 20px;
-}
-.choose-plan-area-three .pricing-item .list-wrapp ul li.disable {
-  color: rgba(23, 23, 23, 0.5);
-}
-.choose-plan-area-three .pricing-item .list-wrapp ul li .icon-check {
-  color: #45c260;
-  margin-right: 10px;
-  font-size: 20px;
-}
-.choose-plan-area-three .pricing-item .list-wrapp ul li .icon-close {
-  color: #c1c1c1;
-  margin-right: 10px;
-  font-size: 20px;
-}
-.choose-plan-area-three .pricing-item .btn {
-  border: 1px solid #356eef;
-  border-radius: 26px;
-  padding: 10px 0;
-  font-family: "Poppins", sans-serif;
-  color: #171717;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.5px;
-  display: block;
-  height: 52px;
-  width: 190px;
-  margin: 0 auto;
-  text-align: center;
-  transition: all 0.3s linear;
-}
-.choose-plan-area-three .pricing-item .btn:hover {
-  color: #fff;
-  background-color: #356eef;
-  text-decoration: none;
-}
+
 
 
 /*================================================

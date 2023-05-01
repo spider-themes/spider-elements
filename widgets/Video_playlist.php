@@ -105,7 +105,7 @@ class Video_playlist extends Widget_Base {
             [
                 'label' => __( 'Title HTML Tag', 'elementor' ),
                 'type' => Controls_Manager::SELECT,
-                'options' => docy_el_title_tags(),
+                'options' => se_el_title_tags(),
                 'default' => 'h3',
             ]
         );

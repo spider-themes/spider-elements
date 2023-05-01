@@ -360,7 +360,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 							}
 							?>
 						</div>
-						<?php landpagy_el_image($settings['ribbon_label'], 'Popular', 'popular d-none d-lg-block') ?>
+						<?php Se_el_image($settings['ribbon_label'], 'Popular', 'popular d-none d-lg-block') ?>
 					</div>
 					<?php
 				}

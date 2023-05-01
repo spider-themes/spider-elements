@@ -37,7 +37,7 @@ wp_enqueue_script('video-js-nuevo');
                             <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ) ?>">
                                 <ion-icon name="person-outline"></ion-icon> <?php the_author_meta('display_name'); ?>
                             </a>
-                            <a href="<?php docycore_day_link(); ?>">
+                            <a href="<?php se_day_link(); ?>">
                                 <ion-icon name="calendar-clear-outline"></ion-icon> <?php the_time(get_option('date_format')); ?>
                             </a>
                         </div>

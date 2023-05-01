@@ -24,7 +24,7 @@ class List_item extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'spider List Item', 'docy-core' );
+        return __( 'spider List Item', 'spider-elements' );
     }
 
     public function get_icon() {
@@ -43,17 +43,17 @@ class List_item extends Widget_Base {
         $this->start_controls_section(
             'section_icon',
             [
-                'label' => __( 'Icon List', 'docy-core' ),
+                'label' => __( 'Icon List', 'spider-elements' ),
             ]
         );
 
         $this->add_control(
             'style', [
-                'label' => __( 'Order Type', 'docy-core' ),
+                'label' => __( 'Order Type', 'spider-elements' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'unordered_list'  => __( 'Unordered List', 'docy-core' ),
-                    'order_list' => __( 'Ordered List', 'docy-core' ),
+                    'unordered_list'  => __( 'Unordered List', 'spider-elements' ),
+                    'order_list' => __( 'Ordered List', 'spider-elements' ),
                 ],
                 'default' => 'unordered_list',
             ]
@@ -63,11 +63,11 @@ class List_item extends Widget_Base {
 
         $repeater->add_control(
             'text', [
-                'label' => __( 'Title', 'docy-core' ),
+                'label' => __( 'Title', 'spider-elements' ),
                 'type' => Controls_Manager::TEXTAREA,
                 'label_block' => true,
-                'placeholder' => __( 'List Item', 'docy-core' ),
-                'default' => __( 'List Item', 'docy-core' ),
+                'placeholder' => __( 'List Item', 'spider-elements' ),
+                'default' => __( 'List Item', 'spider-elements' ),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -95,7 +95,7 @@ class List_item extends Widget_Base {
         $this->start_controls_section(
             'section_icon_list',
             [
-                'label' => __( 'List', 'docy-core' ),
+                'label' => __( 'List', 'spider-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -103,7 +103,7 @@ class List_item extends Widget_Base {
         $this->add_responsive_control(
             'space_between',
             [
-                'label' => __( 'Space Between', 'docy-core' ),
+                'label' => __( 'Space Between', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -119,19 +119,19 @@ class List_item extends Widget_Base {
         $this->add_responsive_control(
             'icon_align',
             [
-                'label' => __( 'Alignment', 'docy-core' ),
+                'label' => __( 'Alignment', 'spider-elements' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'docy-core' ),
+                        'title' => __( 'Left', 'spider-elements' ),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'docy-core' ),
+                        'title' => __( 'Center', 'spider-elements' ),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'docy-core' ),
+                        'title' => __( 'Right', 'spider-elements' ),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -142,7 +142,7 @@ class List_item extends Widget_Base {
         $this->add_control(
             'text_color',
             [
-                'label' => __( 'Text Color', 'docy-core' ),
+                'label' => __( 'Text Color', 'spider-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -155,7 +155,7 @@ class List_item extends Widget_Base {
         $this->add_control(
             'text_color_hover',
             [
-                'label' => __( 'Hover', 'docy-core' ),
+                'label' => __( 'Hover', 'spider-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -167,7 +167,7 @@ class List_item extends Widget_Base {
         $this->add_control(
             'text_indent',
             [
-                'label' => __( 'Text Indent', 'docy-core' ),
+                'label' => __( 'Text Indent', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -184,7 +184,7 @@ class List_item extends Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'content_typography',
-                'label' => __( 'Typography', 'docy-core' ),
+                'label' => __( 'Typography', 'spider-elements' ),
                 'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .steps-panel .ordered-list li',
             ]
@@ -197,7 +197,7 @@ class List_item extends Widget_Base {
         $this->start_controls_section(
             'section_icon_style',
             [
-                'label' => __( 'Icon', 'docy-core' ),
+                'label' => __( 'Icon', 'spider-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -205,7 +205,7 @@ class List_item extends Widget_Base {
         $this->add_control(
             'icon_color',
             [
-                'label' => __( 'Color', 'docy-core' ),
+                'label' => __( 'Color', 'spider-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -217,7 +217,7 @@ class List_item extends Widget_Base {
         $this->add_control(
             'icon_bg_color',
             [
-                'label' => __( 'Background', 'docy-core' ),
+                'label' => __( 'Background', 'spider-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -229,7 +229,7 @@ class List_item extends Widget_Base {
         $this->add_responsive_control(
             'icon_size',
             [
-                'label' => __( 'Size', 'docy-core' ),
+                'label' => __( 'Size', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -245,7 +245,7 @@ class List_item extends Widget_Base {
         $this->add_responsive_control(
             'icon_bg_size',
             [
-                'label' => __( 'Background Size', 'docy-core' ),
+                'label' => __( 'Background Size', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -261,7 +261,7 @@ class List_item extends Widget_Base {
         $this->add_responsive_control(
             'icon_line_height',
             [
-                'label' => __( 'Line Height', 'docy-core' ),
+                'label' => __( 'Line Height', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -283,14 +283,14 @@ class List_item extends Widget_Base {
         $this->start_controls_section(
             'sec_bg_style',
             [
-                'label' => __( 'Section Style', 'docy-core' ),
+                'label' => __( 'Section Style', 'spider-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_responsive_control(
             'sec_margin', [
-                'label' => __( 'Padding', 'docy-core' ),
+                'label' => __( 'Padding', 'spider-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -314,7 +314,7 @@ class List_item extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'border',
-                'label' => __( 'Border', 'docy-core' ),
+                'label' => __( 'Border', 'spider-elements' ),
                 'selector' => '{{WRAPPER}} .steps-panel',
                 'separator' => 'before',
             ]
@@ -323,7 +323,7 @@ class List_item extends Widget_Base {
         $this->add_control(
             'border_radius',
             [
-                'label' => __( 'Border Radius', 'docy-core' ),
+                'label' => __( 'Border Radius', 'spider-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [

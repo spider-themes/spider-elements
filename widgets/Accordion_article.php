@@ -53,7 +53,7 @@ class Accordion_article extends Widget_Base {
 			[
 				'label' => esc_html__( 'Select category', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
-                'options' => docy_cat_ids(),
+                'options' => se_cat_ids(),
                 'default' => '',
 			]
 		);

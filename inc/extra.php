@@ -3,24 +3,24 @@
 /**
  * Elementor Title tags
  */
-function docy_el_title_tags() {
+function se_el_title_tags() {
     return [
-        'h1'  => __( 'H1', 'docy-core' ),
-        'h2' => __( 'H2', 'docy-core' ),
-        'h3' => __( 'H3', 'docy-core' ),
-        'h4' => __( 'H4', 'docy-core' ),
-        'h5' => __( 'H5', 'docy-core' ),
-        'h6' => __( 'H6', 'docy-core' ),
-        'div' => __( 'Div', 'docy-core' ),
-        'span' => __( 'Span', 'docy-core' ),
-        'p' => __( 'Paragraph', 'docy-core' ),
+        'h1'  => __( 'H1', 'spider-elements' ),
+        'h2' => __( 'H2', 'spider-elements' ),
+        'h3' => __( 'H3', 'spider-elements' ),
+        'h4' => __( 'H4', 'spider-elements' ),
+        'h5' => __( 'H5', 'spider-elements' ),
+        'h6' => __( 'H6', 'spider-elements' ),
+        'div' => __( 'Div', 'spider-elements' ),
+        'span' => __( 'Span', 'spider-elements' ),
+        'p' => __( 'Paragraph', 'spider-elements' ),
     ];
 }
 
 /**
  * Day link to archive page
  **/
-function docycore_day_link() {
+function se_day_link() {
     $archive_year   = get_the_time( 'Y' );
     $archive_month  = get_the_time( 'm' );
     $archive_day    = get_the_time( 'd' );
@@ -30,7 +30,7 @@ function docycore_day_link() {
  * Category IDs
  * @return array
  */
-function docy_cat_ids(){
+function se_cat_ids(){
     $taxonomys = get_terms( array(
         'taxonomy' => 'category',
         'hide_empty' => true,
@@ -82,7 +82,7 @@ function return_tab_data( $getCats, $event_schedule_cats ) {
  * @param string $class
  * @param string $alt
  */
-function landpagy_el_image( $settings_key = '', $alt = '', $class = '' ) {
+function Se_el_image( $settings_key = '', $alt = '', $class = '' ) {
     if ( !empty($settings_key['id']) ) {
         echo wp_get_attachment_image($settings_key['id'], 'full', '', array( 'class' => $class ));
     }

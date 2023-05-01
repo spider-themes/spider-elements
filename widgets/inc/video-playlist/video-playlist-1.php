@@ -57,13 +57,18 @@
                 if ( $total_item < 10 ) {
                     $total_item = '0'.$total_item;
                 }
+
+                $nav_collapse = 'collapsed';
+                if ( $count == 1 ){
+                    $nav_collapse = 'expand';
+                }
                 
                 ?>
 
                             <div class="card accordion-panel">
                                 <div class="card">
                                     <div class="card-header">
-                                        <button class="text-left accordion-header" data-bs-toggle="collapse"
+                                        <button class="text-left accordion-header <?php echo esc_attr( $nav_collapse ); ?>" data-bs-toggle="collapse"
                                             data-bs-target="#configuration<?php echo $count; ?>" aria-expanded="true"
                                             aria-controls="configuration<?php echo $count; ?>" type="button">
                                             <span class="title"> <?php echo esc_html( $videos['title'] ); ?> </span>

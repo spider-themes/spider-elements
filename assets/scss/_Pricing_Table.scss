@@ -1,278 +1,280 @@
 // Pricing area
 .pricing-area {
-    &.section-padding {
-      padding-top: 6.25rem;
-      padding-bottom: 0;
-  
-      @media screen and (min-width: 768px) {
-        padding-top: 7.8125rem;
-        padding-bottom: 4.375rem;
-      }
-    }
-  
-    &.section-padding-2 {
-      padding: 5rem 0 4.6875rem;
-  
-      @media screen and (min-width: 576px) {
-        padding: 7.5rem 0 7.1875rem;
-      }
-  
-      @media screen and (min-width: 992px) {
-        padding: 8.75rem 0 8.4375rem;
-      }
-    }
-  
-    .section-title-center {
-      padding-bottom: 4.0625rem;
-  
-      @media screen and (min-width: 992px) {
-        h2 {
-          font-size: 2.5rem;
-          line-height: 1.2;
-          max-width: 52%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-    }
-  
-    .col-md-6,
-    .col-lg-3 {
-      padding-left: 3px;
-      padding-right: 3px;
-    }
-  
-    .tex {
-      font-size: 1.125rem;
-      color: #5d5d66;
-      margin-top: 3.75rem;
-    }
-  
-    .nav-item {
-      width: 100%;
-  
-      @media screen and (min-width: 576px) {
-        width: auto;
-      }
-    }
-  
-    .nav-item .nav-link {
-      width: 100%;
-  
-      @media screen and (min-width: 576px) {
-        width: auto;
-      }
+  &.section-padding {
+    padding-top: 6.25rem;
+    padding-bottom: 0;
+
+    @media screen and (min-width: 768px) {
+      padding-top: 7.8125rem;
+      padding-bottom: 4.375rem;
     }
   }
-  
-  // Pricing area two
-  .pricing-area-two {
-    background-color: #E6F5FA;
-    position: relative;
-  
-    .section-title-center {
-      padding-bottom: 50px;
-  
-      p {
-        font-size: 20px;
-        line-height: 1.6;
-        padding-top: 15px;
-        width: 100%;
-  
-        @media screen and (min-width: 992px) {
-          width: 50%;
-        }
-      }
+
+  &.section-padding-2 {
+    padding: 5rem 0 4.6875rem;
+
+    @media screen and (min-width: 576px) {
+      padding: 7.5rem 0 7.1875rem;
     }
-  
+
     @media screen and (min-width: 992px) {
-      .ps-28 {
-        padding-left: 28px;
-      }
-  
-      .pe-28 {
-        padding-right: 28px;
-      }
-    }
-  
-    .tab-pane {
-      padding-top: 80px;
+      padding: 8.75rem 0 8.4375rem;
     }
   }
-  
-  // Pricing currency
-  .pricing-currency {
-    border-color: #a0a1a3;
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: #6d6d6d;
-    border-radius: 0.625rem;
-    float: right;
-    padding: 15px;
-    position: relative;
-  
-    .icon {
-      width: 15px;
-      height: 100%;
-      background: red;
-    }
-  }
-  
-  // Pricing tabs
-  .pricing-tabs {
-    border: none;
-    padding: 0.625rem;
-    border-radius: 0.625rem;
-    background: #f9f9f9;
-    display: inline-flex;
-    
-    .nav-link {
-      padding: 0.3125rem 1.125rem;
-      border-radius: 0.375rem;
-      font-size: 1rem;
-      color: #6d6d6d;
-      border-color: transparent;
-      
-      &.active {
-        border-color: transparent;
-        background: transparent;
-        background: #ec595a;
-        color: #fff;
-        font-weight: 600;
 
-      }
-      
-      &:hover {
-        border-color: transparent;
+  .section-title-center {
+    padding-bottom: 4.0625rem;
+
+    @media screen and (min-width: 992px) {
+      h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        max-width: 52%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
 
-  
-  .pricing-tabs-two {
-    display: inline-flex;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid #676099;
-    
-    li {
-      display: inline-block;
-      
-      &:first-child .nav-link {
-        padding-left: 40px;
-        
-        &::before {
-          transform-origin: right;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-top-left-radius: 18px;
-          border-bottom-left-radius: 18px;
-        }
-      }
-      
-      &:last-child .nav-link {
-        padding-right: 40px;
-      }
-      
-      .nav-link {
-        padding: 10px 29px;
-        font-family: "Inter", sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 16px;
-        color: #4f4f4f;
-        border: none;
-        border-radius: 0;
-        position: relative;
-        z-index: 1;
-        
-        &::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 100%;
-          transform: scaleX(0);
-          transform-origin: left;
-          background-color: transparent;
-          z-index: -1;
-          transition: all 0.2s linear;
-          border-top-right-radius: 18px;
-          border-bottom-right-radius: 18px;
-        }
-        
-        &.active {
-          font-weight: 600;
-          color: #ffffff;
-          border-radius: 0;
-          background-color: transparent;
-          
-          &::before {
-            background-color: #473d8d;
-            transform: scaleX(1);
-          }
-        }
+  .col-md-6,
+  .col-lg-3 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .tex {
+    font-size: 1.125rem;
+    color: #5d5d66;
+    margin-top: 3.75rem;
+  }
+
+  .nav-item {
+    width: 100%;
+
+    @media screen and (min-width: 576px) {
+      width: auto;
+    }
+  }
+
+  .nav-item .nav-link {
+    width: 100%;
+
+    @media screen and (min-width: 576px) {
+      width: auto;
+    }
+  }
+}
+
+// Pricing area two
+.pricing-area-two {
+  background-color: #E6F5FA;
+  position: relative;
+
+  .section-title-center {
+    padding-bottom: 50px;
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      padding-top: 15px;
+      width: 100%;
+
+      @media screen and (min-width: 992px) {
+        width: 50%;
       }
     }
   }
-  
+
+  @media screen and (min-width: 992px) {
+    .ps-28 {
+      padding-left: 28px;
+    }
+
+    .pe-28 {
+      padding-right: 28px;
+    }
+  }
+
   .tab-pane {
-    position: relative;
-    
-    &.popular {
-      top: 60px;
-      right: 35%;
-      position: absolute;
+    padding-top: 80px;
+  }
+}
+
+// Pricing currency
+.pricing-currency {
+  border-color: #a0a1a3;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #6d6d6d;
+  border-radius: 0.625rem;
+  float: right;
+  padding: 15px;
+  position: relative;
+
+  .icon {
+    width: 15px;
+    height: 100%;
+    background: red;
+  }
+}
+
+// Pricing tabs
+.pricing-tabs {
+  border: none;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+  background: #f9f9f9;
+  display: inline-flex;
+
+  .nav-link {
+    padding: 0.3125rem 1.125rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    color: #6d6d6d;
+    border-color: transparent;
+
+    &.active {
+      border-color: transparent;
+      background: transparent;
+      background: #ec595a;
+      color: #fff;
+      font-weight: 600;
+
     }
-    
-    @media screen and (min-width: 992px) {
-      padding-top: 6.25rem;
+
+    &:hover {
+      border-color: transparent;
     }
   }
-  
+}
+
+
+.pricing-tabs-two {
+  display: inline-flex;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #676099;
+
+  li {
+    display: inline-block;
+
+    &:first-child .nav-link {
+      padding-left: 40px;
+
+      &::before {
+        transform-origin: right;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+      }
+    }
+
+    &:last-child .nav-link {
+      padding-right: 40px;
+    }
+
+    .nav-link {
+      padding: 10px 29px;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #4f4f4f;
+      border: none;
+      border-radius: 0;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        background-color: transparent;
+        z-index: -1;
+        transition: all 0.2s linear;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+      }
+
+      &.active {
+        font-weight: 600;
+        color: #ffffff;
+        border-radius: 0;
+        background-color: transparent;
+
+        &::before {
+          background-color: #473d8d;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+.tab-pane {
+  position: relative;
+
+  &.popular {
+    top: 60px;
+    right: 35%;
+    position: absolute;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding-top: 6.25rem;
+  }
+}
+
 
 .pricing-item {
-    background: #fafafa;
-    border-radius: 1.25rem;
-    padding: 3.75rem 1.375rem 2.5rem;
-    margin-top: 1.875rem;
-    position: relative;
-    border: 2px solid transparent;
+  background: #fafafa;
+  border-radius: 1.25rem;
+  padding: 3.75rem 1.375rem 2.5rem;
+  margin-top: 1.875rem;
+  position: relative;
+  border: 2px solid transparent;
+  text-align: center;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+
+  p {
+    margin: 0;
+    font-size: 17px;
+  }
+}
+
+.pricing-item {
+  &:hover {
+    background: rgba(255, 227, 218, 0.5);
+    border-color: #171717;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .pricing-item {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .pricing-item {
     text-align: center;
-    -webkit-transition: 0.3s ease-out;
-    transition: 0.3s ease-out;
+  }
+}
 
-    p{
-      margin: 0;
-      font-size: 17px;
-    }
-  }
-  
+@media screen and (min-width: 1200px) {
   .pricing-item {
-    &:hover {
-      background: rgba(255, 227, 218, 0.5);
-      border-color:  #171717;
-    }
+    text-align: left;
   }
-  
-  @media screen and (min-width: 576px) {
-    .pricing-item {
-      text-align: left;
-    }
-  }
-  @media screen and (min-width: 992px) {
-    .pricing-item {
-      text-align: center;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    .pricing-item {
-      text-align: left;
-    }
-  }
+}
 
-  .pricing-item {
+.pricing-item {
   .badge {
     top: -2px;
     right: 0;
@@ -314,7 +316,7 @@
 
     sup {
       font-size: 0.875rem;
-      color:  #171717;
+      color: #171717;
       font-weight: 400;
     }
   }
@@ -363,7 +365,7 @@
 
   &.active {
     background: rgba(255, 227, 218, 0.5);
-    border-color:  #171717;
+    border-color: #171717;
 
     .pricing-item-user {
       color: #ec595a;
@@ -386,6 +388,7 @@
     transition: opacity .15s linear;
   }
 }
+
 .fade:not(.show) {
   opacity: 0;
 }
