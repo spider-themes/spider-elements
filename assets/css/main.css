@@ -1884,6 +1884,10 @@ ul.nav.nav-tabs {
   padding: 0px 15px;
 }
 
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
 /*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
   display: flex;
