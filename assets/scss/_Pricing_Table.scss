@@ -67,9 +67,8 @@
 
 // Pricing area two
 .pricing-area-two {
-  background-color: #E6F5FA;
   position: relative;
-
+  
   .section-title-center {
     padding-bottom: 50px;
 
@@ -429,7 +428,7 @@
   padding: 12px 24px;
   margin-bottom: 8px;
   transition: all 0.3s ease-in-out;
-  
+
   &:hover {
     background-color: #171717;
     color: #ec595a;
@@ -444,7 +443,7 @@
 }
 
 .pricing-compare-table {
-  > table {
+  >table {
     margin: 0;
   }
 
@@ -711,33 +710,37 @@
 }
 
 
-  @media (min-width: 1200px) { 
-    .col-xl-3 {
-        flex: 0 0 auto;
-        width: 25%;
-    }
+@media (min-width: 1200px) {
+  .col-xl-3 {
+    flex: 0 0 auto;
+    width: 25%;
   }
+}
 
-  @media (min-width: 768px) { 
-    .nav .nav-link {
+@media (min-width: 768px) {
+  .nav .nav-link {
     font-size: 1.375rem;
     padding: 0.625rem 1.875rem;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    }
   }
+}
 
 
-.tab-content{
-  .tab-pane{
+.tab-content {
+  .tab-pane {
     display: none;
-    &.active{
+
+    &.active {
       display: block;
     }
   }
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
   cursor: pointer;
 }
 
@@ -745,14 +748,15 @@
 .section-title-center {
   padding-bottom: 45px;
   text-align: center;
-  .title{
+
+  .title {
     margin: 0;
     font-size: 50px;
     font-family: "Poppins", sans-serif;
     color: #171717;
     font-weight: 700;
     line-height: 1.4;
-    
+
   }
 }
 
@@ -966,31 +970,38 @@ button {
   transition: all 0.3s ease-in-out;
   padding: 38px 35px 50px;
 }
+
 .app-pricing-item.active {
   position: relative;
 }
+
 .app-pricing-item.active .popular-shape {
   top: -13%;
   right: -18%;
   position: absolute;
   z-index: 1;
 }
+
 .app-pricing-item:hover {
   box-shadow: 0 20px 50px 0 rgba(23, 23, 23, 0.08);
 }
+
 .app-pricing-item .item-title {
   font-size: 30px;
   line-height: 36px;
   margin-bottom: 14px;
 }
+
 .app-pricing-item .item-label {
   font-size: 20px;
   line-height: 1.2;
   margin-bottom: 18px;
 }
+
 .app-pricing-item .item-price {
   margin-bottom: 33px;
 }
+
 .app-pricing-item .item-price .dollar {
   color: #EC595A;
   font-size: 30px;
@@ -998,35 +1009,42 @@ button {
   font-weight: 700;
   position: relative;
 }
+
 .app-pricing-item .item-price .dollar svg {
   bottom: 0;
   left: 0;
   position: absolute;
 }
+
 .app-pricing-item .item-price .time {
   color: #9199A1;
   font-size: 18px;
   line-height: 36px;
 }
+
 .app-pricing-item .item-price .border-shape {
   bottom: 0;
   left: 0;
   position: absolute;
   width: 41px;
 }
+
 .app-pricing-item ul {
   border-top: 1px solid #f0f0f0;
   padding-top: 33px;
   margin-bottom: 45px;
 }
+
 .app-pricing-item ul li {
   font-size: 15px;
   line-height: 40px;
 }
+
 .app-pricing-item .btn {
   border-color: #EC595A;
   color: #EC595A;
 }
+
 .app-pricing-item .btn:hover {
   background: #EC595A;
   color: #fff;
@@ -1039,10 +1057,12 @@ button {
   line-height: 30px;
   letter-spacing: 0.5px;
 }
+
 .app-pricing-question .question-text {
   color: #171717;
   padding: 0 15px;
 }
+
 .app-pricing-question .question-text a {
   color: #EC595A;
   text-decoration: underline;
@@ -1055,27 +1075,34 @@ button {
   z-index: 1;
   overflow: hidden;
 }
+
 .choose-plan-area-three .section-title-center {
   padding-bottom: 45px;
 }
+
 .choose-plan-area-three .section-title-center p {
   color: #4f4f4f;
   width: 100%;
 }
+
 @media screen and (min-width: 992px) {
   .choose-plan-area-three .section-title-center p {
     width: 55%;
   }
 }
+
 .choose-plan-area-three .pricing-switcher {
   padding-bottom: 80px;
 }
+
 .choose-plan-area-three .pricing-switcher .nav-link::after {
   background: #435bcc;
 }
+
 .choose-plan-area-three .tab-pane {
   padding-top: 0;
 }
+
 .choose-plan-area-three .pricing-item {
   border-radius: 15px;
   background-color: #fff;
@@ -1085,18 +1112,25 @@ button {
   border: none;
   transition: all 0.3s linear;
 }
-.choose-plan-area-three .pricing-item.active, .choose-plan-area-three .pricing-item:hover {
+
+.choose-plan-area-three .pricing-item.active,
+.choose-plan-area-three .pricing-item:hover {
   box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1);
   transform: translateY(-20px);
   border: none;
 }
-.choose-plan-area-three .pricing-item.active h4, .choose-plan-area-three .pricing-item:hover h4 {
+
+.choose-plan-area-three .pricing-item.active h4,
+.choose-plan-area-three .pricing-item:hover h4 {
   color: #3c73f0;
 }
-.choose-plan-area-three .pricing-item.active .btn, .choose-plan-area-three .pricing-item:hover .btn {
+
+.choose-plan-area-three .pricing-item.active .btn,
+.choose-plan-area-three .pricing-item:hover .btn {
   color: #fff;
   background-color: #356eef;
 }
+
 .choose-plan-area-three .pricing-item h4 {
   font-size: 24px;
   font-weight: 600;
@@ -1105,6 +1139,7 @@ button {
   margin-bottom: 20px;
   transition: all 0.3s linear;
 }
+
 .choose-plan-area-three .pricing-item .price {
   font-size: 40px;
   font-family: "Poppins", sans-serif;
@@ -1114,13 +1149,16 @@ button {
   margin-top: 0;
   color: #171717;
 }
+
 .choose-plan-area-three .pricing-item .price span {
   color: #8d8d8d;
   font-size: 20px;
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp {
   margin-bottom: 50px;
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp .list-title {
   font-size: 18px;
   line-height: 160%;
@@ -1128,9 +1166,11 @@ button {
   color: #171717;
   margin-bottom: 20px;
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp ul {
   padding-top: 0;
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp ul li {
   display: flex;
   font-size: 17px;
@@ -1140,19 +1180,23 @@ button {
   padding: 0;
   margin-bottom: 20px;
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp ul li.disable {
   color: rgba(23, 23, 23, 0.5);
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp ul li .icon-check {
   color: #45c260;
   margin-right: 10px;
   font-size: 20px;
 }
+
 .choose-plan-area-three .pricing-item .list-wrapp ul li .icon-close {
   color: #c1c1c1;
   margin-right: 10px;
   font-size: 20px;
 }
+
 .choose-plan-area-three .pricing-item .btn {
   border: 1px solid #356eef;
   border-radius: 26px;
@@ -1170,6 +1214,7 @@ button {
   text-align: center;
   transition: all 0.3s linear;
 }
+
 .choose-plan-area-three .pricing-item .btn:hover {
   color: #fff;
   background-color: #356eef;

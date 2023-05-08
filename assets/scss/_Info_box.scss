@@ -64,8 +64,10 @@
     // border-top: 5px solid var(--brand_color);
     box-shadow: 0 40px 30px 0 rgba(2, 47, 57, 0.1);
     transform: translateY(-5px);
+
     &:before {
-      background: var(--brand_color);;
+      background: var(--brand_color);
+      ;
     }
 
   }

@@ -4,17 +4,20 @@
   background: rgb(243 243 243 / 24%);
   padding: 32px 40px 30px;
   margin-bottom: 20px;
+
   i {
     font-size: 24px;
     color: #abb0c0;
     margin-right: 25px;
   }
+
   h5 {
     font-size: 16px;
     color: rgb(29 39 70);
     font-weight: 500;
     margin-bottom: 12px;
   }
+
   p {
     margin-bottom: 0;
     color: rgb(66 84 102);
@@ -25,6 +28,7 @@
     font-weight: 400;
     letter-spacing: 0.15px;
   }
+
   .close {
     position: absolute;
     right: 14px;
@@ -34,6 +38,7 @@
     opacity: 1;
     border: none;
     background: transparent;
+
     i {
       margin-right: 0;
     }

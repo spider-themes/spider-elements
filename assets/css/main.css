@@ -12,8 +12,8 @@ template.
 
 @Default Styles
 Table of Content:
-01/ Accordian_article
-92/ Accordion
+01/ Call_to_action
+02/ Accordion
 03/ Alerts_box
 04/ Animation
 05/ List_Item
@@ -26,6 +26,8 @@ Table of Content:
 12/ Testimonial
 13/ variable
 14/ Video
+15/ Cheat_sheet
+16/ Info_box
 
 
 
@@ -640,7 +642,10 @@ ul.list-style li:last-child {
   color: #4c4cf1;
 }
 .toggle_btn:before {
-  content: "C";
+  content: "";
+  background-image: url("../images/svgviewer-output.svg");
+  height: 12px;
+  width: 20px;
   position: absolute;
   font-size: 18px;
   font-family: eleganticons;
@@ -1739,7 +1744,8 @@ ul.nav.nav-tabs {
   background-color: #bdb4b4;
   transition: all 0.3s ease-in-out;
 }
-.doc_testimonial_slider .slider_nav .prev, .doc_testimonial_slider .slider_nav .next {
+.doc_testimonial_slider .slider_nav .prev,
+.doc_testimonial_slider .slider_nav .next {
   height: 25px;
   width: 27px;
   position: absolute;
@@ -1748,14 +1754,18 @@ ul.nav.nav-tabs {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.doc_testimonial_slider .slider_nav .prev:hover, .doc_testimonial_slider .slider_nav .next:hover {
+.doc_testimonial_slider .slider_nav .prev:hover,
+.doc_testimonial_slider .slider_nav .next:hover {
   width: 40px;
 }
-.doc_testimonial_slider .slider_nav .prev:hover .arrow, .doc_testimonial_slider .slider_nav .next:hover .arrow {
+.doc_testimonial_slider .slider_nav .prev:hover .arrow,
+.doc_testimonial_slider .slider_nav .next:hover .arrow {
   width: 40px;
   background: var(--brand_color);
 }
-.doc_testimonial_slider .slider_nav .prev:hover .arrow:before, .doc_testimonial_slider .slider_nav .prev:hover .arrow:after, .doc_testimonial_slider .slider_nav .next:hover .arrow:before, .doc_testimonial_slider .slider_nav .next:hover .arrow:after {
+.doc_testimonial_slider .slider_nav .prev:hover .arrow:before, .doc_testimonial_slider .slider_nav .prev:hover .arrow:after,
+.doc_testimonial_slider .slider_nav .next:hover .arrow:before,
+.doc_testimonial_slider .slider_nav .next:hover .arrow:after {
   background: var(--brand_color);
 }
 .doc_testimonial_slider .slider_nav .prev {
@@ -2340,7 +2350,8 @@ ul.nav.nav-tabs {
 .gallery_main_area {
   position: relative;
 }
-.gallery_main_area .prev, .gallery_main_area .next {
+.gallery_main_area .prev,
+.gallery_main_area .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -2358,19 +2369,24 @@ ul.nav.nav-tabs {
   justify-content: center;
   align-items: center;
 }
-.gallery_main_area .prev:hover svg path, .gallery_main_area .next:hover svg path {
+.gallery_main_area .prev:hover svg path,
+.gallery_main_area .next:hover svg path {
   fill: #4c4cf1;
 }
-.gallery_main_area .prev.slick-disabled, .gallery_main_area .next.slick-disabled {
+.gallery_main_area .prev.slick-disabled,
+.gallery_main_area .next.slick-disabled {
   display: none !important;
 }
-.gallery_main_area .prev.prev, .gallery_main_area .next.prev {
+.gallery_main_area .prev.prev,
+.gallery_main_area .next.prev {
   left: -20px;
 }
-.gallery_main_area .prev.next, .gallery_main_area .next.next {
+.gallery_main_area .prev.next,
+.gallery_main_area .next.next {
   right: -20px;
 }
-.gallery_main_area .prev:hover, .gallery_main_area .next:hover {
+.gallery_main_area .prev:hover,
+.gallery_main_area .next:hover {
   color: #3c4146;
 }
 .gallery_main_area .gallery-thumbs .slick-track {
@@ -3196,6 +3212,34 @@ ul.nav.nav-tabs {
   margin-bottom: 0;
 }
 
+.video_slider_area {
+  position: relative;
+}
+.video_slider_area #video_loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+  z-index: 9999;
+}
+.video_slider_area #video_loader #loader {
+  border: 6px solid rgba(152, 149, 149, 0.614);
+  border-top: 6px solid var(--brand_color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+  animation: spin 2s linear infinite;
+}
+.video_slider_area.loaded #video_loader {
+  display: none;
+}
 .video_slider_area .video-js {
   min-height: 414px;
   border-radius: 5px;
@@ -3240,6 +3284,14 @@ ul.nav.nav-tabs {
   visibility: hidden;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* End Video Area css
 ============================================================================================ */
 /* 3d video Slider Area css
@@ -4031,7 +4083,6 @@ button.swiper-pagination-bullet {
 }
 
 .pricing-area-two {
-  background-color: #E6F5FA;
   position: relative;
 }
 .pricing-area-two .section-title-center {
@@ -4594,7 +4645,10 @@ button.swiper-pagination-bullet {
   display: block;
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
   cursor: pointer;
 }
 
@@ -4908,17 +4962,20 @@ button {
   transition: all 0.3s linear;
 }
 
-.choose-plan-area-three .pricing-item.active, .choose-plan-area-three .pricing-item:hover {
+.choose-plan-area-three .pricing-item.active,
+.choose-plan-area-three .pricing-item:hover {
   box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1);
   transform: translateY(-20px);
   border: none;
 }
 
-.choose-plan-area-three .pricing-item.active h4, .choose-plan-area-three .pricing-item:hover h4 {
+.choose-plan-area-three .pricing-item.active h4,
+.choose-plan-area-three .pricing-item:hover h4 {
   color: #3c73f0;
 }
 
-.choose-plan-area-three .pricing-item.active .btn, .choose-plan-area-three .pricing-item:hover .btn {
+.choose-plan-area-three .pricing-item.active .btn,
+.choose-plan-area-three .pricing-item:hover .btn {
   color: #fff;
   background-color: #356eef;
 }
@@ -5478,6 +5535,7 @@ Pricing Two CSS
   padding: 4px;
   position: relative;
   z-index: 1;
+  width: fit-content;
 }
 .pricing-banner-2 .pricing-switcher-2 .switcher-bg {
   content: "";
@@ -5869,7 +5927,10 @@ Pricing Two CSS
   display: block;
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
   cursor: pointer;
 }
 
@@ -5912,6 +5973,7 @@ button {
   transition: 0.3s ease-out;
   color: #212529;
   font-family: "Inter", sans-serif;
+  margin-top: 30px;
 }
 
 .cloud-pricing-wrapp .nav .nav-link {
@@ -6443,9 +6505,6 @@ button {
     width: 55%;
   }
 }
-/*================================================
-Pricing Two CSS
-=================================================*/
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -7507,6 +7566,13 @@ ul.ordered-list li::before {
 .support_area .right img {
   z-index: 4;
   position: relative;
+}
+
+.support_area .left h6 {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
 }
 
 .journalism-feature-image {

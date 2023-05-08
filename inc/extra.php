@@ -1,5 +1,12 @@
 <?php 
 
+add_image_size( 'docy_370x300', 370, 300, true); // Screenshot carousel style 6
+add_image_size( 'docy_70x70', 70, 70, true); // Recent posts thumbnail
+add_image_size( 'docy_16x16', 16, 16, true); // Forums list widget forum thumbnail image
+add_image_size( 'docy_60x40', 60, 40, true); // Forums list widget forum thumbnail image
+add_image_size( 'docy_270x152', 270, 152, true); // Forums list widget forum thumbnail image
+add_image_size( 'docy_671x411', 671, 411, true); // Video Carousel Thumb Single
+add_image_size( 'docy_40x40', 40, 40, true); // Forum user image
 /**
  * Elementor Title tags
  */
@@ -122,7 +129,7 @@ function docycore_arrow_left_right() {
  * @param string $class
  * @param string $alt
  */
-function docy_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
+function spider_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
     if ( !empty($settings_key['id']) ) {
         echo wp_get_attachment_image( $settings_key['id'], 'full', '', array('class' => $class) );
     }
@@ -138,3 +145,6 @@ function docy_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] )
         echo "<img src='{$settings_key['url']}' $class alt='$alt' $attss>";
     }
 }
+
+// Register image size
+add_image_size( 'se_270x152px', 270, 152,  true );

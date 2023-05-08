@@ -44,24 +44,29 @@
   background: #002454;
   overflow: hidden;
   z-index: 2;
+
   .container {
     position: relative;
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
   .shap {
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1;
   }
+
   .left {
     position: relative;
     align-self: center;
     z-index: 3;
   }
+
   .right {
     position: relative;
+
     img {
       z-index: 4;
       position: relative;

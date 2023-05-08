@@ -1,78 +1,83 @@
 (function ($) {
-    'use strict'
-  
-    $('document').ready(function() {
+  "use strict";
 
-        $('#video_0').addClass('show').addClass('active');
-        var containers = document.getElementsByClassName('artplayer-app');
+  $("document").ready(function () {
+    setTimeout(function () {
+      $(".video_slider_area").addClass("loaded").css("height", "auto");
+    }, 3000);
 
-        for (var i = 0; i < containers.length; i++) {
-          new Artplayer({
-            container: containers[i],
-            url: containers[i].getAttribute('data-src'),
-            title: 'Your Name',
-            pip: true,
-            screenshot: true,
-            flip: true,
-            fullscreen: true,
-            fullscreenWeb: true,
-            height: '500px',
-          });
-        }
-        
-        const accordionPanels = document.querySelectorAll('.accordion-panel');
-
-        accordionHeaders.forEach(header => {
-          header.addEventListener('click', () => {
-            const accordionPanel = header.parentElement;
-            const isActive = accordionPanel.classList.contains('active');
-        
-            if (!isActive) {
-              accordionPanels.forEach(panel => panel.classList.remove('active'));
-              accordionPanel.classList.add('active');
-            } else {
-              accordionPanel.classList.remove('active');
-            }
-          });
-        });
-      
-
+    $(".toggle_btn").click(function (e) {
+      e.preventDefault();
     });
-  })(jQuery)
+    $("#video_0").addClass("show").addClass("active");
+    var containers = document.getElementsByClassName("artplayer-app");
 
+    for (var i = 0; i < containers.length; i++) {
+      new Artplayer({
+        container: containers[i],
+        url: containers[i].getAttribute("data-src"),
+        title: "Your Name",
+        pip: true,
+        screenshot: true,
+        flip: true,
+        fullscreen: true,
+        fullscreenWeb: true,
+        height: "500px",
+      });
+    }
 
-
- //======================== Counter Up =========================== //
+    const accordionPanels = document.querySelectorAll(".accordion-panel");
+    const accordionHeaders = document.querySelectorAll(".accordion-headers");
 
   //=============== Pricing Table 06 =========================== //
   const tableSwitcher1 = document.querySelectorAll('.pricing-switcher-2 .nav-link');
+    accordionHeaders.forEach((header) => {
+      header.addEventListener("click", () => {
+        const accordionPanel = header.parentElement;
+        const isActive = accordionPanel.classList.contains("active");
 
-  if (tableSwitcher1.length > 0) {
-    tableSwitcher1.forEach((switcher) => {
-      switcher.addEventListener('click', () => {
-        const monthlyTab = document.querySelector('#monthly-tab');
-        const switcherBg = document.querySelector('.switcher-bg');
-  
-        if (monthlyTab.classList.contains('active')) {
-          switcherBg.classList.remove('right');
+        if (!isActive) {
+          accordionPanels.forEach((panel) => panel.classList.remove("active"));
+          accordionPanel.classList.add("active");
         } else {
-          switcherBg.classList.add('right');
+          accordionPanel.classList.remove("active");
         }
       });
     });
-  }
-  
+  });
+})(jQuery);
 
+//======================== Counter Up =========================== //
+
+//=============== Pricing Table 06 =========================== //
+const se_tableSwitcher1 = document.querySelectorAll(
+  ".pricing-switcher-2 .nav-link"
+);
+
+if (se_tableSwitcher1.length > 0) {
+  se_tableSwitcher1.forEach((switcher) => {
+    switcher.addEventListener("click", () => {
+      const monthlyTab = document.querySelector("#monthly-tab");
+      const switcherBg = document.querySelector(".switcher-bg");
+
+      if (monthlyTab.classList.contains("active")) {
+        switcherBg.classList.remove("right");
+      } else {
+        switcherBg.classList.add("right");
+      }
+    });
+  });
+}
 
 // (function ($) {
 //     'use strict'
-  
+
 //     $(document).ready(function () {
-     
-//         // DOCY FOOTNOTE        
+
+//         // DOCY FOOTNOTE
 //         let docy_note_column  = $('.docy-footnote-footer').attr('docy-data-column');
 //         $('.docy-footnote-footer').css('column-count', docy_note_column);
-  
+
 //         $('.docy-footnotes-link-item').each(function() {
 //             let docy_note_content = $(this).attr('data-bs-original-title');
 //             let docy_note_serial = $(this).attr('docy-note-serial');
@@ -86,12 +91,8 @@
 //            $('.docy-footnote-title').show();
 //         }
 
-        
-        
 //     })
 //   })(jQuery)
-
-
 
 // //   ==== Tabs1 JS ======= //
 
@@ -124,7 +125,6 @@
 //   });
 
 // });
-
 
 // //   ==== Tabs2 JS ======= //
 
@@ -163,26 +163,10 @@
 //     // remove the "active" class from all tab buttons and content sections
 //     tabButtons.forEach((button) => button.classList.remove('active',));
 //     tabContents.forEach((content) => content.classList.remove('show', 'active'));
-    
+
 //     // add the "active" class to the clicked button and its associated content section
 //     const targetContent = document.querySelector(button.dataset.bsTarget);
 //     button.classList.add('active');
 //     targetContent.classList.add('show', 'active');
 //   });
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  

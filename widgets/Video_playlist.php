@@ -215,6 +215,18 @@ class Video_playlist extends Widget_Base {
 			]
 		);
 
+		
+		$repeater2->add_control(
+			'video-caption',
+			[
+				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'Default title', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Type your caption here', 'spider-elements' ),
+				'description' => esc_html__( 'This field is applicable for Preset Two', 'spider-elements' ),
+			]
+		);
+
 		$repeater2->add_control(
 			'current_author',
 			[

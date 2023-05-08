@@ -2,31 +2,37 @@
   background: #002454;
   overflow: hidden;
   z-index: 2;
+
   .container {
     position: relative;
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
   .shap {
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1;
   }
+
   .left {
     position: relative;
     align-self: center;
     z-index: 3;
+
     h3 {
       color: #fff;
       font-size: 40px;
       margin-bottom: 5px;
       font-weight: 600;
     }
+
     p {
       color: #fff;
       font-size: 16px;
     }
+
     .icon_btn2 {
       background: rgb(76 76 241);
       color: #fff;
@@ -38,6 +44,7 @@
       padding: 0 44px;
       margin-top: 25px;
       @include transition;
+
       i {
         font-size: 18px;
         position: relative;
@@ -45,13 +52,16 @@
         margin-left: 10px;
         @include transition;
       }
+
       &:hover {
         background: #fff;
         color: var(--brand_color);
+
         i {
           margin-left: 5px;
         }
       }
+
       &.blue {
         &:hover {
           color: var(--brand_color);
@@ -59,13 +69,22 @@
       }
     }
   }
+
   .right {
     position: relative;
+
     img {
       z-index: 4;
       position: relative;
     }
   }
+}
+
+.support_area .left h6 {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
 }
 
 .journalism-feature-image {

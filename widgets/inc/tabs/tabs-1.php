@@ -37,7 +37,7 @@ use Elementor\Plugin;
             $active = $tab_count == 1 ? 'show active' : '';
             $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', 'tabs', $index );
             $this->add_render_attribute( $tab_content_setting_key, [
-                'class' => [ 'tab-pane', 'fade', $active ],
+                'class' => [ 'tab-pane p-0', 'fade', $active ],
                 'id' => 'docy-tab-content-' . $id_int . $tab_count,
                 'aria-labelledby' => 'docy'.'-tab-'.$id_int . $tab_count,
                 'role' => 'tabpanel',

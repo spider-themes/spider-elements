@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #0a58ca transparent !important;
+}
+
 /*  predefine  */
 
 * {
@@ -393,6 +397,9 @@ a {
   margin-left: 100px;
 }
 
+.p-0{
+  padding: 0;
+}
 .pt-0 {
   padding-top: 0;
 }
@@ -927,18 +934,6 @@ a {
   transition: opacity 0.15s linear;
 }
 
-.d-flex {
-  display: flex;
-}
-
-.justify-content-center {
-  justify-content: center !important;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
 .elementor-section .elementor-container {
   display: flex;
   margin-right: auto;
@@ -976,144 +971,4 @@ a {
 
 .elementor-widget-wrap > .elementor-element {
   width: 100%;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  /* margin-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px; */
-  /* margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x)); */
-}
-
-.row>* {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
- margin-top: 15px;
-padding-left: 15px;
-  padding-right: 15px;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* .col-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
-} */
-
-/* @media (min-width: 992px) {
-  .col-lg-7 {
-    flex: 0 0 auto;
-    width: 58.33333333%;
-  }
-
-  .col-lg-5 {
-    flex: 0 0 auto;
-    width: 41.66666667%;
-  }
-} */
-
-.col-8 {
-  flex: 0 0 auto;
-  width: 66.66666667%;
-}
-
-.col-12 {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-@media (min-width: 1200px) {
-  .col-xl-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
-}
-
-.col-lg-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
-}
-
-/* .col-xl-4.col-md-6.mx-auto {
-  padding-right: 12px;
-  width: 33%;
-  padding-left: 12px;
-} */
-
-@media (min-width: 1200px) {
-  .col-xl-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-    padding: 0 12px;
-  }
-}
-
-/* @media (min-width: 768px) { 
-.col-md-6 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-} */
-
-.justify-content-sm-between {
-  justify-content: space-between !important;
-}
-
-/*=============== Bootstrap Breakpoints ====================  */
-
-@media (min-width: 576px) {
-  .col-sm-6 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-}
-@media (min-width: 768px) {
-  .col-md-6 {
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  .col-lg-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
-  .col-lg-5 {
-    flex: 0 0 auto;
-    width: 41.66666667%;
-  }
-  .col-lg-6 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-  .col-lg-7 {
-    flex: 0 0 auto;
-    width: 58.33333333%;
-  }
-  .col-lg-12 {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-xl-3 {
-    width: 25%;
-  }
-  .col-xl-4 {
-    width: 33.33333333%;
-  }
-}
-
-
-.col-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
 }

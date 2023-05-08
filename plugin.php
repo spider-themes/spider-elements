@@ -50,10 +50,6 @@ class Plugin {
 	public function widget_scripts() {
 		wp_register_script( 'Spider_Elements_Assets', plugins_url( '/assets/js', __FILE__ ), [ 'jquery' ], false, true );
 		wp_enqueue_script( 'ionicons', 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js', '', '5.4.0', true );
-
-		 wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' );
-		 wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', [ 'jquery' ], false, true );
-
 	}
 
 	/**
@@ -232,7 +228,7 @@ class Plugin {
         require_once( __DIR__ . '/widgets/List_item.php' );
         require_once( __DIR__ . '/widgets/Info_box.php' );
         require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
-        // require_once( __DIR__ . '/widgets/Call_to_action.php' );
+        require_once( __DIR__ . '/widgets/Call_to_action.php' );
 
 		// Register Widgets
 		$widgets_manager->register( new widgets\Tabs() );
@@ -247,7 +243,7 @@ class Plugin {
         $widgets_manager->register( new widgets\List_item() );
         $widgets_manager->register( new widgets\Info_box() );
         $widgets_manager->register( new widgets\Cheat_sheet() );
-        // $widgets_manager->register( new widgets\Call_to_action() );
+        $widgets_manager->register( new widgets\Call_to_action() );
 	}
 
 	  // Register category

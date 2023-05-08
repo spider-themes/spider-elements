@@ -85,7 +85,7 @@ class Call_to_action extends Widget_Base {
                 'label' => __( 'Title Tag', 'docy-core' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'h3',
-                'options' => docy_el_title_tags(),
+                'options' => se_el_title_tags(),
             ]
         );
 
