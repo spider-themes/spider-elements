@@ -132,7 +132,6 @@ final class Spider_Elements {
 	 * @access public
 	 */
 	public function enqueue_core_styles(){
-		// wp_enqueue_style( 'sp-core-style', plugins_url( 'assets/css/style.css', __FILE__ ) );
 		wp_enqueue_style( 'se-main-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
 		// wp_enqueue_style( 'se-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
 		wp_enqueue_style( 'se-bootstrap', plugins_url( 'assets/vendors/Bootstrap/bootstrap.min.css', __FILE__ ) ); 

@@ -29,8 +29,6 @@
     const accordionPanels = document.querySelectorAll(".accordion-panel");
     const accordionHeaders = document.querySelectorAll(".accordion-headers");
 
-  //=============== Pricing Table 06 =========================== //
-  const tableSwitcher1 = document.querySelectorAll('.pricing-switcher-2 .nav-link');
     accordionHeaders.forEach((header) => {
       header.addEventListener("click", () => {
         const accordionPanel = header.parentElement;
