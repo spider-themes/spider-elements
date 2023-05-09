@@ -9,7 +9,15 @@
                 <?php echo wp_kses_post(wpautop($settings['content'])) ?>
                 <?php if ( !empty($settings['btn_label']) ) : ?>
                     <a class="icon_btn2 wow fadeInUp c2abtn" data-wow-delay="0.6s" <?php echo docy_el_btn($settings['btn_url']) ?>>
-                        <?php echo esc_html($settings['btn_label']) ?><i class="arrow_right"></i>
+                        <?php
+                        echo esc_html($settings['btn_label']);
+
+			 \Elementor\Icons_Manager::render_icon( $settings['btn_icon'], [ 'aria-hidden' => 'true' ] );
+
+
+                        ?>
+
+
                     </a>
                 <?php endif; ?>
             </div>

@@ -134,6 +134,21 @@ class Call_to_action extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'btn_icon',
+            [
+                'label' => esc_html__( 'Icon', 'elementor' ),
+                'type' => Controls_Manager::ICONS,
+                'fa4compatibility' => 'icon',
+                'skin' => 'inline',
+                'label_block' => false,
+                'default' => [
+                    'value' => 'fa fa-arrow-right',
+                    'library' => 'fa-solid',
+                ],
+            ]
+        );
+
         //---------------------------- Normal and Hover ---------------------------//
         $this->start_controls_tabs(
             'style_tabs'

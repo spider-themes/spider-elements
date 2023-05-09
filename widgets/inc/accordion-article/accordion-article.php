@@ -37,7 +37,7 @@ $is_show = $settings['collapse_state'] == 'yes' ? 'show' : '';
                 ));
                 foreach( $cat_posts as $cats ) :
                 ?>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-0">
                     <div class="accordion-article-item">
                       <a href='<?php echo get_the_permalink($cats); ?>'>
                             <h4><?php echo $cats->post_title; ?></h4>

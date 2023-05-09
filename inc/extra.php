@@ -1,4 +1,11 @@
-<?php 
+<?php
+add_image_size( 'docy_370x300', 370, 300, true); // Screenshot carousel style 6
+add_image_size( 'docy_70x70', 70, 70, true); // Recent posts thumbnail
+add_image_size( 'docy_16x16', 16, 16, true); // Forums list widget forum thumbnail image
+add_image_size( 'docy_60x40', 60, 40, true); // Forums list widget forum thumbnail image
+add_image_size( 'docy_270x152', 270, 152, true); // Forums list widget forum thumbnail image
+add_image_size( 'docy_671x411', 671, 411, true); // Video Carousel Thumb Single
+add_image_size( 'docy_40x40', 40, 40, true); // Forum user image
 
 add_image_size( 'docy_370x300', 370, 300, true); // Screenshot carousel style 6
 add_image_size( 'docy_70x70', 70, 70, true); // Recent posts thumbnail

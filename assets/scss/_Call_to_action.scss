@@ -5,8 +5,7 @@
 
   .container {
     position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 12px;
   }
 
   .shap {
@@ -21,7 +20,7 @@
     align-self: center;
     z-index: 3;
 
-    h3 {
+    .title {
       color: #fff;
       font-size: 40px;
       margin-bottom: 5px;
@@ -52,6 +51,7 @@
         margin-left: 10px;
         @include transition;
       }
+
 
       &:hover {
         background: #fff;
