@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Quote extends Widget_Base {
 
     public function get_name() {
-        return 'spider_quote';
+        return 'docy_quote';
     }
 
     public function get_title() {

@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Video_playlist extends Widget_Base {
     public function get_name() {
-        return 'spider_videos_playlist';
+        return 'docy_videos_playlist';
     }
 
     public function get_title() {

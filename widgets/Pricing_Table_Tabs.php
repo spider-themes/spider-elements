@@ -313,7 +313,8 @@ class Pricing_Table_Tabs extends Widget_Base {
 											<h3 class="pricing-title"><?php echo esc_html($table_item['title']) ?></h3>
 											<?php
 										}
-										if ( !empty($table_item['price']) ) {
+										if ( !empty($table_item['price_dollar']) || !empty($table_item['price_euro']) ) {
+                                         
 											?>
 											<div class="price">
                                                 <?php

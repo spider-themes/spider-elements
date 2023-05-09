@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Cheat_sheet extends Widget_Base {
 
     public function get_name() {
-        return 'spider_cheatsheet';
+        return 'docly_cheatsheet';
     }
 
     public function get_title() {

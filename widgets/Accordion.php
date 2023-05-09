@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Accordion extends Widget_Base {
 
     public function get_name() {
-        return 'spider_accordion';
+        return 'docy_accordion';
     }
 
     public function get_title() {

@@ -21,7 +21,7 @@
   }
 
   &:before {
-    content: "";
+    content: "" !important;
     background-image: url('../images/svgviewer-output.svg');
     height: 12px;
     width: 20px;
