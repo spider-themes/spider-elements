@@ -41,12 +41,13 @@
             ?>
         </div>
         <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            
             <nav>
                 <div class="nav justify-content-center pricing-switcher" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-monthly-tab" data-bs-toggle="tab" data-bs-target="#nav-monthly" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
+                    <button class="nav-link active" id="nav-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
                         <?php echo esc_html( $settings['tab1_title'] ) ?>
                     </button>
-                    <button class="nav-link" id="nav-annually-tab" data-bs-toggle="tab" data-bs-target="#nav-annually" type="button" role="tab" aria-controls="nav-annually" aria-selected="false">
+                    <button class="nav-link" id="nav-annually-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-annually-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-annually" aria-selected="false">
                         <?php echo esc_html( $settings['tab2_title'] ) ?>
                     </button>
                 </div>
@@ -54,7 +55,7 @@
 
             <div class="tab-content features-tab-content" id="nav-tabContent">
 
-                <div class="tab-pane fade show active" id="nav-monthly" role="tabpanel" aria-labelledby="nav-monthly-tab">
+                <div class="tab-pane fade show active" id="nav-monthly-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="nav-monthly-tab-<?php echo $this->get_id(); ?>">
                     <div class="row gy-xl-0 gy-4 pricing-item-two-cotnainer">
                         <?php
                         $delay_time = 0.1;
@@ -102,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="nav-annually" role="tabpanel" aria-labelledby="nav-annually-tab">
+                <div class="tab-pane fade" id="nav-annually-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="nav-annually-tab-<?php echo $this->get_id(); ?>">
                     <div class="row gy-xl-0 gy-4 pricing-item-two-cotnainer">
                         <?php
                         unset( $table );

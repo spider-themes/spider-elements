@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class List_item extends Widget_Base {
     public function get_name() {
-        return 'spider_list_item';
+        return 'docly_list_item';
     }
 
     public function get_title() {

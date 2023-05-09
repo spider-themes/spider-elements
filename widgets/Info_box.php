@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Info_box extends Widget_Base {
 
     public function get_name() {
-        return 'spider_info_box';
+        return 'docy_info_box';
     }
 
     public function get_title() {

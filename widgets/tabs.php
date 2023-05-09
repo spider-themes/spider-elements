@@ -26,7 +26,7 @@ class Tabs extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'spider_elements_tabs';
+		return 'docy_tabs';
 	}
 
 	/**

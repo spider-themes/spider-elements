@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Testimonial extends \Elementor\Widget_Base {
 
     public function get_name() {
-        return 'spider_testimonial';
+        return 'docy_testimonial';
     }
 
     public function get_title() {

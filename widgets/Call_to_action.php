@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Call_to_action extends Widget_Base {
     public function get_name() {
-        return 'Spider_contact_banner';
+        return 'Docy_contact_banner';
     }
 
     public function get_title() {

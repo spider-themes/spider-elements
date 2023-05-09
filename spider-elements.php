@@ -133,7 +133,7 @@ final class Spider_Elements {
 	 */
 	public function enqueue_core_styles(){
 		wp_enqueue_style( 'se-main-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
-		// wp_enqueue_style( 'se-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
+		wp_enqueue_style( 'se-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
 		wp_enqueue_style( 'se-bootstrap', plugins_url( 'assets/vendors/Bootstrap/bootstrap.min.css', __FILE__ ) ); 
 		//JS
 		wp_enqueue_script( 'se-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );

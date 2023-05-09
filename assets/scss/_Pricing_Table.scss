@@ -132,6 +132,7 @@
     color: #6d6d6d;
     border-color: transparent;
 
+
     &.active {
       border-color: transparent;
       background: transparent;
@@ -143,13 +144,14 @@
 
     &:hover {
       border-color: transparent;
+      color: unset !important;
     }
   }
 }
 
 
 .pricing-tabs-two {
-  display: inline-flex;
+  display: inline-flex !important;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #676099;
@@ -339,6 +341,7 @@
     padding: 0.8125rem 1.875rem;
     margin-top: 2.1875rem;
     transition: 0.3s ease-out;
+    margin-bottom: 20px !important;
 
     &:hover {
       background: #ec595a;
@@ -1219,4 +1222,28 @@ button {
   color: #fff;
   background-color: #356eef;
   text-decoration: none;
+}
+
+// after add  bootstrap 
+.pricing-tabs {
+  border: none !important;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+  background: #f9f9f9;
+  display: inline-flex;
+}
+.pricing-tabs .nav-link {
+  padding: 0.3125rem 1.125rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  color: #6d6d6d;
+}
+.pricing-tabs .nav-link.active {
+  border-color: transparent !important;
+  background: transparent !important;
+  background: #ec595a !important;
+  color: #fff !important;
+}
+.pricing-tabs .nav-link:hover {
+  border-color: transparent !important;
 }
