@@ -380,7 +380,7 @@ about journalism.'
 
                     <?php if ( !empty($settings['right_image']['id']) ) : ?>
                         <div class="col-lg-5">
-                            <div class="journalism-feature-image wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="se-journalism-feature-image wow fadeInRight" data-wow-delay="0.3s">
                                 <?php echo wp_get_attachment_image($settings['right_image']['id'], 'full') ?>
                             </div>
                             <!-- /.journalism-feature-image -->

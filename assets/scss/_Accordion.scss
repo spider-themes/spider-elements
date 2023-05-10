@@ -241,7 +241,7 @@
 
   .multi-collapse {
     .toggle_body {
-      border: 1px solid rgb(235 235 235);
+      border: 1px solid rgb(235 235 235) ;
       padding: 18px 30px 24px;
       border-radius: 0 0 4px 4px;
       line-height: 26px;
@@ -349,10 +349,12 @@
     }
   }
 }
-//.multi-collapse .toggle_body {
-//  border: 1px solid var(--black_50);
-//  padding: 18px 30px 24px 30px;
-//  border-radius: 0 0 4px 4px;
-//  line-height: 26px;
-//  background: var(--bs-white);
-//}
+  .elementor-widget-container {
+    .toggle_body {
+      border: 1px solid rgb(235 235 235) !important;
+      padding: 18px 30px 24px 30px;
+      border-radius: 0 0 4px 4px;
+      line-height: 26px;
+      background: rgb(255 255 255);
+    }
+  }
