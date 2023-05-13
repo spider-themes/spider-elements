@@ -8,7 +8,7 @@
                 <?php echo !empty($settings['title']) ? sprintf( '<%1$s class="title" data-animation="wow fadeInUp" data-wow-delay="0.2s"> %2$s </%1$s>', $title_tag, nl2br($settings['title']) ) : ''; ?>
                 <?php echo wp_kses_post(wpautop($settings['content'])) ?>
                 <?php if ( !empty($settings['btn_label']) ) : ?>
-                    <a class="icon_btn2 wow fadeInUp c2abtn" data-wow-delay="0.6s" <?php echo docy_el_btn($settings['btn_url']) ?>>
+                    <a class="icon_btn2 wow fadeInUp c2abtn" data-wow-delay="0.6s" <?php echo se_el_btn($settings['btn_url']) ?>>
                         <?php
                         echo esc_html($settings['btn_label']);
 

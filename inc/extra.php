@@ -96,7 +96,7 @@ function return_tab_data( $getCats, $event_schedule_cats ) {
  * @param string $class
  * @param string $alt
  */
-function Se_el_image( $settings_key = '', $alt = '', $class = '' ) {
+function se_el_image( $settings_key = '', $alt = '', $class = '' ) {
     if ( !empty($settings_key['id']) ) {
         echo wp_get_attachment_image($settings_key['id'], 'full', '', array( 'class' => $class ));
     }
@@ -111,7 +111,7 @@ function Se_el_image( $settings_key = '', $alt = '', $class = '' ) {
  * @param bool $echo
  * @return string
  */
-function docy_el_btn( $settings_key, $echo = true ) {
+function se_el_btn( $settings_key, $echo = true ) {
     if ( $echo == true ) {
         echo $settings_key['is_external'] == true ? 'target="_blank"' : '';
         echo $settings_key['nofollow'] == true ? 'rel="nofollow"' : '';
@@ -125,7 +125,7 @@ function docy_el_btn( $settings_key, $echo = true ) {
 }
 
 // Arrow icon left right position
-function docycore_arrow_left_right() {
+function se_arrow_left_right() {
     $arrow_icon = is_rtl() ? 'arrow_left' : 'arrow_right';
     echo esc_attr($arrow_icon);
 }

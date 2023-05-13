@@ -169,12 +169,6 @@ if (se_tableSwitcher1.length > 0) {
 //     targetContent.classList.add('show', 'active');
 //   });
 // });
-
-
-
-
-
-
 (function ($, price) {
   "use strict";
   var $window = $(price);
@@ -228,14 +222,8 @@ if (se_tableSwitcher1.length > 0) {
 
           }
       },
-
-
-     
-
       //======================== Pricing Table Tabs =========================== //
       pricing_table_tabs: function ($scope) {
-
-
           //============= Currency Changes
           let $pricing_currency = $scope.find('.pricing-currency');
           if ( $pricing_currency.length > 0 ) {
@@ -251,41 +239,6 @@ if (se_tableSwitcher1.length > 0) {
                       dollar.css('display', 'inline-block');
                   }
               });
-          }
-
-      },
-
-
-      //============== Mailchimp Form
-      mailchimp: function ($scope) {
-          var mailchimpContainer = $scope.find(".mailchimp");
-          var dataUrl = mailchimpContainer.data('action-url');
-
-          if ( mailchimpContainer.length > 0 ) {
-              mailchimpContainer.ajaxChimp({
-                  callback: mailchimpCallback,
-                  url: dataUrl,
-              });
-              $(".memail").on("focus", function () {
-                  $(".mchimp-errmessage").fadeOut();
-                  $(".mchimp-sucmessage").fadeOut();
-              });
-              $(".memail").on("keydown", function () {
-                  $(".mchimp-errmessage").fadeOut();
-                  $(".mchimp-sucmessage").fadeOut();
-              });
-              $(".memail").on("click", function () {
-                  $(".memail").val("");
-              });
-
-              function mailchimpCallback(resp) {
-                  if (resp.result === "success") {
-                      $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
-                      $(".mchimp-sucmessage").fadeOut(500);
-                  } else if (resp.result === "error") {
-                      $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
-                  }
-              }
           }
       },
   }

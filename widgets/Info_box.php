@@ -222,8 +222,8 @@ class Info_box extends Widget_Base {
                     <h3 class="com-title"> <?php echo wp_kses_post($settings['title']) ?> </h3>
                 <?php endif; ?>
                 <?php if ( !empty($settings['link_title']) ) : ?>
-                    <a <?php docy_el_btn($settings['url']) ?> class="details-link">
-                        <?php echo esc_html($settings['link_title']) ?> <i class="<?php docycore_arrow_left_right() ?>"></i>
+                    <a <?php se_el_btn($settings['url']) ?> class="details-link">
+                        <?php echo esc_html($settings['link_title']) ?> <i class="<?php se_arrow_left_right() ?>"></i>
                     </a>
                 <?php endif; ?>
             </div>
