@@ -342,7 +342,7 @@ about journalism.'
         <section class="about-journalism">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7 md-order-two">
+                    <div class="col-lg-7 md-order">
                         <div class="journalism-content-wrapper">
                             <?php if ( !empty($settings['quote_icon_left']['url']) ) : ?>
                                 <div class="quote wow fadeIn">

@@ -352,7 +352,7 @@ button:focus {
 }
 @media (max-width: 576px) {
   .bbp-shortcode fieldset.bbp-form, .blog_info .blog_body,
-.main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
+  .main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
     padding: 30px 20px !important;
   }
 }
@@ -1006,9 +1006,13 @@ ul.list-style li:last-child {
 }
 
 .about-journalism {
-  background: rgb(250, 252, 253);
   overflow: hidden;
   position: relative;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .about-journalism .md-order {
+    padding: 70px 0 0;
+  }
 }
 
 .light-header {
@@ -1039,9 +1043,8 @@ ul.list-style li:last-child {
 
 .journalism-content-wrapper {
   max-width: 550px;
-  padding: 113px 0 65px;
 }
-@media (max-width: 1480px) {
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
   .journalism-content-wrapper {
     padding: 83px 0 35px;
   }
@@ -1061,6 +1064,14 @@ ul.list-style li:last-child {
   color: #6b707f;
   line-height: 34px;
   margin-bottom: 40px;
+  font-weight: 400;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .journalism-content-wrapper p {
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
 }
 .journalism-content-wrapper .journalism-info .name {
   color: var(--secondary_color);
@@ -1117,7 +1128,12 @@ ul.list-style li:last-child {
   margin-top: 20px;
 }
 .se-journalism-feature-image img {
-  margin-top: 150px;
+  margin-top: 130px;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .se-journalism-feature-image img {
+    margin-top: 0;
+  }
 }
 @media (max-width: 992px) {
   .se-journalism-feature-image {
@@ -1132,13 +1148,19 @@ ul.list-style li:last-child {
   background-image: linear-gradient(45deg, rgb(236, 249, 252) 0%, rgb(254, 239, 236) 100%);
   border-radius: 50%;
   z-index: 1;
-  left: 20px;
-  top: 85px;
+  left: -20px;
+  top: 65px;
 }
 @media (max-width: 992px) {
   .se-journalism-feature-image:before {
     left: -20px;
     top: 15px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .se-journalism-feature-image:before {
+    left: 10px;
+    top: -30px;
   }
 }
 .se-journalism-feature-image img {
@@ -1150,9 +1172,18 @@ ul.list-style li:last-child {
   .se-journalism-feature-image {
     margin-top: 80px;
   }
+}
+@media only screen and (max-width: 1480px) and (min-width: 320px) and (max-width: 768px) {
+  .se-journalism-feature-image {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1480px) {
   .se-journalism-feature-image img {
     width: 500px;
   }
+}
+@media (max-width: 1480px) {
   .se-journalism-feature-image:before {
     height: 500px;
     width: 500px;
@@ -1175,11 +1206,6 @@ ul.list-style li:last-child {
   }
 }
 
-@media (max-width: 992px) {
-  .md-order-two {
-    order: 2;
-  }
-}
 /*============== Tab =========*/
 .tab_shortcode {
   margin-bottom: 50px;
@@ -7751,12 +7777,6 @@ ul.ordered-list li::before {
   color: rgb(76, 76, 241);
 }
 
-.about-journalism {
-  background: rgb(250, 252, 253);
-  overflow: hidden;
-  position: relative;
-}
-
 .light-header {
   position: absolute;
   bottom: -23px;
@@ -7797,104 +7817,81 @@ ul.ordered-list li::before {
   .banner-area .banner-left h1 {
     line-height: 1.25;
   }
-
   .hero_section_landing a.btn.white-btn {
     padding: 10px 25px;
     margin-bottom: 10px;
   }
-
   .banner_text .banner-left .title {
     width: 100%;
   }
-
   .banner-area-4 {
     padding-bottom: 80px;
     margin-bottom: 0;
   }
-
   .banner-area-4 .banner-right {
     margin-bottom: 30px;
   }
-
   .banner-area-4 .banner-left {
     margin-top: -80px;
   }
-
   .banner-area-4 .client-meta {
     margin-top: 0;
   }
-
   .testimonial-area-seven .slider-navigation {
     padding-top: 20px;
     padding-left: 0;
   }
-
   .testimonial-area-seven .testimonial-author {
     flex-wrap: wrap;
   }
-
   .features-area-seven {
     padding-bottom: 0;
   }
-
   .testimonial-area-eight .testimonial-slider-eight .testimonial-item {
     flex-direction: column;
   }
-
   .mobile-app-area-two .section-title-para {
     margin-bottom: 20px;
   }
-
   .mobile-app-area-two .app-store-link {
     font-size: 15px;
     padding: 3px 10px;
   }
-
   .app-integration-area-two .section-title-center {
     margin-bottom: 20px;
   }
-
   .testimonial-area-eight {
     padding-bottom: 140px;
   }
-
   .testimonial-area-eight .testimonial-content {
     margin: 0;
   }
-
   .testimonial-area-eight .testimonial-slider-eight .slider-navigation {
     left: 0;
     bottom: -10%;
     justify-content: left;
   }
-
   .faq-area-four .accordion-item .accordion-button {
     padding: 15px;
   }
-
   .single-post-area .tag-widget .tag-list li {
     margin-bottom: 10px;
   }
-
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
-
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
-
   .action_subscribe_form .form-group .s_btn {
     position: static;
     padding: 17px 29px;
     margin-top: 20px;
   }
-
   .cloud-pricing-wrapp .nav .nav-link {
     margin-right: 15px;
     margin-bottom: 15px;
   }
-
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }

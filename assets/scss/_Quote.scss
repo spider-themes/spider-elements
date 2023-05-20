@@ -62,11 +62,14 @@
   }
 }
 
-
 .about-journalism {
-  background: rgb(250, 252, 253);
-  overflow: hidden;
-  position: relative;
+    overflow: hidden;
+    position: relative;
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    .md-order {
+      padding: 70px 0 0;
+    }
+  }
 }
 
 .light-header {
@@ -93,12 +96,9 @@
   }
 }
 
-
 .journalism-content-wrapper {
   max-width: 550px;
-  padding: 113px 0 65px;
-
-  @media(max-width: 1480px) {
+  @media only screen and (min-width: 1024px) and (max-width: 2560px) {
     padding: 83px 0 35px;
   }
 
@@ -119,9 +119,15 @@
     color: #6b707f;
     line-height: 34px;
     margin-bottom: 40px;
+    font-weight: 400;
+    @media only screen and (min-width: 320px) and (max-width: 425px) {
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 30px;
+    }
   }
 
-  .journalism-info {
+    .journalism-info {
     .name {
       color: var(--secondary_color);
       font-size: 16px;
@@ -179,7 +185,11 @@
   position: relative;
   margin-top: 20px;
   img{
-    margin-top: 150px;
+    margin-top: 130px;
+
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      margin-top: 0;
+    }
   }
   @media(max-width: 992px) {
     margin-left: 20px;
@@ -194,12 +204,17 @@
     background-image: linear-gradient(45deg, rgb(236, 249, 252) 0%, rgb(254, 239, 236) 100%);
     border-radius: 50%;
     z-index: 1;
-    left: 20px;
-    top: 85px;
+    left: -20px;
+    top: 65px;
 
     @media(max-width: 992px) {
       left: -20px;
       top: 15px;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      left: 10px;
+      top: -30px;
     }
   }
 
@@ -213,6 +228,9 @@
   @media(max-width: 1480px) {
     margin-top: 80px;
 
+  @media only screen and (min-width: 320px) and (max-width: 768px){
+    margin-top: 40px;
+  }
     img {
       width: 500px;
     }
@@ -243,8 +261,8 @@
   }
 }
 
-@media(max-width: 992px) {
-  .md-order-two {
-    order: 2;
-  }
-}
+//@media only screen and (min-width: 320px) and (max-width: 425px) {
+//  .md-order {
+//    margin-top: 70px;
+//  }
+//}
