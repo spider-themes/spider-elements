@@ -130,7 +130,10 @@
                                                                     <ion-icon name="calendar-clear-outline" role="img"
                                                                         class="md hydrated"
                                                                         aria-label="calendar clear outline"></ion-icon>
-                                                                    <?php echo $child_video['current_date'] ?? ''; ?>
+                                                                    <?php
+                                                                    $video_date = $child_video['current_date'] ?? ''; 
+                                                                    echo human_time_diff( strtotime($video_date), current_time('timestamp') ) . __( ' ago', 'spider-elements' );
+                                                                    ?>
                                                                 </div>
                                                             </div>
                                                         </div>

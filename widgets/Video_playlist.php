@@ -233,8 +233,7 @@ class Video_playlist extends Widget_Base {
 				'label' => esc_html__( 'Author', 'spider-elements' ),
 				'type' => Controls_Manager::HIDDEN,
 				// current login user name
-				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : '',
-				
+				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''				
 			]
 		);
 		// CURRENT DATE control
@@ -243,8 +242,8 @@ class Video_playlist extends Widget_Base {
 			[
 				'label' => esc_html__( 'Current Date', 'spider-elements' ),
 				'type' => Controls_Manager::HIDDEN,
-				// DEFAULT CURRENT DATE
-				'default' => date( 'F d, Y' ),
+				// DEFAULT CURRENT DATE with time zone
+				'default' => date(get_option('date_format') . get_option('time_format'), current_time( 'timestamp', 0 ))
 				]
 		);
 
