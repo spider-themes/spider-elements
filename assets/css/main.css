@@ -352,7 +352,7 @@ button:focus {
 }
 @media (max-width: 576px) {
   .bbp-shortcode fieldset.bbp-form, .blog_info .blog_body,
-.main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
+  .main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
     padding: 30px 20px !important;
   }
 }
@@ -1182,8 +1182,6 @@ ul.list-style li:last-child {
   .se-journalism-feature-image img {
     width: 500px;
   }
-}
-@media (max-width: 1480px) {
   .se-journalism-feature-image:before {
     height: 500px;
     width: 500px;
@@ -1974,7 +1972,6 @@ ul.nav.nav-tabs {
 
 .art-video-player.art-fullscreen-web {
   height: 70% !important;
-  position: relative !important;
 }
 .art-video-player.art-fullscreen-web + .col-lg-5 {
   flex: 0 0 100%;
@@ -7817,104 +7814,81 @@ ul.ordered-list li::before {
   .banner-area .banner-left h1 {
     line-height: 1.25;
   }
-
   .hero_section_landing a.btn.white-btn {
     padding: 10px 25px;
     margin-bottom: 10px;
   }
-
   .banner_text .banner-left .title {
     width: 100%;
   }
-
   .banner-area-4 {
     padding-bottom: 80px;
     margin-bottom: 0;
   }
-
   .banner-area-4 .banner-right {
     margin-bottom: 30px;
   }
-
   .banner-area-4 .banner-left {
     margin-top: -80px;
   }
-
   .banner-area-4 .client-meta {
     margin-top: 0;
   }
-
   .testimonial-area-seven .slider-navigation {
     padding-top: 20px;
     padding-left: 0;
   }
-
   .testimonial-area-seven .testimonial-author {
     flex-wrap: wrap;
   }
-
   .features-area-seven {
     padding-bottom: 0;
   }
-
   .testimonial-area-eight .testimonial-slider-eight .testimonial-item {
     flex-direction: column;
   }
-
   .mobile-app-area-two .section-title-para {
     margin-bottom: 20px;
   }
-
   .mobile-app-area-two .app-store-link {
     font-size: 15px;
     padding: 3px 10px;
   }
-
   .app-integration-area-two .section-title-center {
     margin-bottom: 20px;
   }
-
   .testimonial-area-eight {
     padding-bottom: 140px;
   }
-
   .testimonial-area-eight .testimonial-content {
     margin: 0;
   }
-
   .testimonial-area-eight .testimonial-slider-eight .slider-navigation {
     left: 0;
     bottom: -10%;
     justify-content: left;
   }
-
   .faq-area-four .accordion-item .accordion-button {
     padding: 15px;
   }
-
   .single-post-area .tag-widget .tag-list li {
     margin-bottom: 10px;
   }
-
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
-
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
-
   .action_subscribe_form .form-group .s_btn {
     position: static;
     padding: 17px 29px;
     margin-top: 20px;
   }
-
   .cloud-pricing-wrapp .nav .nav-link {
     margin-right: 15px;
     margin-bottom: 15px;
   }
-
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }
