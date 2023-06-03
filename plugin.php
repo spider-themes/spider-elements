@@ -230,6 +230,7 @@ class Plugin {
         require_once( __DIR__ . '/widgets/Info_box.php' );
         require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
         require_once( __DIR__ . '/widgets/Call_to_action.php' );
+		require_once( __DIR__ . '/widgets/Hotspot.php' );
 
 		// Register Widgets
 		$widgets_manager->register( new widgets\Tabs() );
@@ -245,6 +246,7 @@ class Plugin {
         $widgets_manager->register( new widgets\Info_box() );
         $widgets_manager->register( new widgets\Cheat_sheet() );
         $widgets_manager->register( new widgets\Call_to_action() );
+		$widgets_manager->register( new widgets\Hotspot() );
 	}
 
 	  // Register category

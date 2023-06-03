@@ -42,6 +42,20 @@
         }
       });
     });
+
+
+    setInterval(function(){
+      var active = $('.hotspot_list li.active');
+      active.removeClass('active');
+      if(active.next('li').length == 0){
+        active.parent('.hotspot_list').find('li:first').addClass('active');
+      }else{
+        active.next('li').addClass('active');
+      }
+    }, 6000 );
+
+
+
   });
 })(jQuery);
 
