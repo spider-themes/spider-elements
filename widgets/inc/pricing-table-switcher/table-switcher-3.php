@@ -1,18 +1,18 @@
 <div class="cloud-pricing-wrapp wow fadeInRight landpagy-table-switcher" data-wow-delay="0.4s">
     <nav>
         <div class="nav nav-tabs d-flex" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="cloud-monthly-tab" data-bs-toggle="tab" data-bs-target="#cloud-monthly" type="button" role="tab" aria-controls="cloud-monthly" aria-selected="true">
+            <button class="nav-link active" id="cloud-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#cloud-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="cloud-monthly" aria-selected="true">
                 <span></span>
                 <?php echo esc_html( $settings['tab1_title'] ) ?>
             </button>
-            <button class="nav-link" id="cloud-annually-tab" data-bs-toggle="tab" data-bs-target="#cloud-annually" type="button" role="tab" aria-controls="cloud-annually" aria-selected="false">
+            <button class="nav-link" id="cloud-annually-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#cloud-annually-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="cloud-annually" aria-selected="false">
                 <span></span>
                 <?php echo esc_html( $settings['tab2_title'] ) ?>
             </button>
         </div>
     </nav>
     <div class="tab-content d-flex">
-        <div class="tab-pane fade show active" id="cloud-monthly" role="tabpanel" aria-labelledby="cloud-monthly-tab">
+        <div class="tab-pane fade show active" id="cloud-monthly-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="cloud-monthly-tab-<?php echo $this->get_id(); ?>">
             <?php
             $delay_time = 0.1;
             if ( !empty($settings['pricing_table_5'])) {
@@ -58,7 +58,7 @@
             }
             ?>
         </div>
-        <div class="tab-pane fade" id="cloud-annually" role="tabpanel" aria-labelledby="cloud-annually-tab">
+        <div class="tab-pane fade" id="cloud-annually-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="cloud-annually-tab-<?php echo $this->get_id(); ?>">
             <?php
             unset( $table );
             $delay_time = 0.1;

@@ -32,13 +32,13 @@
             <div class="col-lg-5">
                 <div class="video_list">
 
-
-                    <h3 class="title" data-animation="wow fadeInUp" data-wow-delay="0.2s">
+                    <?php $title_tag = $settings['title_tag'] ?? 'h3';?>
+                    <<?php echo $title_tag; ?> class="title" data-animation="wow fadeInUp" data-wow-delay="0.2s">
                         <?php 
-            $title_tag = $settings['title_tag'] ?? 'h3';
-            echo '<'.$title_tag.' class="title">' . esc_html( $settings['title'] ) . '</'.$title_tag.'>';
+            
+            echo  esc_html( $settings['title'] ) ;
             ?>
-                    </h3>
+                    </<?php echo $title_tag; ?>>
                     <div class="video_list_inner scroll">
                         <div class="accordion" id="accordionExample">
 
@@ -163,3 +163,17 @@
     </div>
 
 </section>
+
+<script>
+   
+   (function($){
+    $(document).ready(function(){
+    
+      
+        $('.video_player').addClass('hellovideo');
+
+    });
+   })(jQuery);
+   
+
+</script>

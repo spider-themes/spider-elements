@@ -154,6 +154,7 @@ class Plugin {
 			wp_register_script( 'tweenmax', plugins_url( 'assets/js/TweenMax.min.js', __FILE__ ), array( 'jquery' ), '2.0.0', true );
 			wp_register_script( 'wavify', plugins_url( 'assets/js/jquery.wavify.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
 			wp_register_script( 'chart', plugins_url( 'assets/js/Chart.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
+			wp_register_script( 'art', plugins_url( 'assets/js/artplayer.js', __FILE__ ), array( 'jquery' ), '3.5.26', true );
 			wp_register_script( 'slick', plugins_url( 'assets/vendors/slick/slick.min.js', __FILE__ ), array( 'jquery' ), '1.9.0', true );
 			wp_register_script( 'wow', plugins_url( 'assets/vendors/wow/wow.min.js', __FILE__ ), array( 'jquery' ), '1.9.0', true );
 			wp_register_script( 'artplayer', plugins_url( 'assets/vendors/video/artplayer.js', __FILE__ ), array( 'jquery' ), '3.5.26', true );

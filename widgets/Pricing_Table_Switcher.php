@@ -378,7 +378,7 @@ class Pricing_Table_Switcher extends Widget_Base {
         $tab_4 = new \Elementor\Repeater();
         $tab_4->add_control(
             'title', [
-                'label'       => esc_html__( 'Title', 'landpagy-core' ),
+                'label'       => esc_html__( 'Title 1', 'landpagy-core' ),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'default'     => 'The Basics',
             ]
@@ -400,7 +400,7 @@ class Pricing_Table_Switcher extends Widget_Base {
             ]
         );
 
-        $tab_4->add_control(
+        $tab_4->add_control( 
             'duration', [
                 'label'       => esc_html__( 'Duration', 'landpagy-core' ),
                 'type'        => \Elementor\Controls_Manager::TEXT,
@@ -640,7 +640,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 
         $this->add_control(
             'tab1_title2', [
-                'label'       => esc_html__( 'Tab Title', 'landpagy-core' ),
+                'label'       => esc_html__( 'Tab Title 2', 'landpagy-core' ),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'default'     => 'Monthly',
                 'separator'   => 'after'

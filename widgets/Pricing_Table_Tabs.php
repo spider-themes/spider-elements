@@ -266,7 +266,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 							$active = $i == 1 ? ' active' : '';
 							$aria_selected = $i==1 ? 'true' : 'false';
 							$tabs .= '<li class="nav-item" role="presentation">
-                                     <button class="nav-link'. esc_attr( $active ) .'" id="'.esc_attr( $catForFilter ).'-tab" data-bs-toggle="tab" data-bs-target="#'.esc_attr( $catForFilter ).'" type="button" role="tab" aria-controls="'.esc_attr( $catForFilter ).'" aria-selected="'. esc_attr( $aria_selected ) .'">
+                                     <button class="nav-link'. esc_attr( $active ) .'" id="'.esc_attr( $catForFilter ).'-tab" data-bs-toggle="tab" data-bs-target="#'.esc_attr($catForFilter.'-'.$this->get_id()).'" type="button" role="tab" aria-controls="'.esc_attr( $catForFilter ).'" aria-selected="'. esc_attr( $aria_selected ) .'">
                                         '. esc_html( $cat ) .'
                                      </button>
                                  </li>';
@@ -278,7 +278,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 				</ul>
 			</div>
 			<div class="col-4">
-                <select class="pricing-currency">
+                <select class="pricing-currency" data_id="data-<?php echo esc_attr( $this->get_id() ); ?>">
                     <option data-display="USD"><?php esc_html_e( 'USD', 'landpagy-core' ); ?></option>
                     <option data-display="EURO"><?php esc_html_e( 'EURO', 'landpagy-core' ); ?></option>
                 </select>
@@ -294,7 +294,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 					$i++;
 					$active = $i == 1 ? ' show active' : '';
 					?>
-					<div class="tab-pane fade<?php echo $active ?>" id="<?php echo esc_attr($catForFilter); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($catForFilter); ?>-tab">
+					<div class="tab-pane fade<?php echo $active ?>" id="<?php echo esc_attr($catForFilter.'-'.$this->get_id()); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($catForFilter); ?>-tab">
 						<div class="row">
 							<?php
 							foreach ( $value as $table_item ) {
@@ -316,7 +316,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 										if ( !empty($table_item['price_dollar']) || !empty($table_item['price_euro']) ) {
                                          
 											?>
-											<div class="price">
+											<div class="price" data_id="data-<?php echo esc_attr( $this->get_id() ); ?>">
                                                 <?php
                                                 if ( !empty($table_item['price_dollar']) ) { ?>
                                                     <span class="dollar"><?php echo esc_html($table_item['price_dollar']) ?></span>

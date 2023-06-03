@@ -154,7 +154,7 @@
   display: inline-flex !important;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #676099;
+  border: 1px solid #676099 !important;
 
   li {
     display: inline-block;
@@ -769,27 +769,6 @@ button {
   outline: none;
   cursor: pointer;
 }
-
-//.btn {
-//  position: relative;
-//  font-size: 1.125rem;
-//  font-weight: 500;
-//  line-height: 1.5;
-//  text-transform: capitalize;
-//  text-decoration: none;
-//  border: 2px solid #171717;
-//  border-radius: 0.375rem;
-//  padding: 0.8125rem 2rem;
-//  margin: 0 0;
-//  display: inline-block;
-//  overflow: hidden;
-//  text-align: center;
-//  cursor: pointer;
-//  -webkit-transition: 0.3s ease-out;
-//  transition: 0.3s ease-out;
-//  color: #212529;
-//  font-family: "Inter", sans-serif;
-//}
 
 // ========== cloud-features-area Style  ======
 .cloud-pricing-wrapp {

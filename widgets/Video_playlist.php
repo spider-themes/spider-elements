@@ -503,7 +503,7 @@ class Video_playlist extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .video-playlist' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .video_list_area' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'default' => [
                     'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
@@ -516,7 +516,7 @@ class Video_playlist extends Widget_Base {
                 'label' => esc_html__('Background Color', 'rogan-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .video-playlist' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .video_list_area ' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -675,10 +675,7 @@ class Video_playlist extends Widget_Base {
 				'label' => esc_html__( 'Background', 'spider-elements' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .e-tab-title' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-items-wrapper' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-items-wrapper .shadow-bottom' => 'background: linear-gradient(180deg, transparent 0%, {{VALUE}} 100%)',
-					'{{WRAPPER}} .e-tabs-items-wrapper .shadow-top' => 'background: linear-gradient(0deg, transparent 0%, {{VALUE}} 100%);',
+					'{{WRAPPER}} .video_list .video_list_inner .card' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -753,9 +750,7 @@ class Video_playlist extends Widget_Base {
 				'label' => esc_html__( 'Color', 'spider-elements' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .e-tab-title i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tab-title svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .e-tab-title svg path' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:after' => 'color: {{VALUE}};',
 				],
 			]
 		);
