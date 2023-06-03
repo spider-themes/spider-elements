@@ -1,0 +1,27 @@
+
+.hotspot_list{
+    .hotspot{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        outline: none;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        color: #e2498a;
+        text-align: center;
+        -webkit-transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+            height: 100%;
+        }
+        &.active{
+            transform: scale(3);
+        }
+    }
+}
