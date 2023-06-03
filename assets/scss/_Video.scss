@@ -26,6 +26,8 @@
 
 .video_list_area {
   background: rgba(76, 76, 241, 0.1);
+  padding-top: 125px;
+  padding-bottom: 125px;
 
   &.bg_gradient {
     background: linear-gradient(180deg, #ffffff 0%, #f0f3f7 100%);
@@ -161,7 +163,7 @@
   & h3 {
     font-size: 24px;
     color: #1d2746;
-    margin-bottom: 30px;
+    margin: 0;
   }
 
   & .mCustomScrollBox {
@@ -187,6 +189,7 @@
   .video_list_inner {
     max-height: 472px;
     padding-right: 0;
+    margin-top: 32px;
 
     .card {
       border: none;
@@ -209,7 +212,7 @@
         }
 
         button {
-          padding: 14px 30px;
+          padding: 16px 30px 5px 30px !important;
           font-size: 18px;
           color: #242729;
           font-weight: 500;

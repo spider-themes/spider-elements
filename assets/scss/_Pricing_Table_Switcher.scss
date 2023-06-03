@@ -880,6 +880,7 @@ button {
 // ========== cloud-features-area Style  ======
 .cloud-pricing-wrapp {
   .nav {
+    border: none !important;
     .nav-link {
       font-family: "Inter", sans-serif;
       font-size: 17px;
@@ -1003,21 +1004,6 @@ button {
   font-family: "poppins", sans-serif;
 }
 
-
-// .cloud-pricing-wrapp .nav {
-//   border: none;
-// }
-// .cloud-pricing-wrapp .nav .nav-link {
-//   font-family: "Inter", sans-serif;
-//   font-size: 17px;
-//   font-weight: 400;
-//   line-height: 28px;
-//   border: transparent;
-//   background-color: transparent;
-//   padding: 0;
-//   margin-right: 30px;
-//   margin-bottom: 40px;
-// }
 .cloud-pricing-wrapp .nav .nav-link span {
   width: 12px;
   height: 12px;
@@ -1042,6 +1028,10 @@ button {
 
 .cloud-pricing-wrapp .nav .nav-link.active span {
   border-color: #171717;
+}
+
+.cloud-pricing-wrapp .nav .nav-link.active {
+  background-color: transparent;
 }
 
 .cloud-pricing-wrapp .nav .nav-link.active span:before {

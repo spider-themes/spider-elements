@@ -159,12 +159,6 @@ $hover3: #c6e7f7;
 }
 
 /* Spider Elements common CSS */
-
-
-.d-flex{
-  display: flex;
-}
-
 .elementor-section .elementor-container {
   display: flex;
   margin-right: auto;
@@ -200,16 +194,6 @@ $hover3: #c6e7f7;
 .elementor-widget-wrap>.elementor-element {
   width: 100%;
 }
-
-// .row {
-//   --bs-gutter-x: 1.5rem;
-//   --bs-gutter-y: 0;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin-top: calc(-1 * var(--bs-gutter-y));
-//   margin-right: calc(-.5 * var(--bs-gutter-x));
-//   margin-left: calc(-.5 * var(--bs-gutter-x));
-// }
 
 @media (min-width: 992px) { 
 .col-lg-7 {

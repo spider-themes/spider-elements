@@ -142,10 +142,6 @@ Table of Content:
 }
 
 /* Spider Elements common CSS */
-.d-flex {
-  display: flex;
-}
-
 .elementor-section .elementor-container {
   display: flex;
   margin-right: auto;
@@ -1909,6 +1905,8 @@ ul.nav.nav-tabs {
 
 .video_list_area {
   background: rgba(76, 76, 241, 0.1);
+  padding-top: 125px;
+  padding-bottom: 125px;
 }
 .video_list_area.bg_gradient {
   background: linear-gradient(180deg, #ffffff 0%, #f0f3f7 100%);
@@ -1999,7 +1997,7 @@ ul.nav.nav-tabs {
 .video_list h3 {
   font-size: 24px;
   color: #1d2746;
-  margin-bottom: 30px;
+  margin: 0;
 }
 .video_list .mCustomScrollBox {
   padding-right: 20px;
@@ -2020,6 +2018,7 @@ ul.nav.nav-tabs {
 .video_list .video_list_inner {
   max-height: 472px;
   padding-right: 0;
+  margin-top: 32px;
 }
 .video_list .video_list_inner .card {
   border: none;
@@ -2040,7 +2039,7 @@ ul.nav.nav-tabs {
   font-family: "Roboto", sans-serif;
 }
 .video_list .video_list_inner .card .card-header button {
-  padding: 14px 30px;
+  padding: 16px 30px 5px 30px !important;
   font-size: 18px;
   color: #242729;
   font-weight: 500;
@@ -4560,7 +4559,7 @@ button.swiper-pagination-bullet {
   display: inline-flex !important;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #676099;
+  border: 1px solid #676099 !important;
 }
 .pricing-tabs-two li {
   display: inline-block;
@@ -6410,6 +6409,9 @@ button {
   margin-top: 30px;
 }
 
+.cloud-pricing-wrapp .nav {
+  border: none !important;
+}
 .cloud-pricing-wrapp .nav .nav-link {
   font-family: "Inter", sans-serif;
   font-size: 17px;
@@ -6542,6 +6544,10 @@ button {
 
 .cloud-pricing-wrapp .nav .nav-link.active span {
   border-color: #171717;
+}
+
+.cloud-pricing-wrapp .nav .nav-link.active {
+  background-color: transparent;
 }
 
 .cloud-pricing-wrapp .nav .nav-link.active span:before {

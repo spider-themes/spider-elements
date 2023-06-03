@@ -2,19 +2,19 @@
     <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
         <ul class="nav nav-tabs pricing-tabs-two" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <button class="nav-link active" id="home-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#home-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="home" aria-selected="true">
                     <?php echo esc_html( $settings['tab1_title'] ) ?>
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                <button class="nav-link" id="profile-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#profile-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="profile" aria-selected="false">
                     <?php echo esc_html( $settings['tab2_title'] ) ?>
                 </button>
             </li>
         </ul>
     </div>
     <div class="tab-content">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show active" id="home-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="home-tab-<?php echo $this->get_id(); ?>">
             <div class="row align-items-end gy-4 gy-lg-0">
                 <?php
                 $key = 1;
@@ -59,7 +59,7 @@
                 ?>
             </div>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade" id="profile-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="profile-tab-<?php echo $this->get_id(); ?>">
             <div class="row align-items-end gy-4 gy-lg-0">
                 <?php
                 unset( $table );
