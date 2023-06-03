@@ -87,7 +87,7 @@
                                             <?php
                                         }
                                         if ( !empty( $table['btn_label'] ) ) { ?>
-                                            <a <?php Se_Core_Helper()->the_button($table['btn_url']) ?> class="btn">
+                                            <a <?php se_the_button($table['btn_url']) ?> class="btn">
                                                 <?php echo esc_html($table['btn_label']) ?>
                                             </a>
                                             <?php
@@ -135,7 +135,7 @@
                                         <?php
                                     }
                                     if ( !empty( $table['btn_label'] ) ) { ?>
-                                        <a <?php Se_Core_Helper()->the_button($table['btn_url']) ?> class="btn">
+                                        <a <?php se_the_button($table['btn_url']) ?> class="btn">
                                             <?php echo esc_html($table['btn_label']) ?>
                                         </a>
                                         <?php

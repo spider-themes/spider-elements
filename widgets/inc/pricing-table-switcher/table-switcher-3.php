@@ -44,7 +44,7 @@
                             <div class="price">
                                 <p class="type"><?php echo esc_html($table['price']) ?></p>
                                 <?php if ( !empty( $table['btn_label'] ) ) : ?>
-                                    <a <?php Se_Core_Helper()->the_button($table['btn_url']) ?> class="btn-purchase">
+                                    <a <?php se_the_button($table['btn_url']) ?> class="btn-purchase">
                                         <?php echo esc_html($table['btn_label']) ?>
                                     </a>
                                 <?php endif ?>
@@ -91,7 +91,7 @@
                             <div class="price">
                                 <p class="type"><?php echo esc_html($table['price']) ?></p>
                                 <?php if ( !empty( $table['btn_label'] ) ) : ?>
-                                    <a <?php Se_Core_Helper()->the_button($table['btn_url']) ?> class="btn-purchase">
+                                    <a <?php se_the_button($table['btn_url']) ?> class="btn-purchase">
                                         <?php echo esc_html($table['btn_label']) ?>
                                     </a>
                                 <?php endif ?>

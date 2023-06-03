@@ -8,11 +8,11 @@
                         foreach ( $testimonials as $testimonial ) {
                             ?>
                             <div class="item elementor-repeater-item-<?php echo $testimonial['_id']; ?>">
-                                <?php echo !empty($testimonial['content']) ? '<h3>'.wp_kses_post($testimonial['content']).'</h3>' : ''; ?>
+                                <?php echo !empty($testimonial['content']) ? '<h3>'.se_get_the_kses_post($testimonial['content']).'</h3>' : ''; ?>
                                 <div class="name">
                                     <?php
-                                    echo !empty($testimonial['name']) ? '<h5>'.wp_kses_post($testimonial['name']).'</h5>' : '';
-                                    echo !empty($testimonial['designation']) ? '<span>'.wp_kses_post($testimonial['designation']).'</span>' : '';
+                                    echo !empty($testimonial['name']) ? '<h5>'.se_get_the_kses_post($testimonial['name']).'</h5>' : '';
+                                    echo !empty($testimonial['designation']) ? '<span>'.se_get_the_kses_post($testimonial['designation']).'</span>' : '';
                                     ?>
                                 </div>
                                 <?php if ( !empty($testimonial['signature']['id']) ) : ?>

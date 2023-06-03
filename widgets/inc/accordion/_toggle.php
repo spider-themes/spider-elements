@@ -7,12 +7,12 @@ if ( $settings['title'] ) :
     ?>
 <a class="toggle_btn <?php echo $collapse_class; ?>" href='javascript:void()' data-bs-toggle="collapse"
     data-bs-target="#toggle-<?php echo $this->get_ID(); ?>" aria-expanded="<?php echo esc_attr($is_collapsed) ?>">
-    <?php echo wp_kses_post($settings['title']) ?>
+    <?php echo se_get_the_kses_post($settings['title']) ?>
 </a>
 <?php
     if ( !empty($settings['subtitle']) ) : ?>
 <div id="toggle-<?php echo $this->get_ID(); ?>" class="accordion-collapse collapse card card-body toggle_body">
-    <?php echo wp_kses_post($settings['subtitle']) ?>
+    <?php echo se_get_the_kses_post($settings['subtitle']) ?>
 </div>
 <?php
     endif;

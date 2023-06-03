@@ -22,7 +22,7 @@ use Elementor\Plugin;
             ?>
             <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
                 <a <?php echo $this->get_render_attribute_string( $tab_title_setting_key ); ?>>
-                    <?php echo wp_kses_post($item['tab_title']); ?>
+                    <?php echo se_get_the_kses_post($item['tab_title']); ?>
                 </a>
             </li>
             <?php

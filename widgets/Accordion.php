@@ -181,11 +181,11 @@ class Accordion extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings();
         if ( $settings['type'] == 'toggle' ) {
-            include('inc/accordion/_toggle.php');
+            include('includes/accordion/_toggle.php');
         }
 
         if ( $settings['type'] == 'accordion' ) {
-            include('inc/accordion/_accordion.php');
+            include('includes/accordion/_accordion.php');
         }
     }
 }

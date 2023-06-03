@@ -12,7 +12,7 @@ add_action( 'admin_notices', function () {
         ?>
         <div class="notice notice-warning eaz-notice">
             <p>
-                <?php echo wp_kses_post( '<strong>Important notice:</strong> <br> PRO Elements plugin is obsolete. All its features were transferred into the Docy Core plugin.' ); ?> <br>
+                <?php echo se_get_the_kses_post( '<strong>Important notice:</strong> <br> PRO Elements plugin is obsolete. All its features were transferred into the Docy Core plugin.' ); ?> <br>
                 <?php esc_html_e( 'You must need to remove the PRO Elements plugin to avoid conflicts.', 'docy-core' ); ?>
             </p>
             <p>

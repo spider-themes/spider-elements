@@ -30,6 +30,8 @@ Elementor Pro tested up to: 3.5.0
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+use Spider_Elements_Assets\PageSettings\Page_Settings;
+
 defined('ABSPATH') or die( 'Hey, what are you doing here? You silly human!' ) ;
 
 // defind SPIDER_ELEMENTS_PATH
@@ -82,7 +84,15 @@ final class Spider_Elements {
 	public function __construct() {
 
 		// Init Plugin
-		add_action( 'plugins_loaded', array( $this, 'init' ) );
+		add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+
+        // Include Files
+        $this->core_includes();
+
+        // define constants
+        $this->define_constants();
+
+        $this->add_page_settings_controls();
 	}
 
 	/**
@@ -97,7 +107,7 @@ final class Spider_Elements {
 	 * @since 1.2.0
 	 * @access public
 	 */
-	public function init() {
+	public function init_plugin() {
 
 		// Check if Elementor installed and activated
 		if ( ! did_action( 'elementor/loaded' ) ) {
@@ -117,123 +127,246 @@ final class Spider_Elements {
 			return;
 		}
 
-		// Register Widget Scripts
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_core_styles' ] );
-		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'se_elementor_enqueue_scripts' ] );
+        // Register Category
+        add_action( 'elementor/elements/categories_registered', [ $this, 'se_elements_register_category' ] );
 
-		// Once we get here, We have passed all validation checks so we can safely include our plugin
-		require_once( 'plugin.php' );
-	}
-	
+        // Register widgets
+        add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 
-	/**
-	 * Register scripts & styles
-	 *
-	 * @access public
-	 */
-	public function enqueue_core_styles(){
-		wp_enqueue_style( 'se-main-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
-		wp_enqueue_style( 'se-theaterMode-style', plugins_url( 'assets/css/videojs.theaterMode.css', __FILE__ ) );
-		wp_enqueue_style( 'se-core-common-style', plugins_url( 'assets/css/common.css', __FILE__ ) );
-		wp_enqueue_style( 'bootstrap', plugins_url( 'assets/vendors/Bootstrap/bootstrap.min.css', __FILE__ ) ); 
-		//JS
-		wp_enqueue_script( 'se-core-script', plugins_url( 'assets/js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
-		wp_enqueue_script( 'bootstrap', plugins_url( 'assets/vendors/Bootstrap/bootstrap.bundle.min.js', __FILE__ ), array( 'jquery' ), '5.1.3', true );
-		// wp localize scripts
-		wp_localize_script( 'se-core-script', 'se_ajax', array(
-			'ajax_url' 	=> admin_url( 'admin-ajax.php' ),
-			'nonce' 	=> wp_create_nonce( 'se_ajax_nonce' )
-		) );
-		
-	}
-	public function se_elementor_enqueue_scripts() {
-		wp_enqueue_script( 'se-elementor', plugins_url( 'assets/js/se-elementor.js', __FILE__ ), array( 'jquery' ), false, true );
+        // Register Icon
+        add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'sp_font_icons' ] );
 	}
 
-	/**
-	 * Clone
-	 *
-	 * Disable class cloning.
-	 *
-	 * @access protected
-	 *
-	 * @return void
-	*/
-	public function __clone() {
-		// Cloning instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), '1.0.0' );
-	}
 
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have Elementor installed or activated.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-	public function admin_notice_missing_main_plugin() {
-		if ( isset( $_GET['activate'] ) ) {
-			unset( $_GET['activate'] );
-		}
+    public function core_includes() {
 
-		$message = sprintf(
-			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'spider-elements' ),
-			'<strong>' . esc_html__( 'Spider Elements', 'spider-elements' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'spider-elements' ) . '</strong>'
-		);
+        // Extra functions
+        require_once __DIR__ . '/includes/extra.php';
+        require_once __DIR__ . '/includes/se_helper.php';
+        require_once __DIR__ . '/includes/icons.php';
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
-	}
+        if ( !is_admin() ) {
+            require_once __DIR__ . '/includes/Frontend/Assets.php';
+        }
 
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have a minimum required Elementor version.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-	public function admin_notice_minimum_elementor_version() {
-		if ( isset( $_GET['activate'] ) ) {
-			unset( $_GET['activate'] );
-		}
+    }
 
-		$message = sprintf(
-			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements' ),
-			'<strong>' . esc_html__( 'Spider Elements', 'spider-elements' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'spider-elements' ) . '</strong>',
-			self::MINIMUM_ELEMENTOR_VERSION
-		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
-	}
+    public function define_constants() {
 
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have a minimum required PHP version.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-	public function admin_notice_minimum_php_version() {
-		if ( isset( $_GET['activate'] ) ) {
-			unset( $_GET['activate'] );
-		}
+        //SPF(Short form - Spider Elements)
+        define( 'SPE_VERSION', self::VERSION );
+        define( 'SPE_FILE', __FILE__ );
+        define( 'SPE_PATH', __DIR__ );
+        define( 'SPE_URL', plugins_url( '', SPE_FILE ) );
+        define( 'SPE_ASSETS', SPE_URL . '/assets' );
+        define( 'SPE_CSS', SPE_URL . '/assets/css' );
+        define( 'SPE_JS', SPE_URL . '/assets/js' );
+        define( 'SPE_IMG', SPE_URL . '/assets/images' );
+        define( 'SPE_VEND', SPE_URL . '/assets/vendors' );
 
-		$message = sprintf(
-			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements' ),
-			'<strong>' . esc_html__( 'Spider Elements', 'spider-elements' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'spider-elements' ) . '</strong>',
-			self::MINIMUM_PHP_VERSION
-		);
+    }
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
-	}
+
+    public function add_page_settings_controls() {
+        require_once( __DIR__ . '/page-settings/manager.php' );
+        new Page_Settings();
+    }
+
+
+    /***
+     * Added Custom Font Icon Integrated Elementor Icon Library
+     */
+    public function sp_font_icons( $custom_fonts ) {
+        $css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
+        $json_data = plugins_url( 'assets/vendors/elegant-icon/eleganticons.json', __FILE__ );
+
+        $custom_fonts['elegant-icon'] = [
+            'name'          => 'elegant-icon',
+            'label'         => esc_html__( 'Elegant Icons', 'docy' ),
+            'url'           => $css_data,
+            'prefix'        => '',
+            'displayPrefix' => '',
+            'labelIcon'     => 'icon_star',
+            'ver'           => '',
+            'fetchJson'     => $json_data,
+            'native'        => true,
+        ];
+
+        return $custom_fonts;
+    }
+
+
+    public static function generate_custom_font_icons() {
+        $css_source = '';
+        global $wp_filesystem;
+        require_once( ABSPATH . '/wp-admin/includes/file.php' );
+        WP_Filesystem();
+        $css_file = DOCY_PATH . '/assets/vendors/elegant-icon/style.css';
+        if ( $wp_filesystem->exists( $css_file ) ) {
+            $css_source = $wp_filesystem->get_contents( $css_file );
+        }
+        preg_match_all( "/\.(.*?):\w*?\s*?{/", $css_source, $matches, PREG_SET_ORDER, 0 );
+        $iconList = [];
+        foreach ( $matches as $match ) {
+            $icon       = str_replace( '', '', $match[1] );
+            $icons      = explode( ' ', $icon );
+            $iconList[] = current( $icons );
+        }
+        $icons        = new \stdClass();
+        $icons->icons = $iconList;
+        $icon_data    = json_encode( $icons );
+        $js_file      = DOCY_PATH . '/assets/vendors/elegant-icon/eleganticons.json';
+        global $wp_filesystem;
+        require_once( ABSPATH . '/wp-admin/includes/file.php' );
+        WP_Filesystem();
+        if ( $wp_filesystem->exists( $js_file ) ) {
+            $content = $wp_filesystem->put_contents( $js_file, $icon_data );
+        }
+    }
+
+
+    public function se_elements_register_category($elements_manager) {
+        $elements_manager->add_category(
+            'spider-elements',
+            [
+                'title' => __( 'Spider Elements', 'spider-elements' ),
+                'icon' => 'fa fa-plug',
+            ]
+        );
+    }
+
+    /**
+     * Clone
+     *
+     * Disable class cloning.
+     *
+     * @access protected
+     *
+     * @return void
+     */
+    public function __clone() {
+        // Cloning instances of the class is forbidden
+        _doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), '1.0.0' );
+    }
+
+    /**
+     * Admin notice
+     *
+     * Warning when the site doesn't have Elementor installed or activated.
+     *
+     * @since 1.0.0
+     * @access public
+     */
+    public function admin_notice_missing_main_plugin() {
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+
+        $message = sprintf(
+        /* translators: 1: Plugin name 2: Elementor */
+            esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'spider-elements' ),
+            '<strong>' . esc_html__( 'Spider Elements', 'spider-elements' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'spider-elements' ) . '</strong>'
+        );
+
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+    }
+
+    /**
+     * Admin notice
+     *
+     * Warning when the site doesn't have a minimum required Elementor version.
+     *
+     * @since 1.0.0
+     * @access public
+     */
+    public function admin_notice_minimum_elementor_version() {
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+
+        $message = sprintf(
+        /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements' ),
+            '<strong>' . esc_html__( 'Spider Elements', 'spider-elements' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'spider-elements' ) . '</strong>',
+            self::MINIMUM_ELEMENTOR_VERSION
+        );
+
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+    }
+
+    /**
+     * Admin notice
+     *
+     * Warning when the site doesn't have a minimum required PHP version.
+     *
+     * @since 1.0.0
+     * @access public
+     */
+    public function admin_notice_minimum_php_version() {
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+
+        $message = sprintf(
+        /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements' ),
+            '<strong>' . esc_html__( 'Spider Elements', 'spider-elements' ) . '</strong>',
+            '<strong>' . esc_html__( 'PHP', 'spider-elements' ) . '</strong>',
+            self::MINIMUM_PHP_VERSION
+        );
+
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+    }
+
+
+    /**
+     * Register Widgets
+     *
+     * Register new Elementor widgets.
+     *
+     * @since 1.2.0
+     * @access public
+     *
+     * @param $widgets_manager Elementor widgets manager.
+     */
+    public function register_widgets( $widgets_manager ) {
+
+        // Its is now safe to include Widgets files
+        require_once( __DIR__ . '/widgets/Tabs.php' );
+        require_once( __DIR__ . '/widgets/Video_playlist.php' );
+        require_once( __DIR__ . '/widgets/Alerts_box.php' );
+        require_once( __DIR__ . '/widgets/Accordion_article.php' );
+        require_once( __DIR__ . '/widgets/Accordion.php' );
+        require_once( __DIR__ . '/widgets/Testimonial.php' );
+        require_once( __DIR__ . '/widgets/Quote.php' );
+        require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
+        require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
+        require_once( __DIR__ . '/widgets/List_item.php' );
+        require_once( __DIR__ . '/widgets/Info_box.php' );
+        require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
+        require_once( __DIR__ . '/widgets/Call_to_action.php' );
+
+        // Register Widgets
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Tabs() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_playlist() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_box() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion_article() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Testimonial() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Quote() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Tabs() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Switcher() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\List_item() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Info_box() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Call_to_action() );
+
+    }
+
+
 }
 
 // Instantiate Spider_Elements.

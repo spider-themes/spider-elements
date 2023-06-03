@@ -285,7 +285,7 @@ class Call_to_action extends Widget_Base {
                 'label' => esc_html__( 'Background Image', 'docy-core' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => plugins_url('inc/c2a/img/support-shap.png', __FILE__)
+                    'url' => plugins_url('includes/c2a/img/support-shap.png', __FILE__)
                 ]
             ]
         );

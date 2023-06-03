@@ -283,11 +283,11 @@ class Cheat_sheet extends Widget_Base {
                                             }
 
                                             if ( !empty( $item['cs_title'] ) ) {
-                                                echo wp_kses_post(wpautop($item['cs_title']));
+                                                echo se_get_the_kses_post(wpautop($item['cs_title']));
                                             }
 
                                             if ( !empty( $item['cs_content'] ) ) {
-                                                echo '<h5>'.wp_kses_post($item['cs_content']).'</h5>';
+                                                echo '<h5>'.se_get_the_kses_post($item['cs_content']).'</h5>';
                                             }
                                             ?>
                                         </div>
