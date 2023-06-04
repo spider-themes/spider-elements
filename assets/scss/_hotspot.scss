@@ -4,11 +4,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 30px;
-        height: 30px;
+        width: 100px;
+        height: 100px;
         outline: none;
         border-radius: 50%;
         background-color: #fff;
+        border: 0.01px solid #7a7a7a;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         color: #e2498a;
         text-align: center;
@@ -21,10 +22,12 @@
             height: 100%;
         }
         &.active{
-            transform: scale(3);
+            transform: scale(2);
         }
     }
 }
+
+
 
 
 // stack image 
@@ -34,6 +37,15 @@ figure.stack_image{
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     overflow: hidden;
+    &.img-position-left{
+        margin: 0 0 0 left !important;
+    }
+    &.img-position-center{
+        margin: 0 auto !important;
+    }
+    &.img-position-right{
+        margin: 0 auto 0 0 !important;
+    }
     img{
         grid-row: 1 / span 1;
         grid-column: 1 / span 1;

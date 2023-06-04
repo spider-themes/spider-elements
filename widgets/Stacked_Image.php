@@ -2,6 +2,7 @@
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
+use Elementor\Group_Control_Image_Size;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
@@ -56,51 +57,38 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'label' => __('Stack Image', 'spider-elements'),
             ]
         );
-
-        $repeater = new \Elementor\Repeater();
-
-        $repeater->start_controls_tabs('stack_img_tabs');
-
-        $repeater->start_controls_tab(
-            'stack_tab_image',
-            [
-                'label' => __('Stack image tab', 'spider-elements')
-            ]
-        );
-
-        $repeater->add_control(
+        $this->add_control(
             'stack_image',
             [
-                'show_label' => false,
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true
-                ],
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
+                'type' => Controls_Manager::GALLERY,
+				'dynamic' => [
+					'active' => true,
+				],
             ]
         );
 
-        $repeater->end_controls_tab();
+        $this->add_group_control(
+			Group_Control_Image_Size::get_type(),
+			[
+				'name' => 'thumbnail', // Usage: `{name}_size` and `{name}_custom_dimension`, in this case `thumbnail_size` and `thumbnail_custom_dimension`.
+				'exclude' => [ 'custom' ],
+				'separator' => 'none',
+			]
+		);
 
-       
-
-        $repeater->end_controls_tabs();
-
-        $this->add_control(
-            'stack_image_list',
-            [
-                'show_label' => false,
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'stack_image' => \Elementor\Utils::get_placeholder_image_src(),
-                    ],
-                ]
-            ]
-        );
+        // $this->add_control(
+        //     'stack_image_list',
+        //     [
+        //         'show_label' => false,
+        //         'type' => \Elementor\Controls_Manager::REPEATER,
+        //         'fields' => $repeater->get_controls(),
+        //         'default' => [
+        //             [
+        //                 'stack_image' => \Elementor\Utils::get_placeholder_image_src(),
+        //             ],
+        //         ]
+        //     ]
+        // );
 
         $this->end_controls_section();
     }
@@ -218,24 +206,29 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ],
             ]
         );
+        $this->add_group_control(
+            \Elementor\Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => '_dl_pro_testimonials_box_shadow',
+                'label' => __('Box Shadow', 'droit-addons-pro'),
+                'selector' => '{{WRAPPER}} .stack_image',
+            ]
+        );
         $this->end_controls_section();
 
     }
 
-    protected function render()
-    {
-        $settings = $this->get_settings_for_display();
-        extract($settings);
-    ?>
-        <figure class="stack_image <?php echo 'image-alignment' .$stack_image_alignment ?>">
-            <?php
-                if(!empty($settings['stack_image_list'])):
-                    foreach ($settings['stack_image_list'] as $imagelist => $l):
-            ?>
-                <?php echo wp_get_attachment_image($l['stack_image']['id'] ,'full');?>
-            <?php endforeach; endif; ?>
-        </figure>
-    <?php
 
-    }
+
+    protected function render() {
+		$settings = $this->get_settings_for_display();
+        extract($settings);
+        ?>
+            <figure class="stack_image <?php echo "img-position-" .$stack_image_alignment ?>">
+                <?php foreach ( $settings['stack_image'] as $image ) {?>
+                    <?php echo '<img src="' . esc_attr( $image['url'] ) . '">'; ?>  
+                <?php } ?>
+            </figure>
+        <?php
+	}
 }
