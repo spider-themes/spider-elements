@@ -31,6 +31,36 @@ function se_el_title_tags() {
     ];
 }
 
+// Elementor Templates
+function se_elementor_templates() {
+$args = array(
+    'post_type'         => 'elementor_library',
+    'posts_per_page'    => -1,
+);
+
+$templates_query        = new WP_Query( $args );
+$elementor_templates    = array();
+
+if ( $templates_query->have_posts() ) {
+    while ( $templates_query->have_posts() ) {
+        $templates_query->the_post();
+
+        // Get template details
+        $template_id    = get_the_ID();
+        $template_title = get_the_title();
+
+        // Store template details in array
+        $elementor_templates[ $template_id ] = $template_title;
+    }
+    wp_reset_postdata();
+}
+$templates = [];
+foreach ( $elementor_templates as $template_id => $template_title ) {
+    $templates[$template_id] = $template_title;
+}
+return $templates;
+}
+
 /**
  * Day link to archive page
  **/
@@ -155,3 +185,4 @@ function spider_el_image( $settings_key = '', $alt = '', $class = '', $atts = []
 
 // Register image size
 add_image_size( 'se_270x152px', 270, 152,  true );
+
