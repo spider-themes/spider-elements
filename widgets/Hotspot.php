@@ -286,6 +286,35 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'frontend_available' => true,
             ]
         );
+        $repeater-> add_responsive_control(
+            'hotspot_magnific_width',
+            [
+                'label' => __('Magnific Width', 'spider-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['%'],
+                'desktop_default' => [
+                    'size' => 5,
+                ],
+                'tablet_default' => [
+                    'unit' => '%'
+                ],
+                'mobile_default' => [
+                    'unit' => '%'
+                ],
+                'range' => [
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => .1
+                    ]
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot.active' => 'transform: scale({{SIZE}});',
+                ],
+                'render_type' => 'ui',
+                'frontend_available' => true,
+            ]
+        );
 
         $repeater->end_controls_tab();
 
