@@ -58,7 +58,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     public function hotspot_styles_control()
     {
         $this-> hotspot_images_style();
-        // $this-> hotspot_spot_style();
     }
 
     public function hotspot_images_style()

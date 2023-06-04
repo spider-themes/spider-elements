@@ -231,6 +231,7 @@ class Plugin {
         require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
         require_once( __DIR__ . '/widgets/Call_to_action.php' );
 		require_once( __DIR__ . '/widgets/Hotspot.php' );
+		require_once( __DIR__ . '/widgets/Stacked_Image.php' );
 
 		// Register Widgets
 		$widgets_manager->register( new widgets\Tabs() );
@@ -247,6 +248,7 @@ class Plugin {
         $widgets_manager->register( new widgets\Cheat_sheet() );
         $widgets_manager->register( new widgets\Call_to_action() );
 		$widgets_manager->register( new widgets\Hotspot() );
+		$widgets_manager->register( new widgets\Stacked_Image() );
 	}
 
 	  // Register category
