@@ -78,6 +78,8 @@ class Accordion_article extends Widget_Base {
     protected function render() {
 
         $settings = $this->get_settings();
+
+
         include('includes/accordion-article/accordion-article.php');
 
     }

@@ -31,14 +31,6 @@ class Pricing_Table_Switcher extends Widget_Base {
         return [ 'spider-elements' ];
     }
 
-    public function get_style_depends() {
-        return [ 'se-main-style' ];
-    }
-    
-    public function get_script_depends() {
-        return [ 'se-core-script' ];
-    }
-
     /**
      * Name: register_controls()
      * Desc: Register controls for these widgets

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Use namespace to avoid conflict
+ */
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
@@ -8,8 +11,8 @@ use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+if (!defined('ABSPATH')) {
+	exit;
 }
 
 /**
@@ -38,146 +41,189 @@ class Accordion extends Widget_Base {
         return [ 'spider-elements' ];
     }
 
-    protected function register_controls() {
 
-        /** ============ Title Section ============ **/
-        $this->start_controls_section(
-            'style_sec',
-            [
-                'label' => esc_html__( 'Accordion', 'spider-elements' ),
-            ]
-        );
+	/**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	protected function register_controls() {
+		$this->elementor_content_control();
+		$this->elementor_style_control();
+	}
 
-        $this->add_control(
-            'type',
-            [
-                'label' => esc_html__( 'Type', 'spider-elements' ),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'toggle' => esc_html__( 'Toggle', 'spider-elements'),
-                    'accordion' => esc_html__( 'Accordion', 'spider-elements'),
-                ],
-                'default' => 'toggle',
-            ]
-        );
+	/**
+	 * Name: elementor_content_control()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_content_control() {
+		/** ============ Title Section ============ **/
+		$this->start_controls_section(
+			'style_sec', [
+				'label' => esc_html__( 'Accordion', 'spider-elements' ),
+			]
+		);
 
-        $this->add_control(
-            'collapse_state', [
-                'label' => esc_html__( 'Expanded', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'spider-elements' ),
-                'label_off' => esc_html__( 'No', 'spider-elements' ),
-                'return_value' => 'yes',
-                'default' => '',
-            ]
-        );
+		$this->add_control(
+			'type', [
+				'label' => esc_html__( 'Type', 'spider-elements' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'toggle' => esc_html__( 'Toggle', 'spider-elements'),
+					'accordion' => esc_html__( 'Accordion', 'spider-elements'),
+				],
+				'default' => 'toggle',
+			]
+		);
 
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__( 'Title Text', 'spider-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'label_block' => true,
-                'separator' => 'before'
-            ]
-        );
+		$this->add_control(
+			'collapse_state', [
+				'label' => esc_html__( 'Expanded', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'spider-elements' ),
+				'label_off' => esc_html__( 'No', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
 
-        $this->add_control(
-            'subtitle',
-            [
-                'label' => esc_html__( 'Content Text', 'spider-elements' ),
-                'type' => Controls_Manager::WYSIWYG,
-                'label_block' => true,
-            ]
-        );
+		$this->add_control(
+			'title',
+			[
+				'label' => esc_html__( 'Title Text', 'spider-elements' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'label_block' => true,
+				'separator' => 'before'
+			]
+		);
 
-        $this->end_controls_section();
+		$this->add_control(
+			'subtitle',
+			[
+				'label' => esc_html__( 'Content Text', 'spider-elements' ),
+				'type' => Controls_Manager::WYSIWYG,
+				'label_block' => true,
+			]
+		);
 
-        /**
-         * Style Tab
-         */
-        $this->start_controls_section(
-            'title_style_sec', [
-                'label' => esc_html__( 'Style Title', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE
-            ]
-        );
+		$this->end_controls_section();
+	}
 
-        $this->add_control(
-            'color_title', [
-                'label' => esc_html__( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_banner_text h2' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
 
-        $this->add_control(
-            'bg_color_title', [
-                'label' => esc_html__( 'Background Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_banner_text h2' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
+	/**
+	 * Name: elementor_style_control()
+	 * Desc: Register the Style Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_style_control() {
+		/**
+		 * Style Tab
+		 */
+		$this->start_controls_section(
+			'title_style_sec', [
+				'label' => esc_html__( 'Style Title', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE
+			]
+		);
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'typography_title',
-                'label' => esc_html__( 'Typography', 'spider-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .doc_banner_text h2',
-            ]
-        );
+		$this->add_control(
+			'color_title', [
+				'label' => esc_html__( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text h2' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->end_controls_section();
+		$this->add_control(
+			'bg_color_title', [
+				'label' => esc_html__( 'Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text h2' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        /**
-         * Content Styling
-         */
-        $this->start_controls_section(
-            'style_subtitle_sec', [
-                'label' => esc_html__( 'Style Content', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE
-            ]
-        );
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_title',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'scheme' => Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .doc_banner_text h2',
+			]
+		);
 
-        $this->add_control(
-            'color_subtitle', [
-                'label' => esc_html__( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'separator' => 'before',
-                'selectors' => [
-                    '{{WRAPPER}} .doc_banner_text p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
+		$this->end_controls_section();
 
-        $this->add_control(
-            'bg_color_subtitle', [
-                'label' => esc_html__( 'Background Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'separator' => 'before',
-                'selectors' => [
-                    '{{WRAPPER}} .doc_banner_text p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
+		/**
+		 * Content Styling
+		 */
+		$this->start_controls_section(
+			'style_subtitle_sec', [
+				'label' => esc_html__( 'Style Content', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE
+			]
+		);
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'label' => esc_html__( 'Subtitle Typography', 'spider-elements' ),
-                'name' => 'typography_subtitle',
-                'scheme' => Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .doc_banner_text p',
-            ]
-        );
+		$this->add_control(
+			'color_subtitle', [
+				'label' => esc_html__( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text p' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->end_controls_section();
-    }
+		$this->add_control(
+			'bg_color_subtitle', [
+				'label' => esc_html__( 'Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text p' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'label' => esc_html__( 'Subtitle Typography', 'spider-elements' ),
+				'name' => 'typography_subtitle',
+				'scheme' => Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .doc_banner_text p',
+			]
+		);
+
+		$this->end_controls_section();
+	}
+
+
+	/**
+	 * Name: elementor_render()
+	 * Desc: Render the widget output on the frontend.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @banca
+	 * Author: spider-themes
+	 */
     protected function render() {
         $settings = $this->get_settings();
         if ( $settings['type'] == 'toggle' ) {

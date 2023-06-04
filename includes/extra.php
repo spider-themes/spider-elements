@@ -163,25 +163,8 @@ function se_get_the_categories ( $term = 'category' ) {
  * @param $html_data
  * @return mixed
  */
-function html_return($html_data) {
+function se_html_return($html_data) {
     return $html_data;
-}
-
-
-/**
- * Get Default Image Elementor
- * @param $settins_key
- * @param string $class
- * @param string $alt
- */
-function se_el_image( $settings_key = '', $alt = '', $class = '' ) {
-    if ( !empty($settings_key['id']) ) {
-        echo wp_get_attachment_image($settings_key['id'], 'full', '', array( 'class' => $class ));
-    }
-    elseif ( !empty($settings_key['url']) && empty($settings_key['id']) ) {
-        $class = !empty($class) ? "class='$class'" : '';
-        echo "<img src='{$settings_key['url']}' $class alt='$alt'>";
-    }
 }
 
 // Arrow icon left right position
@@ -196,7 +179,7 @@ function se_arrow_left_right() {
  * @param string $class
  * @param string $alt
  */
-function spider_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
+function se_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
     if ( !empty($settings_key['id']) ) {
         echo wp_get_attachment_image( $settings_key['id'], 'full', '', array('class' => $class) );
     }
@@ -315,7 +298,7 @@ function se_return_tab_data( $getCats, $event_schedule_cats ) {
 /**
  * estimated reading time
  **/
-function get_the_reading_time() {
+function se_get_the_reading_time() {
     $content = get_post_field( 'post_content', get_the_ID() );
     $word_count = str_word_count( strip_tags( $content ) );
     $readingtime = ceil($word_count / 200);
@@ -331,7 +314,12 @@ function get_the_reading_time() {
 }
 
 
-function get_contact_form7() {
+/**
+ * Get all contact form 7
+ *
+ * @return array
+ */
+function se_get_contact_form7() {
 
     $forms = get_posts(array(
         'post_type' => 'wpcf7_contact_form',
@@ -349,4 +337,89 @@ function get_contact_form7() {
     }
 
     return $results;
+}
+
+
+/**
+ * Get all elementor page templates
+ *
+ * @param  null  $type
+ *
+ * @return array
+ */
+function se_get_el_templates($type = null)
+{
+	$options = [];
+
+	if ($type) {
+		$args = [
+			'post_type' => 'elementor_library',
+			'posts_per_page' => -1,
+		];
+		$args['tax_query'] = [
+			[
+				'taxonomy' => 'elementor_library_type',
+				'field' => 'slug',
+				'terms' => $type,
+			],
+		];
+
+		$page_templates = get_posts($args);
+
+		if (!empty($page_templates) && !is_wp_error($page_templates)) {
+			foreach ($page_templates as $post) {
+				$options[$post->ID] = $post->post_title;
+			}
+		}
+	} else {
+		$options = se_get_query_post_list('elementor_library');
+	}
+
+	return $options;
+}
+
+
+/**
+ * @param string $post_type
+ * @param int $limit
+ * @param string $search
+ * @return array
+ */
+function se_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
+	global $wpdb;
+	$where = '';
+	$data = [];
+
+	if (-1 == $limit) {
+		$limit = '';
+	} elseif (0 == $limit) {
+		$limit = "limit 0,1";
+	} else {
+		$limit = $wpdb->prepare(" limit 0,%d", esc_sql($limit));
+	}
+
+	if ('any' === $post_type) {
+		$in_search_post_types = get_post_types(['exclude_from_search' => false]);
+		if (empty($in_search_post_types)) {
+			$where .= ' AND 1=0 ';
+		} else {
+			$where .= " AND {$wpdb->posts}.post_type IN ('" . join("', '",
+					array_map('esc_sql', $in_search_post_types)) . "')";
+		}
+	} elseif (!empty($post_type)) {
+		$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_type = %s", esc_sql($post_type));
+	}
+
+	if (!empty($search)) {
+		$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s", '%' . esc_sql($search) . '%');
+	}
+
+	$query = "select post_title,ID  from $wpdb->posts where post_status = 'publish' $where $limit";
+	$results = $wpdb->get_results($query);
+	if (!empty($results)) {
+		foreach ($results as $row) {
+			$data[$row->ID] = $row->post_title;
+		}
+	}
+	return $data;
 }
