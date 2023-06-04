@@ -285,7 +285,7 @@ class Call_to_action extends Widget_Base {
                 'label' => esc_html__( 'Background Image', 'docy-core' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => plugins_url('inc/c2a/img/support-shap.png', __FILE__)
+                    'url' => plugins_url('includes/c2a/img/support-shap.png', __FILE__)
                 ]
             ]
         );
@@ -308,6 +308,8 @@ class Call_to_action extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings();
         $title_tag = !empty($settings['title_tag']) ? $settings['title_tag'] : 'h3';
+
+
         include( "inc/c2a/c2a-{$settings['style']}.php" );
     }
 }

@@ -58,7 +58,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     public function hotspot_styles_control()
     {
         $this-> hotspot_images_style();
-        // $this-> hotspot_spot_style();
     }
 
     public function hotspot_images_style()
@@ -97,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} figure.hotspots__figure' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} figure.hotspots__figure img' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -115,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} figure.hotspots__figure' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} figure.hotspots__figure img' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -186,7 +185,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'default' => 'large',
             ]
         );
-
         $this->end_controls_section();
     }
 

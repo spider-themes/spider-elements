@@ -249,7 +249,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 		$pricing_tables = $settings['pricing_tables'];
 		$cats       = array_column( $pricing_tables, 'tab_title' );
 		$getCats    = array_unique( $cats );
-		$table_data = return_tab_data( $getCats , $pricing_tables );
+		$table_data = se_return_tab_data( $getCats , $pricing_tables );
 
 		?>
 		<div class="row">
@@ -339,17 +339,17 @@ class Pricing_Table_Tabs extends Widget_Base {
 											<?php
 										}
 										if ( !empty($table_item['btn_label_1']) ) { ?>
-											<a <?php Se_Core_Helper()->the_button($table_item['btn_url_1']) ?> class="pricing-btn">
+											<a <?php se_the_button($table_item['btn_url_1']) ?> class="pricing-btn">
 												<?php echo esc_html($table_item['btn_label_1']) ?>
 											</a>
 											<?php
 										}
 										if ( !empty($table_item['contents']) ) { ?>
-											<?php echo Se_Core_Helper()->kses_post($table_item['contents']) ?>
+											<?php echo se_get_the_kses_post($table_item['contents']) ?>
 											<?php
 										}
 										if ( !empty($table_item['btn_label_2']) ) { ?>
-											<a <?php Se_Core_Helper()->the_button($table_item['btn_url_2']) ?> class="pricing-btn">
+											<a <?php se_the_button($table_item['btn_url_2']) ?> class="pricing-btn">
 												<?php echo esc_html($table_item['btn_label_2']) ?>
 											</a>
 											<?php

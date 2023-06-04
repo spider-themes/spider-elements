@@ -351,12 +351,12 @@ about journalism.'
                             <?php endif; ?>
                             <?php if ( !empty($settings['title']) ) : ?>
                                 <h2 class="journalism-title wow fadeInUp" data-wow-delay="0.3s">
-                                    <?php echo wp_kses_post(nl2br($settings['title'])) ?>
+                                    <?php echo se_get_the_kses_post(nl2br($settings['title'])) ?>
                                 </h2>
                             <?php endif; ?>
                             <?php if ( !empty($settings['quote']) ) : ?>
                                 <p class="description wow fadeInUp" data-wow-delay="0.5s">
-                                    <?php echo wp_kses_post($settings['quote']) ?>
+                                    <?php echo se_get_the_kses_post($settings['quote']) ?>
                                 </p>
                             <?php endif; ?>
 
@@ -365,7 +365,7 @@ about journalism.'
                                     <h3 class="name"><?php echo wp_kses_post($settings['name']) ?></h3>
                                 <?php endif; ?>
                                 <?php if ( !empty($settings['designation']) ) : ?>
-                                    <span class="designation"><?php echo wp_kses_post($settings['designation']) ?></span>
+                                    <span class="designation"><?php echo se_get_the_kses_post($settings['designation']) ?></span>
                                 <?php endif; ?>
                             </div>
                             <?php if ( !empty($settings['quote_icon_right']['url']) ) : ?>
@@ -394,7 +394,7 @@ about journalism.'
             <?php if ( !empty($settings['btm_text']) ) : ?>
                 <div class="light-header">
                     <h2 class="title-light wow fadeInDown" data-wow-delay="0.4s">
-                        <?php echo wp_kses_post($settings['btm_text']) ?>
+                        <?php echo se_get_the_kses_post($settings['btm_text']) ?>
                     </h2>
                 </div>
             <?php endif; ?>

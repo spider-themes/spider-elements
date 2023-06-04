@@ -219,10 +219,10 @@ class Info_box extends Widget_Base {
             <?php endif; ?>
             <div class="community-content">
                 <?php if ( !empty($settings['title']) ) : ?>
-                    <h3 class="com-title"> <?php echo wp_kses_post($settings['title']) ?> </h3>
+                    <h3 class="com-title"> <?php echo se_get_the_kses_post($settings['title']) ?> </h3>
                 <?php endif; ?>
                 <?php if ( !empty($settings['link_title']) ) : ?>
-                    <a <?php se_el_btn($settings['url']) ?> class="details-link">
+                    <a <?php se_the_button($settings['url']) ?> class="details-link">
                         <?php echo esc_html($settings['link_title']) ?> <i class="<?php se_arrow_left_right() ?>"></i>
                     </a>
                 <?php endif; ?>

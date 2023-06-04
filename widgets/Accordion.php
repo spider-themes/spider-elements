@@ -1,4 +1,7 @@
 <?php
+/**
+ * Use namespace to avoid conflict
+ */
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
@@ -13,8 +16,8 @@ use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+if (!defined('ABSPATH')) {
+	exit;
 }
 
 /**
@@ -43,15 +46,20 @@ class Accordion extends Widget_Base {
         return [ 'spider-elements' ];
     }
 
-    protected function register_controls() {
 
-        /** ============ Title Section ============ **/
-        $this->start_controls_section(
-            'style_sec',
-            [
-                'label' => esc_html__( 'Accordion', 'spider-elements' ),
-            ]
-        );
+	/**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	protected function register_controls() {
+		$this->elementor_content_control();
+		$this->elementor_style_control();
+	}
 
         $repeater = new \Elementor\Repeater();
 
@@ -197,290 +205,132 @@ class Accordion extends Widget_Base {
         );
 
 
-        $this->end_controls_section();
+		$this->add_control(
+			'subtitle',
+			[
+				'label' => esc_html__( 'Content Text', 'spider-elements' ),
+				'type' => Controls_Manager::WYSIWYG,
+				'label_block' => true,
+			]
+		);
 
-        /**
-         * Style Tab
-         */
+		$this->end_controls_section();
+	}
 
-        $this->start_controls_section(
-            'section_title_style',
-            [
-                'label' => esc_html__( 'Accordion', 'elementor' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
 
-        $this->add_control(
-            'border_width',
-            [
-                'label' => esc_html__( 'Border Width', 'elementor' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%', 'em' ],
-                'range' => [
-                    'px' => [
-                        'max' => 20,
-                    ],
-                    'em' => [
-                        'max' => 2,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion.card' => 'border-width: {{SIZE}}{{UNIT}};'
-                ],
-            ]
-        );
+	/**
+	 * Name: elementor_style_control()
+	 * Desc: Register the Style Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_style_control() {
+		/**
+		 * Style Tab
+		 */
+		$this->start_controls_section(
+			'title_style_sec', [
+				'label' => esc_html__( 'Style Title', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE
+			]
+		);
 
-        $this->add_control(
-            'border_color',
-            [
-                'label' => esc_html__( 'Border Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion.card' => 'border-color: {{VALUE}};background-color: {{VALUE}};',
-                ],
-            ]
-        );
+		$this->add_control(
+			'color_title', [
+				'label' => esc_html__( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text h2' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->end_controls_section();
+		$this->add_control(
+			'bg_color_title', [
+				'label' => esc_html__( 'Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text h2' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->start_controls_section(
-            'section_toggle_style_title',
-            [
-                'label' => esc_html__( 'Title', 'elementor' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_title',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'scheme' => Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .doc_banner_text h2',
+			]
+		);
 
-        $this->add_control(
-            'title_background',
-            [
-                'label' => esc_html__( 'Background', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button.collapsed' => 'background-color: {{VALUE}};',
-                    '{{WRAPPER}} .doc_accordion .card-header button' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
+		$this->end_controls_section();
 
-        $this->add_control(
-            'title_color',
-            [
-                'label' => esc_html__( 'Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button.collapsed, {{WRAPPER}} .elementor-accordion-title' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementor-accordion-icon svg' => 'fill: {{VALUE}};',
-                ],
-                'global' => [
-                    'default' => Global_Colors::COLOR_PRIMARY,
-                ],
-            ]
-        );
+		/**
+		 * Content Styling
+		 */
+		$this->start_controls_section(
+			'style_subtitle_sec', [
+				'label' => esc_html__( 'Style Content', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE
+			]
+		);
 
-        $this->add_control(
-            'tab_active_color',
-            [
-                'label' => esc_html__( 'Active Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button, {{WRAPPER}} .elementor-active .elementor-accordion-title' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementor-active .elementor-accordion-icon svg' => 'fill: {{VALUE}};',
-                ],
-                'global' => [
-                    'default' => Global_Colors::COLOR_ACCENT,
-                ],
-            ]
-        );
+		$this->add_control(
+			'color_subtitle', [
+				'label' => esc_html__( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text p' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'selector' => '{{WRAPPER}} .doc_accordion .card-header button.collapsed',
-                'selector' => '{{WRAPPER}} .doc_accordion .card-header button',
-                'global' => [
-                    'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
-                ],
-            ]
-        );
+		$this->add_control(
+			'bg_color_subtitle', [
+				'label' => esc_html__( 'Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .doc_banner_text p' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->add_group_control(
-            Group_Control_Text_Stroke::get_type(),
-            [
-                'name' => 'text_stroke',
-                'selector' => '{{WRAPPER}} .doc_accordion .card-header button.collapsed',
-                'selector' => '{{WRAPPER}} .doc_accordion .card-header button',
-            ]
-        );
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'label' => esc_html__( 'Subtitle Typography', 'spider-elements' ),
+				'name' => 'typography_subtitle',
+				'scheme' => Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .doc_banner_text p',
+			]
+		);
 
-        $this->add_group_control(
-            Group_Control_Text_Shadow::get_type(),
-            [
-                'name' => 'title_shadow',
-                'selector' => '{{WRAPPER}} .doc_accordion .card-header button.collapsed',
-                'selector' => '{{WRAPPER}} .doc_accordion .card-header button',
-            ]
-        );
+		$this->end_controls_section();
+	}
 
-        $this->add_responsive_control(
-            'title_padding',
-            [
-                'label' => esc_html__( 'Padding', 'elementor' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button.collapsed' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .doc_accordion .card-header button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
 
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_toggle_style_icon',
-            [
-                'label' => esc_html__( 'Icon', 'elementor' ),
-                'tab' => Controls_Manager::TAB_STYLE
-            ]
-        );
-
-        $this->add_control(
-            'icon_align',
-            [
-                'label' => esc_html__( 'Alignment', 'elementor' ),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'left' => [
-                        'title' => esc_html__( 'Start', 'elementor' ),
-                        'icon' => 'eicon-h-align-left'
-                    ],
-                    'right' => [
-                        'title' => esc_html__( 'End', 'elementor' ),
-                        'icon' => 'eicon-h-align-right'
-                    ],
-                ],
-                'default' => is_rtl() ? 'left' : 'right',
-                'toggle' => false,
-            ]
-        );
-
-        $this->add_control(
-            'icon_color',
-            [
-                'label' => esc_html__( 'Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button.collapsed .expanded-icon' => 'color: {{VALUE}};',
-
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'icon_active_color', [
-                'label' => esc_html__( 'Active Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon, .doc_accordion .card-header button .expanded-icon' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'icon_space',
-            [
-                'label' => esc_html__( 'Spacing', 'elementor' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .doc_accordion .card-header button .expanded-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .doc_accordion .card-header button.icon-align-left .expanded-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .doc_accordion .card-header button.icon-align-left .collapsed-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_toggle_style_content',
-            [
-                'label' => esc_html__( 'Content', 'elementor' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'content_background_color',
-            [
-                'label' => esc_html__( 'Background', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-widget-container .toggle_body' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'content_color',
-            [
-                'label' => esc_html__( 'Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-widget-container .toggle_body' => 'color: {{VALUE}};',
-                ],
-                'global' => [
-                    'default' => Global_Colors::COLOR_TEXT,
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'content_typography',
-                'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body',
-                'global' => [
-                    'default' => Global_Typography::TYPOGRAPHY_TEXT,
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Text_Shadow::get_type(),
-            [
-                'name' => 'content_shadow',
-                'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body',
-            ]
-        );
-
-        $this->add_responsive_control(
-            'content_padding',
-            [
-                'label' => esc_html__( 'Padding', 'elementor' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-widget-container .toggle_body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-    }
-
+	/**
+	 * Name: elementor_render()
+	 * Desc: Render the widget output on the frontend.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @banca
+	 * Author: spider-themes
+	 */
     protected function render() {
         $settings = $this->get_settings();
-        include('inc/accordion/_accordion.php');
+        if ( $settings['type'] == 'toggle' ) {
+            include('includes/accordion/_toggle.php');
+        }
+
+        if ( $settings['type'] == 'accordion' ) {
+            include('includes/accordion/_accordion.php');
+        }
     }
 }
