@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Hotspot Widgets
+ * Class Stack image Widgets
  */
 
  class Stacked_Image extends Widget_Base {
