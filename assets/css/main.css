@@ -237,7 +237,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
 }
 
 a {
-  color: rgb(76, 76, 241);
+  color: #4c4cf1;
   transition: all 0.3s;
 }
 a:not(.elementor-button-link):hover {
@@ -348,7 +348,7 @@ button:focus {
 }
 @media (max-width: 576px) {
   .bbp-shortcode fieldset.bbp-form, .blog_info .blog_body,
-  .main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
+.main-post, .all-answers, .forum-single-content .bbp-reply-form, .search-main, #comments, .blog_comment_box {
     padding: 30px 20px !important;
   }
 }
@@ -652,14 +652,14 @@ ul.list-style li:last-child {
 }
 .toggle_btn.collapsed:before {
   transform: rotate(180deg);
-  color: rgb(36, 39, 41);
+  color: #242729;
 }
 .toggle_btn.collapsed:before .toggle_btn {
   display: block;
   font-size: 16px;
   font-weight: 500;
-  color: rgb(36, 39, 41);
-  background: rgb(249, 249, 249);
+  color: #242729;
+  background: #f9f9f9;
   text-align: left;
   border-radius: 4px;
   padding: 12px 30px;
@@ -679,18 +679,18 @@ ul.list-style li:last-child {
   right: 30px;
   transform: rotate(180deg);
   transition: all 0.2s linear;
-  color: rgb(76, 76, 241);
+  color: #4c4cf1;
 }
 .toggle_btn.collapsed:before .toggle_btn.collapsed:before {
   transform: rotate(0deg);
-  color: rgb(36, 39, 41);
+  color: #242729;
 }
 .toggle_btn.collapsed .doc_accordion {
   border: 0;
   margin-bottom: 1rem;
 }
 .toggle_btn.collapsed .doc_accordion .toggle_body {
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid #ebebeb;
   padding: 18px 30px 24px;
   border-radius: 0 0 4px 4px;
   line-height: 26px;
@@ -760,7 +760,7 @@ ul.list-style li:last-child {
   font-weight: 400;
 }
 .toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item {
-  border: 1px solid rgb(230, 237, 240);
+  border: 1px solid #e6edf0;
   padding: 20px;
   margin: 12px 0;
   min-height: 230px;
@@ -780,7 +780,7 @@ ul.list-style li:last-child {
   display: inline-block;
   margin-right: 5px;
   font-size: 14px !important;
-  color: rgb(132, 141, 149);
+  color: #848d95;
   font-weight: 400;
 }
 .toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item {
@@ -804,7 +804,7 @@ ul.list-style li:last-child {
   display: inline-block;
   margin-right: 5px;
   font-size: 14px !important;
-  color: rgb(132, 141, 149);
+  color: #848d95;
   font-weight: 400;
 }
 .toggle_btn.collapsed .doc_accordion .accordion-article-wrap .accordion-article-item h4 {
@@ -828,7 +828,7 @@ ul.list-style li:last-child {
 }
 
 .multi-collapse .toggle_body {
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid #ebebeb;
   padding: 18px 30px 24px;
   border-radius: 0 0 4px 4px;
   line-height: 26px;
@@ -909,19 +909,19 @@ ul.list-style li:last-child {
   font-weight: 400;
 }
 .accordion-article-wrap .accordion-article-item {
-  border: 1px solid rgb(230, 237, 240);
+  border: 1px solid #e6edf0;
   padding: 20px;
   margin: 12px 0;
   min-height: 230px;
 }
 .accordion-article-wrap .accordion-article-item h4 {
-  color: rgb(36, 39, 41);
+  color: #242729;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
 }
 .accordion-article-wrap .accordion-article-item h4:hover {
-  color: rgb(76, 76, 241);
+  color: #4c4cf1;
 }
 .accordion-article-wrap .accordion-article-item .post-meta {
   margin-bottom: 0;
@@ -930,15 +930,15 @@ ul.list-style li:last-child {
   display: inline-block;
   margin-right: 5px;
   font-size: 14px !important;
-  color: rgb(132, 141, 149);
+  color: #848d95;
 }
 
 .elementor-widget-container .toggle_body {
-  border: 1px solid rgb(235, 235, 235) !important;
+  border: 1px solid #ebebeb !important;
   padding: 18px 30px 24px 30px;
   border-radius: 0 0 4px 4px;
   line-height: 26px;
-  background: rgb(255, 255, 255);
+  background: white;
 }
 
 /*========== cheatsheet_info css =========*/
@@ -1141,7 +1141,7 @@ ul.list-style li:last-child {
   position: absolute;
   height: 600px;
   width: 600px;
-  background-image: linear-gradient(45deg, rgb(236, 249, 252) 0%, rgb(254, 239, 236) 100%);
+  background-image: linear-gradient(45deg, #ecf9fc 0%, #feefec 100%);
   border-radius: 50%;
   z-index: 1;
   left: -20px;
@@ -1178,6 +1178,8 @@ ul.list-style li:last-child {
   .se-journalism-feature-image img {
     width: 500px;
   }
+}
+@media (max-width: 1480px) {
   .se-journalism-feature-image:before {
     height: 500px;
     width: 500px;
@@ -1858,7 +1860,7 @@ ul.nav.nav-tabs {
   height: 150px;
   right: 60px;
   top: 60px;
-  background-image: linear-gradient(50deg, rgb(87, 54, 254) 0%, rgb(253, 64, 110) 100%);
+  background-image: linear-gradient(50deg, #5736fe 0%, #fd406e 100%);
   opacity: 0.1;
 }
 .doc_img_slider .item .round.two {
@@ -1867,7 +1869,7 @@ ul.nav.nav-tabs {
   right: 0;
   top: 50%;
   margin-top: -140px;
-  background-image: linear-gradient(50deg, rgb(87, 54, 254) 0%, rgb(253, 64, 110) 100%);
+  background-image: linear-gradient(50deg, #5736fe 0%, #fd406e 100%);
 }
 .doc_img_slider .item.slick-active .one {
   animation: zoomIn 0.8s linear both 0.4s;
@@ -2111,7 +2113,7 @@ ul.nav.nav-tabs {
   transition: all 300ms linear 0s;
 }
 .video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:after {
-  content: "\f215";
+  content: "";
   font: normal normal normal 20px/1 ionicons;
   left: 0;
   top: 50%;
@@ -4096,7 +4098,7 @@ button.swiper-pagination-bullet {
 
 .explanation {
   position: relative;
-  background: linear-gradient(90deg, var(--bs-white), rgba(117, 227, 251, 0.6196078431));
+  background: linear-gradient(90deg, var(--bs-white), #75e3fb9e);
   border: 10px solid var(--bs-white);
   padding: 1rem 2rem;
   border-radius: 16px;
@@ -5680,14 +5682,14 @@ button {
 }
 
 .pricing-item-2 {
-  box-shadow: 0 10px 25px 0 rgba(191, 191, 191, 0.2509803922);
+  box-shadow: 0 10px 25px 0 #bfbfbf40;
   background-color: #fff;
   border-radius: 20px;
   padding: 40px;
   transition: all 0.3s linear;
 }
 .pricing-item-2.active, .pricing-item-2:hover {
-  box-shadow: 0 20px 50px 0 rgba(191, 191, 191, 0.5019607843);
+  box-shadow: 0 20px 50px 0 #bfbfbf80;
   transform: translateY(-30px);
 }
 .pricing-item-2 h4 {
@@ -5740,14 +5742,14 @@ button {
 }
 
 .pricing-item-3 {
-  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.0509803922);
+  box-shadow: 0 20px 50px 0 #0000000d;
   border-radius: 20px;
   overflow: hidden;
   background-color: #fff;
   transition: all 0.3s ease-out;
 }
 .pricing-item-3:hover {
-  box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1019607843);
+  box-shadow: 0 50px 80px 0 #352a431a;
 }
 .pricing-item-3 .price-body {
   display: flex;
@@ -5768,7 +5770,7 @@ button {
   line-height: 18px;
   text-align: center;
   padding: 36px 0;
-  box-shadow: 0 1px 1px 0 rgba(71, 61, 141, 0.1019607843);
+  box-shadow: 0 1px 1px 0 #473d8d1a;
   margin-bottom: 0;
   margin-top: 0;
   text-transform: capitalize;
@@ -7646,7 +7648,7 @@ button {
 
 .steps-panel {
   box-shadow: 0 3px 6px 0 rgba(4, 73, 89, 0.02);
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid #ebebeb;
   margin-top: 25px;
   margin-bottom: 25px;
   border-radius: 10px;
@@ -7702,7 +7704,7 @@ ul.ordered-list li::before {
   border-radius: 50%;
   font-weight: 500;
   font-size: 12px;
-  background-color: rgb(76, 76, 241);
+  background-color: #4c4cf1;
   text-align: center;
   line-height: 23px;
   top: -4px;
@@ -7740,7 +7742,7 @@ ul.ordered-list li::before {
   font-weight: 600;
   margin-bottom: 30px;
   background: transparent;
-  color: rgb(29, 39, 70);
+  color: #1d2746;
   text-decoration: none;
   margin-left: 8px;
   border: none;
@@ -7777,7 +7779,7 @@ ul.ordered-list li::before {
 }
 .cheatsheet_item h5 {
   margin-bottom: 0;
-  color: rgb(76, 76, 241);
+  color: #4c4cf1;
 }
 
 .light-header {
@@ -7820,81 +7822,104 @@ ul.ordered-list li::before {
   .banner-area .banner-left h1 {
     line-height: 1.25;
   }
+
   .hero_section_landing a.btn.white-btn {
     padding: 10px 25px;
     margin-bottom: 10px;
   }
+
   .banner_text .banner-left .title {
     width: 100%;
   }
+
   .banner-area-4 {
     padding-bottom: 80px;
     margin-bottom: 0;
   }
+
   .banner-area-4 .banner-right {
     margin-bottom: 30px;
   }
+
   .banner-area-4 .banner-left {
     margin-top: -80px;
   }
+
   .banner-area-4 .client-meta {
     margin-top: 0;
   }
+
   .testimonial-area-seven .slider-navigation {
     padding-top: 20px;
     padding-left: 0;
   }
+
   .testimonial-area-seven .testimonial-author {
     flex-wrap: wrap;
   }
+
   .features-area-seven {
     padding-bottom: 0;
   }
+
   .testimonial-area-eight .testimonial-slider-eight .testimonial-item {
     flex-direction: column;
   }
+
   .mobile-app-area-two .section-title-para {
     margin-bottom: 20px;
   }
+
   .mobile-app-area-two .app-store-link {
     font-size: 15px;
     padding: 3px 10px;
   }
+
   .app-integration-area-two .section-title-center {
     margin-bottom: 20px;
   }
+
   .testimonial-area-eight {
     padding-bottom: 140px;
   }
+
   .testimonial-area-eight .testimonial-content {
     margin: 0;
   }
+
   .testimonial-area-eight .testimonial-slider-eight .slider-navigation {
     left: 0;
     bottom: -10%;
     justify-content: left;
   }
+
   .faq-area-four .accordion-item .accordion-button {
     padding: 15px;
   }
+
   .single-post-area .tag-widget .tag-list li {
     margin-bottom: 10px;
   }
+
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
+
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
+
   .action_subscribe_form .form-group .s_btn {
     position: static;
     padding: 17px 29px;
     margin-top: 20px;
   }
+
   .cloud-pricing-wrapp .nav .nav-link {
     margin-right: 15px;
     margin-bottom: 15px;
   }
+
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }
@@ -7945,7 +7970,7 @@ ul.ordered-list li::before {
   font-size: 16px;
 }
 .support_area .left .icon_btn2 {
-  background: rgb(76, 76, 241);
+  background: #4c4cf1;
   color: #fff;
   border-radius: 5px;
   line-height: 60px;
@@ -8002,7 +8027,7 @@ ul.ordered-list li::before {
   position: absolute;
   height: 600px;
   width: 600px;
-  background-image: linear-gradient(45deg, rgb(236, 249, 252) 0%, rgb(254, 239, 236) 100%);
+  background-image: linear-gradient(45deg, #ecf9fc 0%, #feefec 100%);
   border-radius: 50%;
   z-index: 1;
   left: 20px;
