@@ -2,7 +2,6 @@
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
@@ -66,29 +65,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				],
             ]
         );
-
-        $this->add_group_control(
-			Group_Control_Image_Size::get_type(),
-			[
-				'name' => 'thumbnail', // Usage: `{name}_size` and `{name}_custom_dimension`, in this case `thumbnail_size` and `thumbnail_custom_dimension`.
-				'exclude' => [ 'custom' ],
-				'separator' => 'none',
-			]
-		);
-
-        // $this->add_control(
-        //     'stack_image_list',
-        //     [
-        //         'show_label' => false,
-        //         'type' => \Elementor\Controls_Manager::REPEATER,
-        //         'fields' => $repeater->get_controls(),
-        //         'default' => [
-        //             [
-        //                 'stack_image' => \Elementor\Utils::get_placeholder_image_src(),
-        //             ],
-        //         ]
-        //     ]
-        // );
 
         $this->end_controls_section();
     }
