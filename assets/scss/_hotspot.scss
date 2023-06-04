@@ -25,3 +25,41 @@
         }
     }
 }
+
+
+// stack image 
+figure.stack_image{   
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    img{
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+        animation-name: stateimage;
+        animation-duration: 8s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        &:first-child{
+            animation-delay: -17000ms;
+        }
+        &:nth-child(2){
+            animation-delay: -15000ms;
+        }
+        &:nth-child(3){
+            animation-delay: -13000ms;
+        }
+        &:nth-child(4){
+            animation-delay: -11000ms;
+        }
+
+    }
+}
+
+@keyframes stateimage
+{
+    0% { clip-path: polygon(-50% 0%, 0% 0%, -50% 101%, -100% 101%) }
+    100% { clip-path: polygon(150% 0%, 200% 0%, 150% 101%, 100% 101%) }
+}
