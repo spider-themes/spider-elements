@@ -58,7 +58,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     public function hotspot_styles_control()
     {
         $this-> hotspot_images_style();
-        // $this-> hotspot_spot_style();
     }
 
     public function hotspot_images_style()
@@ -97,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} figure.hotspots__figure' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} figure.hotspots__figure img' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -115,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} figure.hotspots__figure' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} figure.hotspots__figure img' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -186,7 +185,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'default' => 'large',
             ]
         );
-
         $this->end_controls_section();
     }
 
@@ -281,6 +279,35 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ],
                 'selectors' => [
                     '{{WRAPPER}} {{CURRENT_ITEM}}' => 'top: {{SIZE}}{{UNIT}};',
+                ],
+                'render_type' => 'ui',
+                'frontend_available' => true,
+            ]
+        );
+        $repeater-> add_responsive_control(
+            'hotspot_magnific_width',
+            [
+                'label' => __('Magnific Width', 'spider-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['%'],
+                'desktop_default' => [
+                    'size' => 5,
+                ],
+                'tablet_default' => [
+                    'unit' => '%'
+                ],
+                'mobile_default' => [
+                    'unit' => '%'
+                ],
+                'range' => [
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => .1
+                    ]
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot.active' => 'transform: scale({{SIZE}});',
                 ],
                 'render_type' => 'ui',
                 'frontend_available' => true,
