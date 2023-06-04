@@ -195,23 +195,20 @@ class Tabs extends Widget_Base {
         //============================ Tab Style ============================//
 		$this->start_controls_section(
 			'style_tabs_sec', [
-				'label' => __( 'Tabs', 'spider-elements' ),
+				'label' => __( 'Tab Title', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(), [
-				'name' => 'tab_typo',
-				'label' => __( 'Typography', 'spider-elements' ),
-				'scheme' => \Elementor\Core\Schemes\Typography::TYPOGRAPHY_1,
+				'name' => 'tab_item_typo',
 				'selector' => '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link, {{WRAPPER}} .header_tab_items .nav.nav-tabs li a',
 			]
 		);
 
 		$this->add_control(
-			'icon-size',
-			[
+			'icon-size', [
 				'label' => esc_html__( 'Icon Size', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],

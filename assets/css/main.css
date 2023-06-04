@@ -4134,6 +4134,40 @@ button.swiper-pagination-bullet {
   padding-left: 20px;
   position: relative;
 }
+.note-with-icon .nic-content-wrap .info-tab .icon-wrapper::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  transform: rotateX(60deg);
+}
+.note-with-icon .nic-content-wrap .info-tab .icon-wrapper i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: block;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 20px;
+  color: white;
+}
+.note-with-icon .nic-content-wrap .info-tab .icon-wrapper::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  transform: rotateX(60deg);
+  background-color: #3b3f4c;
+  width: 20px;
+  height: 20px;
+  border: 12px solid transparent;
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+  bottom: -18px;
+  box-shadow: inset 12px 0 13px rgba(0, 0, 0, 0.5);
+}
 
 .note-with-icon .nic-content-wrap {
   margin: 0 0 0 4px;
