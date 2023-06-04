@@ -348,6 +348,8 @@ final class Spider_Elements {
         require_once( __DIR__ . '/widgets/Info_box.php' );
         require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
         require_once( __DIR__ . '/widgets/Call_to_action.php' );
+        require_once( __DIR__ . '/widgets/Hotspot.php' );
+		require_once( __DIR__ . '/widgets/Stacked_Image.php' );
 
         // Register Widgets
         $widgets_manager->register( new Spider_Elements_Assets\Widgets\Tabs() );
@@ -363,6 +365,8 @@ final class Spider_Elements {
         $widgets_manager->register( new Spider_Elements_Assets\Widgets\Info_box() );
         $widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
         $widgets_manager->register( new Spider_Elements_Assets\Widgets\Call_to_action() );
+        $widgets_manager->register( new Spider_Elements_Assets\Widgets\Hotspot() );
+		$widgets_manager->register( new Spider_Elements_Assets\Widgets\Stacked_Image() );
 
     }
 

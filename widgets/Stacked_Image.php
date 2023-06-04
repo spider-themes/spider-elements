@@ -114,6 +114,29 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
+        $this->add_control(
+			'stack_image_alignment',
+			[
+				'label' => __( 'Image Alignment', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'spider-elements' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'top' => [
+						'title' => __( 'Center', 'spider-elements' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'spider-elements' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => true,
+			]
+		);
 
         $this->add_responsive_control(
             'stack_image_width',
@@ -204,7 +227,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         $settings = $this->get_settings_for_display();
         extract($settings);
     ?>
-        <figure class="stack_image">
+        <figure class="stack_image <?php echo 'image-alignment' .$stack_image_alignment ?>">
             <?php
                 if(!empty($settings['stack_image_list'])):
                     foreach ($settings['stack_image_list'] as $imagelist => $l):
