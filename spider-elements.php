@@ -251,8 +251,6 @@ final class Spider_Elements {
 
 		// Extra functions
 		require_once __DIR__ . '/includes/extra.php';
-		require_once __DIR__ . '/includes/se_helper.php';
-		require_once __DIR__ . '/includes/icons.php';
 
 		//Shortcodes
 		require_once __DIR__ . '/shortcodes/direction.php';

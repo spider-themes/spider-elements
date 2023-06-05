@@ -102,7 +102,7 @@ class Assets {
         /**
          * Enqueue Style's
          */
-        //wp_enqueue_style( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.css' );
+        wp_enqueue_style( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.css' );
 
         wp_enqueue_style( 'elegant-icon', SE_VEND . '/elegant-icon/style.css' );
         wp_enqueue_style( 'spider-elements-common', SE_CSS . '/common.css' );
@@ -112,8 +112,9 @@ class Assets {
         /**
          * Enqueue Script's
          */
-        //wp_enqueue_script( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.js', array( 'jquery' ), '5.1.3', true );
-        wp_enqueue_script( 'spider-elements-script', SE_JS . '/scripts.js', array( 'jquery' ), false, true );
+        wp_enqueue_script( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.js', array( 'jquery' ), '5.1.3', true );
+
+		wp_enqueue_script( 'spider-elements-script', SE_JS . '/scripts.js', array( 'jquery' ), false, true );
 
     }
 
