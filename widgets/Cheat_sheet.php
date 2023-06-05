@@ -80,6 +80,7 @@ class Cheat_sheet extends Widget_Base {
 				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
+                'default' => esc_html__( 'Auxiliary', 'spider-elements' ),
 			]
 		);
 
@@ -96,15 +97,15 @@ class Cheat_sheet extends Widget_Base {
 			'cs_title', [
 				'label' => __( 'Top Text', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => 'be',
-				'label_block' => true,
+				'default' => esc_html__( 'be', 'spider-elements' ),
 			]
 		);
 
 		$repeater->add_control(
 			'cs_content', [
 				'label' => __( 'Content', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::WYSIWYG,
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Sein', 'spider-elements' ),
 			]
 		);
 
@@ -114,6 +115,28 @@ class Cheat_sheet extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'title_field' => '{{{ cs_title }}}',
+				'default' => [
+					[
+						'cs_number' => esc_html__( '#1', 'spider-elements' ),
+						'cs_title' => esc_html__( 'be', 'spider-elements' ),
+						'cs_content' => esc_html__( 'sein', 'spider-elements' ),
+					],
+					[
+						'cs_number' => esc_html__( '#2', 'spider-elements' ),
+						'cs_title' => esc_html__( 'have', 'spider-elements' ),
+						'cs_content' => esc_html__( 'haben', 'spider-elements' ),
+					],
+					[
+						'cs_number' => esc_html__( '#3', 'spider-elements' ),
+						'cs_title' => esc_html__( 'become', 'spider-elements' ),
+						'cs_content' => esc_html__( 'werden', 'spider-elements' ),
+					],
+					[
+						'cs_number' => esc_html__( '#4', 'spider-elements' ),
+						'cs_title' => esc_html__( 'can', 'spider-elements' ),
+						'cs_content' => esc_html__( 'konnen', 'spider-elements' ),
+					],
+				],
 				'prevent_empty' => false
 			]
 		);
@@ -276,7 +299,7 @@ class Cheat_sheet extends Widget_Base {
 
 		$this->add_responsive_control(
 			'item_box_margin', [
-				'label' => esc_html__( 'Margin', 'textdomain' ),
+				'label' => esc_html__( 'Margin', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -287,7 +310,7 @@ class Cheat_sheet extends Widget_Base {
 
 		$this->add_responsive_control(
 			'item_box_padding', [
-				'label' => esc_html__( 'Padding', 'textdomain' ),
+				'label' => esc_html__( 'Padding', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -326,7 +349,6 @@ class Cheat_sheet extends Widget_Base {
         extract( $settings); // extract all the settings from the array to variables
         $id = $this->get_ID();
         $cheat_sheet_title = !empty( $settings['cheat_sheet_title'] ) ? $settings['cheat_sheet_title'] : '';
-        $cheat_sheet_contents = is_array( $settings['cheat_sheet_contents'] ) ? $settings['cheat_sheet_contents'] : '';
         $is_collapsed = $settings['collapse_state'] == 'yes' ? 'true' : 'false';
         $is_collapsed_class = $settings['collapse_state'] == 'yes' ? '' : 'collapsed';
         $is_show = $settings['collapse_state'] == 'yes' ? 'show' : '';
@@ -349,7 +371,7 @@ class Cheat_sheet extends Widget_Base {
                     <div id="collapseAtlas-<?php echo esc_attr($id) ?>" class="collapse <?php echo esc_attr($is_show) ?>" aria-labelledby="headingAtlas-<?php echo esc_attr($id) ?>">
                         <div class="row">
                             <?php
-                            if ( $cheat_sheet_contents ) {
+                            if ( is_array($cheat_sheet_contents) ) {
                                 foreach ( $cheat_sheet_contents as $item ) {
                                     ?>
                                     <div class="col-lg-3">
@@ -358,13 +380,11 @@ class Cheat_sheet extends Widget_Base {
                                             if ( !empty( $item['cs_number'] ) ) {
                                                 echo '<div class="cheatsheet_num">'.esc_html($item['cs_number']).'</div>';
                                             }
-
                                             if ( !empty( $item['cs_title'] ) ) {
-                                                echo se_get_the_kses_post(wpautop($item['cs_title']));
+                                                echo '<p>'.esc_html($item['cs_title']).'</p>';
                                             }
-
                                             if ( !empty( $item['cs_content'] ) ) {
-                                                echo '<h5>'.se_get_the_kses_post($item['cs_content']).'</h5>';
+                                                echo '<h5>'.esc_html($item['cs_content']).'</h5>';
                                             }
                                             ?>
                                         </div>

@@ -439,7 +439,6 @@ final class Spider_Elements {
 		require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
 		require_once( __DIR__ . '/widgets/List_item.php' );
 		require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
-		require_once( __DIR__ . '/widgets/Call_to_action.php' );
 		require_once( __DIR__ . '/widgets/Hotspot.php' );
 		require_once( __DIR__ . '/widgets/Stacked_Image.php' );
 
@@ -467,7 +466,6 @@ final class Spider_Elements {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Switcher() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\List_item() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Call_to_action() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Hotspot() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Stacked_Image() );
 	}

@@ -7723,6 +7723,78 @@ ul.ordered-list li::before {
   display: none;
 }
 
+.hotspot_list .hotspot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  outline: none;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 0.01px solid #7a7a7a;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  color: #e2498a;
+  text-align: center;
+  -webkit-transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.hotspot_list .hotspot img {
+  height: 100%;
+}
+.hotspot_list .hotspot.active {
+  transform: scale(2);
+}
+
+figure.stack_image {
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+figure.stack_image.img-position-left {
+  margin: 0 0 0 left !important;
+}
+figure.stack_image.img-position-center {
+  margin: 0 auto !important;
+}
+figure.stack_image.img-position-right {
+  margin: 0 auto 0 0 !important;
+}
+figure.stack_image img {
+  grid-row: 1/span 1;
+  grid-column: 1/span 1;
+  animation-name: stateimage;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+figure.stack_image img:first-child {
+  animation-delay: -17000ms;
+}
+figure.stack_image img:nth-child(2) {
+  animation-delay: -15000ms;
+}
+figure.stack_image img:nth-child(3) {
+  animation-delay: -13000ms;
+}
+figure.stack_image img:nth-child(4) {
+  animation-delay: -11000ms;
+}
+
+@keyframes stateimage {
+  0% {
+    clip-path: polygon(-50% 0%, 0% 0%, -50% 101%, -100% 101%);
+  }
+  100% {
+    clip-path: polygon(150% 0%, 200% 0%, 150% 101%, 100% 101%);
+  }
+}
 @media (max-width: 480px) {
   .banner-area .banner-left h1 {
     line-height: 1.25;
@@ -7819,217 +7891,6 @@ ul.ordered-list li::before {
 @media (max-width: 450px) {
   .video_list_area .art-video-player {
     height: 277px !important;
-  }
-}
-.support_area {
-  background: #002454;
-  overflow: hidden;
-  z-index: 2;
-}
-.support_area .container {
-  position: relative;
-  padding: 50px 12px;
-}
-.support_area .shap {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
-.support_area .left {
-  position: relative;
-  align-self: center;
-  z-index: 3;
-}
-.support_area .left .title {
-  color: #fff;
-  font-size: 40px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-.support_area .left p {
-  color: #fff;
-  font-size: 16px;
-}
-.support_area .left .icon_btn2 {
-  background: rgb(76, 76, 241);
-  color: #fff;
-  border-radius: 5px;
-  line-height: 60px;
-  font-size: 18px;
-  font-weight: 500;
-  display: inline-block;
-  padding: 0 44px;
-  margin-top: 25px;
-  transition: all 300ms linear 0s;
-}
-.support_area .left .icon_btn2 i {
-  font-size: 18px;
-  position: relative;
-  top: 3px;
-  margin-left: 10px;
-  transition: all 300ms linear 0s;
-}
-.support_area .left .icon_btn2:hover {
-  background: #fff;
-  color: var(--brand_color);
-}
-.support_area .left .icon_btn2:hover i {
-  margin-left: 5px;
-}
-.support_area .left .icon_btn2.blue:hover {
-  color: var(--brand_color);
-}
-.support_area .right {
-  position: relative;
-}
-.support_area .right img {
-  z-index: 4;
-  position: relative;
-}
-
-.support_area .left h6 {
-  color: #fff;
-  font-size: 40px;
-  margin-bottom: 5px;
-  text-transform: capitalize;
-}
-
-.journalism-feature-image {
-  position: relative;
-  margin-top: 20px;
-}
-@media (max-width: 992px) {
-  .journalism-feature-image {
-    margin-left: 20px;
-  }
-}
-.journalism-feature-image:before {
-  content: "";
-  position: absolute;
-  height: 600px;
-  width: 600px;
-  background-image: linear-gradient(45deg, rgb(236, 249, 252) 0%, rgb(254, 239, 236) 100%);
-  border-radius: 50%;
-  z-index: 1;
-  left: 20px;
-  top: 85px;
-}
-@media (max-width: 992px) {
-  .journalism-feature-image:before {
-    left: -20px;
-    top: 15px;
-  }
-}
-.journalism-feature-image img {
-  margin-left: -27px;
-  position: relative;
-  z-index: 2;
-}
-@media (max-width: 1480px) {
-  .journalism-feature-image {
-    margin-top: 80px;
-  }
-  .journalism-feature-image img {
-    width: 500px;
-  }
-  .journalism-feature-image:before {
-    height: 500px;
-    width: 500px;
-  }
-}
-@media (max-width: 992px) {
-  .journalism-feature-image img {
-    max-width: 500px;
-  }
-}
-@media (max-width: 576px) {
-  .journalism-feature-image img {
-    max-width: 300px;
-  }
-}
-@media (max-width: 576px) {
-  .journalism-feature-image:before {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-@media (max-width: 992px) {
-  .md-order-two {
-    order: 2;
-  }
-}
-.hotspot_list .hotspot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  outline: none;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 0.01px solid #7a7a7a;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  color: #e2498a;
-  text-align: center;
-  -webkit-transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-  transition: all 0.3s ease-in-out;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.hotspot_list .hotspot img {
-  height: 100%;
-}
-.hotspot_list .hotspot.active {
-  transform: scale(2);
-}
-
-figure.stack_image {
-  display: grid;
-  position: relative;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-  overflow: hidden;
-}
-figure.stack_image.img-position-left {
-  margin: 0 0 0 left !important;
-}
-figure.stack_image.img-position-center {
-  margin: 0 auto !important;
-}
-figure.stack_image.img-position-right {
-  margin: 0 auto 0 0 !important;
-}
-figure.stack_image img {
-  grid-row: 1/span 1;
-  grid-column: 1/span 1;
-  animation-name: stateimage;
-  animation-duration: 8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-figure.stack_image img:first-child {
-  animation-delay: -17000ms;
-}
-figure.stack_image img:nth-child(2) {
-  animation-delay: -15000ms;
-}
-figure.stack_image img:nth-child(3) {
-  animation-delay: -13000ms;
-}
-figure.stack_image img:nth-child(4) {
-  animation-delay: -11000ms;
-}
-
-@keyframes stateimage {
-  0% {
-    clip-path: polygon(-50% 0%, 0% 0%, -50% 101%, -100% 101%);
-  }
-  100% {
-    clip-path: polygon(150% 0%, 200% 0%, 150% 101%, 100% 101%);
   }
 }
 
