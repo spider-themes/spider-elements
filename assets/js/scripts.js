@@ -52,7 +52,7 @@
       }else{
         active.next('li').addClass('active');
       }
-    }, 6000 );
+    }, 3000 );
 
 
 

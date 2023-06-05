@@ -164,6 +164,18 @@ if ( ! defined( 'ABSPATH' ) ) {
         );
 
         $this->add_control(
+            'hotspot_autoplay',
+            [
+                'label' => __('Autoplay', 'spider-elements'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Show', 'spider-elements' ),
+				'label_off' => esc_html__( 'hide', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+            ]
+        );
+
+        $this->add_control(
             'hotspot_image_src',
             [
                 'show_label' => false,
@@ -284,33 +296,50 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'frontend_available' => true,
             ]
         );
-        $repeater-> add_responsive_control(
+        $repeater->add_control(
             'hotspot_magnific_width',
             [
                 'label' => __('Magnific Width', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => ['%'],
-                'desktop_default' => [
-                    'size' => 5,
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => '',
+                    'unit' => 'px',
                 ],
-                'tablet_default' => [
-                    'unit' => '%'
-                ],
-                'mobile_default' => [
-                    'unit' => '%'
-                ],
+                'size_units' => ['px', '%'],
                 'range' => [
-                    '%' => [
+                    'px' => [
                         'min' => 0,
-                        'max' => 100,
-                        'step' => .1
-                    ]
+                        'max' => 200,
+                        'step' => 1,
+                    ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot.active' => 'transform: scale({{SIZE}});',
+                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot' =>'width: {{SIZE}}{{UNIT}};',
                 ],
-                'render_type' => 'ui',
-                'frontend_available' => true,
+                
+            ]
+        );
+        $repeater->add_control(
+            'hotspot_magnific_height',
+            [
+                'label' => __('Magnific height', 'spider-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => '',
+                    'unit' => 'px',
+                ],
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot' =>'height: {{SIZE}}{{UNIT}};',
+                ],
+                
             ]
         );
 
@@ -357,7 +386,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <figure class="hotspots__figure">
                 <?php echo \Elementor\Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'hotspot_image_src'); ?>
             </figure>
-            <ul class="list-unstyled hotspot_list">
+            <ul class="list-unstyled hotspot_list <?php echo $hotspot_autoplay?>">
                 <?php if(!empty($settings['hotspot_spots'])):
                     $i = 0;
                     foreach ($settings['hotspot_spots'] as $index => $value) :
