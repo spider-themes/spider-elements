@@ -1,5 +1,5 @@
 <?php if ( $settings['display_type'] == 'alert' ) : ?>
-	<div class="alert media d-flex message_alert alert-<?php echo esc_attr($settings['alert_type']) ?> fade show" role="alert">
+	<div class="alert media d-flex message_alert alert-<?php echo esc_attr($settings['alert_type']) ?> fade show" role="alert" data-id="<?php echo esc_attr($this->get_id()) ?>">
 		<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
 		<div class="media-body">
 			<?php if ( !empty($settings['alert_title']) ) : ?>
@@ -7,7 +7,7 @@
 			<?php endif; ?>
 			<?php echo !empty($settings['alert_description']) ? $this->parse_text_editor($settings['alert_description']) : ''; ?>
 			<?php if ( 'show' === $settings['show_dismiss'] ) : ?>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close" data-id="<?php echo esc_attr($this->get_id()) ?>">
 					<i class="icon_close"></i>
 				</button>
 			<?php endif; ?>
