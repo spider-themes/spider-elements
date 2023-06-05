@@ -1,5 +1,6 @@
 /*=========== message_alert Shortcode css ========*/
 .message_alert {
+  display: flex;
   border: 1px solid var(--black_50);
   border-radius: 4px;
   background: rgb(243 243 243 / 24%);
@@ -327,62 +328,59 @@
 .dual-box-wrapper.top-right {
   right: -8px
 }
-
-.dual-box-content {
-  bottom: 10px;
-  left: 10px;
-  border-width: 2.5px;
-  border-radius: 8px;
-  border-style: solid;
-  background: #fff;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
-
-  &.top-left {
-    top: 10px;
-    left: 10px;
-  }
-
-  &.top-right {
-    top: 10px;
-    right: 10px;
-    left: unset;
-  }
-
-  &.bottom-right {
-    bottom: 10px;
-    right: 10px;
-    left: unset;
-  }
-}
-
 .dual-box-wrapper {
-  .dual-box-content .notice {
-    border: none;
-    border-radius: 6px;
-    margin: 0;
+  .dual-box-content {
+    bottom: 10px;
+    left: 10px;
+    border-width: 2.5px;
+    border-radius: 8px;
+    border-style: solid;
+    background: #fff;
+    position: relative;
     padding: 20px;
-  }
+    box-sizing: border-box;
 
-  &.notice-warning .dual-box-content {
-    border-color: #f6ba18;
-  }
+    &.top-left {
+      top: 10px;
+      left: 10px;
+    }
 
-  &.notice-success .dual-box-content {
-    border-color: #30845e;
-  }
+    &.top-right {
+      top: 10px;
+      right: 10px;
+      left: unset;
+    }
 
-  &.notice-danger .dual-box-content {
-    border-color: #fa303e;
-  }
+    &.bottom-right {
+      bottom: 10px;
+      right: 10px;
+      left: unset;
+    }
+    .notice {
+      display: flex;
+      border: none;
+      border-radius: 6px;
+      margin: 0;
+      padding: 20px;
+    }
+    &.notice-warning .dual-box-content {
+      border-color: #f6ba18;
+    }
 
-  &.notice-success .dual-box-content i {
-    color: #459e6d;
-  }
+    &.notice-success .dual-box-content {
+      border-color: #30845e;
+    }
 
-  .dual-box-content p {
-    color: var(--black_600);
+    &.notice-danger .dual-box-content {
+      border-color: #fa303e;
+    }
+
+    &.notice-success .dual-box-content i {
+      color: #459e6d;
+    }
+    p {
+      color: var(--black_600);
+    }
   }
 }
 

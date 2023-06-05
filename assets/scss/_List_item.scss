@@ -1,8 +1,6 @@
 .steps-panel {
   box-shadow: 0 3px 6px 0 rgba(4, 73, 89, 0.02);
   border: 1px solid rgb(235 235 235);
-  margin-top: 25px;
-  margin-bottom: 25px;
   border-radius: 10px;
   padding-right: 10px;
 }
@@ -73,6 +71,32 @@ ul.ordered-list {
     }
   }
 }
+
+
+.direction_steps {
+  display: inline-flex;
+  align-items: center;
+  .direction_step {
+    padding: 0 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    background: rgba(127, 130, 248, 0.8);
+    color: #fff;
+    position: relative;
+    line-height: 20px;
+    & + .direction_step {
+      margin-left: 26px;
+      &:before {
+        content: "\24";
+        font-family: eleganticons;
+        position: absolute;
+        left: -20px;
+        color: rgba(127, 130, 248, 0.8);
+      }
+    }
+  }
+}
+
 
 .site-content {
   padding: 100px 0;

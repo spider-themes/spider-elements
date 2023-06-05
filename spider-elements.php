@@ -254,6 +254,11 @@ final class Spider_Elements {
 		require_once __DIR__ . '/includes/se_helper.php';
 		require_once __DIR__ . '/includes/icons.php';
 
+		//Shortcodes
+		require_once __DIR__ . '/shortcodes/direction.php';
+
+
+		// Frontend Scripts
 		if ( !is_admin() ) {
 			require_once __DIR__ . '/includes/Frontend/Assets.php';
 		}
