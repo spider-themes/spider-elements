@@ -314,38 +314,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot' =>'width: {{SIZE}}{{UNIT}};',
-                ],
-                
-            ]
-        );
-        $repeater->add_control(
-            'hotspot_magnific_height',
-            [
-                'label' => __('Magnific height', 'spider-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => '',
-                    'unit' => 'px',
-                ],
-                'size_units' => ['px', '%'],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 200,
-                        'step' => 1,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot' =>'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} {{CURRENT_ITEM}}.hotspot' =>'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
                 ],
                 
             ]
         );
 
         $repeater->end_controls_tab();
-
-       
 
         $repeater->end_controls_tabs();
 
