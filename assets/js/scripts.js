@@ -53,7 +53,7 @@
       }else{
         active.next('li').addClass('active');
       }
-    }, 6000 );
+    }, 3000 );
 
 
     //Close Notice Message On click Event

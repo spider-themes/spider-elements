@@ -32,6 +32,11 @@ if ( ! defined( 'ABSPATH' ) ) {
         return [ 'spider', 'stacked_image', 'stacked image'];
     }
 
+    // Get Control ID
+    protected function get_control_id( $control_id ) {
+        return $control_id;
+    }
+    
     public function get_categories() {
         return [ 'spider-elements' ];
     }
@@ -41,6 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     {
         // layout
         $this-> stackimage_content_control();
+        $this-> stack_image_control();
         $this-> stack_image_style();
 
          /**
@@ -50,10 +56,37 @@ if ( ! defined( 'ABSPATH' ) ) {
     }
     public function stackimage_content_control()
     {
+
+        //===================== Select Preset ===========================//
+        $this->start_controls_section(
+            'style_sec', [
+                'label' => esc_html__( 'Preset Skins', 'landpagy-core' ),
+            ]
+        );
+
+        $this->add_control(
+            'style', [
+                'label'   => esc_html__( 'Style', 'spider-elements' ),
+                'type'    => Controls_Manager::SELECT,
+                'options' => [
+                    '1' => esc_html__( 'Style 01', 'spider-elements' ),
+                    '2' => esc_html__( 'Style 02', 'spider-elements' ),
+                    '3' => esc_html__( 'Style 03', 'spider-elements' ),
+                    '4' => esc_html__( 'Style 04', 'spider-elements' ),
+                ],
+                'default' => '1',
+            ]
+        );
+
+        $this->end_controls_section(); //End Select Style
+
         $this->start_controls_section(
             'stack_images',
             [
-                'label' => __('Stack Image', 'spider-elements'),
+                'label' => __('Stack Image Gallery', 'spider-elements'),
+                'condition' => [
+                    'style' => ['1', '2', '4']
+                ]
             ]
         );
         $this->add_control(
@@ -63,6 +96,126 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'dynamic' => [
 					'active' => true,
 				],
+            ]
+        );
+
+        $this->end_controls_section();
+
+
+
+    }
+
+    public function stack_image_control()
+    {
+        $this->start_controls_section(
+            'stackimage_tab',
+            [
+                'label' => __('Stack Image Tab', 'spider-elements'),
+                'condition'   => [
+                    'style' => '3',
+                ],
+            ]
+        );
+
+        $repeater = new \Elementor\Repeater();
+
+        $repeater->start_controls_tabs('stackimage_tab');
+
+        $repeater->start_controls_tab(
+            'stack_tab_images',
+            [
+                'label' => __('Stack Image', 'spider-elements')
+            ]
+        );
+
+        $repeater->add_control(
+            'stack_tab_image',
+            [
+                'show_label' => false,
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'dynamic' => [
+                    'active' => true
+                ],
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+
+        $repeater->end_controls_tab();
+        $repeater->start_controls_tab(
+            'stack_tab_tooltip',
+            [
+                'label' => __('Style', 'spider-elements')
+            ]
+        );
+        $repeater->add_responsive_control(
+            'stack_img_margin',
+            [
+                'label' => __('Margin', 'spider-elements'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} {{CURRENT_ITEM}}.stack_img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'stack_zindex',   [
+                'label' => esc_html__('z-index', 'spider-elements' ),
+                'type' => Controls_Manager::NUMBER,
+                'description' => __( 'Set z-index for the current layer, default 5', 'spider-elements' ),
+                'selectors' => [
+                    "{{WRAPPER}} {{CURRENT_ITEM}}.stack_img" => 'z-index: {{UNIT}}',
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'stack_transforme',   [
+                'label' => esc_html__('Rotate', 'spider-elements' ),
+                'type' => Controls_Manager::NUMBER,
+                'selectors' => [
+                    "{{WRAPPER}} {{CURRENT_ITEM}}.stack_img" => 'transform:rotate({{UNIT}}deg)',
+                ],
+            ]
+        );
+
+        $repeater->end_controls_tab();
+        $repeater->start_controls_tab(
+            'stack_tab_hover',
+            [
+                'label' => __('Hover Style', 'spider-elements')
+            ]
+        );
+        $repeater->add_responsive_control(
+            'stack_hover_img_margin',
+            [
+                'label' => __('Margin', 'spider-elements'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .imgstack:hover {{CURRENT_ITEM}}.stack_img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $repeater->end_controls_tab();
+        $repeater->end_controls_tabs();
+
+        $this->add_control(
+            'stack_image_list',
+            [
+                'show_label' => false,
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
+                'default' => [
+                    [
+                        'type' => '',
+                        'icon' => [
+                            'library' => 'solid',
+                            'value' => 'fas fa-plus',
+                        ],
+                    ]
+                ]
             ]
         );
 
@@ -129,10 +282,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .stack_image' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .imgstack .stack_img' => 'width: {{SIZE}}{{UNIT}};',
+                    
                 ],
             ]
         );
-
         $this->add_responsive_control(
             'stack_image_height',
             [
@@ -147,6 +301,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .stack_image' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .imgstack .stack_img' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -179,6 +334,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'size_units' => ['px', '%'],
                 'selectors' => [
                     '{{WRAPPER}} .stack_image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .imgstack .stack_img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -187,7 +343,10 @@ if ( ! defined( 'ABSPATH' ) ) {
             [
                 'name' => '_dl_pro_testimonials_box_shadow',
                 'label' => __('Box Shadow', 'droit-addons-pro'),
-                'selector' => '{{WRAPPER}} .stack_image',
+                'selectors' => [
+                    '{{WRAPPER}} .stack_image',
+                    '{{WRAPPER}} .imgstack .stack_img',
+                ],
             ]
         );
         $this->end_controls_section();
@@ -199,12 +358,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     protected function render() {
 		$settings = $this->get_settings_for_display();
         extract($settings);
-        ?>
-            <figure class="stack_image <?php echo "img-position-" .$stack_image_alignment ?>">
-                <?php foreach ( $settings['stack_image'] as $image ) {?>
-                    <?php echo '<img src="' . esc_attr( $image['url'] ) . '">'; ?>  
-                <?php } ?>
-            </figure>
-        <?php
+
+        //Include template parts
+	    include "templates/stack-image/stack-image-{$settings['style']}.php";
 	}
 }
