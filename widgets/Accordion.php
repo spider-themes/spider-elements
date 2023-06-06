@@ -262,7 +262,6 @@ class Accordion extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name' => 'typography_title',
 				'label' => esc_html__( 'Typography', 'spider-elements' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .doc_banner_text h2',
 			]
 		);

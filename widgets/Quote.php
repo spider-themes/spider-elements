@@ -22,7 +22,7 @@ class Quote extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Quote', 'spider-elements' );
+        return __( 'Quote ()', 'spider-elements' );
     }
 
     public function get_icon() {
