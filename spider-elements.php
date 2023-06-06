@@ -428,7 +428,7 @@ final class Spider_Elements {
 		require_once( __DIR__ . '/widgets/Video_playlist.php' );
 		require_once( __DIR__ . '/widgets/Alerts_box.php' );
 		require_once( __DIR__ . '/widgets/Accordion_article.php' );
-		//require_once( __DIR__ . '/widgets/Accordion.php' );
+		require_once( __DIR__ . '/widgets/Accordion.php' );
 		require_once( __DIR__ . '/widgets/Testimonial.php' );
 		require_once( __DIR__ . '/widgets/Quote.php' );
 		require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
@@ -455,7 +455,7 @@ final class Spider_Elements {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_playlist() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_box() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion_article() );
-		//\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Testimonial() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Quote() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Tabs() );

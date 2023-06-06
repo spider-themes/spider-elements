@@ -344,7 +344,7 @@ class Cheat_sheet extends Widget_Base {
 	 */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        extract( $settings); // extract all the settings from the array to variables
+        extract( $settings); // extract all settings array to variables converted to name of key
         $id = $this->get_ID();
         $cheat_sheet_title = !empty( $settings['cheat_sheet_title'] ) ? $settings['cheat_sheet_title'] : '';
         $is_collapsed = $settings['collapse_state'] == 'yes' ? 'true' : 'false';

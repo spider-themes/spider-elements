@@ -38,6 +38,19 @@
             width: 100%;
           }
         }
+        .numb {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: var(--brand_color);
+          display: inline-block;
+          text-align: center;
+          line-height: 20px;
+          font-size: 12px;
+          margin-right: 10px;
+          transition: all 0.2s linear;
+          color: #ffffff;
+        }
       }
 
       &:last-child {

@@ -77,8 +77,8 @@ class Accordion_article extends Widget_Base {
 
         $settings = $this->get_settings();
 
-
-        include('includes/accordion-article/accordion-article.php');
+		//======================== Templates Parts ========================//
+	    include "templates/accordion-article/accordion-article.php";
 
     }
 }

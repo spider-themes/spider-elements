@@ -75,8 +75,8 @@ class Tabs extends Widget_Base {
 				'label' => __('Tab', 'spider-elements'),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'1' => __('Classic Default', 'spider-elements'),
-					'2' => __('Sticky Tab', 'spider-elements'),
+					'1' => __('Inline Tab', 'spider-elements'),
+					'2' => __('Full Width Tab', 'spider-elements'),
 				],
 				'default' => '1',
 			]
@@ -161,29 +161,83 @@ class Tabs extends Widget_Base {
 				'title_field' => '{{{ tab_title }}}',
 				'default' => [
 					[
-						'tab_title' => esc_html__( 'Tab Title #1', 'textdomain' ),
-						'tab_content' => esc_html__( 'Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi gravida?', 'textdomain' ),
+						'tab_title' => esc_html__( 'Tab Title #1', 'spider-elements' ),
+						'tab_content' => esc_html__( 'Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi gravida?', 'spider-elements' ),
 					],
 					[
-						'tab_title' => esc_html__( 'Tab Title #2', 'textdomain' ),
-						'tab_content' => esc_html__( 'Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi gravida?', 'textdomain' ),
+						'tab_title' => esc_html__( 'Tab Title #2', 'spider-elements' ),
+						'tab_content' => esc_html__( 'Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi gravida?', 'spider-elements' ),
 					],
 					[
-						'tab_title' => esc_html__( 'Tab Title #3', 'textdomain' ),
-						'tab_content' => esc_html__( 'Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi gravida?', 'textdomain' ),
+						'tab_title' => esc_html__( 'Tab Title #3', 'spider-elements' ),
+						'tab_content' => esc_html__( 'Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi gravida?', 'spider-elements' ),
 					],
 				],
 			]
 		);
 
 		$this->add_control(
-			'is_process_tab', [
-				'label' => esc_html__( 'Show Process Tab', 'textdomain' ),
+			'is_navigation_arrow', [
+				'label' => esc_html__( 'Navigation Arrow', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'textdomain' ),
-				'label_off' => esc_html__( 'Hide', 'textdomain' ),
+                'description' => esc_html__('Show/Hide navigation arrow button for content area', 'spider-elements'),
+				'label_on' => esc_html__( 'Show', 'spider-elements' ),
+				'label_off' => esc_html__( 'Hide', 'spider-elements' ),
 				'return_value' => 'yes',
 				'default' => 'no',
+                'separator' => 'before'
+			]
+		);
+
+		$this->add_control(
+			'is_auto_numb', [
+				'label' => esc_html__( 'Auto Numbering', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => esc_html__('Show/Hide auto numbering for tab title', 'spider-elements'),
+				'label_on' => esc_html__( 'Show', 'spider-elements' ),
+				'label_off' => esc_html__( 'Hide', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_control(
+			'is_sticky_tab', [
+				'label' => esc_html__( 'Sticky Mode', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => esc_html__('Show/Hide sticky mode for tab title', 'spider-elements'),
+				'label_on' => esc_html__( 'Show', 'spider-elements' ),
+				'label_off' => esc_html__( 'Hide', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_control(
+			'tab_alignment', [
+				'label' => esc_html__( 'Alignment', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => esc_html__( 'Left', 'textdomain' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'textdomain' ),
+						'icon' => ' eicon-h-align-center',
+					],
+					'flex-end' => [
+						'title' => esc_html__( 'Right', 'textdomain' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'default' => 'flex-start',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .tab_shortcode > .nav-tabs' => 'justify-content: {{VALUE}};',
+				],
                 'separator' => 'before'
 			]
 		);
@@ -295,6 +349,19 @@ class Tabs extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'normal_tab_icon_bg_color', [
+				'label' => __( 'Icon Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .tab-item-title > .numb' => 'background: {{VALUE}};',
+				),
+                'condition' => [
+                    'is_auto_numb' => 'yes',
+                ]
+			]
+		);
+
 		$this->end_controls_tab(); //End Normal Tab Title
 
 
@@ -334,6 +401,19 @@ class Tabs extends Widget_Base {
 				),
 				'condition' => [
 					'style' => ['1']
+				]
+			]
+		);
+
+		$this->add_control(
+			'active_tab_icon_bg_color', [
+				'label' => __( 'Icon Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .tab-item-title.active > .numb' => 'background: {{VALUE}};',
+				),
+				'condition' => [
+					'is_auto_numb' => 'yes',
 				]
 			]
 		);
@@ -386,11 +466,12 @@ class Tabs extends Widget_Base {
 	 */
 	protected function render() {
         $settings = $this->get_settings_for_display();
-        extract( $settings ); // All settings array to variables conversion
+        extract( $settings ); // extract all settings array to variables converted to name of key
+
         $tabs = $this->get_settings_for_display( 'tabs' );
         $id_int = substr( $this->get_id_int(), 0, 3 );
 
-        $process_tab_class = !empty( $is_process_tab == 'yes' ) ? ' process_tab_shortcode' : '';
+        $process_tab_class = !empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
 
         //================= Template Parts =================//
         include "templates/tabs/tab-{$settings['style']}.php";

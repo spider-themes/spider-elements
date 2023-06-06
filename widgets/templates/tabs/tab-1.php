@@ -19,8 +19,11 @@
             ?>
             <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
                 <button <?php echo $this->get_render_attribute_string( $tab_title_setting_key ); ?>>
+                    <?php if ( $is_auto_numb == 'yes' ) : ?>
+                        <span class="numb"><?php echo esc_html($tab_count) ?></span>
+                    <?php endif; ?>
 	                <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                    <?php echo se_get_the_kses_post($item['tab_title']); ?>
+                    <?php echo esc_html($item['tab_title']); ?>
                 </button>
             </li>
             <?php
@@ -55,7 +58,7 @@
             <?php
         }
 
-        if ( $is_process_tab == 'yes' ) { ?>
+        if ( $is_navigation_arrow == 'yes' ) { ?>
             <button class="btn btn-info btn-lg previous"><i class="arrow_carrot-left"></i></button>
             <button class="btn btn-info btn-lg next"><i class="arrow_carrot-right"></i></button>
             <?php

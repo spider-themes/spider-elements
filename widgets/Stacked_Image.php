@@ -234,7 +234,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     protected function render() {
 		$settings = $this->get_settings_for_display();
-        extract($settings);
+        extract($settings); //extract all settings array to variables converted to name of key
 
         //Include template parts
 	    include "templates/stack-image/stack-image-{$settings['style']}.php";

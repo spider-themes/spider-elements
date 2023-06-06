@@ -355,7 +355,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        extract($settings);
+        extract($settings); // extract all settings array to variables converted to name of key
     ?>
         <div class="hotspots">
             <figure class="hotspots__figure">

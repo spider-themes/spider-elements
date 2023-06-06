@@ -42,7 +42,7 @@ $is_show = $settings['collapse_state'] == 'yes' ? 'show' : '';
                         <a href='<?php echo get_the_permalink($cats); ?>'>
                             <h4><?php echo $cats->post_title; ?></h4>
                         </a>
-                        <p><?php echo se_get_the_excerpt_length( $cats, '',12 );  ?></p>
+                        <p><?php //echo se_get_the_excerpt_length( $cats, '',12 );  ?></p>
                         <ul class="post-meta list-unstyled">
                             <?php if ( function_exists('spider_reading_time') ) : ?>
                                 <li class="reading-titme"> <?php spider_reading_time($cats);?> </li>

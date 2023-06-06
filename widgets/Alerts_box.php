@@ -461,7 +461,7 @@ class Alerts_box extends Widget_Base {
     protected function render() {
 
         $settings = $this->get_settings_for_display();
-        extract($settings); //Array to variable conversion
+        extract($settings); // extract all settings array to variables converted to name of key
 
 
         //================= Template Parts =================//

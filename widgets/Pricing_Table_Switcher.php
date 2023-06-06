@@ -952,7 +952,7 @@ class Pricing_Table_Switcher extends Widget_Base {
      */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        extract($settings); //Array to variable conversation
+        extract($settings); // extract all settings array to variables converted to name of key
 
 	    $tables   = isset( $settings['pricing_table_1'] ) ? $settings['pricing_table_1'] : '';
 	    $tables2  = isset( $settings['pricing_table_2'] ) ? $settings['pricing_table_2'] : '';
