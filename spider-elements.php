@@ -33,8 +33,6 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-use Spider_Elements_Assets\PageSettings\Page_Settings;
-
 defined('ABSPATH') or die( 'Hey, what are you doing here? You silly human!' ) ;
 
 /**
@@ -165,8 +163,6 @@ final class Spider_Elements {
 
 		// define constants
 		$this->define_constants();
-
-		$this->add_page_settings_controls();
 
 		// Init Plugin
 		add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
@@ -491,14 +487,6 @@ final class Spider_Elements {
         define( 'SE_VEND', SE_URL . '/assets/vendors' );
 
     }
-
-
-    public function add_page_settings_controls() {
-        require_once( __DIR__ . '/page-settings/manager.php' );
-        new Page_Settings();
-    }
-
-
 
 
 }
