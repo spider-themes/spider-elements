@@ -959,7 +959,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 
 
 	    //Include template parts
-	    include "inc/pricing-table-switcher/table-switcher-{$settings['style']}.php";
+	    include "templates/pricing-table-switcher/table-switcher-{$settings['style']}.php";
 
     }
 

@@ -1072,7 +1072,7 @@ class Video_playlist extends Widget_Base {
             'hide_empty' => true
         ));
 
-        include( "inc/video-playlist/video-playlist-{$settings['style']}.php" );
+        include( "templates/video-playlist/video-playlist-{$settings['style']}.php" );
 	
     }
 }
