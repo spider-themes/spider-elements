@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     {
         // layout
         $this-> stackimage_content_control();
-        $this-> stack_image_control();
+        // $this-> stack_image_control();
         $this-> stack_image_style();
 
          /**
@@ -84,9 +84,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             'stack_images',
             [
                 'label' => __('Stack Image Gallery', 'spider-elements'),
-                'condition' => [
-                    'style' => ['1', '2', '4']
-                ]
             ]
         );
         $this->add_control(
@@ -96,126 +93,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'dynamic' => [
 					'active' => true,
 				],
-            ]
-        );
-
-        $this->end_controls_section();
-
-
-
-    }
-
-    public function stack_image_control()
-    {
-        $this->start_controls_section(
-            'stackimage_tab',
-            [
-                'label' => __('Stack Image Tab', 'spider-elements'),
-                'condition'   => [
-                    'style' => '3',
-                ],
-            ]
-        );
-
-        $repeater = new \Elementor\Repeater();
-
-        $repeater->start_controls_tabs('stackimage_tab');
-
-        $repeater->start_controls_tab(
-            'stack_tab_images',
-            [
-                'label' => __('Stack Image', 'spider-elements')
-            ]
-        );
-
-        $repeater->add_control(
-            'stack_tab_image',
-            [
-                'show_label' => false,
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true
-                ],
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-
-        $repeater->end_controls_tab();
-        $repeater->start_controls_tab(
-            'stack_tab_tooltip',
-            [
-                'label' => __('Style', 'spider-elements')
-            ]
-        );
-        $repeater->add_responsive_control(
-            'stack_img_margin',
-            [
-                'label' => __('Margin', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', 'em', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}}.stack_img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-        $repeater->add_control(
-            'stack_zindex',   [
-                'label' => esc_html__('z-index', 'spider-elements' ),
-                'type' => Controls_Manager::NUMBER,
-                'description' => __( 'Set z-index for the current layer, default 5', 'spider-elements' ),
-                'selectors' => [
-                    "{{WRAPPER}} {{CURRENT_ITEM}}.stack_img" => 'z-index: {{UNIT}}',
-                ],
-            ]
-        );
-        $repeater->add_control(
-            'stack_transforme',   [
-                'label' => esc_html__('Rotate', 'spider-elements' ),
-                'type' => Controls_Manager::NUMBER,
-                'selectors' => [
-                    "{{WRAPPER}} {{CURRENT_ITEM}}.stack_img" => 'transform:rotate({{UNIT}}deg)',
-                ],
-            ]
-        );
-
-        $repeater->end_controls_tab();
-        $repeater->start_controls_tab(
-            'stack_tab_hover',
-            [
-                'label' => __('Hover Style', 'spider-elements')
-            ]
-        );
-        $repeater->add_responsive_control(
-            'stack_hover_img_margin',
-            [
-                'label' => __('Margin', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', 'em', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .imgstack:hover {{CURRENT_ITEM}}.stack_img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-        $repeater->end_controls_tab();
-        $repeater->end_controls_tabs();
-
-        $this->add_control(
-            'stack_image_list',
-            [
-                'show_label' => false,
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'type' => '',
-                        'icon' => [
-                            'library' => 'solid',
-                            'value' => 'fas fa-plus',
-                        ],
-                    ]
-                ]
             ]
         );
 

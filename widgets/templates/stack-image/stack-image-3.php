@@ -1,7 +1,7 @@
 <div class="imgstack">
-    <?php foreach ($settings['stack_image_list'] as $images ) {?>
-        <div class="stack_img elementor-repeater-item-<?php echo $images['_id']; ?>">
-            <?php echo wp_get_attachment_image($images['stack_tab_image']['id'], 'full'); ?>
+    <?php foreach ( $settings['stack_image'] as $image )  {?>
+        <div class="stack_img">
+            <?php echo '<img src="' . esc_attr( $image['url'] ) . '">'; ?>
         </div>
     <?php } ?>
 </div>
