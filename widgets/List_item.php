@@ -5,8 +5,6 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -185,7 +183,6 @@ class List_item extends Widget_Base {
             [
                 'name' => 'content_typography',
                 'label' => __( 'Typography', 'spider-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .steps-panel .ordered-list li',
             ]
         );

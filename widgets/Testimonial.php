@@ -3,9 +3,7 @@ namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Border;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 
 // Exit if accessed directly
@@ -228,7 +226,6 @@ class Testimonial extends \Elementor\Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
                 'name' => 'typography_contents',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '
                     {{WRAPPER}} .doc_feedback_slider .item h5,
                 ',
@@ -249,7 +246,6 @@ class Testimonial extends \Elementor\Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
                 'name' => 'typography_author',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '
                     {{WRAPPER}} .doc_feedback_slider .item h5,
                 ',
@@ -270,7 +266,6 @@ class Testimonial extends \Elementor\Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
                 'name' => 'typography_designation',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '
                     {{WRAPPER}} .doc_feedback_slider .item h6,
                 ',

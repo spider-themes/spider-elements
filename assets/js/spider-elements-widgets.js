@@ -1,13 +1,14 @@
-(function ($, price) {
+(function ($, elementor) {
     "use strict";
-    var $window = $(price);
+    var $window = $(elementor);
 
-    var landpagy = {
+    var spiderElements = {
         onInit: function () {
             var E_FRONT = elementorFrontend;
             var widgetHandlersMap = {
-                "landpagy_pricing_table_switcher.default"    : landpagy.pricing_table_switcher,
-                "landpagy_pricing_table_tabs.default"        : landpagy.pricing_table_tabs,
+                //"landpagy_pricing_table_switcher.default"     : spiderElements.pricing_table_switcher,
+                "landpagy_pricing_table_tabs.default"           : spiderElements.pricing_table_tabs,
+                "docy_tabs.default"                             : spiderElements.tabs,
             };
 
             $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -15,42 +16,33 @@
             });
 
         },
-        //======================== Pricing Table Tabs =========================== //
-        screenFeatures: function ($scope) {
 
-            //============= Currency Changes
-            let $screen_features = $scope.find('#how_it_works_desktop');
-            if ( $screen_features.length > 0 ) {
-                window.addEventListener('scroll', function () {
-                    var how_it_works_desktop = document.getElementById('how_it_works_desktop');
-                    var how_it_works_desktop_box_each = how_it_works_desktop.offsetHeight / 4;
 
-                    if (window.scrollY + window.innerHeight > how_it_works_desktop.offsetTop) {
-                        how_it_works_desktop.classList.add('animate_active');
-                        how_it_works_desktop.classList.add('box1');
-                        how_it_works_desktop.classList.remove('box2');
-                    }
-                    if (
-                        window.scrollY + window.innerHeight > how_it_works_desktop.offsetTop + how_it_works_desktop.offsetHeight ||
-                        window.scrollY + window.innerHeight < how_it_works_desktop.offsetTop
-                    ) {
-                        how_it_works_desktop.classList.remove('animate_active');
-                    }
+        //======================== Tabs =========================== //
+        tabs: function ($scope) {
 
-                    if (window.scrollY + window.innerHeight > how_it_works_desktop.offsetTop + how_it_works_desktop_box_each * 2) {
-                        how_it_works_desktop.classList.add('box2');
-                        how_it_works_desktop.classList.remove('box1');
-                        how_it_works_desktop.classList.remove('box3');
-                    }
+            let nextBtn = $scope.find('button.next');
+            let prevBtn = $scope.find('button.previous');
 
-                    if (window.scrollY + window.innerHeight > how_it_works_desktop.offsetTop + how_it_works_desktop_box_each * 3) {
-                        how_it_works_desktop.classList.add('box3');
-                        how_it_works_desktop.classList.remove('box2');
-                    }
+            if (nextBtn.length > 0) {
+                nextBtn.on('click', function () {
+                    let activeTab = $scope.find('ul.nav-tabs .nav-item > .active');
+                    let nextTab = activeTab.parent().next('li').find('.tab-item-title');
+                    nextTab.trigger('click');
                 });
-
             }
+
+            if (prevBtn.length > 0) {
+                prevBtn.on('click', function () {
+                    let activeTab = $scope.find('ul.nav-tabs .nav-item > .active');
+                    let prevTab = activeTab.parent().prev('li').find('.tab-item-title');
+                    prevTab.trigger('click');
+                });
+            }
+
         },
+
+
         //======================== Pricing Table Tabs =========================== //
         pricing_table_tabs: function ($scope) {
             //============= Currency Changes
@@ -73,8 +65,11 @@
                 });
             }
         },
+
+
+
     }
 
-    $window.on("elementor/frontend/init", landpagy.onInit);
+    $window.on("elementor/frontend/init", spiderElements.onInit);
 
 })(jQuery, window);

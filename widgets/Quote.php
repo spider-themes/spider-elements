@@ -3,8 +3,6 @@ namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -187,7 +185,6 @@ about journalism.'
             Group_Control_Typography::get_type(), [
                 'name' => 'typography_title',
                 'label' => esc_html__( 'Typography', 'spider-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-title',
             ]
         );
@@ -221,7 +218,6 @@ about journalism.'
 		    Group_Control_Typography::get_type(), [
 			    'name' => 'typography_quote_text',
 			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'scheme' => Typography::TYPOGRAPHY_1,
 			    'selector' => '{{WRAPPER}} .journalism-content-wrapper p',
 		    ]
 	    );
@@ -255,7 +251,6 @@ about journalism.'
 		    Group_Control_Typography::get_type(), [
 			    'name' => 'typography_quote_author',
 			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'scheme' => Typography::TYPOGRAPHY_1,
 			    'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-info .name',
 		    ]
 	    );
@@ -289,7 +284,6 @@ about journalism.'
 		    Group_Control_Typography::get_type(), [
 			    'name' => 'typography_quote_author_designation',
 			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'scheme' => Typography::TYPOGRAPHY_1,
 			    'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-info .designation',
 		    ]
 	    );
@@ -322,7 +316,6 @@ about journalism.'
 		    Group_Control_Typography::get_type(), [
 			    'name' => 'typography_btm_text',
 			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'scheme' => Typography::TYPOGRAPHY_1,
 			    'selector' => '{{WRAPPER}} .light-header .title-light',
 		    ]
 	    );

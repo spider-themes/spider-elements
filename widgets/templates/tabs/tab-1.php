@@ -1,7 +1,4 @@
-<?php
-use Elementor\Plugin;
-?>
-<div class="tab_shortcode">
+<div class="tab_shortcode<?php echo esc_attr($process_tab_class); ?>">
     <ul class="nav nav-tabs d-flex" role="tablist">
         <?php
         $i = 0.2;
@@ -11,20 +8,20 @@ use Elementor\Plugin;
             $active = $tab_count == 1 ? 'active' : '';
             $selected = $tab_count == 1 ? 'true' : 'false';
             $this->add_render_attribute( $tab_title_setting_key, [
-                'href' => '#docy-tab-content-' . $id_int . $tab_count,
                 'class' => [ 'nav-link tab-item-title', $active ],
-                'id' => 'docy'.'-tab-'.$id_int . $tab_count,
+                'id' => 'se'.'-tab-'.$id_int . $tab_count,
                 'role' => 'tab',
-                'aria-controls' => 'docy-tab-content-' . $id_int . $tab_count,
                 'data-bs-toggle' => 'tab',
+                'aria-controls' => 'se-tab-content-' . $id_int . $tab_count,
+                'data-bs-target' => '#se-tab-content-' . $id_int . $tab_count,
                 'aria-selected' => $selected,
             ]);
             ?>
             <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
-                <a <?php echo $this->get_render_attribute_string( $tab_title_setting_key ); ?>>
+                <button <?php echo $this->get_render_attribute_string( $tab_title_setting_key ); ?>>
 	                <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
                     <?php echo se_get_the_kses_post($item['tab_title']); ?>
-                </a>
+                </button>
             </li>
             <?php
             $i = $i + 0.2;
@@ -33,14 +30,14 @@ use Elementor\Plugin;
     </ul>
     <div class="tab-content">
         <?php
-        foreach ( $tabs as $index => $item ) :
+        foreach ( $tabs as $index => $item ) {
             $tab_count = $index + 1;
             $active = $tab_count == 1 ? 'show active' : '';
             $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', 'tabs', $index );
             $this->add_render_attribute( $tab_content_setting_key, [
                 'class' => [ 'tab-pane p-0', 'fade', $active ],
-                'id' => 'docy-tab-content-' . $id_int . $tab_count,
-                'aria-labelledby' => 'docy'.'-tab-'.$id_int . $tab_count,
+                'id' => 'se-tab-content-' . $id_int . $tab_count,
+                'aria-labelledby' => 'se'.'-tab-'.$id_int . $tab_count,
                 'role' => 'tabpanel',
             ]);
             ?>
@@ -50,13 +47,19 @@ use Elementor\Plugin;
                     echo do_shortcode($item['tab_content']);
                 } elseif ( 'template' == $item['tabs_content_type'] ) {
                     if ( !empty($item['primary_templates']) ) {
-                        echo Plugin::$instance->frontend->get_builder_content($item['primary_templates'], true);
+                        echo \Elementor\Plugin::$instance->frontend->get_builder_content($item['primary_templates'], true);
                     }
                 }
                 ?>
             </div>
             <?php
-        endforeach;
+        }
+
+        if ( $is_process_tab == 'yes' ) { ?>
+            <button class="btn btn-info btn-lg previous"><i class="arrow_carrot-left"></i></button>
+            <button class="btn btn-info btn-lg next"><i class="arrow_carrot-right"></i></button>
+            <?php
+        }
         ?>
     </div>
 </div>
