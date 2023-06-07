@@ -72,7 +72,7 @@ class Tabs extends Widget_Base {
 
 		$this->add_control(
 			'style', [
-				'label' => __('Tab', 'spider-elements'),
+				'label' => __('Style', 'spider-elements'),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'1' => __('Inline Tab', 'spider-elements'),
@@ -236,7 +236,8 @@ class Tabs extends Widget_Base {
 				'default' => 'flex-start',
 				'toggle' => true,
 				'selectors' => [
-					'{{WRAPPER}} .tab_shortcode > .nav-tabs' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .tab_shortcode .nav-tabs' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .header_tabs_area .nav-tabs' => 'justify-content: {{VALUE}};',
 				],
                 'separator' => 'before'
 			]
@@ -423,20 +424,19 @@ class Tabs extends Widget_Base {
 		$this->end_controls_section(); // End Tab Title Style
 
 
-		//------------------------------------ Tab Border Radius -------------------------------------------//
+		//=============================== Content Section ===============================//
 		$this->start_controls_section(
-			'sec_style', [
+			'style_content', [
 				'label' => __( 'Content', 'spider-elements' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(),
-			[
+			\Elementor\Group_Control_Border::get_type(), [
 				'name' => 'border',
 				'label' => esc_html__( 'Border', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link',
+				'selector' => '{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content',
 			]
 		);
 
@@ -446,12 +446,37 @@ class Tabs extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tab_shortcode .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
-		$this->end_controls_section();
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(), [
+				'name' => 'content_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content',
+			]
+		);
+
+		$this->end_controls_section(); // End Content Section
+
+
+		//=============================== Navigation Arrow ===============================//
+		$this->start_controls_section(
+			'style_nav_arrow', [
+				'label' => __( 'Navigation Arrow', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'is_navigation_arrow' => 'yes',
+				]
+			]
+		);
+
+		//
+
+		$this->end_controls_section(); // End Navigation Arrow
+
     }
 
 
@@ -471,26 +496,10 @@ class Tabs extends Widget_Base {
         $tabs = $this->get_settings_for_display( 'tabs' );
         $id_int = substr( $this->get_id_int(), 0, 3 );
 
-        $process_tab_class = !empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
+        $navigation_arrow_class = !empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
+        $sticky_tab_class = !empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
 
         //================= Template Parts =================//
         include "templates/tabs/tab-{$settings['style']}.php";
     }
-
-	/**
-	 * Render the widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access protected
-	 */
-	protected function content_template() {
-		?>
-		<div class="title">
-			{{{ settings.title }}}
-		</div>
-		<?php
-	}
 }

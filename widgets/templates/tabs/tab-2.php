@@ -1,39 +1,39 @@
-<section class="header_tabs_area<?php echo esc_attr($process_tab_class); ?>">
-    <div class="header_tab_items">
-        <div class="container">
-            <ul class="nav nav-tabs" role="tablist">
-                <?php
-                $i = 0.2;
-                foreach ( $tabs as $index => $item ) :
-                    $tab_count = $index + 1;
-                    $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title', 'tabs', $index );
-                    $active = $tab_count == 1 ? 'active' : '';
-                    $selected = $tab_count == 1 ? 'true' : 'false';
-                    $this->add_render_attribute( $tab_title_setting_key, [
-                        'class' => [ 'nav-link tab-item-title', $active ],
-                        'id' => 'docy'.'-tab-'.$id_int . $tab_count,
-                        'role' => 'tab',
-                        'data-bs-toggle' => 'tab',
-                        'aria-controls' => 'docy-tab-content-' . $id_int . $tab_count,
-                        'data-bs-target' => '#se-tab-content-' . $id_int . $tab_count,
-                        'aria-selected' => $selected,
-                    ]);
-                    ?>
-                    <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
-                        <button <?php echo $this->get_render_attribute_string( $tab_title_setting_key ); ?>>
-	                        <?php if ( $is_auto_numb == 'yes' ) : ?>
-                                <span class="numb"><?php echo esc_html($tab_count) ?></span>
-	                        <?php endif; ?>
-                            <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                            <?php echo esc_html($item['tab_title']); ?>
-                        </button>
-                    </li>
-                    <?php
-                    $i = $i + 0.2;
-                endforeach;
+<section class="header_tabs_area<?php echo esc_attr($navigation_arrow_class . $sticky_tab_class ); ?>">
+    <div class="header_tab_items sticky_tab_item tabs_sliders">
+        <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>
+        <ul class="nav nav-tabs" role="tablist">
+            <?php
+            $i = 0.2;
+            foreach ( $tabs as $index => $item ) :
+                $tab_count = $index + 1;
+                $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title', 'tabs', $index );
+                $active = $tab_count == 1 ? 'active' : '';
+                $selected = $tab_count == 1 ? 'true' : 'false';
+                $this->add_render_attribute( $tab_title_setting_key, [
+                    'class' => [ 'nav-link tab-item-title', $active ],
+                    'id' => 'docy'.'-tab-'.$id_int . $tab_count,
+                    'role' => 'tab',
+                    'data-bs-toggle' => 'tab',
+                    'aria-controls' => 'docy-tab-content-' . $id_int . $tab_count,
+                    'data-bs-target' => '#se-tab-content-' . $id_int . $tab_count,
+                    'aria-selected' => $selected,
+                ]);
                 ?>
-            </ul>
-        </div>
+                <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
+                    <button <?php echo $this->get_render_attribute_string( $tab_title_setting_key ); ?>>
+                        <?php if ( $is_auto_numb == 'yes' ) : ?>
+                            <span class="numb"><?php echo esc_html($tab_count) ?></span>
+                        <?php endif; ?>
+                        <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                        <?php echo esc_html($item['tab_title']); ?>
+                    </button>
+                </li>
+                <?php
+                $i = $i + 0.2;
+            endforeach;
+            ?>
+        </ul>
+        <span class="scroller-btn right" id="right"><i class="arrow_carrot-right"></i></span>
     </div>
     <div class="header_tab_content">
         <div class="tab-content">
@@ -73,37 +73,3 @@
         </div>
     </div>
 </section>
-
-<script>
-    ;(function ($) {
-        "use strict";
-
-        $(document).ready(function () {
-
-            function tabFixed() {
-                var windowWidth = $(window).width();
-                if ($(".header_tabs_area").length) {
-                    if (windowWidth > 576) {
-                        var tops = $(".header_tabs_area");
-                        var tabs = $(".header_tab_items").height() + 100;
-                        var leftOffset = tops.offset().top + tabs;
-
-                        $(window).on("scroll", function () {
-                            var scroll = $(window).scrollTop();
-                            if (scroll >= leftOffset) {
-                                tops.addClass("tab_fixed");
-                            } else {
-                                tops.removeClass("tab_fixed")
-                            }
-                            if (scroll >= leftOffset + tops.height()) {
-                                tops.removeClass("tab_fixed")
-                            }
-                        })
-                    }
-                }
-            }
-
-            tabFixed()
-        })
-    })(jQuery);
-</script>

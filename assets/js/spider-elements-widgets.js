@@ -40,6 +40,94 @@
                 });
             }
 
+            //=== Sticky Tab
+            let stickyTab = $scope.find('.sticky_tab');
+            let windowWidth = $(window).width();
+
+            if (stickyTab.length > 0) {
+                if ( windowWidth > 576 ) {
+                    let stickyTabHeight = stickyTab.height() + 100;
+                    let stickyTabOffset = stickyTab.offset().top + stickyTabHeight;
+
+                    $(window).on('scroll', function () {
+                        let scrollTop = $(window).scrollTop();
+
+                        if ( scrollTop >= stickyTabOffset ) {
+                            stickyTab.addClass('tab_fixed');
+                        } else {
+                            stickyTab.removeClass('tab_fixed');
+                        }
+
+                        if ( scrollTop >= stickyTabOffset + stickyTab.height() ) {
+                            stickyTab.removeClass('tab_fixed');
+                        }
+
+                    });
+                }
+            }
+
+
+
+
+            //=== Tabs Slider
+            let tabWrapWidth = $scope.find('.tabs_sliders').outerWidth();
+            let totalWidth = 0;
+
+            let slideArrowBtn = $scope.find('.scroller-btn');
+            let slideBtnLeft = $scope.find('.scroller-btn.left');
+            let slideBtnRight = $scope.find('.scroller-btn.right');
+            let navWrap = $scope.find('ul.nav-tabs');
+            let navWrapItem = $scope.find('ul.nav-tabs li');
+
+            jQuery("ul li").each(function () {
+                totalWidth += jQuery(this).outerWidth();
+            });
+
+            if (totalWidth > tabWrapWidth) {
+                slideArrowBtn.removeClass('inactive');
+            }
+            else {
+                slideArrowBtn.addClass('inactive');
+            }
+
+            if (navWrap.scrollLeft() === 0) {
+                slideBtnLeft.addClass('inactive');
+            } else {
+                slideBtnLeft.removeClass('inactive');
+            }
+
+            slideBtnRight.on('click', function () {
+                navWrap.animate({scrollLeft: '+=200px'}, 300);
+                console.log(navWrap.scrollLeft() + " px");
+            });
+
+            slideBtnLeft.on('click', function () {
+                navWrap.animate({scrollLeft: '-=200px'}, 300);
+            });
+
+            scrollerHide();
+            function scrollerHide() {
+                let scrollLeftPrev = 0;
+                navWrap.scroll(function () {
+                    let $elem = navWrap;
+                    let newScrollLeft = $elem.scrollLeft(),
+                        width = $elem.outerWidth(),
+                        scrollWidth = $elem.get(0).scrollWidth;
+                    if (scrollWidth - newScrollLeft === width) {
+                        slideBtnRight.addClass('inactive');
+                    } else {
+                        slideBtnRight.removeClass('inactive');
+                    }
+                    if (newScrollLeft === 0) {
+                        slideBtnLeft.addClass('inactive');
+                    } else {
+                        slideBtnLeft.removeClass('inactive');
+                    }
+                    scrollLeftPrev = newScrollLeft;
+                });
+            }
+
+
         },
 
 
