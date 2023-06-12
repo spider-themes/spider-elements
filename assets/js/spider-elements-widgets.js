@@ -67,20 +67,18 @@
             }
 
 
-
-
             //=== Tabs Slider
             let tabWrapWidth = $scope.find('.tabs_sliders').outerWidth();
             let totalWidth = 0;
 
-            let slideArrowBtn = $scope.find('.scroller-btn');
-            let slideBtnLeft = $scope.find('.scroller-btn.left');
-            let slideBtnRight = $scope.find('.scroller-btn.right');
-            let navWrap = $scope.find('ul.nav-tabs');
-            let navWrapItem = $scope.find('ul.nav-tabs li');
+            let slideArrowBtn = $('.scroller-btn');
+            let slideBtnLeft = $('.scroller-btn.left');
+            let slideBtnRight = $('.scroller-btn.right');
+            let navWrap = $('ul.nav-tabs');
+            let navWrapItem = $('ul.nav-tabs li');
 
-            jQuery("ul li").each(function () {
-                totalWidth += jQuery(this).outerWidth();
+            navWrapItem.each(function () {
+                totalWidth += navWrapItem.outerWidth();
             });
 
             if (totalWidth > tabWrapWidth) {

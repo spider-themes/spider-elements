@@ -1,5 +1,4 @@
 <div class="wrapper tab_shortcode<?php echo esc_attr($navigation_arrow_class . $sticky_tab_class ); ?>">
-
     <div class="sticky_tab_item tabs_sliders">
         <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>
         <ul class="nav nav-tabs d-flex" role="tablist">

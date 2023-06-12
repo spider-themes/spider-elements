@@ -35,13 +35,6 @@
       }
     }
   }
-
-  .col-md-6,
-  .col-lg-3 {
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-
   .tex {
     font-size: 1.125rem;
     color: #5d5d66;
@@ -709,14 +702,6 @@
         left: 0;
       }
     }
-  }
-}
-
-
-@media (min-width: 1200px) {
-  .col-xl-3 {
-    flex: 0 0 auto;
-    width: 25%;
   }
 }
 

@@ -85,21 +85,9 @@
 
   &.theatermode {
     overflow: hidden;
-
-    .col-lg-7 {
-      flex: 0 0 100%;
-      max-width: 100%;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .col-lg-5 {
-      flex: 0 0 100%;
-      max-width: 100%;
-
       .video_list {
         width: 100%;
         margin-top: 100px;
-
         .video_list_inner {
           .card {
             .card-body {
@@ -113,7 +101,6 @@
           }
         }
       }
-    }
   }
 }
 
@@ -130,11 +117,6 @@
 
 .art-video-player.art-fullscreen-web {
   height: 70% !important;
-
-  & + .col-lg-5 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
 }
 
 .art-video-player {
@@ -549,21 +531,9 @@
 
   &.theatermode {
     .gallery-top {
-      .col-lg-7 {
-        flex: 0 0 100%;
-        max-width: 100%;
-
-        .artplayer-app,
-        .art-video-player {
-          height: 717px !important;
-        }
+      .artplayer-app, .art-video-player {
+        height: 717px !important;
       }
-
-      .col-lg-5 {
-        flex: 0 0 40%;
-        max-width: 40%;
-      }
-
       .slide_text {
         margin-top: 30px;
         padding-left: 0;

@@ -1,19 +1,5 @@
 <?php
-add_image_size( 'se_370x300', 370, 300, true); // Screenshot carousel style 6
-add_image_size( 'se_70x70', 70, 70, true); // Recent posts thumbnail
-add_image_size( 'se_16x16', 16, 16, true); // Forums list widget forum thumbnail image
-add_image_size( 'se_60x40', 60, 40, true); // Forums list widget forum thumbnail image
-add_image_size( 'se_270x152', 270, 152, true); // Forums list widget forum thumbnail image
-add_image_size( 'se_671x411', 671, 411, true); // Video Carousel Thumb Single
-add_image_size( 'se_40x40', 40, 40, true); // Forum user image
-add_image_size( 'se_370x300', 370, 300, true); // Screenshot carousel style 6
-add_image_size( 'se_70x70', 70, 70, true); // Recent posts thumbnail
-add_image_size( 'se_16x16', 16, 16, true); // Forums list widget forum thumbnail image
-add_image_size( 'se_60x40', 60, 40, true); // Forums list widget forum thumbnail image
-add_image_size( 'se_270x152', 270, 152, true); // Forums list widget forum thumbnail image
-add_image_size( 'se_671x411', 671, 411, true); // Video Carousel Thumb Single
-add_image_size( 'se_40x40', 40, 40, true); // Forum user image
-add_image_size( 'se_270x152px', 270, 152,  true );
+add_image_size( 'se_270x152', 270, 152, true); // Video Playlist Thumb
 
 /**
  * Elementor Title tags
@@ -32,6 +18,14 @@ function se_el_title_tags() {
     ];
 }
 
+
+/**
+ * @param $settings_key
+ * @param $is_echo
+ *
+ * The button link
+ * @return void
+ */
 function se_the_button( $settings_key, $is_echo = true ) {
 
     if ( $is_echo == true ) {
@@ -63,6 +57,8 @@ function se_day_link() {
     $archive_day    = get_the_time( 'd' );
     echo get_day_link( $archive_year, $archive_month, $archive_day);
 }
+
+
 /**
  * Category IDs
  * @return array
@@ -96,7 +92,6 @@ function se_get_the_title_length ( $settings, $settings_key, $default = 10 ) {
 }
 
 
-
 /**
  * Post's excerpt text
  * @param $settings_key
@@ -109,8 +104,8 @@ function se_get_the_excerpt_length ( $settings, $settings_key, $default = 10 ) {
     $excerpt = get_the_excerpt() ? wp_trim_words(get_the_excerpt(), $excerpt_length, '...') : wp_trim_words(get_the_content(), $excerpt_length, '...');
 
     return $excerpt;
-
 }
+
 
 /**
  * Get the first category name
@@ -158,6 +153,7 @@ function se_get_the_categories ( $term = 'category' ) {
     return $cat_array;
 }
 
+
 /**
  * @param $html_data
  * @return mixed
@@ -166,11 +162,13 @@ function se_html_return($html_data) {
     return $html_data;
 }
 
+
 // Arrow icon left right position
 function se_arrow_left_right() {
     $arrow_icon = is_rtl() ? 'arrow_left' : 'arrow_right';
     echo esc_attr($arrow_icon);
 }
+
 
 /**
  * Get Default Image Elementor

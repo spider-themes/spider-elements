@@ -12,7 +12,7 @@ template.
 
 @Default Styles
 Table of Content:
-01/ Call_to_action
+01/ Cheat_sheet
 02/ Accordion
 03/ Alerts_box
 04/ Animation
@@ -26,8 +26,6 @@ Table of Content:
 12/ Testimonial
 13/ variable
 14/ Video
-15/ Cheat_sheet
-
 
 
 =====================================================================*/
@@ -178,12 +176,6 @@ Table of Content:
   width: 100%;
 }
 
-@media (min-width: 992px) {
-  .col-lg-7 {
-    flex: 0 0 auto;
-    width: 58.33333333%;
-  }
-}
 html {
   height: 100%;
 }
@@ -815,15 +807,6 @@ ul.list-style li:last-child {
 }
 .toggle_btn.collapsed .doc_accordion .accordion-article-wrap .accordion-article-item ul {
   margin-left: auto;
-}
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_body .col-md-4 {
-  flex: 0 0 auto;
-  width: 35%;
-}
-@media only screen and (min-width: 320px) and (max-width: 425px) {
-  .toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_body .col-md-4 {
-    width: 100%;
-  }
 }
 
 .multi-collapse .toggle_body {
@@ -1916,9 +1899,6 @@ ul.nav.nav-tabs {
 .doc_testimonial_slider .doc_testimonial_area .container {
   padding: 0 12px;
 }
-.doc_testimonial_slider .doc_testimonial_area .container .col-lg-6 {
-  padding: 0 12px;
-}
 .doc_testimonial_slider .action_text h2 {
   color: #fff;
   font-size: 40px;
@@ -1974,10 +1954,6 @@ ul.nav.nav-tabs {
 }
 .doc_img_slider .item.slick-active .two {
   animation: zoomIn 0.8s linear both 0.5s;
-}
-
-.col-lg-6 {
-  padding: 0 15px;
 }
 
 .slick-arrow.slick-hidden {
@@ -2041,20 +2017,11 @@ ul.nav.nav-tabs {
 .video_list_area.theatermode {
   overflow: hidden;
 }
-.video_list_area.theatermode .col-lg-7 {
-  flex: 0 0 100%;
-  max-width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-.video_list_area.theatermode .col-lg-5 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-.video_list_area.theatermode .col-lg-5 .video_list {
+.video_list_area.theatermode .video_list {
   width: 100%;
   margin-top: 100px;
 }
-.video_list_area.theatermode .col-lg-5 .video_list .video_list_inner .card .card-body .nav li {
+.video_list_area.theatermode .video_list .video_list_inner .card .card-body .nav li {
   width: 100%;
   display: block;
 }
@@ -2070,10 +2037,6 @@ ul.nav.nav-tabs {
 
 .art-video-player.art-fullscreen-web {
   height: 70% !important;
-}
-.art-video-player.art-fullscreen-web + .col-lg-5 {
-  flex: 0 0 100%;
-  max-width: 100%;
 }
 
 .art-video-player {
@@ -2380,17 +2343,8 @@ ul.nav.nav-tabs {
   height: 4px;
   margin-top: -2px;
 }
-.video_slider_area.theatermode .gallery-top .col-lg-7 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-.video_slider_area.theatermode .gallery-top .col-lg-7 .artplayer-app,
-.video_slider_area.theatermode .gallery-top .col-lg-7 .art-video-player {
+.video_slider_area.theatermode .gallery-top .artplayer-app, .video_slider_area.theatermode .gallery-top .art-video-player {
   height: 717px !important;
-}
-.video_slider_area.theatermode .gallery-top .col-lg-5 {
-  flex: 0 0 40%;
-  max-width: 40%;
 }
 .video_slider_area.theatermode .gallery-top .slide_text {
   margin-top: 30px;
@@ -4592,11 +4546,6 @@ button.swiper-pagination-bullet {
     margin-right: auto;
   }
 }
-.pricing-area .col-md-6,
-.pricing-area .col-lg-3 {
-  padding-left: 3px;
-  padding-right: 3px;
-}
 .pricing-area .tex {
   font-size: 1.125rem;
   color: #5d5d66;
@@ -5163,12 +5112,6 @@ button.swiper-pagination-bullet {
   left: 0;
 }
 
-@media (min-width: 1200px) {
-  .col-xl-3 {
-    flex: 0 0 auto;
-    width: 25%;
-  }
-}
 @media (min-width: 768px) {
   .nav .nav-link {
     font-size: 1.375rem;
@@ -7790,16 +7733,6 @@ ul.ordered-list li::before {
     font-size: 30px;
     bottom: -10px;
   }
-}
-
-.collapse .col-lg-3 {
-  flex: 0 0 auto;
-  width: 25%;
-  padding: 0 12px;
-}
-
-.collapse:not(.show) {
-  display: none;
 }
 
 .hotspot_list .hotspot {
