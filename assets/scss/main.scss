@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 /*----------------------------------------------------
 @File: Default Styles
 
@@ -13,26 +11,26 @@ template.
 
 @Default Styles
 Table of Content:
-01/ Cheat_sheet
-02/ Accordion
-03/ Alerts_box
-04/ Animation
-05/ List_Item
-06/ Predefine
-07/ Pricing_Table_Switcher
-08/ Pricing_Table
-09/ Quote
-10/ Responsive
-11/ Tabs
-12/ Testimonial
-13/ variable
-14/ Video
+01/ Variables
+02/ Common
+03/ Accordion
+04/ Quote
+05/ Tabs
+06/ Testimonial
+07/ Video
+08/ Alerts_box
+09/ Pricing_Table
+10/ Pricing_Table_Switcher
+11/ Animation
+12/ List_Item
+13/ Cheat_sheet
+14/ Hotspot
 
 
 =====================================================================*/
-@import "variables";
+@import "Variables";
 
-@import "Predefine";
+@import "Common";
 
 @import "Accordion";
 
@@ -56,6 +54,4 @@ Table of Content:
 
 @import "Cheat_sheet";
 
-@import "hotspot";
-
-@import "Responsive";
+@import "Hotspot";

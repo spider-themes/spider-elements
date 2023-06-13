@@ -219,15 +219,8 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
       left: 0;
       right: 0;
       background: var(--secondary_color);
-      -webkit-transform: translateY(70px);
-      -ms-transform: translateY(70px);
       transform: translateY(70px);
-      -webkit-transition: background 500ms ease, -webkit-transform 500ms ease;
-      transition: background 500ms ease, -webkit-transform 500ms ease;
-      -o-transition: transform 500ms ease, background 500ms ease;
       transition: transform 500ms ease, background 500ms ease;
-      transition: transform 500ms ease, background 500ms ease, -webkit-transform 500ms ease;
-      -webkit-transition: transform 500ms ease, background 500ms ease;
       z-index: 30;
     }
   }
@@ -250,10 +243,11 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
     &.scroller-btn {
       position: absolute;
       left: -24px;
-      top: 8px;
+      top: 50%;
       color: var(--brand_color);
       font-size: 20px;
       cursor: pointer;
+      transform: translateY(-50%);
     }
     &.right {
       right: -24px;
@@ -380,24 +374,6 @@ body.remove {
 .header_tabs_area {
   &.tab_fixed {
     .header_tab_items {
-      position: fixed;
-      width: 100%;
-      top: -70px;
-      left: 0;
-      right: 0;
-      background: var(--secondary_color);
-      -webkit-transform: translateY(70px);
-      -ms-transform: translateY(70px);
-      transform: translateY(70px);
-      -webkit-transition: background 500ms ease, -webkit-transform 500ms ease;
-      transition: background 500ms ease, -webkit-transform 500ms ease;
-      -o-transition: transform 500ms ease, background 500ms ease;
-      transition: transform 500ms ease, background 500ms ease;
-      transition: transform 500ms ease, background 500ms ease,
-        -webkit-transform 500ms ease;
-      -webkit-transition: transform 500ms ease, background 500ms ease;
-      z-index: 30;
-
       .nav.nav-tabs {
         li {
           a {
@@ -423,8 +399,6 @@ body.remove {
 
 .header_tab_items {
   background: var(--secondary_color);
-  @include transition;
-
   .nav.nav-tabs {
     justify-content: center;
     border: none;
@@ -443,17 +417,11 @@ body.remove {
         color: #fff;
         padding: 10px 30px;
         text-decoration: none;
-        @include transition;
-
         svg,
         i,
         img {
           display: block;
           margin-bottom: 2px;
-
-          path {
-            @include transition;
-          }
         }
 
         &:hover {

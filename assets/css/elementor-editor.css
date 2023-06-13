@@ -66,33 +66,33 @@
 }
 /** === Slider Styles === **/
 .docs-1::before {
-    background: url("../images/docs-1.png");
+    background: url("../images/el-editor-preview/docs-1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .docs-2::before {
-    background: url("../images/docs-2.png");
+    background: url("../images/el-editor-preview/docs-2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .docs-3::before {
-    background: url("../images/docs-3.jpg");
+    background: url("../images/el-editor-preview/docs-3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 
 .docs-4::before {
-    background: url("../images/docs-4.png");
+    background: url("../images/el-editor-preview/docs-4.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 
 .docs-5::before {
-    background: url("../images/docs-5.jpg");
+    background: url("../images/el-editor-preview/docs-5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -101,57 +101,57 @@
 
 /** === Single Doc === **/
 .single-doc1::before {
-    background: url("../images/single-doc1.jpg");
+    background: url("../images/el-editor-preview/single-doc1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .single-doc2::before {
-    background: url("../images/single-doc2.jpg");
+    background: url("../images/el-editor-preview/single-doc2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .single-doc3::before {
-    background: url("../images/single-doc3.jpg");
+    background: url("../images/el-editor-preview/single-doc3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .single-doc4::before {
-    background: url("../images/single-doc4.jpg");
+    background: url("../images/el-editor-preview/single-doc4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 
 .single-doc5::before {
-    background: url("../images/single-doc5.jpeg");
+    background: url("../images/el-editor-preview/single-doc5.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 /** === Forum Topics === **/
 .forums1::before {
-    background: url("../images/forums1.jpg");
+    background: url("../images/el-editor-preview/forums1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .forums2::before {
-    background: url("../images/forums2.jpg");
+    background: url("../images/el-editor-preview/forums2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .single_forum_1::before {
-    background: url("../images/forums3.jpg");
+    background: url("../images/el-editor-preview/forums3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .single_forum_2::before {
-    background: url("../images/forums4.png");
+    background: url("../images/el-editor-preview/forums4.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -159,13 +159,13 @@
 
 /** === Forum Topics === **/
 .topic1::before {
-    background: url("../images/topic1.jpg");
+    background: url("../images/el-editor-preview/topic1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .topic2::before {
-    background: url("../images/topic2.jpg");
+    background: url("../images/el-editor-preview/topic2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -173,13 +173,13 @@
 
 /** === Forum Topics === **/
 .testimonial1::before {
-    background: url("../images/testimonial1.jpg");
+    background: url("../images/el-editor-preview/testimonial1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .testimonial2::before {
-    background: url("../images/testimonial2.jpg");
+    background: url("../images/el-editor-preview/testimonial2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -187,13 +187,13 @@
 
 /** === Video Playlist === **/
 .video-playlist::before {
-    background: url("../images/video-playlist.jpg");
+    background: url("../images/el-editor-preview/video-playlist.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .video-playlist2::before {
-    background: url("../images/video-playlist2.jpg");
+    background: url("../images/el-editor-preview/video-playlist2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -201,19 +201,19 @@
 
 /** === FAQ === **/
 .faq1::before {
-    background: url("../images/faq1.jpeg");
+    background: url("../images/el-editor-preview/faq1.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .faq2::before {
-    background: url("../images/faq2.jpeg");
+    background: url("../images/el-editor-preview/faq2.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .faq3::before {
-    background: url("../images/faq3.jpg");
+    background: url("../images/el-editor-preview/faq3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;

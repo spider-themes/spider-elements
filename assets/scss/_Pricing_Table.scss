@@ -128,8 +128,7 @@
 
     &.active {
       border-color: transparent;
-      background: transparent;
-      background: #ec595a;
+      background-color: #ec595a;
       color: #fff;
       font-weight: 600;
 
@@ -137,17 +136,17 @@
 
     &:hover {
       border-color: transparent;
-      color: unset !important;
+      color: unset;
     }
   }
 }
 
 
 .pricing-tabs-two {
-  display: inline-flex !important;
+  display: inline-flex;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #676099 !important;
+  border: 1px solid #676099;
 
   li {
     display: inline-block;
@@ -234,7 +233,6 @@
   position: relative;
   border: 2px solid transparent;
   text-align: center;
-  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 
   p {
@@ -317,7 +315,6 @@
 
   .pricing-item-user {
     font-size: 0.875rem;
-    font-weight: #5d5d66;
     display: block;
     margin-top: 0.625rem;
   }
@@ -334,7 +331,7 @@
     padding: 0.8125rem 1.875rem;
     margin-top: 2.1875rem;
     transition: 0.3s ease-out;
-    margin-bottom: 20px !important;
+    margin-bottom: 20px;
 
     &:hover {
       background: #ec595a;
@@ -862,7 +859,7 @@ button {
       font-weight: 500;
       line-height: 22px;
       padding: 4px 21px;
-      margin-top: 6px !important;
+      margin-top: 6px;
       font-family: "inter", sans-serif;
 
       &:hover {
@@ -1190,7 +1187,7 @@ button {
 
 // after add  bootstrap 
 .pricing-tabs {
-  border: none !important;
+  border: none;
   padding: 0.625rem;
   border-radius: 0.625rem;
   background: #f9f9f9;
@@ -1203,11 +1200,17 @@ button {
   color: #6d6d6d;
 }
 .pricing-tabs .nav-link.active {
-  border-color: transparent !important;
-  background: transparent !important;
-  background: #ec595a !important;
-  color: #fff !important;
+  border-color: transparent;
+  background: #ec595a;
+  color: #fff;
 }
 .pricing-tabs .nav-link:hover {
-  border-color: transparent !important;
+  border-color: transparent;
+}
+
+@media (max-width: 480px) {
+  .cloud-pricing-wrapp .nav .nav-link {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
 }

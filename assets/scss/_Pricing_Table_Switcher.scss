@@ -206,7 +206,6 @@
     overflow: hidden;
     text-align: center;
     cursor: pointer;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
     color: #212529;
 
@@ -236,7 +235,7 @@
     font-size: 16px;
     font-weight: 600;
     &:hover{
-      color: unset !important;
+      color: unset;
     }
     &:before {
       position: absolute;
@@ -267,10 +266,8 @@
       animation-duration: 0.3s;
 
       &.fadeInLeft {
-        -webkit-animation-name: fadeInLeft;
-        -moz-animation-name: fadeInLeft;
-        -webkit-animation-duration: 0.3s;
-        -moz-animation-duration: 0.3s;
+        animation-name: fadeInLeft;
+        animation-duration: 0.3s;
       }
     }
 
@@ -294,10 +291,8 @@
         animation-duration: 0.3s;
 
         &.fadeInRight {
-          -webkit-animation-name: fadeInRight;
-          -moz-animation-name: fadeInRight;
-          -webkit-animation-duration: 0.3s;
-          -moz-animation-duration: 0.3s;
+          animation-name: fadeInRight;
+          animation-duration: 0.3s;
         }
       }
     }
@@ -870,7 +865,6 @@ button {
   overflow: hidden;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   color: #212529;
   font-family: "Inter", sans-serif;
@@ -880,7 +874,7 @@ button {
 // ========== cloud-features-area Style  ======
 .cloud-pricing-wrapp {
   .nav {
-    border: none !important;
+    border: none;
     .nav-link {
       font-family: "Inter", sans-serif;
       font-size: 17px;
@@ -985,7 +979,7 @@ button {
       font-weight: 500;
       line-height: 22px;
       padding: 4px 21px;
-      margin-top: 6px !important;
+      margin-top: 6px;
       font-family: "inter", sans-serif;
 
       &:hover {
@@ -1217,7 +1211,6 @@ button {
     overflow: hidden;
     text-align: center;
     cursor: pointer;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
     color: #212529;
     font-family: "Inter", sans-serif;
@@ -1305,28 +1298,6 @@ button {
     }
   }
 }
-
-
-.app-pricing-question {
-  .question-title {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 30px;
-    letter-spacing: 0.5px;
-  }
-
-  .question-text {
-    color: #171717;
-    padding: 0 15px;
-
-    a {
-      color: #EC595A;
-      text-decoration: underline;
-    }
-  }
-}
-
-
 
 // ==== Choose plan area three style ===== //
 .choose-plan-area-three {
@@ -1499,4 +1470,23 @@ button {
       }
     }
   }
+}
+
+@media (max-width: 991px) {
+  .cloud-pricing-wrapp .nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-switcher .nav-link:nth-child(odd) {
+    padding-right: 60px;
+  }
+  .pricing-switcher .nav-link:nth-child(even) {
+    padding-left: 60px;
+  }
+  .pricing-banner-2 .current-price {
+    font-size: 24px;
+  }
+
 }

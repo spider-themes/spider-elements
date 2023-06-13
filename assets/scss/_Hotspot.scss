@@ -13,7 +13,6 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         color: #e2498a;
         text-align: center;
-        border-radius: 50%;
         overflow: hidden;
         img{
             height: 100%;
@@ -28,11 +27,9 @@
     &.yes{
         .hotspot{
             transform: scale(0);
-            --animation-duration: 20s;
-            --animation-segments: 5;
+            animation-duration: 20s;
+            animation-segments: 5;
             --size: 30rem;
-            -webkit-transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-            transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
             transition: all 0.3s ease-in-out;
             &.active{
                 animation-name: scale;
@@ -195,7 +192,6 @@ figure.stack_image{
         border-radius:2px;
         box-shadow:0 0 10px rgba(0,0,0,.3);
         transition:margin .5s;
-        -webkit-transition:margin .5s;
         overflow: hidden;
         @media (max-width:767px){
             width: 210px;
@@ -206,7 +202,6 @@ figure.stack_image{
             margin-left:-20px;
             z-index:2;
             transform:rotate(-3deg);
-            -webkit-transform:rotate(-3deg);
           }
           
           &:nth-of-type(2){
@@ -216,12 +211,10 @@ figure.stack_image{
           }
           &:nth-of-type(3){
             transform:rotate(3deg);
-            -webkit-transform:rotate(3deg);
           }
           
           &:last-of-type{
             transform:rotate(3deg);
-            -webkit-transform:rotate(3deg);
           }
         img{
             width: 100%;

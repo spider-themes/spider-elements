@@ -6,7 +6,6 @@
         onInit: function () {
             var E_FRONT = elementorFrontend;
             var widgetHandlersMap = {
-                //"landpagy_pricing_table_switcher.default"     : spiderElements.pricing_table_switcher,
                 "landpagy_pricing_table_tabs.default"           : spiderElements.pricing_table_tabs,
                 "docy_tabs.default"                             : spiderElements.tabs,
             };
@@ -16,7 +15,6 @@
             });
 
         },
-
 
         //======================== Tabs =========================== //
         tabs: function ($scope) {
@@ -65,7 +63,6 @@
                     });
                 }
             }
-
 
             //=== Tabs Slider
             let tabWrapWidth = $scope.find('.tabs_sliders').outerWidth();
@@ -151,7 +148,6 @@
                 });
             }
         },
-
 
 
     }

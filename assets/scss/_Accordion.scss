@@ -12,7 +12,7 @@
   border-radius: 4px;
   padding: 12px 30px;
   position: relative;
-  text-decoration: none !important;
+  text-decoration: none;
 
   &:not(.collapsed) {
     border-bottom-left-radius: 0;
@@ -20,7 +20,7 @@
     color: #4c4cf1;
   }
   &:before {
-    content: "" !important;
+    content: "";
     background-image: url('../images/svgviewer-output.svg');
     height: 12px;
     width: 20px;
@@ -47,7 +47,7 @@
     border-radius: 4px;
     padding: 12px 30px;
     position: relative;
-    text-decoration: none !important;
+    text-decoration: none;
     &:not(.collapsed) {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -177,7 +177,7 @@
           li {
             display: inline-block;
             margin-right: 5px;
-            font-size: 14px !important;
+            font-size: 14px;
             color: rgb(132 141 149);
             font-weight: 400;
           }
@@ -207,7 +207,7 @@
         li {
           display: inline-block;
           margin-right: 5px;
-          font-size: 14px !important;
+          font-size: 14px;
           color: rgb(132 141 149);
           font-weight: 400;
         }
@@ -355,23 +355,14 @@
       li {
         display: inline-block;
         margin-right: 5px;
-        font-size: 14px !important;
+        font-size: 14px;
         color: rgb(132 141 149);
       }
     }
   }
 }
-  .elementor-widget-container {
-    .toggle_body {
-      border: 1px solid rgb(235 235 235) !important;
-      padding: 18px 30px 24px 30px;
-      border-radius: 0 0 4px 4px;
-      line-height: 26px;
-      background: rgb(255 255 255);
-    }
+button.btn.btn-link.collapsed {
+  .collapsed-icon {
+    display: none ;
   }
-  button.btn.btn-link.collapsed {
-    .collapsed-icon {
-      display: none ;
-    }
-  }
+}

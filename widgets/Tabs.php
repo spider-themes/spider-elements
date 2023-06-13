@@ -25,11 +25,19 @@ class Tabs extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Spider Tabs', 'spider-elements' );
+		return esc_html__( 'Tabs (Spider)', 'spider-elements' );
 	}
 
 	public function get_icon() {
 		return 'eicon-tabs';
+	}
+
+	public function get_style_depends() {
+		return [ 'bootstrap', 'elegant-icon', 'se-main', ];
+	}
+
+	public function get_script_depends() {
+		return [ 'bootstrap', 'se-el-widgets', 'se-script', ];
 	}
 
 	public function get_categories() {
