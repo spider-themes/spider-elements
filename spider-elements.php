@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Spider Elements
  * Plugin URI: https://spider-themes.net/
- * Description: Spider Elements sample asset for elementor widegts.
+ * Description: Spider Elements sample asset for elementor widgets.
  * Version: 1.0.0
  * Requires at least: 5.0
  * Tested up to: 6.2
@@ -17,34 +17,14 @@
  * Elementor Pro tested up to: 3.5.0
  */
 
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- * of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- */
-
 defined('ABSPATH') or die( 'Hey, what are you doing here? You silly human!' ) ;
 
 /**
- * Main Spider Elements Class
+ * Spider_Elements class.
  *
- * The init class that runs the Hello World plugin.
- * Intended To make sure that the plugin's minimum requirements are met.
+ * The main class that initiates and runs the addon.
  *
- * You should only modify the constants to match your plugin's needs.
- *
- * Any custom code should go inside Plugin Class in the plugin.php file.
- * @since 1.2.0
+ * @since 1.0.0
  */
 final class Spider_Elements {
 

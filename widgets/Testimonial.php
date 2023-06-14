@@ -300,9 +300,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' => 'author_name_typo',
-				'selector' => '
-                    {{WRAPPER}} .se_name
-                ',
+				'selector' => '{{WRAPPER}} .se_name',
 			]
 		); //End Author Name
 
@@ -329,9 +327,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' => 'designation_typo',
-				'selector' => '
-                    {{WRAPPER}} .se_designation
-                ',
+				'selector' => '{{WRAPPER}} .se_designation',
 			]
 		); //End Designation
 
@@ -358,9 +354,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' => 'review_content_typo',
-				'selector' => '
-                    {{WRAPPER}} .se_review_content
-                ',
+				'selector' => '{{WRAPPER}} .se_review_content',
 			]
 		); //End Author Designation
 
