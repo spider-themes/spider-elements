@@ -144,7 +144,7 @@ function se_get_the_categories ( $term = 'category' ) {
     ));
 
     $cat_array = [];
-    $cat_array['all'] = esc_html__('All', 'landpagy-core');
+    $cat_array['all'] = esc_html__('All', 'spider-elements');
 
     foreach ($cats as $cat) {
         $cat_array[$cat->term_id] = $cat->name;
@@ -295,14 +295,14 @@ function se_return_tab_data( $getCats, $event_schedule_cats ) {
 /**
  * estimated reading time
  **/
-function se_get_the_reading_time() {
+function se_get_the_reading_time($minute_label = 'minute', $minutes_label = 'minutes') {
     $content = get_post_field( 'post_content', get_the_ID() );
     $word_count = str_word_count( strip_tags( $content ) );
     $readingtime = ceil($word_count / 200);
     if ($readingtime == 1) {
-        $timer = esc_html__( " minute read", 'landpagy' );
+        $timer = esc_html__( " {$minute_label}", 'spider-elements' );
     } else {
-        $timer = esc_html__( " minutes read", 'landpagy' );
+        $timer = esc_html__( " {$minutes_label}", 'spider-elements' );
     }
 
     $totalreadingtime = $readingtime . $timer;
@@ -325,7 +325,7 @@ function se_get_contact_form7() {
 
     $results = [];
     if ( $forms ) {
-        $results[] = __( 'Select A Form', 'landpagy-core' );
+        $results[] = __( 'Select A Form', 'spider-elements' );
         foreach ( $forms as $form ) {
             $results[ $form->ID ] = $form->post_title;
         }

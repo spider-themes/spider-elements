@@ -82,12 +82,75 @@ class Accordion_Article extends Widget_Base {
 
 		$this->add_control(
 			'cat_name', [
-				'label' => esc_html__( 'Select category', 'spider-elements' ),
+				'label' => esc_html__( 'Select category (Blog Post)', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => se_cat_ids(),
 				'default' => '',
 			]
 		);
+
+		$this->add_control(
+			'show_count', [
+				'label' => esc_html__('Show Posts Count', 'banca-core'),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'default' => 3
+			]
+		);
+
+		$this->add_control(
+			'order', [
+				'label' => esc_html__('Order', 'banca-core'),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'ASC' => 'ASC',
+					'DESC' => 'DESC'
+				],
+				'default' => 'ASC'
+			]
+		);
+
+		$this->add_control(
+			'orderby', [
+				'label' => esc_html__( 'Order By', 'landpagy-core' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'none' => 'None',
+					'ID' => 'ID',
+					'author' => 'Author',
+					'title' => 'Title',
+					'name' => 'Name (by post slug)',
+					'date' => 'Date',
+					'rand' => 'Random',
+				],
+				'default' => 'none'
+			]
+		);
+
+		$this->add_control(
+			'title_length', [
+				'label' => esc_html__('Title Length', 'banca-core'),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'default' => -1,
+			]
+		);
+
+		$this->add_control(
+			'excerpt_length', [
+				'label' => esc_html__('Excerpt Word Length', 'banca-core'),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'default' => 15,
+			]
+		);
+
+		$this->add_control(
+			'exclude', [
+				'label' => esc_html__( 'Exclude', 'banca-core' ),
+				'description' => esc_html__( 'Enter the post IDs to hide/exclude. Input the multiple ID with comma separated', 'banca-core' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
 		$this->add_control(
 			'collapse_state', [
 				'label' => esc_html__( 'Expanded', 'spider-elements' ),
@@ -95,7 +158,8 @@ class Accordion_Article extends Widget_Base {
 				'label_on' => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off' => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
-				'default' => '',
+				'default' => 'no',
+				'separator' => 'before',
 			]
 		);
 
@@ -127,6 +191,16 @@ class Accordion_Article extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 		extract($settings); //extract all settings array to variables converted to name of key
+
+	    $taxonomy = get_terms( array(
+		    'taxonomy' => 'category',
+		    'hide_empty' => true,
+		    'include'   => $settings['cat_name']
+	    ) );
+
+	    $is_collapsed = $settings['collapse_state'] == 'yes' ? 'true' : 'false';
+	    $collapse_class = $settings['collapse_state'] == 'yes' ? '' : 'collapsed';
+	    $is_show = $settings['collapse_state'] == 'yes' ? 'show' : '';
 
 
 		//======================== Templates Parts ========================//

@@ -306,7 +306,6 @@ Table of Content:
   border: 1px solid rgb(230, 237, 240);
   padding: 20px;
   margin: 12px 0;
-  min-height: 230px;
 }
 .toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item h4 {
   font-size: 16px;
