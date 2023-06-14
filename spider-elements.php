@@ -76,7 +76,7 @@ final class Spider_Elements {
 	 *
 	 * @var string Minimum PHP version required to run the plugin.
 	 */
-	const MINIMUM_PHP_VERSION = '7.0';
+	const MINIMUM_PHP_VERSION = '7.4';
 
 
 	/**
@@ -89,7 +89,7 @@ final class Spider_Elements {
 	 * @access private
 	 * @static
 	 *
-	 * @var Spider Elements A single instance of the class.
+	 * @var Spider_Elements A single instance of the class.
 	 */
 	private static  $_instance = null ;
 
@@ -104,7 +104,7 @@ final class Spider_Elements {
 	 * @access public
 	 * @static
 	 *
-	 * @return Spider|Spider_Elements An instance of the class.
+	 * @return Spider_Elements An instance of the class.
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -143,7 +143,7 @@ final class Spider_Elements {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'listy-core' ), '1.7.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), '1.7.0' );
 	}
 
 
@@ -251,9 +251,10 @@ final class Spider_Elements {
 		//Shortcodes
 		require_once __DIR__ . '/shortcodes/direction.php';
 
-
-		// Frontend Scripts
-		if ( !is_admin() ) {
+		// Admin and Frontend Scripts Loaded
+		if ( is_admin() ) {
+			require_once __DIR__ . '/includes/Admin/Assets.php';
+		} else {
 			require_once __DIR__ . '/includes/Frontend/Assets.php';
 		}
 
@@ -269,7 +270,7 @@ final class Spider_Elements {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'listy-core', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'spider-elements', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 
 
@@ -304,6 +305,7 @@ final class Spider_Elements {
 			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			return;
 		}
+
 	}
 
 	/**

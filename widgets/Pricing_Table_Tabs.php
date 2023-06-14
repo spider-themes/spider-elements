@@ -24,7 +24,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-price-table';
+		return 'eicon-price-table se-icon';
 	}
 
 	public function get_categories() {

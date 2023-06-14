@@ -25,11 +25,11 @@ class Tabs extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Tabs (Spider)', 'spider-elements' );
+		return esc_html__( 'Tabs', 'spider-elements' );
 	}
 
 	public function get_icon() {
-		return 'eicon-tabs';
+		return 'eicon-tabs se-icon';
 	}
 
 	public function get_style_depends() {
@@ -37,13 +37,12 @@ class Tabs extends Widget_Base {
 	}
 
 	public function get_script_depends() {
-		return [ 'bootstrap', 'se-el-widgets', 'se-script', ];
+		return [ 'bootstrap', 'se-el-widgets' ];
 	}
 
 	public function get_categories() {
 		return [ 'spider-elements' ];
 	}
-
 
 	/**
 	 * Name: register_controls()
@@ -74,7 +73,7 @@ class Tabs extends Widget_Base {
 		// ============================ Select Style  ===========================//
 		$this->start_controls_section(
 			'select_style', [
-				'label' => __( 'Preset Tab', 'spider-elements' ),
+				'label' => __( 'Preset Skins', 'spider-elements' ),
 			]
 		);
 
@@ -90,7 +89,7 @@ class Tabs extends Widget_Base {
 			]
 		);
 
-        $this->end_controls_section(); // End select_style
+        $this->end_controls_section(); // End Select Style
 
 
 		// ============================ Tabs ===========================//
@@ -499,7 +498,7 @@ class Tabs extends Widget_Base {
 	 */
 	protected function render() {
         $settings = $this->get_settings_for_display();
-        extract( $settings ); // extract all settings array to variables converted to name of key
+        extract( $settings ); //extract all settings array to variables converted to name of key
 
         $tabs = $this->get_settings_for_display( 'tabs' );
         $id_int = substr( $this->get_id_int(), 0, 3 );

@@ -1,23 +1,7 @@
 /*============ Start doc_feedback_area css ==========*/
-.doc_feedback_area{
-  position: relative;
-  z-index: 1;
-  padding: 110px 0;
-}
-
-.overlay_bg{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(9, 19, 50, 0.80);
-}
-
 .doc_feedback_info{
   position: relative;
 }
-
 .slider_nav{
   .arrow{
     width: 25px;
@@ -161,13 +145,8 @@
 /*============ End doc_action_area css ==========*/
 
 /*============= spider_testimonial_area css  ================*/
-  .doc_testimonial_area {
-    padding: 160px 0 135px;
-  }
-
   .doc_testimonial_slider {
     padding-right: 100px;
-
     .item {
       padding-left: 15px;
       position: relative;
@@ -179,7 +158,6 @@
         font-size: 150px;
         color: #4c4cf1;
         opacity: 0.1;
-        position: absolute;
         position: absolute;
         left: -5px;
         width: 38px;
@@ -205,13 +183,6 @@
       }
     }
   }
-
-
-
-  .doc_testimonial_area {
-    padding: 160px 0 135px;
-  }
-
   .doc_testimonial_slider {
     padding-right: 100px;
 
@@ -271,7 +242,7 @@
       bottom: 0;
       text-align: left;
       margin-top: 30px;
-      padding-left: 30px;
+      padding-left: 15px;
 
       li {
         width: auto;
@@ -302,20 +273,12 @@
         }
       }
     }
-
-    .doc_testimonial_area .container {
-      padding: 0 12px;
-    }
-
-
-
     .action_text {
       h2 {
         color: #fff;
         font-size: 40px;
         font-weight: 500;
       }
-
       p {
         font-size: 18px;
         line-height: 28px;

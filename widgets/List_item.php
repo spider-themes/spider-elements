@@ -26,7 +26,7 @@ class List_item extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-bullet-list';
+        return 'eicon-bullet-list se-icon';
     }
 
     public function get_keywords() {

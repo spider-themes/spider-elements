@@ -5,50 +5,41 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Use namespace to avoid conflict
- */
-namespace spiderElements\Admin;
-
-/**
  * Class Assets
  * @package spiderElements\Admin
  */
-class Assets
-{
+class Admin_Assets {
 
 	/**
 	 * Assets constructor.
 	 */
-	public function __construct()
-	{
-		$current_url         = !empty($_GET["page"]) ? admin_url("admin.php?page=" . sanitize_text_field($_GET["page"])) : '';
-		$target_url          = admin_url('/admin.php?page=eazydocs');
-		$target_one_page_url = admin_url('/admin.php?page=eazydocs-onepage');
-		$target_analytics_page_url = admin_url('/admin.php?page=ezd-analytics');
+	public function __construct() {
 
-		if ($current_url == $target_url) {
-			add_action('admin_enqueue_scripts', [$this, 'eazydocs_dashboard_scripts']);
-		} elseif ($current_url == $target_one_page_url) {
-			add_action('admin_enqueue_scripts', [$this, 'eazydocs_dashboard_scripts']);
-		} elseif ($current_url == $target_analytics_page_url ) {
-			add_action('admin_enqueue_scripts', [$this, 'eazydocs_dashboard_scripts']);
-		}
+		add_action( 'plugins_loaded', [$this, 'register_scripts'] );
 
-		add_action('admin_enqueue_scripts', [$this, 'eazydocs_global_scripts']);
 	}
 
 	/**
 	 * Register scripts and styles
 	 **/
-	public function eazydocs_dashboard_scripts() {
+	public function register_scripts() {
+
+		// Register Elementor Preview Editor Style's
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'se_register_editor_styles' ] );
 
 	}
 
 	/**
-	 * Enqueue global scripts
-	 * and styles by EazyDocs pages on WordPress dashboard
+	 * Register Widget Styles
+	 *
+	 * Register custom styles required to run Spider Elements.
+	 *
+	 * @access public
 	 */
-	public function eazydocs_global_scripts() {
-
+	function se_register_editor_styles() {
+		wp_register_style( 'se-el-editor', SE_CSS . '/elementor-editor.css');
+		wp_enqueue_style( 'se-el-editor', SE_CSS . '/elementor-editor.css' );
 	}
 }
+
+new Admin_Assets();

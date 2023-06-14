@@ -8,6 +8,7 @@
             var widgetHandlersMap = {
                 "landpagy_pricing_table_tabs.default"           : spiderElements.pricing_table_tabs,
                 "docy_tabs.default"                             : spiderElements.tabs,
+                "docy_testimonial.default"                      : spiderElements.testimonial,
             };
 
             $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -15,6 +16,54 @@
             });
 
         },
+
+
+        //======================== Testimonial =========================== //
+        testimonial: function ($scope) {
+
+            let testimonialSlider = $scope.find('.doc_testimonial_slider');
+            let imageSlider = $scope.find('.doc_img_slider');
+
+            if (testimonialSlider.length > 0) {
+                testimonialSlider.slick({
+                    autoplay: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplaySpeed: 2000,
+                    speed: 2000,
+                    dots: true,
+                    arrows: false,
+                    asNavFor: imageSlider,//.doc_img_slider class
+                });
+                imageSlider.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    asNavFor: testimonialSlider, //.doc_testimonial_slider class
+                    arrows: false,
+                    fade: true,
+                    focusOnSelect: true,
+                });
+
+            }
+
+            let feedbackSlider = $scope.find('.doc_feedback_slider');
+            if (feedbackSlider.length > 0) {
+                feedbackSlider.slick({
+                    autoplay: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplaySpeed: 2000,
+                    speed: 1000,
+                    dots: false,
+                    arrows: true,
+                    prevArrow: '.prev',
+                    nextArrow: '.next',
+                });
+            }
+
+        },
+
+
 
         //======================== Tabs =========================== //
         tabs: function ($scope) {

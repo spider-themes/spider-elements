@@ -26,11 +26,11 @@ class Alerts_box extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Alerts Box (Spider)', 'spider-elements' );
+        return __( 'Alerts Box', 'spider-elements' );
     }
 
     public function get_icon() {
-        return 'eicon-alert';
+        return 'eicon-alert se-icon';
     }
 
     public function get_keywords() {

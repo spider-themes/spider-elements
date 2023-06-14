@@ -36,7 +36,7 @@ class Video_playlist extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-tabs';
+        return 'eicon-tabs se-icon';
     }
 
     public function get_style_depends() {

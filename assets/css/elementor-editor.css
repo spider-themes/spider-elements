@@ -228,4 +228,12 @@
     display: table-cell; 
 }
 
-/* Video Playlist widget CSS */
+/*==================== Widget Preview Icon =====================*/
+.elementor-panel .elementor-element .icon .se-icon::after {
+    content: url("../images/el-editor-preview/se-icon.svg");
+    background-repeat: no-repeat;
+    opacity: .5;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

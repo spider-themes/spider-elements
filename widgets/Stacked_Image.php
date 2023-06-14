@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     }
 
     public function get_icon() {
-        return 'eicon-image-hotspot';
+        return 'eicon-image-hotspot se-icon';
     }
 
     public function get_keywords() {

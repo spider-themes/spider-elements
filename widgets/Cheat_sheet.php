@@ -26,11 +26,11 @@ class Cheat_sheet extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Cheat Sheet (Spider)', 'spider-elements' );
+        return esc_html__( 'Cheat Sheet', 'spider-elements' );
     }
 
     public function get_icon() {
-        return 'eicon-apps';
+        return 'eicon-apps se-icon';
     }
 
     public function get_keywords() {
