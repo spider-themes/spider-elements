@@ -419,6 +419,7 @@ final class Spider_Elements {
 		require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 		require_once( __DIR__ . '/widgets/Hotspot.php' );
 		require_once( __DIR__ . '/widgets/Stacked_Image.php' );
+		require_once( __DIR__ . '/widgets/Box_hover.php' );
 
 	}
 
@@ -446,6 +447,7 @@ final class Spider_Elements {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Hotspot() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Stacked_Image() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Box_hover() );
 	}
 
 
