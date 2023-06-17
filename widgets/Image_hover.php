@@ -41,8 +41,6 @@ class Image_hover extends Widget_Base {
 	}
 
     protected function register_controls() {
-
-
 	    $this->start_controls_section(
 			'section_image',
 			[
