@@ -53,6 +53,12 @@
 .se-black-900 {
   color: var(--black_900) !important;
 }
+a{
+  &:hover,&:focus{
+    outline: none;
+    text-decoration: none;
+  }
+}
 
 /** Hover Classes **/
 /*.h\:bs-md:hover {

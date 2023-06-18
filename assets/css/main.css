@@ -116,6 +116,11 @@ Table of Content:
   color: var(--black_900) !important;
 }
 
+a:hover, a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
 /** Hover Classes **/
 /*.h\:bs-md:hover {
   box-shadow: var(--bs_md) !important;
@@ -7329,7 +7334,6 @@ figure.stack_image img:nth-child(4) {
 }
 
 .sp_image_hover {
-  color: #fff;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -7344,6 +7348,9 @@ figure.stack_image img:nth-child(4) {
   box-sizing: border-box;
 }
 
+.style_one {
+  color: #fff;
+}
 .style_one img {
   max-width: 100%;
   opacity: 1;
@@ -7466,6 +7473,17 @@ figure.stack_image img:nth-child(4) {
   border-style: solid;
   border-width: 125px 120px 125px 0;
   border-color: transparent #ffffff transparent transparent;
+}
+.style_two figcaption h3, .style_two figcaption p {
+  transform: translateX(-30px);
+}
+.style_two figcaption h3 {
+  line-height: 1.1em;
+  font-weight: 900;
+  font-size: 1.6em;
+}
+.style_two figcaption p {
+  font-size: 0.9em;
 }
 .style_two:hover::after {
   transform: translateX(0);

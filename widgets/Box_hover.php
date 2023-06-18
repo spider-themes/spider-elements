@@ -56,7 +56,13 @@ class Box_hover extends Widget_Base {
 		return [ 'bootstrap', 'se-el-widgets' ];
 	}
 
+
     protected function register_controls() {
+		$this->elementor_content_control();
+		$this->elementor_style_control();
+	}
+
+    protected function elementor_content_control() {
 
 	    /**
 	     * Quote Texts
@@ -94,14 +100,23 @@ class Box_hover extends Widget_Base {
                 'label' => __( 'Image', 'spider-elements' ),
                 'type' => Controls_Manager::MEDIA,
                 'separator' => 'before'
-                // 'default' => [
-                //     'url' => plugins_url('images/docs-3.png', __FILE__)
-                // ]
             ]
         );
 
         $this->end_controls_section();
 
+    }
+
+    /**
+	 * Name: elementor_style_control()
+	 * Desc: Register the Style Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_style_control() {
         /**
          * Box Style Title
          */
@@ -217,10 +232,9 @@ class Box_hover extends Widget_Base {
 			    'selector' => '{{WRAPPER}} .box_hover_content p',
 		    ]
 	    );
-
         $this->end_controls_section();
-
     }
+
 
     /**
      * Render alert widget output on the frontend.

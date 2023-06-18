@@ -1,5 +1,4 @@
 .sp_image_hover{
-  color: #fff;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -15,6 +14,7 @@
 }
 
 .style_one{
+  color: #fff;
   img{
     max-width: 100%;
     opacity: 1;
@@ -141,6 +141,17 @@
       border-width: 125px 120px 125px 0;
       border-color: transparent #ffffff transparent transparent;
     }
+    h3,p{
+      transform: translateX(-30px);
+    }
+    h3{
+      line-height: 1.1em;
+      font-weight: 900;
+      font-size: 1.6em;
+    }
+    p{
+      font-size: 0.9em;
+    }
   }
   &:hover{
     &::after{
@@ -150,10 +161,6 @@
     figcaption{
       transform: translateX(0);
       opacity: 1;
-      // &:before{
-      //   transform: translateY(0);
-      // opacity: 1;
-      // }
     }
   }
 }

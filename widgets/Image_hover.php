@@ -57,6 +57,11 @@ class Image_hover extends Widget_Base {
 	}
 
     protected function register_controls() {
+		$this->elementor_content_control();
+		$this->elementor_style_control();
+	}
+
+    protected function elementor_content_control() {
         //===================== Select Preset ===========================//
         $this->start_controls_section(
             'style_sec', [
@@ -106,7 +111,6 @@ class Image_hover extends Widget_Base {
 		);
 		
         $this->end_controls_section();
-        $this->elementor_style_control();
     }
 
     public function elementor_style_control() {
