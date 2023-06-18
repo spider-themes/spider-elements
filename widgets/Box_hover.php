@@ -40,6 +40,22 @@ class Box_hover extends Widget_Base {
         return [ 'spider-elements' ];
     }
 
+    /**
+	 * Name: get_style_depends()
+	 * Desc: Register the required CSS dependencies for the frontend.
+	 */
+	public function get_style_depends() {
+		return [ 'bootstrap', 'elegant-icon', 'se-main' ];
+	}
+
+	/**
+	 * Name: get_script_depends()
+	 * Desc: Register the required JS dependencies for the frontend.
+	 */
+	public function get_script_depends() {
+		return [ 'bootstrap', 'se-el-widgets' ];
+	}
+
     protected function register_controls() {
 
 	    /**
