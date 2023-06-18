@@ -29,7 +29,7 @@ class Image_hover extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-blockquote se-icon';
+        return 'eicon-image-rollover se-icon';
     }
 
     public function get_keywords() {
@@ -41,6 +41,33 @@ class Image_hover extends Widget_Base {
 	}
 
     protected function register_controls() {
+        //===================== Select Preset ===========================//
+        $this->start_controls_section(
+            'style_sec', [
+                'label' => esc_html__( 'Preset Skins', 'landpagy-core' ),
+            ]
+        );
+
+        $this->add_control(
+            'style', [
+                'label'   => esc_html__( 'Style', 'spider-elements' ),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    '1' => [
+                        'title' => __( 'Hover With Image', 'spider-elements' ),
+                        'icon' => 'himage1',
+                    ],
+                    '2' => [
+                        'title' => __( 'Hover With Image', 'spider-elements' ),
+                        'icon' => 'himage2',
+                    ],
+                ],
+                'default' => '1',
+            ]
+        );
+
+        $this->end_controls_section(); //End Select Style
+
 	    $this->start_controls_section(
 			'section_image',
 			[
@@ -180,14 +207,9 @@ class Image_hover extends Widget_Base {
             
             $img_attachment_meta = se_el_image($image_id);
         ?>
-            <figure class="sp_image_hover">
-                 <img src="<?php echo $img_attachment_meta['src']; ?>" alt="<?php echo $img_attachment_meta['alt']; ?>">
-                <figcaption>
-                    <h3><?php echo $img_attachment_meta['title']; ?></h3>
-                    <p><?php echo $img_attachment_meta['caption']; ?></p>
-                    <a href="#"></a>
-                </figcaption>			
-            </figure>
+            
         <?php
+        //================= Template Parts =================//
+        include "templates/image-hover/image-hover-{$settings['style']}.php";
     }
 }

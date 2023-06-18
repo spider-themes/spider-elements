@@ -12,10 +12,15 @@
         right: 0;
         bottom: -20px;
         width: 120px;
+        height: 190px;
         align-items: flex-end;
         display: flex;
         transition: all 0.3s linear;
         box-shadow: 0px 25px 10px 0px rgba(0, 0, 0, 0.1255);
+        img{
+            object-fit: cover;
+            height: 100%;
+        }
     }
     &:hover{
         .box_img{

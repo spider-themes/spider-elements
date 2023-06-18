@@ -29,7 +29,7 @@ class Box_hover extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-blockquote se-icon';
+        return 'eicon-image-box se-icon';
     }
 
     public function get_keywords() {
