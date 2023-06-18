@@ -7281,7 +7281,7 @@ figure.stack_image img:nth-child(4) {
   height: 100%;
 }
 .sp_box_hover:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .sp_box_hover:hover .box_img {
   right: -30px;
@@ -7339,6 +7339,7 @@ figure.stack_image img:nth-child(4) {
   margin: 10px;
   max-width: 100%;
   width: 100%;
+  padding: 0px !important;
   background: #000000;
   text-align: left;
   overflow: hidden;
@@ -7365,6 +7366,7 @@ figure.stack_image img:nth-child(4) {
   padding: 30px 3em;
   width: 100%;
   height: 100%;
+  text-align: left;
 }
 .style_one figcaption:before {
   position: absolute;
@@ -7385,6 +7387,7 @@ figure.stack_image img:nth-child(4) {
   margin: 0 0 5px;
   opacity: 0;
   transition: opacity 0.35s, -webkit-transform 0.35s, -moz-transform 0.35s;
+  color: #fff;
 }
 .style_one figcaption h3 {
   word-spacing: -0.15em;
@@ -7428,6 +7431,7 @@ figure.stack_image img:nth-child(4) {
 .style_two {
   position: relative;
   overflow: hidden;
+  padding: 0 !important;
 }
 .style_two::after {
   content: "";
@@ -7437,9 +7441,9 @@ figure.stack_image img:nth-child(4) {
 .style_two:after {
   position: absolute;
   bottom: 47%;
-  right: 38%;
+  right: 39%;
   border-style: solid;
-  border-width: 132px 120px 0 120px;
+  border-width: 143px 120px 0 120px;
   border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -7460,6 +7464,8 @@ figure.stack_image img:nth-child(4) {
   background-color: #ffffff;
   width: 40%;
   transform: translateX(150%);
+  margin-top: 0 !important;
+  text-align: right;
 }
 .style_two figcaption:before {
   content: "";
@@ -7471,7 +7477,7 @@ figure.stack_image img:nth-child(4) {
   transform: translateY(-50%);
   right: 100%;
   border-style: solid;
-  border-width: 125px 120px 125px 0;
+  border-width: 137px 120px 125px 0;
   border-color: transparent #ffffff transparent transparent;
 }
 .style_two figcaption h3, .style_two figcaption p {
@@ -7484,6 +7490,7 @@ figure.stack_image img:nth-child(4) {
 }
 .style_two figcaption p {
   font-size: 0.9em;
+  margin-bottom: 0;
 }
 .style_two:hover::after {
   transform: translateX(0);

@@ -127,14 +127,12 @@ class Box_hover extends Widget_Base {
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
-        $this->add_control(
-			'box_bg_color', [
-				'label' => esc_html__('Background Color', 'spider-elements'),
-				'type' => Controls_Manager::COLOR,
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sp_box_hover' => 'background: {{VALUE}};',
-				],
+        $this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'background',
+				'types' => [ 'classic', 'gradient'],
+				'selector' => '{{WRAPPER}} .sp_box_hover',
 			]
 		);
         $this->add_responsive_control(
