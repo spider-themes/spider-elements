@@ -9,11 +9,24 @@
                 "landpagy_pricing_table_tabs.default"           : spiderElements.pricing_table_tabs,
                 "docy_tabs.default"                             : spiderElements.tabs,
                 "docy_testimonial.default"                      : spiderElements.testimonial,
+                "docly_alerts_box.default"                      : spiderElements.alertBox,
             };
 
             $.each(widgetHandlersMap, function (widgetName, callback) {
                 E_FRONT.hooks.addAction("frontend/element_ready/" + widgetName, callback);
             });
+
+        },
+
+
+        //======================== Alert Box =========================== //
+        alertBox: function ($scope) {
+
+            $(".message_alert button.close").click(function () {
+                let btnId = $(this).attr("data-id");
+                $(".message_alert[data-id="+btnId+"]").fadeOut();
+            } );
+
 
         },
 

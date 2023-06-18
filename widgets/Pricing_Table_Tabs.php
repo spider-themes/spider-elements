@@ -36,7 +36,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ '' ];
+		return [ 'bootstrap', 'se-main' ];
 	}
 
 	/**
@@ -44,35 +44,32 @@ class Pricing_Table_Tabs extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ '', ];
+		return [ 'bootstrap', ];
 	}
 
-
-
-    /**
-     * Name: register_controls()
-     * Desc: Register controls for these widgets
-     * Params: no params
-     * Return: @void
-     * Since: @1.0.0
-     * Package: @landpagy
-     * Author: spider-themes
-     */
+	/**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     protected function register_controls() {
         $this->elementor_content_control();
         $this->elementor_style_control();
     }
 
-
-    /**
-     * Name: elementor_content_control()
-     * Desc: Register content
-     * Params: no params
-     * Return: @void
-     * Since: @1.0.0
-     * Package: @landpagy
-     * Author: spider-themes
-     */
+	/**
+	 * Name: elementor_content_control()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     public function elementor_content_control() {
 
         // ------------------------------------------- Pricing Table Tabs ----------------------------------------- //
@@ -236,15 +233,15 @@ class Pricing_Table_Tabs extends Widget_Base {
     }
 
 
-    /**
-     * Name: elementor_style_control()
-     * Desc: Register style content
-     * Params: no params
-     * Return: @void
-     * Since: @1.0.0
-     * Package: @landpagy
-     * Author: spider-themes
-     */
+	/**
+	 * Name: elementor_style_control()
+	 * Desc: Register the Style Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     public function elementor_style_control () {
 
 
