@@ -28,17 +28,10 @@ class Accordion_Article extends Widget_Base {
         return esc_html__( 'Accordion Articles', 'spider-elements' );
     }
 
+
     public function get_icon() {
         return 'eicon-accordion se-icon';
     }
-
-	public function get_style_depends() {
-		return [ 'bootstrap', 'se-main' ];
-	}
-
-	public function get_script_depends() {
-		return [ 'bootstrap', ];
-	}
 
     public function get_keywords() {
         return [ 'spider', 'accordion', 'article', 'post', 'category' ];
@@ -47,6 +40,22 @@ class Accordion_Article extends Widget_Base {
     public function get_categories() {
         return [ 'spider-elements' ];
     }
+
+	/**
+	 * Name: get_style_depends()
+	 * Desc: Register the required CSS dependencies for the frontend.
+	 */
+	public function get_style_depends() {
+		return [ 'bootstrap', 'se-main' ];
+	}
+
+	/**
+	 * Name: get_script_depends()
+	 * Desc: Register the required JS dependencies for the frontend.
+	 */
+	public function get_script_depends() {
+		return [ 'bootstrap', ];
+	}
 
 	/**
 	 * Name: register_controls()

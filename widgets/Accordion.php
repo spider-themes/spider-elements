@@ -35,12 +35,28 @@ class Accordion extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'toggle' ];
+        return [ 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab',  ];
     }
 
     public function get_categories() {
         return [ 'spider-elements' ];
     }
+
+	/**
+	 * Name: get_style_depends()
+	 * Desc: Register the required CSS dependencies for the frontend.
+	 */
+	public function get_style_depends() {
+		return [ 'bootstrap', 'se-main' ];
+	}
+
+	/**
+	 * Name: get_script_depends()
+	 * Desc: Register the required JS dependencies for the frontend.
+	 */
+	public function get_script_depends() {
+		return [ 'bootstrap' ];
+	}
 
 
 	/**
@@ -81,7 +97,7 @@ class Accordion extends Widget_Base {
 		$repeater->add_control(
 			'collapse_state', [
 				'label' => esc_html__( 'Expanded', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off' => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
@@ -107,8 +123,8 @@ class Accordion extends Widget_Base {
 				'label'     => esc_html__( 'Content Type', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'content'        => esc_html__( 'Content', 'spider-elements'),
-					'el_template'   => esc_html__( 'Template', 'spider-elements'),
+					'content'        => esc_html__( 'Contents', 'spider-elements'),
+					'el_template'   => esc_html__( 'Saved Template', 'spider-elements'),
 				],
 				'default' => 'content',
 			]
@@ -117,8 +133,7 @@ class Accordion extends Widget_Base {
 		$repeater->add_control(
 			'normal_content', [
 				'label' => __( 'Content Text', 'spider-elements' ),
-				'type' => Controls_Manager::TEXTAREA,
-				'label_block' => true,
+				'type' => Controls_Manager::WYSIWYG,
 				'default' => __( 'Accordion Content', 'spider-elements' ),
 				'condition' => [
 					'content_type' => 'content'
@@ -128,23 +143,13 @@ class Accordion extends Widget_Base {
 		);
 
 		$repeater->add_control(
-			'el_content', [
-				'label'         => __( 'Select Template', 'spider-elements' ),
-				'type'          => Controls_Manager::SELECT,
-				'options'       => se_get_el_templates(),
-				'label_block'   => true,
-				'default'       => __( 'Accordion Content', 'spider-elements' ),
-				'condition'     => [
-					'content_type' => 'el_template'
-				]
-			]
-		);
-
-		$repeater->add_control(
-			'tab_content', [
-				'label' => esc_html__( 'Content', 'spider-elements' ),
-				'type' => Controls_Manager::WYSIWYG,
-				'default' => esc_html__( 'Accordion Content', 'spider-elements' ),
+			'el_templates', [
+				'label' => __('Choose Template', 'spider-elements'),
+				'type' => Controls_Manager::SELECT,
+				'options' => se_get_el_templates(),
+				'condition' => [
+					'content_type' => 'el_template',
+				],
 			]
 		);
 
@@ -156,14 +161,18 @@ class Accordion extends Widget_Base {
 				'default'   => [
 					[
 						'title'    => esc_html__( 'Accordion #1', 'spider-elements' ),
-						'tab_content'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
+						'tab_content'  => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
 					],
 					[
 						'title'    => esc_html__( 'Accordion #2', 'spider-elements' ),
-						'tab_content'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
+						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
+					],
+					[
+						'title'    => esc_html__( 'Accordion #3', 'spider-elements' ),
+						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
 					],
 				],
-				'title_field' => '{{{ se_accordion_title }}}',
+				'title_field' => '{{{ title }}}',
 			]
 		);
 
@@ -175,7 +184,8 @@ class Accordion extends Widget_Base {
 				'default' => [
 					'value' => 'fas fa-plus',
 					'library' => 'solid',
-				]
+				],
+				'separator' => 'before'
 			]
 		);
 
@@ -193,7 +203,7 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'is_toggle', [
 				'label' => esc_html__( 'Toggle', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off' => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
@@ -204,7 +214,7 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'title_tag', [
 				'label' => __( 'Title Tag', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
+				'type' => Controls_Manager::SELECT,
 				'default' => 'h6',
 				'options' => se_el_title_tags(),
 			]
@@ -225,7 +235,6 @@ class Accordion extends Widget_Base {
 	 * Author: spider-themes
 	 */
 	public function elementor_style_control() {
-
 
 		//============================= Accordion =============================//
 		$this->start_controls_section(
@@ -495,7 +504,21 @@ class Accordion extends Widget_Base {
         $settings = $this->get_settings_for_display();
 		extract($settings); // extract all settings array to variables converted to name of key
 
-	    include "templates/accordion/accordion.php";
+	    $get_id             = $settings['_id'] ?? '';
+	    $title_tag          = ! empty ( $settings['title_tag'] ) ? $settings['title_tag'] : 'h6';
+	    $accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
+	    $se_toggle          = ! empty ( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
+	    $icon_align         = ! empty ( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
+	    $icon_align_class   = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
+
+	    $is_toggle = '';
+	    if ( $se_toggle != 'yes' ) {
+		    $is_toggle = 'accordion-'.$get_id;
+	    }
+
+
+	    //======================== Template Parts ========================//
+		include "templates/accordion/accordion.php";
 
     }
 }

@@ -39,17 +39,26 @@ class Video_playlist extends Widget_Base {
         return 'eicon-tabs se-icon';
     }
 
-    public function get_style_depends() {
-        return [ 'ionicons', 'slick', 'slick-theme', 'video-js-theaterMode', 'video-js' ];
-    }
-
-    public function get_script_depends() {
-        return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo' ];
-    }
-
     public function get_categories() {
         return [ 'spider-elements' ];
     }
+
+	/**
+	 * Name: get_style_depends()
+	 * Desc: Register the required CSS dependencies for the frontend.
+	 */
+	public function get_style_depends() {
+		return [ 'ionicons', 'slick', 'slick-theme', 'video-js-theaterMode', 'video-js' ];
+	}
+
+	/**
+	 * Name: get_script_depends()
+	 * Desc: Register the required JS dependencies for the frontend.
+	 */
+	public function get_script_depends() {
+		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo' ];
+	}
+	
 
     protected function register_controls() {
 

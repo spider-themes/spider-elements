@@ -163,7 +163,6 @@
           font-size: 16px;
           font-weight: 600;
           line-height: 22px;
-
           &:hover {
             color: #4c4cf1;
           }
@@ -256,76 +255,80 @@
      border-bottom: 1px solid ;
    }
 }
-.doc_accordion {
-  border: 0;
-  margin-bottom: 1rem;
-  &:last-child {
-    margin-bottom: 0;
-  }
-  .card-header {
-    border-radius: 0;
-    border: 0;
-    background: transparent;
-    padding: 0;
-    .title {
-      padding: 0;
-    }
-    button {
-      padding: 12px 30px;
-      border-radius: 4px 4px 0 0;
-      text-align: left;
-      width: 100%;
-      font-size: 16px;
-      color: var(--brand_color);
-      font-weight: 500;
-      background: var(--black_25);
-      text-decoration: none;
-      position: relative;
-      .icon-wrapper{
-        position: absolute;
-        right: 30px;
-      }
-      svg {
-        position: absolute;
-        right: 0;
-        top: 0;
-        transform: unset;
-        transition: all 0.2s linear;
-        width: 16px;
-        height: 16px;
-        & + svg {
-          display: block;
-        }
-      }
-      .collapsed-icon{
-        display:block;
-      }
-      .expanded-icon {
-        display: none;
-      }
 
-      &.collapsed {
-        color: var(--black_800);
-        border-radius: 4px;
-        svg {
-          display: block;
-          color: var(--p_color);
-        }
-        
-        .expanded-icon {
-          display: block;
-        }
-      }
-      &.icon-align-left {
-        padding-left: 60px;
-        .icon-wrapper {
-          left: 30px;
-          right: unset;
-        }
-      }
-    }
-  }
-}
+ .accordion {
+   .doc_accordion {
+     border: 0;
+     margin-bottom: 1rem;
+     &:last-child {
+       margin-bottom: 0;
+     }
+     .card-header {
+       border-radius: 0;
+       border: 0;
+       background: transparent;
+       padding: 0;
+       .title {
+         padding: 0;
+       }
+       button {
+         padding: 12px 30px;
+         border-radius: 4px 4px 0 0;
+         text-align: left;
+         width: 100%;
+         font-size: 16px;
+         color: var(--brand_color);
+         font-weight: 500;
+         background: var(--black_25);
+         text-decoration: none;
+         position: relative;
+         .icon-wrapper{
+           position: absolute;
+           right: 30px;
+         }
+         svg {
+           position: absolute;
+           right: 0;
+           top: 0;
+           transform: unset;
+           transition: all 0.2s linear;
+           width: 16px;
+           height: 16px;
+           & + svg {
+             display: block;
+           }
+         }
+         .collapsed-icon{
+           display:block;
+         }
+         .expanded-icon {
+           display: none;
+         }
+
+         &.collapsed {
+           color: var(--black_800);
+           border-radius: 4px;
+           svg {
+             display: block;
+             color: var(--p_color);
+           }
+
+           .expanded-icon {
+             display: block;
+           }
+         }
+         &.icon-align-left {
+           padding-left: 60px;
+           .icon-wrapper {
+             left: 30px;
+             right: unset;
+           }
+         }
+       }
+     }
+   }
+ }
+
 
 .accordion-article-wrap {
   .toggle_btn {

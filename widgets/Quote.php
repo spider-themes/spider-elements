@@ -1,17 +1,22 @@
 <?php
+/**
+ * Use namespace to avoid conflict
+ */
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
+// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+	exit;
 }
 
 /**
- * Class Quote
+ * Class Tabs
  * @package spider\Widgets
+ * @since 1.0.0
  */
 class Quote extends Widget_Base {
 
@@ -28,309 +33,368 @@ class Quote extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'quote', 'message' ];
+        return [ 'spider', 'quote', 'message' ];
     }
 
     public function get_categories() {
         return [ 'spider-elements' ];
     }
 
-    protected function register_controls() {
-
-	    /**
-	     * Quote Texts
-	     */
-        $this->start_controls_section(
-            'section_alert',
-            [
-                'label' => __( 'Quote Texts', 'spider-elements' ),
-            ]
-        );
-
-        $this->add_control(
-            'title',
-            [
-                'label' => __( 'Title', 'spider-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'label_block' => true,
-                'default' => 'Docy cares deeply
-about journalism.'
-            ]
-        );
-
-        $this->add_control(
-            'quote',
-            [
-                'label' => __( 'Quote Text', 'spider-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'label_block' => true,
-            ]
-        );
-
-        $this->add_control(
-            'name',
-            [
-                'label' => __( 'Quote Author Name', 'spider-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
-        );
-
-        $this->add_control(
-            'designation',
-            [
-                'label' => __( 'Quote Author Designation', 'spider-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
-        );
-
-	    $this->add_control(
-		    'btm_text',
-		    [
-			    'label' => __( 'Bottom Text', 'spider-elements' ),
-			    'type' => Controls_Manager::TEXT,
-			    'label_block' => true,
-                'default' => 'OUR COMMITMENT'
-		    ]
-	    );
-
-        $this->add_control(
-            'quote_icon_left',
-            [
-                'label' => __( 'Quote Icon Top', 'spider-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'separator' => 'before',
-                'default' => [
-                    'url' => plugins_url('images/quote-top.png', __FILE__)
-                ]
-            ]
-        );
-
-        $this->add_control(
-            'quote_icon_right',
-            [
-                'label' => __( 'Quote Icon Bottom', 'spider-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => plugins_url('images/quote-bottom.png', __FILE__)
-                ]
-            ]
-        );
-
-        $this->end_controls_section();
-
-	    /**
-	     * Right Side Image
-	     */
-	    $this->start_controls_section(
-		    'section_right_image_opt',
-		    [
-			    'label' => __( 'Right Side', 'spider-elements' ),
-		    ]
-	    );
-
-	    $this->add_control(
-		    'right_image',
-		    [
-			    'label' => __( 'Right Side Image', 'spider-elements' ),
-			    'type' => Controls_Manager::MEDIA,
-		    ]
-	    );
-
-	    $this->add_control(
-		    'background',
-		    [
-			    'label' => __( 'Background Circle Color', 'spider-elements' ),
-			    'type' => Controls_Manager::COLOR,
-		    ]
-	    );
-
-	    $this->add_control(
-		    'background2',
-		    [
-			    'label' => __( 'Background Circle Color 02', 'spider-elements' ),
-			    'type' => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .journalism-feature-image:before' => 'background-image: linear-gradient(45deg, {{background.VALUE}} 0%, {{VALUE}} 100%);',
-			    ],
-		    ]
-	    );
-
-        $this->end_controls_section();
-
-
-        /**
-         * Style Title
-         */
-        $this->start_controls_section(
-            'section_title_style',
-            [
-                'label' => __( 'Style Title', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'color_title', [
-                'label' => esc_html__( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .journalism-content-wrapper .journalism-title' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'typography_title',
-                'label' => esc_html__( 'Typography', 'spider-elements' ),
-                'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-title',
-            ]
-        );
-
-        $this->end_controls_section();
-
-
-	    /**
-	     * Styl Quote Text
-	     */
-        $this->start_controls_section(
-            'section_quote_text_style',
-            [
-                'label' => __( 'Quote Text', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'quote_text_color',
-            [
-                'label' => __( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .journalism-content-wrapper p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-	    $this->add_group_control(
-		    Group_Control_Typography::get_type(), [
-			    'name' => 'typography_quote_text',
-			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'selector' => '{{WRAPPER}} .journalism-content-wrapper p',
-		    ]
-	    );
-
-        $this->end_controls_section();
-
-
-	    /**
-	     * Style Quote Author Name
-	     */
-        $this->start_controls_section(
-            'section_quote_author_style',
-            [
-                'label' => __( 'Quote Author Name', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'quote_author_color',
-            [
-                'label' => __( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .journalism-content-wrapper .journalism-info .name' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-	    $this->add_group_control(
-		    Group_Control_Typography::get_type(), [
-			    'name' => 'typography_quote_author',
-			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-info .name',
-		    ]
-	    );
-
-        $this->end_controls_section();
-
-
-	    /**
-	     * Style Quote Author Name
-	     */
-        $this->start_controls_section(
-            'quote_author_designation_style',
-            [
-                'label' => __( 'Quote Author Designation', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'quote_author_designation_color',
-            [
-                'label' => __( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .journalism-content-wrapper .journalism-info .designation' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-	    $this->add_group_control(
-		    Group_Control_Typography::get_type(), [
-			    'name' => 'typography_quote_author_designation',
-			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-info .designation',
-		    ]
-	    );
-
-        $this->end_controls_section();
-
-	    /**
-	     * Style Quote Author Name
-	     */
-        $this->start_controls_section(
-            'btm_text_style',
-            [
-                'label' => __( 'Bottom Text', 'spider-elements' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'btm_text_color',
-            [
-                'label' => __( 'Text Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .light-header .title-light' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-	    $this->add_group_control(
-		    Group_Control_Typography::get_type(), [
-			    'name' => 'typography_btm_text',
-			    'label' => esc_html__( 'Typography', 'spider-elements' ),
-			    'selector' => '{{WRAPPER}} .light-header .title-light',
-		    ]
-	    );
-
-        $this->end_controls_section();
-
-    }
+    /**
+     * Name: get_style_depends()
+     * Desc: Register the required CSS dependencies for the frontend.
+     */
+	public function get_style_depends() {
+		return [ 'bootstrap', 'se-main' ];
+	}
 
     /**
-     * Render alert widget output on the frontend.
-     *
-     * Written in PHP and used to generate the final HTML.
+     * Name: get_script_depends()
+     * Desc: Register the required JS dependencies for the frontend.
      */
+	public function get_script_depends() {
+		return [ 'bootstrap', ];
+	}
+
+	/**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	protected function register_controls() {
+		$this->elementor_content_control();
+		$this->elementor_style_control();
+	}
+
+
+	/**
+	 * Name: elementor_content_control()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_content_control() {
+
+		/**
+		 * Quote Texts
+		 */
+		$this->start_controls_section(
+			'section_alert',
+			[
+				'label' => __( 'Quote Texts', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'title',
+			[
+				'label' => __( 'Title', 'spider-elements' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'label_block' => true,
+				'default' => 'Docy cares deeply
+about journalism.'
+			]
+		);
+
+		$this->add_control(
+			'quote',
+			[
+				'label' => __( 'Quote Text', 'spider-elements' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'name',
+			[
+				'label' => __( 'Quote Author Name', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'designation',
+			[
+				'label' => __( 'Quote Author Designation', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'btm_text',
+			[
+				'label' => __( 'Bottom Text', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'label_block' => true,
+				'default' => 'OUR COMMITMENT'
+			]
+		);
+
+		$this->add_control(
+			'quote_icon_left',
+			[
+				'label' => __( 'Quote Icon Top', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+				'separator' => 'before',
+				'default' => [
+					'url' => plugins_url('images/quote-top.png', __FILE__)
+				]
+			]
+		);
+
+		$this->add_control(
+			'quote_icon_right',
+			[
+				'label' => __( 'Quote Icon Bottom', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => plugins_url('images/quote-bottom.png', __FILE__)
+				]
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Right Side Image
+		 */
+		$this->start_controls_section(
+			'section_right_image_opt',
+			[
+				'label' => __( 'Right Side', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'right_image',
+			[
+				'label' => __( 'Right Side Image', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+			]
+		);
+
+		$this->add_control(
+			'background',
+			[
+				'label' => __( 'Background Circle Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+			]
+		);
+
+		$this->add_control(
+			'background2',
+			[
+				'label' => __( 'Background Circle Color 02', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .journalism-feature-image:before' => 'background-image: linear-gradient(45deg, {{background.VALUE}} 0%, {{VALUE}} 100%);',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+	}
+
+	/**
+	 * Name: elementor_style_control()
+	 * Desc: Register the Style Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_style_control() {
+
+		/**
+		 * Style Title
+		 */
+		$this->start_controls_section(
+			'section_title_style',
+			[
+				'label' => __( 'Style Title', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'color_title', [
+				'label' => esc_html__( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .journalism-content-wrapper .journalism-title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_title',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-title',
+			]
+		);
+
+		$this->end_controls_section();
+
+
+		/**
+		 * Styl Quote Text
+		 */
+		$this->start_controls_section(
+			'section_quote_text_style',
+			[
+				'label' => __( 'Quote Text', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'quote_text_color',
+			[
+				'label' => __( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .journalism-content-wrapper p' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_quote_text',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'selector' => '{{WRAPPER}} .journalism-content-wrapper p',
+			]
+		);
+
+		$this->end_controls_section();
+
+
+		/**
+		 * Style Quote Author Name
+		 */
+		$this->start_controls_section(
+			'section_quote_author_style',
+			[
+				'label' => __( 'Quote Author Name', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'quote_author_color',
+			[
+				'label' => __( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .journalism-content-wrapper .journalism-info .name' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_quote_author',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-info .name',
+			]
+		);
+
+		$this->end_controls_section();
+
+
+		/**
+		 * Style Quote Author Name
+		 */
+		$this->start_controls_section(
+			'quote_author_designation_style',
+			[
+				'label' => __( 'Quote Author Designation', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'quote_author_designation_color',
+			[
+				'label' => __( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .journalism-content-wrapper .journalism-info .designation' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_quote_author_designation',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'selector' => '{{WRAPPER}} .journalism-content-wrapper .journalism-info .designation',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Style Quote Author Name
+		 */
+		$this->start_controls_section(
+			'btm_text_style',
+			[
+				'label' => __( 'Bottom Text', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'btm_text_color',
+			[
+				'label' => __( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .light-header .title-light' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_btm_text',
+				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'selector' => '{{WRAPPER}} .light-header .title-light',
+			]
+		);
+
+		$this->end_controls_section();
+
+	}
+
+
+	/**
+	 * Name: elementor_render()
+	 * Desc: Render the widget output on the frontend.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @banca
+	 * Author: spider-themes
+	 */
     protected function render() {
-        $settings = $this->get_settings();
+	    $settings = $this->get_settings_for_display();
+	    extract( $settings ); //extract all settings array to variables converted to name of key
+
         ?>
         <section class="about-journalism">
             <div class="container">
