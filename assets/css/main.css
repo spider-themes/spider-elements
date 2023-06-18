@@ -7275,6 +7275,9 @@ figure.stack_image img:nth-child(4) {
   object-fit: cover;
   height: 100%;
 }
+.sp_box_hover:hover {
+  text-decoration: none;
+}
 .sp_box_hover:hover .box_img {
   right: -30px;
   bottom: -22px;
@@ -7334,8 +7337,10 @@ figure.stack_image img:nth-child(4) {
   width: 100%;
   background: #000000;
   text-align: left;
+  overflow: hidden;
 }
 .sp_image_hover * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -7393,21 +7398,21 @@ figure.stack_image img:nth-child(4) {
   position: absolute;
   color: #ffffff;
 }
-.style_onehover figcaption:before {
+.style_one:hover figcaption:before {
   background: rgba(255, 255, 255, 0);
   left: 30px;
   opacity: 1;
   transition-delay: 0s;
 }
-.style_onehover img {
+.style_one:hover img {
   opacity: 0.4;
 }
-.style_onehover h3 {
+.style_one:hover h3 {
   opacity: 1;
   transform: translate3d(0%, 0%, 0);
   transition-delay: 0.4s;
 }
-.style_onehover p {
+.style_one:hover p {
   opacity: 0.9;
   transform: translate3d(0%, 0%, 0);
   transition-delay: 0.6s;
