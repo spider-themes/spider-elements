@@ -194,6 +194,25 @@ function se_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
 
 
 /**
+ * Get Default Image Elementor
+ * @param $settins_key
+ * @param string $class
+ * @param string $alt
+ */
+function se_el_image_caption( $image_id = '', ) {
+	$img_attachment = get_post( $image_id );
+	return array(
+		'alt' => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
+		'caption' => $img_attachment->post_excerpt,
+		'href' => get_permalink( $img_attachment->ID ),
+		'src' => $img_attachment->guid,
+		'title' => $img_attachment->post_title
+	);
+}
+
+
+
+/**
  * @param string  $content Text content to filter.
  * @return string Filtered content containing only the allowed HTML.
  */

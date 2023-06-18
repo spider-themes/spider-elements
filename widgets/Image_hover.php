@@ -192,23 +192,13 @@ class Image_hover extends Widget_Base {
      * Written in PHP and used to generate the final HTML.
      */
     protected function render() {
-        $settings = $this->get_settings();
-        $image_id = $settings['hover_image']['id'];
-        function se_el_image( $image_id ) {
-            $img_attachment = get_post( $image_id );
-                return array(
-                    'alt' => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
-                    'caption' => $img_attachment->post_excerpt,
-                    'href' => get_permalink( $img_attachment->ID ),
-                    'src' => $img_attachment->guid,
-                    'title' => $img_attachment->post_title
-                );
-            }
-            
-            $img_attachment_meta = se_el_image($image_id);
-        ?>
-            
-        <?php
+	    $settings = $this->get_settings_for_display();
+	    extract($settings); // extract all settings array to variables converted to name of key
+
+        $image_id = !empty($settings['hover_image']['id']) ? $settings['hover_image']['id'] : '';
+
+		$img_attachment_meta = se_el_image_caption($image_id);
+
         //================= Template Parts =================//
         include "templates/image-hover/image-hover-{$settings['style']}.php";
     }
