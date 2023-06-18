@@ -408,14 +408,13 @@ final class Spider_Elements {
 
 		require_once( __DIR__ . '/widgets/Tabs.php' );
 		require_once( __DIR__ . '/widgets/Video_playlist.php' );
-		require_once( __DIR__ . '/widgets/Alerts_box.php' );
-		require_once( __DIR__ . '/widgets/Accordion_article.php' );
+		require_once( __DIR__ . '/widgets/Alerts_Box.php' );
+		require_once( __DIR__ . '/widgets/Accordion_Article.php' );
 		require_once( __DIR__ . '/widgets/Accordion.php' );
 		require_once( __DIR__ . '/widgets/Testimonial.php' );
-		require_once( __DIR__ . '/widgets/Quote.php' );
 		require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
 		require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
-		require_once( __DIR__ . '/widgets/List_item.php' );
+		require_once( __DIR__ . '/widgets/List_Item.php' );
 		require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 		require_once( __DIR__ . '/widgets/Hotspot.php' );
 		require_once( __DIR__ . '/widgets/Stacked_Image.php' );
@@ -437,14 +436,13 @@ final class Spider_Elements {
 	private function register_widgets() {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Tabs() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_playlist() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_box() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion_article() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_Box() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion_Article() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Testimonial() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Quote() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Tabs() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Switcher() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\List_item() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\List_Item() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Hotspot() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Stacked_Image() );

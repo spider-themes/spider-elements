@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Alerts_box extends Widget_Base {
+class Alerts_Box extends Widget_Base {
 
     public function get_name() {
         return 'docly_alerts_box';
@@ -46,7 +46,7 @@ class Alerts_box extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
     public function get_style_depends() {
-        return [ 'elegant-icon' ];
+        return [ 'bootstrap', 'se-main' ];
     }
 
 	/**
@@ -54,7 +54,7 @@ class Alerts_box extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ '', ];
+		return [ 'bootstrap', 'se-el-widgets' ];
 	}
 
 	/**

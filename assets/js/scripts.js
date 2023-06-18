@@ -56,12 +56,5 @@
     }, 3000 );
 
 
-    //Close Notice Message On click Event
-    $(".message_alert button.close").click(function () {
-      let btnId = $(this).attr("data-id");
-      $(".message_alert[data-id="+btnId+"]").fadeOut();
-    } );
-
-
   });
 })(jQuery);
