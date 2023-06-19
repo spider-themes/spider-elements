@@ -2135,7 +2135,7 @@ ul.nav.nav-tabs {
   transition: all 300ms linear 0s;
 }
 .video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:after {
-  content: "";
+  content: "\f215";
   font: normal normal normal 20px/1 ionicons;
   left: 0;
   top: 50%;
@@ -8168,13 +8168,13 @@ figure.stack_image {
   overflow: hidden;
 }
 figure.stack_image.img-position-left {
-  margin: 0 auto 0 0 !important;
+  margin: 0 0 0 left !important;
 }
 figure.stack_image.img-position-center {
   margin: 0 auto !important;
 }
 figure.stack_image.img-position-right {
-  margin: 0 0 0 auto !important;
+  margin: 0 auto 0 0 !important;
 }
 figure.stack_image img {
   grid-row: 1/span 1;
