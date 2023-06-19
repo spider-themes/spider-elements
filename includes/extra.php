@@ -199,7 +199,7 @@ function se_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
  * @param string $class
  * @param string $alt
  */
-function se_el_image_caption( $image_id = '', ) {
+function se_el_image_caption( $image_id = '' ) {
 	$img_attachment = get_post( $image_id );
 	return array(
 		'alt' => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
