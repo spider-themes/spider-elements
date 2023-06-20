@@ -345,10 +345,21 @@ class Tabs extends Widget_Base
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .header_tab_items .nav.nav-tabs li a i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link i ' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
+
+        $this->add_responsive_control(
+            'tab_margin',[
+                'label' => __( 'margin', 'spider-elements' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
 		$this->add_responsive_control(
 			'tab_pad',
@@ -435,7 +446,10 @@ class Tabs extends Widget_Base
 				'label' => __('Text Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active, {{WRAPPER}} .header_tab_items .nav.nav-tabs li a.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tab-item-title.active, 
+					 {{WRAPPER}} .header_tab_items .nav.nav-tabs li a.active,
+					 {{WRAPPER}} .tab-item-title:hover, 
+					 {{WRAPPER}} .header_tab_items .nav.nav-tabs li a:hover' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -446,7 +460,8 @@ class Tabs extends Widget_Base
 				'label' => __('Background Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .tab-item-title.active, 
+					 {{WRAPPER}} .tab-item-title:hover' => 'background: {{VALUE}};',
 				)
 			]
 		);
@@ -457,7 +472,8 @@ class Tabs extends Widget_Base
 				'label' => __('Border Top Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active::before' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .tab-item-title.active::before,
+					 {{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover::before' => 'background: {{VALUE}};',
 				),
 				'condition' => [
 					'style' => ['1']
@@ -471,7 +487,8 @@ class Tabs extends Widget_Base
 				'label' => __('Icon Background Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active > .numb' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .tab-item-title.active > .numb,
+                     {{WRAPPER}} .tab-item-title:hover > .numb' => 'background: {{VALUE}};',
 				),
 				'condition' => [
 					'is_auto_numb' => 'yes',
@@ -562,8 +579,9 @@ class Tabs extends Widget_Base
 		$tabs = $this->get_settings_for_display('tabs');
 		$id_int = substr($this->get_id_int(), 0, 3);
 
-		$navigation_arrow_class = !empty($is_navigation_arrow == 'yes') ? ' process_tab_shortcode' : '';
-		$sticky_tab_class = !empty($is_sticky_tab == 'yes') ? ' sticky_tab' : '';
+        $navigation_arrow_class = !empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
+        $sticky_tab_class = !empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
+		//$hover_tab_class = !empty( $is_hover_tab == 'yes' ) ? ' hover_tabs' : '';
 
 		//================= Template Parts =================//
 		include "templates/tabs/tab-{$settings['style']}.php";
