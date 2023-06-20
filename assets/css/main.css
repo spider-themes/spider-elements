@@ -7501,4 +7501,131 @@ figure.stack_image img:nth-child(4) {
   opacity: 1;
 }
 
+.hover-fold {
+  background: #e8c63d;
+  border: 5px white solid;
+  height: 310px;
+  margin: 10px auto;
+  -moz-perspective: 1500;
+  -webkit-perspective: 1500;
+  perspective: 1500;
+  position: relative;
+  width: 410px;
+}
+.hover-fold .text {
+  opacity: 0;
+  visibility: hidden;
+  padding: 0px 40px;
+}
+.hover-fold h3 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+}
+.hover-fold p {
+  margin-bottom: 0;
+}
+.hover-fold .top {
+  height: 50%;
+  transition: all 0.5s ease-out;
+  transform: rotateX(0deg);
+  transform-origin: 0 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.hover-fold .top .face {
+  backface-visibility: hidden;
+  position: absolute;
+}
+.hover-fold .front {
+  height: 100%;
+  width: 100%;
+}
+.hover-fold .back {
+  background: #e8c63d;
+  height: 100%;
+  padding: 0 40px;
+  transform: rotateX(180deg);
+  width: 100%;
+  transition: all 0.5s ease-out;
+}
+.hover-fold .bottom {
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background-position: bottom;
+}
+.hover-fold:hover .text {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s linear 0.25s;
+  position: relative;
+  z-index: 2;
+}
+.hover-fold:hover .top {
+  transform: rotateX(-180deg);
+}
+.hover-fold:hover .top .back.face {
+  backface-visibility: visible;
+}
+
+.item_card {
+  transform: skew(-10deg);
+  transition: 0.25s;
+}
+.item_card:before {
+  content: "";
+  left: 0;
+  top: 0;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  border-radius: 40px;
+  opacity: 0;
+  border: 2px solid #ece9e6;
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s 0.05s;
+}
+.item_card .card {
+  background-color: #373f51;
+  background-blend-mode: screen;
+  transition: 0.25s;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.item_card .card .icon {
+  position: absolute;
+  bottom: -1rem;
+  right: 3rem;
+  border-radius: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #373f51;
+  z-index: 1;
+  transform: skew(10deg) translateY(50%);
+  text-align: center;
+  transition: 0.25s;
+}
+.item_card:hover {
+  transform: translateX(-1rem) translateY(-1rem) skew(-10deg);
+}
+.item_card:hover::before {
+  opacity: 1;
+  transform: translateY(1.5rem) translateX(1.5rem);
+}
+.item_card:hover .card {
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.item_card:hover .card .icon {
+  bottom: 4rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 /*# sourceMappingURL=main.css.map */

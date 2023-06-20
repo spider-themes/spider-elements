@@ -75,12 +75,20 @@ class Image_hover extends Widget_Base {
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     '1' => [
-                        'title' => __( 'Hover With Image', 'spider-elements' ),
+                        'title' => __( 'Hover Image with content', 'spider-elements' ),
                         'icon' => 'himage1',
                     ],
                     '2' => [
-                        'title' => __( 'Hover With Image', 'spider-elements' ),
+                        'title' => __( 'Hover Image with content', 'spider-elements' ),
                         'icon' => 'himage2',
+                    ],
+                    '3' => [
+                        'title' => __( 'Hover Image with content', 'spider-elements' ),
+                        'icon' => 'himage3',
+                    ],
+                    '4' => [
+                        'title' => __( 'Hover Image', 'spider-elements' ),
+                        'icon' => 'himage4',
                     ],
                 ],
                 'default' => '1',
@@ -120,6 +128,9 @@ class Image_hover extends Widget_Base {
 			'style_img_hover_sec', [
 				'label' => __( 'Image Box', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'style' => ['1','2','3']
+                ]
 			]
 		);
 
@@ -128,7 +139,7 @@ class Image_hover extends Widget_Base {
 				'label' => __( 'Image Overlay Color', 'spider-elements' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .sp_image_hover' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sp_image_hover,{{WRAPPER}} .hover-fold,{{WRAPPER}} .hover-fold .back' => 'background: {{VALUE}};',
                 ),
 			]
 		); 
@@ -140,13 +151,16 @@ class Image_hover extends Widget_Base {
 			'style_img_hover_content', [
 				'label' => __( 'Hover Content Style', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'style' => ['1','2','3']
+                ]
 			]
 		); 
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(), [
 				'name' => 'hover_title_typo',
                 'label' => esc_html__( 'Title Typography', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .sp_image_hover figcaption h3',
+				'selector' => '{{WRAPPER}} .sp_image_hover figcaption h3,{{WRAPPER}} .hover-fold .text h3',
 			]
 		);
         $this->add_control(
@@ -156,7 +170,7 @@ class Image_hover extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .sp_image_hover figcaption h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .sp_image_hover figcaption h3,{{WRAPPER}} .hover-fold .text h3' => 'color: {{VALUE}};',
                 ],
                 'separator' => 'after',
             ]
@@ -167,7 +181,7 @@ class Image_hover extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .sp_image_hover figcaption h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .sp_image_hover figcaption h3,{{WRAPPER}} .hover-fold .text h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'default' => [
                     'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
@@ -178,7 +192,7 @@ class Image_hover extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(), [
 				'name' => 'hover_caption_typo',
                 'label' => esc_html__( 'Content Typography', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .sp_image_hover figcaption p',
+				'selector' => '{{WRAPPER}} .sp_image_hover figcaption p,{{WRAPPER}} .hover-fold .text p',
 			]
 		);
         $this->add_control(
@@ -188,7 +202,7 @@ class Image_hover extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .sp_image_hover figcaption p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .sp_image_hover figcaption p,{{WRAPPER}} .hover-fold .text p' => 'color: {{VALUE}};',
                 ],
             ]
         );
