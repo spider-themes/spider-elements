@@ -36,7 +36,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ '' ];
+		return [ 'bootstrap', 'se-main' ];
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ '', ];
+		return [ 'bootstrap' ];
 	}
 
 

@@ -1,12 +1,12 @@
 <?php
-wp_enqueue_style('slick');
-wp_enqueue_style('slick-theme');
-wp_enqueue_style('video-js');
-wp_enqueue_style('video-js-theaterMode');
+//wp_enqueue_style('slick');
+//wp_enqueue_style('slick-theme');
+//wp_enqueue_style('video-js');
+//wp_enqueue_style('video-js-theaterMode');
 
-wp_enqueue_script('slick');
-wp_enqueue_script('video-js');
-wp_enqueue_script('video-js-nuevo');
+//wp_enqueue_script('slick');
+//wp_enqueue_script('video-js');
+//wp_enqueue_script('video-js-nuevo');
 ?>
 <?php $is_preloader = '1';
 
