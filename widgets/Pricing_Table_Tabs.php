@@ -225,6 +225,7 @@ class Pricing_Table_Tabs extends Widget_Base {
                 'label' => __( 'Ribbon Label', 'landpagy-core' ),
                 'type' => Controls_Manager::MEDIA,
                 'separator' => 'before'
+                
             ]
         );
 

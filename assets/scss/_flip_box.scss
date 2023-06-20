@@ -1,0 +1,132 @@
+.spe_flip_box_inner{
+    position: relative;
+    .flip_overlay{
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        opacity: 0;
+        transition: all 0.8s linear 0.1s;
+    }
+    .flip_button{
+        position: absolute;
+        background-color: rgba(255,255,240,0);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        margin: 0;
+        opacity: 1;
+        padding: 0;
+    }
+    .font_face{
+        padding: 70px 40px;
+        background: #fff;
+        box-shadow: 4px 12px 40px 6px rgba(0,0,0,0.09);
+        position: relative;
+        transition-duration: .8s;
+        transition-timing-function: ease-in-out;
+        backface-visibility: hidden;
+        z-index: 3;
+        border-radius: 20px;
+        h3{
+            font-size: 45px;
+            line-height: 1.08349;
+            font-weight: 700;
+            letter-spacing: -.003em;
+            margin-bottom: 30px;
+        }
+    }
+    .back_face{
+        padding: 80px 60px;
+        background: #fff;
+        transition-property: transform;
+        transition-duration: .8s;
+        transition-timing-function: ease-in-out;
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: rotateX(-180deg);
+        z-index: 3;
+        border-radius: 20px;
+        display: flex;
+    }
+    .back_face_content{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 400px;
+        h3{
+            font-size: 32px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 18px;
+        }
+    }
+    .image-column {
+        flex: 1;
+    }
+    .flip_button_close,.icon{
+        position: absolute;
+        background: #000;
+        color: #fff;
+        width: 38px;
+        height: 38px;
+        right: 22px;
+        bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    &.flip{
+        .flip_overlay{
+            visibility: visible;
+            transition-timing-function: ease-out;
+            opacity: 0.8;
+        }
+    }
+    &.vertical{
+        .font_face{
+            transform: rotateX(0deg);
+        }
+        .back_face{
+            transform: rotateX(180deg);
+        }
+        &.flip{
+            .font_face{
+                transform: rotateX(180deg);
+            }
+            .back_face{
+                transform: rotateX(0deg);
+                visibility: visible;
+            }
+        }
+    }
+    &.horizontal{
+        .font_face{
+            transform: rotateY(0deg);
+        }
+        .back_face{
+            transform: rotateY(180deg);
+        }
+        &.flip{
+            .font_face{
+                transform: rotateY(180deg);
+            }
+            .back_face{
+                transform: rotateY(0deg);
+                visibility: visible;
+            }
+        }
+    }
+}

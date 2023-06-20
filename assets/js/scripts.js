@@ -2,7 +2,6 @@
   "use strict";
 
   $("document").ready(function () {
-
     setTimeout(function () {
       $(".video_slider_area").addClass("loaded").css("height", "auto");
     }, 3000);
@@ -44,17 +43,41 @@
       });
     });
 
+    // setInterval(function () {
+    //   var active = $(".hotspot_list li");
+    //   active.removeClass("active");
+    //   if (active.next("li").length == 0) {
+    //     active.parent(".hotspot_list").find("li").addClass("active");
+    //   } else {
+    //     active.next("li").addClass("active");
+    //   }
+    // }, 3000);
+    var pause = false;
+    //save items that with number
+    var item = $(".hotspot");
+    //save blocks
+    // var block=  $('.bg-block');
+    //variable for counter
+    var k = 0;
+    setInterval(function () {
+      if (!pause) {
+        var $this = item.eq(k);
 
-    setInterval(function(){
-      var active = $('.hotspot_list li.active');
-      active.removeClass('active');
-      if(active.next('li').length == 0){
-        active.parent('.hotspot_list').find('li:first').addClass('active');
-      }else{
-        active.next('li').addClass('active');
+        if (item.hasClass("active")) {
+          item.removeClass("active");
+        }
+        //  block.removeClass('active').eq(k).addClass('active');
+        $this.addClass("active");
+        //increase k every 1.5 sec
+        k++;
+        //if k more then number of blocks on page
+        // if (k >= block.length ) {
+        //   //rewrite variable to start over
+        //     k = 0;
+        // }
       }
-    }, 3000 );
-
-
+      //every 1.5 sec
+      console.log(hi);
+    }, 3000);
   });
 })(jQuery);
