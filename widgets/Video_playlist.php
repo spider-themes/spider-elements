@@ -1,38 +1,34 @@
 <?php
+/**
+ * Use namespace to avoid conflict
+ */
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Repeater;
-
-use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
-use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Text_Shadow;
-// use Elementor\Group_Control_Typography;	
-use Elementor\Utils;
-use ElementorPro\Base\Base_Widget;
-use Elementor\Modules\DynamicTags\Module as TagsModule;
-use Elementor\Icons_Manager;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 /**
  * Class Video_playlist
- * @package DocyCore\Widgets
+ * @package spider\Widgets
+ * @since 1.0.0
  */
 class Video_playlist extends Widget_Base {
-    public function get_name() {
+
+	public function get_name() {
         return 'docy_videos_playlist';
     }
 
     public function get_title() {
-        return esc_html__( 'Video Playlist', 'docy-core' );
+        return esc_html__( 'Video Playlist', 'spider-elements' );
     }
 
     public function get_icon() {
@@ -48,7 +44,7 @@ class Video_playlist extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'ionicons', 'slick', 'slick-theme', 'video-js-theaterMode', 'video-js' ];
+		return [ 'bootstrap', 'slick', 'slick-theme', 'video-js-theaterMode', 'video-js', 'se-main' ];
 	}
 
 	/**
@@ -56,101 +52,104 @@ class Video_playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo' ];
+		return [ 'bootstrap', 'video-js', 'artplayer', 'video-js-nuevo', 'slick' ];
 	}
-	
 
-    protected function register_controls() {
-
-        $this->start_controls_section(
-            'doc_design_sec', [
-                'label' => __( 'Preset Skin', 'docy-core' ),
-            ]
-        );
-
-        $this->add_control(
-            'style', [
-                'label' => esc_html__( 'Skin', 'docy-core' ),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    '1' => [
-                        'title' => __( 'Tab', 'coro-core' ),
-                        'icon' => 'video-playlist',
-                    ],
-                    '2' => [
-                        'title' => __( 'Slide', 'coro-core' ),
-                        'icon' => 'video-playlist2',
-                    ],
-                ],
-                'toggle' => false,
-                'default' => '1',
-            ]
-        );
-
-        $this->end_controls_section();
+	/**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	protected function register_controls() {
+		$this->elementor_content_control();
+		$this->elementor_style_control();
+	}
 
 
-        // Title
-        $this->start_controls_section(
-            'title_opt_sec', [
-                'label' => __( 'Title', 'docy-core' ),
-                'condition' => [
-                    'style' => ['1']
-                ]
-            ]
-        );
+	/**
+	 * Name: elementor_content_control()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_content_control() {
 
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__( 'Title text', 'rave-core' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'separator' => 'before'
-            ]
-        );
-
-        $this->add_control(
-            'title_tag',
-            [
-                'label' => __( 'Title HTML Tag', 'elementor' ),
-                'type' => Controls_Manager::SELECT,
-                'options' => se_el_title_tags(),
-                'default' => 'h3',
-            ]
-        );
-
-        $this->add_control(
-            'color_title', [
-                'label' => __( 'Text Color', 'rave-core' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .title' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'typography_title',
-                'scheme' => Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .title'
-            ]
-        );
-
-        $this->end_controls_section();
-
-		//  Video Upload section
+		//======================= Select Preset Skin =======================//
 		$this->start_controls_section(
-			'section_playlist',
-			[
-				'label' => esc_html__( 'Playlist', 'spider-elements' ),
+			'doc_design_sec', [
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
-			'tabs_direction',
-			[
-				'label' => esc_html__( 'Position', 'spider-elements' ),
+			'style', [
+				'label' => esc_html__( 'Skin', 'spider-elements' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'1' => [
+						'title' => __( 'Tab', 'coro-core' ),
+						'icon' => 'video-playlist',
+					],
+					'2' => [
+						'title' => __( 'Slide', 'coro-core' ),
+						'icon' => 'video-playlist2',
+					],
+				],
+				'toggle' => false,
+				'default' => '1',
+			]
+		);
+
+		$this->end_controls_section(); // End Preset Skin
+
+
+		//======================= Section Title =======================//
+		$this->start_controls_section(
+			'title_opt_sec', [
+				'label' => __( 'Title', 'spider-elements' ),
+				'condition' => [
+					'style' => ['1']
+				]
+			]
+		);
+
+		$this->add_control(
+			'title', [
+				'label' => esc_html__( 'Title text', 'rave-core' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_control(
+			'title_tag', [
+				'label' => __( 'Title HTML Tag', 'elementor' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => se_el_title_tags(),
+				'default' => 'h3',
+			]
+		);
+
+		$this->end_controls_section(); // End Section Title
+
+
+		//======================= Section Video Playlist =======================//
+		$this->start_controls_section(
+			'section_playlist', [
+				'label' => esc_html__( 'Playlist dd', 'spider-elements' ),
+			]
+		);
+
+		/*$this->add_control(
+			'tabs_direction', [
+				'label' => esc_html__( 'Position dsfsdafsdf', 'spider-elements' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'vertical',
 				'options' => [
@@ -159,11 +158,10 @@ class Video_playlist extends Widget_Base {
 				],
 				'prefix_class' => 'e-tabs-view-',
 			]
-		);
+		);*/
 
 		$this->add_control(
-			'playlist_title',
-			[
+			'playlist_title', [
 				'label' => esc_html__( 'Playlist Name', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => esc_html__( 'Playlist', 'spider-elements' ),
@@ -173,10 +171,8 @@ class Video_playlist extends Widget_Base {
 		);
 
 		$repeater = new Repeater();
-
 		$repeater->add_control(
-			'title',
-			[
+			'title', [
 				'label' => esc_html__( 'Heading', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
@@ -187,47 +183,38 @@ class Video_playlist extends Widget_Base {
 				'label_block' => true,
 			]
 		);
-		
+
 		$repeater2 = new repeater();
 		$repeater2->add_control(
-			'title2',
-			[
+			'title2', [
 				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
 		);
-		
+
 		// video upload
 		$repeater2->add_control(
 			'video_upload',
 			[
 				'label' => esc_html__( 'Video Upload', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
-				 
 				'media_type' => 'video',
-				
 			]
 		);
-		
+
 		$repeater2->add_control(
-			'thumbnail',
-			[
+			'thumbnail', [
 				'label' => esc_html__( 'Thumbnail', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
-				]
 			]
 		);
 
-		
 		$repeater2->add_control(
-			'video-caption',
-			[
+			'video-caption', [
 				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Default title', 'spider-elements' ),
@@ -242,7 +229,7 @@ class Video_playlist extends Widget_Base {
 				'label' => esc_html__( 'Author', 'spider-elements' ),
 				'type' => Controls_Manager::HIDDEN,
 				// current login user name
-				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''				
+				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''
 			]
 		);
 		// CURRENT DATE control
@@ -253,7 +240,7 @@ class Video_playlist extends Widget_Base {
 				'type' => Controls_Manager::HIDDEN,
 				// DEFAULT CURRENT DATE with time zone
 				'default' => date(get_option('date_format') . get_option('time_format'), current_time( 'timestamp', 0 ))
-				]
+			]
 		);
 
 		$repeater->add_control(
@@ -271,7 +258,7 @@ class Video_playlist extends Widget_Base {
 				'title_field' => '{{{ title2 }}}'
 			]
 		);
-		
+
 		$this->add_control(
 			'tabs',
 			[
@@ -312,9 +299,6 @@ class Video_playlist extends Widget_Base {
 			[
 				'label' => esc_html__( 'Choose Image', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
-				],
 				'dynamic' => [
 					'active' => true,
 				],
@@ -496,41 +480,85 @@ class Video_playlist extends Widget_Base {
 
 		$this->end_controls_section();
 
+	}
 
-        // Style Section
-        $this->start_controls_section(
-            'style_sec',
-            [
-                'label' => esc_html__('Style Section', 'rogan-core'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
+	/**
+	 * Name: elementor_style_control()
+	 * Desc: Register the Style Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+	public function elementor_style_control() {
 
-        $this->add_responsive_control(
-            'sec_padding', [
-                'label' => __( 'Section padding', 'docy-core' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .video_list_area' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-                'default' => [
-                    'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
-                ],
-            ]
-        );
+		// Style Section
+		$this->start_controls_section(
+			'style_sec_title', [
+				'label' => esc_html__('Style Section', 'rogan-core'),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
 
-        $this->add_control(
-            'sec_bg_color', [
-                'label' => esc_html__('Background Color', 'rogan-core'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .video_list_area ' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
 
-        $this->end_controls_section();
+		$this->add_control(
+			'color_title', [
+				'label' => __( 'Text Color', 'rave-core' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'typography_title',
+				'selector' => '{{WRAPPER}} .title'
+			]
+		);
+
+		$this->end_controls_section();
+
+
+
+
+
+		// Style Section
+		$this->start_controls_section(
+			'style_sec',
+			[
+				'label' => esc_html__('Style Section', 'rogan-core'),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'sec_padding', [
+				'label' => __( 'Section padding', 'spider-elements' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .video_list_area' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'default' => [
+					'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sec_bg_color', [
+				'label' => esc_html__('Background Color', 'rogan-core'),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .video_list_area ' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'section_style_layout',
@@ -604,9 +632,6 @@ class Video_playlist extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-title' => 'color: {{VALUE}};',
 				],
-				'global' => [
-					'default' => Global_Colors::COLOR_TEXT,
-				],
 			]
 		);
 
@@ -636,9 +661,6 @@ class Video_playlist extends Widget_Base {
 					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side svg' => 'fill: {{VALUE}};',
-				],
-				'global' => [
-					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -698,9 +720,6 @@ class Video_playlist extends Widget_Base {
 					'{{WRAPPER}} .e-tab-title .e-tab-title-text' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tab-title .e-tab-title-text a' => 'color: {{VALUE}};',
 				],
-				'global' => [
-					'default' => Global_Colors::COLOR_TEXT,
-				],
 			]
 		);
 
@@ -709,9 +728,6 @@ class Video_playlist extends Widget_Base {
 			[
 				'name' => 'normal_typography',
 				'selector' => '{{WRAPPER}} .e-tab-title .e-tab-title-text',
-				'global' => [
-					'default' => Global_Typography::TYPOGRAPHY_TEXT,
-				],
 			]
 		);
 
@@ -730,9 +746,6 @@ class Video_playlist extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .e-tab-title .e-tab-duration' => 'color: {{VALUE}};',
-				],
-				'global' => [
-					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -764,7 +777,7 @@ class Video_playlist extends Widget_Base {
 			]
 		);
 
-		
+
 		// Default shadow values for the icon.
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
@@ -794,7 +807,6 @@ class Video_playlist extends Widget_Base {
 					'max' => 30,
 				],
 				'selectors' => [
-					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
 					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
 				],
 			]
@@ -863,7 +875,7 @@ class Video_playlist extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		
+
 		$this->start_controls_tab(
 			'playlist_tabs_active',
 			[
@@ -900,9 +912,6 @@ class Video_playlist extends Widget_Base {
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a' => 'color: {{VALUE}};',
 				],
-				'global' => [
-					'default' => Global_Colors::COLOR_TEXT,
-				],
 			]
 		);
 
@@ -911,9 +920,6 @@ class Video_playlist extends Widget_Base {
 			[
 				'name' => 'active_typography',
 				'selector' => '{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text',
-				'global' => [
-					'default' => Global_Typography::TYPOGRAPHY_TEXT,
-				],
 			]
 		);
 
@@ -933,9 +939,6 @@ class Video_playlist extends Widget_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration' => 'color: {{VALUE}};',
-				],
-				'global' => [
-					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -1065,9 +1068,18 @@ class Video_playlist extends Widget_Base {
 
 		$this->end_controls_section();
 
-    }
+	}
 
 
+	/**
+	 * Name: elementor_render()
+	 * Desc: Render the widget output on the frontend.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @banca
+	 * Author: spider-themes
+	 */
     protected function render() {
         $settings = $this->get_settings();
 
@@ -1081,7 +1093,8 @@ class Video_playlist extends Widget_Base {
             'hide_empty' => true
         ));
 
-        include( "templates/video-playlist/video-playlist-{$settings['style']}.php" );
+		// Render the widget output on the frontend.
+		include "templates/video-playlist/video-playlist-{$settings['style']}.php";
 	
     }
 }
