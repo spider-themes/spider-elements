@@ -218,6 +218,30 @@
     background-size: cover;
     background-position: top;
 }
+
+/* image hover style  */
+
+.himage1{
+    background: url("../images/el-editor-preview/image-hover2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.himage2{
+    background: url("../images/el-editor-preview/image-hover1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.himage3{
+    background: url("../images/el-editor-preview/image-hover3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+
+
 /* Video Playlist widget CSS */
 .elementor-control-se-video-upload > .elementor-control-content > .elementor-button-wrapper{
     display: none;
