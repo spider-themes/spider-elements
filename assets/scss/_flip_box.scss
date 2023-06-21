@@ -5,7 +5,6 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 2;
         width: 100vw;
         height: 100vh;
         background: #000;
@@ -23,6 +22,9 @@
         margin: 0;
         opacity: 1;
         padding: 0;
+        &:hover{
+            opacity: 0.6;
+        }
     }
     .font_face{
         padding: 70px 40px;
@@ -32,7 +34,6 @@
         transition-duration: .8s;
         transition-timing-function: ease-in-out;
         backface-visibility: hidden;
-        z-index: 3;
         border-radius: 20px;
         h3{
             font-size: 45px;
@@ -54,7 +55,6 @@
         height: 100%;
         top: 0;
         transform: rotateX(-180deg);
-        z-index: 3;
         border-radius: 20px;
         display: flex;
     }
@@ -87,12 +87,19 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+        &:hover{
+            opacity: 0.6;
+        }
     }
     &.flip{
         .flip_overlay{
             visibility: visible;
             transition-timing-function: ease-out;
             opacity: 0.8;
+            z-index: 2;
+        }
+        .back_face,.font_face{
+            z-index: 3;
         }
     }
     &.vertical{

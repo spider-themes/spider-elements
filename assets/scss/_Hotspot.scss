@@ -299,10 +299,11 @@ figure.stack_image{
 // stack style 4
 $photos: 10;
 $i: 0;
-$rotation: calc(($i - 1) / ($photos - 1));
+
 @for $i from 1 through $photos {
     .stack_scroll figure:nth-child(#{$i}) {
         img {
+            $rotation: calc(($i - 1) / ($photos - 1));
             transform: scale(0.6) rotate($rotation * 25deg);
         }
     }

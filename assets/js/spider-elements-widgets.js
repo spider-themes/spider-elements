@@ -13,6 +13,7 @@
         "docly_alerts_box.default": spiderElements.alertBox,
         "docly_hotspot.default": spiderElements.hotspot,
         "docy_flip_box.default": spiderElements.flipbox,
+        "docy_image_slider.default": spiderElements.imageSlider,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -23,6 +24,165 @@
       });
     },
 
+    imageSlider: function ($scope) {
+      $(".spe_slider_inner").slick({
+        infinite: false,
+        autoplay: false,
+        speed: 1500,
+        slidesToShow: 1,
+        pauseOnHover: false,
+        slidesToScroll: 1,
+        prevArrow: ".left_arrow",
+        nextArrow: ".right_arrow",
+        dots: true,
+        appendDots: $(".slider-dots-box"),
+        dotsClass: "slider-dots",
+      });
+
+      // var homeCarousel = jQuery(".spe_slider_inner").slick({
+      //   autoplay: false,
+      // });
+
+      //start the animation
+      // homeCarousel.slickPlay();
+
+      //on click event to stop the slider if the user clicks on one of the arrows
+      $("#spe_toggle").click(function () {
+        $(".spe_slider_inner").slick("slickSetOption", "autoplay", false);
+        $(".spe_slider_inner").attr("data-slick", '{"pauseOnHover":true}');
+      });
+
+      // $(".slider-dots .animated-dot").click(function () {
+      //   $(this).toggleClass("play");
+      //   if ($(this).hasClass("play")) {
+      //     isPause = true;
+      //     $(this).css(
+      //       "background-image",
+      //       "url(https://img.icons8.com/plasticine/100/000000/pause.png)"
+      //     );
+      //     $(".spe_slider_inner").slick("slickPause");
+      //   } else {
+      //     isPause = false;
+      //     $(this).css("background-image", "");
+      //     $(".spe_slider_inner").slick("slickPlay");
+      //   }
+      // });
+
+      //ticking machine
+
+      //ticking machine
+      var percentTime;
+      var tick;
+      var time = 1;
+      var progressBarIndex = 0;
+
+      $(".slider-dots-box button").each(function (index) {
+        var progress = "<div class='inProgress inProgress" + index + "'></div>";
+        $(this).html(progress);
+      });
+
+      function startProgressbar() {
+        resetProgressbar();
+        percentTime = 0;
+        tick = setInterval(interval, 10);
+      }
+
+      function interval() {
+        if (
+          $(
+            '.spe_slider_inner .slick-track div[data-slick-index="' +
+              progressBarIndex +
+              '"]'
+          ).attr("aria-hidden") === "true"
+        ) {
+          progressBarIndex = $(
+            '.spe_slider_inner .slick-track div[aria-hidden="false"]'
+          ).data("slickIndex");
+          startProgressbar();
+        } else {
+          percentTime += 1 / (time + 5);
+          $(".inProgress" + progressBarIndex).css({
+            width: percentTime + "%",
+          });
+          if (percentTime >= 100) {
+            $(".spe_slider_inner").slick("slickNext");
+            progressBarIndex++;
+            if (progressBarIndex > 2) {
+              progressBarIndex = 0;
+            }
+            startProgressbar();
+          }
+        }
+      }
+
+      function resetProgressbar() {
+        $(".inProgress").css({
+          width: 0 + "%",
+        });
+        clearInterval(tick);
+      }
+      startProgressbar();
+
+      // play pushe button
+      // $('#toggle').click( function() {
+      //   if ($(this).html() == 'pause'){
+      //      $('.slider').slick('slickPause')
+      //      $(this).html('play')
+      //   } else {
+      //     $('.slider').slick('slickPlay')
+      //     $(this).html('pause')
+      //   }
+      // });
+
+      // $("#spe_toggle").on("click", function () {
+      //   if ($(this).html() == "pause") {
+      //     $(".spe_slider_inner")
+      //       .slick("slickSetOption", "autoplay", false)
+      //       .slick("slickPause");
+      //     $(this).html("play");
+      //   } else {
+      //     $(".spe_slider_inner")
+      //       .slick("slickSetOption", "autoplay", true)
+      //       .slick("slickPlay");
+      //     $(this).html("pause");
+      //   }
+      // });
+      // $("#spe_toggle").click(function () {
+      //   $(".spe_slider_inner").slick("slickPause").addClass("show");
+      // });
+
+      // End ticking machine
+
+      // $(".progressBarContainer div").click(function () {
+      //   clearInterval(tick);
+      //   var goToThisIndex = $(this).find("span").data("slickIndex");
+      //   $(".single-item").slick("slickGoTo", goToThisIndex, false);
+      //   startProgressbar();
+      // });
+      // // On before slide change
+      // $(".spe_slider_inner")
+      //   .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+      //     $(".slider-dots-box button").html("");
+      //   })
+      //   .trigger("beforeChange");
+
+      // // On before slide change
+      // $(".spe_slider_inner")
+      //   .on("afterChange", function (event, slick, currentSlide) {
+      //     $(".slider-dots-box button").html("");
+      //     $(
+      //       ".slider-dots-box .slick-active button"
+      //     ).html(`<svg class="progress-svg" width="80" height="4">
+      //     <g transform="translate(20,20)">
+      //       <circle class="circle-go" r="19" cx="0" cy="0"></circle>
+      //       <text class="circle-tx" x="0" y="4" alignment-baseline="middle" stroke-width="0" text-anchor="middle">${
+      //         (currentSlide || 0) + 1
+      //       }</text>
+      //     </g>
+      //     </svg>`);
+      //   })
+      //   .trigger("afterChange");
+    },
     //===================== flipbox ======================//
     flipbox: function () {
       $(".flip_button").each(function (i) {

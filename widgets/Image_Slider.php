@@ -18,14 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Flip_Box extends Widget_Base {
+class Image_Slider extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_flip_box';
+		return 'docy_image_slider';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Flip Box', 'spider-elements' );
+		return esc_html__( 'Image Slider', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -33,7 +33,7 @@ class Flip_Box extends Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'spider', 'flip', 'box', 'flip box' ];
+		return [ 'spider', 'image', 'slider', 'image slider' ];
 	}
 
 	public function get_categories() {
@@ -45,7 +45,7 @@ class Flip_Box extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'elegant-icon', 'se-main' ];
+		return [ 'bootstrap', 'elegant-icon', 'se-main', 'slick' ];
 	}
 
 	/**
@@ -53,7 +53,7 @@ class Flip_Box extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'se-el-widgets' ];
+		return [ 'bootstrap', 'se-el-widgets', 'slick' ];
 	}
 
 
@@ -68,7 +68,7 @@ class Flip_Box extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->elementor_content_control();
-		$this->elementor_style_control();
+		// $this->elementor_style_control();
 	}
 
 
@@ -84,25 +84,25 @@ class Flip_Box extends Widget_Base {
 	public function elementor_content_control() {
 
 		// ============================ Select Style  ===========================//
-		$this->start_controls_section(
-			'select_style', [
-				'label' => __( 'Preset Skins', 'spider-elements' ),
-			]
-		);
+		// $this->start_controls_section(
+		// 	'select_style', [
+		// 		'label' => __( 'Preset Skins', 'spider-elements' ),
+		// 	]
+		// );
 
-		$this->add_control(
-			'style', [
-				'label' => __('Style', 'spider-elements'),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'vertical' => __('Vertical', 'spider-elements'),
-					'horizontal' => __('Horizontal', 'spider-elements'),
-				],
-				'default' => 'vertical',
-			]
-		);
+		// $this->add_control(
+		// 	'style', [
+		// 		'label' => __('Style', 'spider-elements'),
+		// 		'type' => Controls_Manager::SELECT,
+		// 		'options' => [
+		// 			'vertical' => __('Vertical', 'spider-elements'),s
+		// 			'horizontal' => __('Horizontal', 'spider-elements'),
+		// 		],
+		// 		'default' => 'vertical',
+		// 	]
+		// );
 
-        $this->end_controls_section(); // End Select Style
+        // $this->end_controls_section(); // End Select Style
 
 
 		// ============================ Font face Content ===========================//
@@ -239,17 +239,6 @@ class Flip_Box extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-            'font_button_color',
-            [
-                'label' => __( 'Back Button Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'selectors' => [
-                    '{{WRAPPER}} .spe_flip_box_inner .icon' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
 
 		$this->add_control(
 			'tab_title_hr', [
@@ -335,20 +324,7 @@ class Flip_Box extends Widget_Base {
             ]
         );
 
-		$this->add_control(
-            'back_button_color',
-            [
-                'label' => __( 'Back Button Color', 'spider-elements' ),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'selectors' => [
-                    '{{WRAPPER}} .spe_flip_box_inner .flip_button_close' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
-
 		$this->end_controls_section(); // End Content Section
-
     }
 
 
@@ -366,6 +342,6 @@ class Flip_Box extends Widget_Base {
         extract( $settings ); //extract all settings array to variables converted to name of key
 
         //================= Template Parts =================//
-        include "templates/flip-box/flip-box-1.php";
+        include "templates/image-slider/Image-slider-1.php";
     }
 }

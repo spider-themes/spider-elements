@@ -7194,43 +7194,43 @@ figure.stack_image img:nth-child(4) {
 }
 
 .stack_scroll figure:nth-child(1) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(0deg);
 }
 
 .stack_scroll figure:nth-child(2) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(2.7777777778deg);
 }
 
 .stack_scroll figure:nth-child(3) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(5.5555555556deg);
 }
 
 .stack_scroll figure:nth-child(4) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(8.3333333333deg);
 }
 
 .stack_scroll figure:nth-child(5) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(11.1111111111deg);
 }
 
 .stack_scroll figure:nth-child(6) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(13.8888888889deg);
 }
 
 .stack_scroll figure:nth-child(7) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(16.6666666667deg);
 }
 
 .stack_scroll figure:nth-child(8) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(19.4444444444deg);
 }
 
 .stack_scroll figure:nth-child(9) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(22.2222222222deg);
 }
 
 .stack_scroll figure:nth-child(10) img {
-  transform: scale(0.6) rotate(-2.7777777778deg);
+  transform: scale(0.6) rotate(25deg);
 }
 
 .stack_scroll figure {
@@ -7628,7 +7628,6 @@ figure.stack_image img:nth-child(4) {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
   width: 100vw;
   height: 100vh;
   background: #000;
@@ -7647,6 +7646,9 @@ figure.stack_image img:nth-child(4) {
   opacity: 1;
   padding: 0;
 }
+.spe_flip_box_inner .flip_button:hover {
+  opacity: 0.6;
+}
 .spe_flip_box_inner .font_face {
   padding: 70px 40px;
   background: #fff;
@@ -7655,7 +7657,6 @@ figure.stack_image img:nth-child(4) {
   transition-duration: 0.8s;
   transition-timing-function: ease-in-out;
   backface-visibility: hidden;
-  z-index: 3;
   border-radius: 20px;
 }
 .spe_flip_box_inner .font_face h3 {
@@ -7677,7 +7678,6 @@ figure.stack_image img:nth-child(4) {
   height: 100%;
   top: 0;
   transform: rotateX(-180deg);
-  z-index: 3;
   border-radius: 20px;
   display: flex;
 }
@@ -7711,10 +7711,17 @@ figure.stack_image img:nth-child(4) {
   justify-content: center;
   border-radius: 50%;
 }
+.spe_flip_box_inner .flip_button_close:hover, .spe_flip_box_inner .icon:hover {
+  opacity: 0.6;
+}
 .spe_flip_box_inner.flip .flip_overlay {
   visibility: visible;
   transition-timing-function: ease-out;
   opacity: 0.8;
+  z-index: 2;
+}
+.spe_flip_box_inner.flip .back_face, .spe_flip_box_inner.flip .font_face {
+  z-index: 3;
 }
 .spe_flip_box_inner.vertical .font_face {
   transform: rotateX(0deg);
@@ -7741,6 +7748,80 @@ figure.stack_image img:nth-child(4) {
 .spe_flip_box_inner.horizontal.flip .back_face {
   transform: rotateY(0deg);
   visibility: visible;
+}
+
+.spe_slider_inner .spe_slider_item {
+  position: relative;
+}
+.spe_slider_inner .spe_slider_content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 90%);
+}
+.spe_slider_inner .spe_slider_content h3, .spe_slider_inner .spe_slider_content p {
+  color: #fff;
+}
+.spe_slider_inner .spe_slider_content h3 {
+  font-size: 28px;
+}
+
+.spe_slider_nav .right_arrow, .spe_slider_nav .left_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.spe_slider_nav .right_arrow:hover, .spe_slider_nav .left_arrow:hover {
+  border-color: #fff;
+}
+.spe_slider_nav .left_arrow {
+  left: 0;
+}
+.spe_slider_nav .right_arrow {
+  right: 0;
+}
+
+.slider-dots-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.slider-dots-box .slider-dots {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.slider-dots-box .slider-dots li button {
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+}
+.slider-dots-box .slider-dots li button .inProgress {
+  height: 2px;
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.animated-dot {
+  width: 20px;
+  height: 20px;
+  background: #000;
 }
 
 /*# sourceMappingURL=main.css.map */
