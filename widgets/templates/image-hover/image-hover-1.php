@@ -7,5 +7,6 @@
         <h3><?php echo $img_attachment_meta['title']; ?></h3>
         <p><?php echo $img_attachment_meta['caption']; ?></p>
         <a href="#"></a>
-    </figcaption>			
+    </figcaption>	
+    <?php print_r($img_attachment_meta); ?>		
 </figure>

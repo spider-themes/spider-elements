@@ -83,6 +83,21 @@ class Image_Slider extends Widget_Base {
 	 */
 	public function elementor_content_control() {
 
+		$this->start_controls_section(
+            'spe_slider_images',
+            [
+                'label' => __('Image Slider Gallery', 'spider-elements'),
+            ]
+        );
+        $this->add_control(
+            'spe_slider_image',
+            [
+                'type' => Controls_Manager::GALLERY,
+				'dynamic' => [
+					'active' => true,
+				],
+            ]
+        );
 		// ============================ Select Style  ===========================//
 		// $this->start_controls_section(
 		// 	'select_style', [
@@ -104,71 +119,8 @@ class Image_Slider extends Widget_Base {
 
         // $this->end_controls_section(); // End Select Style
 
-
-		// ============================ Font face Content ===========================//
-        $this->start_controls_section(
-			'section_font', [
-				'label' => __( 'Font Part', 'spider-elements' ),
-			]
-		);
-        $this->add_control(
-            'font_box_title',
-            [
-                'label' => __( 'Font Title', 'spider-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => 'Docy cares deeply.'
-            ]
-        );
-        $this->add_control(
-            'font_box_image',
-            [
-                'label' => __( 'Image', 'spider-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'separator' => 'before',
-                'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-            ]
-        );
-        $this->end_controls_section();
-
-        // ============================ Back face Content ===========================//
-        $this->start_controls_section(
-			'section_back', [
-				'label' => __( 'Back Part', 'spider-elements' ),
-			]
-		);
-        $this->add_control(
-            'back_box_title',
-            [
-                'label' => __( 'Back Title', 'spider-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => 'Spider Flipbox build for elementor.'
-            ]
-        );
-        $this->add_control(
-            'back_box_content',
-            [
-                'label' => __( 'Back Description', 'spider-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'label_block' => true,
-                'default' => 'Spider Flipbox build for elementor.'
-            ]
-        );
-        $this->add_control(
-            'back_box_image',
-            [
-                'label' => __( 'Back Image', 'spider-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'separator' => 'before',
-                'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-            ]
-        );
-        $this->end_controls_section();
+		$this->end_controls_section();
+		
     }
 
 
@@ -340,6 +292,7 @@ class Image_Slider extends Widget_Base {
 	protected function render() {
         $settings = $this->get_settings_for_display();
         extract( $settings ); //extract all settings array to variables converted to name of key
+		
 
         //================= Template Parts =================//
         include "templates/image-slider/Image-slider-1.php";

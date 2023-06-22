@@ -25,54 +25,48 @@
     },
 
     imageSlider: function ($scope) {
-      $(".spe_slider_inner").slick({
+      var $status = $(".pagingInfo");
+      var $slickElement = $(".slider");
+
+      $slickElement.on(
+        "init reInit afterChange",
+        function (event, slick, currentSlide, nextSlide) {
+          //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+          var i = (currentSlide ? currentSlide : 0) + 1;
+          $status.text(i + "/" + slick.slideCount);
+        }
+      );
+
+      $slickElement.slick({
+        dots: true,
+        pauseOnHover: false,
+        arrows: true,
         infinite: false,
         autoplay: false,
         speed: 1500,
         slidesToShow: 1,
-        pauseOnHover: false,
-        slidesToScroll: 1,
+        adaptiveHeight: false,
         prevArrow: ".left_arrow",
         nextArrow: ".right_arrow",
-        dots: true,
         appendDots: $(".slider-dots-box"),
         dotsClass: "slider-dots",
       });
 
-      // var homeCarousel = jQuery(".spe_slider_inner").slick({
-      //   autoplay: false,
-      // });
-
-      //start the animation
-      // homeCarousel.slickPlay();
-
-      //on click event to stop the slider if the user clicks on one of the arrows
-      $("#spe_toggle").click(function () {
-        $(".spe_slider_inner").slick("slickSetOption", "autoplay", false);
-        $(".spe_slider_inner").attr("data-slick", '{"pauseOnHover":true}');
+      $("#toggle").click(function () {
+        if ($(this).html() == "pause") {
+          $(".slider").slick("slickPause");
+          isPause = true;
+          $(this).html("play");
+        } else {
+          $(".slider").slick("slickPlay");
+          isPause = false;
+          $(this).html("pause");
+        }
       });
-
-      // $(".slider-dots .animated-dot").click(function () {
-      //   $(this).toggleClass("play");
-      //   if ($(this).hasClass("play")) {
-      //     isPause = true;
-      //     $(this).css(
-      //       "background-image",
-      //       "url(https://img.icons8.com/plasticine/100/000000/pause.png)"
-      //     );
-      //     $(".spe_slider_inner").slick("slickPause");
-      //   } else {
-      //     isPause = false;
-      //     $(this).css("background-image", "");
-      //     $(".spe_slider_inner").slick("slickPlay");
-      //   }
-      // });
-
-      //ticking machine
 
       //ticking machine
       var percentTime;
-      var tick;
+      var tick, isPause;
       var time = 1;
       var progressBarIndex = 0;
 
@@ -88,29 +82,31 @@
       }
 
       function interval() {
-        if (
-          $(
-            '.spe_slider_inner .slick-track div[data-slick-index="' +
-              progressBarIndex +
-              '"]'
-          ).attr("aria-hidden") === "true"
-        ) {
-          progressBarIndex = $(
-            '.spe_slider_inner .slick-track div[aria-hidden="false"]'
-          ).data("slickIndex");
-          startProgressbar();
-        } else {
-          percentTime += 1 / (time + 5);
-          $(".inProgress" + progressBarIndex).css({
-            width: percentTime + "%",
-          });
-          if (percentTime >= 100) {
-            $(".spe_slider_inner").slick("slickNext");
-            progressBarIndex++;
-            if (progressBarIndex > 2) {
-              progressBarIndex = 0;
-            }
+        if (isPause === false) {
+          if (
+            $(
+              '.slider .slick-track div[data-slick-index="' +
+                progressBarIndex +
+                '"]'
+            ).attr("aria-hidden") === "true"
+          ) {
+            progressBarIndex = $(
+              '.slider .slick-track div[aria-hidden="false"]'
+            ).data("slickIndex");
             startProgressbar();
+          } else {
+            percentTime += 1 / (time + 5);
+            $(".inProgress" + progressBarIndex).css({
+              width: percentTime + "%",
+            });
+            if (percentTime >= 100) {
+              $(".slider").slick("slickNext");
+              progressBarIndex++;
+              if (progressBarIndex > 2) {
+                progressBarIndex = 0;
+              }
+              startProgressbar();
+            }
           }
         }
       }
@@ -123,65 +119,17 @@
       }
       startProgressbar();
 
-      // play pushe button
-      // $('#toggle').click( function() {
-      //   if ($(this).html() == 'pause'){
-      //      $('.slider').slick('slickPause')
-      //      $(this).html('play')
-      //   } else {
-      //     $('.slider').slick('slickPlay')
-      //     $(this).html('pause')
+      // var $status = $(".pagingInfo");
+      // var $slickElement = $(".slider");
+
+      // $slickElement.on(
+      //   "init reInit afterChange",
+      //   function (event, slick, currentSlide, nextSlide) {
+      //     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+      //     var i = (currentSlide ? currentSlide : 0) + 1;
+      //     $status.text(i + "/" + slick.slideCount);
       //   }
-      // });
-
-      // $("#spe_toggle").on("click", function () {
-      //   if ($(this).html() == "pause") {
-      //     $(".spe_slider_inner")
-      //       .slick("slickSetOption", "autoplay", false)
-      //       .slick("slickPause");
-      //     $(this).html("play");
-      //   } else {
-      //     $(".spe_slider_inner")
-      //       .slick("slickSetOption", "autoplay", true)
-      //       .slick("slickPlay");
-      //     $(this).html("pause");
-      //   }
-      // });
-      // $("#spe_toggle").click(function () {
-      //   $(".spe_slider_inner").slick("slickPause").addClass("show");
-      // });
-
-      // End ticking machine
-
-      // $(".progressBarContainer div").click(function () {
-      //   clearInterval(tick);
-      //   var goToThisIndex = $(this).find("span").data("slickIndex");
-      //   $(".single-item").slick("slickGoTo", goToThisIndex, false);
-      //   startProgressbar();
-      // });
-      // // On before slide change
-      // $(".spe_slider_inner")
-      //   .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-      //     $(".slider-dots-box button").html("");
-      //   })
-      //   .trigger("beforeChange");
-
-      // // On before slide change
-      // $(".spe_slider_inner")
-      //   .on("afterChange", function (event, slick, currentSlide) {
-      //     $(".slider-dots-box button").html("");
-      //     $(
-      //       ".slider-dots-box .slick-active button"
-      //     ).html(`<svg class="progress-svg" width="80" height="4">
-      //     <g transform="translate(20,20)">
-      //       <circle class="circle-go" r="19" cx="0" cy="0"></circle>
-      //       <text class="circle-tx" x="0" y="4" alignment-baseline="middle" stroke-width="0" text-anchor="middle">${
-      //         (currentSlide || 0) + 1
-      //       }</text>
-      //     </g>
-      //     </svg>`);
-      //   })
-      //   .trigger("afterChange");
+      // );
     },
     //===================== flipbox ======================//
     flipbox: function () {

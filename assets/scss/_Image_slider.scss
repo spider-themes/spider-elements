@@ -1,4 +1,3 @@
-.spe_image_slider{}
 .spe_slider_inner {
     .spe_slider_item{
         position: relative;
@@ -10,6 +9,7 @@
         width: 100%;
         z-index: 1;
         background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 90%);
+        padding-left: 25px;
         h3,p{
             color: #fff;
         }
@@ -55,14 +55,15 @@
         display: flex;
         justify-content: center;
         li{
+            margin: 0px 5px;
             button{
                 width: 150px;
                 height: 2px;
-                background: #fff;
+                background: rgba(255, 255, 255, 0.4);
                 position: relative;
                 .inProgress{
                     height: 2px;
-                    background: red;
+                    background: #fff;
                     position: absolute;
                     left: 0;
                     top: 0;
@@ -71,9 +72,27 @@
         }
     }
 }
-
-.animated-dot{
-    width: 20px;
-    height: 20px;
-    background: #000;
+.buttons_control{
+    background: rgb(0, 0, 0);
+    display: flex;
+    #toggle{
+        padding: 18px;
+        border: 1px solid transparent;
+        text-align: center;
+        display: block;
+        color: #fff;
+        transition: all 0.2s;
+        &:hover{
+            border-color: #fff;
+        }
+    }
+    .pagingInfo{
+        width: calc(100% - 120px);
+        height: 60px;
+        padding: 18px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
 }
