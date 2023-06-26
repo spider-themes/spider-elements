@@ -7762,11 +7762,29 @@ figure.stack_image img:nth-child(4) {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 90%);
   padding-left: 25px;
 }
+@media (max-width: 767px) {
+  .spe_slider_inner .spe_slider_content {
+    padding-left: 0;
+  }
+}
 .spe_slider_inner .spe_slider_content h3, .spe_slider_inner .spe_slider_content p {
   color: #fff;
 }
 .spe_slider_inner .spe_slider_content h3 {
   font-size: 28px;
+}
+@media (max-width: 767px) {
+  .spe_slider_inner .spe_slider_content h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+}
+@media (max-width: 767px) {
+  .spe_slider_inner .spe_slider_content p {
+    font-size: 13px;
+    margin-bottom: 0;
+    line-height: 20px;
+  }
 }
 
 .spe_slider_nav .right_arrow, .spe_slider_nav .left_arrow {
@@ -7786,6 +7804,11 @@ figure.stack_image img:nth-child(4) {
 }
 .spe_slider_nav .right_arrow:hover, .spe_slider_nav .left_arrow:hover {
   border-color: #fff;
+}
+@media (max-width: 767px) {
+  .spe_slider_nav .right_arrow, .spe_slider_nav .left_arrow {
+    display: none !important;
+  }
 }
 .spe_slider_nav .left_arrow {
   left: 0;
@@ -7825,26 +7848,124 @@ figure.stack_image img:nth-child(4) {
 .buttons_control {
   background: rgb(0, 0, 0);
   display: flex;
-}
-.buttons_control #toggle {
-  padding: 18px;
-  border: 1px solid transparent;
-  text-align: center;
-  display: block;
-  color: #fff;
-  transition: all 0.2s;
-}
-.buttons_control #toggle:hover {
-  border-color: #fff;
+  padding: 5px;
 }
 .buttons_control .pagingInfo {
   width: calc(100% - 120px);
-  height: 60px;
+  height: 50px;
   padding: 18px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+}
+
+.spe_slider_btn {
+  border: 1px solid transparent;
+  text-align: center;
+  display: block;
+  color: #fff;
+  transition: all 0.2s;
+  padding: 0px 5px;
+}
+.spe_slider_btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.spe_slider_btn:hover {
+  border-color: #fff;
+}
+.spe_slider_btn.pause .one {
+  display: block;
+}
+.spe_slider_btn.pause .two {
+  display: none;
+}
+.spe_slider_btn.play .one {
+  display: none;
+}
+.spe_slider_btn.play .two {
+  display: block;
+}
+
+.spe_slider_nav_two {
+  display: flex;
+  align-items: center;
+}
+.spe_slider_nav_two .spe_slider_btn {
+  width: 40px;
+  display: inline-block;
+  margin: 0px 5px;
+  border-radius: 50%;
+  height: 40px;
+  color: #fff;
+  background: #5a5c5f;
+}
+.spe_slider_nav_two .spe_slider_btn:hover {
+  background: blue;
+  border-color: blue;
+}
+
+.pagingInfo_two {
+  border-radius: 45px;
+  padding: 5px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: #5a5c5f;
+  line-height: 20px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.buttons_control_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+}
+
+.spe_slider_nav_two {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.spe_slider_nav_two .slick-arrow {
+  width: 40px;
+  display: inline-block;
+  height: 40px;
+  color: #fff;
+  background: #5a5c5f;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.spe_slider_nav_two .slick-arrow:hover {
+  background: blue;
+}
+
+.slider-progress {
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+}
+.slider-progress .slider_progress_bar {
+  width: 0px;
+  height: 100%;
+  background: red;
+  transition: all 0s linear;
+}
+.slider-progress .slider_progress_bar.active {
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

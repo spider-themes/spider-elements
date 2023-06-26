@@ -83,6 +83,33 @@ class Image_Slider extends Widget_Base {
 	 */
 	public function elementor_content_control() {
 
+		//===================== Select Preset ===========================//
+        $this->start_controls_section(
+            'style_sec', [
+                'label' => esc_html__( 'Preset Skins', 'landpagy-core' ),
+            ]
+        );
+
+        $this->add_control(
+            'style', [
+                'label'   => esc_html__( 'Style', 'spider-elements' ),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    '1' => [
+                        'title' => __( 'Hover Image with content', 'spider-elements' ),
+                        'icon' => 'himage1',
+                    ],
+                    '2' => [
+                        'title' => __( 'Hover Image with content', 'spider-elements' ),
+                        'icon' => 'himage2',
+                    ],
+                ],
+                'default' => '1',
+            ]
+        );
+
+        $this->end_controls_section(); //End Select Style
+
 		$this->start_controls_section(
             'spe_slider_images',
             [
@@ -295,6 +322,6 @@ class Image_Slider extends Widget_Base {
 		
 
         //================= Template Parts =================//
-        include "templates/image-slider/Image-slider-1.php";
+        include "templates/image-slider/image-slider-{$settings['style']}.php";
     }
 }
