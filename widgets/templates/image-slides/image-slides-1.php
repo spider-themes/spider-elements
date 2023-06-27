@@ -7,10 +7,14 @@
             <div>
                 <div class="spe_slider_item"> 
                     <?php echo '<img src="' . esc_attr( $img_attachment_meta['src'] ) . '">'; ?> 
-                    <div class="spe_slider_content">
-                        <div class="container">
+                    <div class="spe_slider_content show">
+                        <div class="container position-relative">
                             <h3><?php echo $img_attachment_meta['title']; ?></h3>
-                            <p><?php echo $img_attachment_meta['caption']; ?></p>
+                            <div class="content_arrow show">
+                              <i class="arrow_carrot-up"></i>
+                              <i class="arrow_carrot-down"></i>
+                            </div>
+                            <p class="description"><?php echo $img_attachment_meta['caption']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -18,15 +22,30 @@
         <?php } ?>
     </div>
     <div class="buttons_control">
-        <button class="spe_slider_btn spe_slider_btn_one play">
-            <img class="one" src='<?php echo SE_IMG ?>/play.svg' alt="">
-            <img class="two" src='<?php echo SE_IMG ?>/push.svg' alt=""> 
-        </button> 
-        <span class="pagingInfo"></span>
+        <div class="container d-flex">
+          <button class="spe_slider_btn spe_slider_btn_one play">
+              <img class="one" src='<?php echo SE_IMG ?>/push.svg' alt="">
+              <img class="two" src='<?php echo SE_IMG ?>/play.svg' alt=""> 
+          </button> 
+          <span class="pagingInfo"></span>
+        </div>
     </div>
     <div class="spe_slider_nav">
-        <i class="arrow_left left_arrow slick-arrow"></i>
-        <i class="arrow_right right_arrow slick-arrow"></i>
+        <div class="left_arrow slick-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" class="sc-cSkPpf dYfTAr">
+            <defs><radialGradient id="left-arrow_gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" stop-opacity="0.5"></stop><stop offset="100%" stop-opacity="0"></stop></radialGradient><filter id="left-arrow_filter" width="236%" height="270%" x="-72%" y="-85%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"></feGaussianBlur><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.8 0"></feColorMatrix><feMerge><feMergeNode in="shadowMatrixOuter1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 60 0)"><circle cx="30" cy="30" r="30" fill="url(#left-arrow_gradient)"></circle><g stroke-width="2" filter="url(#left-arrow_filter)" transform="matrix(-1 0 0 1 40 20)"><path d="M9 0L0 9.989 9 20M0 10L22.5 10"></path></g></g>
+          </svg>
+        </div>
+        <div class="right_arrow slick-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" class="sc-eJgurS bKelnu">
+            <defs>
+              <radialGradient id="right-arrow_gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stop-opacity="0.5"></stop><stop offset="100%" stop-opacity="0"></stop></radialGradient>
+                <filter id="right-arrow_filter" width="236%" height="270%" x="-72%" y="-85%" filterUnits="objectBoundingBox">
+                  <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4">
+                  </feGaussianBlur><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.8 0"></feColorMatrix><feMerge><feMergeNode in="shadowMatrixOuter1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g fill="none" fill-rule="evenodd"><circle cx="30" cy="30" r="30" fill="url(#right-arrow_gradient)"></circle><g stroke-width="2" filter="url(#right-arrow_filter)" transform="matrix(-1 0 0 1 40 20)"><path d="M9 0L0 9.989 9 20M0 10L22.5 10"></path></g></g>
+            </svg>
+        </div>
     </div>
     <div class="slider-dots-box"></div>
 </div>
@@ -176,8 +195,14 @@
             isPause = false;
             $(this).removeClass("play");
             $(this).addClass("pause");
+            $(this).addClass("clicked");
           }
         });
+
+        $(".left_arrow,.right_arrow").on('click', function(e){
+          $('.spe_slider_btn_one').addClass("clicked");
+        });
+
 
         //ticking machine
         var percentTime;
@@ -235,6 +260,14 @@
         }
         startProgressbar();
       });
-
+      $('.content_arrow').on('click', function(e){
+        if($(this).hasClass('show')){
+          $('.content_arrow').removeClass('show');
+          $('.spe_slider_content').removeClass('show')
+        }else{
+          $(this).toggleClass('show');
+          $('.spe_slider_content').toggleClass('show')
+        }
+      });
     })(jQuery)
 </script>

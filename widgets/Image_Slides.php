@@ -18,14 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Image_Slider extends Widget_Base {
+class Image_Slides extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_image_slider';
+		return 'docy_image_slides';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Image Slider', 'spider-elements' );
+		return esc_html__( 'Image Slides', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -322,6 +322,6 @@ class Image_Slider extends Widget_Base {
 		
 
         //================= Template Parts =================//
-        include "templates/image-slider/image-slider-{$settings['style']}.php";
+        include "templates/image-slides/image-slides-{$settings['style']}.php";
     }
 }
