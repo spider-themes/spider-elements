@@ -1,9 +1,7 @@
 <?php
-
 /**
  * Use namespace to avoid conflict
  */
-
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
@@ -92,8 +90,7 @@ class Tabs extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_content_control()
-	{
+	public function elementor_content_control() {
 
 		// ============================ Select Style  ===========================//
 		$this->start_controls_section(
@@ -302,9 +299,7 @@ class Tabs extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_style_control()
-	{
-
+	public function elementor_style_control() {
 
 		//============================ Tab Style ============================//
 		$this->start_controls_section(

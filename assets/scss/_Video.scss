@@ -25,17 +25,13 @@
 }
 
 .video_list_area {
-  background: rgba(76, 76, 241, 0.1);
-  padding-top: 125px;
-  padding-bottom: 125px;
-
   &.bg_gradient {
     background: linear-gradient(180deg, #ffffff 0%, #f0f3f7 100%);
 
     .accordion {
       .card {
         box-shadow: 0 0.3px 0.9px rgba(29, 56, 70, 0.1),
-          0 1.6px 3.6px rgba(29, 56, 70, 0.13);
+        0 1.6px 3.6px rgba(29, 56, 70, 0.13);
       }
     }
   }
@@ -85,22 +81,24 @@
 
   &.theatermode {
     overflow: hidden;
-      .video_list {
-        width: 100%;
-        margin-top: 100px;
-        .video_list_inner {
-          .card {
-            .card-body {
-              .nav {
-                li {
-                  width: 100%;
-                  display: block;
-                }
+
+    .video_list {
+      width: 100%;
+      margin-top: 100px;
+
+      .video_list_inner {
+        .card {
+          .card-body {
+            .nav {
+              li {
+                width: 100%;
+                display: block;
               }
             }
           }
         }
       }
+    }
   }
 }
 
@@ -194,7 +192,7 @@
         }
 
         button {
-          padding: 16px 30px 5px 30px !important;
+          padding: 16px 30px 5px 30px;
           font-size: 18px;
           color: #242729;
           font-weight: 500;
@@ -205,14 +203,22 @@
           text-transform: inherit;
           display: flex;
           align-items: center;
+          background: #ffffff;
 
           & .count {
             color: #7f8493;
             font-size: 14px;
             font-weight: 400;
             position: relative;
-            top: 2px;
             margin-left: 22px;
+            background: rgba(175, 184, 193, 0.2);
+            height: 22px;
+            display: flex;
+            line-height: 1.2;
+            padding: 3px 7px 5px 7px;
+            transition: all 0.3s;
+            min-width: 20px;
+            border-radius: 2em;
           }
 
           &.collapsed #minus {
@@ -312,13 +318,22 @@
                       font-weight: 400;
                       font-size: 12px;
                       margin-right: 20px;
-
-                      ion-icon {
-                        padding-right: 6px;
-                      }
-
                       &:last-child {
                         margin-right: 0;
+                      }
+                    }
+                    .dot {
+                      position: relative;
+                      &::before {
+                        content: "";
+                        width: 3px;
+                        height: 3px;
+                        background: #7f8493;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: -12px;
+                        top: 62%;
+                        transform: translateY(-62%);
                       }
                     }
                   }
@@ -423,9 +438,9 @@
       height: 145px;
       width: 100%;
       background: linear-gradient(
-        180deg,
-        rgba(44, 44, 81, 0) 0%,
-        rgba(44, 44, 81, 0.9) 73.67%
+                      180deg,
+                      rgba(44, 44, 81, 0) 0%,
+                      rgba(44, 44, 81, 0.9) 73.67%
       );
       position: absolute;
       left: 0;
@@ -534,6 +549,7 @@
       .artplayer-app, .art-video-player {
         height: 717px !important;
       }
+
       .slide_text {
         margin-top: 30px;
         padding-left: 0;
@@ -608,6 +624,7 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
+
     &:hover svg path {
       fill: #4c4cf1;
     }
@@ -820,7 +837,7 @@
   background: rgba(76, 76, 241, 0.2);
   border-radius: 20px;
   box-shadow: 0 0.3px 0.9px rgba(29, 56, 70, 0.1),
-    0 1.6px 3.6px rgba(29, 56, 70, 0.13);
+  0 1.6px 3.6px rgba(29, 56, 70, 0.13);
   padding-right: 12px;
 }
 
@@ -1014,9 +1031,9 @@
           bottom: 0;
           height: 145px;
           background: linear-gradient(
-            180deg,
-            rgba(29, 56, 70, 0) 0%,
-            rgba(29, 56, 70, 0.8) 100%
+                          180deg,
+                          rgba(29, 56, 70, 0) 0%,
+                          rgba(29, 56, 70, 0.8) 100%
           );
         }
 
@@ -1185,7 +1202,7 @@
                 text-align: center;
                 background: #41484d;
                 box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
-                  0 4px 8px rgba(0, 0, 0, 0.2);
+                0 4px 8px rgba(0, 0, 0, 0.2);
                 font-size: 22px;
                 line-height: 56px;
                 margin-right: 0;
@@ -1356,9 +1373,9 @@
               &:after {
                 content: "";
                 background: linear-gradient(
-                  180deg,
-                  rgba(29, 56, 70, 0) 0%,
-                  rgba(29, 56, 70, 0.8) 100%
+                                180deg,
+                                rgba(29, 56, 70, 0) 0%,
+                                rgba(29, 56, 70, 0.8) 100%
                 );
                 position: absolute;
                 left: 0;
@@ -1970,15 +1987,15 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-vertical
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet {
+> .swiper-pagination-bullets
+.swiper-pagination-bullet {
   margin: 5px 0;
   display: block;
 }
 
 .swiper-container-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet {
+> .swiper-pagination-bullets
+.swiper-pagination-bullet {
   margin: 0 5px;
 }
 
@@ -2021,12 +2038,12 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-progress.swiper-pagination-white
-  .swiper-pagination-progressbar {
+.swiper-pagination-progressbar {
   background: #fff;
 }
 
 .swiper-pagination-progress.swiper-pagination-black
-  .swiper-pagination-progressbar {
+.swiper-pagination-progressbar {
   background: #000;
 }
 
@@ -2345,19 +2362,6 @@ button.swiper-pagination-bullet {
 
 .accordion-header {
   cursor: pointer;
-}
-
-.accordion-panel .accordion-header.collapsed::before {
-  content: "+";
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.accordion-panel .accordion-header::before {
-  content: "-";
-  display: inline-block;
-  margin-right: 10px;
-  display: none;
 }
 
 .art-undercover {
