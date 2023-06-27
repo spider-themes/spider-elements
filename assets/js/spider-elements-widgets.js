@@ -1,4 +1,4 @@
-(function ($, elementor) {
+;(function ($, elementor) {
     "use strict";
     var $window = $(elementor);
 
@@ -13,7 +13,6 @@
                 "docly_alerts_box.default": spiderElements.alertBox,
                 "docly_hotspot.default": spiderElements.hotspot,
                 "docy_flip_box.default": spiderElements.flipbox,
-                "docy_image_slider.default": spiderElements.imageSlider,
                 "docy_videos_playlist.default": spiderElements.videoPlaylist,
             };
 
@@ -26,16 +25,11 @@
         },
 
 
-        //================ Video Playlist =================//
         videoPlaylist: function ($scope) {
 
-            /*setTimeout(function () {
+            setTimeout(function () {
                 $(".video_slider_area").addClass("loaded").css("height", "auto");
-            }, 3000);*/
-
-            /*$(".toggle_btn").click(function (e) {
-                e.preventDefault();
-            });*/
+            }, 3000);
 
             $("#video_0").addClass("show").addClass("active");
             let containers = document.getElementsByClassName("artplayer-app");
@@ -55,10 +49,10 @@
                 }
             }
 
-            const accordionPanels = document.querySelectorAll(".accordion-panel");
-            const accordionHeaders = document.querySelectorAll(".accordion-headers");
+            //const accordionPanels = document.querySelectorAll(".accordion-panel");
+            //const accordionHeaders = document.querySelectorAll(".accordion-headers");
 
-            accordionHeaders.forEach((header) => {
+            /*accordionHeaders.forEach((header) => {
                 header.addEventListener("click", () => {
                     const accordionPanel = header.parentElement;
                     const isActive = accordionPanel.classList.contains("active");
@@ -70,120 +64,12 @@
                         accordionPanel.classList.remove("active");
                     }
                 });
-            });
-        }, //End Video Playlist
-
-
-        imageSlider: function ($scope) {
-            var $status = $(".pagingInfo");
-            var $slickElement = $(".slider");
-
-            $slickElement.on(
-                "init reInit afterChange",
-                function (event, slick, currentSlide, nextSlide) {
-                    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-                    var i = (currentSlide ? currentSlide : 0) + 1;
-                    $status.text(i + "/" + slick.slideCount);
-                }
-            );
-
-            $slickElement.slick({
-                dots: true,
-                pauseOnHover: false,
-                arrows: true,
-                infinite: false,
-                autoplay: false,
-                speed: 1500,
-                slidesToShow: 1,
-                adaptiveHeight: false,
-                prevArrow: ".left_arrow",
-                nextArrow: ".right_arrow",
-                appendDots: $(".slider-dots-box"),
-                dotsClass: "slider-dots",
-            });
-
-            $("#toggle").click(function () {
-                if ($(this).html() == "pause") {
-                    $(".slider").slick("slickPause");
-                    isPause = true;
-                    $(this).html("play");
-                } else {
-                    $(".slider").slick("slickPlay");
-                    isPause = false;
-                    $(this).html("pause");
-                }
-            });
-
-            //ticking machine
-            var percentTime;
-            var tick, isPause;
-            var time = 1;
-            var progressBarIndex = 0;
-
-            $(".slider-dots-box button").each(function (index) {
-                var progress = "<div class='inProgress inProgress" + index + "'></div>";
-                $(this).html(progress);
-            });
-
-            function startProgressbar() {
-                resetProgressbar();
-                percentTime = 0;
-                tick = setInterval(interval, 10);
-            }
-
-            function interval() {
-                if (isPause === false) {
-                    if (
-                        $(
-                            '.slider .slick-track div[data-slick-index="' +
-                            progressBarIndex +
-                            '"]'
-                        ).attr("aria-hidden") === "true"
-                    ) {
-                        progressBarIndex = $(
-                            '.slider .slick-track div[aria-hidden="false"]'
-                        ).data("slickIndex");
-                        startProgressbar();
-                    } else {
-                        percentTime += 1 / (time + 5);
-                        $(".inProgress" + progressBarIndex).css({
-                            width: percentTime + "%",
-                        });
-                        if (percentTime >= 100) {
-                            $(".slider").slick("slickNext");
-                            progressBarIndex++;
-                            if (progressBarIndex > 2) {
-                                progressBarIndex = 0;
-                            }
-                            startProgressbar();
-                        }
-                    }
-                }
-            }
-
-            function resetProgressbar() {
-                $(".inProgress").css({
-                    width: 0 + "%",
-                });
-                clearInterval(tick);
-            }
-
-            startProgressbar();
-
-            // var $status = $(".pagingInfo");
-            // var $slickElement = $(".slider");
-
-            // $slickElement.on(
-            //   "init reInit afterChange",
-            //   function (event, slick, currentSlide, nextSlide) {
-            //     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-            //     var i = (currentSlide ? currentSlide : 0) + 1;
-            //     $status.text(i + "/" + slick.slideCount);
-            //   }
-            // );
+            });*/
         },
+
+
         //===================== flipbox ======================//
-        flipbox: function () {
+        flipbox: function ($scope) {
             $(".flip_button").each(function (i) {
                 $(this).on("click", function () {
                     $(".spe_flip_box_inner").eq(i).addClass("flip");
@@ -333,16 +219,15 @@
             }
 
             slideBtnRight.on("click", function () {
-                navWrap.animate({scrollLeft: "+=200px"}, 300);
+                navWrap.animate({ scrollLeft: "+=200px" }, 300);
                 console.log(navWrap.scrollLeft() + " px");
             });
 
             slideBtnLeft.on("click", function () {
-                navWrap.animate({scrollLeft: "-=200px"}, 300);
+                navWrap.animate({ scrollLeft: "-=200px" }, 300);
             });
 
             scrollerHide();
-
             function scrollerHide() {
                 let scrollLeftPrev = 0;
                 navWrap.scroll(function () {

@@ -421,7 +421,7 @@ final class Spider_Elements {
 		require_once( __DIR__ . '/widgets/Box_hover.php' );
 		require_once( __DIR__ . '/widgets/Image_hover.php' );
 		require_once( __DIR__ . '/widgets/Flip_Box.php' );
-		require_once( __DIR__ . '/widgets/Image_Slider.php' );
+		require_once( __DIR__ . '/widgets/Image_Slides.php' );
 
 	}
 
@@ -451,7 +451,7 @@ final class Spider_Elements {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Box_hover() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Image_hover() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Flip_Box() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Image_Slider() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Image_Slides() );
 	}
 
 
