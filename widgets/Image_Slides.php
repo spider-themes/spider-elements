@@ -86,7 +86,7 @@ class Image_Slides extends Widget_Base {
 		//===================== Select Preset ===========================//
         $this->start_controls_section(
             'style_sec', [
-                'label' => esc_html__( 'Preset Skins', 'landpagy-core' ),
+                'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
             ]
         );
 
@@ -126,25 +126,6 @@ class Image_Slides extends Widget_Base {
             ]
         );
 		// ============================ Select Style  ===========================//
-		// $this->start_controls_section(
-		// 	'select_style', [
-		// 		'label' => __( 'Preset Skins', 'spider-elements' ),
-		// 	]
-		// );
-
-		// $this->add_control(
-		// 	'style', [
-		// 		'label' => __('Style', 'spider-elements'),
-		// 		'type' => Controls_Manager::SELECT,
-		// 		'options' => [
-		// 			'vertical' => __('Vertical', 'spider-elements'),s
-		// 			'horizontal' => __('Horizontal', 'spider-elements'),
-		// 		],
-		// 		'default' => 'vertical',
-		// 	]
-		// );
-
-        // $this->end_controls_section(); // End Select Style
 
 		$this->end_controls_section();
 		

@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         //===================== Select Preset ===========================//
         $this->start_controls_section(
             'style_sec', [
-                'label' => esc_html__( 'Preset Skins', 'landpagy-core' ),
+                'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
             ]
         );
 

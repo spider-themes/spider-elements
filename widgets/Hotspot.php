@@ -87,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         );
 
         $this->add_responsive_control(
-            'dl_hotspot_image_width',
+            'hotspot_image_width',
             [
                 'label' => __('Width', 'spider-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -118,7 +118,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         );
 
         $this->add_responsive_control(
-            'dl_hotspot_image_height',
+            'hotspot_image_height',
             [
                 'label' => __('Height', 'spider-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -136,7 +136,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         );
 
         $this->add_responsive_control(
-            'dl_hotspot_image_padding',
+            'hotspot_image_padding',
             [
                 'label' => __('Padding', 'spider-elements'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -150,13 +150,13 @@ if ( ! defined( 'ABSPATH' ) ) {
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
             [
-                'name'     => 'dl_hotspot_image_border',
+                'name'     => 'hotspot_image_border',
                 'selector' => '{{WRAPPER}} .hotspots__figure img',
             ]
         );
 
         $this->add_responsive_control(
-            'dl_hotspot_image_border_radius',
+            'hotspot_image_border_radius',
             [
                 'label' => __('Border Radius', 'spider-elements'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -227,7 +227,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         $repeater = new \Elementor\Repeater();
 
-        $repeater->start_controls_tabs('dl_spot_tabs');
+        $repeater->start_controls_tabs('spot_tabs');
 
         $repeater->start_controls_tab(
             'hotspot_tab_spot',

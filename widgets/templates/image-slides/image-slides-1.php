@@ -49,7 +49,7 @@
     </div>
     <div class="slider-dots-box"></div>
 </div>
-
+ <!-- js code  -->
 <script>
     ; (function($){
         'use strict';

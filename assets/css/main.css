@@ -1269,6 +1269,7 @@ ul.nav.nav-tabs {
 
 .art-video-player.art-fullscreen-web {
   height: 70% !important;
+  position: fixed !important;
 }
 
 .art-video-player {
