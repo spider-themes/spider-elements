@@ -4,7 +4,7 @@
         foreach ( $taxonomy as $key => $item ) {
 	        $cat_id = $item->slug;
             ?>
-            <a class="toggle_btn <?php echo $collapse_class; ?>" data-bs-toggle="collapse" href="#toggle-<?php echo esc_attr( $cat_id ); ?>" role="button" aria-expanded="<?php echo esc_attr($is_collapsed) ?>"
+            <a class="toggle_btn se_tab_title <?php echo $collapse_class; ?>" data-bs-toggle="collapse" href="#toggle-<?php echo esc_attr( $cat_id ); ?>" role="button" aria-expanded="<?php echo esc_attr($is_collapsed) ?>"
                aria-controls="toggle-<?php echo esc_attr( $cat_id ); ?>">
 		        <?php echo esc_html( $item->name ); ?>
             </a>
@@ -46,7 +46,7 @@
                         while ( $cat_posts->have_posts() ) : $cat_posts->the_post();
                             ?>
                             <div class="col-md-4">
-                                <div class="accordion-article-item">
+                                <div class="accordion-article-item se_accordion_item">
                                     <a href='<?php the_permalink(); ?>'>
                                         <h4><?php echo se_get_the_title_length( $settings, 'title_length' );  ?></h4>
                                     </a>
