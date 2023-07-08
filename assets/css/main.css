@@ -1244,6 +1244,11 @@ ul.nav.nav-tabs {
 .video_list_area.theatermode {
   overflow: hidden;
 }
+.video_list_area.theatermode .row > * {
+  flex: 0 0 100%;
+  max-width: 100%;
+  transition: all 0.3s linear 0s;
+}
 .video_list_area.theatermode .video_list {
   width: 100%;
   margin-top: 100px;
@@ -1263,8 +1268,9 @@ ul.nav.nav-tabs {
 }
 
 .art-video-player.art-fullscreen-web {
-  height: 70% !important;
-  position: fixed !important;
+  height: 100% !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 .art-video-player {
@@ -1386,6 +1392,7 @@ ul.nav.nav-tabs {
 .video_list .video_list_inner .card .card-body .nav li a {
   padding: 0;
   border: none;
+  text-decoration: none;
 }
 .video_list .video_list_inner .card .card-body .nav li a .media .d-flex {
   padding-right: 20px;
@@ -1453,11 +1460,16 @@ ul.nav.nav-tabs {
   top: 62%;
   transform: translateY(-62%);
 }
-.video_list .video_list_inner .card .card-body .nav li a:hover .media .d-flex .video_tab_img:before, .video_list .video_list_inner .card .card-body .nav li a:hover .media .d-flex .video_tab_img:after, .video_list .video_list_inner .card .card-body .nav li a.active .media .d-flex .video_tab_img:before, .video_list .video_list_inner .card .card-body .nav li a.active .media .d-flex .video_tab_img:after {
+.video_list .video_list_inner .card .card-body .nav li a:hover .media.d-flex .video_tab_img:before, .video_list .video_list_inner .card .card-body .nav li a:hover .media.d-flex .video_tab_img:after, .video_list .video_list_inner .card .card-body .nav li a.active .media.d-flex .video_tab_img:before, .video_list .video_list_inner .card .card-body .nav li a.active .media.d-flex .video_tab_img:after {
   opacity: 1;
 }
-.video_list .video_list_inner .card .card-body .nav li a:hover .media .d-flex .media-body h4, .video_list .video_list_inner .card .card-body .nav li a.active .media .d-flex .media-body h4 {
+.video_list .video_list_inner .card .card-body .nav li a:hover .media.d-flex .media-body h4, .video_list .video_list_inner .card .card-body .nav li a.active .media.d-flex .media-body h4 {
   color: #4c4cf1;
+}
+.video_list .video_list_inner .card .card-body .nav li:hover .media.d-flex .media-body h4 {
+  text-decoration-color: #4c4cf1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .video_list .video_list_inner .card .card-body .nav li:last-child {
   margin-bottom: 0;

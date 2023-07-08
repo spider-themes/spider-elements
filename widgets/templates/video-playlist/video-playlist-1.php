@@ -121,3 +121,25 @@
         </div>
     </div>
 </section>
+
+<script>
+    (function ($) {
+        "use strict";
+        $(document).ready(function () {
+            $(document).on("click", function (e) {
+                var el = e.target.nodeName,
+                    parent = e.target.parentNode;
+                if (
+                    (el === "path" && videoControlClassCheck(parent.parentNode)) ||
+                    (el === "svg" && videoControlClassCheck(parent))
+                ) {
+                    $(".video_list_area").toggleClass("theatermode");
+                }
+            });
+
+            function videoControlClassCheck(parent) {
+                return parent.className.indexOf("art-icon-fullscreenWeb") !== -1;
+            }
+        })
+    })(jQuery);
+</script>
