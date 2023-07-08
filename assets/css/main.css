@@ -1354,8 +1354,8 @@ ul.nav.nav-tabs {
   font-size: 14px;
   font-weight: 400;
   position: relative;
-  margin-left: 22px;
-  background: rgba(175, 184, 193, 0.2);
+  margin-left: 11px;
+  background: transparent;
   height: 22px;
   display: flex;
   line-height: 1.2;
@@ -6021,9 +6021,11 @@ button {
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
+
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
+
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }

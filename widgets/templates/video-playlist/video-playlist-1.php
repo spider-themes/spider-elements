@@ -27,7 +27,7 @@
                 <?php echo esc_html( $settings[ 'title' ] ); ?>
             </<?php echo $title_tag; ?>>
             <div class="video_list_inner scroll">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accordionExample" data-bs-accordion="true">
 					<?php
 					$all_videos = $settings[ 'tabs' ] ?? '';
 					$i          = '0';
@@ -69,7 +69,7 @@
                             <div id="configuration<?php echo esc_attr( $count ); ?>"
                                  class="accordion-content <?php echo $count == 1 ? 'collapse show' : '' ?> "
                                  aria-labelledby="configuration<?php echo $count; ?>-tab"
-                                 data-parent="#accordionExample">
+                                 data-bs-parent="#accordionExample">
                                 <div class="card-body">
                                     <ul class="nav nav-tabs" role="tablist">
 										<?php

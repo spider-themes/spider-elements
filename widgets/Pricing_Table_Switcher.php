@@ -102,44 +102,6 @@ class Pricing_Table_Switcher extends Widget_Base {
         $this->end_controls_section(); //End Select Style
 
 
-		//============================ Section Title ===========================//
-		$this->start_controls_section(
-			'sec_title', [
-				'label' => esc_html__( 'Table Contents', 'landpagy-core' ),
-                'condition' => [
-                    'style' => [ '1', '4' ]
-                ]
-			]
-		);
-
-		$this->add_control(
-			'title', [
-				'label'       => esc_html__( 'Title', 'landpagy-core' ),
-				'type'        => Controls_Manager::TEXT,
-				'label_block' => true,
-				'default'     => 'Choose Your Plan',
-			]
-		);
-
-		$this->add_control(
-			'subtitle', [
-				'label'       => esc_html__( 'Subtitle', 'landpagy-core' ),
-				'type'        => Controls_Manager::TEXTAREA,
-			]
-		);
-
-		$this->add_control(
-			'highlighted_subtitle', [
-				'label'       => esc_html__( 'Highlighted Subtitle', 'landpagy-core' ),
-				'type'        => Controls_Manager::TEXT,
-                'condition' => [
-                    'style' => '4'
-                ]
-			]
-		);
-
-		$this->end_controls_section(); //End Section Title
-
 
 		//============================ Pricing Table Tab 01 ==================================//
 		$this->start_controls_section(
@@ -806,65 +768,73 @@ class Pricing_Table_Switcher extends Widget_Base {
         //=============================== Table Contents ===================================//
         $this->start_controls_section(
             'table_content_style', [
-                'label' => esc_html__( 'Table Contents', 'landpagy-core' ),
+                'label' => esc_html__( 'Table Contents', 'spider-elements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'style' => '1'
-                ]
+                // 'condition' => [
+                //     'style' => '1'
+                // ]
             ]
         );
 
-        // Title Options
-        $this->add_control(
-            'title_options', [
-                'label' => esc_html__( 'Title Options', 'plugin-name' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-            ]
-        );
+     
+		// Title Normal/Active State
+		$this->start_controls_tabs(
+			'style_title_tabs'
+		);
 
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(), [
-                'name' => 'title_typo',
-                'selector' => '{{WRAPPER}} .title',
-            ]
-        );
+		//=== Normal Tab Title
+		$this->start_controls_tab(
+			'style_title_normal',
+			[
+				'label' => __('Normal', 'spider-elements'),
+			]
+		);
 
-        $this->add_control(
-            'title_color', [
-                'label' => esc_html__( 'Text Color', 'plugin-name' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .title' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
+		$this->add_control(
+			'normal_title_text_color',
+			[
+				'label' => __('Text Color', 'spider-elements'),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => array(
+					// '{{WRAPPER}}  .pricing-tabs-two li .nav-link, .cloud-pricing-wrapp .nav .nav-link, .pricing-compare-table .nav-tabs .nav-link, .app-pricing-switcher.nav .nav-link,  {{WRAPPER}} .pricing-switcher .nav-link' => 'color: {{VALUE}}',
+                    
+                    '{{WRAPPER}} .pricing-switcher .nav-link' => 'color: {{VALUE}};',
+                    // '{{WRAPPER}} .pricing-tabs-two li .nav-link' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .cloud-pricing-wrapp .nav .nav-link' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .pricing-compare-table .nav-tabs .nav-link' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .app-pricing-switcher.nav .nav-link' => 'color: {{VALUE}};',
+				)
+			]
+		);
+
+		$this->end_controls_tab(); //End Normal Tab Title
 
 
-        // Sub - Title Options
-        $this->add_control(
-            'subtitle_options', [
-                'label' => esc_html__( 'Subtitle Options', 'plugin-name' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before'
-            ]
-        );
+		//=== Active Tab Title
+		$this->start_controls_tab(
+			'style_tab_title_active',
+			[
+				'label' => __('Active', 'spider-elements'),
+			]
+		);
 
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(), [
-                'name' => 'subtitle_typo',
-                'selector' => '{{WRAPPER}} .subtitle',
-            ]
-        );
+		$this->add_control(
+			'active_title_text_color',
+			[
+				'label' => __('Text Color', 'spider-elements'),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .pricing-switcher .nav-link.active' => 'color: {{VALUE}};',
+					// '{{WRAPPER}} .pricing-tabs-two li .nav-link.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .cloud-pricing-wrapp .nav .nav-link.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .pricing-compare-table .nav-tabs .nav-link.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .app-pricing-switcher.nav .nav-link.active' => 'color: {{VALUE}};',
+				)
+			]
+		);
 
-        $this->add_control(
-            'subtitle_color', [
-                'label' => esc_html__( 'Text Color', 'plugin-name' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .subtitle' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
+
+		$this->end_controls_tab(); // End Active Tab Title
 
         $this->end_controls_section(); //End Section Contents
 
@@ -913,47 +883,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 
 		$this->end_controls_section(); //End Shape Images
 
-
-        //============================= Section Background ============================== //
-        $this->start_controls_section(
-            'sec_bg_style', [
-                'label' => __( 'Section Background', 'landpagy-core' ),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_responsive_control(
-            'sec_margin', [
-                'label' => __( 'Margin', 'landpagy-core' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .landpagy-table-switcher' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'sec_padding', [
-                'label' => __( 'Padding', 'landpagy-core' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .landpagy-table-switcher' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Background::get_type(), [
-                'name' => 'sec_background',
-                'label' => __( 'Background', 'landpagy-core' ),
-                'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .landpagy-table-switcher',
-            ]
-        );
-
-        $this->end_controls_section(); //End Section Background
 
 	}
 

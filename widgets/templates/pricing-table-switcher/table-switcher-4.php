@@ -22,21 +22,6 @@
         ?>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="pricing-title cloud-heading-2 text-center wow fadeInUp mb-20" data-wow-delay="0.2s">
-                    <span>
-                  <?php echo 'Plan &amp;' ?>
-                  <!--<img class="border-shape" src="./assets/images/home_10/shapes/border.svg" alt="Border">-->
-                </span>
-                    <?php echo 'Price' ?>
-                </h2>
-                <p class="title-text text-center mb-40">
-                    <span class="offer"><?php echo esc_html($settings['highlighted_subtitle']) ?></span>
-                    <?php echo esc_html($settings['subtitle']) ?>
-                </p>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
