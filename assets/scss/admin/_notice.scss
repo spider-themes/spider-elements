@@ -1,0 +1,20 @@
+.spider-elements-elementor-notice {
+  padding: 15px !important;
+  .spider-elements-elementor-notice-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .spider-elements-elementor-notice-content {
+      h3 {
+        margin: 0;
+      }
+    }
+    .spider-elements-elementor-install-now {
+      .button {
+        padding: 6px 16px;
+        line-height: 1;
+      }
+    }
+
+  }
+}

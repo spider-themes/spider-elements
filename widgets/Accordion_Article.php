@@ -4,6 +4,8 @@
  */
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Border;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
@@ -92,7 +94,7 @@ class Accordion_Article extends Widget_Base {
 		$this->add_control(
 			'cat_name', [
 				'label' => esc_html__( 'Select category (Blog Post)', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
+				'type' => Controls_Manager::SELECT,
 				'options' => se_cat_ids(),
 				'default' => '',
 			]
@@ -100,16 +102,16 @@ class Accordion_Article extends Widget_Base {
 
 		$this->add_control(
 			'show_count', [
-				'label' => esc_html__('Show Posts Count', 'banca-core'),
-				'type' => \Elementor\Controls_Manager::NUMBER,
+				'label' => esc_html__('Show Posts Count', 'spider-elements'),
+				'type' => Controls_Manager::NUMBER,
 				'default' => 3
 			]
 		);
 
 		$this->add_control(
 			'order', [
-				'label' => esc_html__('Order', 'banca-core'),
-				'type' => \Elementor\Controls_Manager::SELECT,
+				'label' => esc_html__('Order', 'spider-elements'),
+				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'ASC' => 'ASC',
 					'DESC' => 'DESC'
@@ -120,8 +122,8 @@ class Accordion_Article extends Widget_Base {
 
 		$this->add_control(
 			'orderby', [
-				'label' => esc_html__( 'Order By', 'landpagy-core' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
+				'label' => esc_html__( 'Order By', 'spider-elements' ),
+				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'none' => 'None',
 					'ID' => 'ID',
@@ -137,25 +139,25 @@ class Accordion_Article extends Widget_Base {
 
 		$this->add_control(
 			'title_length', [
-				'label' => esc_html__('Title Length', 'banca-core'),
-				'type' => \Elementor\Controls_Manager::NUMBER,
+				'label' => esc_html__('Title Length', 'spider-elements'),
+				'type' => Controls_Manager::NUMBER,
 				'default' => -1,
 			]
 		);
 
 		$this->add_control(
 			'excerpt_length', [
-				'label' => esc_html__('Excerpt Word Length', 'banca-core'),
-				'type' => \Elementor\Controls_Manager::NUMBER,
+				'label' => esc_html__('Excerpt Word Length', 'spider-elements'),
+				'type' => Controls_Manager::NUMBER,
 				'default' => 15,
 			]
 		);
 
 		$this->add_control(
 			'exclude', [
-				'label' => esc_html__( 'Exclude', 'banca-core' ),
-				'description' => esc_html__( 'Enter the post IDs to hide/exclude. Input the multiple ID with comma separated', 'banca-core' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'label' => esc_html__( 'Exclude', 'spider-elements' ),
+				'description' => esc_html__( 'Enter the post IDs to hide/exclude. Input the multiple ID with comma separated', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
 		);
@@ -163,7 +165,7 @@ class Accordion_Article extends Widget_Base {
 		$this->add_control(
 			'collapse_state', [
 				'label' => esc_html__( 'Expanded', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off' => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
@@ -220,7 +222,7 @@ class Accordion_Article extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),[
+			Group_Control_Background::get_type(),[
 				'name' => 'title_normal_bg_color',
 				'types' => [ 'classic', 'gradient' ],
 				'exclude' => ['image'],
@@ -261,7 +263,7 @@ class Accordion_Article extends Widget_Base {
 			'title_active_border_color',
 			[
 				'label' => esc_html__( 'Border Color', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .se_tab_title' => 'border-color: {{VALUE}}',
 				],
@@ -269,7 +271,7 @@ class Accordion_Article extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),[
+			Group_Control_Background::get_type(),[
 				'name' => 'title_active_bg_color',
 				'types' => [ 'classic', 'gradient' ],
 				'exclude' => ['image'],
@@ -305,7 +307,7 @@ class Accordion_Article extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(), [
+			Group_Control_Border::get_type(), [
 				'name' => 'tab_border',
 				'label' => esc_html__( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .se_tab_title',
@@ -316,7 +318,7 @@ class Accordion_Article extends Widget_Base {
 		$this->add_control(
 			'accordion_normal_icon_size', [
 				'label' => esc_html__( 'Icon Size', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
 					'px' => [
@@ -463,7 +465,7 @@ class Accordion_Article extends Widget_Base {
 			);
 	
 			$this->add_group_control(  
-				\Elementor\Group_Control_Background::get_type(),
+				Group_Control_Background::get_type(),
 				[
 					'name' => 'content_background',
 					'types' => [ 'classic', 'gradient', 'video' ],
@@ -472,7 +474,7 @@ class Accordion_Article extends Widget_Base {
 			);
 		
 			$this->add_group_control(
-				\Elementor\Group_Control_Border::get_type(), [
+				Group_Control_Border::get_type(), [
 					'name' => 'border',
 					'label' => esc_html__( 'Border', 'spider-elements' ),
 					'separator'	=> 'before',
@@ -516,7 +518,7 @@ class Accordion_Article extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(), [
+			Group_Control_Border::get_type(), [
 				'name' => 'box_border',
 				'label' => esc_html__( 'Border', 'spider-elements' ),
 				'separator'	=> 'before',
@@ -525,7 +527,7 @@ class Accordion_Article extends Widget_Base {
 		); 
 
 		$this->add_group_control(  
-			\Elementor\Group_Control_Background::get_type(),
+			Group_Control_Background::get_type(),
 			[
 				'name' => 'box_background',
 				'types' => [ 'classic', 'gradient', 'video' ],
@@ -545,7 +547,7 @@ class Accordion_Article extends Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
     protected function render() {

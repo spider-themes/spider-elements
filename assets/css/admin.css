@@ -1,0 +1,25 @@
+/*=====================================================================
+@Template Name: Spider Elements
+
+@Default Styles
+Table of Content:
+01/ Notice
+
+=====================================================================*/
+.spider-elements-elementor-notice {
+  padding: 15px !important;
+}
+.spider-elements-elementor-notice .spider-elements-elementor-notice-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.spider-elements-elementor-notice .spider-elements-elementor-notice-inner .spider-elements-elementor-notice-content h3 {
+  margin: 0;
+}
+.spider-elements-elementor-notice .spider-elements-elementor-notice-inner .spider-elements-elementor-install-now .button {
+  padding: 6px 16px;
+  line-height: 1;
+}
+
+/*# sourceMappingURL=admin.css.map */

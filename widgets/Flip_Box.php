@@ -4,6 +4,9 @@
  */
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Typography;
+use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
@@ -127,7 +130,7 @@ class Flip_Box extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'separator' => 'before',
                 'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				],
             ]
         );
@@ -164,7 +167,7 @@ class Flip_Box extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'separator' => 'before',
                 'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				],
             ]
         );
@@ -193,7 +196,7 @@ class Flip_Box extends Widget_Base {
 		);
 
         $this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(), [
+			Group_Control_Background::get_type(), [
 				'name' => 'font_box__background',
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .spe_flip_box_inner .font_face',
@@ -212,7 +215,7 @@ class Flip_Box extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(), [
 				'name' => 'font_title_typo',
 				'selector' => '{{WRAPPER}} .spe_flip_box_inner .font_face h3',
 				'separator' => 'before',
@@ -253,7 +256,7 @@ class Flip_Box extends Widget_Base {
 
 		$this->add_control(
 			'tab_title_hr', [
-				'type' => \Elementor\Controls_Manager::DIVIDER,
+				'type' => Controls_Manager::DIVIDER,
 			]
 		);
 
@@ -278,7 +281,7 @@ class Flip_Box extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(), [
+			Group_Control_Background::get_type(), [
 				'name' => 'back_box_background',
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .spe_flip_box_inner .back_face',
@@ -286,7 +289,7 @@ class Flip_Box extends Widget_Base {
 		);
 
         $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(), [
 				'name' => 'back_title_typo',
 				'selector' => '{{WRAPPER}} .spe_flip_box_inner .back_face h3',
 				'separator' => 'before',
@@ -316,7 +319,7 @@ class Flip_Box extends Widget_Base {
 		);
 
         $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(), [
 				'name' => 'back_content_typo',
 				'selector' => '{{WRAPPER}} .spe_flip_box_inner .back_face p',
 				'separator' => 'before',
@@ -358,7 +361,7 @@ class Flip_Box extends Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
 	protected function render() {

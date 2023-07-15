@@ -1,6 +1,8 @@
 <?php
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Repeater;
+use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
@@ -15,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class Testimonial
  * @package spider\Widgets
  */
-class Testimonial extends \Elementor\Widget_Base {
+class Testimonial extends Widget_Base {
 
     public function get_name() {
         return 'docy_testimonial';
@@ -110,13 +112,13 @@ class Testimonial extends \Elementor\Widget_Base {
 		);
 
 		//=== Testimonials 01
-		$testimonial = new \Elementor\Repeater();
+		$testimonial = new Repeater();
 		$testimonial->add_control(
 			'author_image', [
 				'label' => __( 'Author Image', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
+				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -124,7 +126,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$testimonial->add_control(
 			'name', [
 				'label' => __( 'Name', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Mark Tony' , 'spider-elements' ),
 			]
 		);
@@ -132,7 +134,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$testimonial->add_control(
 			'designation', [
 				'label' => __( 'Designation', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Software Developer' , 'spider-elements' ),
 			]
 		);
@@ -140,16 +142,16 @@ class Testimonial extends \Elementor\Widget_Base {
 		$testimonial->add_control(
 			'review_content', [
 				'label' => __( 'Review Content', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$testimonial->add_control(
 			'signature', [
 				'label' => __( 'Signature', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
+				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -157,7 +159,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$this->add_control(
 			'testimonials', [
 				'label' => __( 'Testimonials', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
+				'type' => Controls_Manager::REPEATER,
 				'fields' => $testimonial->get_controls(),
 				'title_field' => '{{{ name }}}',
 				'prevent_empty' => false,
@@ -186,13 +188,13 @@ class Testimonial extends \Elementor\Widget_Base {
 
 
 		//=== Testimonials 02
-		$testimonial2 = new \Elementor\Repeater();
+		$testimonial2 = new Repeater();
 		$testimonial2->add_control(
 			'author_image', [
 				'label' => __( 'Author Image', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
+				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -200,7 +202,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$testimonial2->add_control(
 			'name', [
 				'label' => __( 'Name', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Mark Tony' , 'spider-elements' ),
 			]
 		);
@@ -208,7 +210,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$testimonial2->add_control(
 			'designation', [
 				'label' => __( 'Designation', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Software Developer' , 'spider-elements' ),
 			]
 		);
@@ -216,14 +218,14 @@ class Testimonial extends \Elementor\Widget_Base {
 		$testimonial2->add_control(
 			'review_content', [
 				'label' => __( 'Testimonial Text', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$this->add_control(
 			'testimonials2', [
 				'label' => __( 'Testimonials', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
+				'type' => Controls_Manager::REPEATER,
 				'fields' => $testimonial2->get_controls(),
 				'title_field' => '{{{ name }}}',
 				'prevent_empty' => false,
@@ -253,7 +255,7 @@ class Testimonial extends \Elementor\Widget_Base {
 		$this->add_control(
 			'shape', [
 				'label' => __( 'Shape', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
+				'type' => Controls_Manager::MEDIA,
 				'separator' => 'before',
 				'condition' => [
 					'style' => '1'
@@ -378,7 +380,7 @@ class Testimonial extends \Elementor\Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
     protected function render() {

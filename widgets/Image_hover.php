@@ -65,7 +65,7 @@ class Image_hover extends Widget_Base {
         //===================== Select Preset ===========================//
         $this->start_controls_section(
             'style_sec', [
-                'label' => esc_html__( 'Preset Skins', 'landpagy-core' ),
+                'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
             ]
         );
 
@@ -157,7 +157,7 @@ class Image_hover extends Widget_Base {
 			]
 		); 
         $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(), [
 				'name' => 'hover_title_typo',
                 'label' => esc_html__( 'Title Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .sp_image_hover figcaption h3,{{WRAPPER}} .hover-fold .text h3',
@@ -189,7 +189,7 @@ class Image_hover extends Widget_Base {
             ]
         );
         $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(), [
 				'name' => 'hover_caption_typo',
                 'label' => esc_html__( 'Content Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .sp_image_hover figcaption p,{{WRAPPER}} .hover-fold .text p',

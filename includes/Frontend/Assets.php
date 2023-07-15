@@ -1,4 +1,6 @@
 <?php
+namespace Spider_Elements_Assets\includes\Frontend;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -7,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Assets Class
  */
-class Frontend_Assets {
+class Assets {
 
 	public function __construct() {
 		add_action( 'plugins_loaded', [ $this, 'register_scripts' ] );
@@ -89,4 +91,4 @@ class Frontend_Assets {
 
 }
 
-new Frontend_Assets();
+new Assets();

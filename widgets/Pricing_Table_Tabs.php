@@ -1,6 +1,8 @@
 <?php
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
@@ -20,7 +22,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Pricing Table Tabs', 'landpagy-core' );
+		return __( 'Pricing Table Tabs', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -75,16 +77,16 @@ class Pricing_Table_Tabs extends Widget_Base {
         // ------------------------------------------- Pricing Table Tabs ----------------------------------------- //
         $this->start_controls_section(
             'pricing_table_tabs', [
-                'label' => __( 'Pricing Tables', 'landpagy-core' ),
+                'label' => __( 'Pricing Tables', 'spider-elements' ),
             ]
         );
 
-        $repeater = new \Elementor\Repeater();
+        $repeater = new Repeater();
         $repeater->add_control(
             'is_active',
             [
-                'label' => __( 'Active Table', 'landpagy-core' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label' => __( 'Active Table', 'spider-elements' ),
+                'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -92,7 +94,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'tab_title', [
-                'label' => __( 'Tab Title', 'landpagy-core' ),
+                'label' => __( 'Tab Title', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'separator' => 'after'
             ]
@@ -100,14 +102,14 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'discount', [
-                'label' => __( 'Discount Badge', 'landpagy-core' ),
+                'label' => __( 'Discount Badge', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
             ]
         );
 
         $repeater->add_control(
             'title', [
-                'label' => __( 'Title', 'landpagy-core' ),
+                'label' => __( 'Title', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'Free'
             ]
@@ -115,7 +117,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'price_dollar', [
-                'label' => __( 'Price USD', 'landpagy-core' ),
+                'label' => __( 'Price USD', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '$5'
             ]
@@ -123,7 +125,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'price_euro', [
-                'label' => __( 'Price EURO', 'landpagy-core' ),
+                'label' => __( 'Price EURO', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '€4.43'
             ]
@@ -131,7 +133,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'duration', [
-                'label' => __( 'Duration', 'landpagy-core' ),
+                'label' => __( 'Duration', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '/user/mo'
             ]
@@ -139,7 +141,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'description', [
-                'label' => __( 'Description', 'landpagy-core' ),
+                'label' => __( 'Description', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => '1 user'
@@ -148,14 +150,14 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'contents', [
-                'label' => __( 'Contents', 'landpagy-core' ),
+                'label' => __( 'Contents', 'spider-elements' ),
                 'type' => Controls_Manager::WYSIWYG,
             ]
         );
 
         $repeater->add_control(
             'btn_group_heading', [
-                'label' => __( 'Button Group', 'landpagy-core' ),
+                'label' => __( 'Button Group', 'spider-elements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before'
             ]
@@ -163,7 +165,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'btn_label_1', [
-                'label' => __( 'Button Title 01', 'landpagy-core' ),
+                'label' => __( 'Button Title 01', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Continue'
@@ -172,7 +174,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'btn_url_1', [
-                'label' => __( 'Button URL 01', 'landpagy-core' ),
+                'label' => __( 'Button URL 01', 'spider-elements' ),
                 'type' => Controls_Manager::URL,
                 'default' => [
                     'url' => '#'
@@ -183,7 +185,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'btn_label_2', [
-                'label' => __( 'Button Title 02', 'landpagy-core' ),
+                'label' => __( 'Button Title 02', 'spider-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Continue'
@@ -192,7 +194,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $repeater->add_control(
             'btn_url_2', [
-                'label' => __( 'Button URL 02', 'landpagy-core' ),
+                'label' => __( 'Button URL 02', 'spider-elements' ),
                 'type' => Controls_Manager::URL,
                 'default' => [
                     'url' => '#'
@@ -202,9 +204,9 @@ class Pricing_Table_Tabs extends Widget_Base {
         );
 
         $repeater->add_group_control(
-            \Elementor\Group_Control_Background::get_type(), [
+            Group_Control_Background::get_type(), [
                 'name' => 'item_box_bg_color',
-                'label' => __( 'Background', 'landpagy-core' ),
+                'label' => __( 'Background', 'spider-elements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}',
             ]
@@ -212,7 +214,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $this->add_control(
             'pricing_tables', [
-                'label' => __( 'Pricing Table', 'landpagy-core' ),
+                'label' => __( 'Pricing Table', 'spider-elements' ),
                 'type' => Controls_Manager::REPEATER,
                 'prevent_empty' => false,
                 'fields' => $repeater->get_controls(),
@@ -222,7 +224,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 
         $this->add_control(
             'ribbon_label', [
-                'label' => __( 'Ribbon Label', 'landpagy-core' ),
+                'label' => __( 'Ribbon Label', 'spider-elements' ),
                 'type' => Controls_Manager::MEDIA,
                 'separator' => 'before'
                 
@@ -294,8 +296,8 @@ class Pricing_Table_Tabs extends Widget_Base {
 			</div>
 			<div class="col-4">
                 <select class="pricing-currency" data_id="data-<?php echo esc_attr( $this->get_id() ); ?>">
-                    <option data-display="USD"><?php esc_html_e( 'USD', 'landpagy-core' ); ?></option>
-                    <option data-display="EURO"><?php esc_html_e( 'EURO', 'landpagy-core' ); ?></option>
+                    <option data-display="USD"><?php esc_html_e( 'USD', 'spider-elements' ); ?></option>
+                    <option data-display="EURO"><?php esc_html_e( 'EURO', 'spider-elements' ); ?></option>
                 </select>
 			</div>
 		</div>
