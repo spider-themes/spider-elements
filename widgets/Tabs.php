@@ -508,14 +508,46 @@ class Tabs extends Widget_Base
 			]
 		);
 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'tabs_content_typo',
+                'selector' => '{{WRAPPER}} .tab_shortcode .tab-content',
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'tabs_content_text_color',
+            [
+                'label' => __('Text Color', 'spider-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => array(
+                    '{{WRAPPER}} .tab_shortcode .tab-content' => 'color: {{VALUE}}',
+                )
+            ]
+        );
+
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name' => 'border',
+				'name' => 'tabs_border',
 				'label' => esc_html__('Border', 'spider-elements'),
 				'selector' => '{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content',
 			]
 		);
+
+        $this->add_responsive_control(
+            'content_border_radius',
+            [
+                'label' => __('Border Radius', 'spider-elements'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .tab_shortcode .tab-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
 		$this->add_responsive_control(
 			'content-pad',
@@ -528,6 +560,7 @@ class Tabs extends Widget_Base
 				],
 			]
 		);
+
 
 		$this->add_group_control(
 			Group_Control_Background::get_type(),

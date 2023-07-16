@@ -144,6 +144,7 @@
       }
     }
   }
+
 }
 
 .accordion-article-wrap {
@@ -273,10 +274,11 @@
        }
        button {
          padding: 12px 30px;
-         border-radius: 4px 4px 0 0;
+         //border-radius: 4px 4px 0 0;
+         border-radius: unset ;
          text-align: left;
          width: 100%;
-         font-size: 16px;
+         font-size: unset;
          color: var(--brand_color);
          font-weight: 500;
          background: var(--black_25);
@@ -307,7 +309,7 @@
 
          &.collapsed {
            color: var(--black_800);
-           border-radius: 4px;
+           //border-radius: 4px;
            svg {
              display: block;
              color: var(--p_color);
@@ -325,6 +327,14 @@
            }
          }
        }
+     }
+     .card-body {
+       text-transform: lowercase;
+       border-style: none;
+       border-radius: 0px;
+     }
+     .accordion_title_aria {
+       border: unset  ;
      }
    }
  }
@@ -367,3 +377,4 @@ button.btn.btn-link.collapsed {
     display: none ;
   }
 }
+

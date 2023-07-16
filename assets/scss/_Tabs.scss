@@ -12,10 +12,10 @@
         border-radius: 0;
         padding: 9px 20px;
         background: var(--black_25);
-        border: 0;
-        border-left: 1px solid var(--black_50);
+        border: 1px solid var(--black_50);
         position: relative;
         text-decoration: none;
+        margin-bottom: 0px!important;
 
         &:before {
           content: "";
@@ -32,6 +32,7 @@
         &.active {
           background: var(--bs-white);
           color: var(--black_800);
+          border-color: transparent #ebebeb;
 
           &:before {
             opacity: 1;
@@ -131,6 +132,7 @@
       box-shadow: none;
       background: var(--brand_color);
       color: #fff;
+      border-color: transparent #ebebeb;
     }
   }
 
@@ -460,7 +462,7 @@ body.remove {
 ul.nav.nav-tabs {
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: -1px;
   margin-top: 0;
   list-style: none;
 }

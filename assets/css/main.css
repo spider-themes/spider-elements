@@ -412,10 +412,10 @@ a:hover, a:focus {
 }
 .accordion .doc_accordion .card-header button {
   padding: 12px 30px;
-  border-radius: 4px 4px 0 0;
+  border-radius: unset;
   text-align: left;
   width: 100%;
-  font-size: 16px;
+  font-size: unset;
   color: var(--brand_color);
   font-weight: 500;
   background: var(--black_25);
@@ -446,7 +446,6 @@ a:hover, a:focus {
 }
 .accordion .doc_accordion .card-header button.collapsed {
   color: var(--black_800);
-  border-radius: 4px;
 }
 .accordion .doc_accordion .card-header button.collapsed svg {
   display: block;
@@ -461,6 +460,14 @@ a:hover, a:focus {
 .accordion .doc_accordion .card-header button.icon-align-left .icon-wrapper {
   left: 30px;
   right: unset;
+}
+.accordion .doc_accordion .card-body {
+  text-transform: lowercase;
+  border-style: none;
+  border-radius: 0px;
+}
+.accordion .doc_accordion .accordion_title_aria {
+  border: unset;
 }
 
 .accordion-article-wrap .toggle_btn {
@@ -508,10 +515,10 @@ button.btn.btn-link.collapsed .collapsed-icon {
   border-radius: 0;
   padding: 9px 20px;
   background: var(--black_25);
-  border: 0;
-  border-left: 1px solid var(--black_50);
+  border: 1px solid var(--black_50);
   position: relative;
   text-decoration: none;
+  margin-bottom: 0px !important;
 }
 .tab_shortcode .nav-tabs .nav-item .nav-link:before {
   content: "";
@@ -527,6 +534,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
 .tab_shortcode .nav-tabs .nav-item .nav-link.active {
   background: var(--bs-white);
   color: var(--black_800);
+  border-color: transparent #ebebeb;
 }
 .tab_shortcode .nav-tabs .nav-item .nav-link.active:before {
   opacity: 1;
@@ -607,6 +615,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
   box-shadow: none;
   background: var(--brand_color);
   color: #fff;
+  border-color: transparent #ebebeb;
 }
 .process_tab_shortcode .next {
   right: -30px;
@@ -857,7 +866,7 @@ body.remove .header_tabs_area.tab_fixed .header_tab_items {
 ul.nav.nav-tabs {
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: -1px;
   margin-top: 0;
   list-style: none;
 }
