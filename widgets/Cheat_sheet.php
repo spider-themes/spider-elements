@@ -4,6 +4,7 @@
  */
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
@@ -34,7 +35,7 @@ class Cheat_sheet extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'toggle' ];
+        return [ 'spider', 'spider elements', 'toggle' ];
     }
 
     public function get_categories() {
@@ -98,11 +99,11 @@ class Cheat_sheet extends Widget_Base {
 			]
 		);
 
-		$repeater = new \Elementor\Repeater();
+		$repeater = new Repeater();
 		$repeater->add_control(
 			'cs_number', [
 				'label' => __( 'Serial Number', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => '#1',
 			]
 		);
@@ -110,7 +111,7 @@ class Cheat_sheet extends Widget_Base {
 		$repeater->add_control(
 			'cs_title', [
 				'label' => __( 'Top Text', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => esc_html__( 'be', 'spider-elements' ),
 			]
 		);
@@ -118,7 +119,7 @@ class Cheat_sheet extends Widget_Base {
 		$repeater->add_control(
 			'cs_content', [
 				'label' => __( 'Content', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => Controls_Manager::TEXT,
 				'default' => esc_html__( 'Sein', 'spider-elements' ),
 			]
 		);
@@ -126,7 +127,7 @@ class Cheat_sheet extends Widget_Base {
 		$this->add_control(
 			'cheat_sheet_contents', [
 				'label' => __( 'Cheat Sheet List', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
+				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'title_field' => '{{{ cs_title }}}',
 				'default' => [
@@ -158,7 +159,7 @@ class Cheat_sheet extends Widget_Base {
 		$this->add_control(
 			'collapse_state', [
 				'label' => esc_html__( 'Extended Collapse', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off' => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
@@ -314,7 +315,7 @@ class Cheat_sheet extends Widget_Base {
 		$this->add_responsive_control(
 			'item_box_margin', [
 				'label' => esc_html__( 'Margin', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
 					'{{WRAPPER}} .cheatsheet_item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -325,7 +326,7 @@ class Cheat_sheet extends Widget_Base {
 		$this->add_responsive_control(
 			'item_box_padding', [
 				'label' => esc_html__( 'Padding', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
 					'{{WRAPPER}} .cheatsheet_item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -355,7 +356,7 @@ class Cheat_sheet extends Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
     protected function render() {

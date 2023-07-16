@@ -2,7 +2,6 @@
 /**
  * Use namespace to avoid conflict
  */
-
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Group_Control_Typography;
@@ -10,16 +9,8 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Typography;
 use Elementor\Repeater;
-
-use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
-use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Text_Shadow;
-
 use Elementor\Utils;
-use ElementorPro\Base\Base_Widget;
-use Elementor\Modules\DynamicTags\Module as TagsModule;
-use Elementor\Icons_Manager;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,7 +28,7 @@ class Video_playlist extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Video Playlist', 'docy-core' );
+		return esc_html__( 'Video Playlist', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -67,6 +58,10 @@ class Video_playlist extends Widget_Base {
 	 */
 	public function get_script_depends() {
 		return [ 'bootstrap', 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'se-el-widgets' ];
+	}
+
+	public function get_keywords() {
+		return [ 'spider', 'spider elements', 'video', 'playlist', 'video playlist', 'video list' ];
 	}
 
 	public function get_categories() {
@@ -102,13 +97,13 @@ class Video_playlist extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'doc_design_sec', [
-				'label' => __( 'Preset Skin', 'docy-core' ),
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style', [
-				'label'   => esc_html__( 'Skin', 'docy-core' ),
+				'label'   => esc_html__( 'Skin', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
@@ -131,7 +126,7 @@ class Video_playlist extends Widget_Base {
 		//======================= Title Section =======================//
 		$this->start_controls_section(
 			'title_opt_sec', [
-				'label'     => __( 'Title', 'docy-core' ),
+				'label'     => __( 'Title', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '1' ]
 				]
@@ -306,14 +301,14 @@ class Video_playlist extends Widget_Base {
 		$this->start_controls_section(
 			'style_sec',
 			[
-				'label' => esc_html__( 'Style Section', 'rogan-core' ),
+				'label' => esc_html__( 'Style Section', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_responsive_control(
 			'sec_padding', [
-				'label'      => __( 'Section padding', 'docy-core' ),
+				'label'      => __( 'Section padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -327,7 +322,7 @@ class Video_playlist extends Widget_Base {
 
 		$this->add_control(
 			'sec_bg_color', [
-				'label'     => esc_html__( 'Background Color', 'rogan-core' ),
+				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .video_list_area ' => 'background-color: {{VALUE}};',
@@ -409,9 +404,6 @@ class Video_playlist extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-title' => 'color: {{VALUE}};',
 				],
-				'global'    => [
-					'default' => Global_Colors::COLOR_TEXT,
-				],
 			]
 		);
 
@@ -441,9 +433,6 @@ class Video_playlist extends Widget_Base {
 					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count'          => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side svg' => 'fill: {{VALUE}};',
-				],
-				'global'    => [
-					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -503,20 +492,13 @@ class Video_playlist extends Widget_Base {
 					'{{WRAPPER}} .e-tab-title .e-tab-title-text'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tab-title .e-tab-title-text a' => 'color: {{VALUE}};',
 				],
-				'global'    => [
-					'default' => Global_Colors::COLOR_TEXT,
-				],
 			]
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
+			Group_Control_Typography::get_type(), [
 				'name'     => 'normal_typography',
 				'selector' => '{{WRAPPER}} .e-tab-title .e-tab-title-text',
-				'global'   => [
-					'default' => Global_Typography::TYPOGRAPHY_TEXT,
-				],
 			]
 		);
 
@@ -535,9 +517,6 @@ class Video_playlist extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .e-tab-title .e-tab-duration' => 'color: {{VALUE}};',
-				],
-				'global'    => [
-					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);
@@ -705,26 +684,18 @@ class Video_playlist extends Widget_Base {
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a' => 'color: {{VALUE}};',
 				],
-				'global'    => [
-					'default' => Global_Colors::COLOR_TEXT,
-				],
 			]
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
+			Group_Control_Typography::get_type(), [
 				'name'     => 'active_typography',
 				'selector' => '{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text',
-				'global'   => [
-					'default' => Global_Typography::TYPOGRAPHY_TEXT,
-				],
 			]
 		);
 
 		$this->add_control(
-			'heading_duration_active',
-			[
+			'heading_duration_active', [
 				'label' => esc_html__( 'Duration', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
 			]
@@ -738,9 +709,6 @@ class Video_playlist extends Widget_Base {
 				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration' => 'color: {{VALUE}};',
-				],
-				'global'    => [
-					'default' => Global_Colors::COLOR_TEXT,
 				],
 			]
 		);

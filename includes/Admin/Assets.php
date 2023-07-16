@@ -1,4 +1,6 @@
 <?php
+namespace Spider_Elements_Assets\includes\Admin;
+
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit;
@@ -8,7 +10,7 @@ if (!defined('ABSPATH')) {
  * Class Assets
  * @package spiderElements\Admin
  */
-class Admin_Assets {
+class Assets {
 
 	/**
 	 * Assets constructor.
@@ -25,7 +27,10 @@ class Admin_Assets {
 	public function register_scripts() {
 
 		// Register Elementor Preview Editor Style's
-		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'se_register_editor_styles' ] );
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'spe_elementor_editor_scripts' ] );
+
+		// Register Admin Panel Scripts
+		add_action( 'admin_enqueue_scripts', [ $this, 'spe_admin_scripts' ] );
 
 	}
 
@@ -36,10 +41,23 @@ class Admin_Assets {
 	 *
 	 * @access public
 	 */
-	function se_register_editor_styles() {
-		wp_register_style( 'se-el-editor', SE_CSS . '/elementor-editor.css');
-		wp_enqueue_style( 'se-el-editor', SE_CSS . '/elementor-editor.css' );
+	public function spe_elementor_editor_scripts() {
+		wp_enqueue_style( 'spe-el-editor', SE_CSS . '/elementor-editor.css');
 	}
+
+
+	/**
+	 * Register Admin Panel Scripts
+	 *
+	 * Register custom scripts required to run Spider Elements.
+	 *
+	 * @access public
+	 */
+	public function spe_admin_scripts() {
+		wp_enqueue_style( 'spe-admin', SE_CSS . '/admin.css');
+	}
+
+
 }
 
-new Admin_Assets();
+new Assets();

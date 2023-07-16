@@ -4,6 +4,9 @@
  */
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
@@ -38,7 +41,7 @@ class Tabs extends Widget_Base
 
 	public function get_keywords()
 	{
-		return ['spider', 'tab', 'tabs', 'tab widget'];
+		return [ 'spider', 'spider elements', 'tab', 'tabs', 'tab widget' ];
 	}
 
 	public function get_categories()
@@ -218,7 +221,7 @@ class Tabs extends Widget_Base
 			'is_navigation_arrow',
 			[
 				'label' => esc_html__('Navigation Arrow', 'spider-elements'),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'description' => esc_html__('Show/Hide navigation arrow button for content area', 'spider-elements'),
 				'label_on' => esc_html__('Show', 'spider-elements'),
 				'label_off' => esc_html__('Hide', 'spider-elements'),
@@ -232,7 +235,7 @@ class Tabs extends Widget_Base
 			'is_auto_numb',
 			[
 				'label' => esc_html__('Auto Numbering', 'spider-elements'),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'description' => esc_html__('Show/Hide auto numbering for tab title', 'spider-elements'),
 				'label_on' => esc_html__('Show', 'spider-elements'),
 				'label_off' => esc_html__('Hide', 'spider-elements'),
@@ -246,7 +249,7 @@ class Tabs extends Widget_Base
 			'is_sticky_tab',
 			[
 				'label' => esc_html__('Sticky Mode', 'spider-elements'),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'type' => Controls_Manager::SWITCHER,
 				'description' => esc_html__('Show/Hide sticky mode for tab title', 'spider-elements'),
 				'label_on' => esc_html__('Show', 'spider-elements'),
 				'label_off' => esc_html__('Hide', 'spider-elements'),
@@ -259,19 +262,19 @@ class Tabs extends Widget_Base
 		$this->add_control(
 			'tab_alignment',
 			[
-				'label' => esc_html__('Alignment', 'textdomain'),
-				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'label' => esc_html__('Alignment', 'spider-elements'),
+				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__('Left', 'textdomain'),
+						'title' => esc_html__('Left', 'spider-elements'),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => esc_html__('Center', 'textdomain'),
+						'title' => esc_html__('Center', 'spider-elements'),
 						'icon' => ' eicon-h-align-center',
 					],
 					'flex-end' => [
-						'title' => esc_html__('Right', 'textdomain'),
+						'title' => esc_html__('Right', 'spider-elements'),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -311,7 +314,7 @@ class Tabs extends Widget_Base
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+			Group_Control_Typography::get_type(),
 			[
 				'name' => 'tab_item_typo',
 				'selector' => '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link, {{WRAPPER}} .header_tab_items .nav.nav-tabs li a',
@@ -323,7 +326,7 @@ class Tabs extends Widget_Base
 			'icon_size',
 			[
 				'label' => esc_html__('Icon Size', 'spider-elements'),
-				'type' => \Elementor\Controls_Manager::SLIDER,
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
 					'px' => [
@@ -371,7 +374,7 @@ class Tabs extends Widget_Base
 		$this->add_control(
 			'tab_title_hr',
 			[
-				'type' => \Elementor\Controls_Manager::DIVIDER,
+				'type' => Controls_Manager::DIVIDER,
 			]
 		);
 
@@ -506,7 +509,7 @@ class Tabs extends Widget_Base
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(),
+			Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
 				'label' => esc_html__('Border', 'spider-elements'),
@@ -527,7 +530,7 @@ class Tabs extends Widget_Base
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
+			Group_Control_Background::get_type(),
 			[
 				'name' => 'content_background',
 				'types' => ['classic', 'gradient'],
@@ -563,7 +566,7 @@ class Tabs extends Widget_Base
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
 	protected function render()

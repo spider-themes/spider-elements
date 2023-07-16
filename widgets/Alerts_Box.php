@@ -34,7 +34,7 @@ class Alerts_Box extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'alert', 'notice', 'message' ];
+        return [ 'spider', 'spider elements', 'alert', 'notice', 'message', 'warning', 'info', 'success', 'danger', 'note', 'note with icon', 'explanation', 'dual box notice', 'block notice' ];
     }
 
 	public function get_categories() {
@@ -343,7 +343,7 @@ class Alerts_Box extends Widget_Base {
 		$this->add_control(
 			'dual-layer-alignment', [
 				'label' => __( 'Layer Alignment', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'top-left' => [
 						'title' => __( 'Top Left', 'spider-elements' ),
@@ -467,7 +467,7 @@ class Alerts_Box extends Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
     protected function render() {

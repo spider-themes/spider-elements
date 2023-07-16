@@ -6,6 +6,7 @@ namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Text_Stroke;
+use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Icons_Manager;
@@ -35,7 +36,7 @@ class Accordion extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab',  ];
+        return [ 'spider', 'spider elements', 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab',  ];
     }
 
     public function get_categories() {
@@ -93,11 +94,11 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$repeater = new \Elementor\Repeater();
+		$repeater = new Repeater();
 		$repeater->add_control(
 			'collapse_state', [
 				'label'         => esc_html__( 'Expanded', 'spider-elements' ),
-				'type'          => \Elementor\Controls_Manager::SWITCHER,
+				'type'          => Controls_Manager::SWITCHER,
 				'label_on'      => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off'     => esc_html__( 'No', 'spider-elements' ),
 				'return_value'  => 'yes',
@@ -507,7 +508,7 @@ class Accordion extends Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
     protected function render() {

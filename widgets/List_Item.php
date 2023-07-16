@@ -6,6 +6,7 @@ namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
@@ -35,7 +36,7 @@ class List_Item extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'icon list', 'icon', 'list' ];
+        return [ 'spider', 'spider elements', 'icon list', 'icon', 'list' ];
     }
 
     public function get_categories() {
@@ -95,7 +96,7 @@ class List_Item extends Widget_Base {
 			]
 		);
 
-		$repeater = new \Elementor\Repeater();
+		$repeater = new Repeater();
 		$repeater->add_control(
 			'text', [
 				'label' => __( 'Title', 'spider-elements' ),
@@ -220,7 +221,7 @@ class List_Item extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(), [
 				'name' => 'content_typography',
 				'selector' => '{{WRAPPER}} .steps-panel .ordered-list li',
 			]
@@ -337,7 +338,7 @@ class List_Item extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(), [
+			Group_Control_Border::get_type(), [
 				'name' => 'border',
 				'label' => __( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .steps-panel',
@@ -367,7 +368,7 @@ class List_Item extends Widget_Base {
 	 * Params: no params
 	 * Return: @void
 	 * Since: @1.0.0
-	 * Package: @banca
+	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
     protected function render() {
