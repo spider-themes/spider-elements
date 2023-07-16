@@ -2,7 +2,6 @@
 /**
  * Use namespace to avoid conflict
  */
-
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Group_Control_Typography;
@@ -10,15 +9,8 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Typography;
 use Elementor\Repeater;
-use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
-use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Text_Shadow;
-
 use Elementor\Utils;
-use ElementorPro\Base\Base_Widget;
-use Elementor\Modules\DynamicTags\Module as TagsModule;
-use Elementor\Icons_Manager;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -66,6 +58,10 @@ class Video_playlist extends Widget_Base {
 	 */
 	public function get_script_depends() {
 		return [ 'bootstrap', 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'se-el-widgets' ];
+	}
+
+	public function get_keywords() {
+		return [ 'spider', 'spider elements', 'video', 'playlist', 'video playlist', 'video list' ];
 	}
 
 	public function get_categories() {

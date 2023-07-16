@@ -36,7 +36,7 @@ class List_Item extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'icon list', 'icon', 'list' ];
+        return [ 'spider', 'spider elements', 'icon list', 'icon', 'list' ];
     }
 
     public function get_categories() {

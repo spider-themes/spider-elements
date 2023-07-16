@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Pricing_Table_Tabs
- * @package LandpagyCore\Widgets
  */
 class Pricing_Table_Tabs extends Widget_Base {
 	public function get_name() {
@@ -28,6 +27,10 @@ class Pricing_Table_Tabs extends Widget_Base {
 	public function get_icon() {
 		return 'eicon-price-table se-icon';
 	}
+
+    public function get_keywords() {
+	    return [ 'spider', 'spider elements', 'pricing', 'table', 'tabs' ];
+    }
 
 	public function get_categories() {
 		return [ 'spider-elements' ];
@@ -257,7 +260,7 @@ class Pricing_Table_Tabs extends Widget_Base {
      * Params: no params
      * Return: @void
      * Since: @1.0.0
-     * Package: @landpagy
+     * Package: @spider-elements
      * Author: spider-themes
      */
 	protected function render() {

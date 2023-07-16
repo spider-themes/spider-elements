@@ -15,8 +15,6 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-use Elementor\Plugin;
-
 defined('ABSPATH') or die( 'Hey, what are you doing here? You silly human!' ) ;
 
 /**
@@ -68,7 +66,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		/**
 		 * Instance
 		 *
-		 * Holds a single instance of the `Listy_Core` class.
+		 * Holds a single instance of the `Spider_Elements` class.
 		 *
 		 * @since 1.7.0
 		 *
@@ -137,7 +135,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		/**
 		 * Constructor
 		 *
-		 * Initialize the Listy Core plugins.
+		 * Initialize the Spider Elements plugins.
 		 *
 		 * @since 1.7.0
 		 *
@@ -163,7 +161,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			add_action( 'elementor/widgets/register', [ $this, 'on_widgets_registered' ] );
 
 			// Register Icon
-			add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'sp_font_icons' ] );
+			add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'spe_elegant_icons' ] );
 			//self :: generate_custom_font_icons();
 
 		}
@@ -172,7 +170,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		/***
 		 * Added Custom Font Icon Integrated Elementor Icon Library
 		 */
-		public function sp_font_icons( $custom_fonts ) {
+		public function spe_elegant_icons( $custom_fonts ) {
 			$css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
 			$json_data = plugins_url( 'assets/vendors/elegant-icon/eleganticons.json', __FILE__ );
 
@@ -392,7 +390,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		/**
 		 * Add new Elementor Categories
 		 *
-		 * Register new widget categories for Listy Core widgets.
+		 * Register new widget categories for Spider Elements widgets.
 		 *
 		 * @since 1.0.0
 		 * @since 1.7.1 The method moved to this class.
@@ -401,7 +399,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 */
 		public function se_elements_register_category() {
 
-			Plugin::instance()->elements_manager->add_category( 'spider-elements', [
+			\Elementor\Plugin::instance()->elements_manager->add_category( 'spider-elements', [
 				'title' => __( 'Spider Elements', 'spider-elements' ),
 			], 1 );
 
@@ -410,7 +408,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		/**
 		 * Register New Widgets
 		 *
-		 * Include Listy Core widgets files and register them in Elementor.
+		 * Include Spider Elements widgets files and register them in Elementor.
 		 *
 		 * @since 1.0.0
 		 * @since 1.7.1 The method moved to this class.
@@ -436,19 +434,12 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Tabs.php' );
 			require_once( __DIR__ . '/widgets/Video_playlist.php' );
 			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
-			require_once( __DIR__ . '/widgets/Accordion_Article.php' );
 			require_once( __DIR__ . '/widgets/Accordion.php' );
 			require_once( __DIR__ . '/widgets/Testimonial.php' );
 			require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
 			require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
 			require_once( __DIR__ . '/widgets/List_Item.php' );
 			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
-			require_once( __DIR__ . '/widgets/Hotspot.php' );
-			require_once( __DIR__ . '/widgets/Stacked_Image.php' );
-			require_once( __DIR__ . '/widgets/Box_hover.php' );
-			require_once( __DIR__ . '/widgets/Image_hover.php' );
-			require_once( __DIR__ . '/widgets/Flip_Box.php' );
-			require_once( __DIR__ . '/widgets/Image_Slides.php' );
 
 		}
 
@@ -463,22 +454,15 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access private
 		 */
 		private function register_widgets() {
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Tabs() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_playlist() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_Box() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion_Article() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Testimonial() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Tabs() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Switcher() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\List_Item() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Hotspot() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Stacked_Image() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Box_hover() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Image_hover() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Flip_Box() );
-			Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Image_Slides() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Tabs() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_playlist() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_Box() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Testimonial() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Tabs() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Switcher() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\List_Item() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
 		}
 
 

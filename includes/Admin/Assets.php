@@ -42,7 +42,7 @@ class Assets {
 	 * @access public
 	 */
 	public function spe_elementor_editor_scripts() {
-		wp_register_style( 'se-el-editor', SE_CSS . '/elementor-editor.css');
+		wp_enqueue_style( 'spe-el-editor', SE_CSS . '/elementor-editor.css');
 	}
 
 

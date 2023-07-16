@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Image_hover
- * @package LandpagyCore\Widgets
  */
 class Pricing_Table_Switcher extends Widget_Base {
     public function get_name() {
@@ -27,6 +26,10 @@ class Pricing_Table_Switcher extends Widget_Base {
     public function get_icon() {
         return 'eicon-price-table se-icon';
     }
+
+	public function get_keywords() {
+		return [ 'spider', 'spider elements', 'pricing', 'table', 'switcher' ];
+	}
 
     public function get_categories() {
         return [ 'spider-elements' ];
@@ -55,7 +58,7 @@ class Pricing_Table_Switcher extends Widget_Base {
      * Params: no params
      * Return: @void
      * Since: @1.0.0
-     * Package: @landpagy
+     * Package: @spider-elements
      * Author: spider-themes
      */
     protected function register_controls() {
@@ -70,7 +73,7 @@ class Pricing_Table_Switcher extends Widget_Base {
      * Params: no params
      * Return: @void
      * Since: @1.0.0
-     * Package: @landpagy
+     * Package: @spider-elements
      * Author: spider-themes
      */
 	public function elementor_content_control() {
@@ -760,7 +763,7 @@ class Pricing_Table_Switcher extends Widget_Base {
      * Params: no params
      * Return: @void
      * Since: @1.0.0
-     * Package: @landpagy
+     * Package: @spider-elements
      * Author: spider-themes
      */
 	public function elementor_style_control () {
@@ -894,7 +897,7 @@ class Pricing_Table_Switcher extends Widget_Base {
      * Params: no params
      * Return: @void
      * Since: @1.0.0
-     * Package: @landpagy
+     * Package: @spider-elements
      * Author: spider-themes
      */
     protected function render() {

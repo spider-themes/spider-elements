@@ -34,7 +34,7 @@ class Alerts_Box extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'alert', 'notice', 'message' ];
+        return [ 'spider', 'spider elements', 'alert', 'notice', 'message', 'warning', 'info', 'success', 'danger', 'note', 'note with icon', 'explanation', 'dual box notice', 'block notice' ];
     }
 
 	public function get_categories() {

@@ -41,7 +41,7 @@ class Tabs extends Widget_Base
 
 	public function get_keywords()
 	{
-		return ['spider', 'tab', 'tabs', 'tab widget'];
+		return [ 'spider', 'spider elements', 'tab', 'tabs', 'tab widget' ];
 	}
 
 	public function get_categories()
@@ -262,19 +262,19 @@ class Tabs extends Widget_Base
 		$this->add_control(
 			'tab_alignment',
 			[
-				'label' => esc_html__('Alignment', 'textdomain'),
+				'label' => esc_html__('Alignment', 'spider-elements'),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__('Left', 'textdomain'),
+						'title' => esc_html__('Left', 'spider-elements'),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => esc_html__('Center', 'textdomain'),
+						'title' => esc_html__('Center', 'spider-elements'),
 						'icon' => ' eicon-h-align-center',
 					],
 					'flex-end' => [
-						'title' => esc_html__('Right', 'textdomain'),
+						'title' => esc_html__('Right', 'spider-elements'),
 						'icon' => 'eicon-h-align-right',
 					],
 				],

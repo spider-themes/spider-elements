@@ -36,7 +36,7 @@ class Accordion extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab',  ];
+        return [ 'spider', 'spider elements', 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab',  ];
     }
 
     public function get_categories() {

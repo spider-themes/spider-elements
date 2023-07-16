@@ -31,16 +31,20 @@ class Testimonial extends Widget_Base {
         return 'eicon-testimonial-carousel se-icon';
     }
 
-    public function get_categories() {
-        return [ 'spider-elements' ];
-    }
+	public function get_keywords() {
+		return [ 'spider', 'spider elements', 'testimonial' ];
+	}
+
+	public function get_categories() {
+		return [ 'spider-elements' ];
+	}
 
 	/**
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
     public function get_style_depends() {
-        return [ 'se-el-editor', 'bootstrap', 'slick', 'slick-theme', 'se-main' ];
+        return [ 'bootstrap', 'slick', 'slick-theme', 'se-main' ];
     }
 
 	/**
@@ -165,19 +169,19 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default' => [
 					[
-						'name' => esc_html__( 'Mark Tony', 'textdomain' ),
-						'designation' => esc_html__( 'Software Developer', 'textdomain' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'textdomain' ),
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'Software Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 					[
-						'name' => esc_html__( 'Mark Tony', 'textdomain' ),
-						'designation' => esc_html__( 'App Developer', 'textdomain' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'textdomain' ),
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'App Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 					[
-						'name' => esc_html__( 'Mark Tony', 'textdomain' ),
-						'designation' => esc_html__( 'UI/UX Designer', 'textdomain' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'textdomain' ),
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 				],
 				'condition' => [
@@ -231,19 +235,19 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default' => [
 					[
-						'name' => esc_html__( 'Mark Tony', 'textdomain' ),
-						'designation' => esc_html__( 'Software Developer', 'textdomain' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'textdomain' ),
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'Software Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 					[
-						'name' => esc_html__( 'Mark Tony', 'textdomain' ),
-						'designation' => esc_html__( 'App Developer', 'textdomain' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'textdomain' ),
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'App Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 					[
-						'name' => esc_html__( 'Mark Tony', 'textdomain' ),
-						'designation' => esc_html__( 'UI/UX Designer', 'textdomain' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'textdomain' ),
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 				],
 				'condition' => [

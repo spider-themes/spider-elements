@@ -35,7 +35,7 @@ class Cheat_sheet extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'toggle' ];
+        return [ 'spider', 'spider elements', 'toggle' ];
     }
 
     public function get_categories() {
