@@ -92,9 +92,6 @@
 																	$author = $child_video[ 'current_author' ] ?? '';
 																	echo ucwords( $author );
 																	?>
-                                                                </div>
-                                                                <span class="dot"></span>
-                                                                <div>
                                                                     <ion-icon name="calendar-clear-outline" role="img" class="md hydrated" aria-label="calendar clear outline"></ion-icon>
 																	<?php
 																	$video_date = $child_video[ 'current_date' ] ?? '';

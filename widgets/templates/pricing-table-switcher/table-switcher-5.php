@@ -1,10 +1,10 @@
 <section class="choose-plan-area-three landpagy-table-switcher">
     <nav>
         <div class="nav justify-content-center pricing-switcher" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
+            <button class="nav-lin spe_pricing_title active" id="nav-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
                 <?php echo esc_html( $settings['tab1_title'] ) ?>
             </button>
-            <button class="nav-link" id="nav-annually-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-annually-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-annually" aria-selected="false">
+            <button class="nav-link spe_pricing_title" id="nav-annually-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-annually-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-annually" aria-selected="false">
                 <?php echo esc_html( $settings['tab2_title'] ) ?>
             </button>
         </div>
@@ -21,14 +21,14 @@
                         $active = $key == 1 ? ' active' : '';
                         ?>
                         <div class="col-xl-<?php echo esc_attr( $settings['column'] ) ?> col-md-6<?php echo esc_attr($align_class) ?>">
-                            <div class="pricing-item<?php echo esc_attr($active) ?> wow fadeInUp elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>" data-wow-delay="0.1s">
+                            <div class="pricing-item<?php echo esc_attr($active) ?> spe_pricing_item_wrapper wow fadeInUp elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>" data-wow-delay="0.1s">
                                 <?php
                                 if ( !empty( $table['title'] ) ) { ?>
-                                    <h4> <?php echo esc_html($table['title']) ?> </h4>
+                                    <h4 class="spe_pricing_item_header"> <?php echo esc_html($table['title']) ?> </h4>
                                     <?php
                                 }
                                 if ( !empty( $table['price'] ) ) { ?>
-                                    <div class="price">
+                                    <div class="price spe_price">
                                         <?php echo esc_html($table['price']) ?>
                                         <span><?php echo esc_html($table['duration']) ?></span>
                                     </div>
@@ -46,7 +46,7 @@
                                 </div>
                                 <?php
                                 if ( !empty( $table['btn_label'] ) ) { ?>
-                                    <a <?php se_the_button($table['btn_url']) ?> class="btn">
+                                    <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                         <?php echo esc_html($table['btn_label']) ?>
                                     </a>
                                     <?php
@@ -75,14 +75,14 @@
                         $active = $key == 1 ? ' active' : '';
                         ?>
                         <div class="col-xl-<?php echo esc_attr( $settings['column'] ) ?> col-md-6<?php echo esc_attr($align_class) ?>">
-                            <div class="pricing-item<?php echo esc_attr($active) ?> wow fadeInUp elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>" data-wow-delay="0.1s">
+                            <div class="pricing-item<?php echo esc_attr($active) ?> spe_pricing_item_wrapper wow fadeInUp elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>" data-wow-delay="0.1s">
                                 <?php
                                 if ( !empty( $table['title'] ) ) { ?>
-                                    <h4> <?php echo esc_html($table['title']) ?> </h4>
+                                    <h4 class="spe_pricing_item_header"> <?php echo esc_html($table['title']) ?> </h4>
                                     <?php
                                 }
                                 if ( !empty( $table['price'] ) ) { ?>
-                                    <div class="price">
+                                    <div class="price spe_price">
                                         <?php echo esc_html($table['price']) ?>
                                         <span><?php echo esc_html($table['duration']) ?></span>
                                     </div>
@@ -100,7 +100,7 @@
                                 </div>
                                 <?php
                                 if ( !empty( $table['btn_label'] ) ) { ?>
-                                    <a <?php se_the_button($table['btn_url']) ?> class="btn">
+                                    <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                         <?php echo esc_html($table['btn_label']) ?>
                                     </a>
                                     <?php

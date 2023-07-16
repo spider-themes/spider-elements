@@ -5,6 +5,8 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -769,24 +771,24 @@ class Pricing_Table_Switcher extends Widget_Base {
 	public function elementor_style_control () {
 
 
-        //=============================== Table Contents ===================================//
+        //=============================== Start Switcher Title ===================================//
         $this->start_controls_section(
-            'table_content_style', [
-                'label' => esc_html__( 'Table Contents', 'spider-elements' ),
+            'switcher_title_style', [
+                'label' => esc_html__( 'Switcher Title', 'spider-elements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                // 'condition' => [
-                //     'style' => '1'
-                // ]
+                'condition' => [
+                    'style' => [ '1', '3', '4', '5', '7' ]
+                ],
             ]
         );
 
      
-		// Title Normal/Active State
+		// Start Title Normal/Active State
 		$this->start_controls_tabs(
 			'style_title_tabs'
 		);
 
-		//=== Normal Tab Title
+		// Normal Tab Title
 		$this->start_controls_tab(
 			'style_title_normal',
 			[
@@ -800,16 +802,24 @@ class Pricing_Table_Switcher extends Widget_Base {
 				'label' => __('Text Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					// '{{WRAPPER}}  .pricing-tabs-two li .nav-link, .cloud-pricing-wrapp .nav .nav-link, .pricing-compare-table .nav-tabs .nav-link, .app-pricing-switcher.nav .nav-link,  {{WRAPPER}} .pricing-switcher .nav-link' => 'color: {{VALUE}}',
-                    
-                    '{{WRAPPER}} .pricing-switcher .nav-link' => 'color: {{VALUE}};',
-                    // '{{WRAPPER}} .pricing-tabs-two li .nav-link' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .cloud-pricing-wrapp .nav .nav-link' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .pricing-compare-table .nav-tabs .nav-link' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .app-pricing-switcher.nav .nav-link' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .spe_pricing_title' => 'color: {{VALUE}};',
 				)
 			]
 		);
+
+        $this->add_control(
+            'normal_title_border',
+            [
+                'label' => __('Border Color', 'spider-elements'),
+                'type'  => Controls_Manager::COLOR,
+                'condition' => [
+                    'style' => '4'
+                ],
+                'selector'  => array(
+                    '{{WRAPPER}} .spe_pricing_title' => 'color: {{VALUE}}',
+                )
+            ]
+        );
 
 		$this->end_controls_tab(); //End Normal Tab Title
 
@@ -827,21 +837,411 @@ class Pricing_Table_Switcher extends Widget_Base {
 			[
 				'label' => __('Text Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .pricing-switcher .nav-link.active' => 'color: {{VALUE}};',
-					// '{{WRAPPER}} .pricing-tabs-two li .nav-link.active' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .cloud-pricing-wrapp .nav .nav-link.active' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .pricing-compare-table .nav-tabs .nav-link.active' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .app-pricing-switcher.nav .nav-link.active' => 'color: {{VALUE}};',
-				)
+				'selectors' => [ 
+                    '{{WRAPPER}} .spe_pricing_title.active' => 'color: {{VALUE}};',
+                ]
 			]
 		);
 
+        $this->add_control(
+            'normal_title_border',
+            [
+                'label' => __('Border Color', 'spider-elements'),
+                'type'  => Controls_Manager::COLOR,
+                'condition' => [
+                    'style' => '4'
+                ],
+                'selector'  => array(
+                    '{{WRAPPER}} .spe_pricing_title.active' => 'color: {{VALUE}}',
+                )
+            ]
+        );
 
-		$this->end_controls_tab(); // End Active Tab Title
+		$this->end_controls_tabs(); // End Active Tab Title
+		$this->end_controls_tab(); // End Title Normal/Active State
 
-        $this->end_controls_section(); //End Section Contents
+        $this->end_controls_section(); //End Switcher Title
 
+
+        //=============================== Pricing  Content  ===================================//
+        
+        // star pricing content section
+        $this->start_controls_section(
+            'pricing_table_contents',
+            [
+                'label' => esc_html__('Pricing Table Style', 'spider-elements'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'pricing_item_bg',
+            [
+                'label'     => esc_html__('Background Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_wrapper' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'pricing_item_padding',
+            [
+                'label'      => esc_html__('Padding', 'spider-elements'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .spe_pricing_item_wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'pricing_item_margin',
+            [
+                'label'      => esc_html__('Margin', 'spider-elements'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .spe_pricing_item_wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name'     => 'pricing_item_border',
+                'label'    => esc_html__('Border Type', 'spider-elements'),
+                'selector' => '{{WRAPPER}} .spe_pricing_item_wrapper',
+            ]
+        );
+
+        $this->add_control(
+            'pricing_item_border_radius',
+            [
+                'label'     => esc_html__('Border Radius', 'spider-elements'),
+                'type'      => Controls_Manager::SLIDER,
+                'default'   => [
+                    'size' => 4,
+                ],
+                'range'     => [
+                    'px' => [
+                        'max' => 50,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}}' => 'border-radius: {{SIZE}}px;',
+                    '{{WRAPPER}} .spe_pricing_item_wrapper' => 'border-radius: {{SIZE}}px;',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name'      => 'pricing_item_boxShadow',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_wrapper',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();   //End pricing Content Section
+
+
+
+        //  Start Header Style
+        $this->start_controls_section(
+            'pricing_table_contents_heading',
+            [
+                'label' => esc_html__('Header', 'spider-elements'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'pricing_table_contents_heading_title',
+            [
+                'label' => esc_html__('Title Style', 'spider-elements'),
+                'type'  => Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_control(
+            'pricing_table_contents_heading_color',
+            [
+                'label'     => esc_html__('Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_header'  => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'      => 'pricing_table_contents_heading_typo',
+                'selector'  => '{{WRAPPER}} .spe_pricing_item_header',
+            ]
+
+        );
+        
+        $this->add_control(
+            'pricing_item_contents_color',
+            [
+                'label'     => esc_html__('Content Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'separator' => 'before',
+                'default'   => '',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_content'  => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'      => 'pricing_item_contents_typo',
+                'label'     => 'Content Typography',
+                'selector'  => '{{WRAPPER}} .spe_pricing_item_content',
+            ]
+
+        );
+
+        $this->end_controls_section();   // End  Header Style
+
+
+
+        // Star Pricing Style
+        $this->start_controls_section(
+            'pricing_table_contents_price',
+            [
+                'label' => esc_html__('Pricing', 'spider-elements'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'pricing_table_contents_price',
+            [
+                'label' => esc_html__('Title Style', 'spider-elements'),
+                'type'  => Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_control(
+            'pricing_table_contents_price_color',
+            [
+                'label'     => esc_html__('Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_price'  => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'      => 'pricing_table_contents_price_typo',
+                'selector'  => '{{WRAPPER}} .spe_price',
+            ]
+
+        );
+
+        $this->add_control(
+            'pricing_table_contents_duration_color',
+            [
+                'label'     => esc_html__('Duration Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'condition' => [
+                    'style' => [ '2', '4' ]
+                ],
+                'default'   => '',
+                'selectors' => [
+                    '{{WRAPPER}} .pricing-item-3 .price span, .app-pricing-item .item-price .time'  => 'color: {{VALUE}};',
+                ],
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'      => 'pricing_table_contents_duration_typo',
+                'label'     => 'Duration Typography',
+                'selector'  => '{{WRAPPER}} .pricing-item-3 .price span, .app-pricing-item .item-price .time',
+                'condition' => [
+                    'style' => [ '2', '4' ]
+                ],
+            ]
+
+        );
+ 
+        $this->end_controls_section();  //End Pricing style
+
+        // Start Button Style
+        
+        $this->start_controls_section(
+            'pricing_table_contents_btn_style',
+            [
+                'label' => esc_html__('Button', 'spider-elements'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_responsive_control(
+            'pricing_table_contents_btn_padding',
+            [
+                'label'      => esc_html__('Padding', 'spider-elements'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .spe_pricing_item_btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'pricing_table_contents_btn_margin',
+            [
+                'label'      => esc_html__('Margin', 'spider-elements'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .spe_pricing_item_btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'pricing_table_contents_btn_typo',
+                'selector' => '{{WRAPPER}} .spe_pricing_item_btn',
+            ]
+        );
+
+     
+
+        $this->start_controls_tabs('pricing_table_contents_btn_tabs');
+
+        // Normal State Tab
+        $this->start_controls_tab('pricing_table_contents_btn_tabs_normal', ['label' => esc_html__('Normal', 'spider-elements')]);
+
+        $this->add_control(
+            'pricing_contents_btn_normal_color',
+            [
+                'label'     => esc_html__('Text Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                // 'default'   => '#212529',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_btn' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'pricing_contents_btn_normal_bg',
+            [
+                'label'     => esc_html__('Background Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_btn' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name'     => 'pricing_contents_btn_border',
+                'label'    => esc_html__('Border', 'spider-elements'),
+                'selector' => '{{WRAPPER}} .spe_pricing_item_btn',
+            ]
+        );
+
+        $this->add_control(
+            'pricing_contents_btn_border_radius',
+            [
+                'label'     => esc_html__('Border Radius', 'spider-elements'),
+                'type'      => Controls_Manager::SLIDER,
+                'range'     => [
+                    'px' => [
+                        'max' => 50,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_btn' => 'border-radius: {{SIZE}}px;',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        // Hover State Tab
+        $this->start_controls_tab('pricing_contents_btn_hover', ['label' => esc_html__('Hover', 'spider-elements')]);
+
+        $this->add_control(
+            'pricing_contents_btn_hover_text_color',
+            [
+                'label'     => esc_html__('Text Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_btn:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'pricing_contents_btn_hover_bg_color',
+            [
+                'label'     => esc_html__('Background Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#eb5757',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_btn:hover' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'pricing_contents_btn_hover_border_color',
+            [
+                'label'     => esc_html__('Border Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#eb5757',
+                'selectors' => [
+                    '{{WRAPPER}} .spe_pricing_item_btn:hover' => 'border-color: {{VALUE}};',
+                ],
+            ]
+
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name'      => 'pricing_contents_btn_boxShadow',
+                'selector'  => '{{WRAPPER}} .spe_pricing_item_btn',
+                'separator' => 'before',
+            ]
+        );
+
+        $this->end_controls_section();   //End Button style
+       
 
 		//=============================== Shape Images ===================================//
 		$this->start_controls_section(

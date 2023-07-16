@@ -25,17 +25,17 @@
                         $align_class = $key == 1 ? ' middle' : '';
                         ?>
                         <div class="col-lg-<?php echo esc_attr( $settings['column'] ) ?> col-md-6 <?php echo esc_attr($col_class) ?>">
-                            <div class="pricing-item-3<?php echo esc_attr($align_class) ?> elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>">
+                            <div class="pricing-item-3 spe_pricing_item_wrapper<?php echo esc_attr($align_class) ?> elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>">
                                 <?php
                                 if ( !empty( $table['title'] ) ) { ?>
-                                    <h5> <?php echo esc_html($table['title']) ?> </h5>
+                                    <h5 class="spe_pricing_item_header"> <?php echo esc_html($table['title']) ?> </h5>
                                     <?php
                                 }
                                 ?>
                                 <div class="price-body">
                                     <?php
                                     if ( !empty( $table['price'] ) ) { ?>
-                                        <div class="price"><?php echo esc_html($table['price']) ?><?php if ( !empty($table['duration']) ) : ?><span>/</span><span><?php echo esc_html($table['duration']) ?></span><?php endif; ?>
+                                        <div class="price spe_price"><?php echo esc_html($table['price']) ?><?php if ( !empty($table['duration']) ) : ?><span>/</span><span><?php echo esc_html($table['duration']) ?></span><?php endif; ?>
                                         </div>
                                         <?php
                                     }
@@ -43,7 +43,7 @@
                                     echo !empty($table['contents']) ? se_get_the_kses_post($table['contents']) : '';
 
                                     if ( !empty( $table['btn_label'] ) ) { ?>
-                                        <a <?php se_the_button($table['btn_url']) ?> class="btn">
+                                        <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                             <?php echo esc_html($table['btn_label']) ?>
                                         </a>
                                         <?php
@@ -72,17 +72,17 @@
                         $align_class = $key == 1 ? ' middle' : '';
                         ?>
                         <div class="col-lg-<?php echo esc_attr( $settings['column'] ) ?> col-md-6 <?php echo esc_attr($col_class) ?>">
-                            <div class="pricing-item-3 wow fadeInUp<?php echo esc_attr($align_class) ?> elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>" data-wow-delay="<?php echo esc_attr($delay_time) ?>s">
+                            <div class="pricing-item-3 spe_pricing_item_wrapper wow fadeInUp<?php echo esc_attr($align_class) ?> elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>" data-wow-delay="<?php echo esc_attr($delay_time) ?>s">
                                 <?php
                                 if ( !empty( $table['title'] ) ) { ?>
-                                    <h5> <?php echo esc_html($table['title']) ?> </h5>
+                                    <h5 class="spe_pricing_item_header"> <?php echo esc_html($table['title']) ?> </h5>
                                     <?php
                                 }
                                 ?>
                                 <div class="price-body">
                                     <?php
                                     if ( !empty( $table['price'] ) ) { ?>
-                                        <div class="price">
+                                        <div class="price spe_price">
                                             <?php echo esc_html($table['price']) ?><?php if ( !empty($table['duration']) ) : ?><span>/</span><span><?php echo esc_html($table['duration']) ?></span><?php endif; ?>
                                         </div>
                                         <?php
@@ -91,7 +91,7 @@
                                     echo !empty($table['contents']) ? se_get_the_kses_post($table['contents']) : '';
 
                                     if ( !empty( $table['btn_label'] ) ) { ?>
-                                        <a <?php se_the_button($table['btn_url']) ?> class="btn">
+                                        <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                             <?php echo esc_html($table['btn_label']) ?>
                                         </a>
                                         <?php
