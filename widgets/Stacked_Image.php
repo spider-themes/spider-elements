@@ -214,7 +214,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
             [
-                'name'     => 'dl_hotspot_image_border',
+                'name'     => 'stack_image_border',
                 'selector' => '{{WRAPPER}} .stack_image',
             ]
         );
@@ -234,8 +234,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         $this->add_group_control(
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
-                'name' => '_dl_pro_testimonials_box_shadow',
-                'label' => __('Box Shadow', 'droit-addons-pro'),
+                'name' => '_stack_img_box_shadow',
+                'label' => __('Box Shadow', 'spider-elements'),
                 'selectors' => [
                     '{{WRAPPER}} .stack_image',
                     '{{WRAPPER}} .imgstack .stack_img',
