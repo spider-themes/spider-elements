@@ -28,7 +28,7 @@ class List_Item extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'spider List Item', 'spider-elements' );
+        return __( 'List Items', 'spider-elements' );
     }
 
     public function get_icon() {
@@ -48,7 +48,7 @@ class List_Item extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'se-main' ];
+		return [ 'elegant-icon', 'spe-main' ];
 	}
 
 	/**

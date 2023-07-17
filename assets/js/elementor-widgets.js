@@ -117,6 +117,70 @@
                 });
             }
 
+            // === Tabs Slider
+            let tabSliderContainers = $scope.find(".tabs_sliders");
+
+            tabSliderContainers.each(function () {
+                let $scope = $(this);
+                let tabWrapWidth = $scope.outerWidth();
+                let totalWidth = 0;
+
+                let slideArrowBtn = $scope.find(".scroller-btn");
+                let slideBtnLeft = $scope.find(".scroller-btn.left");
+                let slideBtnRight = $scope.find(".scroller-btn.right");
+                let navWrap = $scope.find(".slide_nav_tabs");
+                let navWrapItem = $scope.find(".slide_nav_tabs li");
+
+                navWrapItem.each(function () {
+                    totalWidth += $(this).outerWidth();
+                });
+
+                if (totalWidth > tabWrapWidth) {
+                    slideArrowBtn.removeClass("inactive");
+                } else {
+                    slideArrowBtn.addClass("inactive");
+                }
+
+                if (navWrap.scrollLeft() === 0) {
+                    slideBtnLeft.addClass("inactive");
+                } else {
+                    slideBtnLeft.removeClass("inactive");
+                }
+
+                slideBtnRight.on("click", function () {
+                    navWrap.animate({ scrollLeft: "+=200px" }, 300);
+                    console.log(navWrap.scrollLeft() + " px");
+                });
+
+                slideBtnLeft.on("click", function () {
+                    navWrap.animate({ scrollLeft: "-=200px" }, 300);
+                });
+
+                scrollerHide(navWrap, slideBtnLeft, slideBtnRight);
+            });
+
+            function scrollerHide(navWrap, slideBtnLeft, slideBtnRight) {
+                let scrollLeftPrev = 0;
+                navWrap.scroll(function () {
+                    let $elem = $(this);
+                    let newScrollLeft = $elem.scrollLeft(),
+                        width = $elem.outerWidth(),
+                        scrollWidth = $elem.get(0).scrollWidth;
+                    if (scrollWidth - newScrollLeft === width) {
+                        slideBtnRight.addClass("inactive");
+                    } else {
+                        slideBtnRight.removeClass("inactive");
+                    }
+                    if (newScrollLeft === 0) {
+                        slideBtnLeft.addClass("inactive");
+                    } else {
+                        slideBtnLeft.removeClass("inactive");
+                    }
+                    scrollLeftPrev = newScrollLeft;
+                });
+            }
+
+
             //=== Sticky Tab
             let stickyTab = $scope.find(".sticky_tab");
             let windowWidth = $(window).width();
@@ -142,63 +206,6 @@
                 }
             }
 
-            //=== Tabs Slider
-            let tabWrapWidth = $scope.find(".tabs_sliders").outerWidth();
-            let totalWidth = 0;
-
-            let slideArrowBtn = $(".scroller-btn");
-            let slideBtnLeft = $(".scroller-btn.left");
-            let slideBtnRight = $(".scroller-btn.right");
-            let navWrap = $("ul.nav-tabs");
-            let navWrapItem = $("ul.nav-tabs li");
-
-            navWrapItem.each(function () {
-                totalWidth += navWrapItem.outerWidth();
-            });
-
-            if (totalWidth > tabWrapWidth) {
-                slideArrowBtn.removeClass("inactive");
-            } else {
-                slideArrowBtn.addClass("inactive");
-            }
-
-            if (navWrap.scrollLeft() === 0) {
-                slideBtnLeft.addClass("inactive");
-            } else {
-                slideBtnLeft.removeClass("inactive");
-            }
-
-            slideBtnRight.on("click", function () {
-                navWrap.animate({scrollLeft: "+=200px"}, 300);
-                console.log(navWrap.scrollLeft() + " px");
-            });
-
-            slideBtnLeft.on("click", function () {
-                navWrap.animate({scrollLeft: "-=200px"}, 300);
-            });
-
-            scrollerHide();
-
-            function scrollerHide() {
-                let scrollLeftPrev = 0;
-                navWrap.scroll(function () {
-                    let $elem = navWrap;
-                    let newScrollLeft = $elem.scrollLeft(),
-                        width = $elem.outerWidth(),
-                        scrollWidth = $elem.get(0).scrollWidth;
-                    if (scrollWidth - newScrollLeft === width) {
-                        slideBtnRight.addClass("inactive");
-                    } else {
-                        slideBtnRight.removeClass("inactive");
-                    }
-                    if (newScrollLeft === 0) {
-                        slideBtnLeft.addClass("inactive");
-                    } else {
-                        slideBtnLeft.removeClass("inactive");
-                    }
-                    scrollLeftPrev = newScrollLeft;
-                });
-            }
         },
 
         //======================== Pricing Table Tabs =========================== //

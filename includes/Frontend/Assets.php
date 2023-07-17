@@ -47,7 +47,7 @@ class Assets {
 		wp_register_style( 'video-js', SE_VEND . '/video/videojs.min.css' );
 		wp_register_style( 'video-js-theaterMode', SE_VEND . '/video/videojs.theaterMode.css' );
 		wp_register_style( 'elegant-icon', SE_VEND . '/elegant-icon/style.css' );
-		wp_register_style( 'se-main', SE_CSS . '/main.css' );
+		wp_register_style( 'spe-main', SE_CSS . '/main.css' );
 
 	}
 
@@ -82,7 +82,7 @@ class Assets {
 	 * @access public
 	 */
 	function se_register_editor_scripts() {
-		wp_register_script( 'se-el-widgets', SE_JS . '/spider-elements-widgets.js', [
+		wp_register_script( 'spe-el-widgets', SE_JS . '/elementor-widgets.js', [
 			'jquery',
 			'elementor-frontend'
 		], SE_VERSION, true );

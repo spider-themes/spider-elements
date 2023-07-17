@@ -24,7 +24,7 @@ class Testimonial extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Testimonial', 'spider-elements' );
+        return __( 'Testimonials', 'spider-elements' );
     }
 
     public function get_icon() {
@@ -44,7 +44,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
     public function get_style_depends() {
-        return [ 'bootstrap', 'slick', 'slick-theme', 'se-main' ];
+        return [ 'bootstrap', 'slick', 'slick-theme', 'spe-main' ];
     }
 
 	/**
@@ -52,7 +52,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
     public function get_script_depends() {
-        return [ 'slick', 'se-el-widgets' ];
+        return [ 'slick', 'spe-el-widgets' ];
     }
 
 	/**

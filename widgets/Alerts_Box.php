@@ -46,7 +46,7 @@ class Alerts_Box extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
     public function get_style_depends() {
-        return [ 'bootstrap', 'se-main' ];
+        return [ 'bootstrap', 'spe-main' ];
     }
 
 	/**
@@ -54,7 +54,7 @@ class Alerts_Box extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'se-el-widgets' ];
+		return [ 'bootstrap', 'spe-el-widgets' ];
 	}
 
 	/**

@@ -14,19 +14,15 @@ Table of Content:
 01/ Variables
 02/ Common
 03/ Accordion
-04/ Quote
-05/ Tabs
-06/ Testimonial
-07/ Video
-08/ Alerts_box
-09/ Pricing_Table
-10/ Pricing_Table_Switcher
-11/ Animation
-12/ List_Item
-13/ Cheat_sheet
-14/ Hotspot
-15/ Box_hover
-16/ Image_hover
+04/ Tabs
+05/ Testimonial
+06/ Video
+07/ Alerts_box
+08/ Pricing_Table
+09/ Pricing_Table_Switcher
+10/ Animation
+11/ List_Item
+12/ Cheat_sheet
 
 
 =====================================================================*/
@@ -460,11 +456,6 @@ a:hover, a:focus {
 .accordion .doc_accordion .card-header button.icon-align-left .icon-wrapper {
   left: 30px;
   right: unset;
-}
-.accordion .doc_accordion .card-body {
-  text-transform: lowercase;
-  border-style: none;
-  border-radius: 0px;
 }
 .accordion .doc_accordion .accordion_title_aria {
   border: unset;

@@ -48,7 +48,7 @@ class Video_playlist extends Widget_Base {
 			'elegant-icon',
 			'video-js',
 			'video-js-theaterMode',
-			'se-main'
+			'spe-main'
 		];
 	}
 
@@ -57,7 +57,7 @@ class Video_playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'se-el-widgets' ];
+		return [ 'bootstrap', 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets' ];
 	}
 
 	public function get_keywords() {

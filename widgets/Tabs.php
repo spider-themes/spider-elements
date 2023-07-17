@@ -55,7 +55,7 @@ class Tabs extends Widget_Base
 	 */
 	public function get_style_depends()
 	{
-		return ['bootstrap', 'elegant-icon', 'se-main'];
+		return ['bootstrap', 'elegant-icon', 'spe-main'];
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Tabs extends Widget_Base
 	 */
 	public function get_script_depends()
 	{
-		return ['bootstrap', 'se-el-widgets'];
+		return ['bootstrap', 'spe-el-widgets'];
 	}
 
 

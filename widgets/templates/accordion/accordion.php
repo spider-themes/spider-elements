@@ -32,22 +32,10 @@
                             $content_type       = $item['content_type'] ?? '';
                             if ( $content_type == 'content' ) {
                                 echo wp_kses_post($item['normal_content'] );
-                            } else {
-                                $template_id    = $item['el_content'] ?? '';
-                                $args = array(
-                                    'post_type'         => 'elementor_library',
-                                    'posts_per_page'    => -1,
-                                    'p'                 => $template_id
-                                );
-                                $templates_query        = new WP_Query( $args );
-
-                                if ( $templates_query->have_posts() ) {
-                                    while ( $templates_query->have_posts() ) {
-                                        $templates_query->the_post();
-                                        $content = get_the_content();
-                                        echo  apply_filters( 'the_content',  $content );
-                                    }
-                                    wp_reset_postdata();
+                            }
+                            elseif ( $content_type == 'el_template' ) {
+                                if ( !empty($item['el_content'])) {
+                                    echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $item['el_content'] );
                                 }
                             }
                             ?>
