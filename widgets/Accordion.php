@@ -114,30 +114,30 @@ class Accordion extends Widget_Base {
 				'default'     => __( 'Accordion Title', 'spider-elements' ),
 				'label_block' => true,
 				'dynamic'     => [
-					'active' => true,
+					'active'  => true,
 				],
 			]
 		);
 
 		$repeater->add_control(
 			'content_type', [
-				'label'   => esc_html__( 'Content Type', 'spider-elements' ),
-				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'label'   	=> esc_html__( 'Content Type', 'spider-elements' ),
+				'type'    	=> Controls_Manager::SELECT,
+				'options'	=> [
 					'content'     => esc_html__( 'Contents', 'spider-elements' ),
 					'el_template' => esc_html__( 'Saved Template', 'spider-elements' ),
 				],
-				'default' => 'content',
+				'default' 	=> 'content',
 			]
 		);
 
 		$repeater->add_control(
 			'normal_content', [
-				'label'       => __( 'Content Text', 'spider-elements' ),
-				'type'        => Controls_Manager::WYSIWYG,
-				'label_block' => true,
-				'default'     => __( 'Accordion Content', 'spider-elements' ),
-				'condition'   => [
+				'label'       	=> __( 'Content Text', 'spider-elements' ),
+				'type'        	=> Controls_Manager::WYSIWYG,
+				'label_block'	=> true,
+				'default'     	=> __( 'Accordion Content', 'spider-elements' ),
+				'condition'   	=> [
 					'content_type' => 'content'
 				]
 			]
@@ -146,12 +146,12 @@ class Accordion extends Widget_Base {
 
 		$repeater->add_control(
 			'el_content', [
-				'label'       => __( 'Select Template', 'spider-elements' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => se_get_el_templates(),
-				'label_block' => true,
-				'default'     => __( 'Accordion Content', 'spider-elements' ),
-				'condition'   => [
+				'label'       	=> __( 'Select Template', 'spider-elements' ),
+				'type'        	=> Controls_Manager::SELECT,
+				'options'     	=> se_get_el_templates(),
+				'label_block'	=> true,
+				'default'     	=> __( 'Accordion Content', 'spider-elements' ),
+				'condition'   	=> [
 					'content_type' => 'el_template'
 				]
 			]

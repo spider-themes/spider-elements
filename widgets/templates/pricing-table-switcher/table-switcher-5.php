@@ -1,7 +1,7 @@
 <section class="choose-plan-area-three landpagy-table-switcher">
     <nav>
         <div class="nav justify-content-center pricing-switcher" id="nav-tab" role="tablist">
-            <button class="nav-lin spe_pricing_title active" id="nav-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
+            <button class="nav-link spe_pricing_title active" id="nav-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
                 <?php echo esc_html( $settings['tab1_title'] ) ?>
             </button>
             <button class="nav-link spe_pricing_title" id="nav-annually-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#nav-annually-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-annually" aria-selected="false">

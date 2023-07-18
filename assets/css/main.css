@@ -4580,26 +4580,6 @@ button {
   text-decoration: underline;
 }
 
-.choose-plan-area-three {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.choose-plan-area-three .section-title-center {
-  padding-bottom: 45px;
-}
-
-.choose-plan-area-three .section-title-center p {
-  color: #4f4f4f;
-  width: 100%;
-}
-
-@media screen and (min-width: 992px) {
-  .choose-plan-area-three .section-title-center p {
-    width: 55%;
-  }
-}
 .choose-plan-area-three .pricing-switcher {
   padding-bottom: 80px;
 }
@@ -5839,11 +5819,6 @@ button {
   text-decoration: none;
 }
 
-.choose-plan-area-three {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
 .choose-plan-area-three .pricing-switcher {
   padding-bottom: 80px;
 }
@@ -5978,9 +5953,11 @@ button {
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
+
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
+
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }
