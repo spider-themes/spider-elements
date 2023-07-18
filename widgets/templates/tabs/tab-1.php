@@ -10,7 +10,7 @@
 			    $active = $tab_count == 1 ? 'active' : '';
 			    $selected = $tab_count == 1 ? 'true' : 'false';
 			    $this->add_render_attribute( $tab_title_setting_key, [
-				    'class' => [ 'nav-link tab-item-title', $active ],
+				    'class' => [ 'nav-link tab-item-title spe_tab_title', $active ],
 				    'id' => 'se'.'-tab-'.$id_int . $tab_count,
 				    'role' => 'tab',
 				    'data-bs-toggle' => 'tab',

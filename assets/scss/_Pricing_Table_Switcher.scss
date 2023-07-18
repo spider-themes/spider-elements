@@ -791,23 +791,6 @@ Pricing Two CSS
 }
 
 
-@media (min-width: 1200px) {
-  .col-xl-3 {
-    flex: 0 0 auto;
-    width: 25%;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav .nav-link {
-    font-size: 1.375rem;
-    padding: 0.625rem 1.875rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-  }
-}
-
-
 .tab-content {
   .tab-pane {
     display: none;
@@ -818,29 +801,11 @@ Pricing Two CSS
   }
 }
 
-
-
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
-}
-
-// ================ 
-.section-title-center {
-  padding-bottom: 45px;
-  text-align: center;
-
-  .title {
-    margin: 0;
-    font-size: 50px;
-    font-family: "Poppins", sans-serif;
-    color: #171717;
-    font-weight: 700;
-    line-height: 1.4;
-
-  }
 }
 
 button {
@@ -1305,15 +1270,6 @@ button {
   z-index: 1;
   overflow: hidden;
 
-  .section-title-center {
-    padding-bottom: 45px;
-
-    p {
-      color: #4f4f4f;
-      width: 100%;
-    }
-  }
-
   .pricing-switcher {
     padding-bottom: 80px;
 
@@ -1445,7 +1401,6 @@ button {
       }
     }
   }
-
   .pricing-item.active {
     box-shadow: 0 50px 80px 0 rgba(53, 42, 67, 0.1);
     transform: translateY(-20px);
@@ -1458,16 +1413,6 @@ button {
     .btn {
       color: #fff;
       background-color: #356eef;
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .choose-plan-area-three {
-    .section-title-center {
-      p {
-        width: 55%;
-      }
     }
   }
 }
@@ -1488,5 +1433,4 @@ button {
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }
-
 }

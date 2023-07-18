@@ -210,17 +210,18 @@
 
         //======================== Pricing Table Tabs =========================== //
         pricing_table_tabs: function ($scope) {
-            //============= Currency Changes
-            let $pricing_currency = $scope.find(".pricing-currency");
-            if ($pricing_currency.length > 0) {
-                $pricing_currency.on("change", function () {
-                    var dollar_id = $(this).attr("data_id");
-                    var dollar = $(".price[data_id=" + dollar_id + "] .dollar");
-                    var euro = $(".price[data_id=" + dollar_id + "] .euro");
 
-                    if (
-                        $(".pricing-currency[data_id=" + dollar_id + "]").val() === "EURO"
-                    ) {
+            //============= Currency Changes
+            let pricingCurrency = $scope.find(".pricing-currency");
+            if (pricingCurrency.length > 0) {
+
+                pricingCurrency.on("change", function () {
+
+                    let dollar_id = $(this).attr("data-id");
+                    let dollar = $(".price[data-id=" + dollar_id + "] .dollar");
+                    let euro = $(".price[data-id=" + dollar_id + "] .euro");
+
+                    if ($(".pricing-currency[data-id=" + dollar_id + "]").val() === "EURO") {
                         dollar.css("display", "none");
                         euro.css("display", "inline-block");
                     } else {

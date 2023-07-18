@@ -157,18 +157,6 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-//		$repeater->add_control(
-//			'tab_content', [
-//				'label'     => esc_html__( 'Content', 'spider-elements' ),
-//				'type'      => Controls_Manager::WYSIWYG,
-//                'label_block'   => true,
-//				'default'   => esc_html__( 'Accordion Content', 'spider-elements' ),
-//                'condition'     => [
-//                    'content_type' => 'content'
-//                ]
-//			]
-//		);
-
 		$this->add_control(
 			'accordions', [
 				'label'       => 'Accordion Items',
@@ -239,25 +227,6 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-//        $this->add_control(
-//            'title_tag',
-//            [
-//                'label' => esc_html__( 'Title Tag', 'spider-elements' ),
-//                'type' => Controls_Manager::SELECT,
-//                'options' => [
-//                    'h1' => 'H1',
-//                    'h2' => 'H2',
-//                    'h3' => 'H3',
-//                    'h4' => 'H4',
-//                    'h5' => 'H5',
-//                    'h6' => 'H6',
-//                    'div' => 'div',
-//                ],
-//                'default' => 'h6',
-//                'separator' => 'before',
-//            ]
-//        );
-
 		$this->end_controls_section(); // End Accordion Settings
 
 	}
@@ -290,20 +259,6 @@ class Accordion extends Widget_Base {
 				'selector' => '{{WRAPPER}} .accordion .doc_accordion .accordion_main_aria, {{WRAPPER}} .accordion .doc_accordion .accordion_main_aria',
 			]
 		);
-
-//        $this->add_responsive_control(
-//            'content_border_radius',
-//            [
-//                'label' => __('Border Radius', 'spider-elements'),
-//                'type' => Controls_Manager::DIMENSIONS,
-//                'size_units' => ['px', '%', 'em'],
-//                'selectors' => [
-//                    '{{WRAPPER}} .accordion .doc_accordion .card-header button.collapsed' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-//                    '{{WRAPPER}} .accordion .doc_accordion .card-header button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-//                    '{{WRAPPER}} .accordion .doc_accordion .card-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-//                ],
-//            ]
-//        );
 
 		$this->add_responsive_control(
 			'accordion_bottom_margin',
@@ -566,6 +521,8 @@ class Accordion extends Widget_Base {
 			$is_toggle = 'accordion-' . $get_id;
 		}
 
+
+		
 
 		//======================== Template Parts ========================//
 		include "templates/accordion/accordion.php";

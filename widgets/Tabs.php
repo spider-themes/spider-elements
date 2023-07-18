@@ -432,21 +432,19 @@ class Tabs extends Widget_Base
 
 		//=== Active Tab Title
 		$this->start_controls_tab(
-			'style_tab_title_active',
-			[
+			'style_tab_title_active', [
 				'label' => __('Active', 'spider-elements'),
 			]
 		);
 
 		$this->add_control(
-			'active_tab_title_text_color',
-			[
+			'active_tab_title_text_color', [
 				'label' => __('Text Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active, 
+					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active, 
 					 {{WRAPPER}} .header_tab_items .nav.nav-tabs li a.active,
-					 {{WRAPPER}} .tab-item-title:hover, 
+					 {{WRAPPER}} .tab_shortcode .spe_tab_title:hover, 
 					 {{WRAPPER}} .header_tab_items .nav.nav-tabs li a:hover' => 'color: {{VALUE}};',
 				)
 			]
@@ -470,7 +468,7 @@ class Tabs extends Widget_Base
 				'label' => __('Border Top Color', 'spider-elements'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active::before,
+					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active::before,
 					 {{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover::before' => 'background: {{VALUE}};',
 				),
 				'condition' => [

@@ -5416,20 +5416,6 @@ Pricing Two CSS
   left: 0;
 }
 
-@media (min-width: 1200px) {
-  .col-xl-3 {
-    flex: 0 0 auto;
-    width: 25%;
-  }
-}
-@media (min-width: 768px) {
-  .nav .nav-link {
-    font-size: 1.375rem;
-    padding: 0.625rem 1.875rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-  }
-}
 .tab-content .tab-pane {
   display: none;
 }
@@ -5442,19 +5428,6 @@ Pricing Two CSS
 [type=submit]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
-}
-
-.section-title-center {
-  padding-bottom: 45px;
-  text-align: center;
-}
-.section-title-center .title {
-  margin: 0;
-  font-size: 50px;
-  font-family: "Poppins", sans-serif;
-  color: #171717;
-  font-weight: 700;
-  line-height: 1.4;
 }
 
 button {
@@ -5871,13 +5844,6 @@ button {
   z-index: 1;
   overflow: hidden;
 }
-.choose-plan-area-three .section-title-center {
-  padding-bottom: 45px;
-}
-.choose-plan-area-three .section-title-center p {
-  color: #4f4f4f;
-  width: 100%;
-}
 .choose-plan-area-three .pricing-switcher {
   padding-bottom: 80px;
 }
@@ -6003,11 +5969,6 @@ button {
   background-color: #356eef;
 }
 
-@media screen and (min-width: 992px) {
-  .choose-plan-area-three .section-title-center p {
-    width: 55%;
-  }
-}
 @media (max-width: 991px) {
   .cloud-pricing-wrapp .nav {
     justify-content: center;

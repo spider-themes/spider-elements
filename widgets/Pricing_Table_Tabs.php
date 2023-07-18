@@ -49,7 +49,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', ];
+		return [ 'bootstrap', 'spe-el-widgets' ];
 	}
 
 	/**
@@ -298,7 +298,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 				</ul>
 			</div>
 			<div class="col-4">
-                <select class="pricing-currency" data_id="data-<?php echo esc_attr( $this->get_id() ); ?>">
+                <select class="pricing-currency" data-id="data-<?php echo esc_attr( $this->get_id() ); ?>">
                     <option data-display="USD"><?php esc_html_e( 'USD', 'spider-elements' ); ?></option>
                     <option data-display="EURO"><?php esc_html_e( 'EURO', 'spider-elements' ); ?></option>
                 </select>
@@ -336,7 +336,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 										if ( !empty($table_item['price_dollar']) || !empty($table_item['price_euro']) ) {
                                          
 											?>
-											<div class="price" data_id="data-<?php echo esc_attr( $this->get_id() ); ?>">
+											<div class="price" data-id="data-<?php echo esc_attr( $this->get_id() ); ?>">
                                                 <?php
                                                 if ( !empty($table_item['price_dollar']) ) { ?>
                                                     <span class="dollar"><?php echo esc_html($table_item['price_dollar']) ?></span>
