@@ -67,6 +67,7 @@ class Assets {
 		wp_register_script( 'artplayer', SE_VEND . '/video/artplayer.js', array( 'jquery' ), '3.5.26', true );
 		wp_register_script( 'video-js-nuevo', SE_VEND . '/video/nuevo.min.js', array( 'jquery' ), '7.6.0', true );
 		wp_register_script( 'video-js', SE_VEND . '/video/video.min.js', array( 'jquery' ), '7.6.0', true );
+		wp_register_script( 'scroll-parallax', SE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array( 'jquery' ), SE_VERSION, true );
 
 		wp_register_script( 'ajax-chimp', SE_JS . 'ajax-chimp.js', 'jquery', SE_VERSION, true );
 		wp_register_script( 'se-script', SE_JS . '/scripts.js', array( 'jquery' ), false, true );
