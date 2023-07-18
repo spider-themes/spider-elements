@@ -1,4 +1,4 @@
-<div class="accordion" id="<?php echo $is_toggle; ?>">
+<div class="accordion" <?php echo esc_attr($toggle_id); ?>>
     <?php
     if ( ! empty ( $accordions ) ) {
         foreach( $accordions as $item ) {
@@ -26,7 +26,7 @@
                         </<?php echo $title_tag[0] ?? ''; ?>>
                     </div>
 
-                    <div id="<?php echo esc_attr($id) ?>" class="collapse <?php echo esc_attr($is_show) ?>" aria-labelledby="heading-<?php echo esc_attr($item['_id']); ?>" data-bs-parent="#accordion-<?php echo esc_attr($settings['_id'] ?? ''); ?>">
+                    <div id="<?php echo esc_attr($id) ?>" class="collapse <?php echo esc_attr($is_show) ?>" aria-labelledby="heading-<?php echo esc_attr($item['_id']); ?>" <?php echo esc_attr($toggle_bs_parent_id); ?>>
                         <div class="card-body toggle_body">
                             <?php
                             $content_type       = $item['content_type'] ?? '';

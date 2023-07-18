@@ -509,20 +509,14 @@ class Accordion extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		extract( $settings );
 
-		$get_id           = $settings[ '_id' ] ?? '';
 		$title_tag        = ! empty ( $settings[ 'title_tag' ] ) ? $settings[ 'title_tag' ] : 'h6';
 		$accordions       = ! empty ( $settings[ 'accordions' ] ) ? $settings[ 'accordions' ] : '';
-		$se_toggle        = ! empty ( $settings[ 'is_toggle' ] ) ? $settings[ 'is_toggle' ] : '';
 		$icon_align       = ! empty ( $settings[ 'icon_align' ] ) ? $settings[ 'icon_align' ] : 'right';
 		$icon_align_class = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
 
-		$is_toggle = '';
-		if ( $se_toggle != 'yes' ) {
-			$is_toggle = 'accordion-' . $get_id;
-		}
-
-
-		
+		$is_toggle           = ! empty ( $settings[ 'is_toggle' ] ) ? $settings[ 'is_toggle' ] : '';
+		$toggle_id           = ! empty( $is_toggle == 'yes' ) ? 'id=accordionExample-' . $this->get_id() : '';
+		$toggle_bs_parent_id = ! empty( $is_toggle == 'yes' ) ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
 
 		//======================== Template Parts ========================//
 		include "templates/accordion/accordion.php";
