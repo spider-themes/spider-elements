@@ -211,6 +211,7 @@ class Accordion extends Widget_Base {
 			'is_toggle', [
 				'label'        => esc_html__( 'Toggle', 'spider-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
+				'separator'	   => 'before',
 				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off'    => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
@@ -219,11 +220,21 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_control(
+			'faq_schema',
+			[
+				'label' 	=> esc_html__( 'FAQ Schema', 'spider-elements' ),
+				'type' 		=> Controls_Manager::SWITCHER,
+				'separator'	=> 'before',
+			]
+		);
+
+		$this->add_control(
 			'title_tag', [
-				'label'   => __( 'Title Tag', 'spider-elements' ),
-				'type'    => Controls_Manager::SELECT,
-				'default' => 'h6',
-				'options' => se_el_title_tags(),
+				'label'   	=> __( 'Title Tag', 'spider-elements' ),
+				'type'    	=> Controls_Manager::SELECT,
+				'separator'	=> 'before',
+				'default' 	=> 'h6',
+				'options' 	=> se_el_title_tags(),
 			]
 		);
 
