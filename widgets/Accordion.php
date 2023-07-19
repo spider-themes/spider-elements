@@ -189,7 +189,7 @@ class Accordion extends Widget_Base {
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
 				'default'     => [
-					'value'   => 'fas fa-plus',
+					'value'   => 'fas fa-caret-down',
 					'library' => 'solid',
 				],
 				'separator'   => 'before'
@@ -201,7 +201,7 @@ class Accordion extends Widget_Base {
 				'label'   => __( 'Active Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
-					'value'   => 'fas fa-minus',
+					'value'   => 'fas fa-caret-up',
 					'library' => 'solid',
 				]
 			]
