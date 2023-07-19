@@ -11,11 +11,11 @@
                 $selected = $tab_count == 1 ? 'true' : 'false';
                 $this->add_render_attribute( $tab_title_setting_key, [
                     'class' => [ 'nav-link tab-item-title', $active ],
-                    'id' => 'docy'.'-tab-'.$id_int . $tab_count,
+                    'id' => 'tab-'.$id_int . $tab_count,
                     'role' => 'tab',
                     'data-bs-toggle' => 'tab',
-                    'aria-controls' => 'docy-tab-content-' . $id_int . $tab_count,
-                    'data-bs-target' => '#se-tab-content-' . $id_int . $tab_count,
+                    'aria-controls' => 'tab-content-' . $id_int . $tab_count,
+                    'data-bs-target' => '#tab-content-' . $id_int . $tab_count,
                     'aria-selected' => $selected,
                 ]);
                 ?>
@@ -44,8 +44,8 @@
                 $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', 'tabs', $index );
                 $this->add_render_attribute( $tab_content_setting_key, [
                     'class' => [ 'tab-pane p-0', 'fade', $active ],
-                    'id' => 'docy-tab-content-' . $id_int . $tab_count,
-                    'aria-labelledby' => 'docy'.'-tab-'.$id_int . $tab_count,
+                    'id' => 'tab-content-' . $id_int . $tab_count,
+                    'aria-labelledby' => 'tab-'.$id_int . $tab_count,
                     'role' => 'tabpanel',
                 ]);
                 ?>
