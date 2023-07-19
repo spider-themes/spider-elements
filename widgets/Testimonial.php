@@ -7,6 +7,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,7 +45,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
     public function get_style_depends() {
-        return [ 'bootstrap', 'slick', 'slick-theme', 'spe-main' ];
+        return [ 'bootstrap', 'slick', 'slick-theme', 'se-main', 'swiper-theme' ];
     }
 
 	/**
@@ -52,7 +53,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
     public function get_script_depends() {
-        return [ 'slick', 'spe-el-widgets' ];
+        return [ 'slick', 'spe-el-widgets', 'swiper' ];
     }
 
 	/**
@@ -99,6 +100,10 @@ class Testimonial extends Widget_Base {
 					'2' => [
 						'icon' => 'testimonial2',
 						'title' => esc_html__( '02 : Carousel Testimonials', 'spider-elements'),
+					],
+					'3' => [
+						'icon' => 'testimonial3',
+						'title' => esc_html__( '03 : Carousel Testimonials', 'spider-elements'),
 					]
 				],
 				'default' => '1',
@@ -256,6 +261,71 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Testimonials 02
 
+		//=== Testimonials 03
+		$testimonial3 = new Repeater();
+		$testimonial3->add_control(
+			'author_image', [
+				'label' => __( 'Author Image', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$testimonial3->add_control(
+			'name', [
+				'label' => __( 'Name', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => __( 'Mark Tony' , 'spider-elements' ),
+			]
+		);
+
+		$testimonial3->add_control(
+			'designation', [
+				'label' => __( 'Designation', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => __( 'Software Developer' , 'spider-elements' ),
+			]
+		);
+
+		$testimonial3->add_control(
+			'review_content', [
+				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'type' => Controls_Manager::TEXTAREA,
+			]
+		);
+
+		$this->add_control(
+			'testimonials3', [
+				'label' => __( 'Testimonials', 'spider-elements' ),
+				'type' => Controls_Manager::REPEATER,
+				'fields' => $testimonial3->get_controls(),
+				'title_field' => '{{{ name }}}',
+				'prevent_empty' => false,
+				'default' => [
+					[
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'Software Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+					],
+					[
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'App Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+					],
+					[
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+					],
+				],
+				'condition' => [
+					'style' => '3'
+				]
+			]
+		); //End Testimonials 03
+
 		$this->add_control(
 			'shape', [
 				'label' => __( 'Shape', 'spider-elements' ),
@@ -371,7 +441,6 @@ class Testimonial extends Widget_Base {
 				'selector' => '{{WRAPPER}} .se_review_content',
 			]
 		); //End Author Designation
-
 
 		$this->end_controls_section(); // End Contents
 

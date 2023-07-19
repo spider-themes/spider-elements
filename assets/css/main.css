@@ -919,10 +919,10 @@ ul.nav.nav-tabs {
 }
 .slider_nav .prev:hover .arrow, .slider_nav .next:hover .arrow {
   width: 40px;
-  background: var(--brand_color);
+  background: #d92c0a;
 }
 .slider_nav .prev:hover .arrow:before, .slider_nav .prev:hover .arrow:after, .slider_nav .next:hover .arrow:before, .slider_nav .next:hover .arrow:after {
-  background: var(--brand_color);
+  background: #d92c0a;
 }
 .slider_nav .prev {
   left: 0;
@@ -1190,6 +1190,99 @@ ul.nav.nav-tabs {
 
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+/*============= Allfolio Testimonial Area CSS  ================*/
+.testimonial_area_nine .navigation .swiper-button-prev,
+.testimonial_area_nine .navigation .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(70, 69, 71, 0.3882352941);
+  color: #464547;
+  border-radius: 50%;
+  top: 65%;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.testimonial_area_nine .navigation .swiper-button-prev:after,
+.testimonial_area_nine .navigation .swiper-button-next:after {
+  font-size: 15px;
+}
+.testimonial_area_nine .navigation .swiper-button-prev:hover,
+.testimonial_area_nine .navigation .swiper-button-next:hover {
+  background: #E86A42;
+  color: #fff;
+}
+.testimonial_area_nine .navigation .swiper-button-prev {
+  left: -130px;
+}
+.testimonial_area_nine .navigation .swiper-button-next {
+  right: -130px;
+}
+.testimonial_area_nine:hover .swiper-button-prev {
+  left: -100px;
+  opacity: 1;
+}
+.testimonial_area_nine:hover .swiper-button-next {
+  right: -100px;
+  opacity: 1;
+}
+
+.testimonial-slider-inner .testimonial-item {
+  display: flex;
+  border: 2px solid #E86A42;
+  padding: 50px 110px 50px 50px;
+  border-radius: 8px;
+  margin-top: 280px;
+  align-items: flex-start;
+  margin-bottom: 78px;
+  flex-direction: row-reverse;
+}
+.testimonial-slider-inner .testimonial-item p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #e6e6e6;
+  letter-spacing: 0.01em;
+  font-family: var(--ibm);
+  margin-bottom: 30px;
+  line-height: 1.3;
+  margin-top: 30px;
+}
+.testimonial-slider-inner .testimonial-item .quote-img-top {
+  margin-top: -150px;
+  width: fit-content;
+}
+.testimonial-slider-inner .testimonial-item .quote-img-bottom {
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
+}
+.testimonial-slider-inner .testimonial-content {
+  flex: 1;
+}
+.testimonial-slider-inner .author-info .author-name {
+  font-size: 18px;
+  color: #e8e6e6;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-family: var(--ibm);
+  margin-bottom: 0px;
+}
+.testimonial-slider-inner .author-info .author-position {
+  font-size: 18px;
+  font-weight: 400;
+  color: #CCCCCE;
+  letter-spacing: 0.01em;
+}
+.testimonial-slider-inner .author-image {
+  padding: 14px;
+  border-radius: 8px;
+  background: #2E2D31;
+  margin-left: 40px;
+  margin-top: -330px;
+}
+.testimonial-slider-inner .author-image img {
+  border-radius: 8px;
 }
 
 /*----------------- Video Playlist Widget CSS ------------------*/
@@ -5953,11 +6046,9 @@ button {
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
-
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
-
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }

@@ -59,6 +59,8 @@
             let testimonialSlider = $scope.find(".doc_testimonial_slider");
             let imageSlider = $scope.find(".doc_img_slider");
 
+
+            //=== Testimonial 01
             if (testimonialSlider.length > 0) {
                 testimonialSlider.slick({
                     autoplay: true,
@@ -94,6 +96,24 @@
                     nextArrow: ".next",
                 });
             }
+
+
+            //Testimonials 03
+            let sliderInner = $scope.find('.testimonial-slider-inner');
+            if ( sliderInner.length > 0 ) {
+                var Testimonial = new Swiper(".testimonial-slider-inner", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            }
+
+
+
         },
 
         //======================== Tabs =========================== //
