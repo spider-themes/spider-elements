@@ -397,7 +397,7 @@ class Tabs extends Widget_Base
 				'label' 	=> __('Text Color', 'spider-elements'),
 				'type'		=> Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spe_tab_title, {{WRAPPER}} .header_tab_items .nav.nav-tabs li a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tab_shortcode .spe_tab_title, {{WRAPPER}} .header_tab_items .spe_tab_title' => 'color: {{VALUE}}',
 				)
 			]
 		);
@@ -408,7 +408,7 @@ class Tabs extends Widget_Base
 				'name' 		=> 'normal_tab_title_bg_color',
 				'types' 	=> [ 'classic', 'gradient' ],
 				'exclude' 	=> [ 'image' ],
-				'selector'	=> '{{WRAPPER}} .tab_shortcode .tab-item-title',
+				'selector'	=> '{{WRAPPER}} .tab_shortcode .tab-item-title, {{WRAPPER}} .header_tab_items .spe_tab_title',
 			]
 		);
 
@@ -442,9 +442,9 @@ class Tabs extends Widget_Base
 				'type'		=> Controls_Manager::COLOR,
 				'selectors'	=> array(
 					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active, 
-					 {{WRAPPER}} .header_tab_items .nav.nav-tabs li a.active,
+					 {{WRAPPER}} .header_tab_items .spe_tab_title.active,
 					 {{WRAPPER}} .tab_shortcode .spe_tab_title:hover, 
-					 {{WRAPPER}} .header_tab_items .nav.nav-tabs li a:hover' => 'color: {{VALUE}};',
+					 {{WRAPPER}} .header_tab_items .spe_tab_title:hover' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -456,7 +456,11 @@ class Tabs extends Widget_Base
 				'name' 		=> 'active_tab_title_bg_color',
 				'types' 	=> [ 'classic', 'gradient' ],
 				'exclude' 	=> [ 'image' ],
-				'selector'	=> '{{WRAPPER}} .tab_shortcode .tab-item-title.active, {{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover',
+				'selector'	=> 
+					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
+					{{WRAPPER}} .header_tab_items .spe_tab_title.active, 
+					{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover',
+				
 			]
 		);
 
