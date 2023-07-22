@@ -143,7 +143,7 @@ class Video_playlist extends Widget_Base {
 
 		$this->add_control(
 			'title_tag', [
-				'label'   => __( 'Title HTML Tag', 'elementor' ),
+				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => se_el_title_tags(),
 				'default' => 'h3',

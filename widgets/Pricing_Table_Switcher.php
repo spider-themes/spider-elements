@@ -112,7 +112,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 		//============================ Pricing Table Tab 01 ==================================//
 		$this->start_controls_section(
 			'pricing_table_tab1_sec', [
-				'label' => esc_html__( 'Tab 01', 'spider-elements' ),
+				'label'     => esc_html__( 'Tab 01', 'spider-elements' ),
                 'condition' => [
                     'style' => [ '1', '2', '3', '4', '5' ]
                 ]
@@ -155,35 +155,35 @@ class Pricing_Table_Switcher extends Widget_Base {
 
 		$tab_1->add_control(
 			'price', [
-				'label'       => esc_html__( 'Price', 'spider-elements' ),
-				'type'        => Controls_Manager::TEXT,
-				'default'     => '$18.99',
-				'label_block' => true,
+				'label'         => esc_html__( 'Price', 'spider-elements' ),
+				'type'          => Controls_Manager::TEXT,
+				'default'       => '$18.99',
+				'label_block'   => true,
 			]
 		);
 
 		$tab_1->add_control(
 			'contents', [
-				'label'       => esc_html__( 'Content', 'spider-elements' ),
-				'type'        => Controls_Manager::TEXTAREA,
-				'label_block' => true,
+				'label'         => esc_html__( 'Content', 'spider-elements' ),
+				'type'          => Controls_Manager::TEXTAREA,
+				'label_block'   => true,
 			]
 		);
 
 		$tab_1->add_control(
 			'btn_label', [
-				'label'       => esc_html__( 'Button label', 'spider-elements' ),
-				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Buy Plan', 'spider-elements' ),
-				'label_block' => true,
+				'label'         => esc_html__( 'Button label', 'spider-elements' ),
+				'type'          => Controls_Manager::TEXT,
+				'default'       => esc_html__( 'Buy Plan', 'spider-elements' ),
+				'label_block'   => true,
 			]
 		);
 
 		$tab_1->add_control(
 			'btn_url', [
-				'label'   => esc_html__( 'Button URL', 'spider-elements' ),
-				'type'    => Controls_Manager::URL,
-				'default' => [
+				'label'     => esc_html__( 'Button URL', 'spider-elements' ),
+				'type'      => Controls_Manager::URL,
+				'default'   => [
 					'url' => '#'
 				],
 			]
@@ -191,12 +191,12 @@ class Pricing_Table_Switcher extends Widget_Base {
 
 		$this->add_control(
 			'pricing_table_1', [
-				'label'       => esc_html__( 'Tab 01 List', 'spider-elements' ),
-				'type'        => Controls_Manager::REPEATER,
-				'fields'      => $tab_1->get_controls(),
-				'title_field' => '{{{ title }}}',
+				'label'         => esc_html__( 'Tab 01 List', 'spider-elements' ),
+				'type'          => Controls_Manager::REPEATER,
+				'fields'        => $tab_1->get_controls(),
+				'title_field'   => '{{{ title }}}',
 				'prevent_empty' => false,
-                'condition' => [
+                'condition'     => [
                     'style' => '1'
                 ],
                 'separator' => 'before'
@@ -208,10 +208,10 @@ class Pricing_Table_Switcher extends Widget_Base {
         $tab_2 = new Repeater();
         $tab_2->add_control(
             'title', [
-                'label'       => esc_html__( 'Title', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => esc_html__( 'Free', 'spider-elements' ),
-                'label_block' => true,
+                'label'         => esc_html__( 'Title', 'spider-elements' ),
+                'type'          => Controls_Manager::TEXT,
+                'default'       => esc_html__( 'Free', 'spider-elements' ),
+                'label_block'   => true,
             ]
         );
 
@@ -240,19 +240,19 @@ class Pricing_Table_Switcher extends Widget_Base {
 
         $tab_2->add_control(
             'btn_label', [
-                'label'       => esc_html__( 'Button label', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => esc_html__( 'Buy Plan', 'spider-elements' ),
-                'label_block' => true,
-                'separator' => 'before',
+                'label'         => esc_html__( 'Button label', 'spider-elements' ),
+                'type'          => Controls_Manager::TEXT,
+                'default'       => esc_html__( 'Buy Plan', 'spider-elements' ),
+                'label_block'   => true,
+                'separator'     => 'before',
             ]
         );
 
         $tab_2->add_control(
             'btn_url', [
-                'label'   => esc_html__( 'Button URL', 'spider-elements' ),
-                'type'    => Controls_Manager::URL,
-                'default' => [
+                'label'     => esc_html__( 'Button URL', 'spider-elements' ),
+                'type'      => Controls_Manager::URL,
+                'default'   => [
                     'url' => '#'
                 ],
             ]
@@ -260,10 +260,10 @@ class Pricing_Table_Switcher extends Widget_Base {
 
         $this->add_control(
             'pricing_table_3', [
-                'label'       => esc_html__( 'Tab 02 List', 'spider-elements' ),
-                'type'        => Controls_Manager::REPEATER,
-                'fields'      => $tab_2->get_controls(),
-                'title_field' => '{{{ title }}}',
+                'label'         => esc_html__( 'Tab 02 List', 'spider-elements' ),
+                'type'          => Controls_Manager::REPEATER,
+                'fields'        => $tab_2->get_controls(),
+                'title_field'   => '{{{ title }}}',
                 'prevent_empty' => false,
                 'condition' => [
                     'style' => '2'
@@ -277,13 +277,13 @@ class Pricing_Table_Switcher extends Widget_Base {
         $tab_3 = new Repeater();
         $tab_3->add_control(
             'is_favorite', [
-                'label' => __( 'Is Favorite', 'spider-elements' ),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => __( 'Show', 'spider-elements' ),
-                'label_off' => __( 'Hide', 'spider-elements' ),
-                'return_value' => 'yes',
-                'default' => 'no',
-                'separator' => 'after'
+                'label'         => __( 'Is Favorite', 'spider-elements' ),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_on'      => __( 'Show', 'spider-elements' ),
+                'label_off'     => __( 'Hide', 'spider-elements' ),
+                'return_value'  => 'yes',
+                'default'       => 'no',
+                'separator'     => 'after'
             ]
         );
 
@@ -329,9 +329,9 @@ class Pricing_Table_Switcher extends Widget_Base {
 
         $tab_3->add_control(
             'btn_url', [
-                'label'   => esc_html__( 'Button URL', 'spider-elements' ),
-                'type'    => Controls_Manager::URL,
-                'default' => [
+                'label'     => esc_html__( 'Button URL', 'spider-elements' ),
+                'type'      => Controls_Manager::URL,
+                'default'   => [
                     'url' => '#'
                 ],
             ]
@@ -339,12 +339,12 @@ class Pricing_Table_Switcher extends Widget_Base {
 
         $this->add_control(
             'pricing_table_5', [
-                'label'       => esc_html__( 'Tab 01 List', 'spider-elements' ),
-                'type'        => Controls_Manager::REPEATER,
-                'fields'      => $tab_3->get_controls(),
-                'title_field' => '{{{ title }}}',
+                'label'         => esc_html__( 'Tab 01 List', 'spider-elements' ),
+                'type'          => Controls_Manager::REPEATER,
+                'fields'        => $tab_3->get_controls(),
+                'title_field'   => '{{{ title }}}',
                 'prevent_empty' => false,
-                'condition' => [
+                'condition'     => [
                     'style' => '3'
                 ],
             ]
@@ -355,57 +355,57 @@ class Pricing_Table_Switcher extends Widget_Base {
         $tab_4 = new Repeater();
         $tab_4->add_control(
             'title', [
-                'label'       => esc_html__( 'Title 1', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => 'The Basics',
+                'label'     => esc_html__( 'Title 1', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => 'The Basics',
             ]
         );
 
         $tab_4->add_control(
             'subtitle', [
-                'label'       => esc_html__( 'Subtitle', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => 'Free for 7 days then',
+                'label'     => esc_html__( 'Subtitle', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => 'Free for 7 days then',
             ]
         );
 
         $tab_4->add_control(
             'price', [
-                'label'       => esc_html__( 'Price', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     =>  '$18.99',
+                'label'     => esc_html__( 'Price', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => '$18.99',
             ]
         );
 
         $tab_4->add_control( 
             'duration', [
-                'label'       => esc_html__( 'Duration', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     =>  '/ Month',
+                'label'     => esc_html__( 'Duration', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   =>  '/ Month',
             ]
         );
 
         $tab_4->add_control(
             'contents', [
-                'label'       => esc_html__( 'Content', 'spider-elements' ),
-                'type'        => Controls_Manager::WYSIWYG,
+                'label' => esc_html__( 'Content', 'spider-elements' ),
+                'type'  => Controls_Manager::WYSIWYG,
             ]
         );
 
         $tab_4->add_control(
             'btn_label', [
-                'label'       => esc_html__( 'Button label', 'spider-elements' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => 'Start Free Trial',
-                'label_block' => true,
+                'label'         => esc_html__( 'Button label', 'spider-elements' ),
+                'type'          => Controls_Manager::TEXT,
+                'default'       => 'Start Free Trial',
+                'label_block'   => true,
             ]
         );
 
         $tab_4->add_control(
             'btn_url', [
-                'label'   => esc_html__( 'Button URL', 'spider-elements' ),
-                'type'    => Controls_Manager::URL,
-                'default' => [
+                'label'     => esc_html__( 'Button URL', 'spider-elements' ),
+                'type'      => Controls_Manager::URL,
+                'default'   => [
                     'url' => '#'
                 ],
             ]
@@ -580,10 +580,10 @@ class Pricing_Table_Switcher extends Widget_Base {
         //========== Table Style 05
         $this->add_control(
             'pricing_table_10', [
-                'label'       => esc_html__( 'Tab 01 List', 'spider-elements' ),
-                'type'        => Controls_Manager::REPEATER,
-                'fields'      => $tab_5->get_controls(),
-                'title_field' => '{{{ title }}}',
+                'label'         => esc_html__( 'Tab 01 List', 'spider-elements' ),
+                'type'          => Controls_Manager::REPEATER,
+                'fields'        => $tab_5->get_controls(),
+                'title_field'   => '{{{ title }}}',
                 'prevent_empty' => false,
                 'condition' => [
                     'style' => '5'
@@ -733,7 +733,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 		//========================== Column Grid ============================//
 		$this->start_controls_section(
 			'column_grid_sec', [
-				'label' => esc_html__( 'Column Grid', 'spider-elements' ),
+				'label'     => esc_html__( 'Column Grid', 'spider-elements' ),
                 'condition' => [
                     'style' => [ '1', '2', '3', '4', '5', '6' ]
                 ]
@@ -750,6 +750,26 @@ class Pricing_Table_Switcher extends Widget_Base {
 					'3' => esc_html__( 'Four', 'spider-elements' ),
 				],
 				'default' => '4',
+			]
+		);
+
+        $this->add_responsive_control(
+			'pricing_column_gap',
+			[
+				'label'      => esc_html__( 'Gap', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'      => [
+					'px' => [
+						'max' => 100,
+					],
+					'em' => [
+						'max' => 0,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .pricing-item-two-cotnainer' => 'gap: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -800,7 +820,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 			'normal_title_text_color',
 			[
 				'label' => __('Text Color', 'spider-elements'),
-				'type' => Controls_Manager::COLOR,
+				'type'  => Controls_Manager::COLOR,
 				'selectors' => array(
                     '{{WRAPPER}} .spe_pricing_title' => 'color: {{VALUE}};',
 				)
@@ -836,7 +856,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 			'active_title_text_color',
 			[
 				'label' => __('Text Color', 'spider-elements'),
-				'type' => Controls_Manager::COLOR,
+				'type'  => Controls_Manager::COLOR,
 				'selectors' => [ 
                     '{{WRAPPER}} .spe_pricing_title.active' => 'color: {{VALUE}};',
                 ]
@@ -844,7 +864,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 		);
 
         $this->add_control(
-            'normal_title_border',
+            'active_title_border',
             [
                 'label' => __('Border Color', 'spider-elements'),
                 'type'  => Controls_Manager::COLOR,
@@ -1028,7 +1048,7 @@ class Pricing_Table_Switcher extends Widget_Base {
         );
 
         $this->add_control(
-            'pricing_table_contents_price',
+            'pricing_table_contents_style',
             [
                 'label' => esc_html__('Title Style', 'spider-elements'),
                 'type'  => Controls_Manager::HEADING,
@@ -1258,8 +1278,8 @@ class Pricing_Table_Switcher extends Widget_Base {
             'is_shape_image', [
                 'label' => esc_html__( 'Show Shape Image', 'spider-elements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'your-plugin' ),
-                'label_off' => esc_html__( 'Hide', 'your-plugin' ),
+                'label_on' => esc_html__( 'Show', 'spider-elements' ),
+                'label_off' => esc_html__( 'Hide', 'spider-elements' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]

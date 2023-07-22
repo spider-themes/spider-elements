@@ -1,4 +1,4 @@
-<div class="accordion" id="<?php echo $is_toggle; ?>">
+<div class="accordion" <?php echo esc_attr($toggle_id); ?>>
     <?php
     if ( ! empty ( $accordions ) ) {
         foreach( $accordions as $item ) {
@@ -26,7 +26,7 @@
                         </<?php echo $title_tag[0] ?? ''; ?>>
                     </div>
 
-                    <div id="<?php echo esc_attr($id) ?>" class="collapse <?php echo esc_attr($is_show) ?>" aria-labelledby="heading-<?php echo esc_attr($item['_id']); ?>" data-bs-parent="#accordion-<?php echo esc_attr($settings['_id'] ?? ''); ?>">
+                    <div id="<?php echo esc_attr($id) ?>" class="collapse <?php echo esc_attr($is_show) ?>" aria-labelledby="heading-<?php echo esc_attr($item['_id']); ?>" <?php echo esc_attr($toggle_bs_parent_id); ?>>
                         <div class="card-body toggle_body">
                             <?php
                             $content_type       = $item['content_type'] ?? '';
@@ -39,13 +39,34 @@
                                 }
                             }
                             ?>
+                            <?php
+                            if ( isset( $settings['faq_schema'] ) && 'yes' === $settings['faq_schema'] ) {
+                                $json = [
+                                    '@context' => 'https://schema.org',
+                                    '@type' => 'FAQPage',
+                                    'mainEntity' => [],
+                                ];
+
+                                foreach ( $settings['accordions'] as $index => $item ) {
+                                    $json['mainEntity'][] = [
+                                        '@type' => 'Question',
+                                        'name' => wp_strip_all_tags( $item['title'] ),
+                                        'acceptedAnswer' => [
+                                            '@type' => 'Answer',
+                                            'text' => $this->parse_text_editor( $item['tab_content'] ),
+                                        ],
+                                    ];
+                                }
+                                ?>
+                                <script type="application/ld+json"><?php echo wp_json_encode( $json ); ?></script>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
-
             </div>
             <?php
         }
     }
     ?>
 </div>
+

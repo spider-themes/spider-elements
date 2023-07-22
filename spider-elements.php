@@ -1,22 +1,24 @@
 <?php
 /**
  * Plugin Name: Spider Elements
- * Plugin URI: https://spider-themes.net/
- * Description: Spider Elements sample asset for elementor widgets.
+ * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
+ * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Version: 1.0.0
  * Requires at least: 5.0
  * Tested up to: 6.2
  * Requires PHP: 7.4
  * Author: spider-themes
  * Author URI: https://spider-themes.net/
- * Text domain: spider-elements
  * Domain Path: /languages
- * License: GPL v2 or later
+ * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text domain: spider-elements
+ * Elementor requires at least: 3.0.0
+ * Elementor tested up to: 3.14.0
  */
-
-defined('ABSPATH') or die( 'Hey, what are you doing here? You silly human!' ) ;
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 /**
  * Spider_Elements class.
  *
@@ -127,7 +129,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 */
 		public function __wakeup() {
-			// Unserializing instances of the class is forbidden.
+			// Un-serializing instances of the class is forbidden.
 			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), '1.7.0' );
 		}
 

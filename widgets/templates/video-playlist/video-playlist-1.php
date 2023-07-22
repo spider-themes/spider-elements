@@ -87,16 +87,20 @@
                                                             <h4><?php echo esc_html( $child_video[ 'title2' ] ); ?></h4>
                                                             <div class="list">
                                                                 <div>
+                                                                    <div> 
                                                                     <ion-icon name="person-outline" role="img" class="md hydrated" aria-label="person outline"></ion-icon>
 																	<?php
 																	$author = $child_video[ 'current_author' ] ?? '';
 																	echo ucwords( $author );
 																	?>
+                                                                    </div>
+                                                                    <div> 
                                                                     <ion-icon name="calendar-clear-outline" role="img" class="md hydrated" aria-label="calendar clear outline"></ion-icon>
 																	<?php
 																	$video_date = $child_video[ 'current_date' ] ?? '';
 																	echo human_time_diff( strtotime( $video_date ), current_time( 'timestamp' ) ) . __( ' ago', 'spider-elements' );
 																	?>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
