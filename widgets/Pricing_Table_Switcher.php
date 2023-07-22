@@ -1278,8 +1278,8 @@ class Pricing_Table_Switcher extends Widget_Base {
             'is_shape_image', [
                 'label' => esc_html__( 'Show Shape Image', 'spider-elements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'your-plugin' ),
-                'label_off' => esc_html__( 'Hide', 'your-plugin' ),
+                'label_on' => esc_html__( 'Show', 'spider-elements' ),
+                'label_off' => esc_html__( 'Hide', 'spider-elements' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]

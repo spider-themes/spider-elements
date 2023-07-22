@@ -599,8 +599,7 @@ class Tabs extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render()
-	{
+	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract($settings); //extract all settings array to variables converted to name of key
 
@@ -614,4 +613,6 @@ class Tabs extends Widget_Base
 		//================= Template Parts =================//
 		include "templates/tabs/tab-{$settings['style']}.php";
 	}
+
+
 }
