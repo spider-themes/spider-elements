@@ -696,19 +696,33 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
 }
 .tabs_sliders span.scroller-btn {
   position: absolute;
-  left: -24px;
   top: 50%;
   color: var(--brand_color);
   font-size: 20px;
   cursor: pointer;
   transform: translateY(-50%);
 }
-.tabs_sliders span.right {
-  right: -24px;
-  left: auto;
-}
 .tabs_sliders span.inactive {
   display: none;
+}
+.tabs_sliders.sticky_tab_item span.scroller-btn {
+  left: 0;
+  height: 100%;
+  background: #f9f9f9;
+  box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
+  line-height: 44px;
+  z-index: 1;
+}
+.tabs_sliders.sticky_tab_item span.right {
+  right: 0;
+  left: auto;
+}
+.tabs_sliders.sticky_tab_item.header_tab_items span.scroller-btn {
+  left: -24px;
+}
+.tabs_sliders.sticky_tab_item.header_tab_items span.right {
+  right: -24px;
+  left: auto;
 }
 
 .process_tab_shortcode .version {

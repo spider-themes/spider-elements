@@ -244,19 +244,46 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
   span{
     &.scroller-btn {
       position: absolute;
-      left: -24px;
+      // left: -24px;
       top: 50%;
       color: var(--brand_color);
       font-size: 20px;
       cursor: pointer;
       transform: translateY(-50%);
     }
-    &.right {
-      right: -24px;
-      left: auto;
-    }
+    // &.right {
+    //   right: -24px;
+    //   left: auto;
+    // }
     &.inactive {
       display: none;
+    }
+  }
+  &.sticky_tab_item{
+    span{
+      &.scroller-btn{
+        left: 0;
+        height: 100%;
+        background: #f9f9f9;
+        box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
+        line-height: 44px;
+        z-index: 1;
+      }
+      &.right{
+        right: 0;
+        left: auto;
+      }
+    }
+    &.header_tab_items{
+      span{
+        &.scroller-btn{
+          left: -24px;
+        }
+        &.right{
+          right: -24px;
+          left: auto;
+        }
+      }
     }
   }
 }
