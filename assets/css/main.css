@@ -713,9 +713,21 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
   line-height: 44px;
   z-index: 1;
 }
+.tabs_sliders.sticky_tab_item span.scroller-btn:before {
+  content: "";
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(249, 249, 249, 0.8) 30%, rgb(249, 249, 249) 100%, rgb(249, 249, 249) 16%, rgb(249, 249, 249) 100%);
+  position: absolute;
+  right: -20px;
+}
 .tabs_sliders.sticky_tab_item span.right {
   right: 0;
   left: auto;
+}
+.tabs_sliders.sticky_tab_item span.right:before {
+  left: -20px;
+  right: auto;
 }
 .tabs_sliders.sticky_tab_item.header_tab_items span.scroller-btn {
   left: -24px;

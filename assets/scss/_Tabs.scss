@@ -268,10 +268,22 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
         box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
         line-height: 44px;
         z-index: 1;
+        &:before{
+          content: "";
+          width: 20px;
+          height: 100%;
+          background: linear-gradient(90deg, rgba(249, 249, 249, 0.8) 30%, rgb(249, 249, 249) 100%, rgb(249, 249, 249) 16%, rgb(249, 249, 249) 100%);
+          position: absolute;
+          right: -20px;
+        }
       }
       &.right{
         right: 0;
         left: auto;
+        &:before{
+          left: -20px;
+          right: auto;
+        }
       }
     }
     &.header_tab_items{
