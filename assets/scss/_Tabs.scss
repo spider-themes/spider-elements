@@ -264,10 +264,12 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
       &.scroller-btn{
         left: 0;
         height: 100%;
+        width: 40px;
         background: #f9f9f9;
         box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
         line-height: 44px;
         z-index: 1;
+        text-align: center;
         &:before{
           content: "";
           width: 20px;
