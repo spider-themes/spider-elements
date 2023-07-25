@@ -428,6 +428,37 @@ class Tabs extends Widget_Base
 
 		$this->end_controls_tab(); //End Normal Tab Title
 
+		//=== Active Tab Title
+		$this->start_controls_tab(
+			'style_tab_title_hover', [
+				'label' => __('Hover', 'spider-elements'),
+			]
+		);
+
+		$this->add_control(
+			'hover_tab_title_text_color', [
+				'label' 	=> __('Text Color', 'spider-elements'),
+				'type'		=> Controls_Manager::COLOR,
+				'selectors'	=> array(
+					'{{WRAPPER}} .tab_shortcode .spe_tab_title:hover, 
+					 {{WRAPPER}} .header_tab_items .spe_tab_title:hover' => 'color: {{VALUE}};',
+				)
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' 		=> 'hover_tab_title_bg_color',
+				'types' 	=> [ 'classic', 'gradient' ],
+				'exclude' 	=> [ 'image' ],
+				'selector'	=> 
+					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover',
+			]
+		);
+
+		$this->end_controls_tab(); //End Hover Tab Title
+
 
 		//=== Active Tab Title
 		$this->start_controls_tab(
@@ -442,12 +473,11 @@ class Tabs extends Widget_Base
 				'type'		=> Controls_Manager::COLOR,
 				'selectors'	=> array(
 					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active, 
-					 {{WRAPPER}} .header_tab_items .spe_tab_title.active,
-					 {{WRAPPER}} .tab_shortcode .spe_tab_title:hover, 
-					 {{WRAPPER}} .header_tab_items .spe_tab_title:hover' => 'color: {{VALUE}};',
+					 {{WRAPPER}} .header_tab_items .spe_tab_title.active' => 'color: {{VALUE}};',
 				)
 			]
 		);
+		
 
 
 		$this->add_group_control(
@@ -458,8 +488,7 @@ class Tabs extends Widget_Base
 				'exclude' 	=> [ 'image' ],
 				'selector'	=> 
 					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					{{WRAPPER}} .header_tab_items .spe_tab_title.active, 
-					{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover',
+					{{WRAPPER}} .header_tab_items .spe_tab_title.active',
 				
 			]
 		);
