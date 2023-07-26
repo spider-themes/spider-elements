@@ -208,13 +208,13 @@
   }
 }
 
-body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
+body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   top: -38px;
 }
 
 .sticky_tab {
   &.tab_fixed {
-    .sticky_tab_item {
+    &.sticky_tab_item {
       position: fixed;
       width: 100%;
       top: -70px;
@@ -251,10 +251,6 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
       cursor: pointer;
       transform: translateY(-50%);
     }
-    // &.right {
-    //   right: -24px;
-    //   left: auto;
-    // }
     &.inactive {
       display: none;
     }
@@ -407,16 +403,16 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
 /* Sticky Tab
     ============================================================================================ */
 body.remove {
-  .header_tabs_area.tab_fixed {
-    .header_tab_items {
+  .tab_fixed {
+    &.header_tab_items {
       transform: translateY(144px);
     }
   }
 }
 
 .header_tabs_area {
-  &.tab_fixed {
-    .header_tab_items {
+  .tab_fixed {
+    &.header_tab_items {
       .nav.nav-tabs {
         li {
           a {

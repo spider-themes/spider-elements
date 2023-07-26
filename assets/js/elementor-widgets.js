@@ -196,10 +196,6 @@
             } else {
               stickyTab.removeClass("tab_fixed");
             }
-
-            // if (scrollTop >= stickyTabOffset + stickyTab.height()) {
-            //     stickyTab.removeClass("tab_fixed");
-            // }
           });
         }
       }

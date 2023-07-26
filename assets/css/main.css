@@ -667,11 +667,11 @@ button.btn.btn-link.collapsed .collapsed-icon {
   margin-left: 55px;
 }
 
-body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
+body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   top: -38px;
 }
 
-.sticky_tab.tab_fixed .sticky_tab_item {
+.sticky_tab.tab_fixed.sticky_tab_item {
   position: fixed;
   width: 100%;
   top: -70px;
@@ -819,19 +819,19 @@ body.admin-bar .sticky_tab.tab_fixed .sticky_tab_item {
 
 /* Sticky Tab
     ============================================================================================ */
-body.remove .header_tabs_area.tab_fixed .header_tab_items {
+body.remove .tab_fixed.header_tab_items {
   transform: translateY(144px);
 }
 
-.header_tabs_area.tab_fixed .header_tab_items .nav.nav-tabs li a svg,
-.header_tabs_area.tab_fixed .header_tab_items .nav.nav-tabs li a i,
-.header_tabs_area.tab_fixed .header_tab_items .nav.nav-tabs li a img {
+.header_tabs_area .tab_fixed.header_tab_items .nav.nav-tabs li a svg,
+.header_tabs_area .tab_fixed.header_tab_items .nav.nav-tabs li a i,
+.header_tabs_area .tab_fixed.header_tab_items .nav.nav-tabs li a img {
   display: inline-block;
   margin-bottom: 0;
   position: relative;
   margin-right: 4px;
 }
-.header_tabs_area.tab_fixed .header_tab_content {
+.header_tabs_area .tab_fixed .header_tab_content {
   margin-top: 61px;
 }
 
