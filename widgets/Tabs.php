@@ -378,7 +378,7 @@ class Tabs extends Widget_Base
 			]
 		);
 
-		// Tab Title Normal/Active State
+		// Tab Title Normal/Active/hover State
 		$this->start_controls_tabs(
 			'style_tab_title_tabs'
 		);
@@ -428,7 +428,7 @@ class Tabs extends Widget_Base
 
 		$this->end_controls_tab(); //End Normal Tab Title
 
-		//=== Active Tab Title
+		//=== Hover Tab Title
 		$this->start_controls_tab(
 			'style_tab_title_hover', [
 				'label' => __('Hover', 'spider-elements'),

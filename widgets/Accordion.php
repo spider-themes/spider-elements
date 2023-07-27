@@ -382,11 +382,82 @@ class Accordion extends Widget_Base {
 			]
 		);
 
+		// Accordion icon Normal/Active/ State
+		$this->start_controls_tabs(
+			'style_accordion_icon_tabs'
+		);
+
+		//=== Normal icon
+		$this->start_controls_tab(
+			'style_accordion_icon_normal',
+			[
+				'label' => __('Normal', 'spider-elements'),
+			]
+		);
+
+		$this->add_control(
+			'acc_icon_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_accordion .card-header button.collapsed .expanded-icon' => 'color: {{VALUE}};',
+
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' 		=> 'normal_accordion_icon_bg_color',
+				'types' 	=> [ 'classic', 'gradient' ],
+				'exclude' 	=> [ 'image' ],
+				'selector'	=> '{{WRAPPER}} .doc_accordion .card-header button.collapsed .expanded-icon',
+			]
+		);
+
+		$this->end_controls_tab(); //End Normal icon
+
+
+		//=== Active icon
+		$this->start_controls_tab(
+			'style_tab_title_active', [
+				'label' => __('Active', 'spider-elements'),
+			]
+		);
+
+		$this->add_control(
+			'icon_active_color', [
+				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon, .doc_accordion .card-header button .expanded-icon' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' 		=> 'active_accordion_icon_bg_color',
+				'types' 	=> [ 'classic', 'gradient' ],
+				'exclude' 	=> [ 'image' ],
+				'selector'	=> '{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'
+			]
+		);
+
+
+		$this->end_controls_tab(); // End Active Tab Title
+		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+
+
 		$this->add_control(
 			'icon_align',
 			[
 				'label'   => esc_html__( 'Alignment', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
+				'separator'	=> 'before',
 				'options' => [
 					'left'  => [
 						'title' => esc_html__( 'Start', 'spider-elements' ),
@@ -402,28 +473,6 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'icon_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button.collapsed .expanded-icon' => 'color: {{VALUE}};',
-
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_active_color', [
-				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon, .doc_accordion .card-header button .expanded-icon' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
 		$this->add_responsive_control(
 			'icon_space',
 			[
@@ -435,6 +484,10 @@ class Accordion extends Widget_Base {
 						'max' => 200,
 					],
 				],
+				'default' => [
+					'size' => 30,
+					'unit' => 'px',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .doc_accordion .card-header button .expanded-icon'                  => 'margin-right: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'                 => 'margin-right: {{SIZE}}{{UNIT}};',
@@ -443,6 +496,36 @@ class Accordion extends Widget_Base {
 				],
 			]
 		);
+
+		$this->add_responsive_control(
+			'acc_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} .doc_accordion .card-header button.collapsed .expanded-icon'	=> 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'           	=> 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+            'acc_border_radius',
+            [
+                'label'     => esc_html__('Border Radius', 'spider-elements'),
+                'type'      => Controls_Manager::SLIDER,
+                'range'     => [
+                    'px' => [
+                        'max' => 50,
+                    ],
+                ],
+				'selectors'  => [
+					'{{WRAPPER}} .doc_accordion .card-header button.collapsed .expanded-icon'	=> 'border-radius: {{SIZE}}px;',
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'           	=> 'border-radius: {{SIZE}}px;',
+				],
+            ]
+        );
 
 		$this->end_controls_section();
 
