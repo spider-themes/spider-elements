@@ -1,0 +1,27 @@
+
+
+
+// Card Three
+.expert-slider-one {
+    .item{
+        margin: 0px 15px;
+    }
+}
+.card-style-three {
+    .name{
+        font-weight: 500;
+        font-size: 20px;
+        &:hover {
+            color: #244034;
+            text-decoration: underline;
+        }
+    }
+    .img-meta{
+        margin-bottom: 20px;
+        img {
+            border-radius: 200px;
+        }
+    }
+}
+
+.card-style-three .post {color: rgba($color: #000000, $alpha: 0.5);}

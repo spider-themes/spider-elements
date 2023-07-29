@@ -5981,11 +5981,9 @@ button {
   .pricing-switcher .nav-link:nth-child(odd) {
     padding-right: 60px;
   }
-
   .pricing-switcher .nav-link:nth-child(even) {
     padding-left: 60px;
   }
-
   .pricing-banner-2 .current-price {
     font-size: 24px;
   }
@@ -6863,6 +6861,29 @@ ul.ordered-list li::before {
     font-size: 30px;
     bottom: -10px;
   }
+}
+
+.expert-slider-one .item {
+  margin: 0px 15px;
+}
+
+.card-style-three .name {
+  font-weight: 500;
+  font-size: 20px;
+}
+.card-style-three .name:hover {
+  color: #244034;
+  text-decoration: underline;
+}
+.card-style-three .img-meta {
+  margin-bottom: 20px;
+}
+.card-style-three .img-meta img {
+  border-radius: 200px;
+}
+
+.card-style-three .post {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */

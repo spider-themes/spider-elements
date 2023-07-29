@@ -12,6 +12,7 @@
         "docy_testimonial.default": spiderElements.testimonial,
         "docly_alerts_box.default": spiderElements.alertBox,
         "docy_videos_playlist.default": spiderElements.videoPlaylist,
+        "docy_team.default": spiderElements.teamslider,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -20,6 +21,37 @@
           callback
         );
       });
+    },
+
+    teamslider: function ($scope) {
+      if ($(".expert-slider-one").length) {
+        $(".expert-slider-one").slick({
+          dots: false,
+          arrows: true,
+          lazyLoad: "ondemand",
+          prevArrow: $(".prev_a"),
+          nextArrow: $(".next_a"),
+          centerPadding: "0px",
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+          ],
+        });
+      }
     },
 
     videoPlaylist: function ($scope) {
