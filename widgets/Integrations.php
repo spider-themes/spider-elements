@@ -21,27 +21,27 @@ if (!defined('ABSPATH')) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Team extends Widget_Base
+class Integrations extends Widget_Base
 {
 
 	public function get_name()
 	{
-		return 'docy_team';
+		return 'docy_integrations';
 	}
 
 	public function get_title()
 	{
-		return esc_html__('Team', 'spider-elements');
+		return esc_html__('Integrations', 'spider-elements');
 	}
 
 	public function get_icon()
 	{
-		return 'eicon-tabs se-icon';
+		return 'eicon-integration se-icon';
 	}
 
 	public function get_keywords()
 	{
-		return [ 'spider', 'spider elements', 'team', 'team', 'team widget' ];
+		return [ 'spider', 'spider elements', 'integrations', 'integrations widget' ];
 	}
 
 	public function get_categories()
@@ -55,7 +55,7 @@ class Team extends Widget_Base
 	 */
 	public function get_style_depends()
 	{
-		return ['bootstrap', 'elegant-icon','slick', 'slick-theme', 'spe-main'];
+		return ['bootstrap', 'elegant-icon', 'spe-main'];
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Team extends Widget_Base
 	 */
 	public function get_script_depends()
 	{
-		return ['bootstrap', 'spe-el-widgets', 'slick'];
+		return ['bootstrap', 'spe-el-widgets'];
 	}
 
 
@@ -80,8 +80,8 @@ class Team extends Widget_Base
 	protected function register_controls()
 	{
         $this->elementor_content_control();
-		$this->team_slider_control();
-		// $this->elementor_style_control();
+		$this->integration_control();
+		$this-> integration_style_control();
 	}
 
 
@@ -109,83 +109,69 @@ class Team extends Widget_Base
 		$this->add_control(
 			'style',
 			[
-				'label' 	=> __('Style', 'spider-elements'),
-				'type' 		=> Controls_Manager::SELECT,
-				'options'	=> [
-					'1' 	=> __('Team Style One', 'spider-elements'),
-					'2' 	=> __('Team Style Two', 'spider-elements'),
+				'label' 	=> __('Integration Style', 'spider-elements'),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'1' => [
+						'icon' => 'integration1',
+						'title' => esc_html__( '01 : Integration', 'spider-elements')
+					],
+					'2' => [
+						'icon' => 'integration2',
+						'title' => esc_html__( '02 : Integration', 'spider-elements'),
+					]
 				],
 				'default' 	=> '1',
 			]
 		);
 
+
 		$this->end_controls_section(); // End Select Style
     }
-    public function team_slider_control(){
+    public function integration_control(){
         //start content layout
         $this->start_controls_section(
-            'section_title_control',
+            'integration_control',
             [
-                'label' => __('Content', 'spider-elements'),
+                'label' => __('Integration Item', 'spider-elements'),
             ]
         );
         $repeater = new \Elementor\Repeater();
         $repeater-> add_control(
-            'team_slider_image', [
-                'label' => __('Slider Image', 'spider-elements'),
+            'integration_image', [
+                'label' => __('Integration Image', 'spider-elements'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
             ]
         );
-        $repeater-> add_control(
-            'team_name', [
-                'label' => __('Name', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __('Enter Name', 'spider-elements'),
-                'default' => __('John Deo', 'spider-elements'),
-                'label_block' => true,
-            ]
-        );
-        $repeater-> add_control(
-            'team_job_position', [
-                'label' => __('Content Text', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'placeholder' => __('Enter text', 'spider-elements'),
-                'default' => __('Envato Customer', 'spider-elements'),
-                'label_block' => true,
-            ]
-        );
         $this->add_control(
-            'team_slider_item',
+            'integration_item',
             [
-                'label' => __( 'Team Item', 'spider-elements' ),
+                'label' => __( 'Integration Item', 'spider-elements' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'prevent_empty' => false,
                 'default' => [
                     [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Elizabeth Foster', 'spider-elements'),
-                        'team_job_position' => __('UI/UX Designer', 'spider-elements'),
+                        'integration_image' => __("", "spider-elements"),
                     ],
                     [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Julie Ake', 'spider-elements'),
-                        'team_job_position' => __('Product Designer', 'spider-elements'),
+                        'integration_image' => __("", "spider-elements"),
                     ],
                     [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Elizabeth Foster', 'spider-elements'),
-                        'team_job_position' => __('UI/UX Designer', 'spider-elements'),
+                        'integration_image' => __("", "spider-elements"),
                     ],
                     [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Juan Marko', 'spider-elements'),
-                        'team_job_position' => __('Java Developer', 'spider-elements'),
+                        'integration_image' => __("", "spider-elements"),
                     ],
-
+                    [
+                        'integration_image' => __("", "spider-elements"),
+                    ],
+                    [
+                        'integration_image' => __("", "spider-elements"),
+                    ],
                 ],
             ]
         );
@@ -202,7 +188,47 @@ class Team extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	
+	public function integration_style_control() {
+
+		$this->start_controls_section(
+			'integration_img_style', [
+				'label' => __( 'Integration Image', 'spider-elements' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+        $this->add_control(
+            'integration_round_bg',
+            [
+                'label'     => esc_html__('Background Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .big-circle .brand-icon' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name'     => 'integration_border',
+                'label'    => esc_html__('Border', 'spider-elements'),
+                'selector' => '{{WRAPPER}} .big-circle .brand-icon,{{WRAPPER}} .big-circle',
+            ]
+        );
+		$this->add_control(
+            'team_img_border_radius',
+            [
+                'label' 		=> __('Border Radius', 'spider-elements'),
+                'type' 			=> Controls_Manager::DIMENSIONS,
+                'size_units'	=> ['px', '%', 'em'],
+                'selectors' 	=> [
+                    '{{WRAPPER}} .big-circle .brand-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+		$this-> end_controls_section();
+	}
+
 
 	/**
 	 * Name: elementor_render()
@@ -216,9 +242,8 @@ class Team extends Widget_Base
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract($settings); //extract all settings array to variables converted to name of key
-        $team_id = $this->get_id();
 		//================= Template Parts =================//
-		include "templates/team/team-{$settings['style']}.php";
+		include "templates/integration/integration-{$settings['style']}.php";
 	}
 
 

@@ -11,6 +11,7 @@
     .name{
         font-weight: 500;
         font-size: 20px;
+        color: #212529;
         &:hover {
             color: #244034;
             text-decoration: underline;
@@ -25,3 +26,113 @@
 }
 
 .card-style-three .post {color: rgba($color: #000000, $alpha: 0.5);}
+
+// Expert Section
+.expert-section-one{
+    .slick-arrow-one {
+        position: absolute;
+        right: 0;
+        top:-100px;
+    }
+} 
+.slick-arrow-one {
+    margin-left: -2px; 
+    margin-right: -2px;
+    li {
+        cursor: pointer;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #000;
+        text-align: center;
+        line-height: 50px;
+        font-size: 22px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background:#D2F34C;
+        }
+    }
+    &.color-two li:hover {
+        background: #D2F34C;
+        color: #fff;
+    }
+}
+
+.expert-slider-two{
+    .slick-slide{
+        margin: 0px 15px;
+    }
+    .slick-dots {
+        position: relative;
+        padding: 0;
+        margin: 65px 0 0;
+        justify-content: center;
+        bottom: 0;
+        display: flex;
+        &:after,&::before {
+            content: '';
+            position: absolute;
+            width: 44%;
+            height: 1px;
+            background: #E0E0E0;
+            top:4px;
+            left: 0;
+        }
+        &::before {
+            left: auto;
+            right: 0;
+        }
+        li{
+            margin: 0px;
+            padding: 0;
+            width: auto;
+            height: auto;
+            button{
+                text-indent: -50000px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                margin: 0 5px;
+                background: #E4E4E4;
+                transition: all 0.3s ease-in-out;
+            }
+            &.slick-active{
+                button{
+                    background: #00BF58;
+                }
+            }
+        }
+    }
+}
+
+.card-style-eight .img-meta {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        right: -25px;
+        bottom: -25px;
+        transform: rotate(45deg);
+    }
+}
+.card-style-eight{
+    .name {
+        font-size: 18px;
+        color: #000;
+        font-weight: 500;
+        &:hover {
+            color: #00BF58;
+        }
+    }
+    .post{
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.7);
+    }
+} 

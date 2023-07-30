@@ -79,6 +79,34 @@
     background-position: top;
 }
 
+/* team Carousel  */
+.team1::before{
+    background: url("../images/el-editor-preview/team1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.team2::before{
+    background: url("../images/el-editor-preview/team2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+/* integration  */
+/* team Carousel  */
+.integration1::before{
+    background: url("../images/el-editor-preview/integration1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.integration2::before{
+    background: url("../images/el-editor-preview/integration2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 /** === Video Playlist === **/
 .video-playlist::before {
     background: url("../images/el-editor-preview/video-playlist.jpg");
