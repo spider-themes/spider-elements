@@ -493,6 +493,11 @@ button.btn.btn-link.collapsed .collapsed-icon {
   display: none;
 }
 
+.toggle_body {
+  border-style: none;
+  border-radius: 0;
+}
+
 /*============== Tab =========*/
 .tab_shortcode .nav-tabs {
   border: 0;
