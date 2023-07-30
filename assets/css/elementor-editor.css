@@ -78,6 +78,12 @@
     background-size: cover;
     background-position: top;
 }
+.testimonial3::before {
+    background: url("../images/el-editor-preview/testimonial3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
 
 /* team Carousel  */
 .team1::before{
