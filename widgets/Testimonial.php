@@ -422,18 +422,10 @@ class Testimonial extends Widget_Base {
 		);
 
 		$testimonial5->add_control(
-			'name', [
-				'label' => __( 'Name', 'spider-elements' ),
+			'company_name', [
+				'label' => __( 'Company Name', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Mark Tony' , 'spider-elements' ),
-			]
-		);
-
-		$testimonial5->add_control(
-			'designation', [
-				'label' => __( 'Designation', 'spider-elements' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Software Developer' , 'spider-elements' ),
+				'default' => __( 'Karina' , 'spider-elements' ),
 			]
 		);
 
@@ -445,12 +437,18 @@ class Testimonial extends Widget_Base {
 		);
 
 		$testimonial5->add_control(
-			'c_logo', [
-				'label' => __( 'Company Logo', 'spider-elements' ),
-				'type' => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
-				],
+			'title', [
+				'label' => __( 'Title', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => __( 'Madelyn Press' , 'spider-elements' ),
+			]
+		);
+
+		$testimonial5->add_control(
+			'name', [
+				'label' => __( 'Name', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => __( 'Mark Tony' , 'spider-elements' ),
 			]
 		);
 
@@ -464,17 +462,8 @@ class Testimonial extends Widget_Base {
 				'default' => [
 					[
 						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation' => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
-					],
-					[
-						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation' => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
-					],
-					[
-						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
+						'company_name' => esc_html__( 'Karina', 'spider-elements' ),
+						'title' => esc_html__( 'Madelyn Press', 'spider-elements' ),
 						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
 					],
 				],
