@@ -104,6 +104,10 @@ class Testimonial extends Widget_Base {
 					'3' => [
 						'icon' => 'testimonial3',
 						'title' => esc_html__( '03 : Carousel Testimonials', 'spider-elements'),
+					],
+					'4' => [
+						'icon' => 'testimonial4',
+						'title' => esc_html__( '04 : Carousel Testimonials', 'spider-elements'),
 					]
 				],
 				'default' => '1',
@@ -326,6 +330,81 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Testimonials 03
 
+		//=== Testimonials 04
+		$testimonial4 = new Repeater();
+		$testimonial4->add_control(
+			'author_image', [
+				'label' => __( 'Author Image', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$testimonial4->add_control(
+			'name', [
+				'label' => __( 'Name', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => __( 'Mark Tony' , 'spider-elements' ),
+			]
+		);
+
+		$testimonial4->add_control(
+			'designation', [
+				'label' => __( 'Designation', 'spider-elements' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => __( 'Software Developer' , 'spider-elements' ),
+			]
+		);
+
+		$testimonial4->add_control(
+			'review_content', [
+				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'type' => Controls_Manager::TEXTAREA,
+			]
+		);
+
+		$testimonial4->add_control(
+			'c_logo', [
+				'label' => __( 'Company Logo', 'spider-elements' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$this->add_control(
+			'testimonials4', [
+				'label' => __( 'Testimonials', 'spider-elements' ),
+				'type' => Controls_Manager::REPEATER,
+				'fields' => $testimonial4->get_controls(),
+				'title_field' => '{{{ name }}}',
+				'prevent_empty' => false,
+				'default' => [
+					[
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'Software Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+					],
+					[
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'App Developer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+					],
+					[
+						'name' => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'designation' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+					],
+				],
+				'condition' => [
+					'style' => '4'
+				]
+			]
+		); //End Testimonials 04
+
 		$this->add_control(
 			'shape', [
 				'label' => __( 'Shape', 'spider-elements' ),
@@ -334,6 +413,18 @@ class Testimonial extends Widget_Base {
 				'condition' => [
 					'style' => '1'
 				],
+			]
+		);
+
+		$this->add_control(
+			'quote_icon',
+			[
+				'label' => esc_html__( 'Quote Icon', 'spider-elements' ),
+				'type' => Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				]
 			]
 		);
 

@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-img-top">
-                                        <img src="<?php echo SE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'allfolio-core') ?>"></div>
+                                        <img src="<?php echo SE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>"></div>
                                     <?php
                                     echo !empty($item['review_content']) ? '<p class="se_review_content">' . esc_html($item['review_content']) . '</p>' : '';
                                     ?>
@@ -26,12 +26,11 @@
                                         echo !empty($item['name']) ? '<h4 class="author-name se_name">' . esc_html($item['name']) . '</h4>' : '';
 
                                         echo !empty($item['designation']) ? '<span class="author-position se_designation">' . esc_html($item['designation']) . '</span>' : '';
-
                                         ?>
                                     </div>
                                 </div>
                                 <div class="quote-img-bottom">
-                                    <img src="<?php echo SE_IMG ?>/quote_img2.png" alt="<?php esc_attr_e('Quote Image Two', 'allfolio-core') ?>">
+                                    <img src="<?php echo SE_IMG ?>/quote_img2.png" alt="<?php esc_attr_e('Quote Image Two', 'spider-elements') ?>">
                                 </div>
                             </div>
                         </div>
