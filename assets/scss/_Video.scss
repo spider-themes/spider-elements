@@ -2403,3 +2403,24 @@ button.swiper-pagination-bullet {
     height: 277px !important;
   }
 }
+
+
+
+/*======== video popup css ========*/
+
+.video-icon {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  color: #fff;
+  font-size: 35px;
+  background: #00BF58;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  &:hover {
+    background: #D2F34C;
+    color: #244034;
+  }
+}

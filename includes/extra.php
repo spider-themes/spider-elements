@@ -439,3 +439,22 @@ function se_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
 	}
 	return $data;
 }
+
+
+/**
+ * Add new font group (Custom) to the top of the list
+ */
+add_filter( 'elementor/fonts/groups', function( $font_groups ) {
+    $se_font_group = array( 'se_custom_font' => __( 'Se Custom Font' ) );
+    return array_merge( $se_font_group, $font_groups );
+} );
+
+/**
+ * Add fonts to the new font group
+ */
+add_filter( 'elementor/fonts/additional_fonts', function( $additional_fonts ) {
+    //Font name/font group
+    $additional_fonts['gordita'] = 'se_custom_font';
+    return $additional_fonts;
+
+} );

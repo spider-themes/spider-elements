@@ -85,13 +85,13 @@
       padding: 18px 15px 24px;
     }
 
-    P {
+    p {
       font-size: 16px;
       font-weight: 400;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-  }
-  &:last-child {
-    margin-bottom: 0;
   }
   .card-header {
     border-radius: 0;
@@ -281,7 +281,7 @@
          font-size: unset;
          color: var(--brand_color);
          font-weight: 500;
-         background: var(--black_25);
+         background: var(--black_50);
          text-decoration: none;
          position: relative;
          .icon-wrapper{
