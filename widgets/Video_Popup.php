@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Video_popup extends Widget_Base
+class Video_Popup extends Widget_Base
 {
 
 	public function get_name()
@@ -55,7 +55,7 @@ class Video_popup extends Widget_Base
 	 */
 	public function get_style_depends()
 	{
-		return ['bootstrap', 'elegant-icon', 'spe-main'];
+		return ['bootstrap', 'elegant-icon','fancybox-css', 'spe-main'];
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Video_popup extends Widget_Base
 	 */
 	public function get_script_depends()
 	{
-		return ['bootstrap', 'spe-el-widgets', 'slick'];
+		return ['bootstrap', 'spe-el-widgets', 'fancybox-js', 'slick'];
 	}
 
 
@@ -79,9 +79,9 @@ class Video_popup extends Widget_Base
 	 */
 	protected function register_controls()
 	{
-        // $this->elementor_content_control();
+        $this->elementor_content_control();
 		// $this->team_slider_control();
-		// $this-> team_style_control();
+		$this-> video_style_control();
 	}
 
 
@@ -99,121 +99,32 @@ class Video_popup extends Widget_Base
      public function elementor_content_control() {
 
 		// ============================ Select Style  ===========================//
-		$this->start_controls_section(
-			'select_style',
-			[
-				'label' => __('Preset Skins', 'spider-elements'),
-			]
-		);
 
-		$this->add_control(
-			'style',
-			[
-				'label' 	=> __('Team Style', 'spider-elements'),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'1' => [
-						'icon' => 'team1',
-						'title' => esc_html__( '01 : Team Carousel', 'spider-elements')
-					],
-					'2' => [
-						'icon' => 'team2',
-						'title' => esc_html__( '02 : Team Carousel', 'spider-elements'),
-					]
-				],
-				'default' 	=> '1',
-			]
-		);
-
-
-		$this->end_controls_section(); // End Select Style
-    }
-    public function team_slider_control(){
-        //start content layout
-        $this->start_controls_section(
-            'section_title_control',
-            [
-                'label' => __('Content', 'spider-elements'),
+		 $this->start_controls_section(
+            'video_sec', [
+                'label' => esc_html__( 'Video', 'spider-elements' ),
             ]
         );
-        $repeater = new \Elementor\Repeater();
-        $repeater-> add_control(
-            'team_slider_image', [
-                'label' => __('Slider Image', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-        $repeater-> add_control(
-            'team_name', [
-                'label' => __('Name', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __('Enter Name', 'spider-elements'),
-                'default' => __('John Deo', 'spider-elements'),
-                'label_block' => true,
-            ]
-        );
-		$repeater-> add_control(
-			'team_link',
-			[
-				'label' => esc_html__( 'Link', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'spider-elements' ),
-				'options' => [ 'url', 'is_external', 'nofollow' ],
-				'default' => [
-					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
-					// 'custom_attributes' => '',
-				],
-				'label_block' => true,
-			]
-		);
 
-        $repeater-> add_control(
-            'team_job_position', [
-                'label' => __('Content Text', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'placeholder' => __('Enter text', 'spider-elements'),
-                'default' => __('Envato Customer', 'spider-elements'),
-                'label_block' => true,
-            ]
-        );
         $this->add_control(
-            'team_slider_item',
-            [
-                'label' => __( 'Team Item', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'prevent_empty' => false,
+            'video_url', [
+                'label' => esc_html__( 'Video URL', 'spider-elements' ),
+                'type' => Controls_Manager::TEXT,
+                'label_block' => true,
+                'default' => '#'
+            ]
+        );
+		$this->add_control(
+            'video_icon', [
+                'label' => __( 'Icon', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
-                    [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Elizabeth Foster', 'spider-elements'),
-                        'team_job_position' => __('UI/UX Designer', 'spider-elements'),
-                    ],
-                    [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Julie Ake', 'spider-elements'),
-                        'team_job_position' => __('Product Designer', 'spider-elements'),
-                    ],
-                    [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Elizabeth Foster', 'spider-elements'),
-                        'team_job_position' => __('UI/UX Designer', 'spider-elements'),
-                    ],
-                    [
-                        'team_slider_image' => __("", "spider-elements"),
-                        'team_name' => __('Juan Marko', 'spider-elements'),
-                        'team_job_position' => __('Java Developer', 'spider-elements'),
-                    ],
-
+                    'value' => 'fas fa-play',
+                    'library' => 'solid',
                 ],
             ]
         );
-        $this-> end_controls_section();
+		$this->end_controls_section(); // End Select Style
     }
 
 
@@ -226,107 +137,170 @@ class Video_popup extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function team_style_control() {
+	public function video_style_control() {
 
-		$this->start_controls_section(
-			'team_img_style', [
-				'label' => __( 'Team Image', 'spider-elements' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-		$this->add_responsive_control(
-            'team_img_border_radius',
+		//===================== Icon Style ============================//
+        $this->start_controls_section(
+            'style_icon', [
+                'label' => esc_html__( 'Icon', 'spider-elements' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->start_controls_tabs( 'icon_style_tabs' );
+
+        // Normal tabs
+        $this->start_controls_tab(
+            'icon_normal_tabs', [
+                'label' => __( 'Normal', 'spider-elements' ),
+            ]
+        );
+
+        $this->add_control(
+            'icon_font_color',
             [
-                'label' 		=> __('Border Radius', 'spider-elements'),
-                'type' 			=> Controls_Manager::DIMENSIONS,
-                'size_units'	=> ['px', '%', 'em'],
-                'selectors' 	=> [
-                    '{{WRAPPER}} .card-style-three .img-meta img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                'label' => __( 'Icon Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon' => 'color: {{VALUE}}',
                 ],
             ]
         );
-		$this-> end_controls_section();
-		//========================= Contents =========================//
-		$this->start_controls_section(
-			'team_style_content', [
-				'label' => __( 'Team Contents', 'spider-elements' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
 
+        $this->add_control(
+            'icon_bg_color',
+            [
+                'label' => __( 'Background Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
 
-		$this->start_controls_tabs(
-			'style_team_title_tabs'
-		);
+        $this->end_controls_tab();
 
-		//=== Normal icon
-		$this->start_controls_tab(
-			'style_normal',
-			[
-				'label' => __('Normal', 'spider-elements'),
-			]
-		);
+        // Hover tabs
+        $this->start_controls_tab(
+            'icon_hover_tabs', [
+                'label' => __( 'Hover', 'spider-elements' ),
+            ]
+        );
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name' => 'team_name_typo',
-				'selector' => '{{WRAPPER}} .card-style-three .name,{{WRAPPER}} .card-style-eight .name',
-			]
-		); //End Author Name
-		$this->add_control(
-			'team_name_color', [
-				'label' => __( 'Name Color', 'spider-elements' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card-style-three .name,{{WRAPPER}} .card-style-eight .name' => 'color: {{VALUE}};',
-				],
-				'separator' => 'after'
-			]
-		);
+        $this->add_control(
+            'icon_hover_font_color',
+            [
+                'label' => __( 'Icon Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon:hover' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
 
-		$this->end_controls_tab(); //End Normal icon
-		
-		//=== Active icon
-		$this->start_controls_tab(
-			'team_title_hover', [
-				'label' => __('Hover', 'spider-elements'),
-			]
-		);
+        $this->add_control(
+            'icon_hover_bg_color',
+            [
+                'label' => __( 'Background Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon:hover' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
 
-		$this->add_control(
-			'team_name_hover_color', [
-				'label' => __( 'Name Hover Color', 'spider-elements' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card-style-three .name:hover,{{WRAPPER}} .card-style-eight .name:hover' => 'color: {{VALUE}};',
-				],
-				'separator' => 'after'
-			]
-		);
+        $this->add_control(
+            'icon_hover_border_color',
+            [
+                'label' => __( 'Border Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon:hover' => 'border-color: {{VALUE}}',
+                ],
+            ]
+        );
 
-		$this->end_controls_tab(); // End Active Tab Title
-		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+        $this->end_controls_tab();
+        $this->end_controls_tabs(); // End Tabs
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name' => 'team_position_typo',
-				'selector' => '{{WRAPPER}} .card-style-three .post,{{WRAPPER}} .card-style-eight .post',
-			]
-		); //End Author Name
-		$this->add_control(
-			'team_position_color', [
-				'label' => __( 'Position Color', 'spider-elements' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card-style-three .post,{{WRAPPER}} .card-style-eight .post' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		
+        $this->add_control(
+            'icon_style_divider', [
+                'type' => Controls_Manager::DIVIDER,
+            ]
+        );
 
-		$this-> end_controls_section();
-	}
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'icon_border',
+                'label' => __( 'Border', 'spider-elements' ),
+                'selector' => '{{WRAPPER}} .video-icon',
+            ]
+        );
 
+        $this->add_responsive_control(
+            'icon_border_radius',
+            [
+                'label' => __( 'Border Radius', 'builderarc-core' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'icon_size',
+            [
+                'label' => __( 'Size', 'builderarc-core' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'icon_bg_width', [
+                'label' => __( 'Background Width', 'builderarc-core' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1000,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .video-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+    }
 	/**
 	 * Name: elementor_render()
 	 * Desc: Render the widget output on the frontend.
@@ -340,8 +314,10 @@ class Video_popup extends Widget_Base
 		$settings = $this->get_settings_for_display();
 		extract($settings); //extract all settings array to variables converted to name of key
 		//================= Template Parts =================//
-		
+		?>
+			<a href="<?php echo $settings['video_url'] ?>" class="fancybox video-icon tran3s text-center" data-fancybox>
+				<?php \Elementor\Icons_Manager::render_icon( $settings['video_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+			</a>
+		<?php
 	}
-
-
 }

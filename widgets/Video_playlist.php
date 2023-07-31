@@ -107,11 +107,11 @@ class Video_playlist extends Widget_Base {
 				'type'    	=> Controls_Manager::CHOOSE,
 				'options'	=> [
 					'1'	=> [
-						'title' => __( 'Tab', 'coro-core' ),
+						'title' => __( 'Tab', 'spider-elements' ),
 						'icon'  => 'video-playlist',
 					],
 					'2' => [
-						'title' => __( 'Slide', 'coro-core' ),
+						'title' => __( 'Slide', 'spider-elements' ),
 						'icon'  => 'video-playlist2',
 					],
 				],
@@ -135,7 +135,7 @@ class Video_playlist extends Widget_Base {
 
 		$this->add_control(
 			'title', [
-				'label'     => esc_html__( 'Title text', 'rave-core' ),
+				'label'     => esc_html__( 'Title text', 'spider-elements' ),
 				'type'      => Controls_Manager::TEXTAREA,
 				'separator' => 'before'
 			]
@@ -152,7 +152,7 @@ class Video_playlist extends Widget_Base {
 
 		$this->add_control(
 			'color_title', [
-				'label'     => __( 'Text Color', 'rave-core' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .title' => 'color: {{VALUE}};',

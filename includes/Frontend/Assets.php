@@ -47,6 +47,7 @@ class Assets {
 		wp_register_style( 'video-js', SE_VEND . '/video/videojs.min.css' );
 		wp_register_style( 'video-js-theaterMode', SE_VEND . '/video/videojs.theaterMode.css' );
 		wp_register_style( 'elegant-icon', SE_VEND . '/elegant-icon/style.css' );
+		wp_register_style( 'fancybox-css', SE_VEND . '/fancybox/css/jquery.fancybox.min.css' );
 		wp_register_style( 'spe-main', SE_CSS . '/main.css' );
 
 	}
@@ -68,7 +69,7 @@ class Assets {
 		wp_register_script( 'video-js-nuevo', SE_VEND . '/video/nuevo.min.js', array( 'jquery' ), '7.6.0', true );
 		wp_register_script( 'video-js', SE_VEND . '/video/video.min.js', array( 'jquery' ), '7.6.0', true );
 		wp_register_script( 'scroll-parallax', SE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array( 'jquery' ), SE_VERSION, true );
-
+		wp_register_script( 'fancybox-js', SE_VEND . '/fancybox/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
 		wp_register_script( 'ajax-chimp', SE_JS . 'ajax-chimp.js', 'jquery', SE_VERSION, true );
 		wp_register_script( 'se-script', SE_JS . '/scripts.js', array( 'jquery' ), false, true );
 

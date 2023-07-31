@@ -13,6 +13,7 @@
         "docly_alerts_box.default": spiderElements.alertBox,
         "docy_videos_playlist.default": spiderElements.videoPlaylist,
         "docy_team_carousel.default": spiderElements.teamslider,
+        "docy_video_popup.default": spiderElements.videoPopup,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -21,6 +22,26 @@
           callback
         );
       });
+    },
+
+    videoPopup: function ($scope) {
+      var fancy = $(".fancybox");
+      if (fancy.length) {
+        fancy.fancybox({
+          arrows: true,
+          buttons: [
+            "zoom",
+            //"share",
+            "slideShow",
+            //"fullScreen",
+            //"download",
+            "thumbs",
+            "close",
+          ],
+          animationEffect: "zoom-in-out",
+          transitionEffect: "zoom-in-out",
+        });
+      }
     },
 
     teamslider: function ($scope) {

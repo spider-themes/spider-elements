@@ -1,0 +1,144 @@
+// Blog One
+.blog-meta-two {
+    .post-img {
+        overflow: hidden;
+        position: relative;
+        img{
+            transition: all 0.4s ease-in-out;
+        }
+        .tags {
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            border-radius: 13px;
+            padding: 5px 18px;
+            color: #fff;
+            text-transform: uppercase;
+            background: #00BF58;
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &:hover .post-img img {
+        transform: scale3d(1.1,1.1,1);
+    }
+    .fw-500{
+        font-weight: 500;
+    }
+    .date a {
+        color: #AAAAAA;
+        &:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+    }
+    .post-data{
+        margin-top: 35px;
+    }
+    .blog-title {
+        font-family: "gordita";
+        font-size: 32px;
+        line-height: 1.28em;
+        margin: 25px 0;
+        font-weight: 500;
+        color: #000;
+        transition: color 0.2s linear;
+        &:hover {
+            color: #00BF58;
+        }
+        &.xs {
+            font-size: 28px;
+            line-height: 1.428em;
+        }
+    }
+    .continue-btn {
+        font-size: 18px;
+        color: #000;
+        letter-spacing: -1px;
+        vertical-align: middle;
+        font-weight: 500;
+        transition: all 0.3s linear;
+        i{
+            margin-left: 5px;
+        }
+        &:hover {
+            color: #00BF58; 
+        }
+    }
+    &.box-layout {
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px 25px 50px;
+        .post-img {
+            border-radius: 15px;
+        }
+    }
+}
+
+
+// blog Two
+
+.blog-meta-one{
+    .post-img {
+        overflow: hidden;
+        img{
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .date{
+        font-size: 14px;
+        color: rgba($color: #000000, $alpha: 0.5);
+        .fw-500{
+            font-weight: 500;
+        }
+        a{
+            color: rgba($color: #000000, $alpha: 0.5);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+    }
+    .blog-title {
+        font-family: "gordita";
+        font-size: 24px;
+        line-height: 1.5em;
+        color: #000;
+        &:hover {
+            color: #00BF58; 
+        }
+    }
+    p{
+        font-family: "gordita";
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.7);
+        margin-bottom: 20px;
+    }
+    &:hover{
+        .post-img img {
+            transform: scale3d(1.1,1.1,1);
+        }
+    }
+} 
+.blog-meta-one .tags li {
+    position: relative;
+    &:after {
+        content: ',';
+        color: rgba($color: #000000, $alpha: 0.3);
+    }
+    &:last-child:after {
+        display: none;
+    }
+
+    a {
+        font-size: 15px;
+        color: rgba($color: #000000, $alpha: 0.4);
+        transition: all 0.2s linear;
+        &:hover {
+            color: #000;
+        }
+    }
+}
