@@ -79,6 +79,9 @@ class Assets {
 		wp_register_script( 'diagonal', SE_VEND  . '/diagonal/diagonal.slideshow.js', array( 'jquery' ), SE_VERSION, true );
 		wp_register_script( 'tweenmax', SE_VEND  . '/diagonal/TweenMax.min.js', array( 'jquery' ), '1.18.0', true );
 
+		wp_register_script( 'beforeafter', SE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array( 'jquery' ), '1.0.0', true );
+
+
 	}
 
 

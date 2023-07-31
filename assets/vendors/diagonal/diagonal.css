@@ -705,3 +705,46 @@ a:focus {
     text-align: justify;
   }
 }
+
+
+
+
+
+.before-after-banner {
+  position: relative;
+}
+@media (min-width: 1080px) {
+  .before-after-banner {
+    max-height: 100vh;
+ }
+}
+.before-after-banner #beforeAfter {
+  height: 100%;
+}
+.before-after-banner img {
+  max-width: inherit;
+  width: 100%;
+}
+@media (min-width: 1080px) {
+  .before-after-banner img {
+    max-height: 100vh;
+ }
+}
+.before-after-banner .indicator {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  background-color: #fff;
+  padding: 6px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+}
+.before-after-banner .indicator.after {
+  right: 60px;
+}
+.before-after-banner .indicator.before {
+  left: 60px;
+}
