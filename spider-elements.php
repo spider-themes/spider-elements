@@ -444,6 +444,9 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
 			require_once( __DIR__ . '/widgets/Integrations.php' );
+			require_once( __DIR__ . '/widgets/Slideshow.php' );
+			require_once( __DIR__ . '/widgets/Before_after.php' );
+
 
 		}
 
@@ -469,6 +472,8 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Team_Carousel() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Integrations() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Diagonal_slideshow () );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Before_After () );
 		}
 
 

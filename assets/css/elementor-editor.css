@@ -78,6 +78,24 @@
     background-size: cover;
     background-position: top;
 }
+.testimonial3::before {
+    background: url("../images/el-editor-preview/testimonial3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.testimonial4::before {
+    background: url("../images/el-editor-preview/testimonial4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.testimonial5::before {
+    background: url("../images/el-editor-preview/testimonial5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
 
 /* team Carousel  */
 .team1::before{
