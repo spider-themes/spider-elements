@@ -44,6 +44,7 @@ class Assets {
 		wp_register_style( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.css' );
 		wp_register_style( 'slick-theme', SE_VEND . '/slick/slick-theme.css' );
 		wp_register_style( 'swiper-theme', SE_VEND . '/swiper/swiper-bundle.min.css' );
+		wp_register_style( 'diagonal', SE_VEND . '/diagonal/diagonal.css' );
 		wp_register_style( 'slick', SE_VEND . '/slick/slick.css' );
 		wp_register_style( 'video-js', SE_VEND . '/video/videojs.min.css' );
 		wp_register_style( 'video-js-theaterMode', SE_VEND . '/video/videojs.theaterMode.css' );
@@ -73,6 +74,10 @@ class Assets {
 
 		wp_register_script( 'ajax-chimp', SE_JS . 'ajax-chimp.js', 'jquery', SE_VERSION, true );
 		wp_register_script( 'se-script', SE_JS . '/scripts.js', array( 'jquery' ), false, true );
+
+		wp_register_script( 'charming', SE_VEND  . '/diagonal/charming.min.js', array( 'jquery' ), SE_VERSION, true );
+		wp_register_script( 'diagonal', SE_VEND  . '/diagonal/diagonal.slideshow.js', array( 'jquery' ), SE_VERSION, true );
+		wp_register_script( 'tweenmax', SE_VEND  . '/diagonal/TweenMax.min.js', array( 'jquery' ), '1.18.0', true );
 
 	}
 
