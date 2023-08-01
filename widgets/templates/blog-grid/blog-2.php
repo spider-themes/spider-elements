@@ -13,7 +13,7 @@
                     <div class="date">
                         <?php
                         if ( is_sticky() ) {
-                            echo '<span class="sticky-label fw-500 text-dark">' . esc_html__( 'Featured -', 'jobi' ) . '</span>';
+                            echo '<span class="sticky-label fw-500 text-dark">' . esc_html__( 'Featured -', 'spider-elements' ) . '</span>';
                         }
                         ?>
                         <a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'));  ?>" class="meta-item">

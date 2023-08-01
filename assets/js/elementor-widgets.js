@@ -40,8 +40,9 @@
       }
     },
 
+    // video popup js
     videoPopup: function ($scope) {
-      var fancy = $(".fancybox");
+      let fancy = $scope.find(".fancybox");
       if (fancy.length) {
         fancy.fancybox({
           arrows: true,
@@ -60,9 +61,11 @@
       }
     },
 
+    // teamslider js
     teamslider: function ($scope) {
-      if ($(".expert-slider-one").length) {
-        $(".expert-slider-one").slick({
+      let teamSlider = $scope.find(".expert-slider-one");
+      if (teamSlider.length) {
+        teamSlider.slick({
           arrows: true,
           lazyLoad: "ondemand",
           prevArrow: $(".prev_a"),
@@ -123,6 +126,7 @@
       }
     },
 
+    // video playlist js
     videoPlaylist: function ($scope) {
       setTimeout(function () {
         $(".video_slider_area").addClass("loaded").css("height", "auto");

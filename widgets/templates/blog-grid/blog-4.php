@@ -8,7 +8,6 @@
             <div class="blog-meta-two">
                 <figure class="post-img">
                     <a href="<?php the_permalink(); ?>" class="img"><?php the_post_thumbnail(); ?></a>
-                    <?php echo '<a href="' . esc_url( se_get_the_first_taxonomy_link() ) . '" class="tags">' . se_get_the_first_taxonomy() . '</a>'; ?>
                 </figure>
                 <div class="post-data">
                     <div class="date">
@@ -21,10 +20,9 @@
                             <?php echo get_the_date(__('d M Y')) ?>
                         </a>
                     </div>
-                    <a href="<?php the_permalink(); ?>"><?php the_title('<h2 class="tran3s blog-title">', '</h2>') ?></a>
-                    <a href="<?php the_permalink(); ?>" class="continue-btn tran3s d-flex align-items-center">
-                        <?php echo esc_html("Continue Reading", "spider-elements") ?>
-                        <i class="arrow_right"></i>
+                    <a href="<?php the_permalink(); ?>"><?php the_title('<h2 class="tran3s blog-title two">', '</h2>') ?></a>
+                    <a href="<?php the_permalink(); ?>" class="continue-btn tran3s btn-seven">
+                        <?php echo esc_html("Read More", "spider-elements") ?>
                     </a>
                 </div>
             </div>

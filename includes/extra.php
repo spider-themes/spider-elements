@@ -153,6 +153,24 @@ function se_get_the_categories ( $term = 'category' ) {
     return $cat_array;
 }
 
+/**
+ * Get author name array
+ * @param string $term
+ * @return array
+ */
+
+function se_posted_by() {
+    global $post;
+    $byline = sprintf(
+        /* translators: %s: post author. */
+        esc_html_x( '%s', 'post author', 'jobi' ),
+        '<span class="author">By: <a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author) ) . '">' . esc_html(get_the_author_meta( 'display_name',$post->post_author) ) . '</a></span>'
+    );
+
+    echo $byline ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+
 
 /**
  * @param $html_data

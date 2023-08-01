@@ -247,11 +247,11 @@ a:hover, a:focus {
     padding: 18px 15px 24px;
   }
 }
-.toggle_btn.collapsed .doc_accordion .toggle_body P {
+.toggle_btn.collapsed .doc_accordion .toggle_body p {
   font-size: 16px;
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion:last-child {
+.toggle_btn.collapsed .doc_accordion .toggle_body p:last-child {
   margin-bottom: 0;
 }
 .toggle_btn.collapsed .doc_accordion .card-header {
@@ -414,7 +414,7 @@ a:hover, a:focus {
   font-size: unset;
   color: var(--brand_color);
   font-weight: 500;
-  background: var(--black_25);
+  background: var(--black_50);
   text-decoration: none;
   position: relative;
 }
@@ -1317,7 +1317,6 @@ ul.nav.nav-tabs {
 .testimonial-slider-inner .author-image img {
   border-radius: 8px;
 }
-
 
 /*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
@@ -7396,6 +7395,7 @@ ul.ordered-list li::before {
 .blog-meta-two .post-img {
   overflow: hidden;
   position: relative;
+  margin-bottom: 30px;
 }
 .blog-meta-two .post-img img {
   transition: all 0.4s ease-in-out;
@@ -7428,9 +7428,6 @@ ul.ordered-list li::before {
   color: #000;
   text-decoration: underline;
 }
-.blog-meta-two .post-data {
-  margin-top: 35px;
-}
 .blog-meta-two .blog-title {
   font-family: "gordita";
   font-size: 32px;
@@ -7443,9 +7440,11 @@ ul.ordered-list li::before {
 .blog-meta-two .blog-title:hover {
   color: #00BF58;
 }
-.blog-meta-two .blog-title.xs {
-  font-size: 28px;
+.blog-meta-two .blog-title.two {
+  font-size: 24px;
   line-height: 1.428em;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 .blog-meta-two .continue-btn {
   font-size: 18px;
@@ -7461,6 +7460,23 @@ ul.ordered-list li::before {
 .blog-meta-two .continue-btn:hover {
   color: #00BF58;
 }
+.blog-meta-two .continue-btn.btn-seven {
+  font-weight: 500;
+  padding: 13px 28px;
+  min-width: 150px;
+  text-align: center;
+  border-radius: 50px;
+  color: #00BF58;
+  border: 1px solid #00BF58;
+  transition: all 0.3s ease-in-out 0s;
+  display: inline-block;
+  text-align: center;
+}
+.blog-meta-two .continue-btn.btn-seven:hover {
+  background: #244034;
+  border-color: #244034;
+  color: #fff;
+}
 .blog-meta-two.box-layout {
   background: #fff;
   border-radius: 20px;
@@ -7470,11 +7486,17 @@ ul.ordered-list li::before {
   border-radius: 15px;
 }
 
+.blog-meta-one {
+  margin-top: 35px;
+}
 .blog-meta-one .post-img {
   overflow: hidden;
 }
 .blog-meta-one .post-img img {
   transition: all 0.3s ease-in-out;
+}
+.blog-meta-one .post-data {
+  margin-top: 25px;
 }
 .blog-meta-one .date {
   font-size: 14px;
@@ -7492,8 +7514,10 @@ ul.ordered-list li::before {
 .blog-meta-one .blog-title {
   font-family: "gordita";
   font-size: 24px;
-  line-height: 1.5em;
+  line-height: 1.4em;
   color: #000;
+  margin: 6px 0px 10px;
+  transition: color 0.2s linear;
 }
 .blog-meta-one .blog-title:hover {
   color: #00BF58;
@@ -7504,26 +7528,32 @@ ul.ordered-list li::before {
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: 20px;
 }
+.blog-meta-one .continue-btn {
+  font-size: 30px;
+  color: #000;
+}
+.blog-meta-one .author {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.blog-meta-one .author a {
+  font-weight: 500;
+  color: #000;
+  transition: all 0.2s linear;
+}
+.blog-meta-one .author a:hover {
+  text-decoration: underline;
+}
 .blog-meta-one:hover .post-img img {
   transform: scale3d(1.1, 1.1, 1);
 }
 
-.blog-meta-one .tags li {
-  position: relative;
-}
-.blog-meta-one .tags li:after {
-  content: ",";
-  color: rgba(0, 0, 0, 0.3);
-}
-.blog-meta-one .tags li:last-child:after {
-  display: none;
-}
-.blog-meta-one .tags li a {
+.blog-meta-one .tags {
   font-size: 15px;
   color: rgba(0, 0, 0, 0.4);
   transition: all 0.2s linear;
 }
-.blog-meta-one .tags li a:hover {
+.blog-meta-one .tags:hover {
   color: #000;
 }
 
