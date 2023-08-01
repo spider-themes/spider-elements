@@ -28,9 +28,9 @@ Table of Content:
 =====================================================================*/
 /* Variable CSS */
 :root {
-  --brand_color: #A77DEF;
-  --secondary_color: #031933;
-  --p_color: #6A737C;
+  --spe_brand_color: #A77DEF;
+  --spe_heading_color: #031933;
+  --spe_p_color: #6A737C;
   --gradient_bg_color1: #fffbf2;
   --gradient_bg_color2: #edfffd;
   --border_on_white: #e6edf0;
@@ -247,11 +247,11 @@ a:hover, a:focus {
     padding: 18px 15px 24px;
   }
 }
-.toggle_btn.collapsed .doc_accordion .toggle_body P {
+.toggle_btn.collapsed .doc_accordion .toggle_body p {
   font-size: 16px;
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion:last-child {
+.toggle_btn.collapsed .doc_accordion .toggle_body p:last-child {
   margin-bottom: 0;
 }
 .toggle_btn.collapsed .doc_accordion .card-header {
@@ -294,7 +294,7 @@ a:hover, a:focus {
 }
 .toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button.collapsed svg {
   display: block;
-  color: var(--p_color);
+  color: var(--spe_p_color);
 }
 .toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button.collapsed svg + svg {
   display: none;
@@ -412,9 +412,9 @@ a:hover, a:focus {
   text-align: left;
   width: 100%;
   font-size: unset;
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
   font-weight: 500;
-  background: var(--black_25);
+  background: var(--black_50);
   text-decoration: none;
   position: relative;
 }
@@ -445,7 +445,7 @@ a:hover, a:focus {
 }
 .accordion .doc_accordion .card-header button.collapsed svg {
   display: block;
-  color: var(--p_color);
+  color: var(--spe_p_color);
 }
 .accordion .doc_accordion .card-header button.collapsed .expanded-icon {
   display: block;
@@ -507,7 +507,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
 }
 .tab_shortcode .nav-tabs .nav-item .nav-link {
   font-size: 16px;
-  color: var(--p_color);
+  color: var(--spe_p_color);
   border-radius: 0;
   padding: 9px 20px;
   background: var(--black_25);
@@ -520,7 +520,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
   content: "";
   width: 0;
   height: 2.1px;
-  background: var(--brand_color);
+  background: var(--spe_brand_color);
   position: absolute;
   top: 0;
   left: 0;
@@ -540,7 +540,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
   border-right: 1px solid var(--black_50);
 }
 .tab_shortcode .tab-content {
-  color: var(--p_color);
+  color: var(--spe_p_color);
   padding: 25px 30px;
   border: 1px solid var(--black_50);
   border-radius: 0 5px 5px 5px;
@@ -551,7 +551,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--brand_color);
+  background: var(--spe_brand_color);
   display: inline-block;
   text-align: center;
   line-height: 20px;
@@ -576,7 +576,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
 }
 .header_tab_items .nav-tabs .nav-item .nav-link.active {
   background: #ffffff;
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
 }
 
 .process_tab_shortcode {
@@ -592,7 +592,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
   border-radius: 0;
   background: #e1ebf0;
   border: 0;
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
   outline: none;
   box-shadow: none;
   transition: all 0.4s linear;
@@ -609,7 +609,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
 .process_tab_shortcode .next:hover {
   outline: none;
   box-shadow: none;
-  background: var(--brand_color);
+  background: var(--spe_brand_color);
   color: #fff;
   border-color: transparent #ebebeb;
 }
@@ -639,7 +639,7 @@ button.btn.btn-link.collapsed .collapsed-icon {
 }
 .v_menu .nav-item .nav-link {
   font-size: 16px;
-  color: var(--p_color);
+  color: var(--spe_p_color);
   transition: all 0.2s linear;
   padding: 0;
   border: 0;
@@ -660,12 +660,12 @@ button.btn.btn-link.collapsed .collapsed-icon {
   top: -2px;
 }
 .v_menu .nav-item .nav-link.active, .v_menu .nav-item .nav-link:hover {
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
   border: 0;
   background: transparent;
 }
 .v_menu .nav-item .nav-link.active span, .v_menu .nav-item .nav-link:hover span {
-  background: var(--brand_color);
+  background: var(--spe_brand_color);
   color: #fff;
 }
 .v_menu .nav-item + li {
@@ -682,7 +682,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   top: -70px;
   left: 0;
   right: 0;
-  background: var(--secondary_color);
+  background: var(--spe_heading_color);
   transform: translateY(70px);
   transition: transform 500ms ease, background 500ms ease;
   z-index: 30;
@@ -702,7 +702,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 .tabs_sliders span.scroller-btn {
   position: absolute;
   top: 50%;
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
   font-size: 20px;
   cursor: pointer;
   transform: translateY(-50%);
@@ -787,7 +787,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   border-radius: 0;
   background: #e1ebf0;
   border: 0;
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
   outline: none;
   box-shadow: none;
   transition: all 0.4s linear;
@@ -804,7 +804,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 .process_tab_shortcode .next:hover {
   outline: none;
   box-shadow: none;
-  background: var(--brand_color);
+  background: var(--spe_brand_color);
   color: #fff;
 }
 .process_tab_shortcode .next {
@@ -841,7 +841,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 .header_tab_items {
-  background: var(--secondary_color);
+  background: var(--spe_heading_color);
 }
 .header_tab_items .nav.nav-tabs {
   justify-content: center;
@@ -870,17 +870,17 @@ body.remove .tab_fixed.header_tab_items {
 }
 .header_tab_items .nav.nav-tabs li a:hover {
   background: var(--black_50);
-  color: var(--p_color);
+  color: var(--spe_p_color);
 }
 .header_tab_items .nav.nav-tabs li a:hover svg path {
-  fill: var(--p_color);
+  fill: var(--spe_p_color);
 }
 .header_tab_items .nav.nav-tabs li a.active {
   background-color: #fff;
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
 }
 .header_tab_items .nav.nav-tabs li a.active svg path {
-  fill: var(--brand_color);
+  fill: var(--spe_brand_color);
 }
 
 .header_tab_content .tab-pane {
@@ -1032,7 +1032,7 @@ ul.nav.nav-tabs {
   background-image: linear-gradient(180deg, rgba(4, 133, 161, 0.6) 0%, rgba(29, 39, 70, 0.6) 100%);
 }
 .doc_action_area .action_btn {
-  border: 1px solid var(--brand_color);
+  border: 1px solid var(--spe_brand_color);
 }
 .doc_action_area .action_btn:hover {
   background: transparent;
@@ -1317,7 +1317,6 @@ ul.nav.nav-tabs {
 .testimonial-slider-inner .author-image img {
   border-radius: 8px;
 }
-
 
 /*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
@@ -2639,7 +2638,7 @@ ul.nav.nav-tabs {
 }
 .video_slider_area #video_loader #loader {
   border: 6px solid rgba(152, 149, 149, 0.614);
-  border-top: 6px solid var(--brand_color);
+  border-top: 6px solid var(--spe_brand_color);
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -3366,7 +3365,7 @@ button.swiper-pagination-bullet {
 }
 .message_alert h5 {
   font-size: 16px;
-  color: var(--secondary_color);
+  color: var(--spe_heading_color);
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -3419,7 +3418,7 @@ button.swiper-pagination-bullet {
 }
 .alert-info i,
 .alert-info h5 {
-  color: var(--brand_color);
+  color: var(--spe_brand_color);
 }
 
 .notice {
