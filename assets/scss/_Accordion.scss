@@ -135,7 +135,7 @@
 
         svg {
           display: block;
-          color: var(--p_color);
+          color: var(--spe_p_color);
 
           &+svg {
             display: none;
@@ -279,7 +279,7 @@
          text-align: left;
          width: 100%;
          font-size: unset;
-         color: var(--brand_color);
+         color: var(--spe_brand_color);
          font-weight: 500;
          background: var(--black_50);
          text-decoration: none;
@@ -312,7 +312,7 @@
            //border-radius: 4px;
            svg {
              display: block;
-             color: var(--p_color);
+             color: var(--spe_p_color);
            }
 
            .expanded-icon {
