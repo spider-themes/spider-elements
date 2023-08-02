@@ -85,13 +85,13 @@
       padding: 18px 15px 24px;
     }
 
-    P {
+    p {
       font-size: 16px;
       font-weight: 400;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-  }
-  &:last-child {
-    margin-bottom: 0;
   }
   .card-header {
     border-radius: 0;
@@ -135,7 +135,7 @@
 
         svg {
           display: block;
-          color: var(--p_color);
+          color: var(--spe_p_color);
 
           &+svg {
             display: none;
@@ -279,9 +279,9 @@
          text-align: left;
          width: 100%;
          font-size: unset;
-         color: var(--brand_color);
+         color: var(--spe_brand_color);
          font-weight: 500;
-         background: var(--black_25);
+         background: var(--black_50);
          text-decoration: none;
          position: relative;
          .icon-wrapper{
@@ -312,7 +312,7 @@
            //border-radius: 4px;
            svg {
              display: block;
-             color: var(--p_color);
+             color: var(--spe_p_color);
            }
 
            .expanded-icon {

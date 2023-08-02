@@ -13,7 +13,8 @@
         "docly_alerts_box.default": spiderElements.alertBox,
         "docy_videos_playlist.default": spiderElements.videoPlaylist,
         "docy_team_carousel.default": spiderElements.teamslider,
-        'spe_after_before_widget.default': spiderElements.beforeAfter,
+        "spe_after_before_widget.default": spiderElements.beforeAfter,
+        "docy_video_popup.default": spiderElements.videoPopup,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -24,13 +25,11 @@
       });
     },
 
+    //Before After Widget
+    beforeAfter: function ($scope) {
+      let beforeAfter = $scope.find(".beforeAfter");
 
-    //Before After Widget 
-    beforeAfter: function($scope) {
-
-      let beforeAfter = $scope.find('.beforeAfter')
-
-      if ( beforeAfter.length > 0) {
+      if (beforeAfter.length > 0) {
         beforeAfter.beforeAfter({
           movable: true,
           clickMove: true,
@@ -39,13 +38,34 @@
           bulletColor: "#fff",
         });
       }
-
     },
 
+    // video popup js
+    videoPopup: function ($scope) {
+      let fancy = $scope.find(".fancybox");
+      if (fancy.length) {
+        fancy.fancybox({
+          arrows: true,
+          buttons: [
+            "zoom",
+            //"share",
+            "slideShow",
+            //"fullScreen",
+            //"download",
+            "thumbs",
+            "close",
+          ],
+          animationEffect: "zoom-in-out",
+          transitionEffect: "zoom-in-out",
+        });
+      }
+    },
 
+    // teamslider js
     teamslider: function ($scope) {
-      if ($(".expert-slider-one").length) {
-        $(".expert-slider-one").slick({
+      let teamSlider = $scope.find(".expert-slider-one");
+      if (teamSlider.length) {
+        teamSlider.slick({
           arrows: true,
           lazyLoad: "ondemand",
           prevArrow: $(".prev_a"),
@@ -106,6 +126,7 @@
       }
     },
 
+    // video playlist js
     videoPlaylist: function ($scope) {
       setTimeout(function () {
         $(".video_slider_area").addClass("loaded").css("height", "auto");
@@ -309,6 +330,5 @@
     },
   };
 
-  $window.on("elementor/frontend/init", spiderElements.onInit); 
-
+  $window.on("elementor/frontend/init", spiderElements.onInit);
 })(jQuery, window);

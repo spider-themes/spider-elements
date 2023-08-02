@@ -1,4 +1,7 @@
 <?php
+/**
+ * Use namespace to avoid conflict
+ */
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
@@ -8,6 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
+
+/**
+ * Class Before_after
+ * @package spider\Widgets
+ */
 class Before_After extends Widget_Base {
 
     public function get_name() {
@@ -15,11 +23,11 @@ class Before_After extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'After-Before', 'spider-elements' );
+        return __( 'Before_After', 'spider-elements' );
     }
 
     public function get_icon() {
-        return 'eicon-image-box se-icon';
+        return 'eicon-thumbnails-half se-icon';
     }
 
     public function get_keywords() {
@@ -35,7 +43,7 @@ class Before_After extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'elegant-icon',  'diagonal' ];
+		return [ 'bootstrap', 'elegant-icon', 'spe-main' ];
 	}
 
 	/**
@@ -46,50 +54,71 @@ class Before_After extends Widget_Base {
 		return [ 'bootstrap', 'spe-el-widgets', 'beforeafter' ];
 	}
 
-
-    protected function _register_controls() {
-        // Add your widget controls/fields here using $this->add_control() method.
-        // For example, you can add an image control for "Before" and "After" images.
-        $this->elementor_content_control();
-    }
+   
+    /**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+    protected function register_controls() {
+		$this->elementor_content_control();
+	}
     
-
-
-
+    
+    /**
+	 * Name: elementor_content_control()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     protected function elementor_content_control() {
 
+        //=================Before-After Images=====================//
         $this->start_controls_section(
-			'content_section',
-			[
-				'label' => esc_html__( 'Content', 'textdomain' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
+            'before_after_images',
+            [
+                'label' => __('Images', 'spider-elements'),
+            ]
+        );
 
-	    /**
-	     *Images
-	     */
         $this->add_control(
             'before_image',
             [
-                'label' => __( 'Before Image', 'your-text-domain' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
+                'label' => __( 'Before Image', 'spider-elements' ),
+                'type'  => Controls_Manager::MEDIA,
             ]
         );
 
         $this->add_control(
             'after_image',
             [
-                'label' => __( 'After Image', 'your-text-domain' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
+                'label' => __( 'After Image', 'spider-elements' ),
+                'type'  => Controls_Manager::MEDIA,
             ]
         );
 
         $this->end_controls_section();
 
-    }
+    }   //End Before-After Images
 
 
+
+    /**
+	 * Name: elementor_render()
+	 * Desc: Render the widget output on the frontend.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     protected function render() {
         $settings = $this->get_settings_for_display();
         ?>
@@ -108,6 +137,5 @@ class Before_After extends Widget_Base {
     </section>
     <?php
     }
-
     
 }

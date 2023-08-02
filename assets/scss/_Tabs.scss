@@ -8,7 +8,7 @@
 
       .nav-link {
         font-size: 16px;
-        color: var(--p_color);
+        color: var(--spe_p_color);
         border-radius: 0;
         padding: 9px 20px;
         background: var(--black_25);
@@ -21,7 +21,7 @@
           content: "";
           width: 0;
           height: 2.1px;
-          background: var(--brand_color);
+          background: var(--spe_brand_color);
           position: absolute;
           top: 0;
           left: 0;
@@ -50,7 +50,7 @@
   }
 
   .tab-content {
-    color: var(--p_color);
+    color: var(--spe_p_color);
     padding: 25px 30px;
     border: 1px solid var(--black_50);
     border-radius: 0 5px 5px 5px;
@@ -65,7 +65,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: var(--brand_color);
+      background: var(--spe_brand_color);
       display: inline-block;
       text-align: center;
       line-height: 20px;
@@ -94,7 +94,7 @@
         transition: all 300ms linear 0s;
         &.active {
           background: #ffffff;
-          color: var(--brand_color);
+          color: var(--spe_brand_color);
         }
       }
     }
@@ -114,7 +114,7 @@
     border-radius: 0;
     background: #e1ebf0;
     border: 0;
-    color: var(--brand_color);
+    color: var(--spe_brand_color);
     outline: none;
     box-shadow: none;
     transition: all 0.4s linear;
@@ -130,7 +130,7 @@
     &:hover {
       outline: none;
       box-shadow: none;
-      background: var(--brand_color);
+      background: var(--spe_brand_color);
       color: #fff;
       border-color: transparent #ebebeb;
     }
@@ -168,7 +168,7 @@
 
     .nav-link {
       font-size: 16px;
-      color: var(--p_color);
+      color: var(--spe_p_color);
       transition: all 0.2s linear;
       padding: 0;
       border: 0;
@@ -191,12 +191,12 @@
 
       &.active,
       &:hover {
-        color: var(--brand_color);
+        color: var(--spe_brand_color);
         border: 0;
         background: transparent;
 
         span {
-          background: var(--brand_color);
+          background: var(--spe_brand_color);
           color: #fff;
         }
       }
@@ -220,7 +220,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       top: -70px;
       left: 0;
       right: 0;
-      background: var(--secondary_color);
+      background: var(--spe_heading_color);
       transform: translateY(70px);
       transition: transform 500ms ease, background 500ms ease;
       z-index: 30;
@@ -246,7 +246,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       position: absolute;
       // left: -24px;
       top: 50%;
-      color: var(--brand_color);
+      color: var(--spe_brand_color);
       font-size: 20px;
       cursor: pointer;
       transform: translateY(-50%);
@@ -358,7 +358,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     border-radius: 0;
     background: #e1ebf0;
     border: 0;
-    color: var(--brand_color);
+    color: var(--spe_brand_color);
     outline: none;
     box-shadow: none;
     transition: all 0.4s linear;
@@ -374,7 +374,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     &:hover {
       outline: none;
       box-shadow: none;
-      background: var(--brand_color);
+      background: var(--spe_brand_color);
       color: #fff;
     }
   }
@@ -437,7 +437,7 @@ body.remove {
 }
 
 .header_tab_items {
-  background: var(--secondary_color);
+  background: var(--spe_heading_color);
   .nav.nav-tabs {
     justify-content: center;
     border: none;
@@ -465,22 +465,22 @@ body.remove {
 
         &:hover {
           background: var(--black_50);
-          color: var(--p_color);
+          color: var(--spe_p_color);
 
           svg {
             path {
-              fill: var(--p_color);
+              fill: var(--spe_p_color);
             }
           }
         }
 
         &.active {
           background-color: #fff;
-          color: var(--brand_color);
+          color: var(--spe_brand_color);
 
           svg {
             path {
-              fill: var(--brand_color);
+              fill: var(--spe_brand_color);
             }
           }
         }

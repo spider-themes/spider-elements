@@ -320,7 +320,7 @@ class Accordion extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .doc_accordion .card-header button.collapsed, {{WRAPPER}} .elementor-accordion-title' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-accordion-icon svg'                                                        => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .elementor-accordion-icon svg, .elementor-active .elementor-accordion-icon svg'=> 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -332,7 +332,7 @@ class Accordion extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .doc_accordion .card-header button, {{WRAPPER}} .elementor-active .elementor-accordion-title' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-active .elementor-accordion-icon svg'                                              => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .elementor-active .elementor-accordion-icon svg, .elementor-accordion-icon svg'=> 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -432,7 +432,7 @@ class Accordion extends Widget_Base {
 				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon, .doc_accordion .card-header button .expanded-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -493,6 +493,22 @@ class Accordion extends Widget_Base {
 					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'                 => 'margin-right: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .doc_accordion .card-header button.icon-align-left .expanded-icon'  => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .doc_accordion .card-header button.icon-align-left .collapsed-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);$this->add_responsive_control(
+			'icon_size',
+			[
+				'label'     => esc_html__( 'Size', 'spider-elements' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .doc_accordion .card-header button .expanded-icon'=> 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'=> 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

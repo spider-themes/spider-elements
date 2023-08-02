@@ -153,6 +153,24 @@ function se_get_the_categories ( $term = 'category' ) {
     return $cat_array;
 }
 
+/**
+ * Get author name array
+ * @param string $term
+ * @return array
+ */
+
+function se_posted_by() {
+    global $post;
+    $byline = sprintf(
+        /* translators: %s: post author. */
+        esc_html_x( '%s', 'post author', 'jobi' ),
+        '<span class="author">By: <a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author) ) . '">' . esc_html(get_the_author_meta( 'display_name',$post->post_author) ) . '</a></span>'
+    );
+
+    echo $byline ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+
 
 /**
  * @param $html_data
@@ -439,3 +457,22 @@ function se_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
 	}
 	return $data;
 }
+
+
+/**
+ * Add new font group (Custom) to the top of the list
+ */
+add_filter( 'elementor/fonts/groups', function( $font_groups ) {
+    $se_font_group = array( 'se_custom_font' => __( 'Se Custom Font' ) );
+    return array_merge( $se_font_group, $font_groups );
+} );
+
+/**
+ * Add fonts to the new font group
+ */
+add_filter( 'elementor/fonts/additional_fonts', function( $additional_fonts ) {
+    //Font name/font group
+    $additional_fonts['gordita'] = 'se_custom_font';
+    return $additional_fonts;
+
+} );
