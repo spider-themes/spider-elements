@@ -135,7 +135,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Author Image', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -168,7 +168,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Signature', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -211,7 +211,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Author Image', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -276,7 +276,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Author Image', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -332,7 +332,9 @@ class Testimonial extends Widget_Base {
 					'style' => '3'
 				]
 			]
-		); //End Testimonials 03
+		);
+		
+		//End Testimonials 03
 
 		//=== Testimonials 04
 		$testimonial4 = new Repeater();
@@ -341,7 +343,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Author Image', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -374,7 +376,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Company Logo', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -416,7 +418,7 @@ class Testimonial extends Widget_Base {
 				'label' => __( 'Author Image', 'spider-elements' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
@@ -515,11 +517,10 @@ class Testimonial extends Widget_Base {
 	 */
 	public function elementor_style_control() {
 
-
 		//========================= Contents =========================//
 		$this->start_controls_section(
 			'style_content_sec', [
-				'label' => __( 'Contents', 'spider-elements' ),
+				'label' => __( 'Contents Style', 'spider-elements' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -527,7 +528,7 @@ class Testimonial extends Widget_Base {
 		//=== Author Name
 		$this->add_control(
 			'author_name_options', [
-				'label' => __( 'Author Name Options', 'spider-elements' ),
+				'label' => __( 'Author Name', 'spider-elements' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -550,13 +551,77 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Author Name
 
+		//=== Category Style
+		$this->add_control(
+			'category_options', [
+				'label' => __( 'Category', 'spider-elements' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style' => '5'
+				]
+			]
+		);
+
+		$this->add_control(
+			'category_color', [
+				'label' => __( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .se_category' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'style' => '5'
+				]
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'category_typo',
+				'selector' => '{{WRAPPER}} .se_category',
+				'condition' => [
+					'style' => '5'
+				]
+			]
+		); //End Category Style
+
+		//=== Title Style
+		$this->add_control(
+			'title_style', [
+				'label' => __( 'Title', 'spider-elements' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'title_color', [
+				'label' => __( 'Text Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .se_title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' => 'title_typo',
+				'selector' => '{{WRAPPER}} .se_title',
+			]
+		); //End Title Style
+
 
 		//=== Designation
 		$this->add_control(
 			'designation_options', [
-				'label' => __( 'Designation Options', 'spider-elements' ),
+				'label' => __( 'Designation', 'spider-elements' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
+				'condition' => [
+					'style' => ['1', '2', '3', '4']
+				]
 			]
 		);
 
@@ -567,6 +632,9 @@ class Testimonial extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .se_designation' => 'color: {{VALUE}};',
 				],
+				'condition' => [
+					'style' => ['1', '2', '3', '4']
+				]
 			]
 		);
 
@@ -574,6 +642,9 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name' => 'designation_typo',
 				'selector' => '{{WRAPPER}} .se_designation',
+				'condition' => [
+					'style' => ['1', '2', '3', '4']
+				]
 			]
 		); //End Designation
 
@@ -581,7 +652,7 @@ class Testimonial extends Widget_Base {
 		//=== Review Content
 		$this->add_control(
 			'review_content_options', [
-				'label' => __( 'Review Content Options', 'spider-elements' ),
+				'label' => __( 'Review Content', 'spider-elements' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -599,12 +670,35 @@ class Testimonial extends Widget_Base {
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
-				'name' => 'review_content_typo',
+				'name' => 'review_text_typo',
 				'selector' => '{{WRAPPER}} .se_review_content',
 			]
-		); //End Author Designation
+		); //End Review Content
 
-		$this->end_controls_section(); // End Contents
+		// Item BG color style 5
+		$this->add_control(
+			'item_bg_color', [
+				'label' => __( 'Item Background Color', 'spider-elements' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style' => ['5']
+				]
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'background',
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .testimonial-item',
+				'condition' => [
+					'style' => ['5']
+				]
+			]
+		);
+
+		$this->end_controls_section(); // End Contents Style
 
 	}
 

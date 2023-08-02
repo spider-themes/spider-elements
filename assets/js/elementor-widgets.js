@@ -164,6 +164,7 @@
       let testimonialSlider = $scope.find(".doc_testimonial_slider");
       let imageSlider = $scope.find(".doc_img_slider");
 
+      // Testi
       if (testimonialSlider.length > 0) {
         testimonialSlider.slick({
           autoplay: true,
@@ -199,6 +200,65 @@
           nextArrow: ".next",
         });
       }
+
+      // Testimonial Style 3
+      let testimonialSliderInner = $scope.find(".testimonial-slider-inner");
+      if( testimonialSliderInner.length > 0 ){
+        var Testimonial = new Swiper(".testimonial-slider-inner", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          // speed: 500,
+          // effect: 'fade',
+          loop: true,
+          navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+          },
+      });
+      }
+
+      // Testimonial Style 4
+      let testimonialSlide4 = $scope.find(".testimonial-slide-4");
+      if( testimonialSlide4.length > 0 ){
+        var swiper4 = new Swiper(".testimonial-slide-4", {
+          spaceBetween: 10,
+          loop: true,
+          navigation: false,
+          breakpoints: {
+              768: {
+                  navigation: {
+                      nextEl: ".swiper-button-next",
+                      prevEl: ".swiper-button-prev",
+                  },
+              },
+          },
+      });
+      }
+
+      // Testimonial Style 5
+      let testimonialSliderActive = $scope.find(".testimonial-slider-active");
+      if( testimonialSliderActive.length > 0 ){
+        var swiper5 = new Swiper(".testimonial-slider-active", {
+          slidesPerView: 1,
+          spaceBetween: 24,
+          grabCursor: true,
+          loop: true,
+          speed: 500,
+          navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+              576: {
+                  slidesPerView: 2,
+              },
+              1200: {
+                  slidesPerView: 4,
+              },
+          },
+      });
+      }
+      
     },
 
     //======================== Tabs =========================== //

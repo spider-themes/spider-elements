@@ -10,11 +10,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-5">
                                 <div class="testimonial-slider-img">
-                                    <?php 
-                                    if (!empty($item['author_image']['id'])) :
-                                        echo wp_get_attachment_image($item['author_image']['id'], 'full', '');
-                                    endif;
-                                    ?>
+                                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="">
                                 </div>
                             </div>
                             <div class="col-md-7">
@@ -62,27 +58,3 @@
 </section>
 
 
-<script>
-    ;
-    (function($) {
-        "use strict";
-        $(document).ready(function() {
-            if (jQuery(".testimonial-slide-4").length) {
-                var swiper4 = new Swiper(".testimonial-slide-4", {
-                    spaceBetween: 10,
-                    loop: true,
-                    navigation: false,
-
-                    breakpoints: {
-                        768: {
-                            navigation: {
-                                nextEl: ".swiper-button-next",
-                                prevEl: ".swiper-button-prev",
-                            },
-                        },
-                    },
-                });
-            }
-        });
-    })(jQuery)
-</script>
