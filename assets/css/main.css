@@ -23,6 +23,9 @@ Table of Content:
 10/ Animation
 11/ List_Item
 12/ Cheat_sheet
+13/ Team
+14/Integration
+15/ After_before
 
 
 =====================================================================*/
@@ -7555,6 +7558,418 @@ ul.ordered-list li::before {
 }
 .blog-meta-one .tags:hover {
   color: #000;
+}
+
+.before-after-banner {
+  position: relative;
+}
+@media (min-width: 1080px) {
+  .before-after-banner {
+    max-height: 100vh;
+  }
+}
+.before-after-banner #beforeAfter {
+  height: 100%;
+}
+.before-after-banner img {
+  max-width: inherit;
+  width: 100%;
+}
+@media (min-width: 1080px) {
+  .before-after-banner img {
+    max-height: 100vh;
+  }
+}
+.before-after-banner .indicator {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #17161a;
+  background-color: #fff;
+  padding: 6px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+}
+.before-after-banner .indicator.after {
+  right: 60px;
+}
+.before-after-banner .indicator.before {
+  left: 60px;
+}
+
+@keyframes blinkwithopacity {
+  0% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+}
+.skill-showcase {
+  position: relative;
+  height: 472px;
+}
+.skill-showcase span {
+  position: absolute;
+  position: absolute;
+  color: #d92c0a;
+  font-size: 22px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  animation: blinkwithopacity 5s ease-in-out infinite;
+}
+.skill-showcase span.small {
+  font-size: 16px;
+  animation-duration: 6s;
+}
+.skill-showcase span.big {
+  font-size: 24px;
+  animation-duration: 4s;
+}
+.skill-showcase span:nth-child(1) {
+  top: 10%;
+  left: 51%;
+}
+.skill-showcase span:nth-child(2) {
+  top: 25%;
+  left: 25%;
+  animation-delay: 0.4s;
+}
+.skill-showcase span:nth-child(3) {
+  top: 25%;
+  left: 85%;
+  animation-delay: 2s;
+}
+.skill-showcase span:nth-child(4) {
+  top: 25%;
+  left: 59%;
+  animation-delay: 1s;
+}
+.skill-showcase span:nth-child(5) {
+  top: 39%;
+  left: 5%;
+  animation-delay: 2.2s;
+}
+.skill-showcase span:nth-child(6) {
+  top: 40%;
+  left: 25%;
+}
+.skill-showcase span:nth-child(7) {
+  top: 39%;
+  left: 55%;
+  animation-delay: 2s;
+}
+.skill-showcase span:nth-child(8) {
+  top: 43%;
+  left: 75%;
+  animation-delay: 0.9s;
+}
+.skill-showcase span:nth-child(9) {
+  top: 53%;
+  left: 83%;
+}
+.skill-showcase span:nth-child(10) {
+  top: 52%;
+  left: 34%;
+  animation-delay: 1.9s;
+}
+.skill-showcase span:nth-child(11) {
+  top: 55%;
+  left: 61%;
+  animation-delay: 0.8s;
+}
+.skill-showcase span:nth-child(12) {
+  top: 56%;
+  left: 95%;
+}
+.skill-showcase span:nth-child(13) {
+  top: 57%;
+  left: 11%;
+  animation-delay: 1.9s;
+}
+.skill-showcase span:nth-child(14) {
+  top: 64%;
+  left: 47%;
+  animation-delay: 0.7s;
+}
+.skill-showcase span:nth-child(15) {
+  top: 74%;
+  left: 16%;
+  animation-delay: 1.1s;
+}
+.skill-showcase span:nth-child(16) {
+  top: 69%;
+  left: 35%;
+}
+.skill-showcase span:nth-child(17) {
+  top: 69%;
+  animation-delay: 1.9s;
+  left: 86%;
+}
+.skill-showcase span:nth-child(18) {
+  top: 85%;
+  left: 75%;
+  animation-delay: 0.8s;
+}
+.skill-showcase span:nth-child(19) {
+  top: 85%;
+  left: 13%;
+}
+.skill-showcase span:nth-child(20) {
+  top: 81%;
+  animation-delay: 2s;
+  left: 48%;
+}
+
+.timeline-widget {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+.timeline-widget::before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 5px;
+  background-color: #f5f5f5;
+  left: 50%;
+  margin-left: -1.5px;
+  border-radius: 2.5px;
+}
+
+.timeline-wrapper {
+  display: block;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+  padding-right: 90px;
+}
+.timeline-wrapper.timeline-inverted {
+  padding-right: 0;
+  padding-left: 90px;
+}
+.timeline-wrapper.timeline-inverted .timeline-panel {
+  margin-left: auto;
+  margin-right: 10%;
+  text-align: left;
+}
+.timeline-wrapper.timeline-inverted .timeline-panel p::after {
+  left: inherit;
+  right: calc(100% + 75px);
+}
+.timeline-wrapper.timeline-inverted .timestamp {
+  left: inherit;
+  right: calc(50% + 30px);
+}
+.timeline-wrapper.timeline-inverted .timestamp::after {
+  right: inherit;
+  left: 100%;
+  border-right: none;
+  border-left: 11px solid #f5f5f5;
+}
+.timeline-wrapper::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 16px;
+  left: calc(50% - 7px);
+  z-index: 0;
+  border-radius: 50%;
+  border: 3px solid #3d3d4e;
+}
+.timeline-wrapper .timeline-panel {
+  position: relative;
+  width: 40%;
+  text-align: right;
+  margin-left: 10%;
+}
+.timeline-wrapper .timeline-panel h3 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #17161a;
+}
+.timeline-wrapper .timeline-panel span,
+.timeline-wrapper .timeline-panel p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #3d3d4e;
+}
+.timeline-wrapper .timeline-panel p {
+  margin-top: 20px;
+  position: relative;
+}
+.timeline-wrapper .timeline-panel p::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/timeline-bg.png");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: calc(100% + 75px);
+  top: 0;
+}
+.timeline-wrapper .timestamp {
+  position: absolute;
+  top: 9px;
+  left: calc(50% + 30px);
+  z-index: 0;
+  background: #f5f5f5;
+  border-radius: 3px;
+  padding: 2px 9px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.timeline-wrapper .timestamp::after {
+  position: absolute;
+  right: 100%;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 11px solid #f5f5f5;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-roadmap .icon {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+.timeline-roadmap .icon.animated::after {
+  transform: scaleY(1);
+}
+.timeline-roadmap .icon.no-line::after {
+  display: none;
+}
+.timeline-roadmap .icon img {
+  border-radius: 50%;
+  padding: 15px;
+  border: 1px solid #ccccce;
+  background: #f5f5f5;
+  display: inline-flex;
+  overflow: hidden;
+}
+.timeline-roadmap .icon::after {
+  content: "";
+  position: absolute;
+  border-left: 1px solid #ccccce;
+  z-index: -1;
+  height: 100%;
+  left: 50%;
+  top: 10%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1s linear;
+}
+.timeline-roadmap h4 {
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+.timeline-roadmap h4 a {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #17161a;
+}
+.timeline-roadmap .timeline div {
+  padding: 0;
+  height: 40px;
+}
+.timeline-roadmap .curve {
+  display: flex;
+  overflow: hidden;
+}
+.timeline-roadmap .corner {
+  border: 1px solid #ccccce;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s linear;
+}
+.timeline-roadmap .corner.top-right {
+  left: 43px;
+  top: -50%;
+  transition-delay: 1s;
+}
+.timeline-roadmap .corner.top-left {
+  right: 42px;
+  top: -50%;
+  transform-origin: right;
+  transition-delay: 1s;
+}
+.timeline-roadmap .corner.right-bottom {
+  left: 43px;
+  top: calc(50% - 1px);
+  transform-origin: right;
+  transition-delay: 4s;
+}
+.timeline-roadmap .corner.left-bottom {
+  right: 43px;
+  top: calc(50% - 1px);
+  transition-delay: 4s;
+}
+.timeline-roadmap .animated hr {
+  transform: scale(1);
+  transition-delay: 2s;
+}
+.timeline-roadmap .animated .corner {
+  transform: scale(1);
+}
+.timeline-roadmap hr {
+  border-top: 1px solid #ccccce;
+  margin: 0;
+  top: 19px;
+  position: relative;
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 2s linear;
+}
+.timeline-roadmap .animate-reverse hr {
+  transform-origin: right;
+}
+
+.keyword-tag {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.keyword-tag a {
+  display: inline-block;
+  color: #17161a;
+  padding: 1px 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.0509803922);
+  color: #17161a;
+  border-radius: 3px;
+}
+.keyword-tag a:hover {
+  background-color: #d92c0a;
+  color: #fff;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=main.css.map */
