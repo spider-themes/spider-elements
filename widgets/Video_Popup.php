@@ -241,7 +241,7 @@ class Video_Popup extends Widget_Base
         $this->add_responsive_control(
             'icon_border_radius',
             [
-                'label' => __( 'Border Radius', 'builderarc-core' ),
+                'label' => __( 'Border Radius', 'spider-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -253,7 +253,7 @@ class Video_Popup extends Widget_Base
         $this->add_responsive_control(
             'icon_size',
             [
-                'label' => __( 'Size', 'builderarc-core' ),
+                'label' => __( 'Size', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -277,7 +277,7 @@ class Video_Popup extends Widget_Base
 
         $this->add_responsive_control(
             'icon_bg_width', [
-                'label' => __( 'Background Width', 'builderarc-core' ),
+                'label' => __( 'video Popup Width', 'spider-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
