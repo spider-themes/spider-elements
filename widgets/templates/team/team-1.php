@@ -2,7 +2,7 @@
     <div class="expert-slider-one slider-<?php echo esc_attr($team_id);?>">
         <?php foreach ($team_slider_item as $item) {?> 
             <div class="item">
-                <div class="card-style-three">
+                <div class="card-style-three text-center">
                     <div class="img-meta mb-40 lg-mb-20">
                         <img src="<?php echo esc_url($item['team_slider_image']['url']);?>" alt="" class="m-auto"> 
                     </div>
