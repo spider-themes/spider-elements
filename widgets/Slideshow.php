@@ -1,10 +1,11 @@
 <?php
+/**
+ * Use namespace to avoid conflict
+ */
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Repeater;
 use Elementor\Utils;
-use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
@@ -29,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     }
 
     public function get_icon() {
-        return 'eicon-image-hotspot se-icon';
+        return 'eicon-slideshow se-icon';
     }
 
     public function get_keywords() {
@@ -56,12 +57,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 		return [ 'bootstrap', 'charming', 'diagonal', 'tweenmax' ];
 	}
 
-    // define register controls
-    protected function _register_controls() {
+     /**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+    protected function register_controls() {
+		$this->elementor_content_control();
+	}
+
+      
+	/**
+	 * Name: elementor_content_control()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+     public function elementor_content_control() {
+
+
+        //================== Slideshow ========================//
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __( 'Content', 'your-text-domain' ),
+                'label' => __( 'Content', 'spider-elements' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -71,9 +97,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         $slide->add_control(
             'image_url',
             [
-                'label' => __( 'Slide Image URL', 'your-text-domain' ),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
+                'label'     => __( 'Slide Image URL', 'spider-elements' ),
+                'type'      => Controls_Manager::MEDIA,
+                'default'   => [
                     'url' => '', // Default image URL if no image is selected
                 ],
             ]
@@ -82,60 +108,67 @@ if ( ! defined( 'ABSPATH' ) ) {
         $slide->add_control(
             'side_text',
             [
-                'label' => __( 'Side Text', 'your-text-domain' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => __( 'Memories & Thoughts', 'your-text-domain' ),
+                'label'     => __( 'Side Text', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => __( 'Memories & Thoughts', 'spider-elements' ),
             ]
         );
     
         $slide->add_control(
             'slide_number',
             [
-                'label' => __( 'Slide Number', 'your-text-domain' ),
-                'type' => Controls_Manager::NUMBER,
-                'default' => 1,
+                'label'     => __( 'Slide Number', 'spider-elements' ),
+                'type'      => Controls_Manager::NUMBER,
+                'default'   => 1,
             ]
         );
     
         $slide->add_control(
             'slide_title',
             [
-                'label' => __( 'Slide Title', 'your-text-domain' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => __( 'Automation', 'your-text-domain' ),
+                'label'     => __( 'Slide Title', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => __( 'Automation', 'spider-elements' ),
             ]
         );
     
         $slide->add_control(
             'slide_subtitle',
             [
-                'label' => __( 'Slide Subtitle', 'your-text-domain' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => __( 'A tree needs to be your friend if you\'re going to paint him', 'your-text-domain' ),
+                'label'     => __( 'Slide Subtitle', 'spider-elements' ),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => __( 'A tree needs to be your friend if you\'re going to paint him', 'spider-elements' ),
             ]
         );
     
         $this->add_control(
             'slides',
             [
-                'label' => __( 'Add Slide', 'your-text-domain' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $slide->get_controls(),
-                'default' => [],
+                'label'     => __( 'Add Slide', 'spider-elements' ),
+                'type'      => Controls_Manager::REPEATER,
+                'fields'    => $slide->get_controls(),
+                'default'   => [],
             ]
         );
     
-        $this->end_controls_section();
+        $this->end_controls_section(); //End slideshow
     }
     
 
 
 
-
+    /**
+	 * Name: elementor_render()
+	 * Desc: Render the widget output on the frontend.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     protected function render() {
         $settings = $this->get_settings_for_display();
         ?>
-
 
         <div class="body_wrapper diagonal-slideshow">
             <svg class="hidden">
@@ -162,8 +195,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </polygon>
                 </symbol>
             </svg>
-
-
 
 
             <div class="slideshow ">

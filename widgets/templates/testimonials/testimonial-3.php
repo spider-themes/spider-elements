@@ -9,15 +9,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial testimonial-item">
                                 <div class="author-image">
-                                    <?php
-                                    if (!empty($item['author_image']['id'])) :
-                                        echo wp_get_attachment_image($item['author_image']['id'], 'full', '', array("class" => "author-img"));
-                                    endif;
-                                    ?>
+                                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="" class="author-img">
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-img-top">
-                                        <img src="<?php echo SE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>"></div>
+                                        <img src="<?php echo SE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>">
+                                    </div>
                                     <?php
                                     echo !empty($item['review_content']) ? '<p class="se_review_content">' . esc_html($item['review_content']) . '</p>' : '';
                                     ?>
@@ -47,3 +44,5 @@
         </div>
     </div>
 </section>
+
+

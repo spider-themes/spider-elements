@@ -39,27 +39,6 @@
                                 }
                             }
                             ?>
-                            <?php
-                            if ( isset( $settings['faq_schema'] ) && 'yes' === $settings['faq_schema'] ) {
-                                $json = [
-                                    '@context' => 'https://schema.org',
-                                    '@type' => 'FAQPage',
-                                    'mainEntity' => [],
-                                ];
-
-                                foreach ( $settings['accordions'] as $index => $item ) {
-                                    $json['mainEntity'][] = [
-                                        '@type' => 'Question',
-                                        'name' => wp_strip_all_tags( $item['title'] ),
-                                        'acceptedAnswer' => [
-                                            '@type' => 'Answer',
-                                            'text' => $this->parse_text_editor( $item['tab_content'] ),
-                                        ],
-                                    ];
-                                }
-                                ?>
-                                <script type="application/ld+json"><?php echo wp_json_encode( $json ); ?></script>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -68,5 +47,26 @@
         }
     }
     ?>
+     <?php
+    if ( isset( $settings['faq_schema'] ) && 'yes' === $settings['faq_schema'] ) {
+        $json = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [],
+        ];
+
+        foreach ( $settings['accordions'] as $index => $item ) {
+            $json['mainEntity'][] = [
+                '@type' => 'Question',
+                'name' => wp_strip_all_tags( $item['title'] ),
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $this->parse_text_editor( $item['tab_content'] ),
+                ],
+            ];
+        }
+        ?>
+        <script type="application/ld+json"><?php echo wp_json_encode( $json ); ?></script>
+    <?php } ?>
 </div>
 
