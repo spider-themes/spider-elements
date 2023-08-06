@@ -61,7 +61,7 @@
                 'name' => wp_strip_all_tags( $item['title'] ),
                 'acceptedAnswer' => [
                     '@type' => 'Answer',
-                    'text' => $this->parse_text_editor( $item['tab_content'] ),
+                    'text' => $this->parse_text_editor( $item['normal_content'] ),
                 ],
             ];
         }

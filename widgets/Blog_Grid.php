@@ -42,7 +42,7 @@ class Blog_Grid extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-post';
+        return 'eicon-post se-icon';
     }
 
     public function get_categories() {

@@ -45,7 +45,6 @@ class Skill_Showcase extends Widget_Base {
 		return [ 'bootstrap',  'spe-main' ];
 	}
 
-   
     /**
 	 * Name: register_controls()
 	 * Desc: Register controls for these widgets

@@ -319,7 +319,7 @@ class Accordion extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button.collapsed, {{WRAPPER}} .elementor-accordion-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .accordion .doc_accordion .card-header button.collapsed, {{WRAPPER}} .elementor-accordion-title' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-accordion-icon svg, .elementor-active .elementor-accordion-icon svg'=> 'color: {{VALUE}};',
 				],
 			]
@@ -331,7 +331,7 @@ class Accordion extends Widget_Base {
 				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button, {{WRAPPER}} .elementor-active .elementor-accordion-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .accordion .doc_accordion .card-header button' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-active .elementor-accordion-icon svg, .elementor-accordion-icon svg'=> 'color: {{VALUE}};',
 				],
 			]
