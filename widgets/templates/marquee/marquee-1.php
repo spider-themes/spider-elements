@@ -22,5 +22,83 @@
 </div>
 
 
+<script type="text/javascript">
+
+    ;(function ($) {
+        "use strict";
+
+        $(document).ready(function () {
+
+
+            if ($(".branding-slider").length) {
+                $(".branding-slider").slick({
+                    autoplay: true,
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                    speed: 5000,
+                    pauseOnHover: false,
+
+                    cssEase: "linear",
+                    autoplaySpeed: 10,
+                    responsive: [
+                        {
+                            breakpoint: 765,
+                            settings: {
+                                slidesToShow: 2,
+                            },
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                slidesToShow: 1,
+                            },
+                        },
+                    ],
+                });
+            }
+
+
+            if ($(".branding-reverse-slider").length) {
+                $(".branding-reverse-slider").slick({
+                    autoplay: true,
+                    infinite: true,
+                    rtl: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                    speed: 5000,
+                    pauseOnHover: false,
+                    cssEase: "linear",
+                    autoplaySpeed: 10,
+                    responsive: [
+                        {
+                            breakpoint: 765,
+                            settings: {
+                                slidesToShow: 2,
+                            },
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                slidesToShow: 1,
+                            },
+                        },
+                    ],
+                });
+            }
+
+
+
+
+        });
+
+    })(jQuery);
+
+</script>
+
+
+
 
 

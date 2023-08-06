@@ -51,7 +51,7 @@ class Marquee_Slides extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
     public function get_script_depends() {
-        return [ 'spe-el-widgets'];
+        return [ 'slick', 'spe-el-widgets'];
     }
 
 
