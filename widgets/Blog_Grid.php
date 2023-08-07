@@ -49,16 +49,98 @@ class Blog_Grid extends Widget_Base {
         return [ 'spider-elements' ];
     }
 
+    /**
+	 * Name: register_controls()
+	 * Desc: Register controls for these widgets
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
     protected function register_controls()
     {
-        $this-> layout_setting();
-        $this-> post_setting();
+        $this-> elementor_layout_setting();
+        $this-> elementor_post_setting();
         //style section
-        $this->blog_style_section();
+        $this-> elementor_blog_style_section();
         
     }
 
-    public function post_setting(){
+    /**
+	 * Name: elementor_layout_setting()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+    public function elementor_layout_setting(){
+
+        //============================= Filter Options =================================== //
+        $this->start_controls_section(
+            'blog_layout', [
+                'label' => __('Layout', 'spider-elements'),
+            ]
+        );
+
+        // Style
+        $this->add_control(
+			'style', [
+				'label'   	=> esc_html__( 'Skin', 'spider-elements' ),
+				'type'    	=> Controls_Manager::CHOOSE,
+				'options'	=> [
+					'1'	=> [
+						'title' => __( 'Style 01', 'spider-elements' ),
+						'icon'  => 'blog-grid1',
+					],
+					'2' => [
+						'title' => __( 'Style 02', 'spider-elements' ),
+						'icon'  => 'blog-grid2',
+					],
+                    '3' => [
+						'title' => __( 'Style 03', 'spider-elements' ),
+						'icon'  => 'blog-grid3',
+					],
+                    '4' => [
+						'title' => __( 'Style 04', 'spider-elements' ),
+						'icon'  => 'blog-grid4',
+					],
+				],
+				'toggle'  => false,
+				'default' => '1',
+			]
+		);
+
+        $this->add_control(
+            'column_grid', [
+                'label' => __('Column', 'spider-elements'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    '6'  => __( 'Two Column', 'spider-elements' ),
+                    '4'  => __( 'Three Column', 'spider-elements' ),
+                    '3'  => __( 'Four Column', 'spider-elements' ),
+                    '2'  => __( 'Six Column', 'spider-elements' ),
+                ],
+                'default' => '6',
+            ]
+        );
+        
+        $this->end_controls_section(); //End Filter
+    }
+
+    /**
+	 * Name: elementor_post_setting()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+
+    public function elementor_post_setting(){
 
         $this->start_controls_section(
             'spe_post_settings_section',
@@ -242,61 +324,17 @@ class Blog_Grid extends Widget_Base {
         $this->end_controls_section();
     }
 
-    public function layout_setting(){
 
-        //============================= Filter Options =================================== //
-        $this->start_controls_section(
-            'blog_layout', [
-                'label' => __('Layout', 'spider-elements'),
-            ]
-        );
-
-        // Style
-        $this->add_control(
-			'style', [
-				'label'   	=> esc_html__( 'Skin', 'spider-elements' ),
-				'type'    	=> Controls_Manager::CHOOSE,
-				'options'	=> [
-					'1'	=> [
-						'title' => __( 'Style 01', 'spider-elements' ),
-						'icon'  => 'blog-grid1',
-					],
-					'2' => [
-						'title' => __( 'Style 02', 'spider-elements' ),
-						'icon'  => 'blog-grid2',
-					],
-                    '3' => [
-						'title' => __( 'Style 03', 'spider-elements' ),
-						'icon'  => 'blog-grid3',
-					],
-                    '4' => [
-						'title' => __( 'Style 04', 'spider-elements' ),
-						'icon'  => 'blog-grid4',
-					],
-				],
-				'toggle'  => false,
-				'default' => '1',
-			]
-		);
-
-        $this->add_control(
-            'column_grid', [
-                'label' => __('Column', 'spider-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    '6'  => __( 'Two Column', 'spider-elements' ),
-                    '4'  => __( 'Three Column', 'spider-elements' ),
-                    '3'  => __( 'Four Column', 'spider-elements' ),
-                    '2'  => __( 'Six Column', 'spider-elements' ),
-                ],
-                'default' => '6',
-            ]
-        );
-        
-        $this->end_controls_section(); //End Filter
-    }
-
-    public function blog_style_section(){
+    /**
+	 * Name: elementor_blog_style_section()
+	 * Desc: Register the Content Tab output on the Elementor editor.
+	 * Params: no params
+	 * Return: @void
+	 * Since: @1.0.0
+	 * Package: @spider-elements
+	 * Author: spider-themes
+	 */
+    public function elementor_blog_style_section(){
         $this-> blog_general_style();
         $this-> blog_content_style();
         $this-> button_style();

@@ -40,7 +40,6 @@
     margin-right: -2px;
     li {
         cursor: pointer;
-        display: block;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -49,6 +48,9 @@
         line-height: 50px;
         font-size: 22px;
         transition: all 0.2s linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             background:#D2F34C;

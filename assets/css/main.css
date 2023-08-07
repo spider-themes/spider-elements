@@ -3350,6 +3350,7 @@ button.swiper-pagination-bullet {
 .video-icon:hover {
   background: #D2F34C;
   color: #244034;
+  text-decoration: none;
 }
 
 /*=========== message_alert Shortcode css ========*/
@@ -7018,7 +7019,6 @@ ul.ordered-list li::before {
 }
 .slick-arrow-one li {
   cursor: pointer;
-  display: block;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -7027,6 +7027,9 @@ ul.ordered-list li::before {
   line-height: 50px;
   font-size: 22px;
   transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slick-arrow-one li:hover {
   background: #D2F34C;
@@ -7398,7 +7401,7 @@ ul.ordered-list li::before {
 .blog-meta-two .post-img {
   overflow: hidden;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 .blog-meta-two .post-img img {
   transition: all 0.4s ease-in-out;
