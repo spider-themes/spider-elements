@@ -86,7 +86,6 @@ class Accordion extends Widget_Base {
 	 */
 	public function elementor_content_control() {
 
-
 		//=================== Section Accordion ===================//
 		$this->start_controls_section(
 			'sec_accordion', [

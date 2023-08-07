@@ -45,7 +45,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
     public function get_style_depends() {
-        return [ 'bootstrap', 'slick', 'slick-theme', 'spe-main', 'swiper-theme' ];
+        return [ 'bootstrap', 'slick', 'slick-theme', 'spe-main', 'swiper-theme'];
     }
 
 	/**
@@ -67,6 +67,7 @@ class Testimonial extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->elementor_content_control();
+		$this-> elementor_rating_controls();
 		$this->elementor_style_control();
 	}
 
@@ -112,6 +113,10 @@ class Testimonial extends Widget_Base {
 					'5' => [
 						'icon' 	=> 'testimonial5',
 						'title'	=> esc_html__( '05 : Carousel Testimonials', 'spider-elements'),
+					],
+					'6' => [
+						'icon' 	=> 'testimonial6',
+						'title'	=> esc_html__( '06 : Carousel Testimonials', 'spider-elements'),
 					],
 				],
 				'default' => '1',
@@ -475,6 +480,85 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Testimonials 05
 
+		//=== Testimonials 06
+		$testimonial6 = new Repeater();
+		$testimonial6->add_control(
+			'author_rating',
+			[
+				'label' => __( 'Rating', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'min' => 0,
+				'max' => 10,
+				'step' => 0.1,
+				'default' => 5,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$testimonial6->add_control(
+			'author_rating_title',
+			[
+				'label' => __( 'Title', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'separator' => 'before',
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$testimonial6->add_control(
+			'company_image', [
+				'label'		=> __( 'Company Image', 'spider-elements' ),
+				'type' 		=> Controls_Manager::MEDIA,
+				'default'	=> [
+					'url' 	=> \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+		$testimonial6->add_control(
+			'review_content', [
+				'label'	=> __( 'Testimonial Text', 'spider-elements' ),
+				'type' 	=> Controls_Manager::TEXTAREA,
+			]
+		);
+		$testimonial6->add_control(
+			'author_name', [
+				'label' 	=> __( 'Author Name', 'spider-elements' ),
+				'type' 		=> Controls_Manager::TEXT,
+				'default'	=> __( 'Karina' , 'spider-elements' ),
+			]
+		);
+		$testimonial6->add_control(
+			'author_position', [
+				'label' 	=> __('Author Position', 'spider-elements' ),
+				'type' 		=> Controls_Manager::TEXT,
+				'default'	=> __( 'Lead Designer' , 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'testimonials6', [
+				'label' 		=> __( 'Testimonials', 'spider-elements' ),
+				'type' 			=> Controls_Manager::REPEATER,
+				'fields'		=> $testimonial6->get_controls(),
+				'title_field'	=> '{{{ name }}}',
+				'prevent_empty' => false,
+				'default' 		=> [
+					[
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+				],
+				'condition' => [
+					'style'	=> '6'
+				]
+			]
+		); //End Testimonials 05
+
+
+
 		$this->add_control(
 			'shape', [
 				'label'		=> __( 'Shape', 'spider-elements' ),
@@ -504,6 +588,87 @@ class Testimonial extends Widget_Base {
 		$this->end_controls_section(); // End Testimonials
 
 	}
+
+	// Testimonial Repeater
+    protected function elementor_rating_controls()
+    {
+        $this->start_controls_section(
+			'section_rating',
+			[
+				'label' => __( 'Rating', 'spider-elements' ),
+				'condition'	=> [
+					'style' => '6'
+				],
+			],
+			
+		);
+
+        $this->add_control(
+			'testimonial_ratting_icon',
+			[
+				'label' => __( 'Show Title', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Show', 'spider-elements' ),
+				'label_off' => __( 'Hide', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+        
+
+		$this->add_control(
+			'rating_scale',
+			[
+				'label' => __( 'Rating Scale', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'5' => '0-5',
+					'10' => '0-10',
+				],
+				'default' => '5',
+                'condition' => [
+                    $this->get_control_id('testimonial_ratting_icon') => ['yes'],
+                ],
+			]
+		);
+
+		$this->add_control(
+			'star_style',
+			[
+				'label' => __( 'Icon', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'star_fontawesome' => 'Font Awesome',
+					'star_unicode' => 'Unicode',
+				],
+				'default' => 'star_fontawesome',
+				'render_type' => 'template',
+				'prefix_class' => 'elementor--star-style-',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'unmarked_star_style',
+			[
+				'label' => __( 'Unmarked Style', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'solid' => [
+						'title' => __( 'Solid', 'spider-elements' ),
+						'icon' => 'eicon-star',
+					],
+					'outline' => [
+						'title' => __( 'Outline', 'spider-elements' ),
+						'icon' => 'eicon-star-o',
+					],
+				],
+				'default' => 'solid',
+			]
+		);
+
+		$this->end_controls_section();
+    }
 
 
 	/**
@@ -703,6 +868,35 @@ class Testimonial extends Widget_Base {
 	}
 
 
+	/**
+	 * Print the actual stars and calculate their filling.
+	 *
+	 * Rating type is float to allow stars-count to be a fraction.
+	 * Floored-rating type is int, to represent the rounded-down stars count.
+	 * In the `for` loop, the index type is float to allow comparing with the rating value.
+	 *
+	 * @since 2.3.0
+	 * @access protected
+	 */
+	protected function render_stars( $icon, $dat = 0 ) {
+		$rating_data = $this->get_rating( $dat );
+		$rating = (float) $rating_data[0];
+		$floored_rating = floor( $rating );
+		$stars_html = '';
+
+		for ( $stars = 1.0; $stars <= $rating_data[1]; $stars++ ) {
+			if ( $stars <= $floored_rating ) {
+				$stars_html .= '<i class="elementor-star-full">' . $icon . '</i>';
+			} elseif ( $floored_rating + 1 === $stars && $rating !== $floored_rating ) {
+				$stars_html .= '<i class="elementor-star-' . ( $rating - $floored_rating ) * 10 . '">' . $icon . '</i>';
+			} else {
+				$stars_html .= '<i class="elementor-star-empty">' . $icon . '</i>';
+			}
+		}
+		return $stars_html;
+	}
+
+	
 	/**
 	 * Name: elementor_render()
 	 * Desc: Render the widget output on the frontend.

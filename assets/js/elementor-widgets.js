@@ -203,7 +203,7 @@
 
       // Testimonial Style 3
       let testimonialSliderInner = $scope.find(".testimonial-slider-inner");
-      if( testimonialSliderInner.length > 0 ){
+      if (testimonialSliderInner.length > 0) {
         var Testimonial = new Swiper(".testimonial-slider-inner", {
           slidesPerView: 1,
           spaceBetween: 10,
@@ -211,33 +211,33 @@
           // effect: 'fade',
           loop: true,
           navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           },
-      });
+        });
       }
 
       // Testimonial Style 4
       let testimonialSlide4 = $scope.find(".testimonial-slide-4");
-      if( testimonialSlide4.length > 0 ){
+      if (testimonialSlide4.length > 0) {
         var swiper4 = new Swiper(".testimonial-slide-4", {
           spaceBetween: 10,
           loop: true,
           navigation: false,
           breakpoints: {
-              768: {
-                  navigation: {
-                      nextEl: ".swiper-button-next",
-                      prevEl: ".swiper-button-prev",
-                  },
+            768: {
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
               },
+            },
           },
-      });
+        });
       }
 
       // Testimonial Style 5
       let testimonialSliderActive = $scope.find(".testimonial-slider-active");
-      if( testimonialSliderActive.length > 0 ){
+      if (testimonialSliderActive.length > 0) {
         var swiper5 = new Swiper(".testimonial-slider-active", {
           slidesPerView: 1,
           spaceBetween: 24,
@@ -245,20 +245,42 @@
           loop: true,
           speed: 500,
           navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           },
           breakpoints: {
-              576: {
-                  slidesPerView: 2,
-              },
-              1200: {
-                  slidesPerView: 4,
-              },
+            576: {
+              slidesPerView: 2,
+            },
+            1200: {
+              slidesPerView: 4,
+            },
           },
-      });
+        });
       }
-      
+      let testimonial6 = $scope.find(".feedback-slider-one");
+      if (testimonial6.length > 0) {
+        testimonial6.slick({
+          dots: false,
+          arrows: true,
+          lazyLoad: "ondemand",
+          prevArrow: $(".prev_b"),
+          nextArrow: $(".next_b"),
+          centerPadding: "0px",
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000000,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      }
     },
 
     //======================== Tabs =========================== //
