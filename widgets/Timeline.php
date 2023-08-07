@@ -5,8 +5,11 @@
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
+use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Typography;
+
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -80,7 +83,7 @@ class Timeline extends Widget_Base {
             ]
         );
 
-        $repeater = new \Elementor\Repeater();
+        $repeater = new Repeater();
 
         $repeater->add_control(
             'timestamp',
@@ -174,6 +177,123 @@ class Timeline extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+
+        //=== Timeline Title
+		$this->add_control(
+			'timeline_title', [
+				'label'		=> __( 'Title', 'spider-elements' ),
+				'type' 		=> Controls_Manager::HEADING,
+				'separator'	=> 'before',
+			]
+		);
+
+		$this->add_control(
+			'timeline', [
+				'label' 	=> __( 'Text Color', 'spider-elements' ),
+				'type' 		=> Controls_Manager::COLOR,
+				'selectors'	=> [
+					'{{WRAPPER}} .timeline-wrapper .timeline-panel h3' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' 		=> 'timeline_title_typo',
+				'selector'	=> '{{WRAPPER}} .timeline-wrapper .timeline-panel h3',
+			]
+		); //End TImeline Title
+
+
+		//=== Timeline Location
+		$this->add_control(
+			'timeline_location', [
+				'label' 	=> __( 'Location', 'spider-elements' ),
+				'type' 		=> Controls_Manager::HEADING,
+				'separator'	=> 'before',
+			]
+		);
+
+		$this->add_control(
+			'timeline_location_color', [
+				'label' 	=> __( 'Text Color', 'spider-elements' ),
+				'type' 		=> Controls_Manager::COLOR,
+				'selectors'	=> [
+					'{{WRAPPER}} .timeline-wrapper .timeline-panel span' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' 		=> 'timeline_location_typo',
+				'selector'	=> '{{WRAPPER}} .timeline-wrapper .timeline-panel span',
+			]
+		); //End Timeline Location
+
+
+		//=== Timeline Content
+		$this->add_control(
+			'timeline_content', [
+				'label' 	=> __( 'Timeline Content', 'spider-elements' ),
+				'type' 		=> Controls_Manager::HEADING,
+				'separator'	=> 'before',
+			]
+		);
+
+		$this->add_control(
+			'timeline_content_color', [
+				'label' 	=> __( 'Text Color', 'spider-elements' ),
+				'type' 		=> Controls_Manager::COLOR,
+				'selectors'	=> [
+					'{{WRAPPER}} .timeline-wrapper .timeline-panel p' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' 		=> 'timeline_content_typo',
+				'selector'	=> '{{WRAPPER}} .timeline-wrapper .timeline-panel p',
+			]
+		); //End Timeline content
+
+
+		//=== Timeline Date Option
+		$this->add_control(
+			'timeline_date', [
+				'label' 	=> __( 'Date', 'spider-elements' ),
+				'type' 		=> Controls_Manager::HEADING,
+				'separator'	=> 'before',
+			]
+		);
+
+        $this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' 		=> 'timeline_date_bg_color',
+				'types' 	=> [ 'classic', 'gradient' ],
+				'exclude' 	=> [ 'image' ],
+				'selector'	=> '{{WRAPPER}} .timeline-wrapper .timestamp'
+			]
+		);
+
+		$this->add_control(
+			'timeline_date_color', [
+				'label' 	=> __( 'Text Color', 'spider-elements' ),
+				'type' 		=> Controls_Manager::COLOR,
+				'selectors'	=> [
+					'{{WRAPPER}} .timeline-wrapper .timestamp' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' 		=> 'timeline_meta_typo',
+				'selector'	=> '{{WRAPPER}} .timeline-wrapper .timestamp',
+			]
+		); //End Timeline Date Option
 
 
 		$this->end_controls_section();

@@ -125,9 +125,11 @@ function se_get_the_first_taxonomy( $term = 'category' ) {
  * @return string
  */
 function se_get_the_first_taxonomy_link( $term = 'category' ) {
-    $cats = get_the_terms(get_the_ID(), $term);
+
+	$cats = get_the_terms(get_the_ID(), $term);
     $cat  = is_array($cats) ? get_category_link($cats[0]->term_id) : '';
-    return esc_url($cat);
+
+	return esc_url($cat);
 }
 
 

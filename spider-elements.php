@@ -450,6 +450,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
 			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
+			require_once( __DIR__ . '/widgets/Marquee_slides.php' );
 
 		}
 
@@ -481,6 +482,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Blog_Grid() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Skill_Showcase() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Timeline() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Marquee_Slides() );
 		}
 
 
