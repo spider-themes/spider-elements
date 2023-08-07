@@ -27,7 +27,7 @@ class Before_After extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-thumbnails-half se-icon';
+        return 'eicon-thumbnails-half spe-icon';
     }
 
     public function get_keywords() {

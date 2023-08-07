@@ -30,7 +30,7 @@ class Alerts_Box extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-alert se-icon';
+        return 'eicon-alert spe-icon';
     }
 
     public function get_keywords() {

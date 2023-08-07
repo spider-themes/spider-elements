@@ -36,7 +36,7 @@ class Integrations extends Widget_Base
 
 	public function get_icon()
 	{
-		return 'eicon-integration se-icon';
+		return 'eicon-integration spe-icon';
 	}
 
 	public function get_keywords()

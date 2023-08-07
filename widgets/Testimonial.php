@@ -29,7 +29,7 @@ class Testimonial extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-testimonial-carousel se-icon';
+        return 'eicon-testimonial-carousel spe-icon';
     }
 
 	public function get_keywords() {

@@ -36,7 +36,7 @@ class Team_Carousel extends Widget_Base
 
 	public function get_icon()
 	{
-		return 'eicon-nested-carousel se-icon';
+		return 'eicon-nested-carousel spe-icon';
 	}
 
 	public function get_keywords()

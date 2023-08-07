@@ -5,7 +5,6 @@
 namespace Spider_Elements_Assets\Widgets;
 
 use Elementor\Widget_Base;
-use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
 
@@ -23,7 +22,7 @@ class Marquee_Slides extends Widget_Base {
 
    
     public function get_name() {
-        return 'spe_marquee_slides_widget';
+        return 'spe_marquee_slides';
     }
 
     public function get_title() {
@@ -31,7 +30,7 @@ class Marquee_Slides extends Widget_Base {
     }
 
     public function get_icon() {
-        return ' eicon-slider-push se-icon';
+        return ' eicon-slider-push spe-icon';
     }
 
     public function get_categories() {
@@ -66,7 +65,6 @@ class Marquee_Slides extends Widget_Base {
 	 */
     protected function register_controls() {
 		$this->elementor_content_control();
-		// $this->elementor_style_control();
 	}
 
    /**
@@ -80,9 +78,7 @@ class Marquee_Slides extends Widget_Base {
 	 */
     protected function elementor_content_control() {
 
-
-
-        //========================= Select preset Style ======================//
+        //========================= preset Style ======================//
 		$this->start_controls_section(
 			'select_marquee_style', [
 				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
@@ -110,80 +106,34 @@ class Marquee_Slides extends Widget_Base {
 		$this->end_controls_section(); // End Preset style
 
 
-
-
         //===================== Marquee slides item =======================//
         $this->start_controls_section(
-            'section_content',
+            'marquee_images',
             [
-                'label' => __( 'Content', 'text-domain' ),
-            ]
-        );
-        
-        $repeater = new Repeater();
-        
-        $repeater->add_control(
-            'image',
-            [
-                'label' => __( 'Image', 'text-domain' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'label_block' => true,
+                'label' => __( 'Images', 'spider-elements' ),
             ]
         );
 
-        $repeater->add_control(
-			'marquee_reverse', [
-				'label'        => esc_html__( 'Reverse', 'spider-elements' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
-				'label_off'    => esc_html__( 'No', 'spider-elements' ),
-				'return_value' => 'yes',
-				'default'      => 'no',
-				'separator'    => 'after',
+        $this->add_control(
+			'right_slides',
+			[
+				'label' => esc_html__( 'Right Slides', 'spider-elements'),
+				'type' => Controls_Manager::GALLERY,
+				'show_label' => true,
+			]
+		);
+
+        $this->add_control(
+			'left_slides',
+			[
+				'label' => esc_html__( 'Left Slide', 'spider-elements'),
+				'type' => Controls_Manager::GALLERY,
+				'show_label' => true,
 			]
 		);
         
-        $this->add_control(
-            'images',
-            [
-                'label' => __( 'Images', 'text-domain' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [],
-                'title_field' => '{{{ image.url }}}', // Change this to the desired title field
-            ]
-        );
-     
- 
-        $repeater_reverse = new Repeater();
- 
-        $repeater_reverse->add_control(
-            'image',
-            [
-                'label' => __( 'Image', 'text-domain' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'label_block' => true,
-            ]
-        );
- 
-        $this->add_control(
-            'reverse_images',
-            [
-                'label' => __( 'Reverse Images', 'text-domain' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater_reverse->get_controls(),
-                'default' => [],
-                'title_field' => '{{{ image.url }}}', // Change this to the desired title field
-            ]
-        );
-        
-        // Additional controls can be added here if needed
-        
         $this->end_controls_section(); //End Marquee Slides Item 
     }
- 
- 
-
 
     /**
 	 * Name: elementor_render()
@@ -196,8 +146,6 @@ class Marquee_Slides extends Widget_Base {
 	 */
      protected function render() {
         $settings = $this->get_settings_for_display();
-
-        extract( $settings ); //extract all settings array to variables converted to name of key
         //======================== Template Parts ==========================//
 		include "templates/marquee/marquee-{$settings['style']}.php";
     }

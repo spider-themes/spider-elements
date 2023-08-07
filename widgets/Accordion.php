@@ -32,7 +32,7 @@ class Accordion extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-accordion se-icon';
+		return 'eicon-accordion spe-icon';
 	}
 
 	public function get_keywords() {

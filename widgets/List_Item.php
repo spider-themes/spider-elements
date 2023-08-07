@@ -32,7 +32,7 @@ class List_Item extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-bullet-list se-icon';
+        return 'eicon-bullet-list spe-icon';
     }
 
     public function get_keywords() {

@@ -30,7 +30,7 @@ class Skill_Showcase extends Widget_Base {
     }
 
     public function get_icon() {
-        return ' eicon-woo-settings se-icon'; 
+        return ' eicon-woo-settings spe-icon'; 
     }
 
     public function get_categories() {
