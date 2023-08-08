@@ -185,7 +185,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-    
+}
+.marquee2{
+    background: url("../images/el-editor-preview/marquee2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 
 /* Video Playlist widget CSS */

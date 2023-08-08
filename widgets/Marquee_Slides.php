@@ -4,9 +4,11 @@
  */
 namespace Spider_Elements_Assets\Widgets;
 
+use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
 
 
 
@@ -65,6 +67,7 @@ class Marquee_Slides extends Widget_Base {
 	 */
     protected function register_controls() {
 		$this->elementor_content_control();
+		$this->elementor_style_control();
 	}
 
    /**
@@ -110,7 +113,7 @@ class Marquee_Slides extends Widget_Base {
         $this->start_controls_section(
             'marquee_images',
             [
-                'label' => __( 'Images', 'spider-elements' ),
+                'label' => __( 'Content', 'spider-elements' ),
             ]
         );
 
@@ -120,6 +123,9 @@ class Marquee_Slides extends Widget_Base {
 				'label' => esc_html__( 'Right Slides', 'spider-elements'),
 				'type' => Controls_Manager::GALLERY,
 				'show_label' => true,
+				'condition' => [
+					'style' => '1'
+				]
 			]
 		);
 
@@ -129,10 +135,98 @@ class Marquee_Slides extends Widget_Base {
 				'label' => esc_html__( 'Left Slide', 'spider-elements'),
 				'type' => Controls_Manager::GALLERY,
 				'show_label' => true,
+				'condition' => [
+					'style' => '1'
+				]
 			]
 		);
+
+		//=== Repeater Style two
+		$repeater = new Repeater();
+		$repeater->add_control(
+			'title',
+			[
+				'label'   => esc_html__('Title', 'spider-elements'),
+				'type'    => Controls_Manager::TEXT,
+				'label_block' => true,
+				'default' => esc_html__('Web Developer', 'spider-elements')
+			]
+		);
+
+		$this->add_control(
+			'brand_name',
+			[
+				'label'         => __('Add Brand Name', 'spider-elements'),
+				'type'          => Controls_Manager::REPEATER,
+				'fields'        => $repeater->get_controls(),
+				'title_field'   => '{{{ title }}}',
+				'prevent_empty' => false,
+				'default' 		=> [
+					[
+					'title' 	=> esc_html__( 'Web Developer', 'spider-elements' ),
+					],
+				],
+				'condition' => [
+					'style' => '2'
+				]
+			]
+		); //End Icon
+
+		$this->add_control(
+            'shape_img',
+            [
+                'label'   => esc_html__('Shape Image', 'spider-elements'),
+                'type'    => Controls_Manager::MEDIA,
+				'condition' => [
+					'style' => '2'
+				]
+            ]
+        );
         
         $this->end_controls_section(); //End Marquee Slides Item 
+    }
+
+	/**
+     * Name: elementor_style_control()
+     * Desc: Register style content
+     * Params: no params
+     * Return: @void
+     * Since: @1.0.0
+     * Package: @allfolio
+     * Author: spider-themes
+     */
+    public function elementor_style_control()
+    {
+
+        $this->start_controls_section(
+            'style_sec',
+            [
+                'label' => esc_html__('Marquee Slides', 'spider-elements'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => '2'
+				]
+            ]
+        );
+
+        $this->add_control(
+			'title_color', [
+				'label'     => esc_html__( 'Title Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .se_marquee_title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'title_typography',
+				'selector' => '{{WRAPPER}} .se_marquee_title',
+			]
+		);
+
+        $this->end_controls_section();
     }
 
     /**
@@ -146,6 +240,7 @@ class Marquee_Slides extends Widget_Base {
 	 */
      protected function render() {
         $settings = $this->get_settings_for_display();
+		extract( $settings ); //extract all settings array to variables converted to name of key
         //======================== Template Parts ==========================//
 		include "templates/marquee/marquee-{$settings['style']}.php";
     }
