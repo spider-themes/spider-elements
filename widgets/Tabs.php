@@ -36,7 +36,7 @@ class Tabs extends Widget_Base
 
 	public function get_icon()
 	{
-		return 'eicon-tabs se-icon';
+		return 'eicon-tabs spe-icon';
 	}
 
 	public function get_keywords()

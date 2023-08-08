@@ -36,7 +36,7 @@ class Video_Popup extends Widget_Base
 
 	public function get_icon()
 	{
-		return 'eicon-play se-icon';
+		return 'eicon-play spe-icon';
 	}
 
 	public function get_keywords()

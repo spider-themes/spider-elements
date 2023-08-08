@@ -33,7 +33,7 @@ class Timeline extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-time-line se-icon';
+        return 'eicon-time-line spe-icon';
     }
 
     public function get_categories() {

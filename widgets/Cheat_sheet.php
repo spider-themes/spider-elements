@@ -31,7 +31,7 @@ class Cheat_sheet extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-apps se-icon';
+        return 'eicon-apps spe-icon';
     }
 
     public function get_keywords() {

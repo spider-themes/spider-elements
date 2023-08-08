@@ -15,6 +15,7 @@
         "docy_team_carousel.default": spiderElements.teamslider,
         "spe_after_before_widget.default": spiderElements.beforeAfter,
         "docy_video_popup.default": spiderElements.videoPopup,
+        "spe_marquee_slides.default": spiderElements.marquee,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -25,7 +26,76 @@
       });
     },
 
-    //Before After Widget
+    //============================== Start Marquee =============================//
+    marquee: function ($scope) {
+
+      let left_slides = $scope.find('.branding-slider')
+      let right_slides = $scope.find('.branding-reverse-slider')
+
+      if ( left_slides.length > 0 ) {
+        left_slides.slick({
+          autoplay: true,
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: false,
+          speed: 5000,
+          prevArrow: false,
+          nextArrow: false,
+          pauseOnHover: false,
+          cssEase: "linear",
+          autoplaySpeed: 10,
+          responsive: [
+              {
+                  breakpoint: 765,
+                  settings: {
+                      slidesToShow: 2,
+                  },
+              },
+              {
+                  breakpoint: 576,
+                  settings: {
+                      slidesToShow: 1,
+                  },
+              },
+          ],
+        });
+      }
+
+    if (right_slides.length > 0 ) {
+      right_slides.slick({
+        autoplay: true,
+        infinite: true,
+        rtl: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        prevArrow: false,
+        nextArrow: false,
+        speed: 5000,
+        pauseOnHover: false,
+        cssEase: "linear",
+        autoplaySpeed: 10,
+        responsive: [
+            {
+                breakpoint: 765,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
+      });
+    }
+
+    },// End Marquee
+
+    //============================== Start Before After =============================//
     beforeAfter: function ($scope) {
       let beforeAfter = $scope.find(".beforeAfter");
 
@@ -38,9 +108,9 @@
           bulletColor: "#fff",
         });
       }
-    },
+    }, //End Before After
 
-    // video popup js
+   //============================== Video Popup =============================//
     videoPopup: function ($scope) {
       let fancy = $scope.find(".fancybox");
       if (fancy.length) {
@@ -59,9 +129,9 @@
           transitionEffect: "zoom-in-out",
         });
       }
-    },
+    }, //End Video Popup
 
-    // teamslider js
+    //============================== Team Slider =============================//
     teamslider: function ($scope) {
       let teamSlider = $scope.find(".expert-slider-one");
       if (teamSlider.length) {
@@ -124,9 +194,9 @@
           ],
         });
       }
-    },
+    }, //End Team Slider
 
-    // video playlist js
+    //============================== Video Playlist =============================//
     videoPlaylist: function ($scope) {
       setTimeout(function () {
         $(".video_slider_area").addClass("loaded").css("height", "auto");
@@ -149,7 +219,7 @@
           });
         }
       }
-    },
+    }, //End Video playlist
 
     //======================== Alert Box =========================== //
     alertBox: function ($scope) {

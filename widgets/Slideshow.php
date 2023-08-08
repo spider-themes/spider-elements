@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     }
 
     public function get_icon() {
-        return 'eicon-slideshow se-icon';
+        return 'eicon-slideshow spe-icon';
     }
 
     public function get_keywords() {

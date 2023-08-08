@@ -191,6 +191,20 @@
     background-position: top;
 }
 
+/* Marquee Slides */
+.marquee1{
+    background: url("../images/el-editor-preview/marquee1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.marquee2{
+    background: url("../images/el-editor-preview/marquee2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
 /* Video Playlist widget CSS */
 /*.elementor-control-se-video-upload > .elementor-control-content > .elementor-button-wrapper{
     display: none;
@@ -202,7 +216,7 @@
 }*/
 
 /*==================== Widget Preview Icon =====================*/
-.elementor-panel .elementor-element .icon .se-icon::after {
+.elementor-panel .elementor-element .icon .spe-icon::after {
     content: url("../images/el-editor-preview/se-icon.svg");
     background-repeat: no-repeat;
     opacity: .5;

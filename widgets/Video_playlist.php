@@ -32,7 +32,7 @@ class Video_playlist extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-video-playlist se-icon';
+		return 'eicon-video-playlist spe-icon';
 	}
 
 	/**
