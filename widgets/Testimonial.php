@@ -68,6 +68,7 @@ class Testimonial extends Widget_Base {
 	protected function register_controls() {
 		$this->elementor_content_control();
 		$this-> elementor_rating_controls();
+		$this-> elementor_general_style();
 		$this->elementor_style_control();
 	}
 
@@ -117,6 +118,10 @@ class Testimonial extends Widget_Base {
 					'6' => [
 						'icon' 	=> 'testimonial6',
 						'title'	=> esc_html__( '06 : Carousel Testimonials', 'spider-elements'),
+					],
+					'7' => [
+						'icon' 	=> 'testimonial7',
+						'title'	=> esc_html__( '07 : Carousel Testimonials', 'spider-elements'),
 					],
 				],
 				'default' => '1',
@@ -536,6 +541,15 @@ class Testimonial extends Widget_Base {
 				'default'	=> __( 'Lead Designer' , 'spider-elements' ),
 			]
 		);
+		$testimonial6->add_control(
+			'author_image', [
+				'label'		=> __( 'Author Image', 'spider-elements' ),
+				'type' 		=> Controls_Manager::MEDIA,
+				'default'	=> [
+					'url' 	=> \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
 
 		$this->add_control(
 			'testimonials6', [
@@ -546,16 +560,32 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default' 		=> [
 					[
+						'company_image' => __('', 'spider-elements'),
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+					[
+						'company_image' => __('', 'spider-elements'),
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+					[
+						'company_image' => __('', 'spider-elements'),
+						'author_image' => __('', 'spider-elements'),
 						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 				],
 				'condition' => [
-					'style'	=> '6'
+					'style'	=> ['6','7']
 				]
 			]
-		); //End Testimonials 05
+		); //End Testimonials 06
 
 
 
@@ -597,7 +627,7 @@ class Testimonial extends Widget_Base {
 			[
 				'label' => __( 'Rating', 'spider-elements' ),
 				'condition'	=> [
-					'style' => '6'
+					'style' => ['6','7']
 				],
 			],
 			
@@ -627,7 +657,7 @@ class Testimonial extends Widget_Base {
 				],
 				'default' => '5',
                 'condition' => [
-                    $this->get_control_id('testimonial_ratting_icon') => ['yes'],
+                    'testimonial_ratting_icon' => ['yes'],
                 ],
 			]
 		);
@@ -680,6 +710,102 @@ class Testimonial extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
+
+	public function elementor_general_style(){
+		$this->start_controls_section(
+			'style_item_tabs', [
+				'label'	=> __( 'Testimonial Item Style', 'spider-elements' ),
+				'tab' 	=> Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => ['6']
+				]
+			]
+		);
+		$this->start_controls_tabs(
+			'style_testimonial_item_tabs'
+		);
+
+		//=== Normal icon
+		$this->start_controls_tab(
+			'style_normal',
+			[
+				'label' => __('Normal', 'spider-elements'),
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' 		=> 'testimonial_item_background',
+				'types' 	=> [ 'classic', 'gradient', 'video' ],
+				'selector'	=> '{{WRAPPER}} ..feedback-block-one',
+			]
+		);
+		$this->add_responsive_control(
+			'testimonial_item_pad',
+			[
+				'label' 		=> __('Padding', 'spider-elements'),
+				'type'			=> Controls_Manager::DIMENSIONS,
+				'size_units'	=> ['px', '%', 'em'],
+				'selectors'		=> [
+					'{{WRAPPER}} .feedback-block-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		); 
+		$this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'item_border',
+                'label' => __( 'Border', 'spider-elements' ),
+                'selector' => '{{WRAPPER}} .feedback-block-one',
+            ]
+        );
+		$this->add_responsive_control(
+            'item_border_radius',
+            [
+                'label' 		=> __('Border Radius', 'spider-elements'),
+                'type' 			=> Controls_Manager::DIMENSIONS,
+                'size_units'	=> ['px', '%', 'em'],
+                'selectors' 	=> [
+                    '{{WRAPPER}} .feedback-block-one' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+		
+
+		$this->end_controls_tab(); //End Normal icon
+		
+		//=== Active icon
+		$this->start_controls_tab(
+			'testimonial_item_hover', [
+				'label' => __('Hover', 'spider-elements'),
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' 		=> 'item_hover_background',
+				'types' 	=> [ 'classic', 'gradient', 'video' ],
+				'selector'	=> '{{WRAPPER}} .feedback-block-one:hover',
+			]
+		);
+
+		$this->add_control(
+			'testimonial_item_hover_border', [
+				'label' => __( 'Border Hover Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .feedback-block-one:hover' => 'border-color: {{VALUE}};',
+				],
+				'separator' => 'after'
+			]
+		);
+
+		$this->end_controls_tab(); // End Active Tab Title
+		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+
+		$this->end_controls_section(); // End Contents Style
+	}
+	
 	public function elementor_style_control() {
 
 		//========================= Contents =========================//
@@ -704,7 +830,7 @@ class Testimonial extends Widget_Base {
 				'label' 	=> __( 'Text Color', 'spider-elements' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors'	=> [
-					'{{WRAPPER}} .se_name' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -712,7 +838,7 @@ class Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' 		=> 'author_name_typo',
-				'selector'	=> '{{WRAPPER}} .se_name',
+				'selector'	=> '{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name',
 			]
 		); //End Author Name
 
@@ -757,6 +883,9 @@ class Testimonial extends Widget_Base {
 				'label' 	=> __( 'Title', 'spider-elements' ),
 				'type' 		=> Controls_Manager::HEADING,
 				'separator'	=> 'before',
+				'condition'	=> [
+					'style' => ['1', '2', '3', '4','5']
+				]
 			]
 		);
 
@@ -767,6 +896,9 @@ class Testimonial extends Widget_Base {
 				'selectors'	=> [
 					'{{WRAPPER}} .se_title' => 'color: {{VALUE}};',
 				],
+				'condition'	=> [
+					'style' => ['1', '2', '3', '4','5']
+				]
 			]
 		);
 
@@ -774,6 +906,9 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name' 		=> 'title_typo',
 				'selector'	=> '{{WRAPPER}} .se_title',
+				'condition'	=> [
+					'style' => ['1', '2', '3', '4','5']
+				]
 			]
 		); //End Title Style
 
@@ -811,7 +946,8 @@ class Testimonial extends Widget_Base {
 					'style' => ['1', '2', '3', '4']
 				]
 			]
-		); //End Designation
+		); 
+		//End Designation
 
 
 		//=== Review Content
@@ -828,7 +964,7 @@ class Testimonial extends Widget_Base {
 				'label' 	=> __( 'Text Color', 'spider-elements' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors'	=> [
-					'{{WRAPPER}} .se_review_content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -836,9 +972,10 @@ class Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' 		=> 'review_text_typo',
-				'selector'	=> '{{WRAPPER}} .se_review_content',
+				'selector'	=> '{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3',
 			]
-		); //End Review Content
+		);
+		 //End Review Content
 
 		// Item BG color style 5
 		$this->add_control(
@@ -862,12 +999,77 @@ class Testimonial extends Widget_Base {
 				]
 			]
 		);
+		$this->end_controls_section();
 
-		$this->end_controls_section(); // End Contents Style
+		//========================= Contents =========================//
+		$this->start_controls_section(
+			'style_rating_sec', [
+				'label'	=> __( 'Rating Style', 'spider-elements' ),
+				'tab' 	=> Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => ['6']
+				]
+			]
+		);
+		//=== Author Name
+		$this->add_control(
+			'star_rating_options', [
+				'label'		=> __( 'Rating Title', 'spider-elements' ),
+				'type' 		=> Controls_Manager::HEADING,
+				'separator'	=> 'before',
+			]
+		);
+
+		$this->add_control(
+			'rating_title_color', [
+				'label' 	=> __( 'Text Color', 'spider-elements' ),
+				'type' 		=> Controls_Manager::COLOR,
+				'selectors'	=> [
+					'{{WRAPPER}} .feedback-block-one .review .text-md' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name' 		=> 'rating_title_typo',
+				'selector'	=> '{{WRAPPER}} .feedback-block-one .review .text-md',
+			]
+		);
+		$this->add_responsive_control(
+			'rating_pad',
+			[
+				'label' 		=> __('Padding', 'spider-elements'),
+				'type'			=> Controls_Manager::DIMENSIONS,
+				'size_units'	=> ['px', '%', 'em'],
+				'selectors'		=> [
+					'{{WRAPPER}} .feedback-block-one .review' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		); 
+		$this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'review_border',
+                'label' => __( 'Border', 'spider-elements' ),
+                'selector' => '{{WRAPPER}} .feedback-block-one .review',
+            ]
+        );
+		$this->end_controls_section();
 
 	}
 
 
+	 /**
+	 * @since 2.3.0
+	 * @access protected
+	 */
+	protected function get_rating( $ratting ) {
+		$settings = $this->get_settings_for_display();
+		$rating_scale = (int) $settings['rating_scale'];
+		$rating = (float)  $ratting > $rating_scale ? $rating_scale :  $ratting;
+		return [ $rating, $rating_scale ];
+	}
 	/**
 	 * Print the actual stars and calculate their filling.
 	 *
@@ -909,6 +1111,9 @@ class Testimonial extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
+		$icon = '&#xE934;';
+        
+        $testimonial_id = $this->get_id();
 
 		//======================== Template Parts ==========================//
 		include "templates/testimonials/testimonial-{$settings['style']}.php";

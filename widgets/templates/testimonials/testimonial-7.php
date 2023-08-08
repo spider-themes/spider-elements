@@ -1,4 +1,4 @@
-<div class="feedback_section_one">
+<div class="feedback-section-five">
     <div class="row feedback-slider-one testimonial-slider-<?php echo esc_attr($testimonial_id);?>">
         <?php if(!empty($testimonials6)): 
         foreach ($testimonials6 as $item ) : 
@@ -6,27 +6,8 @@
                             $textual_rating = $rating_data[0] . '/' . $rating_data[1];
         ?>
         <div class="item elementor-repeater-item-<?php echo esc_attr($item['_id']); ?>">
-            <div class="feedback-block-one">
-                <?php
-                if ( !empty($item['company_image']['url']) ) { ?>
-                <div class="logo">
-
-                    <img src="<?php echo esc_url($item['company_image']['url']);?>" alt="">
-                </div>
-                <?php
-                }
-                if ( !empty($item['review_content']) ) { ?>
-                <h3><?php echo esc_html($item['review_content']) ?>
-                </h3>
-                <?php
-                }
-                if ( !empty($item['author_name']) ) { ?>
-                <div class="name"><span class="fw-500"><?php echo esc_html($item['author_name']); ?></span>
-                    <?php echo esc_html($item['author_position']); ?></div>
-                <?php
-                }
-            ?>
-
+            <div class="feedback-block-one feedback-block-three">
+                <img class="quote-icon" src="<?php echo esc_url($item['company_image']['url']);?>" alt="">
                 <?php
                     if ( 'star_fontawesome' === $settings['star_style'] ) {
                         if ( 'outline' === $settings['unmarked_star_style'] ) {
@@ -50,7 +31,7 @@
                     $schema_rating = '<span itemprop="ratingValue" class="elementor-screen-only">' . $textual_rating . '</span>';
                     $stars_element = '<div ' . $this->get_render_attribute_string( 'icon_wrapper' ) . '>' . $this->render_stars( $icon, $item['author_rating'] ) . ' ' . $schema_rating . '</div>';
                     ?>
-                <div class="review pt-40 md-pt-20 mt-40 md-mt-30 d-flex justify-content-between align-items-center">
+                <div class="review">
                     <?php if ( ! \Elementor\Utils::is_empty( $item['author_rating_title'] ) ) : ?>
                     <div class="text-md fw-500"><?php echo $item['author_rating_title']; ?></div>
                     <?php endif; ?>
@@ -60,6 +41,27 @@
                     <?php endif; ?>
                 </div>
                 <?php?>
+                <?php
+                if ( !empty($item['review_content']) ) { ?>
+                <h3><?php echo esc_html($item['review_content']) ?>
+                </h3>
+                <?php
+                }
+                if ( !empty($item['author_name']) ) { ?>
+                <div class="block-footer d-flex align-items-center justify-content-between pt-35 lg-pt-10">
+                    <div class="d-flex align-items-center">
+                        <div class="name">
+                            <?php echo esc_html($item['author_name']); ?><span><?php echo esc_html($item['author_position']); ?></span>
+                        </div>
+                    </div>
+                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt=""
+                        class="author-img rounded-circle">
+                </div>
+                <?php
+                }
+            ?>
+
+
             </div>
         </div>
         <?php 

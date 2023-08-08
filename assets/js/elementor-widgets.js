@@ -258,27 +258,32 @@
           },
         });
       }
+
+      // var row = rowNum++;
+      // console.log(row);
       let testimonial6 = $scope.find(".feedback-slider-one");
       if (testimonial6.length > 0) {
-        testimonial6.slick({
-          dots: false,
-          arrows: true,
-          lazyLoad: "ondemand",
-          prevArrow: $(".prev_b"),
-          nextArrow: $(".next_b"),
-          centerPadding: "0px",
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 3000000,
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
+        testimonial6.each(function () {
+          $(this).slick({
+            dots: false,
+            arrows: true,
+            lazyLoad: "ondemand",
+            prevArrow: $(this).parent().find(".prev_f"),
+            nextArrow: $(this).parent().find(".next_f"),
+            centerPadding: "0px",
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000000,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                },
               },
-            },
-          ],
+            ],
+          });
         });
       }
     },
