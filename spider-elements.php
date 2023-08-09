@@ -450,7 +450,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
 			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
-			require_once( __DIR__ . '/widgets/Marquee_slides.php' );
+			require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
 
 		}
 
