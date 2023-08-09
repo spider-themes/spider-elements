@@ -1,57 +1,56 @@
-<div id="feedBack_carousel" class="carousel slide mt-55 lg-mt-30" data-bs-ride="carousel">
+<div id="feedBack_carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="row">
         <div class="col-xxl-9 col-lg-8 col-md-10 m-auto">
             <div class="carousel-inner text-center">
-                <div class="carousel-item active" data-bs-interval="1000000">
-                    <p>“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they've
-                        made everything seem simple.”</p>
-                    <div class="d-inline-block position-relative name fw-500 text-dark text-lg">Rashed ka. <span
-                            class="fw-normal opacity-50">Italy</span></div>
+                <?php if(!empty($testimonials8)): 
+                foreach ($testimonials8 as $index => $item ) : 
+                            $i = $index + 1;
+							$active = $i == 1 ? 'active' : '';
+                        ?>
+                <div class="carousel-item <?php echo esc_attr($active)?>">
+                    <?php
+                        if ( !empty($item['review_content']) ) { ?>
+                    <p><?php echo esc_html($item['review_content']) ?>
+                    </p>
+                    <?php
+                        }
+                        if ( !empty($item['author_name']) ) { ?>
+                    <div class="d-inline-block position-relative name fw-500 text-lg">
+                        <?php echo esc_html($item['author_name']); ?><span class="fw-normal opacity-50">
+                            <?php echo esc_html($item['author_position']); ?></span>
+                    </div>
+                    <?php
+                        }
+                    ?>
                 </div>
-                <div class="carousel-item">
-                    <p>“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they've
-                        made everything seem simple.”</p>
-                    <div class="d-inline-block position-relative name fw-500 text-dark text-lg">Juan Marko. <span
-                            class="fw-normal opacity-50">London</span></div>
-                </div>
-                <div class="carousel-item">
-                    <p>“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they've
-                        made everything seem simple.”</p>
-                    <div class="d-inline-block position-relative name fw-500 text-dark text-lg">Julia Ark. <span
-                            class="fw-normal opacity-50">California</span></div>
-                </div>
-                <div class="carousel-item">
-                    <p>“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they've
-                        made everything seem simple.”</p>
-                    <div class="d-inline-block position-relative name fw-500 text-dark text-lg">Shani Milar. <span
-                            class="fw-normal opacity-50">Milan</span></div>
-                </div>
+                <?php 
+                    endforeach;
+                    endif;
+                ?>
+
             </div>
         </div>
     </div>
     <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#feedBack_carousel"
         data-bs-slide="prev">
-        <i class="bi bi-chevron-left"></i>
-        <span class="visually-hidden">Previous</span>
+        <i class="eicon-angle-left"></i>
     </button>
     <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#feedBack_carousel"
         data-bs-slide="next">
-        <i class="bi bi-chevron-right"></i>
-        <span class="visually-hidden">Next</span>
+        <i class="eicon-angle-right"></i>
     </button>
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1">
-            <img src="images/lazy.svg" data-src="images/assets/img_22.jpg" alt="" class="lazy-img rounded-circle">
+        <?php if(!empty($testimonials8)):
+            foreach ($testimonials8 as $index => $item):
+                $i= $index;
+                $active = $i == 1 ? 'active' : '';
+                $area_selected = $i == 1 ? 'true' : 'false'
+            ?>
+        <button type="button" class="<?php echo esc_attr($active)?>" data-bs-target="#feedBack_carousel"
+            data-bs-slide-to="<?php echo esc_attr($i)?>" aria-current="<?php echo esc_attr($area_selected)?>"
+            aria-label="Slide <?php echo esc_attr($i)?>">
+            <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="" class="lazy-img rounded-circle">
         </button>
-        <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="1" aria-label="Slide 2">
-            <img src="images/lazy.svg" data-src="images/assets/img_23.jpg" alt="" class="lazy-img rounded-circle">
-        </button>
-        <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="2" aria-label="Slide 3">
-            <img src="images/lazy.svg" data-src="images/assets/img_24.jpg" alt="" class="lazy-img rounded-circle">
-        </button>
-        <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="3" aria-label="Slide 4">
-            <img src="images/lazy.svg" data-src="images/assets/img_25.jpg" alt="" class="lazy-img rounded-circle">
-        </button>
+        <?php endforeach; endif; ?>
     </div>
 </div>

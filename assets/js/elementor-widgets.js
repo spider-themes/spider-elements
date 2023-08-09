@@ -28,11 +28,10 @@
 
     //============================== Start Marquee =============================//
     marquee: function ($scope) {
+      let left_slides = $scope.find(".branding-slider");
+      let right_slides = $scope.find(".branding-reverse-slider");
 
-      let left_slides = $scope.find('.branding-slider')
-      let right_slides = $scope.find('.branding-reverse-slider')
-
-      if ( left_slides.length > 0 ) {
+      if (left_slides.length > 0) {
         left_slides.slick({
           autoplay: true,
           infinite: true,
@@ -46,54 +45,53 @@
           cssEase: "linear",
           autoplaySpeed: 10,
           responsive: [
-              {
-                  breakpoint: 765,
-                  settings: {
-                      slidesToShow: 2,
-                  },
+            {
+              breakpoint: 765,
+              settings: {
+                slidesToShow: 2,
               },
-              {
-                  breakpoint: 576,
-                  settings: {
-                      slidesToShow: 1,
-                  },
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
               },
+            },
           ],
         });
       }
 
-    if (right_slides.length > 0 ) {
-      right_slides.slick({
-        autoplay: true,
-        infinite: true,
-        rtl: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false,
-        prevArrow: false,
-        nextArrow: false,
-        speed: 5000,
-        pauseOnHover: false,
-        cssEase: "linear",
-        autoplaySpeed: 10,
-        responsive: [
+      if (right_slides.length > 0) {
+        right_slides.slick({
+          autoplay: true,
+          infinite: true,
+          rtl: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: false,
+          prevArrow: false,
+          nextArrow: false,
+          speed: 5000,
+          pauseOnHover: false,
+          cssEase: "linear",
+          autoplaySpeed: 10,
+          responsive: [
             {
-                breakpoint: 765,
-                settings: {
-                    slidesToShow: 2,
-                },
+              breakpoint: 765,
+              settings: {
+                slidesToShow: 2,
+              },
             },
             {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                },
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+              },
             },
-        ],
-      });
-    }
-
-    },// End Marquee
+          ],
+        });
+      }
+    }, // End Marquee
 
     //============================== Start Before After =============================//
     beforeAfter: function ($scope) {
@@ -110,7 +108,7 @@
       }
     }, //End Before After
 
-   //============================== Video Popup =============================//
+    //============================== Video Popup =============================//
     videoPopup: function ($scope) {
       let fancy = $scope.find(".fancybox");
       if (fancy.length) {
@@ -329,8 +327,6 @@
         });
       }
 
-      // var row = rowNum++;
-      // console.log(row);
       let testimonial6 = $scope.find(".feedback-slider-one");
       if (testimonial6.length > 0) {
         testimonial6.each(function () {
@@ -354,6 +350,35 @@
               },
             ],
           });
+        });
+      }
+
+      // feedback-slider-two slider js
+      let testimonial8 = $scope.find(".feedback-slider-two");
+      if (testimonial8.length) {
+        testimonial8.slick({
+          dots: true,
+          arrows: false,
+          lazyLoad: "ondemand",
+          centerPadding: "0px",
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 300000,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
         });
       }
     },
