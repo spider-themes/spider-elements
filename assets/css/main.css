@@ -411,6 +411,7 @@ a:hover, a:focus {
 }
 .accordion .doc_accordion .card-header button {
   padding: 12px 30px;
+  border: unset;
   border-radius: unset;
   text-align: left;
   width: 100%;
@@ -494,6 +495,10 @@ a:hover, a:focus {
 
 button.btn.btn-link.collapsed .collapsed-icon {
   display: none;
+}
+
+button.btn.btn-link:focus {
+  box-shadow: none;
 }
 
 .toggle_body {

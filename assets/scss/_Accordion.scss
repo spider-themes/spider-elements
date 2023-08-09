@@ -274,7 +274,7 @@
        }
        button {
          padding: 12px 30px;
-         //border-radius: 4px 4px 0 0;
+         border: unset;
          border-radius: unset ;
          text-align: left;
          width: 100%;
@@ -371,6 +371,9 @@ button.btn.btn-link.collapsed {
   .collapsed-icon {
     display: none ;
   }
+}
+button.btn.btn-link:focus {
+  box-shadow: none;
 }
 
 
