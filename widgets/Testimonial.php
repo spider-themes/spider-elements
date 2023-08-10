@@ -131,6 +131,10 @@ class Testimonial extends Widget_Base {
 						'icon' 	=> 'testimonial9',
 						'title'	=> esc_html__( '09 : Carousel Testimonials', 'spider-elements'),
 					],
+					'10' => [
+						'icon' 	=> 'testimonial10',
+						'title'	=> esc_html__( '10 : Carousel Testimonials', 'spider-elements'),
+					],
 				],
 				'default' => '1',
 			]
@@ -658,6 +662,71 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Testimonials 08
 
+		//=== Testimonials 10
+		$testimonial10 = new Repeater();
+		$testimonial10->add_control(
+			'review_content', [
+				'label'	=> __( 'Testimonial Text', 'spider-elements' ),
+				'type' 	=> Controls_Manager::TEXTAREA,
+			]
+		);
+		$testimonial10->add_control(
+			'author_name', [
+				'label' 	=> __( 'Author Name', 'spider-elements' ),
+				'type' 		=> Controls_Manager::TEXT,
+				'default'	=> __( 'Karina' , 'spider-elements' ),
+			]
+		);
+		$testimonial10->add_control(
+			'author_position', [
+				'label' 	=> __('Author Position', 'spider-elements' ),
+				'type' 		=> Controls_Manager::TEXT,
+				'default'	=> __( 'Lead Designer' , 'spider-elements' ),
+			]
+		);
+		$testimonial10->add_control(
+			'author_image', [
+				'label'		=> __( 'Author Image', 'spider-elements' ),
+				'type' 		=> Controls_Manager::MEDIA,
+				'default'	=> [
+					'url' 	=> \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$this->add_control(
+			'testimonials10', [
+				'label' 		=> __( 'Testimonials', 'spider-elements' ),
+				'type' 			=> Controls_Manager::REPEATER,
+				'fields'		=> $testimonial10->get_controls(),
+				'title_field'	=> '{{{ name }}}',
+				'prevent_empty' => false,
+				'default' 		=> [
+					[
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Italy', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+					],
+					[
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+					[
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+				],
+				'condition' => [
+					'style'	=> '10'
+				]
+			]
+		); //End Testimonials 10
+
 
 
 		$this->add_control(
@@ -667,6 +736,19 @@ class Testimonial extends Widget_Base {
 				'separator'	=> 'before',
 				'condition' => [
 					'style' => '1'
+				],
+			]
+		);
+		$this->add_control(
+			'quote_img', [
+				'label'		=> __( 'Quote Image', 'spider-elements' ),
+				'type' 		=> Controls_Manager::MEDIA,
+				'separator'	=> 'before',
+				'default'	=> [
+					'url' 	=> \Elementor\Utils::get_placeholder_image_src(),
+				],
+				'condition' => [
+					'style' => '10'
 				],
 			]
 		);
@@ -901,7 +983,7 @@ class Testimonial extends Widget_Base {
 				'label' 	=> __( 'Text Color', 'spider-elements' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors'	=> [
-					'{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name,{{WRAPPER}} #feedBack_carousel .name' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name,{{WRAPPER}} #feedBack_carousel .name,{{WRAPPER}} .feedback-section-four .bg-wrapper .name' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -909,7 +991,7 @@ class Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' 		=> 'author_name_typo',
-				'selector'	=> '{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name,{{WRAPPER}} #feedBack_carousel .name',
+				'selector'	=> '{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name,{{WRAPPER}} #feedBack_carousel .name,{{WRAPPER}} .feedback-section-four .bg-wrapper .name',
 			]
 		); //End Author Name
 
@@ -1035,7 +1117,7 @@ class Testimonial extends Widget_Base {
 				'label' 	=> __( 'Text Color', 'spider-elements' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors'	=> [
-					'{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3,{{WRAPPER}} #feedBack_carousel .carousel-inner p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3,{{WRAPPER}} #feedBack_carousel .carousel-inner p,{{WRAPPER}} .feedback-section-four .bg-wrapper p' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1043,7 +1125,7 @@ class Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name' 		=> 'review_text_typo',
-				'selector'	=> '{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3,{{WRAPPER}} #feedBack_carousel .carousel-inner p',
+				'selector'	=> '{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3,{{WRAPPER}} #feedBack_carousel .carousel-inner p,{{WRAPPER}} .feedback-section-four .bg-wrapper p',
 			]
 		);
 		 //End Review Content
@@ -1055,7 +1137,7 @@ class Testimonial extends Widget_Base {
 				'type' 		=> Controls_Manager::HEADING,
 				'separator'	=> 'before',
 				'condition' => [
-					'style' => ['5']
+					'style' => ['5','10']
 				]
 			]
 		);
@@ -1064,12 +1146,26 @@ class Testimonial extends Widget_Base {
 			[
 				'name' 		=> 'background',
 				'types' 	=> [ 'classic', 'gradient', 'video' ],
-				'selector'	=> '{{WRAPPER}} .testimonial-item',
+				'selector'	=> '{{WRAPPER}} .testimonial-item,{{WRAPPER}} .feedback-section-four .bg-wrapper',
 				'condition' => [
-					'style' => ['5']
+					'style' => ['5','10']
 				]
 			]
 		);
+		$this->add_responsive_control(
+			'feedback-section-four-item-pad',
+			[
+				'label' 		=> __('Padding', 'spider-elements'),
+				'type'			=> Controls_Manager::DIMENSIONS,
+				'size_units'	=> ['px', '%', 'em'],
+				'selectors'		=> [
+					'{{WRAPPER}} .feedback-section-four .bg-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+					'style' => ['10']
+				]
+			]
+		); 
 		$this->end_controls_section();
 
 		//========================= Contents =========================//
