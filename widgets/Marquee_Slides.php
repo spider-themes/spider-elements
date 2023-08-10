@@ -28,7 +28,7 @@ class Marquee_Slides extends Widget_Base {
     }
 
     public function get_title() {
-        return 'Marquee Slides';
+        return __( 'Marquee Slides', 'spider-elements' );
     }
 
     public function get_icon() {
@@ -245,32 +245,3 @@ class Marquee_Slides extends Widget_Base {
 		include "templates/marquee/marquee-{$settings['style']}.php";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

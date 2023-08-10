@@ -823,3 +823,120 @@
     }
   }
 }
+
+// testimonial 10 css 
+// FeedBack Section Four
+.feedback-section-four .bg-wrapper {
+  background: #1EA243;
+  padding: 125px 150px 165px 110px;
+  @media (min-width: 1200px) and (max-width: 1399px){
+    padding: 80px 100px 130px 70px;
+  }
+  @media (max-width: 1200px){
+    padding: 40px 40px 80px 40px;
+  }
+  .icon {
+      width: 80px;
+      height: 80px;
+      background: rgba($color: #fff, $alpha: .16);
+  }
+  p {
+      font-size: 40px;
+      line-height: 1.7em;
+      color: #fff;
+      margin: 50px 0 95px;
+  }
+  .name{
+    font-size: 20px;
+  }
+  .slider-arrows {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 0;
+      li {
+          width: 60px;
+          height: 60px;
+          font-size: 22px;
+          text-align: center;
+          line-height: 60px;
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.2s linear;
+          border-left: 1px solid rgba($color: #fff, $alpha: .14);
+          background: rgba($color: #fff, $alpha: .13);
+          &:hover {
+              background: #fff;
+              color: #000;
+          }
+      }
+  }
+}
+.feedback-section-four{
+  .slider-wrapper {
+    position: absolute;
+    width: 70vw;
+    right: -32vw;
+    bottom: 9%;
+    @media (min-width: 1921px){
+      right: -28vw;
+      width: 55vw;
+    }
+    @media (max-width: 1400px){
+      right: -12vw;
+    }
+    @media (max-width: 1024px){
+      width: 100%;
+      position: static;
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-top: 40px;
+    }
+    .item{
+      margin: 0 15px;
+    }
+    .slick-dots {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        bottom: -14%;
+        left: 20%;
+        width: auto;
+        @media (max-width: 1024px){
+          position: relative;
+          margin-top: 15px;
+          left: 0;
+          bottom: 0;
+        }
+        li{
+          width: auto;
+          height: auto;
+          margin: 0 auto;
+          button{
+            text-indent: -50000px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background: #E4E4E4;
+            transition: all 0.3s ease-in-out;
+            padding: 0px;
+          }
+          &.slick-active{
+            button{
+              background: #00BF58;
+            }
+          }
+        }
+    }
+  }
+  .col-lg-6{
+    @media (max-width: 1024px){
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+} 
+
+
+

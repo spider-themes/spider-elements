@@ -381,6 +381,56 @@
           ],
         });
       }
+
+      let testimonial10 = $scope.find(".feedback-slider-three-a");
+      if (testimonial10.length) {
+        testimonial10.slick({
+          dots: false,
+          arrows: true,
+          prevArrow: $(".prev_d"),
+          nextArrow: $(".next_d"),
+          lazyLoad: "ondemand",
+          centerPadding: "0px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          fade: true,
+          autoplaySpeed: 300000,
+          asNavFor: ".feedback-slider-three-b",
+        });
+
+        $(".feedback-slider-three-b").slick({
+          dots: true,
+          arrows: false,
+          lazyLoad: "ondemand",
+          centerPadding: "0px",
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 300000,
+          asNavFor: ".feedback-slider-three-a",
+          responsive: [
+            {
+              breakpoint: 1922,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      }
     },
 
     //======================== Tabs =========================== //
