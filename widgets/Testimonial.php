@@ -890,7 +890,7 @@ class Testimonial extends Widget_Base {
 			[
 				'name' 		=> 'testimonial_item_background',
 				'types' 	=> [ 'classic', 'gradient', 'video' ],
-				'selector'	=> '{{WRAPPER}} ..feedback-block-one',
+				'selector'	=> '{{WRAPPER}} .feedback-block-one',
 			]
 		);
 		$this->add_responsive_control(
