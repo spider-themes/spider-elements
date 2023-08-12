@@ -22,10 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Marquee_Slides extends Widget_Base {
 
-
-    public function get_title() {
-        return __( 'Marquee Slides', 'spider-elements' );
-    }
+	public function get_name() {
+		return 'spe_marquee_slides';
+	}
 
 	public function get_title() {
 		return esc_html__( 'Marquee Slides', 'spider-elements' );
