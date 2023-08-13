@@ -59,7 +59,7 @@
                     <?php echo $stars_element; ?>
                     <?php endif; ?>
                 </div>
-                <?php?>
+                <php?>
             </div>
         </div>
         <?php 
