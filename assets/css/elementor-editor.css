@@ -218,9 +218,9 @@
 
 /**=== Badge Text ===**/
 .spe-new-badge-control {
-    background-color: orangered;
+    background-color: #A77DEF;
     color: #fff;
-    font-size: 7px;
+    font-size: 10px;
     font-weight: 700;
     border-radius: 2px;
     padding: 3px 4px;

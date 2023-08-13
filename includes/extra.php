@@ -2,7 +2,7 @@
 add_image_size( 'se_270x152', 270, 152, true); // Video Playlist Thumb
 
 if (!defined('SPE_NEW_BADGE')) {
-	define('SPE_NEW_BADGE', '<span class="spe-new-badge-control">New</span>');
+	define('SPIDER_TEXT_BADGE', '<span class="spe-new-badge-control">SPIDER</span>');
 }
 
 
