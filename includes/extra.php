@@ -1,6 +1,28 @@
 <?php
 add_image_size( 'se_270x152', 270, 152, true); // Video Playlist Thumb
 
+if (!defined('SPE_NEW_BADGE')) {
+	define('SPIDER_TEXT_BADGE', '<span class="spe-new-badge-control">SPIDER</span>');
+}
+
+
+/**
+ * @return bool
+ * Elementor is edit mode
+ */
+function spider_elements_is_edit () {
+	return \Elementor\Plugin::$instance->editor->is_edit_mode();
+}
+
+/**
+ * @return bool
+ * Elementor is preview mode
+ */
+function spider_elements_is_preview () {
+	return \Elementor\Plugin::$instance->preview->is_preview_mode();
+}
+
+
 /**
  * Elementor Title tags
  */

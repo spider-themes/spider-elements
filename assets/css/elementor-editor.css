@@ -205,15 +205,6 @@
     background-position: top;
 }
 
-/* Video Playlist widget CSS */
-/*.elementor-control-se-video-upload > .elementor-control-content > .elementor-button-wrapper{
-    display: none;
-}
-
- 
-.elementor-control-se-video-upload > .elementor-control-content > .elementor-repeater-fields-wrapper > .elementor-repeater-fields:not(:first-child)> .elementor-repeater-row-tools > .elementor-repeater-tool-remove { 
-    display: table-cell; 
-}*/
 
 /*==================== Widget Preview Icon =====================*/
 .elementor-panel .elementor-element .icon .spe-icon::after {
@@ -223,4 +214,16 @@
     position: absolute;
     top: 5px;
     right: 5px;
+}
+
+/**=== Badge Text ===**/
+.spe-new-badge-control {
+    background-color: #A77DEF;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 2px;
+    padding: 3px 4px;
+    margin-left: 5px;
+    vertical-align: middle;
 }

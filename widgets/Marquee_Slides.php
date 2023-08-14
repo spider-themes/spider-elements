@@ -21,9 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package spider\Widgets
  */
 class Marquee_Slides extends Widget_Base {
+
 	public function get_name() {
-        return 'docly_marquee_slides';
-    }
+		return 'spe_marquee_slides';
+	}
 
 	public function get_title() {
 		return esc_html__( 'Marquee Slides', 'spider-elements' );
