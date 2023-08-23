@@ -67,6 +67,7 @@ class Assets {
 		wp_register_script( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.js', array( 'jquery' ), '5.1.3', true );
 		wp_register_script( 'slick', SE_VEND . '/slick/slick.min.js', array( 'jquery' ), SE_VERSION, true );
 		wp_register_script( 'swiper', SE_VEND . '/swiper/swiper-bundle.min.js', array( 'jquery' ), SE_VERSION, true );
+		wp_register_script( 'text-type', SE_VEND . '/text-type/text-type.js', array( 'jquery' ), SE_VERSION, true );
 		wp_register_script( 'wow', SE_VEND . '/wow/wow.min.js', array( 'jquery' ), '1.1.3', true );
 		wp_register_script( 'artplayer', SE_VEND . '/video/artplayer.js', array( 'jquery' ), '3.5.26', true );
 		wp_register_script( 'video-js-nuevo', SE_VEND . '/video/nuevo.min.js', array( 'jquery' ), '7.6.0', true );
