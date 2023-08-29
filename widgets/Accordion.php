@@ -188,7 +188,7 @@ class Accordion extends Widget_Base {
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
 				'default'     => [
-					'value'   => 'fas fa-caret-down',
+					'value'   => 'fas fa-plus',
 					'library' => 'solid',
 				],
 				'separator'   => 'before'
@@ -200,7 +200,7 @@ class Accordion extends Widget_Base {
 				'label'   => __( 'Active Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
-					'value'   => 'fas fa-caret-up',
+					'value'   => 'fas fa-minus',
 					'library' => 'solid',
 				]
 			]
@@ -264,7 +264,7 @@ class Accordion extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name'     => 'tabs_border',
+				'name'     => 'accordion_border',
 				'label'    => esc_html__( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .accordion .doc_accordion .accordion_main_aria, {{WRAPPER}} .accordion .doc_accordion .accordion_main_aria',
 			]
