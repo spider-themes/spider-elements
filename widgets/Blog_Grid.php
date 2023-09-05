@@ -336,6 +336,7 @@ class Blog_Grid extends Widget_Base {
 	 */
     public function elementor_blog_style_section(){
         $this-> blog_general_style();
+        $this-> blog_image_style();
         $this-> blog_content_style();
         $this-> button_style();
         $this-> meta_style();
@@ -343,7 +344,61 @@ class Blog_Grid extends Widget_Base {
 
     public function blog_general_style(){
         $this->start_controls_section(
-            'blog_general_tab',
+            'blog_general_styles',
+            [
+                'label' => __( 'Blog Item Style', 'spider-elements' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_control(
+            'blog_grid_item_bg',
+            [
+                'label'     => esc_html__('Background Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .blog-meta-two' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'blog_grid_item_radius',
+            [
+                'label' => __( 'Border Radius', 'spider-elements' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px'],
+                'selectors' => [
+                    '{{WRAPPER}} .blog-meta-two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+			'blog_item_padding',
+			[
+				'label' => __( 'Padding', 'spider-elements' ),
+				'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px'],
+				'range' => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+						'step' => 5,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 10,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .blog-meta-two' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+            ]
+		);
+        $this-> end_controls_section();
+    }
+
+    public function blog_image_style(){
+        $this->start_controls_section(
+            'blog_image_tab',
             [
                 'label' => __( 'Image Style', 'spider-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -380,13 +435,14 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-meta-two .post-img,{{WRAPPER}} .blog-meta-two .post-img' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
                 'condition' => [
-                    'style' => ['4']
+                    'style' => ['1','4']
                 ],
 			]
 		);
        
         $this-> end_controls_section();
     }
+    
     public function blog_content_style(){
         $this->start_controls_section(
             'blog_content_tab',
@@ -651,6 +707,28 @@ class Blog_Grid extends Widget_Base {
                 'default' => '',
                 'selectors' => [
                     '{{WRAPPER}} .blog-meta-two .date a' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'category_bg',
+            [
+                'label'     => esc_html__('Category_Background Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .blog-meta-two .post-img .tags' => 'background: {{VALUE}};',
+                ],
+                'separator' => 'after',
+            ]
+        );
+        $this->add_control(
+            'blog_category_color',
+            [
+                'label' => esc_html__('category Color', 'spider-elements'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '',
+                'selectors' => [
+                    '{{WRAPPER}} .blog-meta-two .post-img .tags' => 'color: {{VALUE}};',
                 ],
             ]
         );
