@@ -8439,4 +8439,139 @@ ul.ordered-list li::before {
   box-shadow: none;
 }
 
+.scroll-down-one {
+  display: inline-block;
+}
+.scroll-down-one .circle {
+  height: 25px;
+  width: 18px;
+  border-radius: 9px;
+  position: relative;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+.scroll-down-one .circle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 6px;
+  width: 1px;
+  background-color: #fff;
+}
+.scroll-down-one .arrow-cont {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+.scroll-down-one .arrow-cont i {
+  position: absolute;
+  bottom: 0;
+  background-size: contain;
+  top: 2px;
+  left: 0%;
+  font-size: 17px;
+  color: #fff;
+}
+.scroll-down-one .arrow-cont i:nth-child(2) {
+  margin-top: 5.5px;
+}
+.scroll-down-one .arrow-cont i:nth-child(3) {
+  margin-top: 11.5px;
+}
+.scroll-down-one:hover i {
+  animation-name: bounceAlphaUpper;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.scroll-down-one:hover i:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.scroll-down-one:hover i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.banner-content-typing h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 68px;
+  color: #e6e6e6;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.banner-content-typing .single-headline {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 68px;
+  line-height: 1.2;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.banner-content-typing .single-headline:after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: #fff;
+}
+.banner-content-typing .single-headline span {
+  opacity: 0;
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+  font-style: normal;
+}
+.banner-content-typing .single-headline span b {
+  color: #E86A42;
+}
+.banner-content-typing .single-headline span.is-visible {
+  position: relative;
+  opacity: 1;
+}
+.banner-content-typing p {
+  color: #B9B9BA;
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 15px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.banner-content-typing .allfolio-btn-group {
+  margin-top: 65px;
+}
+.banner-content-typing .allfolio-btn-group .theme-btn {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+}
+.banner-content-typing .allfolio-btn-group .theme-btn + .theme-btn {
+  margin-left: 20px;
+}
+
+@media (max-width: 1300px) {
+  .banner-content-typing h1,
+  .banner-content-typing .single-headline {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 575px) {
+  .banner-content-typing h1,
+  .banner-content-typing .single-headline {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

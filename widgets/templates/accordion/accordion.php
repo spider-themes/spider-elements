@@ -22,7 +22,7 @@
                                 <?php \Elementor\Icons_Manager::render_icon( $settings['plus-icon'], [ 'aria-hidden' => 'true' ] ); ?>
                             </span>
                             <span class="collapsed-icon">
-                                <?php \Elementor\Icons_Manager::render_icon( $settings['minus-icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                <?php \Elementor\Icons_Manager::render_icon( $settings['minus-icon'], [ '   aria-hidden' => 'true' ] ); ?>
                             </span>
                         </span>
                     </button>
