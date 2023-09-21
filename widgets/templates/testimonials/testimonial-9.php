@@ -39,7 +39,6 @@
                     <?php echo $stars_element; ?>
                     <?php endif; ?>
                 </div>
-                <?php?>
                 <?php
                 if ( !empty($item['review_content']) ) { ?>
                 <h3><?php echo esc_html($item['review_content']) ?>
