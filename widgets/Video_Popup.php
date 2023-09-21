@@ -41,7 +41,7 @@ class Video_Popup extends Widget_Base
 
 	public function get_keywords()
 	{
-		return [ 'spider', 'spider elements', 'video', 'video-popup', 'video-popup widget' ];
+		return [ 'spider', 'video', 'video-popup', ];
 	}
 
 	public function get_categories()
@@ -84,7 +84,6 @@ class Video_Popup extends Widget_Base
 		$this-> video_style_control();
 	}
 
-
     
 	/**
 	 * Name: elementor_content_control()
@@ -98,8 +97,33 @@ class Video_Popup extends Widget_Base
 
      public function elementor_content_control() {
 
-		// ============================ Select Style  ===========================//
+        //==================== Select Preset Skin ====================//
+		$this->start_controls_section(
+			'video_popup_sec', [
+				'label'	=> __( 'Preset Skin', 'spider-elements' ),
+			]
+		);
 
+        $this->add_control(
+			'style',
+			[
+				'label'   => esc_html__( 'Video Popup Style', 'spider-elements' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [
+					'1' => esc_html__( 'Style 01', 'spider-elements' ),
+					'2' => esc_html__( 'Style 02', 'spider-elements' ),
+					'3' => esc_html__( 'Style 03', 'spider-elements' ),
+					'4' => esc_html__( 'Style 04', 'spider-elements' ),
+					'5' => esc_html__( 'Style 05', 'spider-elements' ),
+				],
+				'default' => '1',
+			]
+		);
+
+		$this->end_controls_section(); // End Preset Skin
+
+
+		// ============================ Video Popup Content ===========================//
 		 $this->start_controls_section(
             'video_sec', [
                 'label' => esc_html__( 'Video', 'spider-elements' ),
@@ -108,23 +132,25 @@ class Video_Popup extends Widget_Base
 
         $this->add_control(
             'video_url', [
-                'label' => esc_html__( 'Video URL', 'spider-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => '#'
+                'label'         => esc_html__( 'Video URL', 'spider-elements' ),
+                'type'          => Controls_Manager::TEXT,
+                'label_block'   => true,
+                'default'       => '#'
             ]
         );
+
 		$this->add_control(
             'video_icon', [
-                'label' => __( 'Icon', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'default' => [
-                    'value' => 'fas fa-play',
-                    'library' => 'solid',
+                'label'      => __( 'Icon', 'spider-elements' ),
+                'type'      => Controls_Manager::ICONS,
+                'default'   => [
+                    'value'     => 'fas fa-play',
+                    'library'   => 'solid',
                 ],
             ]
         );
-		$this->end_controls_section(); // End Select Style
+
+		$this->end_controls_section(); // End Video Popup Content 
     }
 
 
@@ -147,20 +173,28 @@ class Video_Popup extends Widget_Base
             ]
         );
 
+
         $this->start_controls_tabs( 'icon_style_tabs' );
+
 
         // Normal tabs
         $this->start_controls_tab(
             'icon_normal_tabs', [
-                'label' => __( 'Normal', 'spider-elements' ),
+                'label'     => __( 'Normal', 'spider-elements' ),
+                'condition'	=> [
+					'style' => [ '1' ]
+				]
             ]
         );
 
         $this->add_control(
             'icon_font_color',
             [
-                'label' => __( 'Icon Color', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'label'     => __( 'Icon Color', 'spider-elements' ),
+                'type'      => Controls_Manager::COLOR,
+                'condition'	=> [
+					'style' => [ '1' ]
+				],
                 'selectors' => [
                     '{{WRAPPER}} .video-icon' => 'color: {{VALUE}}',
                 ],
@@ -170,8 +204,11 @@ class Video_Popup extends Widget_Base
         $this->add_control(
             'icon_bg_color',
             [
-                'label' => __( 'Background Color', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'label'     => __( 'Background Color', 'spider-elements' ),
+                'type'      => Controls_Manager::COLOR,
+                'condition'	=> [
+					'style' => [ '1' ]
+				],
                 'selectors' => [
                     '{{WRAPPER}} .video-icon' => 'background-color: {{VALUE}}',
                 ],
@@ -183,15 +220,21 @@ class Video_Popup extends Widget_Base
         // Hover tabs
         $this->start_controls_tab(
             'icon_hover_tabs', [
-                'label' => __( 'Hover', 'spider-elements' ),
+                'label'     => __( 'Hover', 'spider-elements' ),
+                'condition'	=> [
+					'style' => [ '1' ]
+				]
             ]
         );
 
         $this->add_control(
             'icon_hover_font_color',
             [
-                'label' => __( 'Icon Color', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'label'     => __( 'Icon Color', 'spider-elements' ),
+                'type'      => Controls_Manager::COLOR,
+                'condition'	=> [
+					'style' => [ '1' ]
+				],
                 'selectors' => [
                     '{{WRAPPER}} .video-icon:hover' => 'color: {{VALUE}}',
                 ],
@@ -201,8 +244,11 @@ class Video_Popup extends Widget_Base
         $this->add_control(
             'icon_hover_bg_color',
             [
-                'label' => __( 'Background Color', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'label'     => __( 'Background Color', 'spider-elements' ),
+                'type'      => Controls_Manager::COLOR,
+                'condition'	=> [
+					'style' => [ '1' ]
+				],
                 'selectors' => [
                     '{{WRAPPER}} .video-icon:hover' => 'background-color: {{VALUE}}',
                 ],
@@ -212,8 +258,11 @@ class Video_Popup extends Widget_Base
         $this->add_control(
             'icon_hover_border_color',
             [
-                'label' => __( 'Border Color', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'label'     => __( 'Border Color', 'spider-elements' ),
+                'type'      => Controls_Manager::COLOR,
+                'condition'	=> [
+					'style' => [ '1' ]
+				],
                 'selectors' => [
                     '{{WRAPPER}} .video-icon:hover' => 'border-color: {{VALUE}}',
                 ],
@@ -230,10 +279,10 @@ class Video_Popup extends Widget_Base
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Border::get_type(),
+            Group_Control_Border::get_type(),
             [
-                'name' => 'icon_border',
-                'label' => __( 'Border', 'spider-elements' ),
+                'name'      => 'icon_border',
+                'label'     => __( 'Border', 'spider-elements' ),
                 'selector' => '{{WRAPPER}} .video-icon',
             ]
         );
@@ -241,11 +290,11 @@ class Video_Popup extends Widget_Base
         $this->add_responsive_control(
             'icon_border_radius',
             [
-                'label' => __( 'Border Radius', 'spider-elements' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .video-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                'label'         => __( 'Border Radius', 'spider-elements' ),
+                'type'          => Controls_Manager::DIMENSIONS,
+                'size_units'    => [ 'px', '%', 'em' ],
+                'selectors'     => [
+                    '{{WRAPPER}} .video-icon, .play-button a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -253,24 +302,24 @@ class Video_Popup extends Widget_Base
         $this->add_responsive_control(
             'icon_size',
             [
-                'label' => __( 'Size', 'spider-elements' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
+                'label'         => __( 'Size', 'spider-elements' ),
+                'type'          => Controls_Manager::SLIDER,
+                'size_units'    => [ 'px', '%' ],
                 'range' => [
-                    'px' => [
+                    'px'    => [
                         'min' => 0,
                         'max' => 100,
                     ],
-                    '%' => [
+                    '%'     => [
                         'min' => 0,
                         'max' => 100,
                     ],
                 ],
-                'default' => [
-                    'unit' => 'px',
+                'default'   => [
+                    'unit'  => 'px',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .video-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .video-icon, .play-button a i ' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -278,9 +327,12 @@ class Video_Popup extends Widget_Base
         $this->add_responsive_control(
             'icon_bg_width', [
                 'label' => __( 'video Popup Width', 'spider-elements' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
+                'type'  => Controls_Manager::SLIDER,
+                'condition' => [
+					'style' => [ '1' ]
+				],
+                'size_units'    => [ 'px', '%' ],
+                'range'         => [
                     'px' => [
                         'min' => 0,
                         'max' => 1000,
@@ -290,14 +342,55 @@ class Video_Popup extends Widget_Base
                         'max' => 100,
                     ],
                 ],
-                'default' => [
-                    'unit' => 'px',
+                'default'   => [
+                    'unit'  => 'px',
+                    'size'  => '90',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .video-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .video-icon'   => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
+
+
+        $this->add_control(
+            'enable_wave',
+            [
+                'label' => __('Enable Wave', 'spider-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'no', 
+            ]
+        );
+
+        $this->add_control(
+            'wave_color',
+            [
+                'label' => __('Wave Color', 'spider-elements'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ff0000',
+                'condition' => [
+                    'enable_wave' => 'yes', // Show this control when "Enable Wave" is turned on
+                ],
+            ]
+        );
+        
+        // $this->add_control(
+        //     'wave_animation',
+        //     [
+        //         'label' => __('Wave Animation', 'your-addon'),
+        //         'type' => Controls_Manager::SELECT,
+        //         'default' => 'none', // Set your default animation
+        //         'options' => [
+        //             'none' => __('None', 'your-addon'),
+        //             'fade' => __('Fade', 'your-addon'),
+        //             'slide' => __('Slide', 'your-addon'),
+        //         ],
+        //         'condition' => [
+        //             'enable_wave' => 'yes', // Show this control when "Enable Wave" is turned on
+        //         ],
+        //     ]
+        // );
+        
 
         $this->end_controls_section();
     }
@@ -314,10 +407,6 @@ class Video_Popup extends Widget_Base
 		$settings = $this->get_settings_for_display();
 		extract($settings); //extract all settings array to variables converted to name of key
 		//================= Template Parts =================//
-		?>
-			<a href="<?php echo $settings['video_url'] ?>" class="fancybox video-icon tran3s text-center" data-fancybox>
-				<?php \Elementor\Icons_Manager::render_icon( $settings['video_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-			</a>
-		<?php
+        include "templates/video-popup/video-popup-{$settings['style']}.php";
 	}
 }

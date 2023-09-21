@@ -217,7 +217,7 @@
           });
         }
       }
-    }, //End Video playlist
+    },
 
     //======================== Alert Box =========================== //
     alertBox: function ($scope) {
@@ -560,6 +560,8 @@
         });
       }
     },
+
+    //======================== Video Popup style 5 =========================== //
   };
 
   $window.on("elementor/frontend/init", spiderElements.onInit);
