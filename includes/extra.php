@@ -1,9 +1,13 @@
 <?php
 add_image_size( 'se_270x152', 270, 152, true); // Video Playlist Thumb
 
-if (!defined('SPE_NEW_BADGE')) {
-	define('SPIDER_TEXT_BADGE', '<span class="spe-new-badge-control">SPIDER</span>');
+/**
+ * Constants for widgets badge
+ */
+if (!defined('SPIDER_TEXT_BADGE')) {
+	define('SPIDER_TEXT_BADGE', '<span class="spe-text-badge-control">SPIDER</span>');
 }
+
 
 
 /**
