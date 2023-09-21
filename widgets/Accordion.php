@@ -454,8 +454,8 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label'   => esc_html__( 'Alignment', 'spider-elements' ),
-				'type'    => Controls_Manager::CHOOSE,
+				'label'   	=> esc_html__( 'Alignment', 'spider-elements' ),
+				'type'    	=> Controls_Manager::CHOOSE,
 				'separator'	=> 'before',
 				'options' => [
 					'left'  => [
