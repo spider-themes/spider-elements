@@ -181,6 +181,47 @@ function se_get_the_categories ( $term = 'category' ) {
     return $cat_array;
 }
 
+
+/**
+ * Get categories list
+ * @param string $term
+ * @return string
+ */
+function se_get_post_category_list() {
+    $categories = get_categories();
+
+    if ( ! empty( $categories ) ) {
+        echo '<span class="blog-category">';
+
+        $category_names = array();
+
+        foreach ( $categories as $category ) {
+            $category_link = get_category_link( $category->term_id );
+            $category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
+        }
+
+        echo implode(', ', $category_names);
+
+        echo '</span>';
+    } else {
+        echo 'No categories found.';
+    }
+}
+
+/**
+ * Get reading time
+ * @param string $term
+ * @return string
+ */
+function se_get_reading_time($words_per_minute) {
+    $post_content = get_post_field('post_content', get_the_ID());
+    $word_count = str_word_count($post_content);
+    $reading_time = ceil($word_count / $words_per_minute);
+    $formatted_reading_time = $reading_time . ' min read';
+
+    return $formatted_reading_time;
+}
+
 /**
  * Get author name array
  * @param string $term

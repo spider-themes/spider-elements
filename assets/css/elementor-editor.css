@@ -181,6 +181,12 @@
     background-size: cover;
     background-position: center;
 }
+.blog-grid5::before{
+    background: url("../images/el-editor-preview/blog5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 /** === Video Playlist === **/
 .video-playlist::before {
     background: url("../images/el-editor-preview/video-playlist.jpg");

@@ -50,6 +50,20 @@ class Blog_Grid extends Widget_Base {
     }
 
     /**
+	 * Name: get_style_depends()
+	 * Desc: Register the required CSS dependencies for the frontend.
+	 */
+	public function get_style_depends() {
+		return [ 'bootstrap', 'spe-main', 'ionicons' ];
+	}
+	/**
+	 * Name: get_script_depends()
+	 * Desc: Register the required JS dependencies for the frontend.
+	 */
+	public function get_script_depends() {
+		return [ 'ionicons' ];
+	}
+    /**
 	 * Name: register_controls()
 	 * Desc: Register controls for these widgets
 	 * Params: no params
@@ -106,6 +120,10 @@ class Blog_Grid extends Widget_Base {
                     '4' => [
 						'title' => __( 'Style 04', 'spider-elements' ),
 						'icon'  => 'blog-grid4',
+					],
+                    '5' => [
+						'title' => __( 'Style 05', 'spider-elements' ),
+						'icon'  => 'blog-grid5',
 					],
 				],
 				'toggle'  => false,
@@ -361,6 +379,19 @@ class Blog_Grid extends Widget_Base {
             ]
         );
         $this->add_control(
+            'blog_grid_item_bg_hover',
+            [
+                'label'     => esc_html__('Background Hover Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .blog-meta-two:hover' => 'background: {{VALUE}};',
+                ],
+                'condition'   	=> [
+					'style' => '5'
+				]
+            ]
+        );
+        $this->add_control(
             'blog_grid_item_radius',
             [
                 'label' => __( 'Border Radius', 'spider-elements' ),
@@ -402,6 +433,9 @@ class Blog_Grid extends Widget_Base {
             [
                 'label' => __( 'Image Style', 'spider-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'condition'   	=> [
+					'style' => ['1', '2', '3', '4']
+				]
             ]
         );
         $this->add_control(
@@ -555,7 +589,7 @@ class Blog_Grid extends Widget_Base {
             [
                 'name' => 'blog_read_btn',
                 'label' => __('Button Typography', 'spider-elements'),
-                'selector' => '{{WRAPPER}} .blog-meta-two .continue-btn',
+                'selector' => '{{WRAPPER}} .blog-meta-two .continue-btn, {{WRAPPER}} .blog-meta-two .read-more-btn a',
             ]
         );
         $this->add_control(
@@ -566,6 +600,7 @@ class Blog_Grid extends Widget_Base {
                 'default' => '',
                 'selectors' => [
                     '{{WRAPPER}} .blog-meta-two .continue-btn' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .blog-meta-two .read-more-btn a' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -648,6 +683,7 @@ class Blog_Grid extends Widget_Base {
                 'default' => '',
                 'selectors' => [
                     '{{WRAPPER}} .blog-meta-two .continue-btn:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .blog-meta-two .read-more-btn a:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -688,6 +724,9 @@ class Blog_Grid extends Widget_Base {
             [
                 'label' => __( 'Meta Style', 'spider-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'condition'   	=> [
+					'style' => ['1', '2', '3', '4']
+				]
             ]
         );
 
