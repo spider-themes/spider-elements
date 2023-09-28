@@ -1,26 +1,28 @@
 /*============ Start doc_feedback_area css ==========*/
-.doc_feedback_info{
+.doc_feedback_info {
   position: relative;
 }
-.slider_nav{
-  .arrow{
+.slider_nav {
+  .arrow {
     width: 25px;
     height: 2px;
     background: #989dad;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     display: block;
     margin-top: 12px;
-    &:before,&:after{
+    &:before,
+    &:after {
       content: "";
       position: absolute;
       width: 15px;
       height: 2px;
       left: -2px;
       background-color: #bdb4b4;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
   }
-  .prev,.next{
+  .prev,
+  .next {
     height: 25px;
     width: 27px;
     position: absolute;
@@ -28,80 +30,81 @@
     transform: translateY(-50%);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-    &:hover{
+    &:hover {
       width: 40px;
-      .arrow{
+      .arrow {
         width: 40px;
         background: #d92c0a;
-        &:before,&:after{
+        &:before,
+        &:after {
           background: #d92c0a;
         }
       }
     }
   }
-  .prev{
+  .prev {
     left: 0;
-    .arrow{
-      &:before{
+    .arrow {
+      &:before {
         top: 17px;
         transform: rotate(45deg);
       }
-      &:after{
+      &:after {
         top: 7px;
         transform: rotate(-45deg);
       }
     }
-    &:hover{
+    &:hover {
       left: -20px;
     }
   }
-  .next{
+  .next {
     right: 0;
-    .arrow{
-      &:before{
+    .arrow {
+      &:before {
         transform: rotate(-45deg);
         right: -1px;
         left: auto;
         bottom: 6px;
       }
-      &:after{
+      &:after {
         transform: rotate(45deg);
         right: -1px;
         left: auto;
         top: 6px;
       }
     }
-    &:hover{
+    &:hover {
       right: -20px;
     }
   }
 }
 
-.doc_feedback_slider{
+.doc_feedback_slider {
   max-width: 770px;
   margin: 0 auto 0;
   text-align: center;
-  .item{
-    .author_img{
+  .item {
+    .author_img {
       border-radius: 50%;
       width: 60px;
       height: 60px;
       overflow: hidden;
       margin: 0 auto 43px;
     }
-    p{
+    p {
       font-size: 18px;
       color: #fff;
       line-height: 30px;
       margin-bottom: 38px;
       font-weight: 300;
     }
-    h5{
+    h5 {
       font-size: 20px;
       font-weight: 500;
       color: #fff;
     }
-    h6{
+    h6 {
       font-size: 16px;
       color: #989dad;
       font-weight: 400;
@@ -112,16 +115,20 @@
 /*============ End doc_feedback_area css ==========*/
 
 /*============ Start doc_action_area css ==========*/
-.doc_action_area{
+.doc_action_area {
   position: relative;
   z-index: 1;
   padding: 93px 0;
-  .overlay_bg{
-    background-image: linear-gradient( 180deg, rgba(4,133,161, 0.60) 0%, rgba(29,39,70, 0.60) 100%);
+  .overlay_bg {
+    background-image: linear-gradient(
+      180deg,
+      rgba(4, 133, 161, 0.6) 0%,
+      rgba(29, 39, 70, 0.6) 100%
+    );
   }
-  .action_btn{
+  .action_btn {
     border: 1px solid var(--spe_brand_color);
-    &:hover{
+    &:hover {
       background: transparent;
       border-color: #fff;
       color: #fff;
@@ -129,13 +136,13 @@
   }
 }
 
-.action_text{
-  h2{
+.action_text {
+  h2 {
     color: #fff;
     font-size: 40px;
     font-weight: 500;
   }
-  p{
+  p {
     font-size: 18px;
     line-height: 28px;
     color: #b4b9c8;
@@ -145,387 +152,538 @@
 /*============ End doc_action_area css ==========*/
 
 /*============= spider_testimonial_area css  ================*/
-  .doc_testimonial_slider {
-    padding-right: 100px;
-    .item {
-      padding-left: 15px;
-      position: relative;
-      padding-top: 10px;
+.doc_testimonial_slider {
+  padding-right: 100px;
+  .item {
+    padding-left: 15px;
+    position: relative;
+    padding-top: 10px;
 
-      &:before {
-        content: "“";
-        font-weight: 400;
-        font-size: 150px;
-        color: #4c4cf1;
-        opacity: 0.1;
-        position: absolute;
-        left: -5px;
-        width: 38px;
-        height: 38px;
-        line-height: 130px;
-        top: 0;
-        z-index: 1;
-      }
-
-      h3 {
-        font-size: 34px;
-        line-height: 52px;
-        font-weight: 400;
-        margin-bottom: 20px;
-        margin-top: 0;
-      }
-
-      .name {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--black_500);
-        margin-bottom: 20px;
-      }
-    }
-  }
-  .doc_testimonial_slider {
-    padding-right: 100px;
-
-    .item {
-      padding-left: 15px;
-      position: relative;
-      padding-top: 10px;
-
-      &:before {
-        content: "“";
-        font-weight: 400;
-        font-size: 150px;
-        color: #4c4cf1;
-        opacity: 0.1;
-        position: absolute;
-        left: -5px;
-        width: 38px;
-        height: 38px;
-        line-height: 130px;
-        top: 0;
-        z-index: 1;
-      }
-
-      h3 {
-        font-size: 34px;
-        line-height: 52px;
-        font-weight: 400;
-        margin-bottom: 20px;
-        margin-top: 0;
-      }
-
-      .name {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--black_500);
-        margin-bottom: 20px;
-
-        h5 {
-          font-size: 20px;
-          margin-bottom: 10px;
-          margin-top: 0;
-          text-transform: capitalize;
-        }
-
-        span {
-          font-weight: 400;
-        }
-      }
-
-      .sign {
-        display: inline-block;
-      }
-    }
-
-    .slick-dots {
-      position: relative;
-      bottom: 0;
-      text-align: left;
-      margin-top: 30px;
-      padding-left: 15px;
-
-      li {
-        width: auto;
-        height: auto;
-
-        button {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: #dbdbfc;
-          transition: all 0.2s;
-
-          &:before {
-            display: none;
-          }
-        }
-
-        &:nth-child(even) {
-          button {
-            background: #a5a5f8;
-          }
-        }
-
-        &.slick-active {
-          button {
-            background: #4c4cf1;
-          }
-        }
-      }
-    }
-    .action_text {
-      h2 {
-        color: #fff;
-        font-size: 40px;
-        font-weight: 500;
-      }
-      p {
-        font-size: 18px;
-        line-height: 28px;
-        color: #b4b9c8;
-        margin-bottom: 0;
-      }
-    }
-
-  }
-
-  .doc_img_slider {
-    .item {
-      text-align: center;
-      position: relative;
-      padding-bottom: 25px;
+    &:before {
+      content: "“";
+      font-weight: 400;
+      font-size: 150px;
+      color: #4c4cf1;
+      opacity: 0.1;
+      position: absolute;
+      left: -5px;
+      width: 38px;
+      height: 38px;
+      line-height: 130px;
+      top: 0;
       z-index: 1;
+    }
 
-      img {
-        display: inline-block;
-        border-radius: 20px;
+    h3 {
+      font-size: 34px;
+      line-height: 52px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black_500);
+      margin-bottom: 20px;
+    }
+  }
+}
+.doc_testimonial_slider {
+  padding-right: 100px;
+
+  .item {
+    padding-left: 15px;
+    position: relative;
+    padding-top: 10px;
+
+    &:before {
+      content: "“";
+      font-weight: 400;
+      font-size: 150px;
+      color: #4c4cf1;
+      opacity: 0.1;
+      position: absolute;
+      left: -5px;
+      width: 38px;
+      height: 38px;
+      line-height: 130px;
+      top: 0;
+      z-index: 1;
+    }
+
+    h3 {
+      font-size: 34px;
+      line-height: 52px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black_500);
+      margin-bottom: 20px;
+
+      h5 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 0;
+        text-transform: capitalize;
       }
 
-      .dot {
-        border-radius: 0;
-        position: absolute;
-        left: 60px;
-        bottom: 0;
-        z-index: -1;
+      span {
+        font-weight: 400;
       }
+    }
 
-      .round {
+    .sign {
+      display: inline-block;
+    }
+  }
+
+  .slick-dots {
+    position: relative;
+    bottom: 0;
+    text-align: left;
+    margin-top: 30px;
+    padding-left: 15px;
+
+    li {
+      width: auto;
+      height: auto;
+
+      button {
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
-        position: absolute;
-        z-index: -1;
+        background: #dbdbfc;
+        transition: all 0.2s;
 
-        &.one {
-          width: 150px;
-          height: 150px;
-          right: 60px;
-          top: 60px;
-          background-image: linear-gradient(50deg,
-              rgb(87, 54, 254) 0%,
-              rgb(253, 64, 110) 100%);
-          opacity: 0.1;
+        &:before {
+          display: none;
         }
+      }
 
-        &.two {
-          width: 280px;
-          height: 280px;
-          right: 0;
-          top: 50%;
-          margin-top: -140px;
-          background-image: linear-gradient(50deg,
-              rgb(87, 54, 254) 0%,
-              rgb(253, 64, 110) 100%);
+      &:nth-child(even) {
+        button {
+          background: #a5a5f8;
         }
       }
 
       &.slick-active {
-        .one {
-          animation: zoomIn 0.8s linear both 0.4s;
-        }
-
-        .two {
-          animation: zoomIn 0.8s linear both 0.5s;
+        button {
+          background: #4c4cf1;
         }
       }
     }
   }
-
-  .slick-arrow.slick-hidden {
-    display: none;
+  .action_text {
+    h2 {
+      color: #fff;
+      font-size: 40px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      color: #b4b9c8;
+      margin-bottom: 0;
+    }
   }
+}
 
-  /*============= Allfolio Testimonial Area CSS  ================*/
-  // testimonial style 3 css 
-  .testimonial_area_nine {
-    .navigation {
-      .swiper-button-prev,
-      .swiper-button-next {
-        width: 50px;
-        height: 50px;
-        background: #46454763;
-        color: #464547;
-        border-radius: 50%;
-        top: 65%;
-        transition: all 0.3s;
-        opacity: 0;
-  
-        &:after {
-          font-size: 15px;
-        }
-  
-        &:hover {
-          background: #E86A42;
-          color: #fff;
-        }
+.doc_img_slider {
+  .item {
+    text-align: center;
+    position: relative;
+    padding-bottom: 25px;
+    z-index: 1;
+
+    img {
+      display: inline-block;
+      border-radius: 20px;
+    }
+
+    .dot {
+      border-radius: 0;
+      position: absolute;
+      left: 60px;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .round {
+      border-radius: 50%;
+      position: absolute;
+      z-index: -1;
+
+      &.one {
+        width: 150px;
+        height: 150px;
+        right: 60px;
+        top: 60px;
+        background-image: linear-gradient(
+          50deg,
+          rgb(87, 54, 254) 0%,
+          rgb(253, 64, 110) 100%
+        );
+        opacity: 0.1;
       }
-      .swiper-button-prev {
-        left: -130px;
-      }
-      .swiper-button-next {
-        right: -130px;
+
+      &.two {
+        width: 280px;
+        height: 280px;
+        right: 0;
+        top: 50%;
+        margin-top: -140px;
+        background-image: linear-gradient(
+          50deg,
+          rgb(87, 54, 254) 0%,
+          rgb(253, 64, 110) 100%
+        );
       }
     }
-  
-    &:hover {
-      .swiper-button-prev {
-        left: -100px;
-        opacity: 1;
+
+    &.slick-active {
+      .one {
+        animation: zoomIn 0.8s linear both 0.4s;
       }
-      .swiper-button-next {
-        right: -100px;
-        opacity: 1;
+
+      .two {
+        animation: zoomIn 0.8s linear both 0.5s;
       }
     }
-  
   }
-  .testimonial-slider-inner {
-    .testimonial-item {
-      display: flex;
-      border: 2px solid #E86A42;
-      padding: 50px 110px 50px 50px;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/*============= Allfolio Testimonial Area CSS  ================*/
+// testimonial style 3 css
+.testimonial_area_nine {
+  .navigation {
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 50px;
+      height: 50px;
+      background: #46454763;
+      color: #464547;
+      border-radius: 50%;
+      top: 65%;
+      transition: all 0.3s;
+      opacity: 0;
+
+      &:after {
+        font-size: 15px;
+      }
+
+      &:hover {
+        background: #e86a42;
+        color: #fff;
+      }
+    }
+    .swiper-button-prev {
+      left: -130px;
+    }
+    .swiper-button-next {
+      right: -130px;
+    }
+  }
+
+  &:hover {
+    .swiper-button-prev {
+      left: -100px;
+      opacity: 1;
+    }
+    .swiper-button-next {
+      right: -100px;
+      opacity: 1;
+    }
+  }
+}
+.testimonial-slider-inner {
+  .testimonial-item {
+    display: flex;
+    border: 2px solid #e86a42;
+    padding: 50px 110px 50px 50px;
+    border-radius: 8px;
+    margin-top: 280px;
+    align-items: flex-start;
+    margin-bottom: 78px;
+    flex-direction: row-reverse;
+
+    p {
+      font-size: 24px;
+      font-weight: 500;
+      color: #e6e6e6;
+      letter-spacing: 0.01em;
+      font-family: var(--ibm);
+      margin-bottom: 30px;
+      line-height: 1.3;
+      margin-top: 30px;
+    }
+
+    .quote-img-top {
+      margin-top: -150px;
+      width: fit-content;
+    }
+
+    .quote-img-bottom {
+      position: absolute;
+      right: 50px;
+      bottom: 0px;
+    }
+  }
+
+  .testimonial-content {
+    flex: 1;
+  }
+
+  .author-info {
+    .author-name {
+      font-size: 18px;
+      color: #e8e6e6;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      font-family: var(--ibm);
+      margin-bottom: 0px;
+    }
+
+    .author-position {
+      font-size: 18px;
+      font-weight: 400;
+      color: #ccccce;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  .author-image {
+    padding: 14px;
+    border-radius: 8px;
+    background: #2e2d31;
+    margin-left: 40px;
+    margin-top: -330px;
+
+    img {
       border-radius: 8px;
-      margin-top: 280px;
-      align-items: flex-start;
-      margin-bottom: 78px;
-      flex-direction: row-reverse;
-  
-      p {
-        font-size: 24px;
-        font-weight: 500;
-        color: #e6e6e6;
-        letter-spacing: 0.01em;
-        font-family: var(--ibm);
-        margin-bottom: 30px;
-        line-height: 1.3;
-        margin-top: 30px;
-      }
-  
-      .quote-img-top {
-        margin-top: -150px;
-        width:fit-content;
-      }
-  
-      .quote-img-bottom {
-        position: absolute;
-        right: 50px;
-        bottom: 0px;
-      }
     }
-  
-    .testimonial-content {
-      flex: 1;
+  }
+}
+
+/*============ testimonial slider 4 ===========*/
+.testimonial-area-4 {
+  overflow: hidden;
+
+  .section-tag {
+    padding-top: 0;
+
+    .heading {
+      padding-left: 0;
+      color: #b9b9ba;
     }
-  
-    .author-info {
-      .author-name {
-        font-size: 18px;
-        color: #e8e6e6;
-        font-weight: 600;
-        letter-spacing: 0.01em;
-        font-family: var(--ibm);
-        margin-bottom: 0px;
-      }
-  
-      .author-position {
-        font-size: 18px;
-        font-weight: 400;
-        color: #CCCCCE;
-        letter-spacing: 0.01em;
-      }
+
+    .p {
+      padding-left: 0;
+      color: #b9b9ba;
     }
-  
-    .author-image {
-      padding: 14px;
-      border-radius: 8px;
-      background: #2E2D31;
-      margin-left: 40px;
-      margin-top: -330px;
-  
-      img {
-        border-radius: 8px;
-      }
+
+    .title-text {
+      padding-left: 13px;
     }
   }
 
+  :is(.swiper-button-next, .swiper-button-prev) {
+    --swiper-navigation-size: 15px;
+    --swiper-navigation-color: #9d9ca0;
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
+  :is(.swiper-button-next, .swiper-button-prev)::before {
+    content: "";
+    top: 6px;
+    position: absolute;
+    width: 34px;
+    height: 3px;
+    background: #9d9ca0;
+    border-radius: 20px;
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
+  :is(.swiper-button-next, .swiper-button-prev)::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  :is(.swiper-button-next, .swiper-button-prev):hover::before {
+    width: 43px;
+  }
+
+  :is(.swiper-button-next, .swiper-rtl .swiper-button-prev) {
+    right: -50px;
+  }
+    
+  :is(.swiper-button-next, .swiper-rtl .swiper-button-prev)::after {
+    content: "\f054";
+  }
+
+  :is(.swiper-button-next, .swiper-rtl .swiper-button-prev)::before {
+    left: auto;
+    right: 3px;
+  }
+
+  :is(.swiper-button-next, .swiper-rtl .swiper-button-prev):hover {
+    right: -60px;
+  }
+
+  :is(.swiper-button-prev, .swiper-rtl .swiper-button-next) {
+    left: -55px;
+  }
+
+  :is(.swiper-button-prev, .swiper-rtl .swiper-button-next)::after {
+    content: "\f053";
+  }
+
+  :is(.swiper-button-prev, .swiper-rtl .swiper-button-next)::before {
+    left: 3px;
+  }
+  :is(.swiper-button-prev, .swiper-rtl .swiper-button-next):hover {
+    left: -65px;
+  }
+
+}
+
+:is(.testimonial-slide-4) {
+  .testimonial-slider-img {
+    img {
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  :is(.testimonial-slide-4) .testimonial-slider-img img {
+    width: auto;
+  }
+}
+
+:is(.testimonial-slide-4) .testimonial-content {
+  padding-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  :is(.testimonial-slide-4) .testimonial-content {
+    padding-top: 0;
+  }
+}
+@media screen and (min-width: 1441px) {
+  :is(.testimonial-slide-4) .testimonial-content {
+    padding-right: 50px;
+    padding-left: 20px;
+  }
+}
+
+:is(.testimonial-slide-4) .testimonial-content .section-tag .heading {
+  padding-left: 0;
+}
+:is(.testimonial-slide-4) .testimonial-content p {
+  font-size: 16px;
+  line-height: 2;
+  font-style: italic;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  :is(.testimonial-slide-4) .testimonial-content p {
+    font-size: 20px;
+    line-height: 35px;
+  }
+}
+
+:is(.testimonial-slide-4) .testimonial-content hr {
+  background: #e6e6e6;
+  width: 100%;
+  height: 1px;
+  margin: 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  opacity: 1;
+  margin-top: 2.8125rem;
+}
+:is(.testimonial-slide-4) .testimonial-content .testimonial-author-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.625rem;
+}
+:is(.testimonial-slide-4) .testimonial-content .author h5 {
+  margin-bottom: 0;
+}
 
 /*============ testimonial slider 6 ===========*/
-.feedback_section_one{
-    .slick-arrow-one {
-        position: absolute;
-        right: 0;
-        top:-80px;
-    }
+.feedback_section_one {
+  .slick-arrow-one {
+    position: absolute;
+    right: 0;
+    top: -80px;
+  }
 }
 .feedback-slider-one {
-  .item{
+  .item {
     margin-left: 15px;
     margin-right: 15px;
   }
 }
 .feedback-block-one {
-  background: #F9FFE1;
+  background: #f9ffe1;
   border: 2px solid #000;
   border-radius: 30px;
   padding: 40px 40px 45px;
   transition: all 0.25s linear;
   &:hover {
-      background: #D2F34C;
+    background: #d2f34c;
   }
   .logo {
-      height: 50px;
-      img {max-height: 100%;}
+    height: 50px;
+    img {
+      max-height: 100%;
+    }
   }
   h3 {
-      font-size: 36px;
-      line-height: 1.3888em;
-      color: #000;
-      margin-top: 50px;
-      margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.3888em;
+    color: #000;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
-  .name{
+  .name {
     font-size: 16px;
     margin-bottom: 40px;
-    span{
+    span {
       font-weight: 500;
     }
   }
   .review {
-      border-top: 2px solid #000;
-      padding-top: 40px;
-      .text-md{
-        font-size: 20px;
-        font-weight: 500;
-      }
+    border-top: 2px solid #000;
+    padding-top: 40px;
+    .text-md {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
-  .star-rating{
+  .star-rating {
     font-size: 15px;
     font-family: eicons;
     display: inline-block;
-    i{
+    i {
       font-style: normal;
       position: relative;
       display: inline-block;
       color: #0000007a;
-      &::before{
+      &::before {
         content: "\e934";
         display: block;
         font-size: inherit;
@@ -538,60 +696,59 @@
       }
     }
     .elementor-star-empty:before {
-      content: none
+      content: none;
     }
-    
+
     .elementor-star-1:before {
-      width: 10%
+      width: 10%;
     }
-    
+
     .elementor-star-2:before {
-      width: 20%
+      width: 20%;
     }
-    
+
     .droit-star-3:before {
-      width: 30%
+      width: 30%;
     }
-    
+
     .elementor-star-4:before {
-      width: 40%
+      width: 40%;
     }
-    
+
     .elementor-star-5:before {
-      width: 50%
+      width: 50%;
     }
-    
+
     .elementor-star-6:before {
-      width: 60%
+      width: 60%;
     }
-    
+
     .elementor-star-7:before {
-      width: 70%
+      width: 70%;
     }
-    
+
     .elementor-star-8:before {
-      width: 80%
+      width: 80%;
     }
-    
+
     .elementor-star-9:before {
-      width: 90%
+      width: 90%;
     }
   }
   &.color-two {
-      background: #755146;
-      border: none;
-      &:hover {
-          background: #249F47;
+    background: #755146;
+    border: none;
+    &:hover {
+      background: #249f47;
+    }
+    .review {
+      border-top: 1px solid #fff;
+      ul li a {
+        color: #fff;
       }
-      .review {
-          border-top: 1px solid #fff;
-          ul li a {
-              color: #fff;
-          }
-      }
+    }
   }
 }
-
 
 /*========= feedback-slider-two css =============*/
 .feedback-section-two {
@@ -600,41 +757,41 @@
     position: relative;
     bottom: 0;
     text-align: left;
-    li{
+    li {
       height: auto;
       width: auto;
       margin: 0px;
-      button{
+      button {
         text-indent: -50000px;
         width: 8px;
         height: 8px;
         border-radius: 50%;
         margin: 0 5px;
-        background: #E4E4E4;
+        background: #e4e4e4;
         transition: all 0.3s ease-in-out;
         padding: 0px;
       }
       &.slick-active button {
-        background: #00BF58;
+        background: #00bf58;
       }
     }
   }
 }
-.feedback-slider-two{
+.feedback-slider-two {
   .item {
     margin: 50px 25px;
   }
-} 
-.feedback-block-two{
+}
+.feedback-block-two {
   box-shadow: 0px 20px 35px rgba(0, 16, 34, 0.03);
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 10px;
   padding: 38px 45px 40px;
   border: 0px;
-  &:hover{
+  &:hover {
     background: #fff;
   }
-  h3{
+  h3 {
     font-size: 20px;
     line-height: 2em;
     color: #212529;
@@ -642,96 +799,96 @@
     margin-top: 30px;
     margin-bottom: 45px;
   }
-  .review{
+  .review {
     border: 0px;
     padding-top: 0;
-    .text-md{
+    .text-md {
       font-size: 28px;
-      color: #00BF58;
+      color: #00bf58;
       line-height: 1;
     }
-    .star-rating{
+    .star-rating {
       letter-spacing: 7px;
-      i{
-        &:before{
-          color: #FFCC4A;
+      i {
+        &:before {
+          color: #ffcc4a;
         }
       }
     }
   }
-  .block-footer{
+  .block-footer {
     padding-top: 35px;
     border-top: 1px solid #000;
-    .author-img{
+    .author-img {
       width: 50px;
       height: 50px;
     }
-    .name{
+    .name {
       margin-bottom: 0;
       font-size: 18px;
       font-weight: 500;
       color: #212529;
       line-height: 1;
     }
-    span{
+    span {
       font-size: 16px;
     }
-    .quote-icon{
+    .quote-icon {
       width: 40px;
     }
   }
 }
 
-// feedback-section-five css 
+// feedback-section-five css
 
-.feedback-section-five{
+.feedback-section-five {
   .slick-arrow-one {
     position: absolute;
     right: 0;
-    top:-80px;
-    li{
+    top: -80px;
+    li {
       color: #fff;
-      &:hover{
-        background: #00BF58;
+      &:hover {
+        background: #00bf58;
         color: #fff;
       }
     }
   }
-  .feedback-slider-one{
+  .feedback-slider-one {
     margin-left: -35px;
     margin-right: -35px;
-    .item{
+    .item {
       margin: 0 35px;
     }
   }
 }
-.feedback-block-three{
+.feedback-block-three {
   position: relative;
   padding: 45px 55px 40px;
   background: #fff;
   border-radius: 10px;
   border: 0px;
-  .quote-icon{
+  .quote-icon {
     position: absolute;
     top: 58px;
     right: 55px;
     width: 41px;
   }
-  .review{
+  .review {
     border: 0px;
     padding-top: 0;
-    .text-md{
+    .text-md {
       font-size: 28px;
-      color: #00BF58;
+      color: #00bf58;
     }
   }
-  .star-rating i{
+  .star-rating i {
     letter-spacing: 7px;
-    &:before{
-      color: #FFCC4A;
+    &:before {
+      color: #ffcc4a;
     }
   }
-  h3{
+  h3 {
     font-size: 24px;
     line-height: 2em;
     font-weight: 400;
@@ -742,47 +899,46 @@
     font-size: 20px;
     color: #212529;
     font-weight: 500;
-    span{
+    span {
       opacity: 0.5;
       font-weight: 400;
       padding-left: 5px;
     }
   }
-  .author-img{
+  .author-img {
     width: 60px;
     height: 60px;
   }
-  &:hover{
+  &:hover {
     background: #fff;
   }
 }
 
-
 /*==== testimonial 8 css ====*/
 #feedBack_carousel {
   position: relative;
-  .carousel-inner{
+  .carousel-inner {
     p {
       font-size: 36px;
       line-height: 1.888em;
       color: #000;
       margin-bottom: 55px;
     }
-  } 
-  .name{
+  }
+  .name {
     font-size: 22px;
     color: #000;
     font-weight: 500;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 30px;
       height: 2px;
       background: #000;
       left: -45px;
-      top:16px;
+      top: 16px;
     }
-    span{
+    span {
       font-weight: 400;
     }
   }
@@ -800,16 +956,16 @@
       transition: all 0.2s linear;
       text-indent: 0;
       &.active {
-        border-color: #29503D;
+        border-color: #29503d;
       }
-    } 
+    }
   }
   .carousel-btn {
-    top:65px;
+    top: 65px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid rgba($color: #000000, $alpha: .15);
+    border: 1px solid rgba($color: #000000, $alpha: 0.15);
     opacity: 1;
     line-height: 48px;
     text-align: center;
@@ -817,126 +973,123 @@
     color: #000;
     transition: all 0.3s linear;
     &:hover {
-      border-color: #29503D;
-      background: #29503D;
+      border-color: #29503d;
+      background: #29503d;
       color: #fff;
     }
   }
 }
 
-// testimonial 10 css 
+// testimonial 10 css
 // FeedBack Section Four
 .feedback-section-four .bg-wrapper {
-  background: #1EA243;
+  background: #1ea243;
   padding: 125px 150px 165px 110px;
-  @media (min-width: 1200px) and (max-width: 1399px){
+  @media (min-width: 1200px) and (max-width: 1399px) {
     padding: 80px 100px 130px 70px;
   }
-  @media (max-width: 1200px){
+  @media (max-width: 1200px) {
     padding: 40px 40px 80px 40px;
   }
   .icon {
-      width: 80px;
-      height: 80px;
-      background: rgba($color: #fff, $alpha: .16);
+    width: 80px;
+    height: 80px;
+    background: rgba($color: #fff, $alpha: 0.16);
   }
   p {
-      font-size: 40px;
-      line-height: 1.7em;
-      color: #fff;
-      margin: 50px 0 95px;
+    font-size: 40px;
+    line-height: 1.7em;
+    color: #fff;
+    margin: 50px 0 95px;
   }
-  .name{
+  .name {
     font-size: 20px;
   }
   .slider-arrows {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      margin-bottom: 0;
-      li {
-          width: 60px;
-          height: 60px;
-          font-size: 22px;
-          text-align: center;
-          line-height: 60px;
-          color: #fff;
-          cursor: pointer;
-          transition: all 0.2s linear;
-          border-left: 1px solid rgba($color: #fff, $alpha: .14);
-          background: rgba($color: #fff, $alpha: .13);
-          &:hover {
-              background: #fff;
-              color: #000;
-          }
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 0;
+    li {
+      width: 60px;
+      height: 60px;
+      font-size: 22px;
+      text-align: center;
+      line-height: 60px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      border-left: 1px solid rgba($color: #fff, $alpha: 0.14);
+      background: rgba($color: #fff, $alpha: 0.13);
+      &:hover {
+        background: #fff;
+        color: #000;
       }
+    }
   }
 }
-.feedback-section-four{
+.feedback-section-four {
   .slider-wrapper {
     position: absolute;
     width: 70vw;
     right: -32vw;
     bottom: 9%;
-    @media (min-width: 1921px){
+    @media (min-width: 1921px) {
       right: -28vw;
       width: 55vw;
     }
-    @media (max-width: 1400px){
+    @media (max-width: 1400px) {
       right: -12vw;
     }
-    @media (max-width: 1024px){
+    @media (max-width: 1024px) {
       width: 100%;
       position: static;
       margin-left: -15px;
       margin-right: -15px;
       margin-top: 40px;
     }
-    .item{
+    .item {
       margin: 0 15px;
     }
     .slick-dots {
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        bottom: -14%;
-        left: 20%;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      bottom: -14%;
+      left: 20%;
+      width: auto;
+      @media (max-width: 1024px) {
+        position: relative;
+        margin-top: 15px;
+        left: 0;
+        bottom: 0;
+      }
+      li {
         width: auto;
-        @media (max-width: 1024px){
-          position: relative;
-          margin-top: 15px;
-          left: 0;
-          bottom: 0;
+        height: auto;
+        margin: 0 auto;
+        button {
+          text-indent: -50000px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          margin: 0 5px;
+          background: #e4e4e4;
+          transition: all 0.3s ease-in-out;
+          padding: 0px;
         }
-        li{
-          width: auto;
-          height: auto;
-          margin: 0 auto;
-          button{
-            text-indent: -50000px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin: 0 5px;
-            background: #E4E4E4;
-            transition: all 0.3s ease-in-out;
-            padding: 0px;
-          }
-          &.slick-active{
-            button{
-              background: #00BF58;
-            }
+        &.slick-active {
+          button {
+            background: #00bf58;
           }
         }
+      }
     }
   }
-  .col-lg-6{
-    @media (max-width: 1024px){
+  .col-lg-6 {
+    @media (max-width: 1024px) {
       width: 100%;
       max-width: 100%;
     }
   }
-} 
-
-
-
+}

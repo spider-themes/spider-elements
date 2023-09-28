@@ -53,7 +53,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
     public function get_script_depends() {
-        return [ 'slick', 'spe-el-widgets', 'swiper' ];
+        return [ 'slick', 'spe-el-widgets', 'swiper', 'wow' ];
     }
 
 	/**
@@ -1037,7 +1037,7 @@ class Testimonial extends Widget_Base {
 				'type' 		=> Controls_Manager::HEADING,
 				'separator'	=> 'before',
 				'condition'	=> [
-					'style' => ['1', '2', '3', '4','5']
+					'style' => ['1', '2', '3','5']
 				]
 			]
 		);
@@ -1050,7 +1050,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .se_title' => 'color: {{VALUE}};',
 				],
 				'condition'	=> [
-					'style' => ['1', '2', '3', '4','5']
+					'style' => ['1', '2', '3','5']
 				]
 			]
 		);
@@ -1060,7 +1060,7 @@ class Testimonial extends Widget_Base {
 				'name' 		=> 'title_typo',
 				'selector'	=> '{{WRAPPER}} .se_title',
 				'condition'	=> [
-					'style' => ['1', '2', '3', '4','5']
+					'style' => ['1', '2', '3','5']
 				]
 			]
 		); //End Title Style
