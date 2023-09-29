@@ -42,7 +42,7 @@ class Assets {
 	 * @access public
 	 */
 	public function spe_elementor_editor_scripts() {
-		wp_enqueue_style( 'spe-el-editor', SE_CSS . '/elementor-editor.css');
+		wp_enqueue_style( 'spe-el-editor', SPE_CSS . '/elementor-editor.css');
 	}
 
 
@@ -54,7 +54,12 @@ class Assets {
 	 * @access public
 	 */
 	public function spe_admin_scripts() {
-		wp_enqueue_style( 'spe-admin', SE_CSS . '/admin.css');
+
+		// Register Admin Panel Styles
+		wp_enqueue_style( 'spe-admin', SPE_CSS . '/admin.css');
+
+		// Register Admin Panel Scripts
+		wp_enqueue_script( 'spe-admin', SPE_JS . '/admin.js', ['jquery'], SPE_VERSION, true );
 	}
 
 

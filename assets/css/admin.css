@@ -22,4 +22,42 @@ Table of Content:
   line-height: 1;
 }
 
+.spe_dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  background: #F9F7FC;
+  padding: 60px;
+}
+.spe_dashboard .sidebar_navigation {
+  flex: 20% 0 0;
+  padding: 24px 30px 24px 20px;
+  background: #fff;
+  align-items: flex-start;
+  border-radius: 8px;
+}
+.spe_dashboard .sidebar_navigation .tab_left_content .tab-menu-link .tab_content {
+  display: flex;
+  align-items: center;
+}
+.spe_dashboard .sidebar_navigation .tab_left_content .tab-menu-link .tab_content .icon {
+  background: #E4FBD2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spe_dashboard .sidebar_navigation .tab_left_content .tab-menu-link .tab_content .icon img {
+  width: 16px;
+  height: auto;
+}
+.spe_dashboard .sidebar_navigation .tab_left_content.active {
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(90deg, #7460FF 0%, #9D70FF 100%);
+}
+.spe_dashboard .tab_contents {
+  flex: 80% 0 0;
+}
+
 /*# sourceMappingURL=admin.css.map */

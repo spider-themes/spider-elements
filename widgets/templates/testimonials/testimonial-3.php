@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-img-top">
-                                        <img src="<?php echo SE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>">
+                                        <img src="<?php echo SPE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>">
                                     </div>
                                     <?php
                                     echo !empty($item['review_content']) ? '<p class="se_review_content">' . esc_html($item['review_content']) . '</p>' : '';
@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="quote-img-bottom">
-                                    <img src="<?php echo SE_IMG ?>/quote_img2.png" alt="<?php esc_attr_e('Quote Image Two', 'spider-elements') ?>">
+                                    <img src="<?php echo SPE_IMG ?>/quote_img2.png" alt="<?php esc_attr_e('Quote Image Two', 'spider-elements') ?>">
                                 </div>
                             </div>
                         </div>
