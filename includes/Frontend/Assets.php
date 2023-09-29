@@ -18,15 +18,15 @@ class Assets {
 	public function register_scripts() {
 
 		// Register Widget Style's
-		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'se_register_widget_styles' ] );
+		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'register_widget_styles' ] );
 
 		// Register Widget Script's
-		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'se_register_widget_scripts' ] );
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'se_register_widget_scripts' ] );
+		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'register_widget_scripts' ] );
+		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'register_widget_scripts' ] );
 
 		// Register Elementor Preview Editor Script's
-		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'se_register_editor_scripts' ] );
-		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'se_register_editor_scripts' ] );
+		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'register_editor_scripts' ] );
+		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'register_editor_scripts' ] );
 
 	}
 
@@ -38,19 +38,19 @@ class Assets {
 	 *
 	 * @access public
 	 */
-	function se_register_widget_styles() {
+	function register_widget_styles() {
 
 		wp_register_style( 'ionicons', 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' );
-		wp_register_style( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.css' );
-		wp_register_style( 'slick-theme', SE_VEND . '/slick/slick-theme.css' );
-		wp_register_style( 'swiper-theme', SE_VEND . '/swiper/swiper-bundle.min.css' );
-		wp_register_style( 'diagonal', SE_VEND . '/diagonal/diagonal.css' );
-		wp_register_style( 'slick', SE_VEND . '/slick/slick.css' );
-		wp_register_style( 'video-js', SE_VEND . '/video/videojs.min.css' );
-		wp_register_style( 'video-js-theaterMode', SE_VEND . '/video/videojs.theaterMode.css' );
-		wp_register_style( 'elegant-icon', SE_VEND . '/elegant-icon/style.css' );
-		wp_register_style( 'fancybox-css', SE_VEND . '/fancybox/css/jquery.fancybox.min.css' );
-		wp_register_style( 'spe-main', SE_CSS . '/main.css' );
+		wp_register_style( 'bootstrap', SPE_VEND . '/bootstrap/bootstrap.min.css' );
+		wp_register_style( 'slick-theme', SPE_VEND . '/slick/slick-theme.css' );
+		wp_register_style( 'swiper-theme', SPE_VEND . '/swiper/swiper-bundle.min.css' );
+		wp_register_style( 'diagonal', SPE_VEND . '/diagonal/diagonal.css' );
+		wp_register_style( 'slick', SPE_VEND . '/slick/slick.css' );
+		wp_register_style( 'video-js', SPE_VEND . '/video/videojs.min.css' );
+		wp_register_style( 'video-js-theaterMode', SPE_VEND . '/video/videojs.theaterMode.css' );
+		wp_register_style( 'elegant-icon', SPE_VEND . '/elegant-icon/style.css' );
+		wp_register_style( 'fancybox-css', SPE_VEND . '/fancybox/css/jquery.fancybox.min.css' );
+		wp_register_style( 'spe-main', SPE_CSS . '/main.css' );
 
 	}
 
@@ -61,27 +61,27 @@ class Assets {
 	 *
 	 * @access public
 	 */
-	function se_register_widget_scripts() {
+	function register_widget_scripts() {
 
 		wp_register_script( 'ionicons', 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js', '', '5.4.0', true );
-		wp_register_script( 'bootstrap', SE_VEND . '/bootstrap/bootstrap.min.js', array( 'jquery' ), '5.1.3', true );
-		wp_register_script( 'slick', SE_VEND . '/slick/slick.min.js', array( 'jquery' ), SE_VERSION, true );
-		wp_register_script( 'swiper', SE_VEND . '/swiper/swiper-bundle.min.js', array( 'jquery' ), SE_VERSION, true );
-		wp_register_script( 'text-type', SE_VEND . '/text-type/text-type.js', array( 'jquery' ), SE_VERSION, true );
-		wp_register_script( 'wow', SE_VEND . '/wow/wow.min.js', array( 'jquery' ), '1.1.3', true );
-		wp_register_script( 'artplayer', SE_VEND . '/video/artplayer.js', array( 'jquery' ), '3.5.26', true );
-		wp_register_script( 'video-js-nuevo', SE_VEND . '/video/nuevo.min.js', array( 'jquery' ), '7.6.0', true );
-		wp_register_script( 'video-js', SE_VEND . '/video/video.min.js', array( 'jquery' ), '7.6.0', true );
-		wp_register_script( 'scroll-parallax', SE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array( 'jquery' ), SE_VERSION, true );
-		wp_register_script( 'fancybox-js', SE_VEND . '/fancybox/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
-		wp_register_script( 'ajax-chimp', SE_JS . 'ajax-chimp.js', 'jquery', SE_VERSION, true );
-		wp_register_script( 'se-script', SE_JS . '/scripts.js', array( 'jquery' ), false, true );
+		wp_register_script( 'bootstrap', SPE_VEND . '/bootstrap/bootstrap.min.js', array( 'jquery' ), '5.1.3', true );
+		wp_register_script( 'slick', SPE_VEND . '/slick/slick.min.js', array( 'jquery' ), SPE_VERSION, true );
+		wp_register_script( 'swiper', SPE_VEND . '/swiper/swiper-bundle.min.js', array( 'jquery' ), SPE_VERSION, true );
+		wp_register_script( 'text-type', SPE_VEND . '/text-type/text-type.js', array( 'jquery' ), SPE_VERSION, true );
+		wp_register_script( 'wow', SPE_VEND . '/wow/wow.min.js', array( 'jquery' ), '1.1.3', true );
+		wp_register_script( 'artplayer', SPE_VEND . '/video/artplayer.js', array( 'jquery' ), '3.5.26', true );
+		wp_register_script( 'video-js-nuevo', SPE_VEND . '/video/nuevo.min.js', array( 'jquery' ), '7.6.0', true );
+		wp_register_script( 'video-js', SPE_VEND . '/video/video.min.js', array( 'jquery' ), '7.6.0', true );
+		wp_register_script( 'scroll-parallax', SPE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array( 'jquery' ), SPE_VERSION, true );
+		wp_register_script( 'fancybox-js', SPE_VEND . '/fancybox/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
+		wp_register_script( 'ajax-chimp', SPE_JS . 'ajax-chimp.js', 'jquery', SPE_VERSION, true );
+		wp_register_script( 'se-script', SPE_JS . '/scripts.js', array( 'jquery' ), false, true );
 
-		wp_register_script( 'charming', SE_VEND  . '/diagonal/charming.min.js', array( 'jquery' ), SE_VERSION, true );
-		wp_register_script( 'diagonal', SE_VEND  . '/diagonal/diagonal.slideshow.js', array( 'jquery' ), SE_VERSION, true );
-		wp_register_script( 'tweenmax', SE_VEND  . '/diagonal/TweenMax.min.js', array( 'jquery' ), '1.18.0', true );
+		wp_register_script( 'charming', SPE_VEND  . '/diagonal/charming.min.js', array( 'jquery' ), SPE_VERSION, true );
+		wp_register_script( 'diagonal', SPE_VEND  . '/diagonal/diagonal.slideshow.js', array( 'jquery' ), SPE_VERSION, true );
+		wp_register_script( 'tweenmax', SPE_VEND  . '/diagonal/TweenMax.min.js', array( 'jquery' ), '1.18.0', true );
 
-		wp_register_script( 'beforeafter', SE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array( 'jquery' ), '1.0.0', true );
+		wp_register_script( 'beforeafter', SPE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array( 'jquery' ), '1.0.0', true );
 
 
 	}
@@ -94,11 +94,11 @@ class Assets {
 	 *
 	 * @access public
 	 */
-	function se_register_editor_scripts() {
-		wp_register_script( 'spe-el-widgets', SE_JS . '/elementor-widgets.js', [
+	function register_editor_scripts() {
+		wp_register_script( 'spe-el-widgets', SPE_JS . '/elementor-widgets.js', [
 			'jquery',
 			'elementor-frontend'
-		], SE_VERSION, true );
+		], SPE_VERSION, true );
 	}
 
 

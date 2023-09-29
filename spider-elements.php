@@ -157,7 +157,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			add_action( 'init', [ $this, 'i18n' ] );
 
 			// Register Category
-			add_action( 'elementor/elements/categories_registered', [ $this, 'se_elements_register_category' ] );
+			add_action( 'elementor/elements/categories_registered', [ $this, 'elements_register_category' ] );
 
 			// Register widgets
 			add_action( 'elementor/widgets/register', [ $this, 'on_widgets_registered' ] );
@@ -241,6 +241,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
+				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
@@ -399,7 +400,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * @access public
 		 */
-		public function se_elements_register_category() {
+		public function elements_register_category() {
 
 			\Elementor\Plugin::instance()->elements_manager->add_category( 'spider-elements', [
 				'title' => __( 'Spider Elements', 'spider-elements' ),
@@ -499,15 +500,15 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		public function define_constants() {
 
 			//SPF(Short form - Spider Elements)
-			define( 'SE_VERSION', self::VERSION );
-			define( 'SE_FILE', __FILE__ );
+			define( 'SPE_VERSION', self::VERSION );
+			define( 'SPE_FILE', __FILE__ );
 			define( 'SPE_PATH', __DIR__ );
-			define( 'SE_URL', plugins_url( '', SE_FILE ) );
-			define( 'SE_ASSETS', SE_URL . '/assets' );
-			define( 'SE_CSS', SE_URL . '/assets/css' );
-			define( 'SE_JS', SE_URL . '/assets/js' );
-			define( 'SE_IMG', SE_URL . '/assets/images' );
-			define( 'SE_VEND', SE_URL . '/assets/vendors' );
+			define( 'SPE_URL', plugins_url( '', SPE_FILE ) );
+			define( 'SPE_ASSETS', SPE_URL . '/assets' );
+			define( 'SPE_CSS', SPE_URL . '/assets/css' );
+			define( 'SPE_JS', SPE_URL . '/assets/js' );
+			define( 'SPE_IMG', SPE_URL . '/assets/images' );
+			define( 'SPE_VEND', SPE_URL . '/assets/vendors' );
 
 		}
 
