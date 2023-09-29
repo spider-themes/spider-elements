@@ -113,8 +113,6 @@ class Video_Popup extends Widget_Base
 					'1' => esc_html__( 'Style 01', 'spider-elements' ),
 					'2' => esc_html__( 'Style 02', 'spider-elements' ),
 					'3' => esc_html__( 'Style 03', 'spider-elements' ),
-					'4' => esc_html__( 'Style 04', 'spider-elements' ),
-					'5' => esc_html__( 'Style 05', 'spider-elements' ),
 				],
 				'default' => '1',
 			]
@@ -170,6 +168,9 @@ class Video_Popup extends Widget_Base
             'style_icon', [
                 'label' => esc_html__( 'Icon', 'spider-elements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition'	=> [
+					'style' => [ '1' ]
+				]
             ]
         );
 
@@ -283,7 +284,7 @@ class Video_Popup extends Widget_Base
             [
                 'name'      => 'icon_border',
                 'label'     => __( 'Border', 'spider-elements' ),
-                'selector' => '{{WRAPPER}} .video-icon',
+                'selector'  => '{{WRAPPER}} .video-icon',
             ]
         );
 
@@ -328,9 +329,6 @@ class Video_Popup extends Widget_Base
             'icon_bg_width', [
                 'label' => __( 'video Popup Width', 'spider-elements' ),
                 'type'  => Controls_Manager::SLIDER,
-                'condition' => [
-					'style' => [ '1' ]
-				],
                 'size_units'    => [ 'px', '%' ],
                 'range'         => [
                     'px' => [
@@ -352,45 +350,24 @@ class Video_Popup extends Widget_Base
             ]
         );
 
-
+        // Wave switcher
         $this->add_control(
-            'enable_wave',
-            [
-                'label' => __('Enable Wave', 'spider-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'default' => 'no', 
+            'enable_wave_regular',[
+                'label'     => __('Enable Wave on Regular', 'spider-elements'),
+                'type'      => Controls_Manager::SWITCHER,
+                'default'   => 'no', 
             ]
         );
 
-        $this->add_control(
-            'wave_color',
-            [
-                'label' => __('Wave Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#ff0000',
-                'condition' => [
-                    'enable_wave' => 'yes', // Show this control when "Enable Wave" is turned on
-                ],
+          // Wave effect Hover switcher
+          $this->add_control(
+            'enable_wave_hover',[
+                'label'     => __('Enable Wave on Hover', 'spider-elements'),
+                'type'      => Controls_Manager::SWITCHER,
+                'default'   => 'no', 
             ]
         );
-        
-        // $this->add_control(
-        //     'wave_animation',
-        //     [
-        //         'label' => __('Wave Animation', 'your-addon'),
-        //         'type' => Controls_Manager::SELECT,
-        //         'default' => 'none', // Set your default animation
-        //         'options' => [
-        //             'none' => __('None', 'your-addon'),
-        //             'fade' => __('Fade', 'your-addon'),
-        //             'slide' => __('Slide', 'your-addon'),
-        //         ],
-        //         'condition' => [
-        //             'enable_wave' => 'yes', // Show this control when "Enable Wave" is turned on
-        //         ],
-        //     ]
-        // );
-        
+
 
         $this->end_controls_section();
     }

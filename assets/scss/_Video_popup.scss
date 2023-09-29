@@ -11,13 +11,11 @@
   justify-content: center;
   z-index: 1;
   &:hover {
-    background: #d2f34c;
-    color: #244034;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
-/*======== video popup 2 ========*/
+/*======== video popup 1========*/
 @keyframes pulse-white {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
@@ -46,7 +44,7 @@
   }
 }
 
-// Style 02
+/*======== video popup 1(with wave) ========*/
 .wave {
   a {
     &::before {
@@ -71,8 +69,8 @@
   }
 }
 
-// Style03
-.play-button3 {
+/*======== video popup 1(with hover wave) ========*/
+.hover_wave {
   a {
     width: 90px;
     height: 90px;
@@ -102,8 +100,8 @@
   }
 }
 
-// Style-4
-.play-button4 {
+/*======== video popup 2========*/
+.play-button2 {
   a {
     &::before {
       animation: pulse-red 2s infinite;
@@ -200,7 +198,7 @@
 
 
 
-// Style 5
+/*======== video popup 3========*/
 .btn-circle {
   position: relative;
   width: 180px;
