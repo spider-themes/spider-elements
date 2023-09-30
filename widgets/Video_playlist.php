@@ -96,7 +96,7 @@ class Video_playlist extends Widget_Base {
 
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
-			'doc_design_sec', [
+			'spe_video_preset', [
 				'label'	=> __( 'Preset Skin', 'spider-elements' ),
 			]
 		);

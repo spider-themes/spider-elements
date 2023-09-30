@@ -80,7 +80,6 @@ class Video_Popup extends Widget_Base
 	protected function register_controls()
 	{
         $this->elementor_content_control();
-		// $this->team_slider_control();
 		$this-> video_style_control();
 	}
 
