@@ -7,17 +7,3 @@
         <p>.Know About MY Self. By A Quick Video</p>
     </div>
 </div>
-
-
-<script>
-    const text = document.querySelector(".btn-circle .text p");
-
-text.innerHTML = text.innerText
-  .split("")
-  .map(
-    (char, i) =>
-      `<span style="transform:rotate(${i * 9.5}deg)">${char}</span>`
-  )
-  .join("");
-
-</script>
