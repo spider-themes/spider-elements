@@ -25,7 +25,7 @@ $flex_gap = $settings['flex_gap']['size'] . $settings['flex_gap']['unit'];
             $counter_value = $counter['counter_value'];
             $counter_text = $counter['counter_text'];
             ?>
-            <div class="skill_item text-center wow fadeInUp">
+            <div class="skill_item text-center">
                 <!-- Render your counters here -->
                 <svg class="radial-progress" data-percentage="<?php echo esc_attr($counter_value); ?>" viewBox="0 0 80 80">
                     <circle class="incomplete" cx="40" cy="40" r="35"></circle>
