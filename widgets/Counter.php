@@ -4,9 +4,6 @@
  */
 namespace Spider_Elements_Assets\Widgets;
 
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -56,7 +53,7 @@ class Counter extends Widget_Base
 	 */
 	public function get_style_depends()
 	{
-		return ['bootstrap', 'elegant-icon', 'spe-main'];
+		return ['bootstrap', 'spe-main'];
 	}
 
 	/**
@@ -67,7 +64,6 @@ class Counter extends Widget_Base
 	{
 		return ['bootstrap', 'spe-el-widgets'];
 	}
-
 
 	/**
 	 * Name: register_controls()
@@ -81,7 +77,7 @@ class Counter extends Widget_Base
 	protected function register_controls()
 	{
         $this->elementor_content_control();
-		$this-> video_style_control();
+		$this-> counter_style_control();
 	}
 
     
@@ -95,146 +91,175 @@ class Counter extends Widget_Base
 	 * Author: spider-themes
 	 */
 
-     public function elementor_content_control() {
-
-        //==================== Select Preset Skin ====================//
+    public function elementor_content_control() {
+      //==================== Select Preset Skin ====================//
 		$this->start_controls_section(
-			'spe_counter', [
-				'label'	=> __( 'Preset Skin', 'spider-elements' ),
+			'counter_preset', [
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
-     
-		$this->add_control(
-			'style', [
-				'label'   	=> esc_html__( 'Skin', 'spider-elements' ),
-				'type'    	=> Controls_Manager::CHOOSE,
-				'options'	=> [
-					'1'	=> [
-						'title' => __( 'Regular', 'spider-elements' ),
-						'icon'  => 'Counter',
-					],
-					'2' => [
-						'title' => __( 'Pro', 'spider-elements' ),
-						'icon'  => 'Counter_pro',
-					],
+        $this->add_control(
+			'style',
+			[
+				'label'     => esc_html__( 'Counter Style', 'spider-elements' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => [
+					'1' => esc_html__( 'Style 01', 'spider-elements' ),
+					'2' => esc_html__( 'Style 02', 'spider-elements' ),
 				],
-				'toggle'  => false,
-				'default' => '1',
+				'default'   => '1',
 			]
 		);
 
 		$this->end_controls_section(); // End Preset Skin
 
+		//=================== Section Accordion ===================//
+		$this->start_controls_section(
+			'sec_counter', [
+				'label' => esc_html__( 'Counter', 'spider-elements' ),
+			]
+		);
 
-		// ============================ Counter Content ===========================//
-		 $this->start_controls_section(
-            'counter_sec', [
-                'label' => esc_html__( 'Content', 'spider-elements' ),
-            ]
-        );
-
-
-        $this->add_control(
-            'counter_title',
-            [
-                'label' => __('Title', 'spider-elements'),
-                'type' => Controls_Manager::TEXT,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => __('Progress Bar', 'spider-elements'),
-                'separator' => 'before',
-                'ai' => [
-					'active' => false,
-				],
-            ]
-        );
-
-        $this->add_control(
-            'counter_title_html_tag',
-            [
-                'label' => __('Title HTML Tag', 'spider-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'h1' => __('H1', 'spider-elements'),
-                    'h2' => __('H2', 'spider-elements'),
-                    'h3' => __('H3', 'spider-elements'),
-                    'h4' => __('H4', 'spider-elements'),
-                    'h5' => __('H5', 'spider-elements'),
-                    'h6' => __('H6', 'spider-elements'),
-                    'div' => __('div', 'spider-elements'),
-                    'span' => __('span', 'spider-elements'),
-                    'p' => __('p', 'spider-elements'),
-                ],
-                'default' => 'div',
-                'separator' => 'after',
-            ]
-        );
-
-   
-
-        $this->add_control(
+        $repeater = new Repeater();
+        $repeater->add_control(
             'counter_value',
             [
-                'label' => __('Counter Value', 'spider-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['%'],
-                'range' => [
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                        'step' => 1,
+                'label'     => esc_html__('Counter Value', 'spider-elements'),
+                'type'      => Controls_Manager::NUMBER,
+                'default'   => 85, 
+                'min'       => 0,
+                'max'       => 100,
+            ]
+        );
+
+        // Control for Counter Text
+        $repeater->add_control(
+            'counter_text',
+            [
+                'label'     => esc_html__('Counter Text', 'spider-elements'),
+                'type'      => Controls_Manager::TEXT,
+                'default'   => esc_html__('User research', 'spider-elements'), // Set a default text
+            ]
+        );
+
+        $this->add_control(
+            'counters',
+            [
+                'label'     => esc_html__('Counters', 'spider-elements'),
+                'type'      => Controls_Manager::REPEATER,
+                'fields'    => $repeater->get_controls(),
+                'default'   => [
+                    [
+                        'counter_value' => 85,
+                        'counter_text' => 'User research',
                     ],
                 ],
-                'default' => [
-                    'unit' => '%',
-                    'size' => 50,
+            ]
+        );
+
+        $this->add_control(
+            'flex_display',
+            [
+                'label'     => esc_html__('Display', 'spider-elements'),
+                'type'      => Controls_Manager::SELECT,
+                'default'   => 'flex',
+                'options'   => [
+                    'flex'          => esc_html__('Flex', 'spider-elements'),
+                    'inline-flex'   => esc_html__('Inline Flex', 'spider-elements'),
                 ],
-                // 'condition' => [
-                //     'counter_value_type' => 'static',
-                // ],
+            ]
+        );
+        
+        $this->add_control(
+            'flex_direction',
+            [
+                'label'     => esc_html__('Flex Direction', 'spider-elements'),
+                'type'      => Controls_Manager::SELECT,
+                'default'   => 'row',
+                'options'   => [
+                    'row'               => esc_html__('Row', 'spider-elements'),
+                    'row-reverse'       => esc_html__('Row Reverse', 'spider-elements'),
+                    'column'            => esc_html__('Column', 'spider-elements'),
+                    'column-reverse'    => esc_html__('Column Reverse', 'spider-elements'),
+                ],
+            ]
+        );
+        
+        $this->add_control(
+            'flex_justify_content',
+            [
+                'label'     => esc_html__('Justify Content', 'spider-elements'),
+                'type'      => Controls_Manager::SELECT,
+                'default'   => 'flex-start',
+                'options'   => [
+                    'flex-start'    => esc_html__('Flex Start', 'spider-elements'),
+                    'flex-end'      => esc_html__('Flex End', 'spider-elements'),
+                    'center'        => esc_html__('Center', 'spider-elements'),
+                    'space-between' => esc_html__('Space Between', 'spider-elements'),
+                    'space-around'  => esc_html__('Space Around', 'spider-elements'),
+                ],
+            ]
+        );
+        
+        $this->add_control(
+            'flex_align_items',
+            [
+                'label'     => esc_html__('Align Items', 'spider-elements'),
+                'type'      => Controls_Manager::SELECT,
+                'default'   => 'center',
+                'options'   => [
+                    'flex-start'    => esc_html__('Flex Start', 'spider-elements'),
+                    'flex-end'      => esc_html__('Flex End', 'spider-elements'),
+                    'center'        => esc_html__('Center', 'spider-elements'),
+                    'baseline'      => esc_html__('Baseline', 'spider-elements'),
+                    'stretch'       => esc_html__('Stretch', 'spider-elements'),
+                ],
             ]
         );
 
         $this->add_control(
-            'counter_show_count',
+            'flex_gap',
             [
-                'label' => esc_html__('Display Count', 'spider-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
-        );
-
-        $this->add_control(
-            'counter_animation_duration',
-            [
-                'label' => __('Animation Duration', 'spider-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
+                'label'         => esc_html__('Gap', 'spider-elements'),
+                'type'          => Controls_Manager::SLIDER,
+                'size_units'    => ['px', '%', 'em', 'rem'],
                 'range' => [
                     'px' => [
-                        'min' => 1000,
-                        'max' => 10000,
-                        'step' => 100,
+                        'min'   => 0,
+                        'max'   => 100,
+                        'step'  => 1,
+                    ],
+                    '%' => [
+                        'min'   => 0,
+                        'max'   => 100,
+                        'step'  => 1,
+                    ],
+                    'em' => [
+                        'min'   => 0,
+                        'max'   => 10,
+                        'step'  => 0.1,
+                    ],
+                    'rem' => [
+                        'min'   => 0,
+                        'max'   => 10,
+                        'step'  => 0.1,
                     ],
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 1500,
+                    'size' => 10, 
                 ],
-                'separator' => 'before',
             ]
         );
 
+	    $this->end_controls_section(); 
 
-		$this->end_controls_section(); // End Video Popup Content 
-    }
+	}
 
-
+    
 	/**
-	 * Name: elementor_style_control()
+	 * Name: counter_style_control()
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
@@ -242,249 +267,145 @@ class Counter extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function video_style_control() {
+	public function counter_style_control() {
 
-		//===================== Counter Style ============================//
-        
+		//===================== Counter Content Style ============================//
         $this->start_controls_section(
-            'counter_section_style_general_circle',
-            [
-                'label' => __('General', 'spider-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-                // 'condition' => [
-                //     'counter_layout' => $circle_general_condition,
-                // ],
-            ]
-        );
-
-        $this->add_control(
-            'counter_circle_alignment',
-            [
-                'label' => __('Alignment', 'spider-elements'),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'left' => [
-                        'title' => __('Left', 'spider-elements'),
-                        'icon' => 'eicon-text-align-left',
-                    ],
-                    'center' => [
-                        'title' => __('Center', 'spider-elements'),
-                        'icon' => 'eicon-text-align-center',
-                    ],
-                    'right' => [
-                        'title' => __('Right', 'spider-elements'),
-                        'icon' => 'eicon-text-align-right',
-                    ],
-                ],
-                'default' => 'center',
+            'style_counter', [
+                'label' => esc_html__( 'Counter', 'spider-elements' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
             'counter_circle_size',
             [
-                'label' => __('Size', 'spider-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
+                'label'         => __('Size', 'spider-elements'),
+                'type'          => Controls_Manager::SLIDER,
+                'size_units'    => ['px'],
                 'range' => [
                     'px' => [
-                        'min' => 50,
-                        'max' => 500,
-                        'step' => 1,
+                        'min'   => 50,
+                        'max'   => 500,
+                        'step'  => 1,
                     ],
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 200,
+                    'size' => 100,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-circle' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .eael-progressbar-half-circle' => 'width: {{SIZE}}{{UNIT}}; height: calc({{SIZE}} / 2 * 1{{UNIT}});',
-                    '{{WRAPPER}} .eael-progressbar-half-circle-after' => 'width: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .eael-progressbar-circle-shadow' => 'width: calc({{SIZE}}{{UNIT}} + 20px); height: calc({{SIZE}}{{UNIT}} + 20px);',
+                    '{{WRAPPER}} svg.radial-progress' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};'
                 ],
-                'separator' => 'before',
+                'separator' => 'after',
             ]
         );
 
+        // Control for percent color
+		$this->add_control(
+			'percent_color',
+			[
+				'label'     => esc_html__( 'Percent Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} svg.radial-progress text' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'percent_typography',
+				'selector' => '{{WRAPPER}} svg.radial-progress text'
+			]
+		);
+
         $this->add_control(
-            'counter_circle_bg_color',
+			'hr',
+			[
+				'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);
+
+        // Control for text color
+		$this->add_control(
+			'counter_text_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .skill_item h6' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'counter_text_typography',
+				'selector' => '{{WRAPPER}} .skill_item h6'
+			]
+		);
+
+        $this->add_control(
+			'hr_text',
+			[
+				'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);
+        
+        // Control for Fill Color
+        $this->add_control(
+            'fill_color',
             [
-                'label' => __('Background Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#fff',
+                'label'     => esc_html__('Fill Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#5d5b62',
                 'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-circle-inner' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} svg.radial-progress circle.incomplete' => 'stroke: {{VALUE}};',
                 ],
-                'separator' => 'before',
+            ]
+        );
+
+        // Control for Stroke Color
+        $this->add_control(
+            'stroke_color',
+            [
+                'label'     => esc_html__('Stroke Color', 'spider-elements'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#ef4953',
+                'selectors' => [
+                    '{{WRAPPER}} .radial-progress .complete' => 'stroke: {{VALUE}};',
+                ],
             ]
         );
 
         $this->add_control(
             'counter_circle_stroke_width',
             [
-                'label' => __('Stroke Width', 'spider-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
+                'label'         => __('Stroke Width', 'spider-elements'),
+                'type'          => Controls_Manager::SLIDER,
+                'size_units'    => ['px'],
                 'range' => [
                     'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                        'step' => 1,
+                        'min'   => 0,
+                        'max'   => 100,
+                        'step'  => 1,
                     ],
                 ],
                 'default' => [
-                    'unit' => 'px',
-                    'size' => 12,
+                    'unit'  => 'px',
+                    'size'  => 6,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-circle-inner' => 'border-width: {{SIZE}}{{UNIT}}',
-                    '{{WRAPPER}} .eael-progressbar-circle-half' => 'border-width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} svg.radial-progress circle' => 'stroke-width: {{SIZE}}{{UNIT}}',
                 ],
                 'separator' => 'before',
             ]
         );
-
-        $this->add_control(
-            'counter_circle_stroke_color',
-            [
-                'label' => __('Stroke Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#eee',
-                'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-circle-inner' => 'border-color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        if (apply_filters('eael/pro_enabled', false)) {
-            $circle_fill_color_condition = [
-                '{{WRAPPER}} .eael-progressbar-circle-half' => 'border-color: {{VALUE}}',
-                '{{WRAPPER}} .eael-progressbar-circle-fill .eael-progressbar-circle-half' => 'background-color: {{VALUE}}',
-                '{{WRAPPER}} .eael-progressbar-half-circle-fill .eael-progressbar-circle-half' => 'background-color: {{VALUE}}',
-            ];
-        } else {
-            $circle_fill_color_condition = [
-                '{{WRAPPER}} .eael-progressbar-circle-half' => 'border-color: {{VALUE}}',
-            ];
-        }
-
-        $this->add_control(
-            'counter_circle_fill_color',
-            [
-                'label' => __('Fill Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000',
-                'selectors' => $circle_fill_color_condition,
-                'separator' => 'before',
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Box_Shadow::get_type(),
-            [
-                'name' => 'counter_circle_box_shadow',
-                'label' => __('Box Shadow', 'spider-elements'),
-                'selector' => '{{WRAPPER}} .eael-progressbar-circle-shadow',
-                // 'condition' => [
-                //     'counter_layout' => 'circle',
-                // ],
-                'separator' => 'before',
-            ]
-        );
-
-        $this->end_controls_section();
-
-        // Import progress bar style controlls
-        do_action('add_counter_control', $this);
-
-        /**
-         * Style Tab: Typography
-         */
-        $this->start_controls_section(
-            'counter_section_style_typography',
-            [
-                'label' => __('Typography', 'spider-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'counter_title_typography',
-                'label' => __('Title', 'spider-elements'),
-                'selector' => '{{WRAPPER}} .eael-progressbar-title',
-            ]
-        );
-
-        $this->add_control(
-            'counter_title_color',
-            [
-                'label' => __('Title Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-title' => 'color: {{VALUE}}',
-                ],
-                'separator' => 'after',
-            ]
-        );
-
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'counter_count_typography',
-                'label' => __('Counter', 'spider-elements'),
-                'selector' => '{{WRAPPER}} .eael-progressbar-count-wrap',
-            ]
-        );
-
-        $this->add_control(
-            'counter_count_color',
-            [
-                'label' => __('Counter Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-count-wrap' => 'color: {{VALUE}}',
-                ],
-                'separator' => 'after',
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'counter_after_typography',
-                'label' => __('Prefix/Postfix', 'spider-elements'),
-                'selector' => '{{WRAPPER}} .eael-progressbar-half-circle-after span',
-                'condition' => [
-                    'counter_layout' => 'half_circle',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'counter_after_color',
-            [
-                'label' => __('Prefix/Postfix Color', 'spider-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'selectors' => [
-                    '{{WRAPPER}} .eael-progressbar-half-circle-after' => 'color: {{VALUE}}',
-                ],
-                'condition' => [
-                    'counter_layout' => 'half_circle',
-                ],
-            ]
-        );
-
-
 
         $this->end_controls_section();
     }
+
 	/**
 	 * Name: elementor_render()
 	 * Desc: Render the widget output on the frontend.
@@ -499,5 +420,58 @@ class Counter extends Widget_Base
 		extract($settings); //extract all settings array to variables converted to name of key
 		//================= Template Parts =================//
         include "templates/counter/counter-{$settings['style']}.php";
-	}
+	}    
 }
+
+
+?>
+<script type=text/javascript>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+
+  // Remove svg.radial-progress .complete inline styling
+  var radialProgressElements = document.querySelectorAll("svg.radial-progress");
+  radialProgressElements.forEach(function (element) {
+    var completeCircle = element.querySelector("circle.complete");
+    if (completeCircle) {
+      completeCircle.removeAttribute("style");
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    radialProgressElements.forEach(function (element) {
+      // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+      var rect = element.getBoundingClientRect();
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      if (
+        rect.top <= windowHeight * 0.75 &&
+        rect.bottom >= windowHeight * 0.25
+      ) {
+        // Get percentage of progress
+        var percent = parseInt(element.getAttribute("data-percentage"));
+
+        // Get radius of the svg's circle.complete
+        var completeCircle = element.querySelector("circle.complete");
+        if (completeCircle) {
+          var radius = parseInt(completeCircle.getAttribute("r"));
+
+          // Get circumference (2πr)
+          var circumference = 2 * Math.PI * radius;
+
+          // Get stroke-dashoffset value based on the percentage of the circumference
+          var strokeDashOffset = circumference - (percent * circumference) / 100;
+
+          // Transition progress for 1.25 seconds
+          completeCircle.style.transition = "stroke-dashoffset 1.25s";
+          completeCircle.style.strokeDashoffset = strokeDashOffset;
+        }
+      }
+    });
+  });
+
+  // Trigger scroll event to initialize animations
+  window.dispatchEvent(new Event("scroll"));
+});
+</script>
+
+
