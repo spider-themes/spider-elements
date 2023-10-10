@@ -229,6 +229,20 @@
     background-position: top;
 }
 
+/* Counter */
+.counter1{
+    background: url("../images/el-editor-preview/counter1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.counter2{
+    /* background: url("../images/el-editor-preview/marquee2.png"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
 
 /*==================== Widget Preview Icon =====================*/
 .elementor-panel .elementor-element .icon .spe-icon::after {

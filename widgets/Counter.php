@@ -7,7 +7,6 @@ namespace Spider_Elements_Assets\Widgets;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Repeater;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
@@ -103,10 +102,16 @@ class Counter extends Widget_Base
 			'style',
 			[
 				'label'     => esc_html__( 'Counter Style', 'spider-elements' ),
-				'type'      => Controls_Manager::SELECT,
+				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
-					'1' => esc_html__( 'Style 01', 'spider-elements' ),
-					'2' => esc_html__( 'Style 02', 'spider-elements' ),
+                    '1' => [
+						'icon' => 'counter1',
+						'title' => esc_html__( '01 : Counter', 'spider-elements')
+					],
+                    '2' => [
+						'icon' => 'counter2',
+						'title' => esc_html__( '02 : Counter', 'spider-elements')
+					],
 				],
 				'default'   => '1',
 			]
@@ -114,18 +119,17 @@ class Counter extends Widget_Base
 
 		$this->end_controls_section(); // End Preset Skin
 
-		//=================== Section Accordion ===================//
+		//=================== SecCountertion  ===================//
 		$this->start_controls_section(
 			'sec_counter', [
 				'label' => esc_html__( 'Counter', 'spider-elements' ),
 			]
 		);
 
-        $repeater = new Repeater();
-        $repeater->add_control(
+        $this->add_control(
             'counter_value',
             [
-                'label'     => esc_html__('Counter Value', 'spider-elements'),
+                'label'     => esc_html__('Value', 'spider-elements'),
                 'type'      => Controls_Manager::NUMBER,
                 'default'   => 85, 
                 'min'       => 0,
@@ -134,125 +138,16 @@ class Counter extends Widget_Base
         );
 
         // Control for Counter Text
-        $repeater->add_control(
+        $this->add_control(
             'counter_text',
             [
-                'label'     => esc_html__('Counter Text', 'spider-elements'),
+                'label'     => esc_html__('Title', 'spider-elements'),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => esc_html__('User research', 'spider-elements'), // Set a default text
+                'default'   => esc_html__('User research', 'spider-elements'),
             ]
         );
 
-        $this->add_control(
-            'counters',
-            [
-                'label'     => esc_html__('Counters', 'spider-elements'),
-                'type'      => Controls_Manager::REPEATER,
-                'fields'    => $repeater->get_controls(),
-                'default'   => [
-                    [
-                        'counter_value' => 85,
-                        'counter_text' => 'User research',
-                    ],
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'flex_display',
-            [
-                'label'     => esc_html__('Display', 'spider-elements'),
-                'type'      => Controls_Manager::SELECT,
-                'default'   => 'flex',
-                'options'   => [
-                    'flex'          => esc_html__('Flex', 'spider-elements'),
-                    'inline-flex'   => esc_html__('Inline Flex', 'spider-elements'),
-                ],
-            ]
-        );
-        
-        $this->add_control(
-            'flex_direction',
-            [
-                'label'     => esc_html__('Flex Direction', 'spider-elements'),
-                'type'      => Controls_Manager::SELECT,
-                'default'   => 'row',
-                'options'   => [
-                    'row'               => esc_html__('Row', 'spider-elements'),
-                    'row-reverse'       => esc_html__('Row Reverse', 'spider-elements'),
-                    'column'            => esc_html__('Column', 'spider-elements'),
-                    'column-reverse'    => esc_html__('Column Reverse', 'spider-elements'),
-                ],
-            ]
-        );
-        
-        $this->add_control(
-            'flex_justify_content',
-            [
-                'label'     => esc_html__('Justify Content', 'spider-elements'),
-                'type'      => Controls_Manager::SELECT,
-                'default'   => 'flex-start',
-                'options'   => [
-                    'flex-start'    => esc_html__('Flex Start', 'spider-elements'),
-                    'flex-end'      => esc_html__('Flex End', 'spider-elements'),
-                    'center'        => esc_html__('Center', 'spider-elements'),
-                    'space-between' => esc_html__('Space Between', 'spider-elements'),
-                    'space-around'  => esc_html__('Space Around', 'spider-elements'),
-                ],
-            ]
-        );
-        
-        $this->add_control(
-            'flex_align_items',
-            [
-                'label'     => esc_html__('Align Items', 'spider-elements'),
-                'type'      => Controls_Manager::SELECT,
-                'default'   => 'center',
-                'options'   => [
-                    'flex-start'    => esc_html__('Flex Start', 'spider-elements'),
-                    'flex-end'      => esc_html__('Flex End', 'spider-elements'),
-                    'center'        => esc_html__('Center', 'spider-elements'),
-                    'baseline'      => esc_html__('Baseline', 'spider-elements'),
-                    'stretch'       => esc_html__('Stretch', 'spider-elements'),
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'flex_gap',
-            [
-                'label'         => esc_html__('Gap', 'spider-elements'),
-                'type'          => Controls_Manager::SLIDER,
-                'size_units'    => ['px', '%', 'em', 'rem'],
-                'range' => [
-                    'px' => [
-                        'min'   => 0,
-                        'max'   => 100,
-                        'step'  => 1,
-                    ],
-                    '%' => [
-                        'min'   => 0,
-                        'max'   => 100,
-                        'step'  => 1,
-                    ],
-                    'em' => [
-                        'min'   => 0,
-                        'max'   => 10,
-                        'step'  => 0.1,
-                    ],
-                    'rem' => [
-                        'min'   => 0,
-                        'max'   => 10,
-                        'step'  => 0.1,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 10, 
-                ],
-            ]
-        );
-
+   
 	    $this->end_controls_section(); 
 
 	}
@@ -277,7 +172,7 @@ class Counter extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'counter_circle_size',
             [
                 'label'         => __('Size', 'spider-elements'),
@@ -290,9 +185,9 @@ class Counter extends Widget_Base
                         'step'  => 1,
                     ],
                 ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 100,
+                'default'   => [
+                    'unit'  => 'px',
+                    'size'  => 100,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} svg.radial-progress' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};'
@@ -301,59 +196,6 @@ class Counter extends Widget_Base
             ]
         );
 
-        // Control for percent color
-		$this->add_control(
-			'percent_color',
-			[
-				'label'     => esc_html__( 'Percent Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} svg.radial-progress text' => 'fill: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'percent_typography',
-				'selector' => '{{WRAPPER}} svg.radial-progress text'
-			]
-		);
-
-        $this->add_control(
-			'hr',
-			[
-				'type' => \Elementor\Controls_Manager::DIVIDER,
-			]
-		);
-
-        // Control for text color
-		$this->add_control(
-			'counter_text_color',
-			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .skill_item h6' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'counter_text_typography',
-				'selector' => '{{WRAPPER}} .skill_item h6'
-			]
-		);
-
-        $this->add_control(
-			'hr_text',
-			[
-				'type' => \Elementor\Controls_Manager::DIVIDER,
-			]
-		);
-        
-        // Control for Fill Color
         $this->add_control(
             'fill_color',
             [
@@ -366,7 +208,6 @@ class Counter extends Widget_Base
             ]
         );
 
-        // Control for Stroke Color
         $this->add_control(
             'stroke_color',
             [
@@ -379,7 +220,7 @@ class Counter extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'counter_circle_stroke_width',
             [
                 'label'         => __('Stroke Width', 'spider-elements'),
@@ -404,6 +245,62 @@ class Counter extends Widget_Base
         );
 
         $this->end_controls_section();
+
+
+        // Control for percent color
+        $this->start_controls_section( 
+            'percent', [
+                'label' => esc_html__( 'Percent', 'spider-elements' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+       
+		$this->add_control(
+			'percent_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} svg.radial-progress text' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'percent_typo',
+				'selector' => '{{WRAPPER}} svg.radial-progress text'
+			]
+		);
+
+      $this->end_controls_section();
+
+        // Control for text color
+        $this->start_controls_section(      
+            'counter_title', [
+                'label' => esc_html__( 'Title', 'spider-elements' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+		$this->add_control(
+			'counter_text_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .skill_item h6' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'counter_text_typo',
+				'selector' => '{{WRAPPER}} .skill_item h6'
+			]
+		);
+        $this->end_controls_section();
+        
     }
 
 	/**
@@ -422,56 +319,3 @@ class Counter extends Widget_Base
         include "templates/counter/counter-{$settings['style']}.php";
 	}    
 }
-
-
-?>
-<script type=text/javascript>
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-
-  // Remove svg.radial-progress .complete inline styling
-  var radialProgressElements = document.querySelectorAll("svg.radial-progress");
-  radialProgressElements.forEach(function (element) {
-    var completeCircle = element.querySelector("circle.complete");
-    if (completeCircle) {
-      completeCircle.removeAttribute("style");
-    }
-  });
-
-  window.addEventListener("scroll", function () {
-    radialProgressElements.forEach(function (element) {
-      // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
-      var rect = element.getBoundingClientRect();
-      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      if (
-        rect.top <= windowHeight * 0.75 &&
-        rect.bottom >= windowHeight * 0.25
-      ) {
-        // Get percentage of progress
-        var percent = parseInt(element.getAttribute("data-percentage"));
-
-        // Get radius of the svg's circle.complete
-        var completeCircle = element.querySelector("circle.complete");
-        if (completeCircle) {
-          var radius = parseInt(completeCircle.getAttribute("r"));
-
-          // Get circumference (2πr)
-          var circumference = 2 * Math.PI * radius;
-
-          // Get stroke-dashoffset value based on the percentage of the circumference
-          var strokeDashOffset = circumference - (percent * circumference) / 100;
-
-          // Transition progress for 1.25 seconds
-          completeCircle.style.transition = "stroke-dashoffset 1.25s";
-          completeCircle.style.strokeDashoffset = strokeDashOffset;
-        }
-      }
-    });
-  });
-
-  // Trigger scroll event to initialize animations
-  window.dispatchEvent(new Event("scroll"));
-});
-</script>
-
-
