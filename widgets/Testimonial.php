@@ -135,6 +135,10 @@ class Testimonial extends Widget_Base {
 						'icon' 	=> 'testimonial10',
 						'title'	=> esc_html__( '10 : Carousel Testimonials', 'spider-elements'),
 					],
+					'11' => [
+						'icon' 	=> 'testimonial11',
+						'title'	=> esc_html__( '11 : Carousel Testimonials', 'spider-elements'),
+					],
 				],
 				'default' => '1',
 			]
@@ -727,6 +731,70 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Testimonials 10
 
+		//=== Testimonials 11
+		$testimonial11 = new Repeater();
+		$testimonial11->add_control(
+			'review_content', [
+				'label'	=> __( 'Testimonial Text', 'spider-elements' ),
+				'type' 	=> Controls_Manager::TEXTAREA,
+			]
+		);
+		$testimonial11->add_control(
+			'author_name', [
+				'label' 	=> __( 'Author Name', 'spider-elements' ),
+				'type' 		=> Controls_Manager::TEXT,
+				'default'	=> __( 'Karina' , 'spider-elements' ),
+			]
+		);
+		$testimonial11->add_control(
+			'author_position', [
+				'label' 	=> __('Author Position', 'spider-elements' ),
+				'type' 		=> Controls_Manager::TEXT,
+				'default'	=> __( 'Lead Designer' , 'spider-elements' ),
+			]
+		);
+		$testimonial11->add_control(
+			'author_image', [
+				'label'		=> __( 'Author Image', 'spider-elements' ),
+				'type' 		=> Controls_Manager::MEDIA,
+				'default'	=> [
+					'url' 	=> \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+		$this->add_control(
+			'testimonials11', [
+				'label' 		=> __( 'Testimonials', 'spider-elements' ),
+				'type' 			=> Controls_Manager::REPEATER,
+				'fields'		=> $testimonial11->get_controls(),
+				'title_field'	=> '{{{ name }}}',
+				'prevent_empty' => false,
+				'default' 		=> [
+					[
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Italy', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+					],
+					[
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+					[
+						'author_image' => __('', 'spider-elements'),
+						'author_name'		=> esc_html__( 'Karina', 'spider-elements' ),
+						'author_position' 			=> esc_html__( 'Lead Designer', 'spider-elements' ),
+						'review_content'	=> esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
+					],
+				],
+				'condition' => [
+					'style'	=> '11'
+				]
+			]
+		); //End Testimonials 11
 
 
 		$this->add_control(

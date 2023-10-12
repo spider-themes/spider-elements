@@ -1923,6 +1923,115 @@ ul.nav.nav-tabs {
   }
 }
 
+.testimonial-area {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+.testimonial-area .bg-shape .shape {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.testimonial-area span {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #b9b9ba;
+}
+.testimonial-area .review-text {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: 1px;
+  margin-bottom: 55px;
+  margin-top: 50px;
+}
+.testimonial-area .author-img {
+  border-radius: 10px;
+  max-width: 100%;
+  margin-left: auto;
+}
+.testimonial-area .author-info h5 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.testimonial-area .author-info p {
+  margin-bottom: 0;
+  color: #b9b9ba;
+}
+.testimonial-area .custom_slider_nav {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-50%, 0);
+}
+.testimonial-area .custom_slider_nav .slide_info {
+  display: flex;
+  flex-direction: row;
+}
+.testimonial-area .custom_slider_nav .total_slide {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial-slider .arrow {
+  width: 45px;
+  height: 2px;
+  background: #989dad;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin-top: 12px;
+  position: relative;
+}
+.testimonial-slider .arrow::before, .testimonial-slider .arrow::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  left: -2px;
+  background-color: #bdb4b4;
+  transition: all 0.3s ease-in-out;
+}
+.testimonial-slider .arrow::before {
+  transform: rotate(45deg);
+  right: -1px;
+  left: auto;
+  bottom: 6px;
+}
+.testimonial-slider .arrow::after {
+  transform: rotate(-45deg);
+  right: -1px;
+  left: auto;
+  top: 6px;
+}
+.testimonial-slider .next {
+  height: 25px;
+  width: 27px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  right: -50px;
+  cursor: pointer;
+}
+.testimonial-slider .next:hover {
+  right: -50px;
+}
+.testimonial-slider .next:hover .arrow {
+  width: 70px;
+}
+
 /*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
   display: flex;

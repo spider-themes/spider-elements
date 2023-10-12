@@ -1093,3 +1093,136 @@
     }
   }
 }
+
+
+// testimonial 11 css
+.testimonial-area {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+
+  .bg-shape {
+    .shape {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  span {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #b9b9ba;
+  }
+
+  .review-text {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 1px;
+    margin-bottom: 55px;
+    margin-top: 50px;
+  }
+
+  .author-img {
+    border-radius: 10px;
+    max-width: 100%;
+    margin-left: auto;
+  }
+
+  .author-info {
+    h5 {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    p {
+      margin-bottom: 0;
+      color: #b9b9ba;
+    }
+  }
+
+  .custom_slider_nav {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    transform: translateX(-50%, 0);
+
+    .slide_info {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .total_slide {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+.testimonial-slider {
+  .arrow {
+    width: 45px;
+    height: 2px;
+    background: #989dad;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin-top: 12px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 2px;
+      left: -2px;
+      background-color: #bdb4b4;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      right: -1px;
+      left: auto;
+      bottom: 6px;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      right: -1px;
+      left: auto;
+      top: 6px;
+    }
+  }
+
+  .next {
+    height: 25px;
+    width: 27px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    right: -50px;
+    cursor: pointer;
+
+    &:hover {
+      right: -50px;
+
+      .arrow {
+        width: 70px;
+      }
+    }
+  }
+}
