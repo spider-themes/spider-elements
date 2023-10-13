@@ -1,5 +1,5 @@
 <?php
-namespace Spider_Elements_Assets\includes\Admin;
+namespace Spider_Elements\includes\Admin;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {

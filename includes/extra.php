@@ -1,11 +1,11 @@
 <?php
-add_image_size( 'se_270x152', 270, 152, true); // Video Playlist Thumb
+add_image_size( 'spe_270x152', 270, 152, true); // Video Playlist Thumb
 
 /**
  * Constants for widgets badge
  */
-if (!defined('SPIDER_TEXT_BADGE')) {
-	define('SPIDER_TEXT_BADGE', '<span class="spe-text-badge-control">SPIDER</span>');
+if (!defined('SPE_TEXT_BADGE')) {
+	define('SPE_TEXT_BADGE', '<span class="spe-text-badge-control">SPIDER</span>');
 }
 
 
@@ -30,7 +30,7 @@ function spider_elements_is_preview () {
 /**
  * Elementor Title tags
  */
-function se_el_title_tags() {
+function spe_el_title_tags() {
     return [
         'h1'  => __( 'H1', 'spider-elements' ),
         'h2' => __( 'H2', 'spider-elements' ),
@@ -52,7 +52,7 @@ function se_el_title_tags() {
  * The button link
  * @return void
  */
-function se_the_button( $settings_key, $is_echo = true ) {
+function spe_the_button( $settings_key, $is_echo = true ) {
 
     if ( $is_echo == true ) {
         echo !empty($settings_key['url']) ? "href='{$settings_key['url']}'" : '';
@@ -77,7 +77,7 @@ function se_the_button( $settings_key, $is_echo = true ) {
 /**
  * Day link to archive page
  **/
-function se_day_link() {
+function spe_day_link() {
     $archive_year   = get_the_time( 'Y' );
     $archive_month  = get_the_time( 'm' );
     $archive_day    = get_the_time( 'd' );
@@ -89,15 +89,17 @@ function se_day_link() {
  * Category IDs
  * @return array
  */
-function se_cat_ids(){
+function spe_cat_ids(){
     $taxonomys = get_terms( array(
         'taxonomy' => 'category',
         'hide_empty' => true,
     ) );
     $taxonomy = [];
-    foreach( $taxonomys as $cat_id){
-        $taxonomy[$cat_id->term_id]= $cat_id->name;    
-    }
+	if ( is_array($taxonomys) ) {
+		foreach ( $taxonomys as $cat_id ) {
+			$taxonomy[ $cat_id->term_id ] = $cat_id->name;
+		}
+	}
 
     return $taxonomy;
 }
@@ -110,7 +112,7 @@ function se_cat_ids(){
  * @param int $default
  * @return string|void
  */
-function se_get_the_title_length ( $settings, $settings_key, $default = 10 ) {
+function spe_get_the_title_length ( $settings, $settings_key, $default = 10 ) {
 
     $title_length = !empty($settings[$settings_key]) ? $settings[$settings_key] : $default;
     $title = get_the_title() ? wp_trim_words(get_the_title(), $title_length, '') : the_title();
@@ -124,7 +126,7 @@ function se_get_the_title_length ( $settings, $settings_key, $default = 10 ) {
  * @param bool $echo
  * @return string
  **/
-function se_get_the_excerpt_length ( $settings, $settings_key, $default = 10 ) {
+function spe_get_the_excerpt_length ( $settings, $settings_key, $default = 10 ) {
 
     $excerpt_length = !empty($settings[$settings_key]) ? $settings[$settings_key] : $default;
     $excerpt = get_the_excerpt() ? wp_trim_words(get_the_excerpt(), $excerpt_length, '...') : wp_trim_words(get_the_content(), $excerpt_length, '...');
@@ -138,7 +140,7 @@ function se_get_the_excerpt_length ( $settings, $settings_key, $default = 10 ) {
  * @param string $term
  * @return string
  */
-function se_get_the_first_taxonomy( $term = 'category' ) {
+function spe_get_the_first_taxonomy( $term = 'category' ) {
     $cats = get_the_terms(get_the_ID(), $term);
     $cat  = is_array($cats) ? $cats[0]->name : '';
     return esc_html($cat);
@@ -150,7 +152,7 @@ function se_get_the_first_taxonomy( $term = 'category' ) {
  * @param string $term
  * @return string
  */
-function se_get_the_first_taxonomy_link( $term = 'category' ) {
+function spe_get_the_first_taxonomy_link( $term = 'category' ) {
 
 	$cats = get_the_terms(get_the_ID(), $term);
     $cat  = is_array($cats) ? get_category_link($cats[0]->term_id) : '';
@@ -164,7 +166,7 @@ function se_get_the_first_taxonomy_link( $term = 'category' ) {
  * @param string $term
  * @return array
  */
-function se_get_the_categories ( $term = 'category' ) {
+function spe_get_the_categories ( $term = 'category' ) {
 
     $cats = get_terms( array(
         'taxonomy' => $term,
@@ -174,9 +176,11 @@ function se_get_the_categories ( $term = 'category' ) {
     $cat_array = [];
     $cat_array['all'] = esc_html__('All', 'spider-elements');
 
-    foreach ($cats as $cat) {
-        $cat_array[$cat->term_id] = $cat->name;
-    }
+	if ( is_array($cats) ) {
+		foreach ( $cats as $cat ) {
+			$cat_array[ $cat->term_id ] = $cat->name;
+		}
+	}
 
     return $cat_array;
 }
@@ -187,7 +191,7 @@ function se_get_the_categories ( $term = 'category' ) {
  * @param string $term
  * @return string
  */
-function se_get_post_category_list() {
+function spe_get_post_category_list() {
     $categories = get_categories();
 
     if ( ! empty( $categories ) ) {
@@ -195,16 +199,18 @@ function se_get_post_category_list() {
 
         $category_names = array();
 
-        foreach ( $categories as $category ) {
-            $category_link = get_category_link( $category->term_id );
-            $category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
-        }
+	    if ( is_array($categories) ) {
+		    foreach ( $categories as $category ) {
+			    $category_link    = get_category_link( $category->term_id );
+			    $category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
+		    }
+	    }
 
         echo implode(', ', $category_names);
 
         echo '</span>';
     } else {
-        echo 'No categories found.';
+        echo esc_html__('No categories found.', 'spider-elements');
     }
 }
 
@@ -213,7 +219,7 @@ function se_get_post_category_list() {
  * @param string $term
  * @return string
  */
-function se_get_reading_time($words_per_minute) {
+function spe_get_reading_time($words_per_minute) {
     $post_content = get_post_field('post_content', get_the_ID());
     $word_count = str_word_count($post_content);
     $reading_time = ceil($word_count / $words_per_minute);
@@ -228,7 +234,7 @@ function se_get_reading_time($words_per_minute) {
  * @return array
  */
 
-function se_posted_by() {
+function spe_posted_by() {
     global $post;
     $byline = sprintf(
         /* translators: %s: post author. */
@@ -236,26 +242,8 @@ function se_posted_by() {
         '<span class="author">By: <a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author) ) . '">' . esc_html(get_the_author_meta( 'display_name',$post->post_author) ) . '</a></span>'
     );
 
-    echo $byline ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    echo wp_kses_post($byline) ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
-
-
-
-/**
- * @param $html_data
- * @return mixed
- */
-function se_html_return($html_data) {
-    return $html_data;
-}
-
-
-// Arrow icon left right position
-function se_arrow_left_right() {
-    $arrow_icon = is_rtl() ? 'arrow_left' : 'arrow_right';
-    echo esc_attr($arrow_icon);
-}
-
 
 /**
  * Get Default Image Elementor
@@ -263,7 +251,7 @@ function se_arrow_left_right() {
  * @param string $class
  * @param string $alt
  */
-function se_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
+function spe_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
     if ( !empty($settings_key['id']) ) {
         echo wp_get_attachment_image( $settings_key['id'], 'full', '', array('class' => $class) );
     }
@@ -286,7 +274,7 @@ function se_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
  * @param string $class
  * @param string $alt
  */
-function se_el_image_caption( $image_id = '' ) {
+function spe_el_image_caption( $image_id = '' ) {
 	$img_attachment = get_post( $image_id );
 	return array(
 		'alt' => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
@@ -303,7 +291,7 @@ function se_el_image_caption( $image_id = '' ) {
  * @param string  $content Text content to filter.
  * @return string Filtered content containing only the allowed HTML.
  */
-function se_get_the_kses_post($content) {
+function spe_get_the_kses_post($content) {
     $allowed_tag = array(
         'strong' => [],
         'br' => [],
@@ -381,7 +369,7 @@ function se_get_the_kses_post($content) {
  * @param $event_schedule_cats
  * @return array
  */
-function se_return_tab_data( $getCats, $event_schedule_cats ) {
+function spe_return_tab_data( $getCats, $event_schedule_cats ) {
     $y = [];
     foreach ( $getCats as $val ) {
 
@@ -401,7 +389,7 @@ function se_return_tab_data( $getCats, $event_schedule_cats ) {
 /**
  * estimated reading time
  **/
-function se_get_the_reading_time($minute_label = 'minute', $minutes_label = 'minutes') {
+function spe_get_the_reading_time($minute_label = 'minute', $minutes_label = 'minutes') {
     $content = get_post_field( 'post_content', get_the_ID() );
     $word_count = str_word_count( strip_tags( $content ) );
     $readingtime = ceil($word_count / 200);
@@ -416,33 +404,6 @@ function se_get_the_reading_time($minute_label = 'minute', $minutes_label = 'min
     return $totalreadingtime;
 }
 
-
-/**
- * Get all contact form 7
- *
- * @return array
- */
-function se_get_contact_form7() {
-
-    $forms = get_posts(array(
-        'post_type' => 'wpcf7_contact_form',
-        'posts_per_page' => -1,
-    ));
-
-    $results = [];
-    if ( $forms ) {
-        $results[] = __( 'Select A Form', 'spider-elements' );
-        foreach ( $forms as $form ) {
-            $results[ $form->ID ] = $form->post_title;
-        }
-    } else {
-        $results[] =  __( 'No contact forms found', 'hostim-core' ) ;
-    }
-
-    return $results;
-}
-
-
 /**
  * Get all elementor page templates
  *
@@ -450,7 +411,7 @@ function se_get_contact_form7() {
  *
  * @return array
  */
-function se_get_el_templates($type = null)
+function spe_get_el_templates($type = null)
 {
 	$options = [];
 
@@ -475,7 +436,7 @@ function se_get_el_templates($type = null)
 			}
 		}
 	} else {
-		$options = se_get_query_post_list('elementor_library');
+		$options = spe_get_query_post_list('elementor_library');
 	}
 
 	return $options;
@@ -488,7 +449,7 @@ function se_get_el_templates($type = null)
  * @param string $search
  * @return array
  */
-function se_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
+function spe_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
 	global $wpdb;
 	$where = '';
 	$data = [];
@@ -526,22 +487,3 @@ function se_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
 	}
 	return $data;
 }
-
-
-/**
- * Add new font group (Custom) to the top of the list
- */
-add_filter( 'elementor/fonts/groups', function( $font_groups ) {
-    $se_font_group = array( 'se_custom_font' => __( 'Se Custom Font' ) );
-    return array_merge( $se_font_group, $font_groups );
-} );
-
-/**
- * Add fonts to the new font group
- */
-add_filter( 'elementor/fonts/additional_fonts', function( $additional_fonts ) {
-    //Font name/font group
-    $additional_fonts['gordita'] = 'se_custom_font';
-    return $additional_fonts;
-
-} );

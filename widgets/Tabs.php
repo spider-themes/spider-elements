@@ -2,7 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
@@ -170,7 +170,7 @@ class Tabs extends Widget_Base
 			[
 				'label' 	=> __('Choose Template', 'spider-elements'),
 				'type' 		=> Controls_Manager::SELECT,
-				'options'	=> se_get_el_templates(),
+				'options'	=> spe_get_el_templates(),
 				'condition' => [
 					'tabs_content_type' => 'template',
 				],

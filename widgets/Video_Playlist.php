@@ -2,12 +2,11 @@
 /**
  * Use namespace to avoid conflict
  */
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Repeater;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Utils;
@@ -22,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Video_playlist extends Widget_Base {
+class Video_Playlist extends Widget_Base {
 	public function get_name() {
 		return 'docy_videos_playlist';
 	}
@@ -145,7 +144,7 @@ class Video_playlist extends Widget_Base {
 			'title_tag', [
 				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => se_el_title_tags(),
+				'options' => spe_el_title_tags(),
 				'default' => 'h3',
 			]
 		);
@@ -163,7 +162,6 @@ class Video_playlist extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name'     => 'typography_title',
-				'scheme'   => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .title'
 			]
 		);

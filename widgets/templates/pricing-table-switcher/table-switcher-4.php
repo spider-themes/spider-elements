@@ -28,10 +28,10 @@
 
                 <nav>
                     <div class="nav d-flex justify-content-center app-pricing-switcher" id="nav-tab" role="tablist">
-                        <button class="nav-link spe_pricing_title active" id="app-monthly-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#app-monthly-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
+                        <button class="nav-link spe_pricing_title active" id="app-monthly-tab-<?php echo esc_attr($this->get_id()); ?>" data-bs-toggle="tab" data-bs-target="#app-monthly-<?php echo esc_attr($this->get_id()); ?>" type="button" role="tab" aria-controls="nav-monthly" aria-selected="true">
                             <?php echo esc_html($settings['tab1_title']) ?>
                         </button>
-                        <button class="nav-link spe_pricing_title" id="app-annual-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#app-annual-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="app-annual" aria-selected="false">
+                        <button class="nav-link spe_pricing_title" id="app-annual-tab-<?php echo esc_attr($this->get_id()); ?>" data-bs-toggle="tab" data-bs-target="#app-annual-<?php echo esc_attr($this->get_id()); ?>" type="button" role="tab" aria-controls="app-annual" aria-selected="false">
                             <?php echo esc_html($settings['tab2_title']) ?>
                         </button>
                     </div>
@@ -39,7 +39,7 @@
 
                 <div class="tab-content pricing-tab-content" id="nav-tabContent">
 
-                    <div class="tab-pane fade show active" id="app-monthly-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="app-monthly-tab-<?php echo $this->get_id(); ?>">
+                    <div class="tab-pane fade show active" id="app-monthly-<?php echo esc_attr($this->get_id()); ?>" role="tabpanel" aria-labelledby="app-monthly-tab-<?php echo esc_attr($this->get_id()); ?>">
                         <div class="row">
                             <?php
                             $delay_time = 0.1;
@@ -70,10 +70,10 @@
                                                 <?php
                                             }
                                             if ( !empty( $table['contents'] ) ) {
-                                                echo se_get_the_kses_post($table['contents']);
+                                                echo spe_get_the_kses_post($table['contents']);
                                             }
                                             if ( !empty( $table['btn_label'] ) ) { ?>
-                                                <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
+                                                <a <?php spe_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                                     <?php echo esc_html($table['btn_label']) ?>
                                                 </a>
                                                 <?php
@@ -91,7 +91,7 @@
                     </div>
 
 
-                    <div class="tab-pane fade" id="app-annual-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="app-annual-tab-<?php echo $this->get_id(); ?>">
+                    <div class="tab-pane fade" id="app-annual-<?php echo esc_attr($this->get_id()); ?>" role="tabpanel" aria-labelledby="app-annual-tab-<?php echo esc_attr($this->get_id()); ?>">
                         <div class="row">
                             <?php
                             unset( $table );
@@ -123,10 +123,10 @@
                                                 <?php
                                             }
                                             if ( !empty( $table['contents'] ) ) {
-                                                echo se_get_the_kses_post($table['contents']);
+                                                echo spe_get_the_kses_post($table['contents']);
                                             }
                                             if ( !empty( $table['btn_label'] ) ) { ?>
-                                                <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
+                                                <a <?php spe_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                                     <?php echo esc_html($table['btn_label']) ?>
                                                 </a>
                                                 <?php

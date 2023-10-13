@@ -2,14 +2,15 @@
 /**
  * Use namespace to avoid conflict
  */
-namespace Spider_Elements_Assets\Widgets;
+
+namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -18,50 +19,42 @@ if (!defined('ABSPATH')) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Counter extends Widget_Base
-{
+class Counter extends Widget_Base {
 
-	public function get_name()
-	{
+	public function get_name() {
 		return 'spe_counter';
 	}
 
-	public function get_title()
-	{
-		return esc_html__('Counter', 'spider-elements');
+	public function get_title() {
+		return esc_html__( 'Counter', 'spider-elements' );
 	}
 
-	public function get_icon()
-	{
+	public function get_icon() {
 		return 'eicon-counter spe-icon';
 	}
 
-	public function get_keywords()
-	{
+	public function get_keywords() {
 		return [ 'spider', 'Counter', 'Progress bar', ];
 	}
 
-	public function get_categories()
-	{
-		return ['spider-elements'];
+	public function get_categories() {
+		return [ 'spider-elements' ];
 	}
 
 	/**
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends()
-	{
-		return ['bootstrap', 'spe-main'];
+	public function get_style_depends() {
+		return [ 'bootstrap', 'spe-main' ];
 	}
 
 	/**
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends()
-	{
-		return ['bootstrap', 'spe-el-widgets'];
+	public function get_script_depends() {
+		return [ 'bootstrap', 'spe-el-widgets' ];
 	}
 
 	/**
@@ -73,13 +66,12 @@ class Counter extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls()
-	{
-        $this->elementor_content_control();
-		$this-> counter_style_control();
+	protected function register_controls() {
+		$this->elementor_content_control();
+		$this->counter_style_control();
 	}
 
-    
+
 	/**
 	 * Name: elementor_content_control()
 	 * Desc: Register the Content Tab output on the Elementor editor.
@@ -90,30 +82,26 @@ class Counter extends Widget_Base
 	 * Author: spider-themes
 	 */
 
-    public function elementor_content_control() {
-      //==================== Select Preset Skin ====================//
+	public function elementor_content_control() {
+		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'counter_preset', [
 				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
-        $this->add_control(
+		$this->add_control(
 			'style',
 			[
-				'label'     => esc_html__( 'Counter Style', 'spider-elements' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => [
-                    '1' => [
-						'icon' => 'counter1',
-						'title' => esc_html__( '01 : Counter', 'spider-elements')
-					],
-                    '2' => [
-						'icon' => 'counter2',
-						'title' => esc_html__( '02 : Counter', 'spider-elements')
+				'label'   => esc_html__( 'Counter Style', 'spider-elements' ),
+				'type'    => Controls_Manager::CHOOSE,
+				'options' => [
+					'1' => [
+						'icon'  => 'counter1',
+						'title' => esc_html__( '01 : Counter', 'spider-elements' )
 					],
 				],
-				'default'   => '1',
+				'default' => '1',
 			]
 		);
 
@@ -126,33 +114,31 @@ class Counter extends Widget_Base
 			]
 		);
 
-        $this->add_control(
-            'counter_value',
-            [
-                'label'     => esc_html__('Value', 'spider-elements'),
-                'type'      => Controls_Manager::NUMBER,
-                'default'   => 85, 
-                'min'       => 0,
-                'max'       => 100,
-            ]
-        );
+		$this->add_control(
+			'counter_value', [
+				'label'   => esc_html__( 'Value', 'spider-elements' ),
+				'type'    => Controls_Manager::NUMBER,
+				'default' => 85,
+				'min'     => 0,
+				'max'     => 100,
+			]
+		);
 
-        // Control for Counter Text
-        $this->add_control(
-            'counter_text',
-            [
-                'label'     => esc_html__('Title', 'spider-elements'),
-                'type'      => Controls_Manager::TEXT,
-                'default'   => esc_html__('User research', 'spider-elements'),
-            ]
-        );
+		// Control for Counter Text
+		$this->add_control(
+			'counter_text', [
+				'label'   => esc_html__( 'Title', 'spider-elements' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => esc_html__( 'User research', 'spider-elements' ),
+			]
+		);
 
-   
-	    $this->end_controls_section(); 
+
+		$this->end_controls_section();
 
 	}
 
-    
+
 	/**
 	 * Name: counter_style_control()
 	 * Desc: Register the Style Tab output on the Elementor editor.
@@ -165,96 +151,96 @@ class Counter extends Widget_Base
 	public function counter_style_control() {
 
 		//===================== Counter Content Style ============================//
-        $this->start_controls_section(
-            'style_counter', [
-                'label' => esc_html__( 'Counter', 'spider-elements' ),
-                'tab'   => Controls_Manager::TAB_STYLE,
-            ]
-        );
+		$this->start_controls_section(
+			'style_counter', [
+				'label' => esc_html__( 'Counter', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
 
-        $this->add_responsive_control(
-            'counter_circle_size',
-            [
-                'label'         => __('Size', 'spider-elements'),
-                'type'          => Controls_Manager::SLIDER,
-                'size_units'    => ['px'],
-                'range' => [
-                    'px' => [
-                        'min'   => 50,
-                        'max'   => 500,
-                        'step'  => 1,
-                    ],
-                ],
-                'default'   => [
-                    'unit'  => 'px',
-                    'size'  => 100,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} svg.radial-progress' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};'
-                ],
-                'separator' => 'after',
-            ]
-        );
+		$this->add_responsive_control(
+			'counter_circle_size',
+			[
+				'label'      => __( 'Size', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => 50,
+						'max'  => 500,
+						'step' => 1,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 100,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} svg.radial-progress' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};'
+				],
+				'separator'  => 'after',
+			]
+		);
 
-        $this->add_control(
-            'fill_color',
-            [
-                'label'     => esc_html__('Fill Color', 'spider-elements'),
-                'type'      => Controls_Manager::COLOR,
-                'default'   => '#5d5b62',
-                'selectors' => [
-                    '{{WRAPPER}} svg.radial-progress circle.incomplete' => 'stroke: {{VALUE}};',
-                ],
-            ]
-        );
+		$this->add_control(
+			'fill_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#5d5b62',
+				'selectors' => [
+					'{{WRAPPER}} svg.radial-progress circle.incomplete' => 'stroke: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->add_control(
-            'stroke_color',
-            [
-                'label'     => esc_html__('Stroke Color', 'spider-elements'),
-                'type'      => Controls_Manager::COLOR,
-                'default'   => '#ef4953',
-                'selectors' => [
-                    '{{WRAPPER}} .radial-progress .complete' => 'stroke: {{VALUE}};',
-                ],
-            ]
-        );
+		$this->add_control(
+			'stroke_color',
+			[
+				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#ef4953',
+				'selectors' => [
+					'{{WRAPPER}} .radial-progress .complete' => 'stroke: {{VALUE}};',
+				],
+			]
+		);
 
-        $this->add_responsive_control(
-            'counter_circle_stroke_width',
-            [
-                'label'         => __('Stroke Width', 'spider-elements'),
-                'type'          => Controls_Manager::SLIDER,
-                'size_units'    => ['px'],
-                'range' => [
-                    'px' => [
-                        'min'   => 0,
-                        'max'   => 100,
-                        'step'  => 1,
-                    ],
-                ],
-                'default' => [
-                    'unit'  => 'px',
-                    'size'  => 6,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} svg.radial-progress circle' => 'stroke-width: {{SIZE}}{{UNIT}}',
-                ],
-                'separator' => 'before',
-            ]
-        );
+		$this->add_responsive_control(
+			'counter_circle_stroke_width',
+			[
+				'label'      => __( 'Stroke Width', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 6,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} svg.radial-progress circle' => 'stroke-width: {{SIZE}}{{UNIT}}',
+				],
+				'separator'  => 'before',
+			]
+		);
 
-        $this->end_controls_section();
+		$this->end_controls_section();
 
 
-        // Control for percent color
-        $this->start_controls_section( 
-            'percent', [
-                'label' => esc_html__( 'Percent', 'spider-elements' ),
-                'tab'   => Controls_Manager::TAB_STYLE,
-            ]
-        );
-       
+		// Control for percent color
+		$this->start_controls_section(
+			'percent', [
+				'label' => esc_html__( 'Percent', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
 		$this->add_control(
 			'percent_color',
 			[
@@ -273,15 +259,15 @@ class Counter extends Widget_Base
 			]
 		);
 
-      $this->end_controls_section();
+		$this->end_controls_section();
 
-        // Control for text color
-        $this->start_controls_section(      
-            'counter_title', [
-                'label' => esc_html__( 'Title', 'spider-elements' ),
-                'tab'   => Controls_Manager::TAB_STYLE,
-            ]
-        );
+		// Control for text color
+		$this->start_controls_section(
+			'counter_title', [
+				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
 		$this->add_control(
 			'counter_text_color',
 			[
@@ -299,9 +285,9 @@ class Counter extends Widget_Base
 				'selector' => '{{WRAPPER}} .skill_item h6'
 			]
 		);
-        $this->end_controls_section();
-        
-    }
+		$this->end_controls_section();
+
+	}
 
 	/**
 	 * Name: elementor_render()
@@ -314,8 +300,9 @@ class Counter extends Widget_Base
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		extract($settings); //extract all settings array to variables converted to name of key
+		extract( $settings ); //extract all settings array to variables converted to name of key
+
 		//================= Template Parts =================//
-        include "templates/counter/counter-{$settings['style']}.php";
-	}    
+		include "templates/counter/counter-{$settings['style']}.php";
+	}
 }

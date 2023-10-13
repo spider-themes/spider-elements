@@ -2,19 +2,19 @@
     <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
         <ul class="nav nav-tabs pricing-tabs-two" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#home-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <button class="nav-link active" id="home-tab-<?php echo esc_attr($this->get_id()) ?>" data-bs-toggle="tab" data-bs-target="#home-<?php echo esc_attr($this->get_id()) ?>" type="button" role="tab" aria-controls="home" aria-selected="true">
                     <?php echo esc_html( $settings['tab1_title'] ) ?>
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab-<?php echo $this->get_id(); ?>" data-bs-toggle="tab" data-bs-target="#profile-<?php echo $this->get_id(); ?>" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                <button class="nav-link" id="profile-tab-<?php echo esc_attr($this->get_id()); ?>" data-bs-toggle="tab" data-bs-target="#profile-<?php echo esc_attr($this->get_id()) ?>" type="button" role="tab" aria-controls="profile" aria-selected="false">
                     <?php echo esc_html( $settings['tab2_title'] ) ?>
                 </button>
             </li>
         </ul>
     </div>
     <div class="tab-content">
-        <div class="tab-pane fade show active" id="home-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="home-tab-<?php echo $this->get_id(); ?>">
+        <div class="tab-pane fade show active" id="home-<?php echo esc_attr($this->get_id()); ?>" role="tabpanel" aria-labelledby="home-tab-<?php echo esc_attr($this->get_id()); ?>">
             <div class="row align-items-end gy-4 gy-lg-0">
                 <?php
                 $key = 1;
@@ -28,7 +28,7 @@
                             <div class="pricing-item-3 spe_pricing_item_wrapper<?php echo esc_attr($align_class) ?> elementor-repeater-item-<?php echo esc_attr($table['_id']) ?>">
                                 <?php
                                 if ( !empty( $table['title'] ) ) { ?>
-                                    <h5 class="spe_pricing_item_header"> <?php echo esc_html($table['title']) ?> </h5>
+                                    <h5 class="spe_pricing_item_header"><?php echo esc_html($table['title']) ?> </h5>
                                     <?php
                                 }
                                 ?>
@@ -40,10 +40,10 @@
                                         <?php
                                     }
 
-                                    echo !empty($table['contents']) ? se_get_the_kses_post($table['contents']) : '';
+                                    echo !empty($table['contents']) ? spe_get_the_kses_post($table['contents']) : '';
 
                                     if ( !empty( $table['btn_label'] ) ) { ?>
-                                        <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
+                                        <a <?php spe_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                             <?php echo esc_html($table['btn_label']) ?>
                                         </a>
                                         <?php
@@ -59,7 +59,7 @@
                 ?>
             </div>
         </div>
-        <div class="tab-pane fade" id="profile-<?php echo $this->get_id(); ?>" role="tabpanel" aria-labelledby="profile-tab-<?php echo $this->get_id(); ?>">
+        <div class="tab-pane fade" id="profile-<?php echo esc_attr($this->get_id()); ?>" role="tabpanel" aria-labelledby="profile-tab-<?php echo esc_attr($this->get_id()); ?>">
             <div class="row align-items-end gy-4 gy-lg-0">
                 <?php
                 unset( $table );
@@ -88,10 +88,10 @@
                                         <?php
                                     }
 
-                                    echo !empty($table['contents']) ? se_get_the_kses_post($table['contents']) : '';
+                                    echo !empty($table['contents']) ? spe_get_the_kses_post($table['contents']) : '';
 
                                     if ( !empty( $table['btn_label'] ) ) { ?>
-                                        <a <?php se_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
+                                        <a <?php spe_the_button($table['btn_url']) ?> class="btn spe_pricing_item_btn">
                                             <?php echo esc_html($table['btn_label']) ?>
                                         </a>
                                         <?php

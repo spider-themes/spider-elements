@@ -2,7 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;

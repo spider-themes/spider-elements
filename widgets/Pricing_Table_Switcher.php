@@ -1,5 +1,5 @@
 <?php
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Repeater;
 use Elementor\Widget_Base;

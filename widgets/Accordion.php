@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Text_Shadow;
@@ -147,7 +147,7 @@ class Accordion extends Widget_Base {
 			'el_content', [
 				'label'       	=> __( 'Select Template', 'spider-elements' ),
 				'type'        	=> Controls_Manager::SELECT,
-				'options'     	=> se_get_el_templates(),
+				'options'     	=> spe_get_el_templates(),
 				'label_block'	=> true,
 				'default'     	=> __( 'Accordion Content', 'spider-elements' ),
 				'condition'   	=> [
@@ -233,7 +233,7 @@ class Accordion extends Widget_Base {
 				'type'    	=> Controls_Manager::SELECT,
 				'separator'	=> 'before',
 				'default' 	=> 'h6',
-				'options' 	=> se_el_title_tags(),
+				'options' 	=> spe_el_title_tags(),
 			]
 		);
 

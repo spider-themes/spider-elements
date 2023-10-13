@@ -1,5 +1,5 @@
 <?php
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Background;
 use Elementor\Repeater;
@@ -269,7 +269,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 		$pricing_tables = $settings['pricing_tables'];
 		$cats       = array_column( $pricing_tables, 'tab_title' );
 		$getCats    = array_unique( $cats );
-		$table_data = se_return_tab_data( $getCats , $pricing_tables );
+		$table_data = spe_return_tab_data( $getCats , $pricing_tables );
 
 		?>
 		<div class="row">
@@ -292,7 +292,7 @@ class Pricing_Table_Tabs extends Widget_Base {
                                  </li>';
 							$i++;
 						}
-						echo $tabs;
+						echo wp_kses_post($tabs);
 					}
 					?>
 				</ul>
@@ -314,7 +314,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 					$i++;
 					$active = $i == 1 ? ' show active' : '';
 					?>
-					<div class="tab-pane fade<?php echo $active ?>" id="<?php echo esc_attr($catForFilter.'-'.$this->get_id()); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($catForFilter); ?>-tab">
+					<div class="tab-pane fade<?php echo esc_attr($active) ?>" id="<?php echo esc_attr($catForFilter.'-'.$this->get_id()); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($catForFilter); ?>-tab">
 						<div class="row">
 							<?php
 							foreach ( $value as $table_item ) {
@@ -359,17 +359,17 @@ class Pricing_Table_Tabs extends Widget_Base {
 											<?php
 										}
 										if ( !empty($table_item['btn_label_1']) ) { ?>
-											<a <?php se_the_button($table_item['btn_url_1']) ?> class="pricing-btn">
+											<a <?php spe_the_button($table_item['btn_url_1']) ?> class="pricing-btn">
 												<?php echo esc_html($table_item['btn_label_1']) ?>
 											</a>
 											<?php
 										}
 										if ( !empty($table_item['contents']) ) { ?>
-											<?php echo se_get_the_kses_post($table_item['contents']) ?>
+											<?php echo spe_get_the_kses_post($table_item['contents']) ?>
 											<?php
 										}
 										if ( !empty($table_item['btn_label_2']) ) { ?>
-											<a <?php se_the_button($table_item['btn_url_2']) ?> class="pricing-btn">
+											<a <?php spe_the_button($table_item['btn_url_2']) ?> class="pricing-btn">
 												<?php echo esc_html($table_item['btn_label_2']) ?>
 											</a>
 											<?php
@@ -381,7 +381,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 							}
 							?>
 						</div>
-						<?php se_el_image($settings['ribbon_label'], 'Popular', 'popular d-none d-lg-block') ?>
+						<?php spe_el_image($settings['ribbon_label'], 'Popular', 'popular d-none d-lg-block') ?>
 					</div>
 					<?php
 				}

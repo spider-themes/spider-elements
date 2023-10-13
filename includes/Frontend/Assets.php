@@ -1,5 +1,5 @@
 <?php
-namespace Spider_Elements_Assets\includes\Frontend;
+namespace Spider_Elements\includes\Frontend;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {

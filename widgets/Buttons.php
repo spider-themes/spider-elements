@@ -2,7 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
-namespace Spider_Elements_Assets\Widgets;
+namespace Spider_Elements\Widgets;
 
 use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Buttons extends Widget_Base {
 
     public function get_name() {
-        return 'se_buttons';
+        return 'spe_buttons';
     }
 
     public function get_title() {
@@ -103,11 +103,10 @@ class Buttons extends Widget_Base {
         );
 
         $this->add_control(
-			'se_section_id',
+			'section_id',
 			[
 				'label' => esc_html__( 'Section ID', 'spider-elements' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( '#', 'spider-elements' ),
 				'placeholder' => esc_html__( 'Type your section ID here', 'spider-elements' ),
 			]
 		);

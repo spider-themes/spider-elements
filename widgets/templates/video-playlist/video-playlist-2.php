@@ -31,9 +31,9 @@ if ( $is_preloader == '1' ) {
                 <div class="item">
                     <div class="row video2_wrapper">
                         <div class="col-lg-7 player_wrapper">
-                            <video id="player_<?php echo $child_video[ 'video_upload' ][ 'id' ]; ?>"
+                            <video id="player_<?php echo esc_attr( $child_video[ 'video_upload' ][ 'id' ] ); ?>"
                                    class="video-js vjs-fluid vjs-default-skin" controls preload playsinline
-                                   poster="<?php echo $child_video[ 'thumbnail' ][ 'url' ]; ?>">
+                                   poster="<?php echo esc_attr( $child_video[ 'thumbnail' ][ 'url' ] ); ?>">
                                 <source src="<?php echo esc_url( $child_video[ 'video_upload' ][ 'url' ], ); ?>"
                                         type="video/mp4">
                             </video>
@@ -49,7 +49,7 @@ if ( $is_preloader == '1' ) {
                                         <ion-icon
                                                 name="person-outline"></ion-icon> <?php the_author_meta( 'display_name' ); ?>
                                     </a>
-                                    <a href="<?php se_day_link(); ?>">
+                                    <a href="<?php spe_day_link(); ?>">
                                         <ion-icon name="calendar-clear-outline"></ion-icon>
 										<?php the_time( get_option( 'date_format' ) ); ?>
                                     </a>
@@ -67,33 +67,34 @@ if ( $is_preloader == '1' ) {
     <div class="gallery_main_area">
         <div class="gallery-thumbs p-0">
 			<?php
-			foreach ( $all_videos as $videos ) {
-				$child_videos = $videos[ 'videos' ] ?? '';
+			if ( is_array( $all_videos ) ) {
+				foreach ( $all_videos as $videos ) {
+					$child_videos = $videos[ 'videos' ] ?? '';
 
-				foreach ( $child_videos as $child_video ) {
-					$img_id = attachment_url_to_postid( $child_video[ 'thumbnail' ][ 'url' ] );
-					?>
-                    <div class="item">
-                        <div class="gallery_inner_thumb">
-							<?php
-							$get_img = wp_get_attachment_image( $img_id, 'se_270x152px' );
-							if ( ! empty ( $get_img ) ) :
-								echo $get_img;
-							else : ?>
-
-                                <img src="<?php echo $child_video[ 'thumbnail' ][ 'url' ]; ?>"/>
-							<?php
-							endif;
-							?>
-                            <div class="caption_text">
-                                <div class="play-icon">
-                                    <ion-icon name="play"></ion-icon>
+					foreach ( $child_videos as $child_video ) {
+						$img_id = attachment_url_to_postid( $child_video[ 'thumbnail' ][ 'url' ] );
+						?>
+                        <div class="item">
+                            <div class="gallery_inner_thumb">
+								<?php
+								if ( ! empty ( $get_img ) ) :
+									wp_get_attachment_image( $img_id, 'spe_270x152' );
+								else : ?>
+                                    <img src="<?php echo esc_url( $child_video[ 'thumbnail' ][ 'url' ] ); ?>"
+                                         alt="<?php esc_attr_e( 'Video Poster Image', 'spider-elements' ); ?>"/>
+								<?php
+								endif;
+								?>
+                                <div class="caption_text">
+                                    <div class="play-icon">
+                                        <ion-icon name="play"></ion-icon>
+                                    </div>
+                                    <h4> <?php echo esc_html( $child_video[ 'title2' ] ); ?></h4>
                                 </div>
-                                <h4> <?php echo esc_html( $child_video[ 'title2' ] ); ?></h4>
                             </div>
                         </div>
-                    </div>
-					<?php
+						<?php
+					}
 				}
 			}
 			?>

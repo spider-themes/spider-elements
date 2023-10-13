@@ -32,11 +32,11 @@
                     ?>
                 <div class="review">
                     <?php if ( ! \Elementor\Utils::is_empty( $item['author_rating_title'] ) ) : ?>
-                    <div class="text-md fw-500"><?php echo $item['author_rating_title']; ?></div>
+                    <div class="text-md fw-500"><?php echo esc_html($item['author_rating_title']); ?></div>
                     <?php endif; ?>
 
                     <?php if ( $testimonial_ratting_icon == 'yes' ) : ?>
-                    <?php echo $stars_element; ?>
+                    <?php echo esc_html($stars_element); ?>
                     <?php endif; ?>
                 </div>
                 <?php

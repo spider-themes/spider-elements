@@ -3,18 +3,18 @@
  * Plugin Name: Spider Elements
  * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
- * Version: 1.0.0
+ * Version: 1.0
  * Requires at least: 5.0
- * Tested up to: 6.2
+ * Tested up to: 6.3
  * Requires PHP: 7.4
  * Author: spider-themes
- * Author URI: https://spider-themes.net/
+ * Author URI: https://spider-themes.net/spider-elements
  * Domain Path: /languages
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
  * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.14.0
+ * Elementor tested up to: 3.16.5
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -164,7 +164,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 
 			// Register Icon
 			add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'spe_elegant_icons' ] );
-			//self :: generate_custom_font_icons();
 
 		}
 
@@ -189,35 +188,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			];
 
 			return $custom_fonts;
-		}
-
-
-		public static function generate_custom_font_icons() {
-			$css_source = '';
-			global $wp_filesystem;
-			require_once( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-			$css_file = SPE_PATH . '/assets/vendors/elegant-icon/style.css';
-			if ( $wp_filesystem->exists( $css_file ) ) {
-				$css_source = $wp_filesystem->get_contents( $css_file );
-			}
-			preg_match_all( "/\.(.*?):\w*?\s*?{/", $css_source, $matches, PREG_SET_ORDER, 0 );
-			$iconList = [];
-			foreach ( $matches as $match ) {
-				$icon       = str_replace( '', '', $match[ 1 ] );
-				$icons      = explode( ' ', $icon );
-				$iconList[] = current( $icons );
-			}
-			$icons        = new stdClass();
-			$icons->icons = $iconList;
-			$icon_data    = json_encode( $icons );
-			$js_file      = SPE_PATH . '/assets/vendors/elegant-icon/eleganticons.json';
-			global $wp_filesystem;
-			require_once( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-			if ( $wp_filesystem->exists( $js_file ) ) {
-				$content = $wp_filesystem->put_contents( $js_file, $icon_data );
-			}
 		}
 
 
@@ -349,8 +319,18 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access public
 		 */
 		public function admin_notice_minimum_elementor_version() {
-			if ( isset( $_GET[ 'activate' ] ) ) {
-				unset( $_GET[ 'activate' ] );
+
+			if (isset($_GET['activate'])) {
+				// Ensure it's a valid action (optional, depending on your needs)
+				if (isset($_GET['activate']) && $_GET['activate'] === 'spider-elements-activation') {
+
+					// After activation is complete, remove the 'activate' parameter
+					unset($_GET['activate']);
+
+					// Redirect to a specific page after activation (optional)
+					wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
+					exit;
+				}
 			}
 
 			$message = sprintf(
@@ -374,8 +354,18 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access public
 		 */
 		public function admin_notice_minimum_php_version() {
-			if ( isset( $_GET[ 'activate' ] ) ) {
-				unset( $_GET[ 'activate' ] );
+
+			if (isset($_GET['activate'])) {
+				// Ensure it's a valid action (optional, depending on your needs)
+				if (isset($_GET['activate']) && $_GET['activate'] === 'spider-elements-activation') {
+
+					// After activation is complete, remove the 'activate' parameter
+					unset($_GET['activate']);
+
+					// Redirect to a specific page after activation (optional)
+					wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
+					exit;
+				}
 			}
 
 			$message = sprintf(
@@ -435,7 +425,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		private function include_widgets() {
 
 			require_once( __DIR__ . '/widgets/Tabs.php' );
-			require_once( __DIR__ . '/widgets/Video_playlist.php' );
+			require_once( __DIR__ . '/widgets/Video_Playlist.php' );
 			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
 			require_once( __DIR__ . '/widgets/Accordion.php' );
 			require_once( __DIR__ . '/widgets/Testimonial.php' );
@@ -452,7 +442,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
 			require_once( __DIR__ . '/widgets/Buttons.php' );
-			require_once( __DIR__ . '/widgets/Animated_Headline.php' );
+			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
 
@@ -469,27 +459,27 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access private
 		 */
 		private function register_widgets() {
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Tabs() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_playlist() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Alerts_Box() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Accordion() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Testimonial() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Tabs() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Pricing_Table_Switcher() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\List_Item() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Cheat_sheet() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Team_Carousel() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Integrations() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Diagonal_slideshow () );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Before_After () );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Video_Popup() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Blog_Grid() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Skill_Showcase() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Timeline() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Buttons() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Animated_Headline() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Marquee_Slides() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements_Assets\Widgets\Counter() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Tabs() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Video_Playlist() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Alerts_Box() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Accordion() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Testimonial() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Pricing_Table_Tabs() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Pricing_Table_Switcher() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\List_Item() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Cheat_sheet() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Team_Carousel() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Integrations() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Diagonal_slideshow () );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Before_After () );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Video_Popup() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Blog_Grid() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Skill_Showcase() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Timeline() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Buttons() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Animated_Heading() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Marquee_Slides() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Counter() );
 		}
 
 
