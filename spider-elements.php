@@ -3,7 +3,7 @@
  * Plugin Name: Spider Elements
  * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
- * Version: 1.0
+ * Version: 1.0.0
  * Requires at least: 5.0
  * Tested up to: 6.3
  * Requires PHP: 7.4
@@ -113,7 +113,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden
-			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), self::VERSION );
 		}
 
 
@@ -211,7 +211,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
-				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
@@ -271,8 +270,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Warning when the site doesn't have Elementor installed or activated.
 		 *
-		 * @since 1.1.0
-		 * @since 1.7.0 Moved from a standalone function to a class method.
+		 * @since 1.0.0
 		 *
 		 * @access public
 		 */
@@ -386,7 +384,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Register new widget categories for Spider Elements widgets.
 		 *
 		 * @since 1.0.0
-		 * @since 1.7.1 The method moved to this class.
 		 *
 		 * @access public
 		 */
@@ -404,7 +401,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Include Spider Elements widgets files and register them in Elementor.
 		 *
 		 * @since 1.0.0
-		 * @since 1.7.1 The method moved to this class.
 		 *
 		 * @access public
 		 */
@@ -435,7 +431,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
 			require_once( __DIR__ . '/widgets/Integrations.php' );
-			require_once( __DIR__ . '/widgets/Slideshow.php' );
 			require_once( __DIR__ . '/widgets/Before_after.php' );
 			require_once( __DIR__ . '/widgets/Video_Popup.php' );
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
@@ -454,7 +449,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Register new Elementor widgets.
 		 *
 		 * @since 1.0.0
-		 * @since 1.7.1 The method moved to this class.
 		 *
 		 * @access private
 		 */
@@ -470,7 +464,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Cheat_sheet() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Team_Carousel() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Integrations() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Diagonal_slideshow () );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Before_After () );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Video_Popup() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Blog_Grid() );
