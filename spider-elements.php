@@ -440,6 +440,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
+            require_once( __DIR__ . '/widgets/Instagram.php' );
 
 		}
 
@@ -473,6 +474,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Animated_Heading() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Marquee_Slides() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Counter() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Instagram() );
 		}
 
 

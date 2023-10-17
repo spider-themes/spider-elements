@@ -42,7 +42,7 @@ class Assets {
 		wp_register_style( 'ionicons', 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' );
 		wp_register_style( 'bootstrap', SPE_VEND . '/bootstrap/bootstrap.min.css' );
 		wp_register_style( 'slick-theme', SPE_VEND . '/slick/slick-theme.css' );
-		wp_register_style( 'swiper-theme', SPE_VEND . '/swiper/swiper-bundle.min.css' );
+		wp_register_style( 'swiper', SPE_VEND . '/swiper/swiper-bundle.min.css' );
 		wp_register_style( 'slick', SPE_VEND . '/slick/slick.css' );
 		wp_register_style( 'video-js', SPE_VEND . '/video/videojs.min.css' );
 		wp_register_style( 'video-js-theaterMode', SPE_VEND . '/video/videojs.theaterMode.css' );

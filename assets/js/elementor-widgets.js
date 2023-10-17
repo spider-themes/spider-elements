@@ -16,6 +16,7 @@
                 "spe_after_before_widget.default": spiderElements.beforeAfter,
                 "docy_video_popup.default": spiderElements.videoPopup,
                 "spe_marquee_slides.default": spiderElements.marquee,
+                "spe_instagram.default": spiderElements.instagramFeed,
             };
 
             $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -25,6 +26,42 @@
                 );
             });
         },
+
+
+        //======================== Instagram Feed =========================== //
+        instagramFeed: function ($scope) {
+
+            let instagramFeed = $scope.find(".instagram-feed-active");
+
+            if (instagramFeed.length > 0) {
+                var portfolio = new Swiper(".instagram-feed-active", {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                    loop: true,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    breakpoints: {
+                        480: {
+                            slidesPerView: 2,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                        },
+                        992: {
+                            slidesPerView: 4,
+                        },
+                        1200: {
+                            slidesPerView: 5,
+                        },
+                    },
+                });
+            }
+
+        },
+
+
 
         //============================== Start Marquee =============================//
         marquee: function ($scope) {
