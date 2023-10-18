@@ -479,6 +479,44 @@
                     ],
                 });
             }
+            
+            // Testimonial Style 11
+            let testimonial11 = $scope.find(".testimonial-slider");
+            if (testimonial11.length) {
+                testimonial11.slick({
+                    autoplay: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: true,
+                    nextArrow: '<div class="next"><span class="arrow"></span></div>',
+                });
+        
+                var getSlickItem = $(".testimonial-slider").slick("getSlick");
+                if (getSlickItem.currentSlide < 9) {
+                    $(".current_slide").text(`0${getSlickItem.currentSlide + 1}`);
+                } else {
+                    $(".current_slide").text(getSlickItem.currentSlide + 1);
+                }
+                if (getSlickItem.getDotCount() < 9) {
+                    $(".total_slide").text(`0${getSlickItem.getDotCount() + 1}`);
+                } else {
+                    $(".total_slide").text(getSlickItem.getDotCount() + 1);
+                }
+        
+                $(".testimonial-slider").on(
+                    "beforeChange",
+                    function(event, slick, currentSlide, nextSlide) {
+                        if (nextSlide < 9) {
+                            $(".current_slide").text(`0${nextSlide + 1}`);
+                        } else {
+                            $(".current_slide").text(nextSlide + 1);
+                        }
+                    }
+                );
+            }
+
         },
 
         //======================== Tabs =========================== //
