@@ -1,5 +1,5 @@
 <?php
-namespace Spider_Elements\includes\Admin;
+namespace Spider_Elements_Assets\includes\Admin;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
@@ -56,6 +56,7 @@ class Assets {
 	public function spe_admin_scripts() {
 
 		// Register Admin Panel Styles
+		wp_enqueue_style( 'icomoon', SPE_VEND . '/icomoon/style.css' );
 		wp_enqueue_style( 'spe-admin', SPE_CSS . '/admin.css');
 
 		// Register Admin Panel Scripts

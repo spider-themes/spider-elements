@@ -211,6 +211,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
+				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
