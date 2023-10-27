@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.eot?fiaihb");
-  src: url("fonts/icomoon.eot?fiaihb#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?fiaihb") format("truetype"),
-    url("fonts/icomoon.woff?fiaihb") format("woff"),
-    url("fonts/icomoon.svg?fiaihb#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?yrjr7w");
+  src: url("fonts/icomoon.eot?yrjr7w#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?yrjr7w") format("truetype"),
+    url("fonts/icomoon.woff?yrjr7w") format("woff"),
+    url("fonts/icomoon.svg?yrjr7w#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -86,11 +86,26 @@
 .icon-dashboard:before {
   content: "\e909";
 }
+.icon-image-slides:before {
+  content: "\e92f";
+}
+.icon-gallery:before {
+  content: "\e930";
+}
+.icon-hotspot:before {
+  content: "\e92e";
+}
 .icon-svg:before {
   content: "\e90a";
 }
 .icon-play:before {
   content: "\e90b";
+}
+.icon-accordion-article:before {
+  content: "\e931";
+}
+.icon-accordion:before {
+  content: "\e932";
 }
 .icon-after-before:before {
   content: "\e90c";
