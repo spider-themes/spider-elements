@@ -2,10 +2,10 @@
     <div class="spe_elements_tab_menu">
         <div class="spe_tab_content">
             <div class="icon">
-                <i class="icon-element"></i>
+                <i class="icon-feature_two"></i>
             </div>
             <div class="content">
-                <h3>Elements</h3>
+                <h3>Features</h3>
             </div>
         </div>
         <div class="menu_right_content">
@@ -39,21 +39,27 @@
         <div class="ezd-colum-space-4 free">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
-                    <i class="icon-hotspot"></i>
-                    <label for="spe-elementor-video">Video Playlist</label>
+                    <i class="icon-cloud"></i>
+                    <label for="spe-elementor-video">Template cloud</label>
                 </div>
-                <label>
-                    <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video">
-                    <span class="spe_widget_switcher"></span>
-                </label>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video" checked>
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
             </div>
         </div>
         <div class="ezd-colum-space-4 free">
             <div class="spe_element_box spe_element_switch">
                 <span class="badge">Pro</span>
                 <div class="spe_element_content">
-                    <i class="icon-hotspot"></i>
-                    <label for="spe-elementor-video-two">Video Playlist</label>
+                    <i class="icon-mega-menu"></i>
+                    <label for="spe-elementor-menu">Mega Menu</label>
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
@@ -61,7 +67,25 @@
                         <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
                     </div>
                     <label class="pro_popup">
-                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video-two" disabled>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-menu" disabled>
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ezd-colum-space-4 free">
+            <div class="spe_element_box spe_element_switch">
+                <div class="spe_element_content">
+                    <i class="icon-image-shadow"></i>
+                    <label for="spe-elementor-video-three">Image Shadow</label>
+                </div>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video-three" checked>
                         <span class="spe_widget_switcher"></span>
                     </label>
                 </div>
@@ -71,48 +95,145 @@
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-hotspot"></i>
-                    <label for="spe-elementor-video-three">Video Playlist</label>
+                    <label for="spe-elementor-scroll">Scroll trigger </label>
                 </div>
-                <label>
-                    <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video-three">
-                    <span class="spe_widget_switcher"></span>
-                </label>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-scroll" checked>
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
             </div>
         </div>
+        <div class="ezd-colum-space-4 pro">
+            <div class="spe_element_box spe_element_switch">
+                <div class="spe_element_content">
+                    <i class="icon-effect"></i>
+                    <label for="spe-elementor-hover">Tilt Effect on Hover</label>
+                </div>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-hover">
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ezd-colum-space-4 pro">
+            <div class="spe_element_box spe_element_switch">
+                <div class="spe_element_content">
+                    <i class="icon-revel-animation"></i>
+                    <label for="spe-elementor-reveal">Reveal Animation</label>
+                </div>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-reveal">
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
         <div class="ezd-colum-space-4 free">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
-                    <i class="icon-hotspot"></i>
-                    <label for="spe-elementor-hotspot">Image Hotspot</label>
+                    <i class="icon-price"></i>
+                    <label for="spe-elementor-table">Pricing Table</label>
                 </div>
-                <label>
-                    <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-hotspot">
-                    <span class="spe_widget_switcher"></span>
-                </label>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-table">
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
             </div>
         </div>
         <div class="ezd-colum-space-4 pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
-                    <i class="icon-accordion"></i>
-                    <label for="spe-elementor-accordion">Accordion</label>
+                    <i class="icon-tooltip"></i>
+                    <label for="spe-elementor-tooltip">Tooltip / Element </label>
                 </div>
-                <label>
-                    <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-accordion">
-                    <span class="spe_widget_switcher"></span>
-                </label>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-tooltip">
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
             </div>
         </div>
         <div class="ezd-colum-space-4 pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
-                    <i class="icon-accordion-article"></i>
-                    <label for="spe-elementor-accordion-article">Accordion Article</label>
+                    <i class="icon-badge"></i>
+                    <label for="spe-elementor-badge">Badge</label>
                 </div>
-                <label>
-                    <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-accordion-article">
-                    <span class="spe_widget_switcher"></span>
-                </label>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-badge">
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ezd-colum-space-4 pro">
+            <div class="spe_element_box spe_element_switch">
+                <div class="spe_element_content">
+                    <i class="icon-smooth-animation"></i>
+                    <label for="spe-elementor-smooth">Smooth Animation</label>
+                </div>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-smooth" checked>
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ezd-colum-space-4 pro">
+            <div class="spe_element_box spe_element_switch">
+                <div class="spe_element_content">
+                    <i class="icon-gradient-color"></i>
+                    <label for="spe-elementor-gradient">Create gradient color from image</label>
+                </div>
+                <div class="spe_element_right">
+                    <div class="spe_link">
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon1.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo SPE_IMG ?>/icon2.svg; ?>" alt=""></a>
+                    </div>
+                    <label>
+                        <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-gradient">
+                        <span class="spe_widget_switcher"></span>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
