@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.eot?yrjr7w");
-  src: url("fonts/icomoon.eot?yrjr7w#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?yrjr7w") format("truetype"),
-    url("fonts/icomoon.woff?yrjr7w") format("woff"),
-    url("fonts/icomoon.svg?yrjr7w#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?664f5d");
+  src: url("fonts/icomoon.eot?664f5d#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?664f5d") format("truetype"),
+    url("fonts/icomoon.woff?664f5d") format("woff"),
+    url("fonts/icomoon.svg?664f5d#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,6 +28,18 @@
 
 .icon-setting:before {
   content: "\e92d";
+}
+.icon-gradient:before {
+  content: "\e933";
+}
+.icon-debug:before {
+  content: "\e934";
+}
+.icon-love:before {
+  content: "\e935";
+}
+.icon-features:before {
+  content: "\e936";
 }
 .icon-gradient-color:before {
   content: "\e924";

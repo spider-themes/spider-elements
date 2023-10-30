@@ -58,6 +58,7 @@ class Assets {
 		// Register Admin Panel Styles
 		wp_enqueue_style( 'icomoon', SPE_VEND . '/icomoon/style.css' );
 		wp_enqueue_style( 'spe-circle', SPE_VEND . '/circle-progressbar/circularprogress.css' );
+		wp_enqueue_style( 'spe-fancy', SPE_VEND . '/fancybox/css/jquery.fancybox.min.css' );
 		wp_enqueue_style( 'spe-admin', SPE_CSS . '/admin.css');
 
 		// Register Admin Panel Scripts
@@ -65,6 +66,7 @@ class Assets {
 		wp_enqueue_script( 'spe-counterup', SPE_VEND . '/circle-progressbar/jquery.counterup.min.js', ['jquery'], SPE_VERSION, true );
 		wp_enqueue_script( 'spe-imageloaded', SPE_VEND . '/imagesloaded/imagesloaded.pkgd.min.js', ['jquery'], SPE_VERSION, true );
 		wp_enqueue_script( 'spe-isotope', SPE_VEND . '/isotope/isotope.min.js', ['jquery'], SPE_VERSION, true );
+		wp_enqueue_script( 'spe-fancy', SPE_VEND . '/fancybox/js/jquery.fancybox.min.js', ['jquery'], SPE_VERSION, true );
 		wp_enqueue_script( 'spe-circle', SPE_VEND . '/circle-progressbar/circle-progress.js', ['jquery'], SPE_VERSION, true );
 		wp_enqueue_script( 'spe-admin', SPE_JS . '/admin.js', ['jquery'], SPE_VERSION, true );
 	}

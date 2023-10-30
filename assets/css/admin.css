@@ -315,12 +315,9 @@ Table of Content:
 }
 .spe_dashboard .tab_contents .spe-tab-box {
   display: none;
-  opacity: 0;
-  transition: opacity 0.5s linear;
 }
 .spe_dashboard .tab_contents .spe-tab-box.active {
   display: block;
-  animation: fadeInUp 0.4s;
   opacity: 1;
 }
 
@@ -377,7 +374,6 @@ Table of Content:
 .spe_widget_progress_item .progress_info_list li + li {
   margin-left: 20px;
 }
-
 .spe_widget_progress_item svg.radial-progress {
   height: auto;
   max-width: 130px;
@@ -396,13 +392,19 @@ Table of Content:
 .spe_widget_progress_item svg.radial-progress circle.complete {
   stroke-dasharray: 219.9114857513;
 }
-.spe_widget_progress_item svg.radial-progress text {
-  fill: #02a4ff;
-  font-size: 20px;
+.spe_widget_progress_item .circle_progress {
+  position: relative;
+}
+.spe_widget_progress_item .circle_progress text {
+  color: #02a4ff;
+  font-size: 30px;
   font-weight: 600;
   text-anchor: middle;
-  transform: rotate(-89deg);
   font-family: "Roboto", sans-serif;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 .spe_widget_progress_item svg.radial-progress circle.complete {
   stroke: #6bccfe;
@@ -737,13 +739,16 @@ Table of Content:
 .spe_elements_tab_menu .menu_right_content .plugin_active_switcher input {
   display: none;
 }
+.spe_elements_tab_menu .menu_right_content .plugin_active_switcher input:checked + .switch {
+  background: #7fb71f;
+}
 .spe_elements_tab_menu .menu_right_content .plugin_active_switcher input:checked + .switch::before {
   transform: translateX(12px);
 }
 .spe_elements_tab_menu .menu_right_content .plugin_active_switcher .switch {
   width: 32px;
   height: 18px;
-  background: #7fb71f;
+  background: #848d95;
   border-radius: 45px;
   position: relative;
   display: block;
@@ -940,6 +945,8 @@ Table of Content:
   font-family: "Roboto", sans-serif;
   line-height: 30px;
   margin: 0px;
+  outline: none;
+  box-shadow: none;
 }
 .spe_api_box .spe_api_panel .spe_api_inner input.placeholder {
   color: #bbc0c4;
@@ -954,7 +961,7 @@ Table of Content:
   color: #bbc0c4;
 }
 .spe_api_box .spe_api_panel .spe_api_inner input:focus {
-  border-color: #6d27e5;
+  border-color: rgba(109, 39, 229, 0.6901960784);
 }
 .spe_api_box .spe_api_panel p {
   font-size: 12px;
@@ -1141,6 +1148,13 @@ Table of Content:
     -webkit-transform: translate(-50%, -50%) scale(2);
     transform: translate(-50%, -50%) scale(2);
   }
+}
+.fancybox-slide--iframe .fancybox-content,
+.fancybox-slide--map .fancybox-content,
+.fancybox-slide--pdf .fancybox-content,
+.fancybox-slide--video .fancybox-content {
+  width: 55%;
+  height: 50%;
 }
 
 /*# sourceMappingURL=admin.css.map */

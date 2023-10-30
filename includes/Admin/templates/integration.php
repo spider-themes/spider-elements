@@ -12,8 +12,8 @@
             <div class="plugin_active_switcher">
                 <label class="toggler" id="disable">Disable All</label>
                 <div class="toggle">
-                    <input type="checkbox" id="switcher" class="check">
-                    <label class="b switch" for="switcher"></label>
+                    <input type="checkbox" id="i_switcher" class="check">
+                    <label class="b switch" for="i_switcher"></label>
                 </div>
                 <label class="toggler" id="enabled">Enabled All</label>
             </div>

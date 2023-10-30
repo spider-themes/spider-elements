@@ -72,7 +72,12 @@
 
     var target = $(this).attr("href");
 
-    $(target).addClass("active").siblings(".spe-tab-box").removeClass("active");
+    // $(target).addClass("active").siblings(".spe-tab-box").removeClass("active");
+    $(".spe-tab-box")
+      .removeClass("active")
+      .fadeOut(300, function () {
+        $(target).addClass("active").fadeIn(300);
+      });
 
     // Trigger Isotope filtering after the tab is clicked
     filterMasonry();
@@ -156,4 +161,19 @@
   $(".pro-close").on("click", function (e) {
     $("#elements_popup1").removeClass("popup-visible");
   });
+
+  if ($(".spe_popup_youtube").length) {
+    $(".spe_popup_youtube").fancybox({
+      type: "iframe", //<--added
+      maxWidth: 800,
+      maxHeight: 600,
+      fitToView: false,
+      width: "70%",
+      height: "70%",
+      autoSize: false,
+      closeClick: false,
+      openEffect: "elastic",
+      closeEffect: "elastic",
+    });
+  }
 })(jQuery);

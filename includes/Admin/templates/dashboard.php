@@ -6,11 +6,13 @@
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
                 <h3>All Widget</h3>
-                <svg class="radial-progress" data-percentage="85" viewBox="0 0 80 80">
-                    <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                    <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    <text class="percentage" x="-48%" y="59%">85%</text>
-                </svg>
+                <div class="circle_progress">
+                    <svg class="radial-progress" data-percentage="85" viewBox="0 0 80 80">
+                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35"></circle>
+                    </svg>
+                    <text class="percentage">85%</text>
+                </div>
                 <ul class="ezd-list-unstyled progress_info_list">
                     <li>Total : 250</li>
                     <li>Used : 155</li>
@@ -21,11 +23,13 @@
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
                 <h3>Core</h3>
-                <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
-                    <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                    <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    <text class="percentage" x="-48%" y="59%">65%</text>
-                </svg>
+                <div class="circle_progress">
+                    <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
+                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35"></circle>
+                    </svg>
+                    <text class="percentage">65%</text>
+                </div>
                 <ul class="ezd-list-unstyled progress_info_list">
                     <li>Total : 250</li>
                     <li>Used : 155</li>
@@ -36,11 +40,14 @@
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
                 <h3>3rd Party</h3>
-                <svg class="radial-progress" data-percentage="62" viewBox="0 0 80 80">
-                    <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                    <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    <text class="percentage" x="-48%" y="59%">62%</text>
-                </svg>
+                <div class="circle_progress">
+                    <svg class="radial-progress" data-percentage="62" viewBox="0 0 80 80">
+                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35"></circle>
+
+                    </svg>
+                    <text class="percentage">62%</text>
+                </div>
                 <ul class="ezd-list-unstyled progress_info_list">
                     <li>Total : 250</li>
                     <li>Used : 155</li>
@@ -51,11 +58,13 @@
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
                 <h3>Active</h3>
-                <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
-                    <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                    <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    <text class="percentage" x="-48%" y="59%">65%</text>
-                </svg>
+                <div class="circle_progress">
+                    <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
+                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35"></circle>
+                    </svg>
+                    <text class="percentage">65%</text>
+                </div>
                 <ul class="ezd-list-unstyled progress_info_list">
                     <li>Total : 250</li>
                     <li>Used : 155</li>

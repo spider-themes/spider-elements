@@ -12,8 +12,8 @@
             <div class="plugin_active_switcher">
                 <label class="toggler" id="disable">Disable All</label>
                 <div class="toggle">
-                    <input type="checkbox" id="switcher" class="check">
-                    <label class="b switch" for="switcher"></label>
+                    <input type="checkbox" id="f_switcher" class="check">
+                    <label class="b switch" for="f_switcher"></label>
                 </div>
                 <label class="toggler" id="enabled">Enabled All</label>
             </div>
@@ -27,16 +27,16 @@
         <div class="spe_fiter_data active" data-filter="*">
             <i class="icon-star"></i>All
         </div>
-        <div class="spe_fiter_data" data-filter=".free">
+        <div class="spe_fiter_data" data-filter=".f_free">
             <i class="icon-gift"></i>Free
         </div>
-        <div class="spe_fiter_data" data-filter=".pro">
+        <div class="spe_fiter_data" data-filter=".f_pro">
             <i class="icon-pro-badge"></i>Pro
         </div>
     </div>
 
     <div class="spe_filter_content ezd-d-flex" id="elements_gallery">
-        <div class="ezd-colum-space-4 free">
+        <div class="ezd-colum-space-4 f_free">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-cloud"></i>
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 free">
+        <div class="ezd-colum-space-4 f_free">
             <div class="spe_element_box spe_element_switch">
                 <span class="badge">Pro</span>
                 <div class="spe_element_content">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 free">
+        <div class="ezd-colum-space-4 f_free">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-image-shadow"></i>
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 free">
+        <div class="ezd-colum-space-4 f_free">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-hotspot"></i>
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 pro">
+        <div class="ezd-colum-space-4 f_pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-effect"></i>
@@ -127,7 +127,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 pro">
+        <div class="ezd-colum-space-4 f_pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-revel-animation"></i>
@@ -164,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 pro">
+        <div class="ezd-colum-space-4 f_pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-tooltip"></i>
@@ -182,7 +182,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 pro">
+        <div class="ezd-colum-space-4 f_pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-badge"></i>
@@ -200,7 +200,7 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 pro">
+        <div class="ezd-colum-space-4 f_pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
                     <i class="icon-smooth-animation"></i>
@@ -218,10 +218,10 @@
                 </div>
             </div>
         </div>
-        <div class="ezd-colum-space-4 pro">
+        <div class="ezd-colum-space-4 f_pro">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
-                    <i class="icon-gradient-color"></i>
+                    <i class="icon-gallery"></i>
                     <label for="spe-elementor-gradient">Create gradient color from image</label>
                 </div>
                 <div class="spe_element_right">

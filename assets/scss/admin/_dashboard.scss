@@ -117,11 +117,8 @@
     flex: 80% 0 0;
     .spe-tab-box {
       display: none;
-      opacity: 0;
-      transition: opacity 0.5s linear;
       &.active {
         display: block;
-        animation: fadeInUp 0.4s;
         opacity: 1;
       }
     }
@@ -182,8 +179,6 @@
       }
     }
   }
-}
-.spe_widget_progress_item {
   svg.radial-progress {
     height: auto;
     max-width: 130px;
@@ -206,13 +201,19 @@
     stroke-dasharray: 219.91148575129;
   }
 
-  svg.radial-progress text {
-    fill: #02a4ff;
-    font-size: 20px;
-    font-weight: 600;
-    text-anchor: middle;
-    transform: rotate(-89deg);
-    font-family: $rob;
+  .circle_progress {
+    position: relative;
+    text {
+      color: #02a4ff;
+      font-size: 30px;
+      font-weight: 600;
+      text-anchor: middle;
+      font-family: $rob;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
   }
 
   svg.radial-progress circle.complete {

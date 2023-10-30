@@ -58,6 +58,7 @@
         display: none;
         &:checked {
           & + .switch {
+            background: #7fb71f;
             &::before {
               transform: translateX(12px);
             }
@@ -67,7 +68,7 @@
       .switch {
         width: 32px;
         height: 18px;
-        background: #7fb71f;
+        background: #848d95;
         border-radius: 45px;
         position: relative;
         display: block;
@@ -267,11 +268,13 @@
         font-family: $rob;
         line-height: 30px;
         margin: 0px;
+        outline: none;
+        box-shadow: none;
         @include placeholder {
           color: #bbc0c4;
         }
         &:focus {
-          border-color: #6d27e5;
+          border-color: #6d27e5b0;
         }
       }
     }
@@ -469,4 +472,12 @@
     -webkit-transform: translate(-50%, -50%) scale(2);
     transform: translate(-50%, -50%) scale(2);
   }
+}
+
+.fancybox-slide--iframe .fancybox-content,
+.fancybox-slide--map .fancybox-content,
+.fancybox-slide--pdf .fancybox-content,
+.fancybox-slide--video .fancybox-content {
+  width: 55%;
+  height: 50%;
 }

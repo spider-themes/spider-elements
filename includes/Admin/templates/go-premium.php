@@ -3,29 +3,33 @@
         <h2>Get Spider Elements Addons Pro</h2>
         <p>Purchase the premium version of spider Elements Addons to get additional and exclusive features.</p>
         <a href="#" class="spe_banner_btn">CLICK here to get Spider Elementor Addons PRO!</a>
-        <img class="rocket_img" src="<?php echo SPE_IMG ?>/dashboard-img/rocket.png; ?>" alt="spe-logo">
+        <img class="rocket_img" src="<?php echo SPE_IMG ?>/dashboard-img/rocket.png" alt="spe-logo">
     </div>
     <div class="ezd-grid ezd-grid-cols-12">
         <div class="ezd-lg-col-6">
             <div class="spe_pr_promo_box ezd-text-center">
                 <div class="spe_promo_video">
-                    <img src="<?php echo SPE_IMG ?>/dashboard-img/video1.jpg; ?>" alt="">
-                    <a href="#" class="spe_popup_youtube"><i class="icon-hotspot"></i></a>
+                    <img src="<?php echo SPE_IMG ?>/dashboard-img/video1.jpg" alt="">
+                    <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="spe_popup_youtube"><i
+                            class="icon-hotspot"></i></a>
                 </div>
                 <h2>Protected Content</h2>
                 <p>Restrict important data by setting up user permission or giving password to certain area.</p>
-                <a href="#" class="spe_demo_btn">View Demo</a>
+                <a href="#" class="spe_demo_btn">View Demo
+                    <img src="<?php echo SPE_IMG ?>/dashboard-img/arrow.svg" alt=""></a>
             </div>
         </div>
         <div class="ezd-lg-col-6">
             <div class="spe_pr_promo_box ezd-text-center">
                 <div class="spe_promo_video">
-                    <img src="<?php echo SPE_IMG ?>/dashboard-img/video2.jpg; ?>" alt="">
-                    <a href="#" class="spe_popup_youtube"><i class="icon-hotspot"></i></a>
+                    <img src="<?php echo SPE_IMG ?>/dashboard-img/video2.jpg" alt="">
+                    <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="spe_popup_youtube"><i
+                            class="icon-hotspot"></i></a>
                 </div>
                 <h2>Protected Content</h2>
                 <p>Restrict important data by setting up user permission or giving password to certain area.</p>
-                <a href="#" class="spe_demo_btn">View Demo</a>
+                <a href="#" class="spe_demo_btn">View Demo <img src="<?php echo SPE_IMG ?>/dashboard-img/arrow.svg"
+                        alt=""></a>
             </div>
         </div>
     </div>
