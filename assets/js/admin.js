@@ -72,11 +72,10 @@
 
     var target = $(this).attr("href");
 
-    // $(target).addClass("active").siblings(".spe-tab-box").removeClass("active");
     $(".spe-tab-box")
       .removeClass("active")
-      .fadeOut(300, function () {
-        $(target).addClass("active").fadeIn(300);
+      .fadeOut(200, function () {
+        $(target).addClass("active").fadeIn(200);
       });
 
     // Trigger Isotope filtering after the tab is clicked
