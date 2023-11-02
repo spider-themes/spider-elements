@@ -151,7 +151,6 @@
 
   $(".pro_popup").on("click", function (e) {
     $("#elements_popup1").addClass("popup-visible");
-    console.log("hi");
   });
   $(".pro-close").on("click", function (e) {
     $("#elements_popup1").removeClass("popup-visible");

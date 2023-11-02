@@ -124,76 +124,7 @@ class Skill_Showcase extends Widget_Base {
 					[
 						'name' => __( 'Java', 'spider-elements' ),
 						'size' => 'default',
-					],
-					[
-						'name' => __( 'JavaScript', 'spider-elements' ),
-						'size' => 'big',
-					],
-					[
-						'name' => __( 'Schema', 'spider-elements' ),
-						'size' => 'small',
-					],
-					[
-						'name' => __( 'Python', 'spider-elements' ),
-						'size' => 'small',
-					],
-					[
-						'name' => __( 'Kotlin', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( 'SQL', 'spider-elements' ),
-						'size' => 'Default',
-					],
-					[
-						'name' => __( 'Perl', 'spider-elements' ),
-						'size' => 'small',
-					],
-					[
-						'name' => __( 'PHP', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( 'Scala', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( '.NET', 'spider-elements' ),
-						'size' => 'big',
-					],
-					[
-						'name' => __( 'Swift', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( 'Angular', 'spider-elements' ),
-						'size' => 'small',
-					],
-					[
-						'name' => __( 'MATLAB', 'spider-elements' ),
-						'size' => 'small',
-					],
-					[
-						'name' => __( 'C++', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( 'Golang', 'spider-elements' ),
-						'size' => 'big',
-					],
-					[
-						'name' => __( 'TypeScript', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( 'Ruby', 'spider-elements' ),
-						'size' => 'default',
-					],
-					[
-						'name' => __( 'Rust', 'spider-elements' ),
-						'size' => 'default',
-					],
-					// Add more default skills here...
+					]
 				],
 				'title_field' => '{{{ name }}}',
 			]
