@@ -204,6 +204,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 
 			// Extra functions
 			require_once __DIR__ . '/includes/extra.php';
+			require_once __DIR__ . '/includes/Ajax_Handler.php';
 
 			//Shortcodes
 			require_once __DIR__ . '/shortcodes/direction.php';
@@ -212,6 +213,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
+				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}

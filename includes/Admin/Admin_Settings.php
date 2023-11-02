@@ -51,7 +51,7 @@ class Admin_Settings {
 	 */
 	public function render_plugin_page() {
 
-		echo '<div class="wrapper spe_dashboard">';
+		echo '<form action="" method="POST" id="eael-settings" name="eael-settings" class="wrapper spe_dashboard">';
 
 
 			//Sidebar's menu
