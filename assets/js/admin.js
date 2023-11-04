@@ -177,67 +177,58 @@
     }
 
 
+    // Elements list Save Now Button
+    function elementsSaveNowButton() {
 
-
-
-
-
-
-    // Save Now Button
-    $(document).ready(function() {
-
-
-        $('.spe-widget-list').on('click', function() {
+        let elementsList = $('.spe_element_right .spe-widget-list');
+        elementsList.on('click', function () {
             // Check if the checkbox is checked
             if ($(this).is(':checked')) {
                 $('.spe_dashboard_btn').addClass('save-now');
             } else {
                 $('.spe_dashboard_btn')
                     .removeClass('save-now')
-                    .css( 'cursor', 'pointer' );
+                    .removeAttr('disabled')
+                    .css('cursor', 'pointer');
             }
         });
 
-
         // Global Switcher for all widgets
-        $('.spe_element_global_switcher').on('click', function() {
-
+        let elementsGlobalWidgetSwitcher = $('.spe_element_global_switcher');
+        elementsGlobalWidgetSwitcher.on('click', function () {
             let status = $(this).prop('checked');
             let dataId = $(this).data('id');
             let alignClass = '.spe_widget_checkbox.' + dataId + ':enabled';
 
-            $(alignClass).each(function() {
+            $(alignClass).each(function () {
                 $(this).prop('checked', status).change();
             });
 
-            console.log(alignClass);
+            $('.spe_dashboard_btn')
+                .addClass('save-now')
+                .removeAttr('disabled')
+                .css('cursor', 'pointer');
         });
 
 
+        // Individual Switcher for each widget
+        let elementsWidgetSwitcher = $('.spe-widget-list:checked');
+        elementsWidgetSwitcher.on('click', function () {
+            $('.spe_dashboard_btn')
+                .addClass('save-now')
+                .removeAttr('disabled')
+                .css('cursor', 'pointer');
+        });
 
+        // Button Setting Switcher Enable/Disable
+        let elementsSettingBtn = $('.spe_elements_tab_menu .menu_right_content .save_btn')
+        elementsSettingBtn.on('click', function (event) {
+            event.preventDefault();
+            elementsSettingBtn.attr('disabled', 'value').css('cursor', 'not-allowed');
+        });
 
-    });
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    elementsSaveNowButton();
 
 })(jQuery);

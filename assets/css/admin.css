@@ -772,6 +772,9 @@ Table of Content:
   margin-left: 40px;
   cursor: pointer;
 }
+.spe_elements_tab_menu .spe_dashboard_btn.save-now {
+  background: #6d27e5;
+}
 
 .spe_elements_tab {
   background: #f0e9fc;

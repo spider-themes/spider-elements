@@ -24,7 +24,7 @@ $elements = Module_Settings::get_widget_settings( function ( $settings ) {
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>
             </div>
-            <button type="submit" class="spe_dashboard_btn">
+            <button type="submit" class="spe_dashboard_btn save_btn">
 				<?php esc_html_e( 'Save Changes', 'spider-elements' ); ?>
             </button>
         </div>
@@ -43,7 +43,6 @@ $elements = Module_Settings::get_widget_settings( function ( $settings ) {
     </div>
 
     <div class="spe_filter_content ezd-d-flex" id="elements_gallery">
-
 		<?php
 		if ( is_array( $elements ) ) {
 			foreach ( $elements as $key => $element ) {
