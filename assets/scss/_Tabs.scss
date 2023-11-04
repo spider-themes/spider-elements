@@ -55,6 +55,8 @@
     border: 1px solid var(--black_50);
     border-radius: 0 5px 5px 5px;
     background-color: var(--bs-white);
+    display: block;
+    margin-top: 0;
   }
 }
 
@@ -441,7 +443,8 @@ body.remove {
   .nav.nav-tabs {
     justify-content: center;
     border: none;
-
+    display: flex;
+    flex-wrap: wrap;
     li {
       margin-bottom: 0;
 
@@ -490,6 +493,9 @@ body.remove {
 }
 
 .header_tab_content {
+  .tab-content {
+    display: block;
+  }
   .tab-pane {
     padding: 0;
   }

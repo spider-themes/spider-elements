@@ -55,11 +55,7 @@
                         <div class="card accordion-panel spe_accordion_inner">
                             <div class="card spe-accordion" id="configuration<?php echo esc_attr( $count ); ?>-tab">
                                 <div class="card-header">
-                                    <button class="text-left accordion-header <?php echo esc_attr( $nav_collapse ); ?>"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#configuration<?php echo esc_attr( $count ); ?>"
-                                        aria-expanded="true"
-                                        aria-controls="configuration<?php echo esc_attr( $count ) ?>" type="button">
+                                    <button class="text-left accordion-header <?php echo esc_attr( $nav_collapse ); ?>">
                                         <span class="title"><?php echo esc_html( $video_item[ 'title' ] ); ?> </span>
                                         <span class="count">(<?php echo esc_html( $total_item ); ?>)</span>
                                         <span class="plus-minus">
@@ -89,7 +85,7 @@
 											?>
                                         <li class="nav-item">
                                             <a class="nav-link <?php echo $i == 0 ? 'active' : '' ?>"
-                                                data-bs-toggle="tab" href="#video_<?php echo esc_attr( $i ++ ); ?>">
+                                                href="#video_<?php echo esc_attr( $i ++ ); ?>">
                                                 <div class="media ezd-d-flex">
                                                     <?php if ( ! empty( $child_video[ 'thumbnail' ][ 'url' ] ) ) : ?>
                                                     <div class="ezd-d-flex">
@@ -167,6 +163,23 @@
     })
 
 
+    let videoAccordion = $(".spe_accordion_inner > .spe-accordion");
+    videoAccordion.on("click", function() {
+        var $this = $(this);
+        var $parent = $this.parent();
+        var $collapse = $parent.find("> .collapse").first();
+
+        $collapse.slideToggle(300);
+        $parent.siblings().find("> .collapse").hide(300);
+
+        if ($parent.hasClass("spe-collapsed")) {
+            $parent.removeClass("spe-collapsed");
+        } else {
+            videoAccordion.parent().removeClass("spe-collapsed");
+            $parent.addClass("spe-collapsed");
+        }
+        return false;
+    });
     // custom tab js
     $(".ezd-tab-menu li a").on("click", function(e) {
         e.preventDefault();

@@ -13,11 +13,7 @@
                 $this->add_render_attribute( $tab_title_setting_key, [
                     'class' => [ 'nav-link tab-item-title spe_tab_title', $active ],
                     'id' => 'tab-'.$id_int . $tab_count,
-                    'role' => 'tab',
-                    'data-bs-toggle' => 'tab',
-                    'aria-controls' => 'tab-content-' . $id_int . $tab_count,
                     'data-rel' => 'tab-content-' . $id_int . $tab_count,
-                    'aria-selected' => $selected,
                 ]);
                 ?>
             <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
@@ -46,8 +42,6 @@
                 $this->add_render_attribute( $tab_content_setting_key, [
                     'class' => [ 'tab-pane p-0 ezd-tab-box', 'fade', $active ],
                     'id' => 'tab-content-' . $id_int . $tab_count,
-                    'aria-labelledby' => 'tab-'.$id_int . $tab_count,
-                    'role' => 'tabpanel',
                 ]);
                 ?>
             <div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>>
@@ -66,7 +60,7 @@
 
             if ( $is_navigation_arrow == 'yes' ) { ?>
             <button class="ezd_tab_arrow_btn previous"><i class="arrow_carrot-left"></i></button>
-            <button class="ezd_tab_arrow_btn next"><i class="arrow_carrot-right"></i></button>
+            <button class="ezd_tab_arrow_btn nexts"><i class="arrow_carrot-right"></i></button>
             <?php
             }
 

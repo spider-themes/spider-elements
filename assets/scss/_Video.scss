@@ -2369,7 +2369,11 @@ button.swiper-pagination-bullet {
 .accordion-header {
   cursor: pointer;
 }
-
+.video_player {
+  .tab-content {
+    display: block;
+  }
+}
 .art-undercover {
   background: #000;
   position: fixed;

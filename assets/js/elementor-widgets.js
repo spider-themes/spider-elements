@@ -29,34 +29,39 @@
 
     //=============== accordion js ===============//
 
-    accordions: function ($scope) {
-      let speAccordion = $(".spe_accordion_inner > .spe-accordion");
-      speAccordion.on("click", function () {
-        var $this = $(this);
-        var $parent = $this.parent();
-        var $collapse = $parent.find("> .collapse").first();
+    // accordions: function ($scope) {
+    //   let speAccordion = $scope.find(".spe_accordion_inner > .spe-accordion");
+    //   speAccordion.on("click", function () {
+    //     var $this = $(this);
+    //     var $parent = $this.parent();
+    //     var $collapse = $parent.find("> .collapse").first();
 
-        $collapse.slideToggle(300);
-        $parent.siblings().find("> .collapse").hide(300);
-        return false;
-      });
+    //     $collapse.slideToggle(300);
+    //     $parent.siblings().find("> .collapse").hide(300);
 
-      $(".spe_accordion_inner > .spe-accordion").on("click", function (e) {
-        var $this = $(this);
-        var $parent = $this.parent();
+    //     if ($parent.hasClass("spe-collapsed")) {
+    //       $parent.removeClass("spe-collapsed");
+    //     } else {
+    //       speAccordion.parent().removeClass("spe-collapsed");
+    //       $parent.addClass("spe-collapsed");
+    //     }
+    //     return false;
+    //   });
 
-        if ($parent.hasClass("spe-collapsed")) {
-          $parent.removeClass("spe-collapsed");
-        } else {
-          $(".spe_accordion_inner > .spe-accordion")
-            .parent()
-            .removeClass("spe-collapsed");
-          $parent.addClass("spe-collapsed");
-        }
+    //   // speAccordion.on("click", function (e) {
+    //   //   var $this = $(this);
+    //   //   var $parent = $this.parent();
 
-        e.stopPropagation(); // Prevent the click event from propagating to other elements
-      });
-    },
+    //   //   if ($parent.hasClass("spe-collapsed")) {
+    //   //     $parent.removeClass("spe-collapsed");
+    //   //   } else {
+    //   //     speAccordion.parent().removeClass("spe-collapsed");
+    //   //     $parent.addClass("spe-collapsed");
+    //   //   }
+
+    //   //   e.stopPropagation(); // Prevent the click event from propagating to other elements
+    //   // });
+    // },
 
     //======================== Instagram Feed =========================== //
     instagramFeed: function ($scope) {
@@ -271,11 +276,12 @@
 
     //============================== Video Playlist =============================//
     videoPlaylist: function ($scope) {
+      let video = $scope.find("#video_0");
       setTimeout(function () {
         $(".video_slider_area").addClass("loaded").css("height", "auto");
       }, 3000);
 
-      $("#video_0").addClass("show").addClass("active");
+      video.addClass("show").addClass("active");
       let containers = document.getElementsByClassName("artplayer-app");
       if (containers.length > 0) {
         for (var i = 0; i < containers.length; i++) {
@@ -294,24 +300,24 @@
       }
 
       // custom tab js
-      $(".ezd-tab-menu li a").on("click", function (e) {
-        e.preventDefault();
+      // $(".ezd-tab-menu li a").on("click", function (e) {
+      //   e.preventDefault();
 
-        // Remove active class from all tabs within the same menu
-        $(this).closest(".ezd-tab-menu").find("li a").removeClass("active");
+      //   // Remove active class from all tabs within the same menu
+      //   $(this).closest(".ezd-tab-menu").find("li a").removeClass("active");
 
-        // Add active class to the clicked tab
-        $(this).addClass("active");
+      //   // Add active class to the clicked tab
+      //   $(this).addClass("active");
 
-        var target = $(this).attr("href");
+      //   var target = $(this).attr("href");
 
-        $("" + target)
-          .addClass("active")
-          .siblings(".ezd-tab-box")
-          .removeClass("active");
+      //   $("" + target)
+      //     .addClass("active")
+      //     .siblings(".ezd-tab-box")
+      //     .removeClass("active");
 
-        return false;
-      });
+      //   return false;
+      // });
     },
 
     //======================== Alert Box =========================== //
@@ -567,8 +573,8 @@
 
     //======================== Tabs =========================== //
     tabs: function ($scope) {
-      let nextBtn = $scope.find("button.next");
-      let prevBtn = $scope.find("button.previous");
+      let nextBtn = $scope.find("button.ezd_tab_arrow_btn.nexts");
+      let prevBtn = $scope.find("button.ezd_tab_arrow_btn.previous");
 
       if (nextBtn.length > 0) {
         nextBtn.on("click", function () {
@@ -668,6 +674,30 @@
           });
         }
       }
+
+      // custom tab js
+      let tabJs = $scope.find(".ezd-tab-menu li button");
+      tabJs.on("click", function (e) {
+        e.preventDefault();
+
+        // Remove active class from all tabs within the same menu
+        $(this)
+          .closest(".ezd-tab-menu")
+          .find("li button")
+          .removeClass("active");
+
+        // Add active class to the clicked tab
+        $(this).addClass("active");
+
+        var target = $(this).attr("data-rel");
+
+        $("#" + target)
+          .addClass("active")
+          .siblings(".ezd-tab-box")
+          .removeClass("active");
+
+        return false;
+      });
     },
 
     //======================== Pricing Table Tabs =========================== //
@@ -693,7 +723,8 @@
       }
 
       // custom tab js
-      $(".ezd-tab-menu li button").on("click", function (e) {
+      let pricingTabjs = $scope.find(".ezd-tab-menu li button");
+      pricingTabjs.on("click", function (e) {
         e.preventDefault();
 
         // Remove active class from all tabs within the same menu
