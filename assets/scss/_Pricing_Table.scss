@@ -61,7 +61,7 @@
 // Pricing area two
 .pricing-area-two {
   position: relative;
-  
+
   .section-title-center {
     padding-bottom: 50px;
 
@@ -124,14 +124,13 @@
     font-size: 1rem;
     color: #6d6d6d;
     border-color: transparent;
-
-
+    background: transparent;
+    line-height: 25px;
     &.active {
       border-color: transparent;
-      background-color: #ec595a;
+      background-color: #ec595a !important;
       color: #fff;
       font-weight: 600;
-
     }
 
     &:hover {
@@ -140,7 +139,6 @@
     }
   }
 }
-
 
 .pricing-tabs-two {
   display: inline-flex;
@@ -210,20 +208,21 @@
   }
 }
 
-.tab-pane {
-  position: relative;
+.pricing-tabs-content {
+  .tab-pane {
+    position: relative;
 
-  &.popular {
-    top: 60px;
-    right: 35%;
-    position: absolute;
-  }
+    .popular {
+      top: 60px;
+      right: 35%;
+      position: absolute;
+    }
 
-  @media screen and (min-width: 992px) {
-    padding-top: 6.25rem;
+    @media screen and (min-width: 992px) {
+      padding-top: 6.25rem;
+    }
   }
 }
-
 
 .pricing-item {
   background: #fafafa;
@@ -377,14 +376,9 @@
 
 .tab-content {
   .fade {
-    transition: opacity .15s linear;
+    transition: opacity 0.15s linear;
   }
 }
-
-.fade:not(.show) {
-  opacity: 0;
-}
-
 
 .current-price {
   font-weight: 700;
@@ -436,7 +430,7 @@
 }
 
 .pricing-compare-table {
-  >table {
+  > table {
     margin: 0;
   }
 
@@ -701,6 +695,12 @@
     }
   }
 }
+.ezd-tab-box {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
 
 @media (min-width: 768px) {
   .nav .nav-link {
@@ -711,25 +711,7 @@
   }
 }
 
-
-.tab-content {
-  .tab-pane {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-}
-
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-  cursor: pointer;
-}
-
-// ================ 
+// ================
 .section-title-center {
   padding-bottom: 45px;
   text-align: center;
@@ -741,7 +723,6 @@ button:not(:disabled) {
     color: #171717;
     font-weight: 700;
     line-height: 1.4;
-
   }
 }
 
@@ -785,7 +766,7 @@ button {
           width: 0;
           height: 9px;
           border-radius: 50%;
-          background-color: #EC595A;
+          background-color: #ec595a;
           position: absolute;
           left: 50%;
           top: 50%;
@@ -852,7 +833,7 @@ button {
 
     .btn-purchase {
       border-radius: 5px;
-      background-color: #EC595A;
+      background-color: #ec595a;
       color: #fff;
       transition: all 0.4s ease-in-out;
       font-size: 15px;
@@ -864,7 +845,7 @@ button {
 
       &:hover {
         background-color: #171717;
-        color: #EC595A;
+        color: #ec595a;
         text-decoration: none;
       }
     }
@@ -877,7 +858,6 @@ button {
   margin-top: 0;
   font-family: "poppins", sans-serif;
 }
-
 
 .app-pricing-area {
   .pricing-title {
@@ -897,12 +877,12 @@ button {
     margin-top: 0;
     font-size: 17px;
     font-family: "inter", sans-serif;
-    color: #5D5D66;
+    color: #5d5d66;
 
     .offer {
       font-family: "Kalam", cursive;
       font-weight: 700;
-      color: #EC595A;
+      color: #ec595a;
     }
   }
 
@@ -967,7 +947,7 @@ button {
 }
 
 .app-pricing-item .item-price .dollar {
-  color: #EC595A;
+  color: #ec595a;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -981,7 +961,7 @@ button {
 }
 
 .app-pricing-item .item-price .time {
-  color: #9199A1;
+  color: #9199a1;
   font-size: 18px;
   line-height: 36px;
 }
@@ -1005,12 +985,12 @@ button {
 }
 
 .app-pricing-item .btn {
-  border-color: #EC595A;
-  color: #EC595A;
+  border-color: #ec595a;
+  color: #ec595a;
 }
 
 .app-pricing-item .btn:hover {
-  background: #EC595A;
+  background: #ec595a;
   color: #fff;
   text-decoration: none;
 }
@@ -1028,10 +1008,9 @@ button {
 }
 
 .app-pricing-question .question-text a {
-  color: #EC595A;
+  color: #ec595a;
   text-decoration: underline;
 }
-
 
 // ==== Choose plan area three style ===== //
 .choose-plan-area-three .pricing-switcher {

@@ -31,7 +31,7 @@
     .accordion {
       .card {
         box-shadow: 0 0.3px 0.9px rgba(29, 56, 70, 0.1),
-        0 1.6px 3.6px rgba(29, 56, 70, 0.13);
+          0 1.6px 3.6px rgba(29, 56, 70, 0.13);
       }
     }
   }
@@ -80,10 +80,10 @@
 
   &.theatermode {
     overflow: hidden;
-    .row>*{
+    .row > * {
       flex: 0 0 100%;
       max-width: 100%;
-      transition: all .3s linear 0s;
+      transition: all 0.3s linear 0s;
     }
     .video_list {
       width: 100%;
@@ -365,7 +365,7 @@
                 }
               }
             }
-            &:hover{
+            &:hover {
               .media {
                 &.d-flex {
                   .media-body {
@@ -456,9 +456,9 @@
       height: 145px;
       width: 100%;
       background: linear-gradient(
-                      180deg,
-                      rgba(44, 44, 81, 0) 0%,
-                      rgba(44, 44, 81, 0.9) 73.67%
+        180deg,
+        rgba(44, 44, 81, 0) 0%,
+        rgba(44, 44, 81, 0.9) 73.67%
       );
       position: absolute;
       left: 0;
@@ -564,7 +564,8 @@
 
   &.theatermode {
     .gallery-top {
-      .artplayer-app, .art-video-player {
+      .artplayer-app,
+      .art-video-player {
         height: 717px !important;
       }
 
@@ -855,7 +856,7 @@
   background: rgba(76, 76, 241, 0.2);
   border-radius: 20px;
   box-shadow: 0 0.3px 0.9px rgba(29, 56, 70, 0.1),
-  0 1.6px 3.6px rgba(29, 56, 70, 0.13);
+    0 1.6px 3.6px rgba(29, 56, 70, 0.13);
   padding-right: 12px;
 }
 
@@ -1049,9 +1050,9 @@
           bottom: 0;
           height: 145px;
           background: linear-gradient(
-                          180deg,
-                          rgba(29, 56, 70, 0) 0%,
-                          rgba(29, 56, 70, 0.8) 100%
+            180deg,
+            rgba(29, 56, 70, 0) 0%,
+            rgba(29, 56, 70, 0.8) 100%
           );
         }
 
@@ -1220,7 +1221,7 @@
                 text-align: center;
                 background: #41484d;
                 box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
-                0 4px 8px rgba(0, 0, 0, 0.2);
+                  0 4px 8px rgba(0, 0, 0, 0.2);
                 font-size: 22px;
                 line-height: 56px;
                 margin-right: 0;
@@ -1391,9 +1392,9 @@
               &:after {
                 content: "";
                 background: linear-gradient(
-                                180deg,
-                                rgba(29, 56, 70, 0) 0%,
-                                rgba(29, 56, 70, 0.8) 100%
+                  180deg,
+                  rgba(29, 56, 70, 0) 0%,
+                  rgba(29, 56, 70, 0.8) 100%
                 );
                 position: absolute;
                 left: 0;
@@ -2005,15 +2006,15 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-vertical
-> .swiper-pagination-bullets
-.swiper-pagination-bullet {
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: 5px 0;
   display: block;
 }
 
 .swiper-container-horizontal
-> .swiper-pagination-bullets
-.swiper-pagination-bullet {
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: 0 5px;
 }
 
@@ -2033,7 +2034,9 @@ button.swiper-pagination-bullet {
   transform-origin: left top;
 }
 
-.swiper-container-rtl .swiper-pagination-progress .swiper-pagination-progressbar {
+.swiper-container-rtl
+  .swiper-pagination-progress
+  .swiper-pagination-progressbar {
   transform-origin: right top;
 }
 
@@ -2056,12 +2059,12 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-progress.swiper-pagination-white
-.swiper-pagination-progressbar {
+  .swiper-pagination-progressbar {
   background: #fff;
 }
 
 .swiper-pagination-progress.swiper-pagination-black
-.swiper-pagination-progressbar {
+  .swiper-pagination-progressbar {
   background: #000;
 }
 
@@ -2320,14 +2323,14 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-bullet-active {
-  background: rgba(0, 0, 0, 0) linear-gradient(to right, #ee0f6f 0%, #f89482 100%) repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(to right, #ee0f6f 0%, #f89482 100%) repeat scroll 0 0;
   border: medium none;
   height: 12px;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   width: 12px;
 }
-
 
 .art-video-player .art-mask .art-state {
   width: 80px !important;
@@ -2348,10 +2351,6 @@ button.swiper-pagination-bullet {
   background: blue;
 }
 
-.accordion-panel .accordion-content.show {
-  height: unset;
-}
-
 .accordion-panel .accordion-content.show #minus {
   display: inline-block;
 }
@@ -2365,16 +2364,8 @@ button.swiper-pagination-bullet {
 }
 
 .accordion-panel .accordion-content {
-  height: 0;
   overflow: hidden;
-  transition: height 0.3s ease-out;
 }
-
-.accordion-panel.active .accordion-content {
-  height: auto;
-  transition: height 0.3s ease-in;
-}
-
 .accordion-header {
   cursor: pointer;
 }
@@ -2390,7 +2381,6 @@ button.swiper-pagination-bullet {
   opacity: 0.9;
   z-index: 10;
 }
-
 
 @media (max-width: 576px) {
   .video_list_area .art-video-player {
