@@ -262,6 +262,7 @@ Table of Content:
 }
 .ezd-list-unstyled {
   list-style: none !important;
+  padding: 0px;
 }
 
 .ezd-tab-content {
@@ -613,21 +614,23 @@ a:hover, a:focus {
 .toggle_btn:before {
   content: "";
   background-image: url("../images/svgviewer-output.svg");
+  background-repeat: no-repeat;
   height: 12px;
   width: 20px;
   position: absolute;
   font-size: 18px;
   font-family: eleganticons;
   right: 30px;
-  transform: rotate(360deg);
+  top: 16px;
+  transform: rotate(180deg);
   transition: all 0.2s linear;
   color: #4c4cf1;
 }
-.toggle_btn.collapsed:before {
-  transform: rotate(180deg);
+.toggle_btn.active:before {
+  transform: rotate(360deg);
   color: rgb(36, 39, 41);
 }
-.toggle_btn.collapsed:before .toggle_btn {
+.toggle_btn.active:before .toggle_btn {
   display: block;
   font-size: 16px;
   font-weight: 500;
@@ -639,12 +642,12 @@ a:hover, a:focus {
   position: relative;
   text-decoration: none;
 }
-.toggle_btn.collapsed:before .toggle_btn:not(.collapsed) {
+.toggle_btn.active:before .toggle_btn:not(.collapsed) {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: #4c4cf1;
 }
-.toggle_btn.collapsed:before .toggle_btn:before {
+.toggle_btn.active:before .toggle_btn.active {
   content: "C";
   position: absolute;
   font-size: 18px;
@@ -654,15 +657,15 @@ a:hover, a:focus {
   transition: all 0.2s linear;
   color: rgb(76, 76, 241);
 }
-.toggle_btn.collapsed:before .toggle_btn.collapsed:before {
+.toggle_btn.active:before .toggle_btn.active:before {
   transform: rotate(0deg);
   color: rgb(36, 39, 41);
 }
-.toggle_btn.collapsed .doc_accordion {
+.toggle_btn.active .doc_accordion {
   border: 0;
   margin-bottom: 1rem;
 }
-.toggle_btn.collapsed .doc_accordion .toggle_body {
+.toggle_btn.active .doc_accordion .toggle_body {
   border: 1px solid rgb(235, 235, 235);
   padding: 18px 30px 24px;
   border-radius: 0 0 4px 4px;
@@ -670,29 +673,29 @@ a:hover, a:focus {
   background: #ffffff;
 }
 @media only screen and (min-width: 320px) and (max-width: 425px) {
-  .toggle_btn.collapsed .doc_accordion .toggle_body {
+  .toggle_btn.active .doc_accordion .toggle_body {
     padding: 18px 15px 24px;
   }
 }
-.toggle_btn.collapsed .doc_accordion .toggle_body p {
+.toggle_btn.active .doc_accordion .toggle_body p {
   font-size: 16px;
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion .toggle_body p:last-child {
+.toggle_btn.active .doc_accordion .toggle_body p:last-child {
   margin-bottom: 0;
 }
-.toggle_btn.collapsed .doc_accordion .card-header {
+.toggle_btn.active .doc_accordion .card-header {
   border-radius: 0;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion {
   border: 0;
   background: transparent;
   padding: 0;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion .title {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion .title {
   padding: 0;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion button {
   padding: 12px 30px;
   border-radius: 4px 4px 0 0;
   text-align: left;
@@ -704,7 +707,7 @@ a:hover, a:focus {
   text-decoration: none;
   position: relative;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button svg {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion button svg {
   position: absolute;
   right: 30px;
   top: 50%;
@@ -712,81 +715,81 @@ a:hover, a:focus {
   display: none;
   transition: all 0.2s linear;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button svg + svg {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion button svg + svg {
   display: block;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button.collapsed {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion button.collapsed {
   color: var(--black_800);
   border-radius: 4px;
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button.collapsed svg {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion button.collapsed svg {
   display: block;
   color: var(--spe_p_color);
 }
-.toggle_btn.collapsed .doc_accordion .card-header .doc_accordion button.collapsed svg + svg {
+.toggle_btn.active .doc_accordion .card-header .doc_accordion button.collapsed svg + svg {
   display: none;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn {
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .toggle_btn {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .toggle_btn {
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item {
   border: 1px solid rgb(230, 237, 240);
   padding: 20px;
   margin: 12px 0;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item h4 {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item h4 {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item h4:hover {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item h4:hover {
   color: #4c4cf1;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item .post-meta {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item .post-meta {
   margin-bottom: 0;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item .post-meta li {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-wrap .accordion-article-item .post-meta li {
   display: inline-block;
   margin-right: 5px;
   font-size: 14px;
   color: rgb(132, 141, 149);
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item {
   border: 1px solid var(--border_on_white);
   padding: 20px;
   margin: 12px 0;
   min-height: 230px;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item h4 {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item h4 {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item h4:hover {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item h4:hover {
   color: #4c4cf1;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item .post-meta {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item .post-meta {
   margin-bottom: 0;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item .post-meta li {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .toggle_btn .accordion-article-item .post-meta li {
   display: inline-block;
   margin-right: 5px;
   font-size: 14px;
   color: rgb(132, 141, 149);
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .accordion-article-item h4 {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .accordion-article-item h4 {
   margin-bottom: 15px;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .accordion-article-item p {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .accordion-article-item p {
   font-size: 16px;
   font-weight: 400;
 }
-.toggle_btn.collapsed .doc_accordion .accordion-article-wrap .accordion-article-item ul {
+.toggle_btn.active .doc_accordion .accordion-article-wrap .accordion-article-item ul {
   margin-left: auto;
 }
 

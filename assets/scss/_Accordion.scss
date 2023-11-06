@@ -22,20 +22,22 @@
   &:before {
     content: "";
     background-image: url("../images/svgviewer-output.svg");
+    background-repeat: no-repeat;
     height: 12px;
     width: 20px;
     position: absolute;
     font-size: 18px;
     font-family: eleganticons;
     right: 30px;
-    transform: rotate(360deg);
+    top: 16px;
+    transform: rotate(180deg);
     transition: all 0.2s linear;
     color: #4c4cf1;
   }
 
-  &.collapsed {
+  &.active {
     &:before {
-      transform: rotate(180deg);
+      transform: rotate(360deg);
       color: rgb(36 39 41);
       .toggle_btn {
         display: block;
@@ -53,7 +55,7 @@
           border-bottom-right-radius: 0;
           color: #4c4cf1;
         }
-        &:before {
+        &.active {
           content: "\43";
           position: absolute;
           font-size: 18px;
@@ -63,7 +65,7 @@
           transition: all 0.2s linear;
           color: rgb(76 76 241);
         }
-        &.collapsed {
+        &.active {
           &:before {
             transform: rotate(0deg);
             color: rgb(36 39 41);

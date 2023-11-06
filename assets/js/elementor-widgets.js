@@ -29,39 +29,39 @@
 
     //=============== accordion js ===============//
 
-    // accordions: function ($scope) {
-    //   let speAccordion = $scope.find(".spe_accordion_inner > .spe-accordion");
-    //   speAccordion.on("click", function () {
-    //     var $this = $(this);
-    //     var $parent = $this.parent();
-    //     var $collapse = $parent.find("> .collapse").first();
+    accordions: function ($scope) {
+      let speAccordion = $scope.find(".spe_accordion_inner > .spe-accordion");
+      speAccordion.on("click", function () {
+        var $this = $(this);
+        var $parent = $this.parent();
+        var $collapse = $parent.find("> .collapse").first();
 
-    //     $collapse.slideToggle(300);
-    //     $parent.siblings().find("> .collapse").hide(300);
+        $collapse.slideToggle(300);
+        $parent.siblings().find("> .collapse").hide(300);
 
-    //     if ($parent.hasClass("spe-collapsed")) {
-    //       $parent.removeClass("spe-collapsed");
-    //     } else {
-    //       speAccordion.parent().removeClass("spe-collapsed");
-    //       $parent.addClass("spe-collapsed");
-    //     }
-    //     return false;
-    //   });
+        if ($parent.hasClass("spe-collapsed")) {
+          $parent.removeClass("spe-collapsed");
+        } else {
+          speAccordion.parent().removeClass("spe-collapsed");
+          $parent.addClass("spe-collapsed");
+        }
+        return false;
+      });
 
-    //   // speAccordion.on("click", function (e) {
-    //   //   var $this = $(this);
-    //   //   var $parent = $this.parent();
+      // speAccordion.on("click", function (e) {
+      //   var $this = $(this);
+      //   var $parent = $this.parent();
 
-    //   //   if ($parent.hasClass("spe-collapsed")) {
-    //   //     $parent.removeClass("spe-collapsed");
-    //   //   } else {
-    //   //     speAccordion.parent().removeClass("spe-collapsed");
-    //   //     $parent.addClass("spe-collapsed");
-    //   //   }
+      //   if ($parent.hasClass("spe-collapsed")) {
+      //     $parent.removeClass("spe-collapsed");
+      //   } else {
+      //     speAccordion.parent().removeClass("spe-collapsed");
+      //     $parent.addClass("spe-collapsed");
+      //   }
 
-    //   //   e.stopPropagation(); // Prevent the click event from propagating to other elements
-    //   // });
-    // },
+      //   e.stopPropagation(); // Prevent the click event from propagating to other elements
+      // });
+    },
 
     //======================== Instagram Feed =========================== //
     instagramFeed: function ($scope) {
