@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Pricing_Table_Tabs extends Widget_Base {
 	public function get_name() {
-		return 'pricing_table_tabs';
+		return 'spe_pricing_table_tabs';
 	}
 
 	public function get_title() {
