@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Accordion extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_accordion';
+		return 'spe_accordion';
 	}
 
 	public function get_title() {
@@ -48,7 +48,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'spe-main' ];
+		return ['spe-main','elegant-icon'];
 	}
 
 	/**
@@ -56,7 +56,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap' ];
+		return ['spe-el-widgets', 'spe-script'];
 	}
 
 
@@ -188,7 +188,7 @@ class Accordion extends Widget_Base {
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
 				'default'     => [
-					'value'   => 'fas fa-plus',
+					'value'   => 'icon_plus',
 					'library' => 'solid',
 				],
 				'separator'   => 'before'
@@ -200,7 +200,7 @@ class Accordion extends Widget_Base {
 				'label'   => __( 'Active Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
-					'value'   => 'fas fa-minus',
+					'value'   => 'icon_minus-06',
 					'library' => 'solid',
 				]
 			]
@@ -266,7 +266,7 @@ class Accordion extends Widget_Base {
 			[
 				'name'     => 'accordion_border',
 				'label'    => esc_html__( 'Border', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .accordion .doc_accordion .accordion_main_aria, {{WRAPPER}} .accordion .doc_accordion .accordion_main_aria',
+				'selector' => '{{WRAPPER}} .accordion .doc_accordion',
 			]
 		);
 

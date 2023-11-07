@@ -1,6 +1,6 @@
 <div id="feedBack_carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="row">
-        <div class="col-xxl-9 col-lg-8 col-md-10 m-auto">
+    <div class="ezd-grid ezd-grid-cols-12">
+        <div class="ezd-xl-col-9 ezd-lg-col-8 ezd-md-col-10 ezd-m-auto">
             <div class="carousel-inner text-center">
                 <?php if(!empty($testimonials8)): 
                 foreach ($testimonials8 as $index => $item ) : 

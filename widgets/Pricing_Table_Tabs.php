@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Pricing_Table_Tabs extends Widget_Base {
 	public function get_name() {
-		return 'landpagy_pricing_table_tabs';
+		return 'spe_pricing_table_tabs';
 	}
 
 	public function get_title() {
@@ -41,7 +41,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'spe-main' ];
+		return ['spe-main' ];
 	}
 
 	/**
@@ -49,7 +49,7 @@ class Pricing_Table_Tabs extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'spe-el-widgets' ];
+		return ['spe-el-widgets' ];
 	}
 
 	/**
@@ -272,10 +272,10 @@ class Pricing_Table_Tabs extends Widget_Base {
 		$table_data = spe_return_tab_data( $getCats , $pricing_tables );
 
 		?>
-		<div class="row">
-			<div class="col-8">
-				<ul class="nav nav-tabs pricing-tabs" id="myTab" role="tablist">
-					<?php
+<div class="ezd-grid ezd-grid-cols-12">
+    <div class="ezd-md-col-8">
+        <ul class="nav nav-tabs pricing-tabs ezd-tab-menu">
+            <?php
 					if ( is_array( $pricing_tables ) && count( $pricing_tables ) > 0 ){
 						$tabs   = '';
 						$i      = 0;
@@ -285,8 +285,8 @@ class Pricing_Table_Tabs extends Widget_Base {
 							$i++;
 							$active = $i == 1 ? ' active' : '';
 							$aria_selected = $i==1 ? 'true' : 'false';
-							$tabs .= '<li class="nav-item" role="presentation">
-                                     <button class="nav-link'. esc_attr( $active ) .'" id="'.esc_attr( $catForFilter ).'-tab" data-bs-toggle="tab" data-bs-target="#'.esc_attr($catForFilter.'-'.$this->get_id()).'" type="button" role="tab" aria-controls="'.esc_attr( $catForFilter ).'" aria-selected="'. esc_attr( $aria_selected ) .'">
+							$tabs .= '<li class="nav-item">
+                                     <button class="nav-link'. esc_attr( $active ) .'" data-rel="'.esc_attr($catForFilter.'-'.$this->get_id()).'">
                                         '. esc_html( $cat ) .'
                                      </button>
                                  </li>';
@@ -295,99 +295,101 @@ class Pricing_Table_Tabs extends Widget_Base {
 						echo wp_kses_post($tabs);
 					}
 					?>
-				</ul>
-			</div>
-			<div class="col-4">
-                <select class="pricing-currency" data-id="data-<?php echo esc_attr( $this->get_id() ); ?>">
-                    <option data-display="USD"><?php esc_html_e( 'USD', 'spider-elements' ); ?></option>
-                    <option data-display="EURO"><?php esc_html_e( 'EURO', 'spider-elements' ); ?></option>
-                </select>
-			</div>
-		</div>
-		<div class="tab-content" id="myTabContent">
-			<?php
+        </ul>
+    </div>
+    <div class="ezd-md-col-4">
+        <select class="pricing-currency" data-id="data-<?php echo esc_attr( $this->get_id() ); ?>">
+            <option data-display="USD"><?php esc_html_e( 'USD', 'spider-elements' ); ?></option>
+            <option data-display="EURO"><?php esc_html_e( 'EURO', 'spider-elements' ); ?></option>
+        </select>
+    </div>
+</div>
+<div class="tab-content pricing-tabs-content" id="myTabContent">
+    <?php
 			if ( !empty( $table_data ) ) {
 				$i = 0;
 				foreach ($table_data as $key => $value) {
 					$tagforfilter = sanitize_title_with_dashes($key);
 					$catForFilter = str_replace( '-', '', $tagforfilter );
 					$i++;
-					$active = $i == 1 ? ' show active' : '';
+					$active = $i == 1 ? 'active' : '';
 					?>
-					<div class="tab-pane fade<?php echo esc_attr($active) ?>" id="<?php echo esc_attr($catForFilter.'-'.$this->get_id()); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($catForFilter); ?>-tab">
-						<div class="row">
-							<?php
+    <div class="tab-pane ezd-tab-box <?php echo esc_attr($active) ?>"
+        id="<?php echo esc_attr($catForFilter.'-'.$this->get_id()); ?>">
+        <div class="ezd-grid ezd-grid-cols-12">
+            <?php
 							foreach ( $value as $table_item ) {
 							    $id = wp_unique_id($catForFilter.'-1');
 								?>
-								<div class="col-sm-6 col-xl-3" id="<?php echo esc_attr($id); ?>">
-									<div class="pricing-item elementor-repeater-item-<?php echo esc_attr($table_item['_id']) ?><?php echo esc_attr($table_item['is_active'] == 'yes' ? ' active' : '') ?>">
-										<?php
+            <div class="ezd-sm-col-6 ezd-md-col-3" id="<?php echo esc_attr($id); ?>">
+                <div
+                    class="pricing-item elementor-repeater-item-<?php echo esc_attr($table_item['_id']) ?><?php echo esc_attr($table_item['is_active'] == 'yes' ? ' active' : '') ?>">
+                    <?php
 										if ( !empty($table_item['discount']) ) {
 											?>
-											<div class="badge"><?php echo esc_html($table_item['discount']) ?></div>
-											<?php
+                    <div class="badge"><?php echo esc_html($table_item['discount']) ?></div>
+                    <?php
 										}
 										if ( !empty($table_item['title']) ) {
 											?>
-											<h3 class="pricing-title"><?php echo esc_html($table_item['title']) ?></h3>
-											<?php
+                    <h3 class="pricing-title"><?php echo esc_html($table_item['title']) ?></h3>
+                    <?php
 										}
 										if ( !empty($table_item['price_dollar']) || !empty($table_item['price_euro']) ) {
                                          
 											?>
-											<div class="price" data-id="data-<?php echo esc_attr( $this->get_id() ); ?>">
-                                                <?php
+                    <div class="price" data-id="data-<?php echo esc_attr( $this->get_id() ); ?>">
+                        <?php
                                                 if ( !empty($table_item['price_dollar']) ) { ?>
-                                                    <span class="dollar"><?php echo esc_html($table_item['price_dollar']) ?></span>
-                                                    <?php
+                        <span class="dollar"><?php echo esc_html($table_item['price_dollar']) ?></span>
+                        <?php
                                                 }
                                                 if ( !empty($table_item['price_euro']) ) { ?>
-                                                    <span class="euro"><?php echo esc_html($table_item['price_euro']) ?></span>
-                                                    <?php
+                        <span class="euro"><?php echo esc_html($table_item['price_euro']) ?></span>
+                        <?php
                                                 }
                                                 if ( !empty($table_item['duration']) ) { ?>
-                                                    <sup> <?php echo esc_html($table_item['duration']) ?></sup>
-                                                    <?php
+                        <sup> <?php echo esc_html($table_item['duration']) ?></sup>
+                        <?php
                                                 }
                                                 ?>
-											</div>
-											<?php
+                    </div>
+                    <?php
 										}
 										if ( !empty($table_item['description']) ) { ?>
-											<span class="pricing-item-user"><?php echo esc_html($table_item['description']) ?></span>
-											<?php
+                    <span class="pricing-item-user"><?php echo esc_html($table_item['description']) ?></span>
+                    <?php
 										}
 										if ( !empty($table_item['btn_label_1']) ) { ?>
-											<a <?php spe_the_button($table_item['btn_url_1']) ?> class="pricing-btn">
-												<?php echo esc_html($table_item['btn_label_1']) ?>
-											</a>
-											<?php
+                    <a <?php spe_the_button($table_item['btn_url_1']) ?> class="pricing-btn">
+                        <?php echo esc_html($table_item['btn_label_1']) ?>
+                    </a>
+                    <?php
 										}
 										if ( !empty($table_item['contents']) ) { ?>
-											<?php echo spe_get_the_kses_post($table_item['contents']) ?>
-											<?php
+                    <?php echo spe_get_the_kses_post($table_item['contents']) ?>
+                    <?php
 										}
 										if ( !empty($table_item['btn_label_2']) ) { ?>
-											<a <?php spe_the_button($table_item['btn_url_2']) ?> class="pricing-btn">
-												<?php echo esc_html($table_item['btn_label_2']) ?>
-											</a>
-											<?php
+                    <a <?php spe_the_button($table_item['btn_url_2']) ?> class="pricing-btn">
+                        <?php echo esc_html($table_item['btn_label_2']) ?>
+                    </a>
+                    <?php
 										}
 										?>
-									</div>
-								</div>
-								<?php
+                </div>
+            </div>
+            <?php
 							}
 							?>
-						</div>
-						<?php spe_el_image($settings['ribbon_label'], 'Popular', 'popular d-none d-lg-block') ?>
-					</div>
-					<?php
+        </div>
+        <?php spe_el_image($settings['ribbon_label'], 'Popular', 'popular ezd-d-none ezd-d-lg-block') ?>
+    </div>
+    <?php
 				}
 			}
 			?>
-		</div>
-		<?php
+</div>
+<?php
 	}
 }

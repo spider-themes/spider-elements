@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Video_Playlist extends Widget_Base {
 	public function get_name() {
-		return 'docy_videos_playlist';
+		return 'spe_videos_playlist';
 	}
 
 	public function get_title() {
@@ -56,7 +56,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets' ];
+		return ['slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets', 'spe-script' ];
 	}
 
 	public function get_keywords() {

@@ -1,5 +1,5 @@
 <div class="feedback-section-two">
-    <div class="row feedback-slider-two testimonial-slider-<?php echo esc_attr($testimonial_id);?>">
+    <div class="feedback-slider-two testimonial-slider-<?php echo esc_attr($testimonial_id);?>">
         <?php if(!empty($testimonials6)): 
         foreach ($testimonials6 as $item ) : 
             $rating_data = $this->get_rating( $item['author_rating'] );
@@ -36,7 +36,7 @@
                     <?php endif; ?>
 
                     <?php if ( $testimonial_ratting_icon == 'yes' ) : ?>
-                    <?php echo esc_html($stars_element); ?>
+                    <?php echo $stars_element ?>
                     <?php endif; ?>
                 </div>
                 <?php
@@ -46,11 +46,11 @@
                 <?php
                 }
                 if ( !empty($item['author_name']) ) { ?>
-                <div class="block-footer d-flex align-items-center justify-content-between pt-35 lg-pt-20">
-                    <div class="d-flex align-items-center">
+                <div class="block-footer ezd-d-flex ezd-align-items-center ezd-justify-content-between pt-35 lg-pt-20">
+                    <div class="ezd-d-flex ezd-align-items-center">
                         <img src="<?php echo esc_url($item['author_image']['url']);?>" alt=""
-                            class="author-img rounded-circle">
-                        <div class="ms-3">
+                            class="author-img ezd-rounded-circle">
+                        <div class="ezd-ms-3">
                             <div class="name fw-500"><?php echo esc_html($item['author_name']); ?></div>
                             <span class="opacity-50"><?php echo esc_html($item['author_position']); ?></span>
                         </div>

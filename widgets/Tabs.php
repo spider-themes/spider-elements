@@ -55,7 +55,7 @@ class Tabs extends Widget_Base
 	 */
 	public function get_style_depends()
 	{
-		return ['bootstrap', 'elegant-icon', 'spe-main'];
+		return ['elegant-icon', 'spe-main'];
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Tabs extends Widget_Base
 	 */
 	public function get_script_depends()
 	{
-		return ['bootstrap', 'spe-el-widgets'];
+		return ['spe-el-widgets'];
 	}
 
 
@@ -134,7 +134,7 @@ class Tabs extends Widget_Base
 				'label'		=> esc_html__('Icon', 'spider-elements'),
 				'type'		=> Controls_Manager::ICONS,
 				'default'	=> [
-					'value'		=> 'fa-lightbulb',
+					'value'		=> 'far fa-lightbulb',
 					'library'	=> 'fa-regular',
 				],
 

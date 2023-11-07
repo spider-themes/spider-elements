@@ -3,17 +3,17 @@
         <div class="testimonial position-relative wow fadeInUp" data-wow-delay="0.2s">
             <div class="swiper testimonial-slide-4">
                 <div class="swiper-wrapper">
-                <?php
+                    <?php
                 if ( !empty($testimonials4)) :
                     foreach ($testimonials4 as $item) : ?>
                     <div class="swiper-slide">
-                        <div class="row align-items-center">
-                            <div class="col-md-5">
+                        <div class="ezd-grid ezd-grid-cols-12 align-items-center">
+                            <div class="ezd-md-col-5">
                                 <div class="testimonial-slider-img">
                                     <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="">
                                 </div>
                             </div>
-                            <div class="col-md-7">
+                            <div class="ezd-md-col-7">
                                 <div class="testimonial-content">
                                     <?php
                                     \Elementor\Icons_Manager::render_icon( $settings['quote_icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -56,5 +56,3 @@
         </div>
     </div>
 </section>
-
-

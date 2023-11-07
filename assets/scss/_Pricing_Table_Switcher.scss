@@ -1,11 +1,7 @@
 .tab-content {
   .fade {
-    transition: opacity .10s linear;
+    transition: opacity 0.1s linear;
   }
-}
-
-.fade:not(.show) {
-  opacity: 0;
 }
 
 //  pricing item two
@@ -76,7 +72,6 @@
     }
   }
 }
-
 
 .pricing-item-3 {
   box-shadow: 0 20px 50px 0 #0000000d;
@@ -218,7 +213,6 @@
   }
 }
 
-
 .pricing-switcher {
   position: relative;
   z-index: 99;
@@ -234,7 +228,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 600;
-    &:hover{
+    &:hover {
       color: unset;
     }
     &:before {
@@ -310,7 +304,6 @@
   }
 }
 
-
 /*================================================
 Pricing Two CSS
 =================================================*/
@@ -357,7 +350,6 @@ Pricing Two CSS
       }
     }
 
-
     .nav-link {
       border-radius: 23px;
       font-weight: 700;
@@ -378,7 +370,6 @@ Pricing Two CSS
     padding-top: 20px;
   }
 }
-
 
 .old-price,
 .current-price,
@@ -444,7 +435,7 @@ Pricing Two CSS
   width: 60%;
 }
 
-.pricing-compare-table>table {
+.pricing-compare-table > table {
   margin: 0;
 }
 
@@ -657,7 +648,6 @@ Pricing Two CSS
   }
 }
 
-
 /*================================================
 Pricing Two CSS
 =================================================*/
@@ -673,8 +663,6 @@ Pricing Two CSS
     position: fixed;
   }
 }
-
-
 
 .pricing-compare-table {
   & .feature-title {
@@ -790,30 +778,12 @@ Pricing Two CSS
   }
 }
 
-
-.tab-content {
-  .tab-pane {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-}
-
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-  cursor: pointer;
-}
-
-button {
-  border: none;
-  background: transparent;
-  outline: none;
-  cursor: pointer;
-}
+// button {
+//   border: none;
+//   background: transparent;
+//   outline: none;
+//   cursor: pointer;
+// }
 
 .pricing-item-2 .btn {
   position: relative;
@@ -870,7 +840,7 @@ button {
           width: 0;
           height: 9px;
           border-radius: 50%;
-          background-color: #EC595A;
+          background-color: #ec595a;
           position: absolute;
           left: 50%;
           top: 50%;
@@ -937,7 +907,7 @@ button {
 
     .btn-purchase {
       border-radius: 5px;
-      background-color: #EC595A;
+      background-color: #ec595a;
       color: #fff;
       transition: all 0.4s ease-in-out;
       font-size: 15px;
@@ -949,7 +919,7 @@ button {
 
       &:hover {
         background-color: #171717;
-        color: #EC595A;
+        color: #ec595a;
         text-decoration: none;
       }
     }
@@ -978,7 +948,7 @@ button {
   width: 0;
   height: 9px;
   border-radius: 50%;
-  background-color: #EC595A;
+  background-color: #ec595a;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1036,7 +1006,7 @@ button {
 }
 
 .cloud-pricing-item .label .tag {
-  color: #EC595A;
+  color: #ec595a;
   margin-left: 8px;
 }
 
@@ -1066,7 +1036,7 @@ button {
 
 .cloud-pricing-item .btn-purchase {
   border-radius: 5px;
-  background-color: #EC595A;
+  background-color: #ec595a;
   color: #fff;
   transition: all 0.4s ease-in-out;
   font-size: 15px;
@@ -1079,14 +1049,13 @@ button {
 
 .cloud-pricing-item .btn-purchase:hover {
   background-color: #171717;
-  color: #EC595A;
+  color: #ec595a;
   text-decoration: none;
 }
 
 .cloud-pricing-item:hover {
   box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 .app-pricing-area {
   .pricing-title {
@@ -1106,12 +1075,12 @@ button {
     margin-top: 0;
     font-size: 17px;
     font-family: "inter", sans-serif;
-    color: #5D5D66;
+    color: #5d5d66;
 
     .offer {
       font-family: "Kalam", cursive;
       font-weight: 700;
-      color: #EC595A;
+      color: #ec595a;
     }
   }
 
@@ -1160,7 +1129,6 @@ button {
 }
 
 .app-pricing-item {
-
   .btn {
     position: relative;
     font-size: 1.125rem;
@@ -1214,7 +1182,7 @@ button {
     margin-bottom: 33px;
 
     .dollar {
-      color: #EC595A;
+      color: #ec595a;
       font-size: 30px;
       line-height: 36px;
       font-weight: 700;
@@ -1228,7 +1196,7 @@ button {
     }
 
     .time {
-      color: #9199A1;
+      color: #9199a1;
       font-size: 18px;
       line-height: 36px;
     }
@@ -1253,11 +1221,11 @@ button {
   }
 
   .btn {
-    border-color: #EC595A;
-    color: #EC595A;
+    border-color: #ec595a;
+    color: #ec595a;
 
     &:hover {
-      background: #EC595A;
+      background: #ec595a;
       color: #fff;
       text-decoration: none;
     }
@@ -1331,7 +1299,7 @@ button {
 
     .list-wrapp {
       margin-bottom: 50px;
-      ul{
+      ul {
         padding-left: 0;
       }
       .list-title {

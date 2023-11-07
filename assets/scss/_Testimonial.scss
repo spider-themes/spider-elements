@@ -525,7 +525,7 @@
   :is(.swiper-button-next, .swiper-rtl .swiper-button-prev) {
     right: -50px;
   }
-    
+
   :is(.swiper-button-next, .swiper-rtl .swiper-button-prev)::after {
     content: "\f054";
   }
@@ -553,7 +553,6 @@
   :is(.swiper-button-prev, .swiper-rtl .swiper-button-next):hover {
     left: -65px;
   }
-
 }
 
 :is(.testimonial-slide-4) {
@@ -632,6 +631,8 @@
   }
 }
 .feedback-slider-one {
+  margin-left: -15px;
+  margin-right: 15px;
   .item {
     margin-left: 15px;
     margin-right: 15px;
@@ -1010,6 +1011,7 @@
     left: 0;
     bottom: 0;
     margin-bottom: 0;
+    list-style: none;
     li {
       width: 60px;
       height: 60px;
@@ -1093,7 +1095,6 @@
     }
   }
 }
-
 
 // testimonial 11 css
 .testimonial-area {
@@ -1223,6 +1224,14 @@
       .arrow {
         width: 70px;
       }
+    }
+  }
+}
+
+.testimonial-area {
+  .testimonial-slider {
+    .slick-prev.slick-arrow {
+      display: none !important;
     }
   }
 }

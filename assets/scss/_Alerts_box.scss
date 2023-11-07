@@ -17,11 +17,13 @@
     font-size: 16px;
     color: var(--spe_heading_color);
     font-weight: 500;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 
   p {
     margin-bottom: 0;
+    margin-top: 12px;
   }
 
   .close {
@@ -221,7 +223,6 @@
         }
       }
     }
-
   }
 }
 
@@ -241,11 +242,11 @@
 }
 
 .nic-alert .nic-content-wrap .note-box h5.title {
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .nic-alert .nic-content-wrap .note-box p {
-  margin-bottom: 3px
+  margin-bottom: 3px;
 }
 
 .nic-alert .nic-content-wrap .note-icon {
@@ -255,7 +256,7 @@
   position: absolute;
   top: 20px;
   left: 0;
-  color: white
+  color: white;
 }
 
 /* ALERT [MESSAGE && INFO] */
@@ -266,7 +267,7 @@
 
 .nic-alert.nic-alert-info .nic-content-wrap .note-icon,
 .nic-alert.nic-alert-message .nic-content-wrap .note-icon {
-  background: #4C5267;
+  background: #4c5267;
 }
 
 .nic-alert-message .note-icon .icon-wrapper::after,
@@ -322,7 +323,7 @@
 
 .dual-box-wrapper.bottom-right,
 .dual-box-wrapper.top-right {
-  right: -8px
+  right: -8px;
 }
 .dual-box-wrapper {
   .dual-box-content {
@@ -387,7 +388,7 @@
   box-sizing: border-box;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     clear: both;
     width: 1rem;
@@ -404,7 +405,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
     width: 1rem;
@@ -491,7 +492,7 @@
   }
 
   .block-notice-icon:after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
     width: 100%;
@@ -509,54 +510,49 @@
   }
 
   &.block-notice-info .block-notice-icon:after {
-    background: #F6F6FE;
+    background: #f6f6fe;
   }
 
   &.block-notice-success .block-notice-icon:after {
-    background: #459E6D;
+    background: #459e6d;
   }
 
   &.block-notice-danger .block-notice-icon:after {
-    background: #FFEFF0;
+    background: #ffeff0;
   }
 
   &.block-notice-message {
-
     &:before,
     &:after {
-      border-color: #4C5267;
+      border-color: #4c5267;
     }
   }
 
   &.block-notice-warning {
-
     &:before,
     &:after {
-      border-color: #F6BA18;
+      border-color: #f6ba18;
     }
   }
 
   &.block-notice-info {
-
     &:before,
     &:after {
-      border-color: #4C5267;
+      border-color: #4c5267;
     }
   }
 
   &.block-notice-success {
-
     &:before,
     &:after {
-      border-color: #30845E;
+      border-color: #30845e;
     }
   }
 
   &.block-notice-danger {
-
     &:before,
     &:after {
-      border-color: #FA303E;
+      border-color: #fa303e;
     }
   }
 
