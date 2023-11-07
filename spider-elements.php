@@ -443,7 +443,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
             require_once( __DIR__ . '/widgets/Counter.php' );
             require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
-
 		}
 
 		/**

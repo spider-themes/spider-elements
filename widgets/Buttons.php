@@ -26,11 +26,11 @@ class Buttons extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Buttons', 'spider-elements' );
+        return __( 'Button', 'spider-elements' );
     }
 
     public function get_icon() {
-        return 'eicon-button';
+        return 'eicon-button spe-icon';
     }
 
     public function get_keywords() {
@@ -140,10 +140,8 @@ class Buttons extends Widget_Base {
 	 * Author: spider-themes
 	 */
     protected function render() {
-
         $settings = $this->get_settings_for_display();
         extract($settings); // extract all settings array to variables converted to name of key
-
 
         //================= Template Parts =================//
         include "templates/buttons/button-{$settings['style']}.php";
