@@ -207,14 +207,26 @@
 }
 
 /* image hover style  */
-.himage1{
-    background: url("../images/el-editor-preview/image-hover2.png");
+.img_hover1{
+    background: url("../images/el-editor-preview/image_hover2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
-.himage2{
-    background: url("../images/el-editor-preview/image-hover1.png");
+.img_hover2{
+    background: url("../images/el-editor-preview/image_hover1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+}.img_hover3{
+    background: url("../images/el-editor-preview/image_hover3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+}.img_hover4{
+    background: url("../images/el-editor-preview/image_hover4.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -276,4 +288,73 @@
     padding: 3px 4px;
     margin-left: 5px;
     vertical-align: middle;
+}
+
+/*====Pricing style====*/
+.pricing_style1::before {
+    background: url("../images/el-editor-preview/pricing_style1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.pricing_style2::before {
+    background: url("../images/el-editor-preview/pricing_style2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.pricing_style3::before {
+    background: url("../images/el-editor-preview/pricing_style3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.pricing_style4::before {
+    background: url("../images/el-editor-preview/pricing_style4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.pricing_style5::before {
+    background: url("../images/el-editor-preview/pricing_style5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.pricing_style6::before {
+    background: url("../images/el-editor-preview/pricing_style6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.pricing_style7::before {
+    background: url("../images/el-editor-preview/pricing_style7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+/*========Stackey image style==========*/
+.style1::before {
+    background: url("../images/el-editor-preview/quote_img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.style2::before {
+    background: url("../images/el-editor-preview/stack_img_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.style3::before {
+    background: url("../images/el-editor-preview/stacky_img3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.style4::before {
+    background: url("../images/el-editor-preview/stacky_img4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }

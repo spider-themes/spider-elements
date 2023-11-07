@@ -16,6 +16,8 @@
         position: relative;
         text-decoration: none;
         margin-bottom: 0px!important;
+        display: flex;
+        align-items: center;
 
         &:before {
           content: "";
@@ -81,6 +83,8 @@
   .nav-tabs {
     .nav-item {
       .nav-link {
+        display: flex;
+        align-items: center;
         border: none;
         box-shadow: none;
         background: transparent;

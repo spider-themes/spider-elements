@@ -441,6 +441,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
             require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
             require_once( __DIR__ . '/widgets/Instagram.php' );
+            require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
 
 		}
 
@@ -475,6 +476,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Marquee_Slides() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Counter() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Instagram() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\FullScreen_slider() );
 		}
 
 

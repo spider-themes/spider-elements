@@ -88,18 +88,56 @@ class Pricing_Table_Switcher extends Widget_Base {
             ]
         );
 
+//        $this->add_control(
+//            'style', [
+//                'label'   => esc_html__( 'Style', 'spider-elements' ),
+//                'type'    => Controls_Manager::SELECT,
+//                'options' => [
+//                    '1' => esc_html__( '01: Button Switcher', 'spider-elements' ),
+//                    '2' => esc_html__( '02: Tab Switcher', 'spider-elements' ),
+//                    '3' => esc_html__( '03: Pricing Cloud', 'spider-elements' ),
+//                    '4' => esc_html__( '04: Button Switcher', 'spider-elements' ),
+//                    '5' => esc_html__( '05: Button Switcher', 'spider-elements' ),
+//                    '6' => esc_html__( '06: Tab Switcher', 'spider-elements' ),
+//                    '7' => esc_html__( '07: Button Switcher', 'spider-elements' ),
+//                ],
+//                'default' => '1',
+//            ]
+//        );
+
         $this->add_control(
             'style', [
-                'label'   => esc_html__( 'Style', 'spider-elements' ),
-                'type'    => Controls_Manager::SELECT,
-                'options' => [
-                    '1' => esc_html__( '01: Button Switcher', 'spider-elements' ),
-                    '2' => esc_html__( '02: Tab Switcher', 'spider-elements' ),
-                    '3' => esc_html__( '03: Pricing Cloud', 'spider-elements' ),
-                    '4' => esc_html__( '04: Button Switcher', 'spider-elements' ),
-                    '5' => esc_html__( '05: Button Switcher', 'spider-elements' ),
-                    '6' => esc_html__( '06: Tab Switcher', 'spider-elements' ),
-                    '7' => esc_html__( '07: Button Switcher', 'spider-elements' ),
+                'label'		=> esc_html__( 'Pricing Style', 'spider-elements' ),
+                'type' 		=> Controls_Manager::CHOOSE,
+                'options'	=> [
+                    '1' => [
+                        'icon' 	=> 'pricing_style1',
+                        'title'	=> esc_html__( '01 : Button Switcher', 'spider-elements')
+                    ],
+                    '2' => [
+                        'icon' 	=> 'pricing_style2',
+                        'title'	=> esc_html__( '02 : Tab Switcher', 'spider-elements'),
+                    ],
+                    '3' => [
+                        'icon' 	=> 'pricing_style3',
+                        'title'	=> esc_html__( '03 : Pricing Cloud', 'spider-elements'),
+                    ],
+                    '4' => [
+                        'icon' 	=> 'pricing_style4',
+                        'title'	=> esc_html__( '04 : Button Switcher', 'spider-elements'),
+                    ],
+                    '5' => [
+                        'icon' 	=> 'pricing_style5',
+                        'title'	=> esc_html__( '05 : Button Switcher', 'spider-elements'),
+                    ],
+                    '6' => [
+                        'icon' 	=> 'pricing_style6',
+                        'title'	=> esc_html__( '06 : Tab Switcher', 'spider-elements'),
+                    ],
+                    '7' => [
+                        'icon' 	=> 'pricing_style7',
+                        'title'	=> esc_html__( '07 : Button Switcher', 'spider-elements'),
+                    ],
                 ],
                 'default' => '1',
             ]

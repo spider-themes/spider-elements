@@ -240,7 +240,7 @@ class Tabs extends Widget_Base
 				'label_on' 		=> esc_html__('Show', 'spider-elements'),
 				'label_off' 	=> esc_html__('Hide', 'spider-elements'),
 				'return_value'	=> 'yes',
-				'default' 		=> 'no',
+				'default' 		=> 'on',
 				'separator' 	=> 'before'
 			]
 		);
@@ -304,7 +304,7 @@ class Tabs extends Widget_Base
 	 */
 	public function elementor_style_control() {
 
-		//============================ Tab Style ============================//
+		//============================ Tab Title Style ============================//
 		$this->start_controls_section(
 			'style_tabs_sec',
 			[
@@ -317,7 +317,7 @@ class Tabs extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'tab_item_typo',
-				'selector' 	=> '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link, {{WRAPPER}} .header_tab_items .nav.nav-tabs li a',
+				'selector' 	=> '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link, {{WRAPPER}} .header_tab_items .nav-tabs .nav-item .nav-link',
 				'separator'	=> 'before',
 			]
 		);
@@ -343,7 +343,7 @@ class Tabs extends Widget_Base
 					'unit' 	=> 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link i ' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link i, {{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link i ' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -355,6 +355,7 @@ class Tabs extends Widget_Base
                 'size_units'	=> [ 'px', '%', 'em' ],
                 'selectors'		=> [
                     '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -366,10 +367,24 @@ class Tabs extends Widget_Base
 				'type'			=> Controls_Manager::DIMENSIONS,
 				'size_units'	=> ['px', '%', 'em'],
 				'selectors'		=> [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link, {{WRAPPER}} .header_tab_items .nav.nav-tabs li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
+
+        $this->add_responsive_control(
+            'title_border_radius',
+            [
+                'label' 		=> __('Border Radius', 'spider-elements'),
+                'type' 			=> Controls_Manager::DIMENSIONS,
+                'size_units'	=> ['px', '%', 'em'],
+                'selectors' 	=> [
+                    '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
 		$this->add_control(
 			'tab_title_hr',
@@ -402,15 +417,31 @@ class Tabs extends Widget_Base
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name' 		=> 'normal_tab_title_bg_color',
-				'types' 	=> [ 'classic', 'gradient' ],
-				'exclude' 	=> [ 'image' ],
-				'selector'	=> '{{WRAPPER}} .tab_shortcode .tab-item-title, {{WRAPPER}} .header_tab_items .spe_tab_title',
-			]
-		);
+//		$this->add_group_control(
+//			\Elementor\Group_Control_Background::get_type(),
+//			[
+//				'name' 		=> 'normal_tab_title_bg_color',
+//				'types' 	=> [ 'classic', 'gradient' ],
+//				'exclude' 	=> [ 'image' ],
+//                'selectors' =>
+//                    '{{WRAPPER}} .tab_shortcode .spe_tab_title,
+//                    {{WRAPPER}} .header_tab_items .spe_tab_title',
+//			]
+//		);
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' 		=> 'normal_tab_title_bg_color',
+                'types' 	=> [ 'classic', 'gradient' ],
+                'exclude' 	=> [ 'image' ],
+                'selector'	=>
+                    '{{WRAPPER}} .tab_shortcode .tab-item-title, 
+					{{WRAPPER}} .header_tab_items .spe_tab_title',
+
+            ]
+        );
+
 
 		$this->add_control(
 			'normal_tab_icon_bg_color',
@@ -446,16 +477,17 @@ class Tabs extends Widget_Base
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name' 		=> 'hover_tab_title_bg_color',
-				'types' 	=> [ 'classic', 'gradient' ],
-				'exclude' 	=> [ 'image' ],
-				'selector'	=> 
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover',
-			]
-		);
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' 		=> 'hover_tab_title_bg_color',
+                'types' 	=> [ 'classic', 'gradient' ],
+                'exclude' 	=> [ 'image' ],
+                'selector'	=>
+                    '{{WRAPPER}} .tab_shortcode .tab-item-title:hover,
+					{{WRAPPER}} .header_tab_items .spe_tab_title:hover',
+            ]
+        );
 
 		$this->end_controls_tab(); //End Hover Tab Title
 
@@ -542,7 +574,7 @@ class Tabs extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' 		=> 'tabs_content_typo',
-                'selector' 	=> '{{WRAPPER}} .tab_shortcode .tab-content',
+                'selector' 	=> '{{WRAPPER}} .tab-content .tab_style',
                 'separator'	=> 'before',
             ]
         );
@@ -551,9 +583,9 @@ class Tabs extends Widget_Base
             'tabs_content_text_color',
             [
                 'label' 	=> __('Text Color', 'spider-elements'),
-                'type' 		=> Controls_Manager::COLOR,
-                'selectors'	=> array(
-                    '{{WRAPPER}} .tab_shortcode .tab-content' => 'color: {{VALUE}}',
+                'type'		=> Controls_Manager::COLOR,
+                'selectors' => array(
+                    '{{WRAPPER}} .tab-content .tab_style, {{WRAPPER}} .tab-content .tab-pane' => 'color: {{VALUE}}',
                 )
             ]
         );
@@ -597,7 +629,7 @@ class Tabs extends Widget_Base
 			[
 				'name' 		=> 'content_background',
 				'types' 	=> ['classic', 'gradient'],
-				'selector'	=> '{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content',
+				'selector'	=> '{{WRAPPER}} .tab-content',
 			]
 		);
 

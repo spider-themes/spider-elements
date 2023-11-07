@@ -1,5 +1,6 @@
 <?php
 add_image_size( 'spe_270x152', 270, 152, true); // Video Playlist Thumb
+add_image_size( 'spe_120x70', 120, 70, true); // Fullscreen slider Thumb 01
 
 /**
  * Constants for widgets badge

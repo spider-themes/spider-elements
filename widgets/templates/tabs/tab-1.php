@@ -42,7 +42,7 @@
             $active = $tab_count == 1 ? 'show active' : '';
             $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', 'tabs', $index );
             $this->add_render_attribute( $tab_content_setting_key, [
-                'class' => [ 'tab-pane p-0', 'fade', $active ],
+                'class' => [ 'tab-pane p-0 tab_style', 'fade', $active ],
                 'id' => 'tab-content-' . $id_int . $tab_count,
                 'aria-labelledby' => 'tab-'.$id_int . $tab_count,
                 'role' => 'tabpanel',
