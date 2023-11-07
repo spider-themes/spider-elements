@@ -1,4 +1,7 @@
 <?php
+
+use Spider_Elements_Assets\includes\Admin\Module_Settings;
+
 add_image_size( 'spe_270x152', 270, 152, true); // Video Playlist Thumb
 
 /**
@@ -487,3 +490,46 @@ function spe_get_query_post_list($post_type = 'any', $limit = -1, $search = '') 
 	}
 	return $data;
 }
+
+/*
+add_action('admin_head', function () {
+
+	echo 'Hello sdfdsf';
+	echo get_option('spider_elements_save_settings');
+
+	update_post_meta(1, 'docy_accordion', 1);
+	echo get_post_meta(1, 'docy_accordion', true);
+
+});*/
+
+
+add_action('admin_head', function() {
+
+	$elements = Module_Settings::get_widget_settings();
+	$names = array(); // Create an array to store the 'name' values
+
+	/*if (!empty($elements)) {
+		foreach ($elements as $element) {
+			if (is_array($element)) {
+				foreach ($element as $k => $v) {
+					if ($k == 'name') {
+						$names[$v] = $v; // Add the 'name' value to the $names array
+					}
+				}
+			}
+		}
+	}*/
+
+	if ( isset($_POST['elements-submit'])) {
+		$elements = Module_Settings::get_widget_settings();
+
+	}
+
+	echo '<pre>';
+	print_r($names);
+	echo '</pre>';
+
+	// Now you can save the serialized names into an option
+	update_option('spider_elements_names_option', $names);
+
+});

@@ -1,9 +1,11 @@
 <?php
 use Spider_Elements_Assets\includes\Admin\Module_Settings;
 
-$elements = Module_Settings::get_widget_settings( function ( $settings ) {
-	return $settings[ 'settings_fields' ];
-} );
+$elements = Module_Settings::get_widget_settings();
+
+
+//$update_1 = update_post_meta( 1, 'spider_elements_save_settings', $elements );
+
 ?>
 <div id="elements" class="spe-tab-box">
     <div class="spe_elements_tab_menu">
@@ -19,12 +21,13 @@ $elements = Module_Settings::get_widget_settings( function ( $settings ) {
             <div class="plugin_active_switcher">
                 <label class="toggler" id="disable"><?php esc_html_e( 'Disable All', 'spider-elements' ); ?></label>
                 <div class="toggle">
-                    <input type="checkbox" data-id="spe-widget-list" id="switcher" class="check spe_element_global_switcher">
+                    <input type="checkbox" data-id="spe-widget-list" id="switcher"
+                           class="check spe_element_global_switcher">
                     <label class="b switch" for="switcher"></label>
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>
             </div>
-            <button type="submit" class="spe_dashboard_btn save_btn">
+            <button type="submit" name="elements-submit" class="spe_dashboard_btn save_btn">
 				<?php esc_html_e( 'Save Changes', 'spider-elements' ); ?>
             </button>
         </div>
@@ -45,55 +48,67 @@ $elements = Module_Settings::get_widget_settings( function ( $settings ) {
     <div class="spe_filter_content ezd-d-flex" id="elements_gallery">
 		<?php
 		if ( is_array( $elements ) ) {
-			foreach ( $elements as $key => $element ) {
-				foreach ( $element as $item ) {
-					$widget_type   = $item[ 'widget_type' ];
-					$is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
-					?>
-                    <div class="ezd-colum-space-4 <?php echo esc_attr( $item[ 'widget_type' ] ) ?>">
-                        <div class="spe_element_box spe_element_switch badge">
-                            <div class="spe_element_content">
+			foreach ( $elements as $item ) {
+				$widget_type   = $item[ 'widget_type' ] ?? '';
+				$is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
+				?>
+                <div class="ezd-colum-space-4 <?php echo esc_attr( $item[ 'widget_type' ] ) ?>">
+                    <div class="spe_element_box spe_element_switch badge">
+                        <div class="spe_element_content">
+							<?php
+							if ( ! empty( $item[ 'icon' ] ) ) { ?>
+                                <i class="<?php echo esc_attr( $item[ 'icon' ] ) ?>"></i>
 								<?php
-								if ( ! empty( $item[ 'icon' ] ) ) { ?>
-                                    <i class="<?php echo esc_attr( $item[ 'icon' ] ) ?>"></i>
-									<?php
-								}
-								if ( ! empty( $item[ 'label' ] ) ) { ?>
-                                    <label for="<?php echo esc_attr($item['name']) ?>"><?php echo esc_html( $item[ 'label' ] ) ?></label>
-									<?php
-								}
-								?>
-                            </div>
-                            <div class="spe_element_right">
+							}
+							if ( ! empty( $item[ 'label' ] ) ) { ?>
+                                <label for="<?php echo esc_attr( $item[ 'name' ] ) ?>"><?php echo esc_html( $item[ 'label' ] ) ?></label>
 								<?php
-								if ( ! empty( $item[ 'label' ] ) ) {
-									?>
-                                    <div class="spe_link">
-                                        <a href="<?php echo esc_url( $item[ 'demo_url' ] ) ?>" class="tooltip-top"
-                                           data-tooltip="<?php printf( esc_attr__( 'View %s Widget Demo',
-											   'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
-                                            <img src="<?php echo SPE_IMG . '/icon1.svg' ?>"
-                                                 alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
-                                        </a>
-                                        <a href="<?php echo esc_url( $item[ 'video_url' ] ) ?>" class="tooltip-top"
-                                           data-tooltip="<?php printf( esc_attr__( 'View %s Video Tutorial',
-											   'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
-                                            <img src="<?php echo SPE_IMG . '/icon2.svg' ?>"
-                                                 alt="<?php esc_attr_e( 'Video Tutorial', 'spider-elements' ); ?>">
-                                        </a>
-                                    </div>
-									<?php
-								}
+							}
+							?>
+                        </div>
+                        <div class="spe_element_right">
+							<?php
+							if ( ! empty( $item[ 'label' ] ) ) {
 								?>
-                                <label<?php echo esc_attr( $is_pro_widget ) ?>>
-                                    <input type="checkbox" class="spe_widget_checkbox spe-widget-list" name="<?php echo esc_attr($item['name']) ?>" id="<?php echo esc_attr($item['name']) ?>">
-                                    <span class="spe_widget_switcher"></span>
-                                </label>
-                            </div>
+                                <div class="spe_link">
+                                    <a href="<?php echo esc_url( $item[ 'demo_url' ] ) ?>" class="tooltip-top"
+                                       data-tooltip="<?php printf( esc_attr__( 'View %s Widget Demo',
+										   'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
+                                        <img src="<?php echo SPE_IMG . '/icon1.svg' ?>"
+                                             alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
+                                    </a>
+                                    <a href="<?php echo esc_url( $item[ 'video_url' ] ) ?>" class="tooltip-top"
+                                       data-tooltip="<?php printf( esc_attr__( 'View %s Video Tutorial',
+										   'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
+                                        <img src="<?php echo SPE_IMG . '/icon2.svg' ?>"
+                                             alt="<?php esc_attr_e( 'Video Tutorial', 'spider-elements' ); ?>">
+                                    </a>
+                                </div>
+								<?php
+							}
+							?>
+                            <label<?php echo esc_attr( $is_pro_widget ) ?> class="eael-switch">
+
+                                <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
+                                       name="<?php echo esc_attr( $item[ 'name' ] ) ?>"
+                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>">
+
+
+								<?php
+								/*$status   = isset( $item['is_pro'] ) ? 'disabled' : checked( 1, $item[ 'name' ], false );
+
+                                printf( '<input class="eael-widget-item eael-elements-list" id="%1$s" name="%1$s"
+                                           type="checkbox" %2$s>', $item[ 'name' ], $status )*/
+
+								?>
+
+
+                                <span class="spe_widget_switcher"></span>
+                            </label>
                         </div>
                     </div>
-					<?php
-				}
+                </div>
+				<?php
 			}
 		}
 		?>
@@ -105,17 +120,44 @@ $elements = Module_Settings::get_widget_settings( function ( $settings ) {
     <div class="message_content ezd-text-center">
         <div class="close-pro">
             <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>"
-                 alt="<?php esc_attr_e('Popup Close', 'spider-elements'); ?>">
+                 alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>" alt="<?php esc_attr_e('Popup Pro Diamond', 'spider-elements'); ?>">
+            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>"
+                 alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
         </div>
         <div class="pro-content">
-            <h3><?php esc_html_e('Go Pro', 'spider-elements'); ?></h3>
-            <p><?php esc_html_e('Upgrade to Pro Version for Unlock more features!', 'spider-elements'); ?></p>
+            <h3><?php esc_html_e( 'Go Pro', 'spider-elements' ); ?></h3>
+            <p><?php esc_html_e( 'Upgrade to Pro Version for Unlock more features!', 'spider-elements' ); ?></p>
             <a href="#" class="spe_dashboard_btn" target="_blank">
-                <?php esc_html_e('Confirme', 'spider-elements'); ?>
+				<?php esc_html_e( 'Confirm', 'spider-elements' ); ?>
             </a>
         </div>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('.spe_widget_checkbox').on('change', function() {
+            var isChecked = $(this).is(':checked');
+            var widgetName = $(this).attr('name');
+
+            // Send an AJAX request to your WordPress backend
+            $.ajax({
+                type: 'POST',
+                url: ajaxurl,  // This global variable is available in the WordPress admin
+                data: {
+                    action: 'update_widget_status',
+                    widgetName: widgetName,
+                    isChecked: isChecked
+                },
+                success: function(response) {
+                    // Handle the response from the server if needed
+                }
+            });
+        });
+    });
+
+</script>

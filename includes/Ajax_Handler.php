@@ -8,6 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Ajax_Handler {
 
+
+	/**
+	 * Ajax_Handler constructor.
+	 */
 	public function __construct() {
 
 		$this->init_ajax_hooks();
@@ -15,6 +19,9 @@ class Ajax_Handler {
 	}
 
 
+	/**
+	 * Init ajax hooks
+	 */
 	public function init_ajax_hooks() {
 
 		//Admin Settings
@@ -30,7 +37,21 @@ class Ajax_Handler {
 
 	public function save_settings() {
 
-		echo 'Hello World!';
+		if ( isset( $_POST['data'] ) ) {
+
+			$data = $_POST['data'];
+
+			$settings = get_option( 'spider_elements_save_settings' );
+
+			$settings['spider_elements_save_settings'] = $data;
+
+			update_option( 'spider_elements_save_settings', $settings );
+
+			wp_send_json_success( $settings );
+
+		}
+
+		wp_send_json_error();
 
 	}
 

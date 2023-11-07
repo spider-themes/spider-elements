@@ -194,8 +194,8 @@
         });
 
         // Global Switcher for all widgets
-        let elementsGlobalWidgetSwitcher = $('.spe_element_global_switcher');
-        elementsGlobalWidgetSwitcher.on('click', function () {
+        let globalSwitcher = $('.menu_right_content .spe_element_global_switcher');
+        globalSwitcher.on('click', function () {
             let status = $(this).prop('checked');
             let dataId = $(this).data('id');
             let alignClass = '.spe_widget_checkbox.' + dataId + ':enabled';
@@ -212,8 +212,8 @@
 
 
         // Individual Switcher for each widget
-        let elementsWidgetSwitcher = $('.spe-widget-list:checked');
-        elementsWidgetSwitcher.on('click', function () {
+        let widgetSwitcher = $('.spe_element_right .spe-widget-list:checked');
+        widgetSwitcher.on('click', function () {
             $('.spe_dashboard_btn')
                 .addClass('save-now')
                 .removeAttr('disabled')
@@ -224,7 +224,9 @@
         let elementsSettingBtn = $('.spe_elements_tab_menu .menu_right_content .save_btn')
         elementsSettingBtn.on('click', function (event) {
             event.preventDefault();
-            elementsSettingBtn.attr('disabled', 'value').css('cursor', 'not-allowed');
+
+            alert('Saved Successfully');
+
         });
 
     }
