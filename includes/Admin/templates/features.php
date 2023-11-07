@@ -5,33 +5,34 @@
                 <i class="icon-feature_two"></i>
             </div>
             <div class="content">
-                <h3>Features</h3>
+                <h3><?php esc_html_e('Features', 'spider-elements'); ?></h3>
             </div>
         </div>
         <div class="menu_right_content">
             <div class="plugin_active_switcher">
-                <label class="toggler" id="disable">Disable All</label>
+                <label class="toggler" id="disable"><?php esc_html_e('Disable All', 'spider-elements'); ?></label>
                 <div class="toggle">
                     <input type="checkbox" id="f_switcher" class="check">
                     <label class="b switch" for="f_switcher"></label>
                 </div>
-                <label class="toggler" id="enabled">Enabled All</label>
+                <label class="toggler" id="enabled"><?php esc_html_e('Enabled All', 'spider-elements'); ?></label>
             </div>
             <button type="submit" class="spe_dashboard_btn">
-                Save Changes</button>
+                <?php esc_html_e('Save Changes', 'spider-elements'); ?>
+            </button>
         </div>
     </div>
 
 
     <div class="spe_elements_tab" id="elements_filter">
         <div class="spe_fiter_data active" data-filter="*">
-            <i class="icon-star"></i>All
+            <i class="icon-star"></i><?php esc_html_e('All', 'spider-elements'); ?>
         </div>
         <div class="spe_fiter_data" data-filter=".f_free">
-            <i class="icon-gift"></i>Free
+            <i class="icon-gift"></i><?php esc_html_e('Free', 'spider-elements'); ?>
         </div>
         <div class="spe_fiter_data" data-filter=".f_pro">
-            <i class="icon-pro-badge"></i>Pro
+            <i class="icon-pro-badge"></i><?php esc_html_e('Pro', 'spider-elements'); ?>
         </div>
     </div>
 

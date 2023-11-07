@@ -1,11 +1,11 @@
 <div id="dashboard" class="spe-tab-box active">
     <div class="spe_dashboard_banner">
-        <img src="<?php echo SPE_IMG ?>/dashboard-img/spe-log.png; ?>" alt="spe-logo">
+        <img src="<?php echo SPE_IMG . '/dashboard-img/spe-log.png' ?>" alt="<?php esc_attr_e('Dashboard Banner', 'spider-elements'); ?>">
     </div>
     <div class="ezd-grid ezd-grid-cols-12">
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
-                <h3>All Widget</h3>
+                <h3><?php esc_html_e('All Widgets', 'spider-elements'); ?></h3>
                 <div class="circle_progress">
                     <svg class="radial-progress" data-percentage="85" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
@@ -22,7 +22,7 @@
         </div>
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
-                <h3>Core</h3>
+                <h3><?php esc_html_e('Core', 'spider-elements'); ?></h3>
                 <div class="circle_progress">
                     <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
@@ -128,7 +128,7 @@
         </div>
         <div class="ezd-lg-col-6">
             <div class="spe_support_item dashboard_img">
-                <img src="<?php echo SPE_IMG ?>/dashboard-img/table_work.png; ?>" alt="work">
+                <img src="<?php echo SPE_IMG . '/dashboard-img/table_work.png' ?>" alt="work">
             </div>
         </div>
         <div class="ezd-lg-col-6">
