@@ -2,7 +2,6 @@
 /**
  * Use namespace to avoid conflict
  */
-
 namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Border;

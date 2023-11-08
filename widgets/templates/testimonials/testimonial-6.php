@@ -8,10 +8,9 @@
                 <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
                     <div class="feedback-block-one">
 						<?php
-						if ( ! empty( $item[ 'company_image' ][ 'url' ] ) ) { ?>
+						if ( ! empty( $item[ 'company_image' ][ 'id' ] ) ) { ?>
                             <div class="logo">
-
-                                <img src="<?php echo esc_url( $item[ 'company_image' ][ 'url' ] ); ?>" alt="">
+								<?php echo wp_get_attachment_image( $item[ 'company_image' ][ 'id' ], 'full' ) ?>
                             </div>
 							<?php
 						}
@@ -21,14 +20,11 @@
 							<?php
 						}
 						if ( ! empty( $item[ 'author_name' ] ) ) { ?>
-                            <div class="name"><span
-                                        class="fw-500"><?php echo esc_html( $item[ 'author_name' ] ); ?></span>
+                            <div class="name"><span class="fw-500"><?php echo esc_html( $item[ 'author_name' ] ); ?></span>
 								<?php echo esc_html( $item[ 'author_position' ] ); ?></div>
 							<?php
 						}
-						?>
 
-						<?php
 						if ( 'star_fontawesome' === $settings[ 'star_style' ] ) {
 							if ( 'outline' === $settings[ 'unmarked_star_style' ] ) {
 								$icon = '&#xE933;';

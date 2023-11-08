@@ -94,7 +94,7 @@
                                                                 <div class="video_tab_img">
                                                                     <img loading="lazy" width="60" height="40"
                                                                          src="<?php echo esc_url( $child_video[ 'thumbnail' ][ 'url' ] ) ?>"
-                                                                         alt="video-thumbnails"/>
+                                                                         alt="<?php esc_attr_e('video-thumbnails', 'spider-elements'); ?>"/>
                                                                 </div>
                                                             </div>
 														<?php endif ?>
@@ -108,7 +108,7 @@
                                                                                   aria-label="person outline"></ion-icon>
 																		<?php
 																		$author = $child_video[ 'current_author' ] ?? '';
-																		echo ucwords( $author );
+																		echo esc_html(ucwords( $author ));
 																		?>
                                                                     </div>
                                                                     <div>

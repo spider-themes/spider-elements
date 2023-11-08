@@ -6,7 +6,8 @@
         <div class="col-xxl-7 col-lg-6 order-lg-first">
             <div class="bg-wrapper position-relative me-xxl-4 md-mt-40 md-mb-40">
                 <div class="icon d-flex align-items-center justify-content-center rounded-circle">
-                    <img src="<?php echo esc_url( $settings[ 'quote_img' ][ 'url' ] ); ?>" alt="" class="lazy-img">
+					<?php echo wp_get_attachment_image( $settings[ 'quote_img' ][ 'id' ], 'full', false,
+						[ 'class' => 'lazy-img' ] ) ?>
                 </div>
                 <div class="feedback-slider-three-a">
 					<?php if ( ! empty( $testimonials10 ) ):
@@ -39,7 +40,8 @@
 			<?php if ( ! empty( $testimonials10 ) ):
 				foreach ( $testimonials10 as $item ):?>
                     <div class="item">
-                        <img src="<?php echo esc_url( $item[ 'author_image' ][ 'url' ] ); ?>" alt="" class="lazy-img">
+						<?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full', false,
+							[ 'class' => 'lazy-img' ] ) ?>
                     </div>
 				<?php endforeach; endif; ?>
         </div>

@@ -43,7 +43,7 @@ if ( $is_preloader == '1' ) {
                                 <a href="#">
                                     <h4> <?php echo esc_html( $child_video[ 'title2' ] ); ?> </h4>
                                 </a>
-								<?php echo wpautop( $child_video[ 'video_caption' ] ); ?>
+	                            <?php echo wpautop( esc_html( $child_video[ 'video_caption' ] ) ); ?>
                                 <div class="video_user">
                                     <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ) ?>">
                                         <ion-icon

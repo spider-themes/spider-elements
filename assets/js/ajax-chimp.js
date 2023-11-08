@@ -2,40 +2,18 @@
 Mailchimp Ajax Submit
 jQuery Plugin
 Author: Siddharth Doshi
-
-Use:
-===
-$('#form_id').ajaxchimp(options);
-
-- Form should have one <input> element with attribute 'type=email'
-- Form should have one label element with attribute 'for=email_input_id' (used to display error/success message)
-- All options are optional.
-
-Options:
-=======
-options = {
-    language: 'en',
-    callback: callbackFunction,
-    url: 'http://blahblah.us1.list-manage.com/subscribe/post?u=5afsdhfuhdsiufdba6f8802&id=4djhfdsh99f'
-}
-
-Notes:
-=====
-To get the mailchimp JSONP url (undocumented), change 'post?' to 'post-json?' and add '&c=?' to the end.
-For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsiufdba6f8802&id=4djhfdsh99f&c=?',
 */
-
-(function ($) {
+;(function ($) {
     'use strict';
 
     $.ajaxChimp = {
         responses: {
-            'You are sent to a welcome message and will be being sent our latest newsletters time to time'                                             : 0,
-            'Please enter a value'                                                              : 1,
-            'An email address must contain a single @'                                          : 2,
-            'The domain portion of the email address is invalid (the portion after the @: )'    : 3,
-            'The username portion of the email address is invalid (the portion before the @: )' : 4,
-            'This email address looks fake or invalid. Please enter a real email address'       : 5
+            'You are sent to a welcome message and will be being sent our latest newsletters time to time': 0,
+            'Please enter a value': 1,
+            'An email address must contain a single @': 2,
+            'The domain portion of the email address is invalid (the portion after the @: )': 3,
+            'The username portion of the email address is invalid (the portion before the @: )': 4,
+            'This email address looks fake or invalid. Please enter a real email address': 5
         },
         translations: {
             'en': null
@@ -46,7 +24,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
     };
 
     $.fn.ajaxChimp = function (options) {
-        $(this).each(function(i, elem) {
+        $(this).each(function (i, elem) {
             var form = $(elem);
             var email = form.find('input[type=email]');
             var label = form.find('label[for=' + email.attr('id') + ']');
@@ -63,6 +41,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
             form.submit(function () {
                 var msg;
+
                 function successCallback(resp) {
                     if (resp.result === 'success') {
                         msg = 'You are sent to a welcome message and will be being sent our latest newsletters time to time.';
@@ -86,8 +65,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                                     msg = resp.msg;
                                 }
                             }
-                        }
-                        catch (e) {
+                        } catch (e) {
                             index = -1;
                             msg = resp.msg;
                         }
@@ -129,7 +107,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
                 // Translate and display submit message
                 var submitMsg = 'Submitting...';
-                if(
+                if (
                     settings.language !== 'en'
                     && $.ajaxChimp.translations
                     && $.ajaxChimp.translations[settings.language]

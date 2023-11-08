@@ -241,5 +241,5 @@ class Marquee_Slides extends Widget_Base {
 		extract( $settings ); //extract all settings array to variables converted to name of key
 		//======================== Template Parts ==========================//
 		include "templates/marquee/marquee-{$settings['style']}.php";
-    }
+	}
 }

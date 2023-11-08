@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'Spider_Elements') ) {
+if ( ! class_exists( 'Spider_Elements' ) ) {
 
 	/**
 	 * Class Spider_Elements
@@ -281,9 +281,10 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			if ( isset( $screen->parent_file ) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id ) {
 				return;
 			}
-			$plugin = 'elementor/elementor.php';
-			$plugin_name = 'Spider Elements';
-			$installed_plugins = get_plugins();
+
+			$plugin                 = 'elementor/elementor.php';
+			$plugin_name            = esc_html__( 'Spider Elements', 'spider-elements' );
+			$installed_plugins      = get_plugins();
 			$is_elementor_installed = isset( $installed_plugins[ $plugin ] );
 
 			if ( $is_elementor_installed ) {
@@ -291,19 +292,25 @@ if ( ! class_exists( 'Spider_Elements') ) {
 					return;
 				}
 				$button_text = __( 'Activate Elementor', 'spider-elements' );
-				$button_link = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
-				$message     = __('<strong>'.$plugin_name.'</strong> requires <strong>Elementor</strong> plugin to be active. Please activate Elementor to continue.', 'spider-elements');
+				$button_link = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s',
+					'activate-plugin_' . $plugin );
+				$message     = sprintf( __( '<strong>%1$s</strong> requires <strong>Elementor</strong> plugin to be active. Please activate Elementor to continue.',
+					'spider-elements' ), $plugin_name
+				);
 			} else {
 				if ( ! current_user_can( 'install_plugins' ) ) {
 					return;
 				}
 				$button_text = __( 'Install Elementor', 'spider-elements' );
-				$button_link = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
-				$message     = sprintf(__('<strong>'.$plugin_name.' requires Elementor</strong> plugin to be installed and activated. Please install Elementor to continue.', 'spider-elements'), '<strong>', '</strong>');
+				$button_link = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ),
+					'install-plugin_elementor' );
+				$message     = sprintf( __( '<strong>%1$s requires Elementor</strong> plugin to be installed and activated. Please install Elementor to continue.',
+					'spider-elements' ), $plugin_name
+				);
 			}
 
 			//Admin Notice
-			if ( is_readable( __DIR__ . '/includes/Admin/notices.php' )) {
+			if ( is_readable( __DIR__ . '/includes/Admin/notices.php' ) ) {
 				require_once __DIR__ . '/includes/Admin/notices.php';
 			}
 
@@ -319,15 +326,15 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 */
 		public function admin_notice_minimum_elementor_version() {
 
-			if (isset($_GET['activate'])) {
+			if ( isset( $_GET[ 'activate' ] ) ) {
 				// Ensure it's a valid action (optional, depending on your needs)
-				if (isset($_GET['activate']) && $_GET['activate'] === 'spider-elements-activation') {
+				if ( isset( $_GET[ 'activate' ] ) && $_GET[ 'activate' ] === 'spider-elements-activation' ) {
 
 					// After activation is complete, remove the 'activate' parameter
-					unset($_GET['activate']);
+					unset( $_GET[ 'activate' ] );
 
 					// Redirect to a specific page after activation (optional)
-					wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
+					wp_redirect( admin_url( 'admin.php?page=spider-elements-settings' ) );
 					exit;
 				}
 			}
@@ -354,15 +361,15 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 */
 		public function admin_notice_minimum_php_version() {
 
-			if (isset($_GET['activate'])) {
+			if ( isset( $_GET[ 'activate' ] ) ) {
 				// Ensure it's a valid action (optional, depending on your needs)
-				if (isset($_GET['activate']) && $_GET['activate'] === 'spider-elements-activation') {
+				if ( isset( $_GET[ 'activate' ] ) && $_GET[ 'activate' ] === 'spider-elements-activation' ) {
 
 					// After activation is complete, remove the 'activate' parameter
-					unset($_GET['activate']);
+					unset( $_GET[ 'activate' ] );
 
 					// Redirect to a specific page after activation (optional)
-					wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
+					wp_redirect( admin_url( 'admin.php?page=spider-elements-settings' ) );
 					exit;
 				}
 			}
@@ -439,9 +446,9 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			require_once( __DIR__ . '/widgets/Timeline.php' );
 			require_once( __DIR__ . '/widgets/Buttons.php' );
 			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
-            require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
-            require_once( __DIR__ . '/widgets/Counter.php' );
-            require_once( __DIR__ . '/widgets/Instagram.php' );
+			require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
+			require_once( __DIR__ . '/widgets/Counter.php' );
+			require_once( __DIR__ . '/widgets/Instagram.php' );
 		}
 
 		/**
@@ -454,6 +461,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access private
 		 */
 		private function register_widgets() {
+
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Tabs() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Video_Playlist() );
 			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Alerts_Box() );

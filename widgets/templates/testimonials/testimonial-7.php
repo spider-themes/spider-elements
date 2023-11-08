@@ -7,8 +7,7 @@
 				?>
                 <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
                     <div class="feedback-block-one feedback-block-three">
-                        <img class="quote-icon" src="<?php echo esc_url( $item[ 'company_image' ][ 'url' ] ); ?>"
-                             alt="">
+	                    <?php echo wp_get_attachment_image( $item[ 'company_image' ][ 'id' ], 'full', '', [ 'class' => 'quote-icon' ] ) ?>
 						<?php
 						if ( 'star_fontawesome' === $settings[ 'star_style' ] ) {
 							if ( 'outline' === $settings[ 'unmarked_star_style' ] ) {
@@ -56,8 +55,7 @@
                                         <span><?php echo esc_html( $item[ 'author_position' ] ); ?></span>
                                     </div>
                                 </div>
-                                <img src="<?php echo esc_url( $item[ 'author_image' ][ 'url' ] ); ?>" alt=""
-                                     class="author-img rounded-circle">
+	                            <?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'author-img rounded-circle' ] ) ?>
                             </div>
 							<?php
 						}

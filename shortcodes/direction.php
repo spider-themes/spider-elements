@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 add_shortcode( 'direction', function ( $atts, $content ) {
 	ob_start();
 	$directions = explode( '>', $content );

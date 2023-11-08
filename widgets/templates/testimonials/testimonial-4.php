@@ -10,7 +10,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-5">
                                 <div class="testimonial-slider-img">
-                                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="">
+	                                <?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full' ) ?>
                                 </div>
                             </div>
                             <div class="col-md-7">

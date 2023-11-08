@@ -9,15 +9,13 @@
                         <div class="swiper-slide">
                             <div class="testimonial testimonial-item">
                                 <div class="author-image">
-                                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="" class="author-img">
+	                                <?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'author-img', ] ) ?>
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-img-top">
-                                        <img src="<?php echo SPE_IMG ?>/quote_img1.png" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>">
+                                        <img src="<?php echo SPE_IMG . '/quote_img1.png' ?>" alt="<?php esc_attr_e('Quote Image One', 'spider-elements') ?>">
                                     </div>
-                                    <?php
-                                    echo !empty($item['review_content']) ? '<p class="se_review_content">' . esc_html($item['review_content']) . '</p>' : '';
-                                    ?>
+                                    <?php echo !empty($item['review_content']) ? '<p class="se_review_content">' . esc_html($item['review_content']) . '</p>' : ''; ?>
                                     <div class="author-info">
                                         <?php
                                         echo !empty($item['name']) ? '<h4 class="author-name se_name">' . esc_html($item['name']) . '</h4>' : '';
@@ -27,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="quote-img-bottom">
-                                    <img src="<?php echo SPE_IMG ?>/quote_img2.png" alt="<?php esc_attr_e('Quote Image Two', 'spider-elements') ?>">
+                                    <img src="<?php echo SPE_IMG . '/quote_img2.png' ?>" alt="<?php esc_attr_e('Quote Image Two', 'spider-elements') ?>">
                                 </div>
                             </div>
                         </div>
