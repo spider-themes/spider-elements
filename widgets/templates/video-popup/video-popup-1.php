@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
 $enable_wave_regular    = $settings['enable_wave_regular'] == 'yes' ? 'wave' : '';
 $enable_wave_hover      = $settings['enable_wave_hover'] == 'yes' ? 'hover_wave' : '';
 ?>

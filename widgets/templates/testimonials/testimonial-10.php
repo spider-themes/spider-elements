@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="feedback-section-four">
     <div class="row">
         <div class="col-xl-5 col-lg-6 ms-auto order-lg-last">

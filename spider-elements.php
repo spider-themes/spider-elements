@@ -3,9 +3,9 @@
  * Plugin Name: Spider Elements
  * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 5.0
- * Tested up to: 6.3
+ * Tested up to: 6.4
  * Requires PHP: 7.4
  * Author: spider-themes
  * Author URI: https://spider-themes.net/spider-elements
@@ -14,7 +14,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
  * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.16.5
+ * Elementor tested up to: 3.17.2
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -211,7 +211,6 @@ if ( ! class_exists( 'Spider_Elements' ) ) {
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
-				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}

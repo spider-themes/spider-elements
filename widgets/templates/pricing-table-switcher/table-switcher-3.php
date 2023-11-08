@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="cloud-pricing-wrapp wow fadeInRight landpagy-table-switcher" data-wow-delay="0.4s">
     <nav>
         <div class="nav nav-tabs d-flex" id="nav-tab" role="tablist">

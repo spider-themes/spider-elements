@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="feedback-section-two">
     <div class="row feedback-slider-two testimonial-slider-<?php echo esc_attr( $testimonial_id ); ?>">
 		<?php if ( ! empty( $testimonials6 ) ):

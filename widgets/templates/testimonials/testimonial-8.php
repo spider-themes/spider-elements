@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div id="feedBack_carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="row">
         <div class="col-xxl-9 col-lg-8 col-md-10 m-auto">

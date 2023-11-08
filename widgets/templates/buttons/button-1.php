@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
 <a href="#<?php echo esc_url( $section_id ); ?>" class="scroll-down-one position-absolute">
     <div class="circle"></div>
     <div class="arrow-cont">

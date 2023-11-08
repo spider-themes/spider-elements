@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
 <div class="big-circle rounded-circle position-relative d-flex align-items-center justify-content-center ms-lg-5 integration_style_two">
 	<?php
 	if ( ! empty( $integration_item ) ) {

@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="testimonial_area_nine">
     <div class="testimonial_slider_box position-relative">
         <div class="testimonial-slider-inner swiper mt-minus">

@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="pricing-area-two landpagy-table-switcher">
     <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
         <ul class="nav nav-tabs pricing-tabs-two" id="myTab" role="tablist">

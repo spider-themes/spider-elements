@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="testimonial-area testimonial-area-8">
     <div class="testimonial-slider-active swiper">
         <div class="swiper-wrapper">

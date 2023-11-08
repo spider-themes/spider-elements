@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+
 $is_preloader = '1';
 if ( did_action( 'elementor/loaded' ) ) {
 	if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {

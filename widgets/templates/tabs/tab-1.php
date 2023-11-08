@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="wrapper tab_shortcode">
     <div class="sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class ); ?>">
         <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>

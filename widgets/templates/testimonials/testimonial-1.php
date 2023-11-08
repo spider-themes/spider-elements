@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="row">
     <div class="col-lg-6">
         <div class="doc_testimonial_slider">

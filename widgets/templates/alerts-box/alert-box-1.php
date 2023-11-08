@@ -1,4 +1,8 @@
-<?php if ( $settings[ 'display_type' ] == 'alert' ) : ?>
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+if ( $settings[ 'display_type' ] == 'alert' ) : ?>
     <div class="alert media d-flex message_alert alert-<?php echo esc_attr( $settings[ 'alert_type' ] ) ?> fade show"
          role="alert" data-id="<?php echo esc_attr( $this->get_id() ) ?>">
 		<?php \Elementor\Icons_Manager::render_icon( $settings[ 'icon' ], [ 'aria-hidden' => 'true' ] ); ?>

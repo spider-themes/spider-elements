@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="testimonial-area-4">
     <div class="container">
         <div class="testimonial position-relative wow fadeInUp" data-wow-delay="0.2s">

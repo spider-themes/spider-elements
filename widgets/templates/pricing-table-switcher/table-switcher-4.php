@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="app-pricing-area landpagy-table-switcher">
     <div class="bg-shapes">
         <div class="shape"></div>

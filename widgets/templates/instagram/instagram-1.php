@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
 <div class="instagram-area">
     <div class="instagram-wrapper">
         <div class="swiper instagram-feed-active">

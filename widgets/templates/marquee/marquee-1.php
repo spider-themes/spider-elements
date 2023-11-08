@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="branding-area overflow-hidden">
 	<?php
 	if ( ! empty( $settings[ 'left_slides' ] ) ) { ?>

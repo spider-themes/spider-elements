@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="pricing-banner-2 landpagy-table-switcher">
     <ul class="nav nav-tabs pricing-switcher-2 switcher-<?php echo esc_attr( $this->get_id() ); ?> d-flex" id="myTab" role="tablist">
         <span class="switcher-bg switcher-bg-<?php echo esc_attr( $this->get_id() ); ?>"></span>

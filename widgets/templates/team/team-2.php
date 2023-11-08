@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="expert-slider-two">
 	<?php
 	if ( ! empty( $team_slider_item ) ) {

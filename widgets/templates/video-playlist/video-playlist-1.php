@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="video_list_area">
     <div class="row justify-content-sm-between">
         <div class="col-lg-7">

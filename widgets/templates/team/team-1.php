@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+
 if ( !empty( $team_slider_item ) ) {
     ?>
     <div class="expert-section-one">

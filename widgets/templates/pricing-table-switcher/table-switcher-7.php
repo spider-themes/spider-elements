@@ -1,7 +1,8 @@
-<?php 
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
 $section_id = 'tab-'.$this->get_id();
-
-
 ?>
 <div class="pricing-compare-table">
     <div class="product-plan">

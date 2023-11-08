@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="choose-plan-area landpagy-table-switcher">
     <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
         <nav>
