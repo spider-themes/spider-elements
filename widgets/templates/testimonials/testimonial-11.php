@@ -1,7 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="testimonial-area">
-    <div class="bg-shape">
-        <div class="shape"><img src="img/home_two/testimonial-shape.png" alt=""></div>
-    </div>
     <div class="ezd-container">
         <div class="ezd-position-relative">
             <div class="testimonial-slider">
@@ -23,7 +25,7 @@
                             </div>
                         </div>
                         <div class="ezd-lg-col-6">
-                            <img class="author-img" src="<?php echo esc_url($item['author_image']['url']); ?>" alt="">
+	                        <?php echo wp_get_attachment_image($item['author_image']['id'], 'full', '', ['class' => 'author-img']) ?>
                         </div>
                     </div>
                 </div>

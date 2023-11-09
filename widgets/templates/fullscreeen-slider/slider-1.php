@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
 <section class="banner-area-2 banner-area-6" id="home">
     <div class="swiper banner-main">
         <div class="swiper-wrapper">

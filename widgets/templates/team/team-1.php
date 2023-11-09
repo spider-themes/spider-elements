@@ -1,14 +1,20 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
 <div class="expert-section-one">
     <div class="expert-slider-one slider-<?php echo esc_attr($team_id);?>">
         <?php foreach ($team_slider_item as $item) {?>
         <div class="item">
             <div class="card-style-three ezd-text-center">
                 <div class="img-meta mb-40 lg-mb-20">
-                    <img src="<?php echo esc_url($item['team_slider_image']['url']);?>" alt="" class="m-auto">
+	                <?php echo wp_get_attachment_image($item['team_slider_image']['id'], 'full', '', ['class' => 'm-auto']) ?>
                 </div>
                 <a href="<?php echo esc_url($item['team_link']['url']);?>"
-                    class="name text-md fw-500"><?php echo esc_html__($item['team_name']);?></a>
-                <div class="post"><?php echo esc_html__($item['team_job_position']);?></div>
+                    class="name text-md fw-500"><?php echo esc_html($item['team_name']);?></a>
+                <div class="post"><?php echo esc_html($item['team_job_position']);?></div>
             </div>
         </div>
         <?php } ?>

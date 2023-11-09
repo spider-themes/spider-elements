@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="ezd-grid ezd-grid-cols-12">
     <?php
 	if ( $post_query->have_posts() ) {

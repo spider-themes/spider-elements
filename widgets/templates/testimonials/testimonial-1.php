@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="ezd-grid ezd-grid-cols-12">
     <div class="ezd-lg-col-6">
         <div class="doc_testimonial_slider">

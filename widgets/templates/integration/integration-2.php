@@ -1,5 +1,10 @@
-<div
-    class="big-circle ezd-rounded-circle ezd-position-relative ezd-d-flex ezd-align-items-center ezd-justify-content-center ms-lg-5 integration_style_two">
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
+<div class="big-circle ezd-rounded-circle ezd-position-relative ezd-d-flex ezd-align-items-center ezd-justify-content-center ms-lg-5 integration_style_two">
     <?php
 	if ( ! empty( $integration_item ) ) {
 		foreach ( $integration_item as $item ) { ?>

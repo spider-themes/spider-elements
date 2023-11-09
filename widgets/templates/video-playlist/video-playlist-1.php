@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="video_list_area">
     <div class="ezd-grid ezd-grid-cols-12 ezd-justify-content-sm-between">
         <div class="ezd-lg-col-7">
