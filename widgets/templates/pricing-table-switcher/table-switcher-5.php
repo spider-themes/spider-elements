@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="choose-plan-area-three landpagy-table-switcher">
     <nav>
         <div class="nav justify-content-center pricing-switcher" id="nav-tab" role="tablist">

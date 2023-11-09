@@ -1,5 +1,8 @@
-<!-- Backup  -->
-
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="slideshow">
             <div class="slideshow__deco"></div>
             <?php

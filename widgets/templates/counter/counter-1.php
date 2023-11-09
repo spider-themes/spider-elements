@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
+
 <div class="counters-container">
     <div class="skill_item ezd-text-center">
         <svg class="radial-progress" data-percentage="<?php echo esc_attr( $counter_value ); ?>" viewBox="0 0 80 80">

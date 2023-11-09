@@ -13,7 +13,8 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 
 
-if ( ! defined( 'ABSPATH' ) ) {
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
 	exit;
 }
 

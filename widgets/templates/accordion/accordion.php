@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="accordion" <?php echo esc_attr( $toggle_id ); ?>>
     <?php
 	if ( ! empty ( $accordions ) ) {

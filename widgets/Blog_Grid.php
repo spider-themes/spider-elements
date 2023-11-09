@@ -2,7 +2,6 @@
 /**
  * Use namespace to avoid conflict
  */
-
 namespace Spider_Elements\Widgets;
 
 use Elementor\Icons_Manager;
@@ -12,7 +11,6 @@ use Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_shadow;
-
 use WP_Query;
 
 // Exit if accessed directly

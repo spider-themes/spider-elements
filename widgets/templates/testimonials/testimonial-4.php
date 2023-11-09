@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <section class="testimonial-area-4">
     <div class="container">
         <div class="testimonial position-relative wow fadeInUp" data-wow-delay="0.2s">
@@ -10,7 +15,7 @@
                         <div class="ezd-grid ezd-grid-cols-12 align-items-center">
                             <div class="ezd-md-col-5">
                                 <div class="testimonial-slider-img">
-                                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt="">
+	                                <?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full' ) ?>
                                 </div>
                             </div>
                             <div class="ezd-md-col-7">

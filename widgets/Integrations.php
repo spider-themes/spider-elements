@@ -2,6 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
+
 namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Background;
@@ -12,7 +13,7 @@ use Elementor\Controls_Manager;
 use Elementor\Repeater;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -21,50 +22,42 @@ if (!defined('ABSPATH')) {
  * @package spider\Widgets
  * @since 1.0.0
  */
-class Integrations extends Widget_Base
-{
+class Integrations extends Widget_Base {
 
-	public function get_name()
-	{
+	public function get_name() {
 		return 'docy_integrations';
 	}
 
-	public function get_title()
-	{
-		return esc_html__('Integrations', 'spider-elements');
+	public function get_title() {
+		return esc_html__( 'Integrations', 'spider-elements' );
 	}
 
-	public function get_icon()
-	{
+	public function get_icon() {
 		return 'eicon-integration spe-icon';
 	}
 
-	public function get_keywords()
-	{
+	public function get_keywords() {
 		return [ 'spider', 'spider elements', 'integrations', 'integrations widget' ];
 	}
 
-	public function get_categories()
-	{
-		return ['spider-elements'];
+	public function get_categories() {
+		return [ 'spider-elements' ];
 	}
 
 	/**
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends()
-	{
-		return ['bootstrap', 'elegant-icon', 'spe-main'];
+	public function get_style_depends() {
+		return [ 'bootstrap', 'elegant-icon', 'spe-main' ];
 	}
 
 	/**
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends()
-	{
-		return ['bootstrap', 'spe-el-widgets'];
+	public function get_script_depends() {
+		return [ 'bootstrap', 'spe-el-widgets' ];
 	}
 
 
@@ -77,15 +70,13 @@ class Integrations extends Widget_Base
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls()
-	{
-        $this->elementor_content_control();
+	protected function register_controls() {
+		$this->elementor_content_control();
 		$this->integration_control();
-		$this-> integration_style_control();
+		$this->integration_style_control();
 	}
 
 
-    
 	/**
 	 * Name: elementor_content_control()
 	 * Desc: Register the Content Tab output on the Elementor editor.
@@ -96,87 +87,77 @@ class Integrations extends Widget_Base
 	 * Author: spider-themes
 	 */
 
-     public function elementor_content_control() {
+	public function elementor_content_control() {
 
 		// ============================ Select Style  ===========================//
 		$this->start_controls_section(
 			'select_style',
 			[
-				'label' => __('Preset Skins', 'spider-elements'),
+				'label' => __( 'Preset Skins', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style',
 			[
-				'label' 	=> __('Integration Style', 'spider-elements'),
-				'type' => Controls_Manager::CHOOSE,
+				'label'   => __( 'Integration Style', 'spider-elements' ),
+				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
-						'icon' => 'integration1',
-						'title' => esc_html__( '01 : Integration', 'spider-elements')
+						'icon'  => 'integration1',
+						'title' => esc_html__( '01 : Integration', 'spider-elements' )
 					],
 					'2' => [
-						'icon' => 'integration2',
-						'title' => esc_html__( '02 : Integration', 'spider-elements'),
+						'icon'  => 'integration2',
+						'title' => esc_html__( '02 : Integration', 'spider-elements' ),
 					]
 				],
-				'default' 	=> '1',
+				'default' => '1',
 			]
 		);
 
-
 		$this->end_controls_section(); // End Select Style
-    }
-    public function integration_control(){
-        //start content layout
-        $this->start_controls_section(
-            'integration_control',
-            [
-                'label' => __('Integration Item', 'spider-elements'),
-            ]
-        );
-        $repeater = new \Elementor\Repeater();
-        $repeater-> add_control(
-            'integration_image', [
-                'label' => __('Integration Image', 'spider-elements'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-        $this->add_control(
-            'integration_item',
-            [
-                'label' => __( 'Integration Item', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'prevent_empty' => false,
-                'default' => [
-                    [
-                        'integration_image' => __("", "spider-elements"),
-                    ],
-                    [
-                        'integration_image' => __("", "spider-elements"),
-                    ],
-                    [
-                        'integration_image' => __("", "spider-elements"),
-                    ],
-                    [
-                        'integration_image' => __("", "spider-elements"),
-                    ],
-                    [
-                        'integration_image' => __("", "spider-elements"),
-                    ],
-                    [
-                        'integration_image' => __("", "spider-elements"),
-                    ],
-                ],
-            ]
-        );
-        $this-> end_controls_section();
-    }
+	}
+
+	public function integration_control() {
+
+		//start content layout
+		$this->start_controls_section(
+			'integration_control', [
+				'label' => __( 'Integration Item', 'spider-elements' ),
+			]
+		);
+
+		$repeater = new \Elementor\Repeater();
+
+		$repeater->add_control(
+			'align_items', [
+				'type'    => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$repeater->add_control(
+			'integration_image', [
+				'label'   => __( 'Integration Image', 'spider-elements' ),
+				'type'    => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+		$this->add_control(
+			'integration_item', [
+				'label'         => __( 'Integration Item', 'spider-elements' ),
+				'type'          => \Elementor\Controls_Manager::REPEATER,
+				'fields'        => $repeater->get_controls(),
+				'title_field'   => '{{{ align_items }}}',
+				'prevent_empty' => false,
+			]
+		);
+
+		$this->end_controls_section();
+
+	}
 
 
 	/**
@@ -193,40 +174,40 @@ class Integrations extends Widget_Base
 		$this->start_controls_section(
 			'integration_img_style', [
 				'label' => __( 'Integration Image', 'spider-elements' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-        $this->add_control(
-            'integration_round_bg',
-            [
-                'label'     => esc_html__('Background Color', 'spider-elements'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .big-circle .brand-icon' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Border::get_type(),
-            [
-                'name'     => 'integration_border',
-                'label'    => esc_html__('Border', 'spider-elements'),
-                'selector' => '{{WRAPPER}} .big-circle .brand-icon,{{WRAPPER}} .big-circle',
-            ]
-        );
 		$this->add_control(
-            'team_img_border_radius',
-            [
-                'label' 		=> __('Border Radius', 'spider-elements'),
-                'type' 			=> Controls_Manager::DIMENSIONS,
-                'size_units'	=> ['px', '%', 'em'],
-                'selectors' 	=> [
-                    '{{WRAPPER}} .big-circle .brand-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
+			'integration_round_bg',
+			[
+				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .big-circle .brand-icon' => 'background: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name'     => 'integration_border',
+				'label'    => esc_html__( 'Border', 'spider-elements' ),
+				'selector' => '{{WRAPPER}} .big-circle .brand-icon,{{WRAPPER}} .big-circle',
+			]
+		);
+		$this->add_control(
+			'team_img_border_radius',
+			[
+				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
+					'{{WRAPPER}} .big-circle .brand-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
-		$this-> end_controls_section();
+		$this->end_controls_section();
 	}
 
 
@@ -241,7 +222,7 @@ class Integrations extends Widget_Base
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		extract($settings); //extract all settings array to variables converted to name of key
+		extract( $settings ); //extract all settings array to variables converted to name of key
 		//================= Template Parts =================//
 		include "templates/integration/integration-{$settings['style']}.php";
 	}

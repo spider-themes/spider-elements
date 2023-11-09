@@ -10,7 +10,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 

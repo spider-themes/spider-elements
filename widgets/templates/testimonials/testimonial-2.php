@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly.
+}
+?>
 <div class="doc_feedback_info">
     <div class="doc_feedback_slider">
         <?php
