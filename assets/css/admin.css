@@ -1102,6 +1102,9 @@ Table of Content:
   transform: translate(-50%, -50%);
   border: 0px;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .spe_pr_promo_box .spe_promo_video .spe_popup_youtube::before, .spe_pr_promo_box .spe_promo_video .spe_popup_youtube:after {
   content: "";

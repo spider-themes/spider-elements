@@ -475,6 +475,9 @@
       transform: translate(-50%, -50%);
       border: 0px;
       transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &::before,
       &:after {
