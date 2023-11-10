@@ -162,7 +162,6 @@
         }
     })
 
-
     let videoAccordion = $(".spe_accordion_inner > .spe-accordion");
     videoAccordion.on("click", function() {
         var $this = $(this);
@@ -198,6 +197,31 @@
             .removeClass("active");
 
         return false;
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let video = $("#video_0");
+        setTimeout(function() {
+            $(".video_slider_area").addClass("loaded").css("height", "auto");
+        }, 3000);
+
+        video.addClass("show").addClass("active");
+        let containers = document.getElementsByClassName("artplayer-app");
+        if (containers.length > 0) {
+            for (var i = 0; i < containers.length; i++) {
+                new Artplayer({
+                    container: containers[i],
+                    url: containers[i].getAttribute("data-src"),
+                    title: "Your Name",
+                    pip: true,
+                    screenshot: true,
+                    flip: true,
+                    fullscreen: true,
+                    fullscreenWeb: true,
+                    height: "500px",
+                });
+            }
+        }
     });
 })(jQuery);
 </script>

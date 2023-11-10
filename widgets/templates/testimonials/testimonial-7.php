@@ -55,8 +55,7 @@
                             <span><?php echo esc_html( $item[ 'author_position' ] ); ?></span>
                         </div>
                     </div>
-                    <img src="<?php echo esc_url( $item[ 'author_image' ][ 'url' ] ); ?>" alt=""
-                        class="author-img ezd-rounded-circle">
+                    <?php echo wp_get_attachment_image( $item['author_image']['id'], ' author-img ezd-rounded-circle' ) ?>
                 </div>
                 <?php
 						}

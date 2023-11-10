@@ -48,8 +48,7 @@
                 if ( !empty($item['author_name']) ) { ?>
                 <div class="block-footer ezd-d-flex ezd-align-items-center ezd-justify-content-between pt-35 lg-pt-20">
                     <div class="ezd-d-flex ezd-align-items-center">
-                        <img src="<?php echo esc_url($item['author_image']['url']);?>" alt=""
-                            class="author-img ezd-rounded-circle">
+                        <?php echo wp_get_attachment_image( $item['author_image']['id'], ' author-img ezd-rounded-circle' ) ?>
                         <div class="ezd-ms-3">
                             <div class="name fw-500"><?php echo esc_html($item['author_name']); ?></div>
                             <span class="opacity-50"><?php echo esc_html($item['author_position']); ?></span>

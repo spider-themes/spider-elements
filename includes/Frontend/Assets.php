@@ -41,7 +41,6 @@ class Assets {
 
 		wp_register_style( 'ionicons', 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' );
 		wp_register_style( 'slick-theme', SPE_VEND . '/slick/slick-theme.css' );
-		// wp_register_style( 'bootstrap', SPE_VEND . '//bootstrap/bootstrap.min.css' );
 		wp_register_style( 'swiper', SPE_VEND . '/swiper/swiper-bundle.min.css' );
 		wp_register_style( 'slick', SPE_VEND . '/slick/slick.css' );
 		wp_register_style( 'video-js', SPE_VEND . '/video/videojs.min.css' );
@@ -62,7 +61,6 @@ class Assets {
 	function register_widget_scripts() {
 
 		wp_register_script( 'ionicons', 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js', '', '5.4.0', true );
-		// wp_register_script( 'bootstrap', SPE_VEND . '/bootstrap/bootstrap.min.js', array( 'jquery' ), SPE_VERSION, true );
 		wp_register_script( 'slick', SPE_VEND . '/slick/slick.min.js', array( 'jquery' ), SPE_VERSION, true );
 		wp_register_script( 'swiper', SPE_VEND . '/swiper/swiper-bundle.min.js', array( 'jquery' ), SPE_VERSION, true );
 		wp_register_script( 'text-type', SPE_VEND . '/text-type/text-type.js', array( 'jquery' ), SPE_VERSION, true );

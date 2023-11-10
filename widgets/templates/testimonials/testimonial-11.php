@@ -23,7 +23,8 @@
                             </div>
                         </div>
                         <div class="ezd-lg-col-6">
-                            <img class="author-img" src="<?php echo esc_url($item['author_image']['url']); ?>" alt="">
+                            <img class="author-img" src="<?php echo esc_url($item['author_image']['url']); ?>"
+                                alt="author">
                         </div>
                     </div>
                 </div>
