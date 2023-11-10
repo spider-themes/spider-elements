@@ -3,7 +3,7 @@
  * Plugin Name: Spider Elements
  * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 5.0
  * Tested up to: 6.3
  * Requires PHP: 7.4
@@ -16,6 +16,9 @@
  * Elementor requires at least: 3.0.0
  * Elementor tested up to: 3.16.5
  */
+
+use Spider_Elements_Assets\includes\Admin\Module_Settings;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -42,7 +45,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @since 1.0.0
 		 * @var string The plugin version.
 		 */
-		const VERSION = '0.1.0';
+		const VERSION = '0.2.0';
 
 		/**
 		 * Minimum Elementor Version
@@ -208,6 +211,9 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			//Shortcodes
 			require_once __DIR__ . '/shortcodes/direction.php';
 
+
+			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
@@ -281,9 +287,10 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			if ( isset( $screen->parent_file ) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id ) {
 				return;
 			}
-			$plugin = 'elementor/elementor.php';
-			$plugin_name = 'Spider Elements';
-			$installed_plugins = get_plugins();
+
+			$plugin                 = 'elementor/elementor.php';
+			$plugin_name            = esc_html__( 'Spider Elements', 'spider-elements' );
+			$installed_plugins      = get_plugins();
 			$is_elementor_installed = isset( $installed_plugins[ $plugin ] );
 
 			if ( $is_elementor_installed ) {
@@ -291,15 +298,21 @@ if ( ! class_exists( 'Spider_Elements') ) {
 					return;
 				}
 				$button_text = __( 'Activate Elementor', 'spider-elements' );
-				$button_link = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
-				$message     = __('<strong>'.$plugin_name.'</strong> requires <strong>Elementor</strong> plugin to be active. Please activate Elementor to continue.', 'spider-elements');
+				$button_link = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s',
+					'activate-plugin_' . $plugin );
+				$message     = sprintf( __( '<strong>%1$s</strong> requires <strong>Elementor</strong> plugin to be active. Please activate Elementor to continue.',
+					'spider-elements' ), $plugin_name
+				);
 			} else {
 				if ( ! current_user_can( 'install_plugins' ) ) {
 					return;
 				}
 				$button_text = __( 'Install Elementor', 'spider-elements' );
-				$button_link = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
-				$message     = sprintf(__('<strong>'.$plugin_name.' requires Elementor</strong> plugin to be installed and activated. Please install Elementor to continue.', 'spider-elements'), '<strong>', '</strong>');
+				$button_link = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ),
+					'install-plugin_elementor' );
+				$message     = sprintf( __( '<strong>%1$s requires Elementor</strong> plugin to be installed and activated. Please install Elementor to continue.',
+					'spider-elements' ), $plugin_name
+				);
 			}
 
 			//Admin Notice
@@ -443,6 +456,30 @@ if ( ! class_exists( 'Spider_Elements') ) {
             require_once( __DIR__ . '/widgets/Counter.php' );
             require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
+
+
+			/*$widget_settings = Module_Settings::get_widget_settings();
+
+			if (is_array($widget_settings)) {
+				foreach ($widget_settings as $widget) {
+					if (isset($widget['className'])) {
+						$class_name = $widget['className'];
+
+						// Check if the class exists
+						if (class_exists($class_name)) {
+							// Construct the file path
+							$file_path = __DIR__ . '/widgets/' . $class_name . '.php';
+
+							require_once __DIR__ . '/widgets/' . $class_name . '.php';
+
+							//require_once($file_path);
+
+						}
+					}
+				}
+			}*/
+
+
 		}
 
 		/**
@@ -455,28 +492,25 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access private
 		 */
 		private function register_widgets() {
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Tabs() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Video_Playlist() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Alerts_Box() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Accordion() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Testimonial() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Pricing_Table_Tabs() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Pricing_Table_Switcher() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\List_Item() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Cheat_sheet() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Team_Carousel() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Integrations() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Before_After () );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Video_Popup() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Blog_Grid() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Skill_Showcase() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Timeline() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Buttons() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Animated_Heading() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Marquee_Slides() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Counter() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\Instagram() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Spider_Elements\Widgets\FullScreen_slider() );
+
+			$widget_settings = Module_Settings::get_widget_settings();
+
+			// Register each widget class
+			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
+
+			if ( is_array( $widget_settings ) ) {
+				foreach ( $widget_settings as $widget ) {
+					if ( isset( $widget[ 'className' ] ) ) {
+						$class_name = 'Spider_Elements\Widgets\\' . $widget[ 'className' ];
+
+						// Check if the class exists
+						if ( class_exists( $class_name ) ) {
+							$widgets_manager->register( new $class_name() );
+						}
+					}
+				}
+			}
+
 		}
 
 

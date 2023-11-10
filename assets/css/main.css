@@ -1768,6 +1768,11 @@ ul.nav.nav-tabs {
 #feedBack_carousel {
   position: relative;
 }
+#feedBack_carousel .feedback_slider {
+  max-width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 #feedBack_carousel .carousel-inner p {
   font-size: 36px;
   line-height: 1.888em;
@@ -1795,6 +1800,8 @@ ul.nav.nav-tabs {
   position: static;
   width: 100%;
   margin: 60px 0 0;
+  display: flex;
+  justify-content: center;
 }
 #feedBack_carousel .carousel-indicators button {
   width: 80px;
@@ -1805,6 +1812,11 @@ ul.nav.nav-tabs {
   margin: 0 10px;
   transition: all 0.2s linear;
   text-indent: 0;
+}
+#feedBack_carousel .carousel-indicators button:focus, #feedBack_carousel .carousel-indicators button:hover {
+  outline: none;
+  border-color: #29503d;
+  background: transparent;
 }
 #feedBack_carousel .carousel-indicators button.active {
   border-color: #29503d;
@@ -1820,12 +1832,18 @@ ul.nav.nav-tabs {
   text-align: center;
   font-size: 30px;
   color: #000;
+  padding: 0px;
   transition: all 0.3s linear;
+  position: absolute;
 }
-#feedBack_carousel .carousel-btn:hover {
+#feedBack_carousel .carousel-btn:hover, #feedBack_carousel .carousel-btn:focus {
   border-color: #29503d;
   background: #29503d;
   color: #fff;
+}
+#feedBack_carousel .carousel-btn.carousel-control-next {
+  right: 0;
+  left: auto;
 }
 
 .feedback-section-four .bg-wrapper {
@@ -2063,6 +2081,26 @@ ul.nav.nav-tabs {
   display: none !important;
 }
 
+.carousel {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
 /*----------------- Video Playlist Widget CSS ------------------*/
 .video2_wrapper {
   display: flex;
@@ -2197,6 +2235,12 @@ ul.nav.nav-tabs {
 .video_list .video_list_inner .card:last-child {
   margin-bottom: 0;
 }
+.video_list .video_list_inner .card.spe_accordion_inner.spe-collapsed #minus {
+  display: block;
+}
+.video_list .video_list_inner .card.spe_accordion_inner.spe-collapsed #plus {
+  display: none !important;
+}
 .video_list .video_list_inner .card .card-header {
   border: none;
   background: transparent;
@@ -2235,7 +2279,7 @@ ul.nav.nav-tabs {
   min-width: 20px;
   border-radius: 2em;
 }
-.video_list .video_list_inner .card .card-header button.collapsed #minus {
+.video_list .video_list_inner .card .card-header button #minus {
   display: none;
 }
 .video_list .video_list_inner .card .card-header button .plus-minus {
@@ -2247,7 +2291,7 @@ ul.nav.nav-tabs {
   line-height: 26px;
   color: #425466;
 }
-.video_list .video_list_inner .card .card-header button .plus-minus#plus {
+.video_list .video_list_inner .card .card-header button .plus-minus #plus {
   display: inline-block;
 }
 
@@ -2265,18 +2309,18 @@ ul.nav.nav-tabs {
   border: none;
   text-decoration: none;
 }
-.video_list .video_list_inner .card .card-body .nav li a .media .d-flex {
+.video_list .video_list_inner .card .card-body .nav li a .media .ezd-d-flex {
   padding-right: 20px;
 }
-.video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img {
+.video_list .video_list_inner .card .card-body .nav li a .media .ezd-d-flex .video_tab_img {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
 }
-.video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img img {
+.video_list .video_list_inner .card .card-body .nav li a .media .ezd-d-flex .video_tab_img img {
   height: 100%;
 }
-.video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:before {
+.video_list .video_list_inner .card .card-body .nav li a .media .ezd-d-flex .video_tab_img:before {
   content: "";
   background: rgba(29, 39, 70, 0.55);
   position: absolute;
@@ -2287,7 +2331,7 @@ ul.nav.nav-tabs {
   opacity: 0;
   transition: all 300ms linear 0s;
 }
-.video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:after {
+.video_list .video_list_inner .card .card-body .nav li a .media .ezd-d-flex .video_tab_img:after {
   content: "\f215";
   font: normal normal normal 20px/1 ionicons;
   left: 0;
@@ -2306,6 +2350,10 @@ ul.nav.nav-tabs {
   font-weight: 500;
   margin-bottom: 3px;
   transition: all 300ms linear 0s;
+  margin-top: 0;
+}
+.video_list .video_list_inner .card .card-body .nav li a .media .media-body .list {
+  line-height: 1;
 }
 .video_list .video_list_inner .card .card-body .nav li a .media .media-body .list div {
   display: inline-block;
@@ -4032,7 +4080,7 @@ button.swiper-pagination-bullet {
   content: "-";
 }
 
-.accordion-header:not(.collapsed) #plus {
+.spe_accordion_inner:not(.spe-collapsed) #plus {
   display: none;
 }
 

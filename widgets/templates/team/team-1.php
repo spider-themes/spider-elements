@@ -12,8 +12,7 @@ if (!defined('ABSPATH')) {
                 <div class="img-meta mb-40 lg-mb-20">
 	                <?php echo wp_get_attachment_image($item['team_slider_image']['id'], 'full', '', ['class' => 'm-auto']) ?>
                 </div>
-                <a href="<?php echo esc_url($item['team_link']['url']);?>"
-                    class="name text-md fw-500"><?php echo esc_html($item['team_name']);?></a>
+                <a <?php spe_the_button($item['team_link']); ?> class="name text-md fw-500"><?php echo esc_html($item['team_name']);?></a>
                 <div class="post"><?php echo esc_html($item['team_job_position']);?></div>
             </div>
         </div>

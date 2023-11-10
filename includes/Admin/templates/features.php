@@ -26,13 +26,13 @@
 
     <div class="spe_elements_tab" id="elements_filter">
         <div class="spe_fiter_data active" data-filter="*">
-            <i class="icon-star"></i><?php esc_html_e('All', 'spider-elements'); ?>
+            <i class="icon-star"></i>All
         </div>
         <div class="spe_fiter_data" data-filter=".f_free">
-            <i class="icon-gift"></i><?php esc_html_e('Free', 'spider-elements'); ?>
+            <i class="icon-gift"></i>Free
         </div>
         <div class="spe_fiter_data" data-filter=".f_pro">
-            <i class="icon-pro-badge"></i><?php esc_html_e('Pro', 'spider-elements'); ?>
+            <i class="icon-pro-badge"></i>Pro
         </div>
     </div>
 

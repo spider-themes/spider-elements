@@ -1,11 +1,8 @@
 <?php
+
 use Spider_Elements_Assets\includes\Admin\Module_Settings;
 
 $elements = Module_Settings::get_widget_settings();
-
-
-//$update_1 = update_post_meta( 1, 'spider_elements_save_settings', $elements );
-
 ?>
 <div id="elements" class="spe-tab-box">
     <div class="spe_elements_tab_menu">
@@ -51,6 +48,14 @@ $elements = Module_Settings::get_widget_settings();
 			foreach ( $elements as $item ) {
 				$widget_type   = $item[ 'widget_type' ] ?? '';
 				$is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
+
+				$elements_opt = get_option( 'spe_widget_settings' );
+				$opt_name     = $item[ 'name' ] ?? '';
+
+				$checked = '';
+				if ( isset( $elements_opt[ $opt_name ] ) && $elements_opt[ $opt_name ] == 'on' ) {
+					$checked = ' checked="on"';
+				}
 				?>
                 <div class="ezd-colum-space-4 <?php echo esc_attr( $item[ 'widget_type' ] ) ?>">
                     <div class="spe_element_box spe_element_switch badge">
@@ -91,18 +96,7 @@ $elements = Module_Settings::get_widget_settings();
 
                                 <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
                                        name="<?php echo esc_attr( $item[ 'name' ] ) ?>"
-                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>">
-
-
-								<?php
-								/*$status   = isset( $item['is_pro'] ) ? 'disabled' : checked( 1, $item[ 'name' ], false );
-
-                                printf( '<input class="eael-widget-item eael-elements-list" id="%1$s" name="%1$s"
-                                           type="checkbox" %2$s>', $item[ 'name' ], $status )*/
-
-								?>
-
-
+                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $checked ); ?>>
                                 <span class="spe_widget_switcher"></span>
                             </label>
                         </div>
@@ -137,10 +131,9 @@ $elements = Module_Settings::get_widget_settings();
 </div>
 
 
-
 <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $('.spe_widget_checkbox').on('change', function() {
+    jQuery(document).ready(function ($) {
+        $('.spe_widget_checkbox').on('change', function () {
             var isChecked = $(this).is(':checked');
             var widgetName = $(this).attr('name');
 
@@ -153,7 +146,7 @@ $elements = Module_Settings::get_widget_settings();
                     widgetName: widgetName,
                     isChecked: isChecked
                 },
-                success: function(response) {
+                success: function (response) {
                     // Handle the response from the server if needed
                 }
             });

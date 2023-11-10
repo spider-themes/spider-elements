@@ -14,10 +14,7 @@ class Admin_Settings {
 
 	const PAGE_ID = 'spider_elements_settings';
 
-
 	public function __construct() {
-
-		//add_action( 'admin_init', [ $this, 'register_settings' ] );
 
 		add_action( 'admin_menu', [ $this, 'add_menu_page' ] );
 
@@ -51,8 +48,7 @@ class Admin_Settings {
 	 */
 	public function render_plugin_page() {
 
-		echo '<form action="" method="post" id="eael-settings" name="eael-settings" class="wrapper spe_dashboard">';
-
+		echo '<form action="" method="post" id="spe-settings" name="spe-settings" class="wrapper spe_dashboard">';
 
 			//Sidebar's menu
 			echo '<div class="sidebar_navigation">';

@@ -496,3 +496,32 @@ function spe_get_el_templates($type = null)
 
 	return $options;
 }
+
+
+add_action('admin_init', function () {
+
+	if (isset($_POST['elements-submit'])) {
+
+		// Retrieve the field values from the form
+		$docy_accordion = sanitize_text_field($_POST['docy_accordion']);
+		$docly_alerts_box = sanitize_text_field($_POST['docly_alerts_box']);
+		$spe_animated_heading = sanitize_text_field($_POST['spe_animated_heading']);
+		$spe_after_before_widget = sanitize_text_field($_POST['spe_after_before_widget']);
+
+		// Create an array to store the field values
+		$data = array(
+			'docy_accordion' => $docy_accordion,
+			'docly_alerts_box' => $docly_alerts_box,
+			'spe_animated_heading' => $spe_animated_heading,
+			'spe_after_before_widget' => $spe_after_before_widget,
+		);
+
+		// Save the data in the options table using update_option
+		update_option('spe_widget_settings', $data);
+	}
+
+	echo '<pre>';
+	print_r(get_option('spe_widget_settings'));
+	echo '</pre>';
+
+});

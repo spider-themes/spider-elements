@@ -9,6 +9,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Module_Settings {
 
+	public static function get_widget_names()
+	{
+		$widget_names = [];
+		$settings_fields = self::get_widget_settings();
+
+		foreach ($settings_fields['spider_elements_widgets'] as $widget) {
+			$widget_names[] = $widget['name'];
+		}
+
+		return $widget_names;
+	}
+
 	public static function get_widget_settings() {
 
 		$settings_fields = [
@@ -16,7 +28,7 @@ class Module_Settings {
 				[
 					'name'         => 'docy_accordion', // widget name
 					'className'    => 'Accordion', // widget class name
-					'label'        => esc_html__('Accordion dfd', 'spider-elements'), // widget label
+					'label'        => esc_html__('Accordion', 'spider-elements'), // widget label
 					'type'         => 'checkbox',
 					'default'      => 'on',
 					'widget_type'  => 'free',
