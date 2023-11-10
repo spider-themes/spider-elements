@@ -9,18 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Module_Settings {
 
-	public static function get_widget_names()
-	{
-		$widget_names = [];
-		$settings_fields = self::get_widget_settings();
-
-		foreach ($settings_fields['spider_elements_widgets'] as $widget) {
-			$widget_names[] = $widget['name'];
-		}
-
-		return $widget_names;
-	}
-
 	public static function get_widget_settings() {
 
 		$settings_fields = [
@@ -39,7 +27,7 @@ class Module_Settings {
 				],
 				[
 					'name'         => 'docly_alerts_box',
-					'className'    => '', // widget class name
+					'className'    => 'Alerts_Box', // widget class name
 					'label'        => esc_html__('Alerts Box', 'spider-elements'),
 					'type'         => 'checkbox',
 					'default'      => 'on',

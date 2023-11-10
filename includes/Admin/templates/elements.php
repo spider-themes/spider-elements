@@ -48,6 +48,7 @@ $elements = Module_Settings::get_widget_settings();
 			foreach ( $elements as $item ) {
 				$widget_type   = $item[ 'widget_type' ] ?? '';
 				$is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
+                $is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
 
 				$elements_opt = get_option( 'spe_widget_settings' );
 				$opt_name     = $item[ 'name' ] ?? '';
@@ -92,11 +93,11 @@ $elements = Module_Settings::get_widget_settings();
 								<?php
 							}
 							?>
-                            <label<?php echo esc_attr( $is_pro_widget ) ?> class="eael-switch">
+                            <label<?php echo esc_attr( $is_pro_widget ) ?> class="spe-switch">
 
                                 <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
                                        name="<?php echo esc_attr( $item[ 'name' ] ) ?>"
-                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $checked ); ?>>
+                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $checked . $is_pro_widget_enabled ); ?>>
                                 <span class="spe_widget_switcher"></span>
                             </label>
                         </div>
@@ -129,28 +130,3 @@ $elements = Module_Settings::get_widget_settings();
         </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $('.spe_widget_checkbox').on('change', function () {
-            var isChecked = $(this).is(':checked');
-            var widgetName = $(this).attr('name');
-
-            // Send an AJAX request to your WordPress backend
-            $.ajax({
-                type: 'POST',
-                url: ajaxurl,  // This global variable is available in the WordPress admin
-                data: {
-                    action: 'update_widget_status',
-                    widgetName: widgetName,
-                    isChecked: isChecked
-                },
-                success: function (response) {
-                    // Handle the response from the server if needed
-                }
-            });
-        });
-    });
-
-</script>

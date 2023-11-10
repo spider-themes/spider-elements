@@ -497,11 +497,13 @@ if ( ! class_exists( 'Spider_Elements') ) {
 
 			// Register each widget class
 			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
-
 			if ( is_array( $widget_settings ) ) {
 				foreach ( $widget_settings as $widget ) {
 					if ( isset( $widget[ 'className' ] ) ) {
 						$class_name = 'Spider_Elements\Widgets\\' . $widget[ 'className' ];
+
+						$elements_opt = get_option( 'spe_widget_settings' );
+						$opt_name     = $widget[ 'name' ] ?? '';
 
 						// Check if the class exists
 						if ( class_exists( $class_name ) ) {
@@ -510,6 +512,9 @@ if ( ! class_exists( 'Spider_Elements') ) {
 					}
 				}
 			}
+
+			$elements_opt = get_option( 'spe_widget_settings' );
+			$opt_name     = $item[ 'name' ] ?? '';
 
 		}
 

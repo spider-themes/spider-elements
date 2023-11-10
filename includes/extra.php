@@ -520,8 +520,4 @@ add_action('admin_init', function () {
 		update_option('spe_widget_settings', $data);
 	}
 
-	echo '<pre>';
-	print_r(get_option('spe_widget_settings'));
-	echo '</pre>';
-
 });
