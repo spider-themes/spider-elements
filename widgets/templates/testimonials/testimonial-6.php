@@ -1,5 +1,5 @@
 <div class="feedback_section_one">
-    <div class="row feedback-slider-one testimonial-slider-<?php echo esc_attr( $testimonial_id ); ?>">
+    <div class="feedback-slider-one testimonial-slider-<?php echo esc_attr( $testimonial_id ); ?>">
         <?php if ( ! empty( $testimonials6 ) ) {
 			foreach ( $testimonials6 as $item ) {
 				$rating_data    = $this->get_rating( $item[ 'author_rating' ] );

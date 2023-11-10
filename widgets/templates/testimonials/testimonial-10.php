@@ -39,7 +39,7 @@
             <?php if ( ! empty( $testimonials10 ) ):
 				foreach ( $testimonials10 as $item ):?>
             <div class="item">
-                <img src="<?php echo esc_url( $item[ 'author_image' ][ 'url' ] ); ?>" alt="" class="lazy-img">
+                <?php echo wp_get_attachment_image( $item['author_image']['id'], ' lazy-img' ) ?>
             </div>
             <?php endforeach; endif; ?>
         </div>

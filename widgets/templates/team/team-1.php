@@ -7,8 +7,8 @@
                     <img src="<?php echo esc_url($item['team_slider_image']['url']);?>" alt="" class="m-auto">
                 </div>
                 <a href="<?php echo esc_url($item['team_link']['url']);?>"
-                    class="name text-md fw-500"><?php echo esc_html__($item['team_name']);?></a>
-                <div class="post"><?php echo esc_html__($item['team_job_position']);?></div>
+                    class="name text-md fw-500"><?php echo esc_html($item['team_name']);?></a>
+                <div class="post"><?php echo esc_html($item['team_job_position']);?></div>
             </div>
         </div>
         <?php } ?>
