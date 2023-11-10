@@ -60,6 +60,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-heading',
 				],
 				[
 					'name'         => 'spe_after_before_widget',
@@ -71,6 +72,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-thumbnails-half',
 				],
 				[
 					'name'         => 'docy_blog_grid',
@@ -82,6 +84,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-post',
 				],
 				[
 					'name'         => 'spe_buttons',
@@ -93,6 +96,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-button',
 				],
 				[
 					'name'         => 'docly_cheatsheet',
@@ -104,6 +108,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-apps',
 				],
 				[
 					'name'         => 'spe_counter',
@@ -115,6 +120,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-counter',
 				],
 				[
 					'name'         => 'spe_instagram',
@@ -126,6 +132,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-instagram-post',
 				],
 				[
 					'name'         => 'docy_integrations',
@@ -137,6 +144,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-integration',
 				],
 				[
 					'name'         => 'docly_list_item',
@@ -148,6 +156,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-bullet-list',
 				],
 				[
 					'name'         => 'spe_marquee_slides',
@@ -159,6 +168,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-slider-push',
 				],
 				[
 					'name'         => 'landpagy_pricing_table_switcher',
@@ -170,6 +180,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-price-table',
 				],
 				[
 					'name'         => 'landpagy_pricing_table_tabs',
@@ -181,6 +192,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-price-table',
 				],
 				[
 					'name'         => 'spe_skill_showcase_widget',
@@ -192,6 +204,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-woo-settings',
 				],
 				[
 					'name'         => 'docy_tabs',
@@ -203,6 +216,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-tabs',
 				],
 				[
 					'name'         => 'docy_team_carousel',
@@ -214,6 +228,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-nested-carousel',
 				],
 				[
 					'name'         => 'docy_testimonial',
@@ -225,6 +240,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-testimonial-carousel',
 				],
 				[
 					'name'         => 'spe_timeline_widget',
@@ -236,6 +252,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-time-line',
 				],
 				[
 					'name'         => 'docy_videos_playlist',
@@ -247,6 +264,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-video-playlist',
 				],
 				[
 					'name'         => 'docy_video_popup',
@@ -258,6 +276,7 @@ class Module_Settings {
 					'content_type' => 'custom',
 					'demo_url'     => '#',
 					'video_url'    => '#',
+					'icon'         => 'eicon-play',
 				],
 			],
 
