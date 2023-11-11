@@ -69,10 +69,10 @@ function spe_el_title_tags()
 function spe_the_button($settings_key, $is_echo = true)
 {
 
-	if ($is_echo == true) {
-		echo !empty($settings_key['url']) ? "href='{$settings_key['url']}'" : '';
-		echo $settings_key['is_external'] == true ? 'target="_blank"' : '';
-		echo $settings_key['nofollow'] == true ? 'rel="nofollow"' : '';
+    if ($is_echo) {
+        echo !empty($settings_key['url']) ? "href='{$settings_key['url']}'" : '';
+        echo $settings_key['is_external'] ? 'target="_blank"' : '';
+        echo $settings_key['nofollow'] ? 'rel="nofollow"' : '';
 
 		if (!empty($settings_key['custom_attributes'])) {
 			$attrs = explode(',', $settings_key['custom_attributes']);
@@ -507,7 +507,6 @@ add_action('admin_init', function () {
 		$docly_alerts_box = sanitize_text_field($_POST['docly_alerts_box']);
 		$spe_animated_heading = sanitize_text_field($_POST['spe_animated_heading']);
 		$spe_after_before_widget = sanitize_text_field($_POST['spe_after_before_widget']);
-
 		// Create an array to store the field values
 		$data = array(
 			'docy_accordion' => $docy_accordion,
@@ -515,6 +514,51 @@ add_action('admin_init', function () {
 			'spe_animated_heading' => $spe_animated_heading,
 			'spe_after_before_widget' => $spe_after_before_widget,
 		);
+	if (!empty($search)) {
+		$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s", '%' . esc_sql($search) . '%');
+	}
+
+	$query = "select post_title,ID  from $wpdb->posts where post_status = 'publish' $where $limit";
+	$results = $wpdb->get_results($query);
+	if (!empty($results)) {
+		foreach ($results as $row) {
+			$data[$row->ID] = $row->post_title;
+		}
+	}
+	return $data;
+}
+
+/*
+add_action('admin_head', function () {
+
+	echo 'Hello sdfdsf';
+	echo get_option('spider_elements_save_settings');
+
+	update_post_meta(1, 'docy_accordion', 1);
+	echo get_post_meta(1, 'docy_accordion', true);
+
+});*/
+
+
+add_action('admin_head', function() {
+
+//	$elements = Module_Settings::get_widget_settings();
+	$names = array(); // Create an array to store the 'name' values
+
+	/*if (!empty($elements)) {
+		foreach ($elements as $element) {
+			if (is_array($element)) {
+				foreach ($element as $k => $v) {
+					if ($k == 'name') {
+						$names[$v] = $v; // Add the 'name' value to the $names array
+					}
+				}
+			}
+		}
+	}*/
+
+	if ( isset($_POST['elements-submit'])) {
+		$elements = Module_Settings::get_widget_settings();
 
 		// Save the data in the options table using update_option
 		update_option('spe_widget_settings', $data);

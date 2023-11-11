@@ -417,18 +417,6 @@ class Tabs extends Widget_Base
 			]
 		);
 
-//		$this->add_group_control(
-//			\Elementor\Group_Control_Background::get_type(),
-//			[
-//				'name' 		=> 'normal_tab_title_bg_color',
-//				'types' 	=> [ 'classic', 'gradient' ],
-//				'exclude' 	=> [ 'image' ],
-//                'selectors' =>
-//                    '{{WRAPPER}} .tab_shortcode .spe_tab_title,
-//                    {{WRAPPER}} .header_tab_items .spe_tab_title',
-//			]
-//		);
-
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(),
             [
