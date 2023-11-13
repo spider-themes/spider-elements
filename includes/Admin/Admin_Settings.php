@@ -89,7 +89,7 @@ class Admin_Settings {
 
 			echo '</div>'; //End of tab contents
 
-		echo '</div>'; //End of wrapper
+		echo '</form>'; //End of wrapper
 
 	}
 
