@@ -242,16 +242,17 @@
 <div id="elements_popup1" class="elements_pro_popup">
     <div class="message_content ezd-text-center">
         <div class="close-pro">
-            <img class="pro-close" src="<?php echo SPE_IMG ?>/dashboard-img/modal-close.png; ?>"
-                alt="SPE Elementor Addons">
+            <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>" alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPE_IMG ?>/dashboard-img/dimond.png; ?>" alt="SPE dimond">
+            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>" alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
         </div>
         <div class="pro-content">
-            <h3>Go Pro</h3>
-            <p>Upgrade to Pro Version for Unlock more features!</p>
-            <a href="#" class="spe_dashboard_btn" target="_blank">Confirme</a>
+            <h3><?php esc_html_e( 'Go Pro', 'spider-elements' ); ?></h3>
+            <p><?php esc_html_e( 'Upgrade to Pro Version for Unlock more features!', 'spider-elements' ); ?></p>
+            <a href="#" class="spe_dashboard_btn" target="_blank">
+                <?php esc_html_e( 'Confirm', 'spider-elements' ); ?>
+            </a>
         </div>
     </div>
 </div>

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
 use Spider_Elements_Assets\includes\Admin\Module_Settings;
 
@@ -46,8 +49,9 @@ $elements = Module_Settings::get_widget_settings();
 		<?php
 		if ( is_array( $elements ) ) {
 			foreach ( $elements as $item ) {
-				$widget_type   = $item[ 'widget_type' ] ?? '';
-				$is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
+				$widget_type           = $item[ 'widget_type' ] ?? '';
+				$is_pro_widget         = $widget_type === 'pro' ? ' class=pro_popup' : '';
+				$is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
 
 				$elements_opt = get_option( 'spe_widget_settings' );
 				$opt_name     = $item[ 'name' ] ?? '';
@@ -76,11 +80,8 @@ $elements = Module_Settings::get_widget_settings();
 							if ( ! empty( $item[ 'label' ] ) ) {
 								?>
                                 <div class="spe_link">
-                                    <a href="<?php echo esc_url( $item[ 'demo_url' ] ) ?>" class="tooltip-top"
-                                       data-tooltip="<?php printf( esc_attr__( 'View %s Widget Demo',
-										   'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
-                                        <img src="<?php echo SPE_IMG . '/icon1.svg' ?>"
-                                             alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
+                                    <a href="<?php echo esc_url( $item[ 'demo_url' ] ) ?>" class="tooltip-top" data-tooltip="<?php printf( esc_attr__( 'View %s Widget Demo', 'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
+                                        <img src="<?php echo SPE_IMG . '/icon1.svg' ?>" alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
                                     </a>
                                     <a href="<?php echo esc_url( $item[ 'video_url' ] ) ?>" class="tooltip-top"
                                        data-tooltip="<?php printf( esc_attr__( 'View %s Video Tutorial',
@@ -92,11 +93,10 @@ $elements = Module_Settings::get_widget_settings();
 								<?php
 							}
 							?>
-                            <label<?php echo esc_attr( $is_pro_widget ) ?> class="eael-switch">
-
+                            <label<?php echo esc_attr( $is_pro_widget ) ?> class="spe-switch">
                                 <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
                                        name="<?php echo esc_attr( $item[ 'name' ] ) ?>"
-                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $checked ); ?>>
+                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $checked . $is_pro_widget_enabled ); ?>>
                                 <span class="spe_widget_switcher"></span>
                             </label>
                         </div>
@@ -129,28 +129,3 @@ $elements = Module_Settings::get_widget_settings();
         </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $('.spe_widget_checkbox').on('change', function () {
-            var isChecked = $(this).is(':checked');
-            var widgetName = $(this).attr('name');
-
-            // Send an AJAX request to your WordPress backend
-            $.ajax({
-                type: 'POST',
-                url: ajaxurl,  // This global variable is available in the WordPress admin
-                data: {
-                    action: 'update_widget_status',
-                    widgetName: widgetName,
-                    isChecked: isChecked
-                },
-                success: function (response) {
-                    // Handle the response from the server if needed
-                }
-            });
-        });
-    });
-
-</script>

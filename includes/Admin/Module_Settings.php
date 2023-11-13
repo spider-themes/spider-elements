@@ -1,5 +1,4 @@
 <?php
-
 namespace Spider_Elements_Assets\includes\Admin;
 
 // Exit if accessed directly
@@ -8,18 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Module_Settings {
-
-	public static function get_widget_names()
-	{
-		$widget_names = [];
-		$settings_fields = self::get_widget_settings();
-
-		foreach ($settings_fields['spider_elements_widgets'] as $widget) {
-			$widget_names[] = $widget['name'];
-		}
-
-		return $widget_names;
-	}
 
 	public static function get_widget_settings() {
 
@@ -39,7 +26,7 @@ class Module_Settings {
 				],
 				[
 					'name'         => 'docly_alerts_box',
-					'className'    => '', // widget class name
+					'className'    => 'Alerts_Box', // widget class name
 					'label'        => esc_html__('Alerts Box', 'spider-elements'),
 					'type'         => 'checkbox',
 					'default'      => 'on',
@@ -88,7 +75,7 @@ class Module_Settings {
 				],
 				[
 					'name'         => 'spe_buttons',
-					'className'    => '', // widget class name
+					'className'    => 'Buttons', // widget class name
 					'label'        => esc_html__('Buttons', 'spider-elements'),
 					'type'         => 'checkbox',
 					'default'      => 'on',
@@ -100,7 +87,7 @@ class Module_Settings {
 				],
 				[
 					'name'         => 'docly_cheatsheet',
-					'className'    => 'Buttons', // widget class name
+					'className'    => 'Cheat_sheet', // widget class name
 					'label'        => esc_html__('Cheat Sheet', 'spider-elements'),
 					'type'         => 'checkbox',
 					'default'      => 'on',
