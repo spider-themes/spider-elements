@@ -462,6 +462,56 @@ function spe_get_the_reading_time()
     return $totalreadingtime;
 }
 
+
+/**
+ * @param string $post_type
+ * @param int $limit
+ * @param string $search
+ * @return array
+ */
+function spe_get_query_post_list($post_type = 'any', $limit = -1, $search = '') {
+    global $wpdb;
+    $where = '';
+    $data = [];
+
+    if (-1 == $limit) {
+        $limit = '';
+    } elseif (0 == $limit) {
+        $limit = $wpdb->prepare("LIMIT %d,1", 0);
+    } else {
+        $limit = $wpdb->prepare("LIMIT %d,%d", 0, esc_sql($limit));
+    }
+
+    if ('any' === $post_type) {
+        $in_search_post_types = get_post_types(['exclude_from_search' => false]);
+        if (empty($in_search_post_types)) {
+            $where .= ' AND 1=0 ';
+        } else {
+            $placeholders = array_fill(0, count($in_search_post_types), '%s');
+            $in_search_post_types = array_map('esc_sql', $in_search_post_types);
+            $in_search_post_types_placeholder = implode(', ', $placeholders);
+            $where .= $wpdb->prepare(" AND {$wpdb->posts}.post_type IN ($in_search_post_types_placeholder)", ...$in_search_post_types);
+        }
+    } elseif (!empty($post_type)) {
+        $where .= $wpdb->prepare(" AND {$wpdb->posts}.post_type = %s", esc_sql($post_type));
+    }
+
+    if (!empty($search)) {
+        $search_term = '%' . esc_sql($search) . '%';
+        $where .= $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s", $search_term);
+    }
+
+    $query = $wpdb->prepare("SELECT post_title, ID FROM $wpdb->posts WHERE post_status = %s $where $limit", 'publish');
+    $results = $wpdb->get_results($query);
+    if (!empty($results)) {
+        foreach ($results as $row) {
+            $data[$row->ID] = $row->post_title;
+        }
+    }
+    return $data;
+}
+
+
 /**
  * Get all elementor page templates
  *
@@ -472,16 +522,17 @@ function spe_get_the_reading_time()
 function spe_get_el_templates($type = null)
 {
     $options = [];
+
     if ($type) {
-        $args                = [
-            'post_type'      => 'elementor_library',
+        $args = [
+            'post_type' => 'elementor_library',
             'posts_per_page' => -1,
         ];
         $args['tax_query'] = [
             [
                 'taxonomy' => 'elementor_library_type',
-                'field'    => 'slug',
-                'terms'    => $type,
+                'field' => 'slug',
+                'terms' => $type,
             ],
         ];
 
@@ -492,6 +543,8 @@ function spe_get_el_templates($type = null)
                 $options[$post->ID] = $post->post_title;
             }
         }
+    } else {
+        $options = spe_get_query_post_list('elementor_library');
     }
 
     return $options;
