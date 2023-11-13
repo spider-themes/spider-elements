@@ -492,29 +492,90 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access private
 		 */
 		private function register_widgets() {
-
-			$widget_settings = Module_Settings::get_widget_settings();
-
+			
 			// Register each widget class
 			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
-			if ( is_array( $widget_settings ) ) {
+			$elements_opt = get_option( 'spe_widget_settings' );
+
+			/*if ( is_array( $widget_settings ) ) {
 				foreach ( $widget_settings as $widget ) {
+					$elements_opt = get_option( 'spe_widget_settings' );
+
 					if ( isset( $widget[ 'className' ] ) ) {
 						$class_name = 'Spider_Elements\Widgets\\' . $widget[ 'className' ];
-
-						$elements_opt = get_option( 'spe_widget_settings' );
-						$opt_name     = $widget[ 'name' ] ?? '';
-
 						// Check if the class exists
 						if ( class_exists( $class_name ) ) {
 							$widgets_manager->register( new $class_name() );
 						}
 					}
+
 				}
+			}*/
+
+			if ( isset( $elements_opt[ 'docy_accordion' ] ) && $elements_opt[ 'docy_accordion' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Accordion() );
+			}
+			if ( isset( $elements_opt[ 'docly_alerts_box' ] ) && $elements_opt[ 'docly_alerts_box' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Alerts_Box() );
+			}
+			if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Animated_Heading() );
+			}
+			if ( isset( $elements_opt[ 'spe_after_before_widget' ] ) && $elements_opt[ 'spe_after_before_widget' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Before_After() );
+			}
+			if ( isset( $elements_opt[ 'docy_blog_grid' ] ) && $elements_opt[ 'docy_blog_grid' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Blog_Grid() );
+			}
+			if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Buttons() );
+			}
+			if ( isset( $elements_opt[ 'docly_cheatsheet' ] ) && $elements_opt[ 'docly_cheatsheet' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Cheat_sheet() );
+			}
+			if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Counter() );
+			}
+			if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Instagram() );
+			}
+			if ( isset( $elements_opt[ 'docy_integrations' ] ) && $elements_opt[ 'docy_integrations' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Integrations() );
+			}
+			if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\List_Item() );
+			}
+			if ( isset( $elements_opt[ 'spe_marquee_slides' ] ) && $elements_opt[ 'spe_marquee_slides' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Marquee_Slides() );
+			}
+			if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Pricing_Table_Switcher() );
+			}
+			if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Pricing_Table_Tabs() );
+			}
+			if ( isset( $elements_opt[ 'spe_skill_showcase_widget' ] ) && $elements_opt[ 'spe_skill_showcase_widget' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Skill_Showcase() );
+			}
+			if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Tabs() );
+			}
+			if ( isset( $elements_opt[ 'docy_team_carousel' ] ) && $elements_opt[ 'docy_team_carousel' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Team_Carousel() );
+			}
+			if ( isset( $elements_opt[ 'docy_testimonial' ] ) && $elements_opt[ 'docy_testimonial' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Testimonial() );
+			}
+			if ( isset( $elements_opt[ 'spe_timeline_widget' ] ) && $elements_opt[ 'spe_timeline_widget' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Timeline() );
+			}
+			if ( isset( $elements_opt[ 'docy_videos_playlist' ] ) && $elements_opt[ 'docy_videos_playlist' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Video_Playlist() );
+			}
+			if ( isset( $elements_opt[ 'docy_video_popup' ] ) && $elements_opt[ 'docy_video_popup' ] == 'on' ) {
+				$widgets_manager->register( new \Spider_Elements\Widgets\Video_Popup() );
 			}
 
-			$elements_opt = get_option( 'spe_widget_settings' );
-			$opt_name     = $item[ 'name' ] ?? '';
 
 		}
 

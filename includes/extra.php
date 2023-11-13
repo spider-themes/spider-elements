@@ -503,21 +503,56 @@ add_action('admin_init', function () {
 	if (isset($_POST['elements-submit'])) {
 
 		// Retrieve the field values from the form
-		$docy_accordion = sanitize_text_field($_POST['docy_accordion']);
-		$docly_alerts_box = sanitize_text_field($_POST['docly_alerts_box']);
-		$spe_animated_heading = sanitize_text_field($_POST['spe_animated_heading']);
-		$spe_after_before_widget = sanitize_text_field($_POST['spe_after_before_widget']);
+		$accordion = isset($_POST['docy_accordion']) ? sanitize_text_field($_POST['docy_accordion']) : '';
+		$alerts_box = isset($_POST['docly_alerts_box']) ? sanitize_text_field($_POST['docly_alerts_box']) : '';
+		$animated_heading = isset($_POST['spe_animated_heading']) ? sanitize_text_field($_POST['spe_animated_heading']) : '';
+		$after_before_widget = isset($_POST['spe_after_before_widget']) ? sanitize_text_field($_POST['spe_after_before_widget']) : '';
+		$docy_blog_grid = isset($_POST['docy_blog_grid']) ? sanitize_text_field($_POST['docy_blog_grid']) : '';
+		$spe_buttons = isset($_POST['spe_buttons']) ? sanitize_text_field($_POST['spe_buttons']) : '';
+		$docly_cheatsheet = isset($_POST['docly_cheatsheet']) ? sanitize_text_field($_POST['docly_cheatsheet']) : '';
+		$spe_counter = isset($_POST['spe_counter']) ? sanitize_text_field($_POST['spe_counter']) : '';
+		$spe_instagram = isset($_POST['spe_instagram']) ? sanitize_text_field($_POST['spe_instagram']) : '';
+		$docy_integrations = isset($_POST['docy_integrations']) ? sanitize_text_field($_POST['docy_integrations']) : '';
+		$docly_list_item = isset($_POST['docly_list_item']) ? sanitize_text_field($_POST['docly_list_item']) : '';
+		$spe_marquee_slides = isset($_POST['spe_marquee_slides']) ? sanitize_text_field($_POST['spe_marquee_slides']) : '';
+		$landpagy_pricing_table_switcher = isset($_POST['landpagy_pricing_table_switcher']) ? sanitize_text_field($_POST['landpagy_pricing_table_switcher']) : '';
+		$landpagy_pricing_table_tabs = isset($_POST['landpagy_pricing_table_tabs']) ? sanitize_text_field($_POST['landpagy_pricing_table_tabs']) : '';
+		$spe_skill_showcase_widget = isset($_POST['spe_skill_showcase_widget']) ? sanitize_text_field($_POST['spe_skill_showcase_widget']) : '';
+		$docy_tabs = isset($_POST['docy_tabs']) ? sanitize_text_field($_POST['docy_tabs']) : '';
+		$docy_team_carousel = isset($_POST['docy_team_carousel']) ? sanitize_text_field($_POST['docy_team_carousel']) : '';
+		$docy_testimonial = isset($_POST['docy_testimonial']) ? sanitize_text_field($_POST['docy_testimonial']) : '';
+		$spe_timeline_widget = isset($_POST['spe_timeline_widget']) ? sanitize_text_field($_POST['spe_timeline_widget']) : '';
+		$docy_videos_playlist = isset($_POST['docy_videos_playlist']) ? sanitize_text_field($_POST['docy_videos_playlist']) : '';
+		$docy_video_popup = isset($_POST['docy_video_popup']) ? sanitize_text_field($_POST['docy_video_popup']) : '';
 
 		// Create an array to store the field values
 		$data = array(
-			'docy_accordion' => $docy_accordion,
-			'docly_alerts_box' => $docly_alerts_box,
-			'spe_animated_heading' => $spe_animated_heading,
-			'spe_after_before_widget' => $spe_after_before_widget,
+			'docy_accordion' => $accordion,
+			'docly_alerts_box' => $alerts_box,
+			'spe_animated_heading' => $animated_heading,
+			'spe_after_before_widget' => $after_before_widget,
+			'docy_blog_grid' => $docy_blog_grid,
+			'spe_buttons' => $spe_buttons,
+			'docly_cheatsheet' => $docly_cheatsheet,
+			'spe_counter' => $spe_counter,
+			'spe_instagram' => $spe_instagram,
+			'docy_integrations' => $docy_integrations,
+			'docly_list_item' => $docly_list_item,
+			'spe_marquee_slides' => $spe_marquee_slides,
+			'landpagy_pricing_table_switcher' => $landpagy_pricing_table_switcher,
+			'landpagy_pricing_table_tabs' => $landpagy_pricing_table_tabs,
+			'spe_skill_showcase_widget' => $spe_skill_showcase_widget,
+			'docy_tabs' => $docy_tabs,
+			'docy_team_carousel' => $docy_team_carousel,
+			'docy_testimonial' => $docy_testimonial,
+			'spe_timeline_widget' => $spe_timeline_widget,
+			'docy_videos_playlist' => $docy_videos_playlist,
+			'docy_video_popup' => $docy_video_popup,
 		);
 
 		// Save the data in the options table using update_option
 		update_option('spe_widget_settings', $data);
+
 	}
 
 });

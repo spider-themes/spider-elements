@@ -1,5 +1,4 @@
 <?php
-
 namespace Spider_Elements_Assets\includes\Admin;
 
 // Exit if accessed directly
@@ -76,7 +75,7 @@ class Module_Settings {
 				],
 				[
 					'name'         => 'spe_buttons',
-					'className'    => '', // widget class name
+					'className'    => 'Buttons', // widget class name
 					'label'        => esc_html__('Buttons', 'spider-elements'),
 					'type'         => 'checkbox',
 					'default'      => 'on',
@@ -88,7 +87,7 @@ class Module_Settings {
 				],
 				[
 					'name'         => 'docly_cheatsheet',
-					'className'    => 'Buttons', // widget class name
+					'className'    => 'Cheat_sheet', // widget class name
 					'label'        => esc_html__('Cheat Sheet', 'spider-elements'),
 					'type'         => 'checkbox',
 					'default'      => 'on',
