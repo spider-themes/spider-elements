@@ -77,6 +77,7 @@
     // Trigger Isotope filtering after the tab is clicked
     filterMasonry();
     filterMasonryTwo();
+    return false;
   });
 
   // filter js
