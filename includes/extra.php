@@ -71,8 +71,8 @@ function spe_the_button($settings_key, $is_echo = true)
 
 	if ($is_echo == true) {
 		echo !empty($settings_key['url']) ? "href='{$settings_key['url']}'" : '';
-		echo $settings_key['is_external'] == true ? 'target="_blank"' : '';
-		echo $settings_key['nofollow'] == true ? 'rel="nofollow"' : '';
+		echo $settings_key['is_external'] ? 'target="_blank"' : '';
+		echo $settings_key['nofollow'] ? 'rel="nofollow"' : '';
 
 		if (!empty($settings_key['custom_attributes'])) {
 			$attrs = explode(',', $settings_key['custom_attributes']);
