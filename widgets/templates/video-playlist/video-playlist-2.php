@@ -23,31 +23,31 @@ if ( $is_preloader == '1' ) {
     <div class="gallery-top">
 		<?php
 		$i          = 0;
-		$all_videos = $settings[ 'tabs' ] ?? '';
+		$all_videos = $settings['tabs'] ?? '';
 		$i          = '0';
 		$active     = '';
 		foreach ( $all_videos as $videos ) {
-			$child_videos = $videos[ 'videos' ] ?? '';
+			$child_videos = $videos['videos'] ?? '';
 
 			foreach ( $child_videos as $child_video ) {
-				$video_url = $child_videos[ 'video_upload' ] ?? '';
+				$video_url = $child_videos['video_upload'] ?? '';
 				?>
                 <div class="item">
                     <div class="ezd-grid ezd-grid-cols-12ow video2_wrapper">
                         <div class="ezd-lg-col-7 player_wrapper">
-                            <video id="player_<?php echo esc_attr( $child_video[ 'video_upload' ][ 'id' ] ); ?>"
+                            <video id="player_<?php echo esc_attr( $child_video['video_upload']['id'] ); ?>"
                                    class="video-js vjs-fluid vjs-default-skin" controls preload playsinline
-                                   poster="<?php echo esc_attr( $child_video[ 'thumbnail' ][ 'url' ] ); ?>">
-                                <source src="<?php echo esc_url( $child_video[ 'video_upload' ][ 'url' ], ); ?>"
+                                   poster="<?php echo esc_attr( $child_video['thumbnail']['url'] ); ?>">
+                                <source src="<?php echo esc_url( $child_video['video_upload']['url'], ); ?>"
                                         type="video/mp4">
                             </video>
                         </div>
                         <div class="ezd-lg-col-5">
                             <div class="slide_text">
                                 <a href="#">
-                                    <h4> <?php echo esc_html( $child_video[ 'title2' ] ); ?> </h4>
+                                    <h4> <?php echo esc_html( $child_video['title2'] ); ?> </h4>
                                 </a>
-								<?php echo wpautop( $child_video[ 'video_caption' ] ); ?>
+								<?php echo wpautop( $child_video['video_caption'] ); ?>
                                 <div class="video_user">
                                     <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ) ?>">
                                         <ion-icon
@@ -73,10 +73,10 @@ if ( $is_preloader == '1' ) {
 			<?php
 			if ( is_array( $all_videos ) ) {
 				foreach ( $all_videos as $videos ) {
-					$child_videos = $videos[ 'videos' ] ?? '';
+					$child_videos = $videos['videos'] ?? '';
 
 					foreach ( $child_videos as $child_video ) {
-						$img_id = attachment_url_to_postid( $child_video[ 'thumbnail' ][ 'url' ] );
+						$img_id = attachment_url_to_postid( $child_video['thumbnail']['url'] );
 						?>
                         <div class="item">
                             <div class="gallery_inner_thumb">
@@ -84,7 +84,7 @@ if ( $is_preloader == '1' ) {
 								if ( ! empty ( $get_img ) ) :
 									wp_get_attachment_image( $img_id, 'spe_270x152' );
 								else : ?>
-                                    <img src="<?php echo esc_url( $child_video[ 'thumbnail' ][ 'url' ] ); ?>"
+                                    <img src="<?php echo esc_url( $child_video['thumbnail']['url'] ); ?>"
                                          alt="<?php esc_attr_e( 'Video Poster Image', 'spider-elements' ); ?>"/>
 								<?php
 								endif;
@@ -93,7 +93,7 @@ if ( $is_preloader == '1' ) {
                                     <div class="play-icon">
                                         <ion-icon name="play"></ion-icon>
                                     </div>
-                                    <h4> <?php echo esc_html( $child_video[ 'title2' ] ); ?></h4>
+                                    <h4> <?php echo esc_html( $child_video['title2'] ); ?></h4>
                                 </div>
                             </div>
                         </div>
@@ -189,9 +189,9 @@ if ( $is_preloader == '1' ) {
                 var myPlayers = Array(
 					<?php
 					foreach( $all_videos as $videos ) :
-					$child_videos = $videos[ 'videos' ] ?? '';
+					$child_videos = $videos['videos'] ?? '';
 					foreach( $child_videos as $child_video ) : ?> videojs(
-                        "player_<?php echo esc_js( $child_video[ 'video_upload' ][ 'id' ] ); ?>"),
+                        "player_<?php echo esc_js( $child_video['video_upload']['id'] ); ?>"),
 					<?php endforeach;
 					endforeach;
 					?>

@@ -43,7 +43,7 @@ class Skill_Showcase extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return ['spe-main' ];
+		return [ 'spe-main' ];
 	}
 
 	/**
@@ -188,21 +188,21 @@ class Skill_Showcase extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		if ( empty( $settings[ 'skills_list' ] ) ) {
+		if ( empty( $settings['skills_list'] ) ) {
 			return;
 		}
 
 		echo '<div class="col-lg-5 offset-lg-2 col-md-6 text-end wow fadeInRight">';
 		echo '<div class="skill-showcase">';
-			foreach ( $settings[ 'skills_list' ] as $skill ) {
-				if ( $skill[ 'size' ] === 'default' ) {
-					echo '<span>' . esc_html($skill[ 'name' ]) . '</span>';
-				} elseif ( $skill[ 'size' ] === 'small' ) {
-					echo '<span class="small">' . esc_html($skill[ 'name' ]) . '</span>';
-				} elseif ( $skill[ 'size' ] === 'big' ) {
-					echo '<span class="big">' . esc_html($skill[ 'name' ]) . '</span>';
-				}
+		foreach ( $settings['skills_list'] as $skill ) {
+			if ( $skill['size'] === 'default' ) {
+				echo '<span>' . esc_html( $skill['name'] ) . '</span>';
+			} elseif ( $skill['size'] === 'small' ) {
+				echo '<span class="small">' . esc_html( $skill['name'] ) . '</span>';
+			} elseif ( $skill['size'] === 'big' ) {
+				echo '<span class="big">' . esc_html( $skill['name'] ) . '</span>';
 			}
+		}
 		echo '</div>';
 		echo '</div>';
 	}

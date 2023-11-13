@@ -2,6 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
+
 namespace Spider_Elements\Widgets;
 
 use Elementor\Icons_Manager;
@@ -27,6 +28,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.7.0
  */
 class Blog_Grid extends Widget_Base {
+
+	public static function get_taxonomies( $cate = 'post', $type = 0 ) {
+		$post_cat = self::_get_terms( $cate );
+
+		$tag   = isset( $post_cat[ $type ] ) && ! empty( $post_cat[ $type ] ) ? $post_cat[ $type ] : 'category';
+		$terms = get_terms( array(
+			'taxonomy'   => $tag,
+			'orderby'    => 'name',
+			'order'      => 'DESC',
+			'hide_empty' => false,
+			'number'     => 1500
+		) );
+
+		return $terms;
+	}
 
 	public function get_name() {
 		return 'docy_blog_grid';
@@ -338,6 +354,80 @@ class Blog_Grid extends Widget_Base {
 		$this->end_controls_section();
 	}
 
+	public static function get_category( $cate = 'post' ) {
+		$post_cat = self::_get_terms( $cate );
+
+		$taxonomy   = isset( $post_cat[0] ) && ! empty( $post_cat[0] ) ? $post_cat[0] : [ 'category' ];
+		$query_args = [
+			'taxonomy'   => $taxonomy,
+			'orderby'    => 'name',
+			'order'      => 'DESC',
+			'hide_empty' => false,
+			'number'     => 1500
+		];
+		$terms      = get_terms( $query_args );
+
+		$options = [];
+		$count   = count( (array) $terms );
+		if ( $count > 0 ):
+			foreach ( $terms as $term ) {
+				if ( $term->parent == 0 ) {
+					$options[ $term->term_id ] = $term->name;
+					foreach ( $terms as $subcategory ) {
+						if ( $subcategory->parent == $term->term_id ) {
+							$options[ $subcategory->term_id ] = $subcategory->name;
+						}
+					}
+				}
+			}
+		endif;
+
+		return $options;
+	}
+
+	public static function _get_terms( $post = 'post' ) {
+		$taxonomy_objects = get_object_taxonomies( $post );
+
+		return $taxonomy_objects;
+	}
+
+	public static function get_posts() {
+		$post_args = get_posts(
+			array(
+				'posts_per_page' => - 1,
+				'post_status'    => 'publish',
+			)
+		);
+
+		$posts      = get_posts( $post_args );
+		$posts_list = [];
+		if ( is_array( $posts ) ) {
+			foreach ( $posts as $_key => $object ) {
+				$posts_list[ $object->ID ] = $object->post_title;
+			}
+		}
+
+		return $posts_list;
+	}
+
+	public static function get_posttype() {
+		$post_types = get_post_types(
+			array(
+				'public' => true,
+			),
+			'objects'
+		);
+
+		$options = array();
+
+		if ( is_array( $post_types ) ) {
+			foreach ( $post_types as $post_type ) {
+				$options[ $post_type->name ] = $post_type->label;
+			}
+		}
+
+		return $options;
+	}
 
 	/**
 	 * Name: elementor_blog_style_section()
@@ -769,33 +859,32 @@ class Blog_Grid extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // Array to variable conversation
 		// query part
-		$query[ 'post_status' ]      = 'publish';
-		$query[ 'suppress_filters' ] = false;
+		$query['post_status']      = 'publish';
+		$query['suppress_filters'] = false;
 		if ( $spe_post_blog_queryby == 'postype' ) {
-			$query[ 'post_type' ] = isset( $spe_post_blog_posttype ) ? $spe_post_blog_posttype : [ 'post' ];
+			$query['post_type'] = isset( $spe_post_blog_posttype ) ? $spe_post_blog_posttype : [ 'post' ];
 		} else {
-			$query[ 'post_type' ] = [ 'post' ];
+			$query['post_type'] = [ 'post' ];
 		}
 
-		$query[ 'orderby' ] = $spe_post_blog_order_by;
+		$query['orderby'] = $spe_post_blog_order_by;
 		if ( ! empty( $spe_post_blog_order ) ) {
-			$query[ 'order' ] = $spe_post_blog_order;
+			$query['order'] = $spe_post_blog_order;
 		}
 		if ( ! empty( $spe_post_blog_limit ) ) {
-			$query[ 'posts_per_page' ] = (int) $spe_post_blog_limit;
+			$query['posts_per_page'] = (int) $spe_post_blog_limit;
 		}
 		if ( ! empty( $spe_post_blog_offset ) ) {
-			$query[ 'offset' ] = (int) $spe_post_blog_offset;
+			$query['offset'] = (int) $spe_post_blog_offset;
 		}
 
 		if ( $spe_post_blog_queryby == 'categories' ) {
 			if ( is_array( $spe_post_blog_categories ) && sizeof( $spe_post_blog_categories ) > 0 ) {
-				$cate_query           = [
+				$cate_query         = [
 					[
 						'taxonomy' => 'category',
 						'field'    => 'term_id',
@@ -803,109 +892,19 @@ class Blog_Grid extends Widget_Base {
 					],
 					'relation' => 'AND',
 				];
-				$query[ 'tax_query' ] = $cate_query;
+				$query['tax_query'] = $cate_query;
 			}
 		}
 
 		if ( $spe_post_blog_queryby == 'posts' ) {
 			if ( is_array( $spe_post_blog_post ) && sizeof( $spe_post_blog_post ) > 0 ) {
-				$query[ 'post__in' ] = $spe_post_blog_post;
+				$query['post__in'] = $spe_post_blog_post;
 			}
 		}
 
 		$post_query = new \WP_Query( $query );
 
 		include "templates/blog-grid/blog-{$settings['style']}.php";
-	}
-
-	public static function get_posts() {
-		$post_args = get_posts(
-			array(
-				'posts_per_page' => - 1,
-				'post_status'    => 'publish',
-			)
-		);
-
-		$posts      = get_posts( $post_args );
-		$posts_list = [];
-		if ( is_array( $posts ) ) {
-			foreach ( $posts as $_key => $object ) {
-				$posts_list[ $object->ID ] = $object->post_title;
-			}
-		}
-
-		return $posts_list;
-	}
-
-	public static function get_category( $cate = 'post' ) {
-		$post_cat = self::_get_terms( $cate );
-
-		$taxonomy   = isset( $post_cat[ 0 ] ) && ! empty( $post_cat[ 0 ] ) ? $post_cat[ 0 ] : [ 'category' ];
-		$query_args = [
-			'taxonomy'   => $taxonomy,
-			'orderby'    => 'name',
-			'order'      => 'DESC',
-			'hide_empty' => false,
-			'number'     => 1500
-		];
-		$terms      = get_terms( $query_args );
-
-		$options = [];
-		$count   = count( (array) $terms );
-		if ( $count > 0 ):
-			foreach ( $terms as $term ) {
-				if ( $term->parent == 0 ) {
-					$options[ $term->term_id ] = $term->name;
-					foreach ( $terms as $subcategory ) {
-						if ( $subcategory->parent == $term->term_id ) {
-							$options[ $subcategory->term_id ] = $subcategory->name;
-						}
-					}
-				}
-			}
-		endif;
-
-		return $options;
-	}
-
-	public static function get_taxonomies( $cate = 'post', $type = 0 ) {
-		$post_cat = self::_get_terms( $cate );
-
-		$tag   = isset( $post_cat[ $type ] ) && ! empty( $post_cat[ $type ] ) ? $post_cat[ $type ] : 'category';
-		$terms = get_terms( array(
-			'taxonomy'   => $tag,
-			'orderby'    => 'name',
-			'order'      => 'DESC',
-			'hide_empty' => false,
-			'number'     => 1500
-		) );
-
-		return $terms;
-	}
-
-	public static function _get_terms( $post = 'post' ) {
-		$taxonomy_objects = get_object_taxonomies( $post );
-
-		return $taxonomy_objects;
-	}
-
-	public static function get_posttype() {
-		$post_types = get_post_types(
-			array(
-				'public' => true,
-			),
-			'objects'
-		);
-
-		$options = array();
-
-		if ( is_array( $post_types ) ) {
-			foreach ( $post_types as $post_type ) {
-				$options[ $post_type->name ] = $post_type->label;
-			}
-		}
-
-		return $options;
 	}
 
 }

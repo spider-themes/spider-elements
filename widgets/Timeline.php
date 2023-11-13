@@ -27,7 +27,7 @@ class Timeline extends Widget_Base {
 
 
 	public function get_title() {
-		return __('Timeline', 'spider-elements');
+		return __( 'Timeline', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -313,11 +313,11 @@ class Timeline extends Widget_Base {
 
 		echo '<div class="timeline-widget">';
 		$is_inverted = false;
-		foreach ( $settings[ 'timeline_items' ] as $item ) {
-			$timestamp = ! empty( $item[ 'timestamp' ] ) ? $item[ 'timestamp' ] : '';
-			$title     = ! empty( $item[ 'title' ] ) ? $item[ 'title' ] : '';
-			$location  = ! empty( $item[ 'location' ] ) ? $item[ 'location' ] : '';
-			$content   = ! empty( $item[ 'content' ] ) ? $item[ 'content' ] : '';
+		foreach ( $settings['timeline_items'] as $item ) {
+			$timestamp = ! empty( $item['timestamp'] ) ? $item['timestamp'] : '';
+			$title     = ! empty( $item['title'] ) ? $item['title'] : '';
+			$location  = ! empty( $item['location'] ) ? $item['location'] : '';
+			$content   = ! empty( $item['content'] ) ? $item['content'] : '';
 			echo '<div class="timeline-wrapper wow fadeInUp' . ( $is_inverted ? ' timeline-inverted' : '' ) . '" data-wow-delay="0.1s">';
 			echo '<div class="timestamp">' . esc_html( $timestamp ) . '</div>';
 			echo '<div class="timeline-panel">';

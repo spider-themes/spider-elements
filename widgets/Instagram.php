@@ -2,6 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
+
 namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Typography;
@@ -92,16 +93,16 @@ class Instagram extends Widget_Base {
 
 		$this->add_control(
 			'style', [
-				'label'   => esc_html__( 'Style', 'spider-elements' ),
-				'type'    => Controls_Manager::CHOOSE,
-				'options' => [
-					'1' => [
-						'icon'  => 'instagram1',
-						'title' => esc_html__( '01 : Instagram', 'spider-elements' )
-					],
+			'label'   => esc_html__( 'Style', 'spider-elements' ),
+			'type'    => Controls_Manager::CHOOSE,
+			'options' => [
+				'1' => [
+					'icon'  => 'instagram1',
+					'title' => esc_html__( '01 : Instagram', 'spider-elements' )
 				],
-				'default' => '1',
 			],
+			'default' => '1',
+		],
 		);
 
 		$this->end_controls_section(); // End Preset Skin
@@ -134,11 +135,11 @@ class Instagram extends Widget_Base {
 
 		$this->add_control(
 			'instagram_user_token', [
-				'label'       => esc_html__('Instagram Token', 'spider-elements'),
-				'description' => esc_html__('Enter instagram User Token if you want to show separated user\'s photos', 'spider-elements'),
+				'label'       => esc_html__( 'Instagram Token', 'spider-elements' ),
+				'description' => esc_html__( 'Enter instagram User Token if you want to show separated user\'s photos', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => __('---------------', 'spider-elements')
+				'placeholder' => __( '---------------', 'spider-elements' )
 			]
 		);
 
@@ -174,21 +175,20 @@ class Instagram extends Widget_Base {
 		extract( $settings ); //extract all settings array to variables converted to name of key
 
 
-		$access_token = !empty($instagram_user_token) ? $instagram_user_token : '';
+		$access_token = ! empty( $instagram_user_token ) ? $instagram_user_token : '';
 
 		// Instagram API Endpoint
 		$api_url = "https://graph.instagram.com/v13.0/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=$access_token";
 
 		// Fetch Instagram Data
-		$response = file_get_contents($api_url);
-		$data = json_decode($response);
+		$response = file_get_contents( $api_url );
+		$data     = json_decode( $response );
 
 
 		//================= Template Parts =================//
 		include "templates/instagram/instagram-1.php";
 
 	}
-
 
 
 }

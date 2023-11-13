@@ -1,5 +1,5 @@
 <?php
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
@@ -11,8 +11,8 @@ if (!defined('ABSPATH')) {
 				?>
                 <div class="slide">
                     <h2 class="se_marquee_title">
-						<?php echo wp_get_attachment_image( $settings[ 'shape_img' ][ 'id' ], 'full' ); ?>
-						<?php echo esc_html( $item[ 'title' ] ); ?>
+						<?php echo wp_get_attachment_image( $settings['shape_img']['id'], 'full' ); ?>
+						<?php echo esc_html( $item['title'] ); ?>
                     </h2>
                 </div>
 				<?php

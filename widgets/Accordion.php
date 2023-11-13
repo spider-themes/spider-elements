@@ -14,7 +14,7 @@ use Elementor\Widget_Base;
 
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -49,7 +49,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return ['spe-main','elegant-icon'];
+		return [ 'spe-main', 'elegant-icon' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return ['spe-el-widgets', 'spe-script'];
+		return [ 'spe-el-widgets', 'spe-script' ];
 	}
 
 
@@ -344,7 +344,7 @@ class Accordion extends Widget_Base {
 				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .accordion .doc_accordion .card-header button:not(.collapsed)'                  => 'color: {{VALUE}};',
+					'{{WRAPPER}} .accordion .doc_accordion .card-header button:not(.collapsed)'                              => 'color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-active .elementor-accordion-icon svg, {{WRAPPER}} .elementor-accordion-icon svg' => 'color: {{VALUE}};',
 				],
 			]

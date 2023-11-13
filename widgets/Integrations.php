@@ -132,7 +132,7 @@ class Integrations extends Widget_Base {
 
 		$repeater->add_control(
 			'align_items', [
-				'type'    => \Elementor\Controls_Manager::HEADING,
+				'type' => \Elementor\Controls_Manager::HEADING,
 			]
 		);
 

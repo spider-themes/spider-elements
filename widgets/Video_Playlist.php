@@ -2,6 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
+
 namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Typography;
@@ -56,7 +57,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return ['slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets', 'spe-script' ];
+		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets', 'spe-script' ];
 	}
 
 	public function get_keywords() {
@@ -96,16 +97,16 @@ class Video_Playlist extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'spe_video_preset', [
-				'label'	=> __( 'Preset Skin', 'spider-elements' ),
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style', [
-				'label'   	=> esc_html__( 'Skin', 'spider-elements' ),
-				'type'    	=> Controls_Manager::CHOOSE,
-				'options'	=> [
-					'1'	=> [
+				'label'   => esc_html__( 'Skin', 'spider-elements' ),
+				'type'    => Controls_Manager::CHOOSE,
+				'options' => [
+					'1' => [
 						'title' => __( 'Tab', 'spider-elements' ),
 						'icon'  => 'video-playlist',
 					],
@@ -126,7 +127,7 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'title_opt_sec', [
 				'label'     => __( 'Title', 'spider-elements' ),
-				'condition'	=> [
+				'condition' => [
 					'style' => [ '1' ]
 				]
 			]
@@ -222,29 +223,29 @@ class Video_Playlist extends Widget_Base {
 
 		$repeater2->add_control(
 			'video_caption', [
-				'label'       	=> esc_html__( 'Description', 'spider-elements' ),
-				'type'        	=> Controls_Manager::TEXTAREA,
-				'default'     	=> esc_html__( 'Default title', 'spider-elements' ),
-				'placeholder'	=> esc_html__( 'Type your caption here', 'spider-elements' ),
-				'description'	=> esc_html__( 'This field is applicable for Preset Two', 'spider-elements' ),
+				'label'       => esc_html__( 'Description', 'spider-elements' ),
+				'type'        => Controls_Manager::TEXTAREA,
+				'default'     => esc_html__( 'Default title', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Type your caption here', 'spider-elements' ),
+				'description' => esc_html__( 'This field is applicable for Preset Two', 'spider-elements' ),
 			]
 		);
 
 		$repeater2->add_control(
 			'current_author', [
-				'label'   	=> esc_html__( 'Author', 'spider-elements' ),
-				'type'    	=> Controls_Manager::HIDDEN,
+				'label'   => esc_html__( 'Author', 'spider-elements' ),
+				'type'    => Controls_Manager::HIDDEN,
 				// current login user name
-				'default'	=> get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''
+				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''
 			]
 		);
 		// CURRENT DATE control
 		$repeater2->add_control(
 			'current_date', [
-				'label'   	=> esc_html__( 'Current Date', 'spider-elements' ),
-				'type'    	=> Controls_Manager::HIDDEN,
+				'label'   => esc_html__( 'Current Date', 'spider-elements' ),
+				'type'    => Controls_Manager::HIDDEN,
 				// DEFAULT CURRENT DATE with time zone
-				'default'	=> date( get_option( 'date_format' ) . get_option( 'time_format' ), current_time( 'timestamp', 0 ) )
+				'default' => date( get_option( 'date_format' ) . get_option( 'time_format' ), current_time( 'timestamp', 0 ) )
 			]
 		);
 
@@ -258,8 +259,8 @@ class Video_Playlist extends Widget_Base {
 						'title2' => esc_html__( 'Add Video', 'spider-elements' ),
 					]
 				],
-				'frontend_available'	=> true,
-				'title_field'        	=> '{{{ title2 }}}'
+				'frontend_available' => true,
+				'title_field'        => '{{{ title2 }}}'
 			]
 		);
 
@@ -273,9 +274,9 @@ class Video_Playlist extends Widget_Base {
 						'title' => esc_html__( 'Insert Video', 'spider-elements' ),
 					]
 				],
-				'frontend_available'	=> true,
-				'title_field'        	=> '{{{ title }}}',
-				'prevent_empty'      	=> true,
+				'frontend_available' => true,
+				'title_field'        => '{{{ title }}}',
+				'prevent_empty'      => true,
 			]
 		);
 
@@ -299,21 +300,21 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'style_sec',
 			[
-				'label'	=> esc_html__( 'Style Section', 'spider-elements' ),
+				'label' => esc_html__( 'Style Section', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_responsive_control(
 			'sec_padding', [
-				'label'      	=> __( 'Section padding', 'spider-elements' ),
-				'type'       	=> Controls_Manager::DIMENSIONS,
-				'size_units'	=> [ 'px', '%', 'em' ],
-				'selectors'  	=> [
+				'label'      => __( 'Section padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
 					'{{WRAPPER}} .video_list_area' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'default'   => [
-					'unit'	=> 'px', // The selected CSS Unit. 'px', '%', 'em',
+				'default'    => [
+					'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
 				],
 			]
 		);
@@ -322,8 +323,8 @@ class Video_Playlist extends Widget_Base {
 			'sec_bg_color', [
 				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors'	=> [
-					'{{WRAPPER}} .video_list_area'	=> 'background-color: {{VALUE}};',
+				'selectors' => [
+					'{{WRAPPER}} .video_list_area' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -333,7 +334,7 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_layout',
 			[
-				'label'	=> esc_html__( 'Layout', 'spider-elements' ),
+				'label' => esc_html__( 'Layout', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -341,10 +342,10 @@ class Video_Playlist extends Widget_Base {
 		$this->add_responsive_control(
 			'layout_height',
 			[
-				'label'      	=> esc_html__( 'Height', 'spider-elements' ),
-				'type'       	=> Controls_Manager::SLIDER,
-				'size_units'	=> [ 'px', 'vh', 'vw' ],
-				'range'      	=> [
+				'label'      => esc_html__( 'Height', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'vh', 'vw' ],
+				'range'      => [
 					'px' => [
 						'min' => 200,
 						'max' => 1200,
@@ -369,7 +370,7 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_top_bar',
 			[
-				'label'	=> esc_html__( 'Top Bar', 'spider-elements' ),
+				'label' => esc_html__( 'Top Bar', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -387,7 +388,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors'	=> [
+				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header' => 'background-color: {{VALUE}};',
 				],
 			]
@@ -399,7 +400,7 @@ class Video_Playlist extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
-				'selectors'	=> [
+				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-title' => 'color: {{VALUE}};',
 				],
 			]
@@ -427,10 +428,10 @@ class Video_Playlist extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
-				'selectors'	=> [
-					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count'          	=> 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i'   	=> 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side svg'	=> 'fill: {{VALUE}};',
+				'selectors' => [
+					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count'          => 'color: {{VALUE}};',
+					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -438,8 +439,8 @@ class Video_Playlist extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     	=> 'videos_amount_typography',
-				'selector'	=> '{{WRAPPER}} .e-tabs-header .e-tabs-videos-count',
+				'name'     => 'videos_amount_typography',
+				'selector' => '{{WRAPPER}} .e-tabs-header .e-tabs-videos-count',
 			]
 		);
 
@@ -448,7 +449,7 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_videos',
 			[
-				'label'	=> esc_html__( 'Videos', 'spider-elements' ),
+				'label' => esc_html__( 'Videos', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -458,7 +459,7 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_tab(
 			'playlist_tabs_normal',
 			[
-				'label'	=> esc_html__( 'Normal', 'spider-elements' ),
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
 			]
 		);
 
@@ -475,7 +476,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors'	=> [
+				'selectors' => [
 					'{{WRAPPER}} .video_list .video_list_inner .card' => 'background-color: {{VALUE}};',
 				],
 			]
@@ -503,7 +504,7 @@ class Video_Playlist extends Widget_Base {
 		$this->add_control(
 			'heading_duration_normal',
 			[
-				'label'	=> esc_html__( 'Duration', 'spider-elements' ),
+				'label' => esc_html__( 'Duration', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -513,7 +514,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors'	=> [
+				'selectors' => [
 					'{{WRAPPER}} .e-tab-title .e-tab-duration' => 'color: {{VALUE}};',
 				],
 			]
@@ -540,7 +541,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors'	=> [
+				'selectors' => [
 					'{{WRAPPER}} .video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:after' => 'color: {{VALUE}};',
 				],
 			]
@@ -551,15 +552,15 @@ class Video_Playlist extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
-				'name'           		=> 'normal_icon_top_text_shadow',
-				'fields_options'		=> [
-					'text_shadow_type'	=> [
-						'label' 		=> _x( 'Shadow', 'Text Shadow Control', 'spider-elements' ),
+				'name'           => 'normal_icon_top_text_shadow',
+				'fields_options' => [
+					'text_shadow_type' => [
+						'label' => _x( 'Shadow', 'Text Shadow Control', 'spider-elements' ),
 					],
-					'text_shadow'      	=> [
-						'selectors' 	=> [
-							'{{WRAPPER}} .e-tab-title i'   	=> 'text-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}};',
-							'{{WRAPPER}} .e-tab-title svg'	=> 'filter: drop-shadow({{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}});',
+					'text_shadow'      => [
+						'selectors' => [
+							'{{WRAPPER}} .e-tab-title i'   => 'text-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}};',
+							'{{WRAPPER}} .e-tab-title svg' => 'filter: drop-shadow({{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}});',
 						],
 					],
 				],

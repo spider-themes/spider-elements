@@ -327,7 +327,7 @@ function spe_el_image_caption( $image_id = '' ) {
  *
  * @return string Filtered content containing only the allowed HTML.
  */
-function spe_get_the_kses_post( $content ) {
+function spe_kses_post( $content ) {
 	$allowed_tag = array(
 		'strong' => [],
 		'br'     => [],
