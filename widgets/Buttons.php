@@ -2,6 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
+
 namespace Spider_Elements\Widgets;
 
 use Elementor\Icons_Manager;
@@ -21,21 +22,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Buttons extends Widget_Base {
 
-    public function get_name() {
-        return 'spe_buttons';
-    }
+	public function get_name() {
+		return 'spe_buttons';
+	}
 
-    public function get_title() {
-        return __( 'Button', 'spider-elements' );
-    }
+	public function get_title() {
+		return __( 'Button', 'spider-elements' );
+	}
 
-    public function get_icon() {
-        return 'eicon-button spe-icon';
-    }
+	public function get_icon() {
+		return 'eicon-button spe-icon';
+	}
 
-    public function get_keywords() {
-        return [ '' ];
-    }
+	public function get_keywords() {
+		return [ '' ];
+	}
 
 	public function get_categories() {
 		return [ 'spider-elements' ];
@@ -45,9 +46,9 @@ class Buttons extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-    public function get_style_depends() {
-        return [ '' ];
-    }
+	public function get_style_depends() {
+		return [ '' ];
+	}
 
 	/**
 	 * Name: get_script_depends()
@@ -82,38 +83,38 @@ class Buttons extends Widget_Base {
 	 * Author: spider-themes
 	 */
 	public function elementor_content_control() {
-        //============================= Filter Options =================================== //
-        $this->start_controls_section(
-            'buttons_layout', [
-                'label' => __('Layout', 'spider-elements'),
-            ]
-        );
+		//============================= Filter Options =================================== //
+		$this->start_controls_section(
+			'buttons_layout', [
+				'label' => __( 'Layout', 'spider-elements' ),
+			]
+		);
 
-        // Style
-        $this->add_control(
-            'style', [
-                'label'   => esc_html__( 'Style', 'spider-elements' ),
-                'type'    => Controls_Manager::SELECT,
-                'label_block' => true,
-                'options' => [
-                    '1' => esc_html__( '01: Scroll Button', 'spider-elements' )
-                ],
-                'default' => '1',
-            ]
-        );
+		// Style
+		$this->add_control(
+			'style', [
+				'label'       => esc_html__( 'Style', 'spider-elements' ),
+				'type'        => Controls_Manager::SELECT,
+				'label_block' => true,
+				'options'     => [
+					'1' => esc_html__( '01: Scroll Button', 'spider-elements' )
+				],
+				'default'     => '1',
+			]
+		);
 
-        $this->add_control(
+		$this->add_control(
 			'section_id',
 			[
-				'label' => esc_html__( 'Section ID', 'spider-elements' ),
-				'type' => Controls_Manager::TEXT,
+				'label'       => esc_html__( 'Section ID', 'spider-elements' ),
+				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Type your section ID here', 'spider-elements' ),
 			]
 		);
 
-        $this->end_controls_section(); //End Filter
+		$this->end_controls_section(); //End Filter
 
-    }
+	}
 
 
 	/**
@@ -127,7 +128,7 @@ class Buttons extends Widget_Base {
 	 */
 	public function elementor_style_control() {
 
-    }
+	}
 
 
 	/**
@@ -139,12 +140,12 @@ class Buttons extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-    protected function render() {
-        $settings = $this->get_settings_for_display();
-        extract($settings); // extract all settings array to variables converted to name of key
+	protected function render() {
+		$settings = $this->get_settings_for_display();
+		extract( $settings ); // extract all settings array to variables converted to name of key
 
-        //================= Template Parts =================//
-        include "templates/buttons/button-{$settings['style']}.php";
+		//================= Template Parts =================//
+		include "templates/buttons/button-{$settings['style']}.php";
 
-    }
+	}
 }

@@ -1,5 +1,5 @@
 <?php
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
@@ -8,35 +8,37 @@ if (!defined('ABSPATH')) {
     <div class="swiper banner-main">
         <div class="swiper-wrapper">
 
-            <?php
-            if ( !empty($sliders) ) {
-                foreach ( $sliders as $item ) {
-                    ?>
-                    <div class="swiper-slide" style="background-image: url('<?php echo esc_url($item['bg_img']['url']) ?>')">
+			<?php
+			if ( ! empty( $sliders ) ) {
+				foreach ( $sliders as $item ) {
+					?>
+                    <div class="swiper-slide"
+                         style="background-image: url('<?php echo esc_url( $item['bg_img']['url'] ) ?>')">
                         <div class="banner-content text-center">
-                            <?php
-                            if ( !empty($item['title']) ) { ?>
-                                <h1><?php echo wp_kses_post($item['title']) ?></h1>
-                                <?php
-                            }
-                            if ( !empty($item['subtitle']) ) { ?>
-                                <p class="mt-75"><?php echo esc_html($item['subtitle']) ?></p>
-                                <?php
-                            }
-                            if ( !empty($item['title']) ) {
-                                ?>
-                                <a <?php spe_the_button($item['btn_url']) ?> class="theme-btn theme-btn-outline-white mt-30">
-                                    <?php echo esc_html($item['btn_label']) ?>
+							<?php
+							if ( ! empty( $item['title'] ) ) { ?>
+                                <h1><?php echo wp_kses_post( $item['title'] ) ?></h1>
+								<?php
+							}
+							if ( ! empty( $item['subtitle'] ) ) { ?>
+                                <p class="mt-75"><?php echo esc_html( $item['subtitle'] ) ?></p>
+								<?php
+							}
+							if ( ! empty( $item['title'] ) ) {
+								?>
+                                <a <?php spe_the_button( $item['btn_url'] ) ?>
+                                        class="theme-btn theme-btn-outline-white mt-30">
+									<?php echo esc_html( $item['btn_label'] ) ?>
                                 </a>
-                                <?php
-                            }
-                            ?>
+								<?php
+							}
+							?>
                         </div>
                     </div>
-                    <?php
-                }
-            }
-            ?>
+					<?php
+				}
+			}
+			?>
 
         </div>
         <div class="swiper-button-prev"></div>
@@ -48,28 +50,21 @@ if (!defined('ABSPATH')) {
         <div class="swiper banner-thumbs">
             <div class="swiper-wrapper">
 
-                <?php
-                if ( !empty($sliders) ) {
-                    foreach ( $sliders as $item ) {
-                        ?>
+				<?php
+				if ( ! empty( $sliders ) ) {
+					foreach ( $sliders as $item ) {
+						?>
                         <div class="swiper-slide">
                             <div class="banner-thumb-img">
-                                <?php echo wp_get_attachment_image($item['bg_img']['id'], 'spe_120x70'); ?>
+								<?php echo wp_get_attachment_image( $item['bg_img']['id'], 'spe_120x70' ); ?>
                             </div>
                         </div>
-                        <?php
-                    }
-                }
-                ?>
+						<?php
+					}
+				}
+				?>
 
             </div>
         </div>
     </div>
-<!--    <div class="circle">-->
-<!--        <div class="circle-item">-->
-<!--            <svg class="circle-spinner" viewBox="0 0 50 50">-->
-<!--                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke="#fff" stroke-width="1"></circle>-->
-<!--            </svg>-->
-<!--        </div>-->
-<!--    </div>-->
 </section>

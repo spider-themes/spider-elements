@@ -272,28 +272,28 @@ class Animated_Heading extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // extract all settings array to variables converted to name of key
 		?>
-<h1 class="cd-headline clip home-headline">
-    <?php echo esc_html( $settings[ 'headline_before_text' ] ) ?>
-    <small class="cd-words-wrapper single-headline">
-        <?php
+        <h1 class="cd-headline clip home-headline">
+			<?php echo esc_html( $settings['headline_before_text'] ) ?>
+            <small class="cd-words-wrapper single-headline">
+				<?php
 				$i = "";
 				if ( ! empty( $cd_option_list ) ) {
 					foreach ( $cd_option_list as $item ) {
 						$vihi = $i == 1 ? 'visible' : 'hidden';
 						$i ++;
-						$slide_title1 = ! empty( $item[ 'title1' ] ) ? $item[ 'title1' ] : '';
-						$slide_title2 = ! empty( $item[ 'title2' ] ) ? $item[ 'title2' ] : '';
+						$slide_title1 = ! empty( $item['title1'] ) ? $item['title1'] : '';
+						$slide_title2 = ! empty( $item['title2'] ) ? $item['title2'] : '';
 						?>
-        <span class="is-<?php echo esc_attr( $vihi ); ?>">
+                        <span class="is-<?php echo esc_attr( $vihi ); ?>">
             <b><?php echo esc_attr( $slide_title1 ); ?></b>
             <?php echo esc_attr( $slide_title2 ); ?>
         </span>
-        <?php
+						<?php
 					}
 				}
 				?>
-    </small>
-</h1>
-<?php
+            </small>
+        </h1>
+		<?php
 	}
 }

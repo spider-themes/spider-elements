@@ -358,3 +358,17 @@
     background-size: cover;
     background-position: top;
 }
+
+/*=======Image slider Image style=======*/
+.img_slid1::before {
+    background: url("../images/el-editor-preview/img_slider1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.img_slid2::before {
+    background: url("../images/el-editor-preview/img_silder2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}

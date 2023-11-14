@@ -2,6 +2,7 @@
 /**
  * Use namespace to avoid conflict
  */
+
 namespace Spider_Elements\Widgets;
 
 use Elementor\Group_Control_Border;
@@ -375,16 +376,16 @@ class List_Item extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // extract all settings array to variables converted to name of key
 
-		if ( $settings[ 'style' ] == 'unordered_list' ) {
+		if ( $settings['style'] == 'unordered_list' ) {
 			?>
             <div class="steps-panel">
                 <ul class="ordered-list">
 					<?php
 					if ( ! empty( $ul_icon_list ) ) {
 						foreach ( $ul_icon_list as $item ) {
-							if ( ! empty( $item[ 'text' ] ) ) { ?>
-                                <li class="elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
-									<?php echo esc_html( $item[ 'text' ] ); ?>
+							if ( ! empty( $item['text'] ) ) { ?>
+                                <li class="elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
+									<?php echo esc_html( $item['text'] ); ?>
                                 </li>
 								<?php
 							}
@@ -394,16 +395,16 @@ class List_Item extends Widget_Base {
                 </ul>
             </div>
 			<?php
-		} elseif ( $settings[ 'style' ] == 'order_list' ) {
+		} elseif ( $settings['style'] == 'order_list' ) {
 			?>
             <div class="steps-panel">
                 <ol class="ordered-list">
 					<?php
 					if ( ! empty( $ul_icon_list ) ) {
 						foreach ( $ul_icon_list as $item ) {
-							if ( ! empty( $item[ 'text' ] ) ) { ?>
-                                <li class="elementor-repeater-item-<?php echo esc_attr($item[ '_id' ]); ?>">
-									<?php echo esc_html( $item[ 'text' ] ) ?>
+							if ( ! empty( $item['text'] ) ) { ?>
+                                <li class="elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
+									<?php echo esc_html( $item['text'] ) ?>
                                 </li>
 								<?php
 							}

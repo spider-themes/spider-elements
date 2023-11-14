@@ -1,5 +1,5 @@
 <?php
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
@@ -23,20 +23,21 @@ if (!defined('ABSPATH')) {
 						?>
                         <div class="swiper-slide">
                             <div class="instagram-feed-item">
-                                <?php
-                                if ( $media_url ) { ?>
-                                    <img src="<?php echo esc_url( $media_url ); ?>" alt="<?php echo esc_attr($caption) ?>" />
-                                    <?php
-                                }
-                                if ( $permalink ) { ?>
+								<?php
+								if ( $media_url ) { ?>
+                                    <img src="<?php echo esc_url( $media_url ); ?>"
+                                         alt="<?php echo esc_attr( $caption ) ?>"/>
+									<?php
+								}
+								if ( $permalink ) { ?>
                                     <a class="icon-link" href="<?php echo esc_url( $permalink ); ?>">
                                         <span class="instagram-icon">
                                           <i class="fab fa-instagram"></i>
                                         </span>
                                     </a>
-                                    <?php
-                                }
-                                ?>
+									<?php
+								}
+								?>
                             </div>
                         </div>
 						<?php
