@@ -553,6 +553,32 @@ class Tabs extends Widget_Base {
 
 		$this->end_controls_section(); // End Tab Title Style
 
+		//============================ Tab ProgressBar Style ============================//
+		$this->start_controls_section(
+			'style_tabs_progressbar',
+			[
+				'label' => __( 'Tab ProgressBar', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'is_auto_play' => 'yes',
+				]
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'progressbar_bg_color',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' =>
+					'{{WRAPPER}} .tab_shortcode .spe_auto_tabs .nav-item .nav-link .progress-bar', 
+
+			]
+		);
+
+		$this->end_controls_section();
+
 
 		//=============================== Content Section ===============================//
 		$this->start_controls_section(
