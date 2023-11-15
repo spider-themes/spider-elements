@@ -232,7 +232,21 @@ class Tabs extends Widget_Base {
 				'label_on'     => esc_html__( 'Show', 'spider-elements' ),
 				'label_off'    => esc_html__( 'Hide', 'spider-elements' ),
 				'return_value' => 'yes',
-				'default'      => 'on',
+				'default'      => 'no',
+				'separator'    => 'before'
+			]
+		);
+
+		$this->add_control(
+			'is_auto_play',
+			[
+				'label'        => esc_html__( 'Auto Play', 'spider-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'description'  => esc_html__( 'Show/Hide auto play for tab', 'spider-elements' ),
+				'label_on'     => esc_html__( 'Show', 'spider-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
 				'separator'    => 'before'
 			]
 		);
@@ -652,7 +666,7 @@ class Tabs extends Widget_Base {
 
 		$navigation_arrow_class = ! empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
 		$sticky_tab_class       = ! empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
-		//$hover_tab_class = !empty( $is_hover_tab == 'yes' ) ? ' hover_tabs' : '';
+		$tab_auto_class = !empty( $is_auto_play == 'yes' ) ? 'spe_auto_tabs' : '';
 
 		//================= Template Parts =================//
 		include "templates/tabs/tab-{$settings['style']}.php";

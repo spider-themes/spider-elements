@@ -47,20 +47,6 @@
         }
         return false;
       });
-
-      // speAccordion.on("click", function (e) {
-      //   var $this = $(this);
-      //   var $parent = $this.parent();
-
-      //   if ($parent.hasClass("spe-collapsed")) {
-      //     $parent.removeClass("spe-collapsed");
-      //   } else {
-      //     speAccordion.parent().removeClass("spe-collapsed");
-      //     $parent.addClass("spe-collapsed");
-      //   }
-
-      //   e.stopPropagation(); // Prevent the click event from propagating to other elements
-      // });
     },
 
     //======================== Instagram Feed =========================== //
@@ -674,30 +660,6 @@
           });
         }
       }
-
-      // custom tab js
-      let tabJs = $scope.find(".ezd-tab-menu li button");
-      tabJs.on("click", function (e) {
-        e.preventDefault();
-
-        // Remove active class from all tabs within the same menu
-        $(this)
-          .closest(".ezd-tab-menu")
-          .find("li button")
-          .removeClass("active");
-
-        // Add active class to the clicked tab
-        $(this).addClass("active");
-
-        var target = $(this).attr("data-rel");
-
-        $("#" + target)
-          .addClass("active")
-          .siblings(".ezd-tab-box")
-          .removeClass("active");
-
-        return false;
-      });
     },
 
     //======================== Pricing Table Tabs =========================== //

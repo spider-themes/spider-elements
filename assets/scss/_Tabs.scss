@@ -15,7 +15,7 @@
         border: 1px solid var(--black_50);
         position: relative;
         text-decoration: none;
-        margin-bottom: 0px!important;
+        margin-bottom: 0px !important;
         display: flex;
         gap: 8px;
         align-items: center;
@@ -61,8 +61,8 @@
   }
 }
 
-
-.header_tab_items, .tab_shortcode  {
+.header_tab_items,
+.tab_shortcode {
   .nav-tabs {
     .numb {
       width: 20px;
@@ -207,7 +207,7 @@
       }
     }
 
-    &+li {
+    & + li {
       margin-left: 55px;
     }
   }
@@ -233,10 +233,9 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   }
 }
 
-
 .tabs_sliders {
   position: relative;
-  ul{
+  ul {
     &.nav-tabs {
       align-items: flex-start;
       flex-wrap: nowrap !important;
@@ -246,7 +245,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       }
     }
   }
-  span{
+  span {
     &.scroller-btn {
       position: absolute;
       // left: -24px;
@@ -260,9 +259,9 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       display: none;
     }
   }
-  &.sticky_tab_item{
-    span{
-      &.scroller-btn{
+  &.sticky_tab_item {
+    span {
+      &.scroller-btn {
         left: 0;
         height: 100%;
         width: 40px;
@@ -271,30 +270,36 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
         line-height: 44px;
         z-index: 1;
         text-align: center;
-        &:before{
+        &:before {
           content: "";
           width: 20px;
           height: 100%;
-          background: linear-gradient(90deg, rgba(249, 249, 249, 0.8) 30%, rgb(249, 249, 249) 100%, rgb(249, 249, 249) 16%, rgb(249, 249, 249) 100%);
+          background: linear-gradient(
+            90deg,
+            rgba(249, 249, 249, 0.8) 30%,
+            rgb(249, 249, 249) 100%,
+            rgb(249, 249, 249) 16%,
+            rgb(249, 249, 249) 100%
+          );
           position: absolute;
           right: -20px;
         }
       }
-      &.right{
+      &.right {
         right: 0;
         left: auto;
-        &:before{
+        &:before {
           left: -20px;
           right: auto;
         }
       }
     }
-    &.header_tab_items{
-      span{
-        &.scroller-btn{
+    &.header_tab_items {
+      span {
+        &.scroller-btn {
           left: -24px;
         }
-        &.right{
+        &.right {
           right: -24px;
           left: auto;
         }
@@ -302,9 +307,6 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     }
   }
 }
-
-
-
 
 .process_tab_shortcode {
   .version {
@@ -353,7 +355,6 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 }
 
 .process_tab_shortcode {
-
   .previous,
   .next {
     position: absolute;
@@ -421,7 +422,6 @@ body.remove {
       .nav.nav-tabs {
         li {
           a {
-
             svg,
             i,
             img {
@@ -500,24 +500,26 @@ body.remove {
   }
 }
 
-
 ul.nav.nav-tabs {
+  display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: -1px;
   margin-top: 0;
   list-style: none;
+  margin-left: 0px;
 }
 
 .tab_shortcode .nav-link {
   display: block;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: #0d6efd;
   text-decoration: none;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }
 
-.tab-content>.active {
+.tab-content > .active {
   display: block;
 }
 
@@ -529,5 +531,27 @@ ul.nav.nav-tabs {
 .tab-content {
   p {
     margin-top: 0;
+  }
+}
+
+// spe_auto_tabs css start
+.tab_shortcode {
+  .spe_auto_tabs {
+    .nav-item {
+      .nav-link {
+        position: relative;
+        overflow: hidden;
+        &:before {
+          display: none;
+        }
+        .progress-bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #a77def;
+          height: 2px;
+        }
+      }
+    }
   }
 }
