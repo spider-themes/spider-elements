@@ -14,10 +14,10 @@ class Admin_Settings {
 
 	const PAGE_ID = 'spider_elements_settings';
 
+
 	public function __construct() {
 
 		add_action( 'admin_menu', [ $this, 'add_menu_page' ] );
-
 
 	}
 
@@ -104,5 +104,3 @@ class Admin_Settings {
 
 
 }
-
-new Admin_Settings();

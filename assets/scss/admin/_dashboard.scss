@@ -291,14 +291,13 @@
 
 .spe_requirment_list {
   li {
-    font-size: 16px;
+    font-size: 14px;
     font-family: $rob;
     color: #535a60;
-    line-height: 32px;
     display: flex;
     align-items: center;
     margin-bottom: 0;
-    padding: 10px 25px;
+    padding: 16px 24px;
     background: #f5f5f5;
     strong {
       font-size: 16px;
@@ -308,11 +307,16 @@
     }
     span {
       flex: 60%;
+      &.invalid {
+        i {
+          background: #e9336b;
+        }
+      }
     }
     i {
       font-size: 8px;
-      width: 15px;
-      height: 15px;
+      width: 24px;
+      height: 24px;
       display: inline-flex;
       align-items: center;
       justify-content: center;

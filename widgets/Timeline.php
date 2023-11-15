@@ -43,7 +43,7 @@ class Timeline extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'spe-main' ];
+		return [ 'spe-main' ];
 	}
 
 

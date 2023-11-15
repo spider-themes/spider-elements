@@ -35,7 +35,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 	/**
 	 * Class Spider_Elements
 	 */
-	class Spider_Elements {
+	final class Spider_Elements {
 
 		/**
 		 * Plugin Version
@@ -103,6 +103,37 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			return self::$_instance;
 		}
 
+        /**
+         * Constructor
+         *
+         * Initialize the Spider Elements plugins.
+         *
+         */
+        public function __construct() {
+
+            // Include Files
+            $this->core_includes();
+
+            // define constants
+            $this->define_constants();
+
+            // Init Plugin
+            add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+
+            add_action( 'init', [ $this, 'i18n' ] );
+
+            // Register Category
+            add_action( 'elementor/elements/categories_registered', [ $this, 'elements_register_category' ] );
+
+            // Register widgets
+            add_action( 'elementor/widgets/register', [ $this, 'on_widgets_registered' ] );
+
+            // Register Icon
+            add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'spe_elegant_icons' ] );
+
+        }
+
+
 		/**
 		 * Clone
 		 *
@@ -134,40 +165,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		public function __wakeup() {
 			// Un-serializing instances of the class is forbidden.
 			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), '1.7.0' );
-		}
-
-
-		/**
-		 * Constructor
-		 *
-		 * Initialize the Spider Elements plugins.
-		 *
-		 * @since 1.7.0
-		 *
-		 * @access public
-		 */
-		public function __construct() {
-
-			// Include Files
-			$this->core_includes();
-
-			// define constants
-			$this->define_constants();
-
-			// Init Plugin
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
-
-			add_action( 'init', [ $this, 'i18n' ] );
-
-			// Register Category
-			add_action( 'elementor/elements/categories_registered', [ $this, 'elements_register_category' ] );
-
-			// Register widgets
-			add_action( 'elementor/widgets/register', [ $this, 'on_widgets_registered' ] );
-
-			// Register Icon
-			add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'spe_elegant_icons' ] );
-
 		}
 
 
@@ -269,6 +266,12 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			}
+
+
+            //
+            if ( is_admin() ) {
+                new Spider_Elements_Assets\includes\Admin\Admin_Settings();
+            }
 
 		}
 
@@ -598,12 +601,25 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			define( 'SPE_JS', SPE_URL . '/assets/js' );
 			define( 'SPE_IMG', SPE_URL . '/assets/images' );
 			define( 'SPE_VEND', SPE_URL . '/assets/vendors' );
-
 		}
 
 
 	}
 }
 
-// Instantiate Spider_Elements.
-new Spider_Elements();
+
+/**
+ * Initialize the main plugin class
+ *
+ * @return \Spider_Elements
+ *
+ */
+if ( ! function_exists( 'Spider_Elements' ) ) {
+
+    function Spider_Elements () {
+        return Spider_Elements::instance();
+    }
+
+    //kick-off the plugin
+    Spider_Elements();
+}

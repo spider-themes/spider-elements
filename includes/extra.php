@@ -591,3 +591,88 @@ add_action( 'admin_init', function () {
 	}
 
 } );
+
+/**
+ * Get information about the server environment.
+ *
+ * @return array Server environment information.
+ */
+function spe_get_environment_info() {
+
+    // Figure out cURL version, if installed.
+    $curl_version = '';
+    if ( function_exists( 'curl_version' ) ) {
+        $curl_version = curl_version();
+        $curl_version = $curl_version['version'] . ', ' . $curl_version['ssl_version'];
+    }
+
+    // WP memory limit.
+    $wp_memory_limit = spe_readable_number(WP_MEMORY_LIMIT);
+    if ( function_exists( 'memory_get_usage' ) ) {
+        $wp_memory_limit = max( $wp_memory_limit, spe_readable_number( @ini_get( 'memory_limit' ) ) );
+    }
+
+    return array(
+        'home_url'                  => get_option( 'home' ),
+        'site_url'                  => get_option( 'siteurl' ),
+        'version'                   => SPE_VERSION,
+        'wp_version'                => get_bloginfo( 'version' ),
+        'wp_multisite'              => is_multisite(),
+        'wp_memory_limit'           => $wp_memory_limit,
+        'wp_debug_mode'             => ( defined( 'WP_DEBUG' ) && WP_DEBUG ),
+        'wp_cron'                   => ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ),
+        'language'                  => get_locale(),
+        'external_object_cache'     => wp_using_ext_object_cache(),
+        'server_info'               => isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '',
+        'php_version'               => phpversion(),
+        'php_post_max_size'         => spe_readable_number( ini_get( 'post_max_size' ) ),
+        'php_max_execution_time'    => ini_get( 'max_execution_time' ),
+        'php_max_input_vars'        => ini_get( 'max_input_vars' ),
+        'curl_version'              => $curl_version,
+        'suhosin_installed'         => extension_loaded( 'suhosin' ),
+        'max_upload_size'           => wp_max_upload_size(),
+        'default_timezone'          => date_default_timezone_get(),
+        'fsockopen_or_curl_enabled' => ( function_exists( 'fsockopen' ) || function_exists( 'curl_init' ) ),
+        'soapclient_enabled'        => class_exists( 'SoapClient' ),
+        'domdocument_enabled'       => class_exists( 'DOMDocument' ),
+        'gzip_enabled'              => is_callable( 'gzopen' ),
+        'mbstring_enabled'          => extension_loaded( 'mbstring' ),
+    );
+
+}
+
+
+/**
+ * Convert a human-readable file size into bytes.
+ *
+ * @param string $size The size string (e.g., "1M", "2G", "500K").
+ * @return int The equivalent size in bytes.
+ */
+function spe_readable_number( $size ) {
+
+    // Get the last character of the size string
+    $suffix = substr($size, -1);
+
+    // Remove the last character from the size string
+    $value = substr($size, 0, -1);
+
+    // Convert suffix to lowercase for case-insensitive comparison
+    $suffix = strtolower($suffix);
+
+    $multipliers = [
+        'p' => 1024,
+        't' => 1024,
+        'g' => 1024,
+        'm' => 1024,
+        'k' => 1024,
+    ];
+
+    // Check if the suffix is a valid multiplier
+    if (array_key_exists($suffix, $multipliers)) {
+        $value *= $multipliers[$suffix];
+    }
+
+    // Return the result
+    return (int) $value;
+
+}
