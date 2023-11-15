@@ -2,10 +2,8 @@
 .tab_shortcode {
   .nav-tabs {
     border: 0;
-
     .nav-item {
       margin: 0;
-
       .nav-link {
         font-size: 16px;
         color: var(--spe_p_color);
@@ -33,10 +31,10 @@
         }
 
         &.active {
-          background: var(--bs-white);
+          background: #fff;
           color: var(--black_800);
-          border-color: transparent #ebebeb;
-
+          border-color: #ebebeb;
+          border-bottom-color: transparent;
           &:before {
             opacity: 1;
             width: 100%;
@@ -57,7 +55,7 @@
     padding: 25px 30px;
     border: 1px solid var(--black_50);
     border-radius: 0 5px 5px 5px;
-    background-color: var(--bs-white);
+    background-color: #fff;
   }
 }
 
@@ -545,10 +543,23 @@ ul.nav.nav-tabs {
         &:before {
           display: none;
         }
-        .progress-bar {
+        .tab_progress {
           position: absolute;
           top: 0;
           left: 0;
+          width: 100%;
+          height: 2px;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0.4;
+          }
+        }
+        .progress-bar {
           background: #a77def;
           height: 2px;
         }

@@ -987,9 +987,10 @@ button.btn.btn-link:focus {
   transition: width 0.2s linear;
 }
 .tab_shortcode .nav-tabs .nav-item .nav-link.active {
-  background: var(--bs-white);
+  background: #fff;
   color: var(--black_800);
-  border-color: transparent #ebebeb;
+  border-color: #ebebeb;
+  border-bottom-color: transparent;
 }
 .tab_shortcode .nav-tabs .nav-item .nav-link.active:before {
   opacity: 1;
@@ -1003,7 +1004,7 @@ button.btn.btn-link:focus {
   padding: 25px 30px;
   border: 1px solid var(--black_50);
   border-radius: 0 5px 5px 5px;
-  background-color: var(--bs-white);
+  background-color: #fff;
 }
 
 .header_tab_items .nav-tabs .numb,
@@ -1389,11 +1390,26 @@ ul.nav.nav-tabs {
 .header_tab_items .spe_auto_tabs .nav-item .nav-link:before {
   display: none;
 }
-.tab_shortcode .spe_auto_tabs .nav-item .nav-link .progress-bar,
-.header_tab_items .spe_auto_tabs .nav-item .nav-link .progress-bar {
+.tab_shortcode .spe_auto_tabs .nav-item .nav-link .tab_progress,
+.header_tab_items .spe_auto_tabs .nav-item .nav-link .tab_progress {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 2px;
+}
+.tab_shortcode .spe_auto_tabs .nav-item .nav-link .tab_progress::before,
+.header_tab_items .spe_auto_tabs .nav-item .nav-link .tab_progress::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+}
+.tab_shortcode .spe_auto_tabs .nav-item .nav-link .progress-bar,
+.header_tab_items .spe_auto_tabs .nav-item .nav-link .progress-bar {
   background: #a77def;
   height: 2px;
 }

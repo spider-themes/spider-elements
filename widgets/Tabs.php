@@ -572,8 +572,32 @@ class Tabs extends Widget_Base {
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
 				'selector' =>
-					'{{WRAPPER}} .tab_shortcode .spe_auto_tabs .nav-item .nav-link .progress-bar', 
+					'{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .progress-bar,{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link.active .tab_progress:before', 
 
+			]
+		);
+		$this->add_responsive_control(
+			'progressbar_height', [
+				'label'      => __( 'Progress Bar Hegiht', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range'      => [
+					'px' => [
+						'min' => 0,
+						'max' => 10,
+					],
+					'%'  => [
+						'min' => 0,
+						'max' => 10,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => '2',
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .progress-bar,{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .tab_progress' => 'height: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
