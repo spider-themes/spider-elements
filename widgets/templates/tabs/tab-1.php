@@ -79,24 +79,18 @@ if ( ! defined( 'ABSPATH' ) ) {
     $(document).ready(function() {
         // Function to handle tab change
         function changeTab(tabJs, index) {
-            // Remove active class from all tabs within the same menu
+
             tabJs.closest(".ezd-tab-menu").find("li button").removeClass("active");
-
-            // Add active class to the clicked tab
             tabJs.addClass("active");
-
             var target = tabJs.attr("data-rel");
-
             $("#" + target)
                 .addClass("active")
                 .siblings(".ezd-tab-box")
                 .removeClass("active");
-
-            // Reset progress bar for all tabs
             resetProgressBar($(".progress-bar"));
         }
 
-        // Function to update progress bar
+        // Function progress bar
         function updateProgressBar(progressBar, duration) {
             progressBar.animate({
                     width: "100%",
@@ -106,16 +100,15 @@ if ( ! defined( 'ABSPATH' ) ) {
             );
         }
 
-        // Function to reset progress bar
         function resetProgressBar(progressBar) {
             progressBar.stop().width(0);
         }
 
         // Tab click event handler
         var tabJs = $(".ezd-tab-menu li button");
-        var firstTab = tabJs.first(); // Select the first tab
-        changeTab(firstTab, tabJs.index(firstTab)); // Activate the first tab
-        updateProgressBar(firstTab.find(".progress-bar"), 0); // Start with width 100% for the first tab
+        var firstTab = tabJs.first();
+        changeTab(firstTab, tabJs.index(firstTab));
+        updateProgressBar(firstTab.find(".progress-bar"), 5000);
 
         tabJs.on("click", function(e) {
             e.preventDefault();

@@ -1380,14 +1380,17 @@ ul.nav.nav-tabs {
   margin-top: 0;
 }
 
-.tab_shortcode .spe_auto_tabs .nav-item .nav-link {
+.tab_shortcode .spe_auto_tabs .nav-item .nav-link,
+.header_tab_items .spe_auto_tabs .nav-item .nav-link {
   position: relative;
   overflow: hidden;
 }
-.tab_shortcode .spe_auto_tabs .nav-item .nav-link:before {
+.tab_shortcode .spe_auto_tabs .nav-item .nav-link:before,
+.header_tab_items .spe_auto_tabs .nav-item .nav-link:before {
   display: none;
 }
-.tab_shortcode .spe_auto_tabs .nav-item .nav-link .progress-bar {
+.tab_shortcode .spe_auto_tabs .nav-item .nav-link .progress-bar,
+.header_tab_items .spe_auto_tabs .nav-item .nav-link .progress-bar {
   position: absolute;
   top: 0;
   left: 0;
