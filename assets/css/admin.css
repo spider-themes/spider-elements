@@ -479,14 +479,13 @@ Table of Content:
 }
 
 .spe_requirment_list li {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Roboto", sans-serif;
   color: #535a60;
-  line-height: 32px;
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding: 10px 25px;
+  padding: 16px 24px;
   background: #f5f5f5;
 }
 .spe_requirment_list li strong {
@@ -498,10 +497,13 @@ Table of Content:
 .spe_requirment_list li span {
   flex: 60%;
 }
+.spe_requirment_list li span.invalid i {
+  background: #e9336b;
+}
 .spe_requirment_list li i {
   font-size: 8px;
-  width: 15px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;

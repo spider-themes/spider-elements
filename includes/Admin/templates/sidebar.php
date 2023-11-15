@@ -9,8 +9,8 @@
                         <i class="icon-dashboard"></i>
                     </div>
                     <div class="content">
-                        <h3>Dashboard</h3>
-                        <p>Find all information</p>
+                        <h3><?php esc_html_e('Dashboard', 'spider-elements'); ?></h3>
+                        <p><?php esc_html_e('Find all information', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
@@ -23,8 +23,8 @@
                         <i class="icon-element"></i>
                     </div>
                     <div class="content">
-                        <h3>Elements</h3>
-                        <p>Control All the Widgets</p>
+                        <h3><?php esc_html_e('Elements', 'spider-elements'); ?></h3>
+                        <p><?php esc_html_e('Control All the Widgets', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
@@ -37,8 +37,8 @@
                         <i class="icon-feature_two"></i>
                     </div>
                     <div class="content">
-                        <h3>Features</h3>
-                        <p>Control All Features</p>
+                        <h3><?php esc_html_e('Features', 'spider-elements'); ?></h3>
+                        <p><?php esc_html_e('Control All Features', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
@@ -51,8 +51,8 @@
                         <i class="icon-api"></i>
                     </div>
                     <div class="content">
-                        <h3>API Settings</h3>
-                        <p>Added api here</p>
+                        <h3><?php esc_html_e('API Settings', 'spider-elements'); ?></h3>
+                        <p><?php esc_html_e('Added api here', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
@@ -65,8 +65,8 @@
                         <i class="icon-setting"></i>
                     </div>
                     <div class="content">
-                        <h3>Integration</h3>
-                        <p>Regenerate assets</p>
+                        <h3><?php esc_html_e('Integration', 'spider-elements'); ?></h3>
+                        <p><?php esc_html_e('Regenerate assets', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
@@ -79,8 +79,8 @@
                         <i class="icon-premium"></i>
                     </div>
                     <div class="content">
-                        <h3>Go Premium</h3>
-                        <p>Get Premium Features</p>
+                        <h3><?php esc_html_e('Go Premium', 'spider-elements'); ?></h3>
+                        <p><?php esc_html_e('Get Premium Features', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
