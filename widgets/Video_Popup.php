@@ -49,7 +49,7 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'elegant-icon', 'fancybox-css', 'spe-main' ];
+		return [ 'elegant-icon', 'fancybox', 'spe-main' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'spe-el-widgets', 'fancybox-js', 'slick' ];
+		return [ 'spe-el-widgets', 'fancybox', 'slick' ];
 	}
 
 

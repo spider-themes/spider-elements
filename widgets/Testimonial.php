@@ -46,7 +46,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'slick', 'slick-theme', 'spe-main', 'swiper' ];
+		return [ 'slick', 'slick-theme', 'swiper', 'spe-main' ];
 	}
 
 	/**
@@ -54,7 +54,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'spe-el-widgets', 'swiper', 'wow' ];
+		return [ 'slick', 'swiper', 'wow', 'spe-el-widgets' ];
 	}
 
 	/**

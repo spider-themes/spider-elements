@@ -49,7 +49,7 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'bootstrap', 'elegant-icon', 'slick', 'slick-theme', 'spe-main' ];
+		return [ 'elegant-icon', 'slick', 'slick-theme', 'spe-main' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'bootstrap', 'spe-el-widgets', 'slick' ];
+		return [ 'slick', 'spe-el-widgets' ];
 	}
 
 
