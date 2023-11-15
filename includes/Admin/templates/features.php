@@ -24,7 +24,7 @@
     </div>
 
 
-    <div class="spe_elements_tab" id="elements_filter">
+    <div class="spe_elements_tab" id="features_filter">
         <div class="spe_fiter_data active" data-filter="*">
             <i class="icon-star"></i>All
         </div>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="spe_filter_content ezd-d-flex" id="elements_gallery">
+    <div class="spe_filter_content ezd-d-flex" id="features_gallery">
         <div class="ezd-colum-space-4 f_free">
             <div class="spe_element_box spe_element_switch">
                 <div class="spe_element_content">
@@ -242,10 +242,12 @@
 <div id="elements_popup1" class="elements_pro_popup">
     <div class="message_content ezd-text-center">
         <div class="close-pro">
-            <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>" alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
+            <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>"
+                alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>" alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
+            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>"
+                alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
         </div>
         <div class="pro-content">
             <h3><?php esc_html_e( 'Go Pro', 'spider-elements' ); ?></h3>

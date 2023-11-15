@@ -1036,6 +1036,7 @@ button.btn.btn-link:focus {
   padding: 10px 30px;
   text-decoration: none;
   transition: all 300ms linear 0s;
+  gap: 8px;
 }
 .header_tab_items .nav-tabs .nav-item .nav-link.active {
   background: #ffffff;
