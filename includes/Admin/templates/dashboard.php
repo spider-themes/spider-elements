@@ -10,7 +10,6 @@ $upload_path = $uploads['basedir'];
 $check_icon = '<span class="valid"><i class="icon-check"></i></span>';
 $close_icon = '<span class="invalid"><i class="icon-close"></i></span>';
 $environment = spe_get_environment_info();
-
 ?>
 <div id="dashboard" class="spe-tab-box active">
     <div class="spe_dashboard_banner">

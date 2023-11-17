@@ -1,3 +1,9 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+?>
+
 <div id="go_premium" class="spe-tab-box">
     <div class="spe_dashboard_banner premium_banner">
         <h2>Get Spider Elements Addons Pro</h2>

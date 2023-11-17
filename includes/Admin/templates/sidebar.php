@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+?>
 <div class="sticky_sidebar">
 
     <ul class="tab-menu tab_left_content spe-tab-menu">

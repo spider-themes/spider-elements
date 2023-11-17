@@ -1013,6 +1013,9 @@ Table of Content:
   margin-top: 25px;
   padding: 40px 50px;
 }
+.spe_integration_item img {
+  max-width: 50px;
+}
 .spe_integration_item h3 {
   font-size: 18px;
   font-weight: 600;
@@ -1035,9 +1038,10 @@ Table of Content:
 }
 .spe_integration_item .spe_dashboard_btn.active_btn {
   background: #848d95;
+  cursor: not-allowed;
 }
 .spe_integration_item .spe_dashboard_btn.active_btn:hover {
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 
 .mt-25 {
