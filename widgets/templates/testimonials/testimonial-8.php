@@ -58,13 +58,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <script>
 (function($) {
-
     $(document).ready(function() {
         var carousel = $(".carousel");
         var items = $(".carousel-item");
         var indicators = $(".carousel-indicators button");
         var itemCount = items.length;
         var currentIndex = 0;
+        var interval;
 
         function showSlide(index) {
             if (index < 0) {
@@ -75,7 +75,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             var translateX = -index * 100 + "%";
             $(".carousel-inner").css("transform", "translateX(" + translateX + ")");
             currentIndex = index;
-
             // Update the active indicator
             indicators.removeClass("active");
             indicators.eq(index).addClass("active");
@@ -83,20 +82,40 @@ if ( ! defined( 'ABSPATH' ) ) {
             items.eq(index).addClass("active");
         }
 
+        function startAutoSlide() {
+            interval = setInterval(function() {
+                showSlide(currentIndex + 1);
+            }, 4000); // Adjust the interval (in milliseconds) as needed
+        }
+
+        function stopAutoSlide() {
+            clearInterval(interval);
+        }
         indicators.click(function() {
             var index = $(this).data("slide-to");
             showSlide(index);
+            stopAutoSlide();
         });
-
         $(".carousel-control-prev").click(function(e) {
             e.preventDefault();
             showSlide(currentIndex - 1);
+            stopAutoSlide();
         });
-
         $(".carousel-control-next").click(function(e) {
             e.preventDefault();
             showSlide(currentIndex + 1);
+            stopAutoSlide();
         });
+        carousel.hover(
+            function() {
+                stopAutoSlide();
+            },
+            function() {
+                startAutoSlide();
+            }
+        );
+        // Start auto-slide initially
+        startAutoSlide();
     });
 
 
