@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+?>
 <div id="features" class="spe-tab-box">
     <div class="spe_elements_tab_menu">
         <div class="spe_tab_content">

@@ -3,8 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-use Spider_Elements_Assets\includes\Admin\Module_Settings;
-
+use Spider_Elements\includes\Admin\Module_Settings;
 $elements = Module_Settings::get_widget_settings();
 ?>
 <div id="elements" class="spe-tab-box">

@@ -1,3 +1,9 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+?>
+
 <div class="notice updated spider-elements-elementor-notice spider-elements-elementor-install-elementor">
 	<div class="spider-elements-elementor-notice-inner">
 		<div class="spider-elements-elementor-notice-content">

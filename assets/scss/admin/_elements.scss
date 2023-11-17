@@ -369,6 +369,9 @@
 .spe_integration_item {
   margin-top: 25px;
   padding: 40px 50px;
+  img {
+    max-width: 50px;
+  }
 
   h3 {
     font-size: 18px;
@@ -394,9 +397,9 @@
 
     &.active_btn {
       background: #848d95;
-
+      cursor: not-allowed;
       &:hover {
-        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: none;
       }
     }
   }

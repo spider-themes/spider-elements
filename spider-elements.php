@@ -17,7 +17,7 @@
  * Elementor tested up to: 3.16.5
  */
 
-use Spider_Elements_Assets\includes\Admin\Module_Settings;
+use Spider_Elements\includes\Admin\Module_Settings;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -215,6 +215,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
+				require_once __DIR__ . '/includes/classes/Plugin_Installer.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
@@ -270,7 +271,11 @@ if ( ! class_exists( 'Spider_Elements') ) {
 
             //
             if ( is_admin() ) {
-                new Spider_Elements_Assets\includes\Admin\Admin_Settings();
+                //Admin
+                new Spider_Elements\includes\Admin\Admin_Settings();
+
+                //Classes
+                new Spider_Elements\includes\classes\Plugin_Installer();
             }
 
 		}
