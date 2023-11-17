@@ -11,6 +11,8 @@ class Module_Settings {
     public static function get_widget_settings() {
 
         $settings_fields = [
+
+            // All Widget List
             'spider_elements_widgets' => [
                 [
                     'name'         => 'docy_accordion', // widget name
@@ -19,9 +21,8 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
-                    'demo_url'     => '',
-                    'video_url'    => '',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
                     'icon'         => 'eicon-accordion',
                 ],
                 [
@@ -31,7 +32,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-alert',
@@ -43,8 +43,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'is_pro'       => true,
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-heading',
@@ -56,7 +54,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-thumbnails-half',
@@ -68,7 +65,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-post',
@@ -80,7 +76,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-button',
@@ -92,7 +87,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-apps',
@@ -104,7 +98,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-counter',
@@ -116,7 +109,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-instagram-post',
@@ -128,7 +120,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-integration',
@@ -140,7 +131,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-bullet-list',
@@ -152,7 +142,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-slider-push',
@@ -164,7 +153,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-price-table',
@@ -176,7 +164,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-price-table',
@@ -188,7 +175,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-woo-settings',
@@ -200,7 +186,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-tabs',
@@ -212,7 +197,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-nested-carousel',
@@ -224,7 +208,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-testimonial-carousel',
@@ -236,7 +219,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-time-line',
@@ -248,7 +230,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-video-playlist',
@@ -260,7 +241,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-play',
@@ -274,8 +254,6 @@ class Module_Settings {
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'pro',
-                    'is_pro'       => true,
-                    'content_type' => 'custom',
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-heading',
@@ -283,9 +261,122 @@ class Module_Settings {
 
             ],
 
+            // All Feature List
+            'spider_elements_features' => [
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Template cloud', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-cloud',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Mega Menu', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-mega-menu',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Image Shadow', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-image-shadow',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Scroll Trigger', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-hotspot',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Tilt Effect on Hover', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-effect',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-revel-animation',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Tooltip / Element', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-tooltip',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Badge', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-badge',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Smooth Animation', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-smooth-animation',
+                ],
+                [
+                    'name'         => '', // widget name
+                    'className'    => '', // widget class name
+                    'label'        => esc_html__('Gradient Color from Image', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-gallery',
+                ],
+            ]
         ];
 
-        return $settings_fields['spider_elements_widgets'];
+        return $settings_fields;
 
     }
 

@@ -9,7 +9,8 @@ if (!defined('ABSPATH')) {
 /**
  * Class Plugin_Installer
  */
-class Plugin_Installer {
+class Plugin_Installer
+{
 
     private static $instance;
     private $installedPlugins = array();
@@ -20,8 +21,9 @@ class Plugin_Installer {
      *
      * @return Plugin_Installer Singleton instance of the class
      */
-    public static function instance() {
-        if ( ! static::$instance ) {
+    public static function instance ()
+    {
+        if (!static::$instance) {
             static::$instance = new static();
         }
 
@@ -32,7 +34,16 @@ class Plugin_Installer {
      * Constructor
      * Initializes the class and collects installed and activated plugins
      */
-    public function __construct() {
+    public function __construct ()
+    {
+        add_action('plugins_loaded', [ $this, 'init' ]);
+    }
+
+    /**
+     * Initializes the class
+     */
+    public function init ()
+    {
         $this->collect_installed_plugins();
         $this->collect_activated_plugins();
     }
@@ -40,18 +51,23 @@ class Plugin_Installer {
     /**
      * Collects the list of installed plugins
      */
-    private function collect_installed_plugins() {
-        foreach ( get_plugins() as $key => $plugin ) {
-            array_push( $this->installedPlugins, $key );
+    private function collect_installed_plugins ()
+    {
+
+        if (!function_exists('get_plugins')) {
+            foreach ( get_plugins() as $key => $plugin ) {
+                array_push($this->installedPlugins, $key);
+            }
         }
     }
 
     /**
      * Collects the list of activated plugins
      */
-    private function collect_activated_plugins() {
-        foreach ( apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) as $plugin ) {
-            array_push( $this->activatedPlugins, $plugin );
+    private function collect_activated_plugins ()
+    {
+        foreach ( apply_filters('active_plugins', get_option('active_plugins')) as $plugin ) {
+            array_push($this->activatedPlugins, $plugin);
         }
     }
 
@@ -62,27 +78,28 @@ class Plugin_Installer {
      *
      * @return array Plugin status information
      */
-    public function get_status( $name ) {
+    public function get_status ($name)
+    {
         $data = array(
-            'url'              => '',
-            'activation_url'   => '',
+            'url' => '',
+            'activation_url' => '',
             'installation_url' => '',
         );
 
-        if ( $this->check_installed_plugin( $name ) ) {
-            if ( $this->check_activated_plugin( $name ) ) {
-                $data['title']  = __( 'Activated', 'elementskit-lite' );
-                $data['status'] = 'activated';
+        if ($this->check_installed_plugin($name)) {
+            if ($this->check_activated_plugin($name)) {
+                $data[ 'title' ] = __('Activated', 'elementskit-lite');
+                $data[ 'status' ] = 'activated';
             } else {
-                $data['title']          = __( 'Activate Now', 'elementskit-lite' );
-                $data['status']         = 'installed';
-                $data['activation_url'] = $this->activation_url( $name );
+                $data[ 'title' ] = __('Activate Now', 'elementskit-lite');
+                $data[ 'status' ] = 'installed';
+                $data[ 'activation_url' ] = $this->activation_url($name);
             }
         } else {
-            $data['title']            = __( 'Install Now', 'elementskit-lite' );
-            $data['status']           = 'not_installed';
-            $data['installation_url'] = $this->installation_url( $name );
-            $data['activation_url']   = $this->activation_url( $name );
+            $data[ 'title' ] = __('Install Now', 'elementskit-lite');
+            $data[ 'status' ] = 'not_installed';
+            $data[ 'installation_url' ] = $this->installation_url($name);
+            $data[ 'activation_url' ] = $this->activation_url($name);
         }
 
         return $data;
@@ -95,8 +112,9 @@ class Plugin_Installer {
      *
      * @return bool True if the plugin is installed, false otherwise
      */
-    public function check_installed_plugin( $name ) {
-        return in_array( $name, $this->installedPlugins );
+    public function check_installed_plugin ($name)
+    {
+        return in_array($name, $this->installedPlugins);
     }
 
     /**
@@ -106,8 +124,9 @@ class Plugin_Installer {
      *
      * @return bool True if the plugin is activated, false otherwise
      */
-    public function check_activated_plugin( $name ) {
-        return in_array( $name, $this->activatedPlugins );
+    public function check_activated_plugin ($name)
+    {
+        return in_array($name, $this->activatedPlugins);
     }
 
     /**
@@ -117,17 +136,18 @@ class Plugin_Installer {
      *
      * @return string Activation URL
      */
-    public function activation_url( $pluginName ) {
+    public function activation_url ($pluginName)
+    {
 
         return wp_nonce_url(
             add_query_arg(
                 array(
-                    'action'        => 'activate',
-                    'plugin'        => $pluginName,
+                    'action' => 'activate',
+                    'plugin' => $pluginName,
                     'plugin_status' => 'all',
-                    'paged'         => '1&s',
+                    'paged' => '1&s',
                 ),
-                admin_url( 'plugins.php' )
+                admin_url('plugins.php')
             ),
             'activate-plugin_' . $pluginName
         );
@@ -140,9 +160,10 @@ class Plugin_Installer {
      *
      * @return string Installation URL
      */
-    public function installation_url( $pluginName ) {
-        $action     = 'install-plugin';
-        $pluginSlug = $this->get_plugin_slug( $pluginName );
+    public function installation_url ($pluginName)
+    {
+        $action = 'install-plugin';
+        $pluginSlug = $this->get_plugin_slug($pluginName);
 
         return wp_nonce_url(
             add_query_arg(
@@ -150,7 +171,7 @@ class Plugin_Installer {
                     'action' => $action,
                     'plugin' => $pluginSlug,
                 ),
-                admin_url( 'update.php' )
+                admin_url('update.php')
             ),
             $action . '_' . $pluginSlug
         );
@@ -163,9 +184,11 @@ class Plugin_Installer {
      *
      * @return string|null Plugin slug
      */
-    public function get_plugin_slug( $name ) {
-        $split = explode( '/', $name );
+    public function get_plugin_slug ($name)
+    {
+        $split = explode('/', $name);
 
-        return isset( $split[0] ) ? $split[0] : null;
+        return isset($split[ 0 ]) ? $split[ 0 ] : null;
     }
+
 }

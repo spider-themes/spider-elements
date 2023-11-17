@@ -46,8 +46,8 @@ $elements = Module_Settings::get_widget_settings();
 
     <div class="spe_filter_content ezd-d-flex" id="elements_gallery">
 		<?php
-		if ( is_array( $elements ) ) {
-			foreach ( $elements as $item ) {
+		if ( is_array( $elements['spider_elements_widgets'] ) ) {
+			foreach ( $elements['spider_elements_widgets'] as $item ) {
 				$widget_type           = $item[ 'widget_type' ] ?? '';
 				$is_pro_widget         = $widget_type === 'pro' ? ' class=pro_popup' : '';
 				$is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
