@@ -6,11 +6,11 @@
     onInit: function () {
       var E_FRONT = elementorFrontend;
       var widgetHandlersMap = {
-        "pricing_table_tabs.default": spiderElements.pricing_table_tabs,
+        "landpagy_pricing_table_tabs.default": spiderElements.pricing_table_tabs,
         "docy_tabs.default": spiderElements.tabs,
         "docy_testimonial.default": spiderElements.testimonial,
         "docly_alerts_box.default": spiderElements.alertBox,
-        "spe_videos_playlist.default": spiderElements.videoPlaylist,
+        "docy_videos_playlist.default": spiderElements.videoPlaylist,
         "docy_team_carousel.default": spiderElements.teamslider,
         "spe_after_before_widget.default": spiderElements.beforeAfter,
         "docy_video_popup.default": spiderElements.videoPopup,
