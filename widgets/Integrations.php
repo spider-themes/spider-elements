@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Integrations extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_integrations';
+		return 'docy_integrations'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

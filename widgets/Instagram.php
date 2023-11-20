@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Instagram extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_instagram';
+		return 'spe_instagram'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Tabs extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_tabs';
+		return 'docy_tabs'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

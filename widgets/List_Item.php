@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class List_Item extends Widget_Base {
 	public function get_name() {
-		return 'docly_list_item';
+		return 'docly_list_item'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

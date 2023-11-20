@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Skill_Showcase extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_skill_showcase_widget';
+		return 'spe_skill_showcase_widget'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

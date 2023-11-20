@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Video_Playlist extends Widget_Base {
 	public function get_name() {
-		return 'spe_videos_playlist';
+		return 'docy_videos_playlist'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

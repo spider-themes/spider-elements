@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Team_Carousel extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_team_carousel';
+		return 'docy_team_carousel'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

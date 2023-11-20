@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Cheat_sheet extends Widget_Base {
 
 	public function get_name() {
-		return 'docly_cheatsheet';
+		return 'docly_cheatsheet'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

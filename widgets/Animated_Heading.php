@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Animated_Heading extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_animated_heading';
+		return 'spe_animated_heading'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

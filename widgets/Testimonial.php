@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Testimonial extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_testimonial';
+		return 'docy_testimonial'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

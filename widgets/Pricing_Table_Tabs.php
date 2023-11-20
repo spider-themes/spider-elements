@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Pricing_Table_Tabs extends Widget_Base {
 	public function get_name() {
-		return 'spe_pricing_table_tabs';
+		return 'landpagy_pricing_table_tabs'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

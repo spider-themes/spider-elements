@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Marquee_Slides extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_marquee_slides';
+		return 'spe_marquee_slides'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

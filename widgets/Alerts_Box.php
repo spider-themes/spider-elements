@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Alerts_Box extends Widget_Base {
 
 	public function get_name() {
-		return 'docly_alerts_box';
+		return 'docly_alerts_box'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {
