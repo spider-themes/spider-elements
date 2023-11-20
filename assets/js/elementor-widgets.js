@@ -16,7 +16,7 @@
         "docy_video_popup.default": spiderElements.videoPopup,
         "spe_marquee_slides.default": spiderElements.marquee,
         "spe_instagram.default": spiderElements.instagramFeed,
-        "spe_accordion.default": spiderElements.accordions,
+        "docy_accordion.default": spiderElements.accordions,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
