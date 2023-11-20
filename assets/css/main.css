@@ -487,6 +487,12 @@ button:focus {
   outline: 0px auto -webkit-focus-ring-color;
 }
 
+@media (min-width: 992px) {
+  .ezd-d-md-block {
+    display: block;
+  }
+}
+
 /* Spider Elements common CSS */
 .fade {
   transition: opacity 0.15s linear;
@@ -909,6 +915,9 @@ a:hover, a:focus {
 .accordion .doc_accordion.spe-collapsed .card-header button .collapsed-icon {
   display: block;
 }
+.accordion .doc_accordion.spe-collapsed .collapse {
+  display: block;
+}
 
 .accordion-article-wrap .toggle_btn {
   font-weight: 400;
@@ -936,6 +945,9 @@ a:hover, a:focus {
   margin-right: 5px;
   font-size: 14px;
   color: rgb(132, 141, 149);
+}
+.accordion-article-wrap .collapse.show {
+  display: block;
 }
 
 button.btn.btn-link.collapsed .collapsed-icon {

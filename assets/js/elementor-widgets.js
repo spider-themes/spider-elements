@@ -45,6 +45,7 @@
           speAccordion.parent().removeClass("spe-collapsed");
           $parent.addClass("spe-collapsed");
         }
+
         return false;
       });
     },

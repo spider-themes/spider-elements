@@ -4,23 +4,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="accordion" <?php echo esc_attr( $toggle_id ); ?>>
-	<?php
+    <?php
 	if ( ! empty ( $accordions ) ) {
 	foreach ( $accordions
 
 	as $item ) {
 	$is_coFllapsed_class = $item['collapse_state'] ?? '';
-	$is_btn_collapse     = $is_coFllapsed_class == 'yes' ? '' : 'collapsed';
+	$is_btn_collapse     = $is_coFllapsed_class == 'yes' ? 'spe-collapsed' : '';
 	$is_collapsed        = $is_coFllapsed_class == 'yes' ? 'true' : 'false';
 	$id                  = 'toggle-' . $item['_id'] ?? '';
 	$is_show             = $is_coFllapsed_class == 'yes' ? 'show' : '';
 	?>
-    <div class="card doc_accordion spe_accordion_inner">
+    <div class="card doc_accordion spe_accordion_inner <?php echo esc_attr( $is_btn_collapse ) ?>">
         <div class="card-header spe-accordion" id="heading-<?php echo esc_attr( $item['_id'] ); ?>">
             <<?php echo esc_attr( $title_tag ); ?> class="mb-0 title">
-            <button class="btn btn-link <?php echo esc_attr( $is_btn_collapse . $icon_align_class ); ?>">
-				<?php echo esc_html( $item['title'] ) ?>
-                <span class="icon-wrapper">
+                <button class="btn btn-link <?php echo esc_attr( $icon_align_class ); ?>">
+                    <?php echo esc_html( $item['title'] ) ?>
+                    <span class="icon-wrapper">
                         <span class="expanded-icon">
                             <?php \Elementor\Icons_Manager::render_icon( $settings['plus-icon'],
 	                            [ 'aria-hidden' => 'true' ] ); ?>
@@ -30,14 +30,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	                            [ 'aria-hidden' => 'true' ] ); ?>
                         </span>
                     </span>
-            </button>
-        </<?php echo esc_attr( $title_tag ) ?>>
-    </div>
+                </button>
+            </<?php echo esc_attr( $title_tag ) ?>>
+        </div>
 
-    <div id="<?php echo esc_attr( $id ) ?>" class="collapse <?php echo esc_attr( $is_show ) ?>"
-		<?php echo esc_attr( $toggle_bs_parent_id ); ?>>
-        <div class="card-body toggle_body">
-			<?php
+        <div id="<?php echo esc_attr( $id ) ?>" class="collapse <?php echo esc_attr( $is_show ) ?>"
+            <?php echo esc_attr( $toggle_bs_parent_id ); ?>>
+            <div class="card-body toggle_body">
+                <?php
 			$content_type = $item['content_type'] ?? '';
 			if ( $content_type == 'content' ) {
 				echo wp_kses_post( $item['normal_content'] );
@@ -47,14 +47,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 			}
 			?>
+            </div>
         </div>
     </div>
-</div>
-<?php
+    <?php
 }
 }
 ?>
-<?php
+    <?php
 if ( isset( $settings['faq_schema'] ) && 'yes' === $settings['faq_schema'] ) {
 	$json = [
 		'@context'   => 'https://schema.org',
@@ -75,7 +75,6 @@ if ( isset( $settings['faq_schema'] ) && 'yes' === $settings['faq_schema'] ) {
 	?>
     <script type="application/ld+json">
     <?php echo wp_json_encode( $json ); ?>
-
     </script>
-<?php } ?>
+    <?php } ?>
 </div>

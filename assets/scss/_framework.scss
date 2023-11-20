@@ -404,3 +404,9 @@
 button:focus {
   outline: 0px auto -webkit-focus-ring-color;
 }
+
+.ezd-d-md-block {
+  @media (min-width: 992px) {
+    display: block;
+  }
+}

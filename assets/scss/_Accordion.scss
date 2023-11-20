@@ -347,6 +347,9 @@
           display: block;
         }
       }
+      .collapse {
+        display: block;
+      }
     }
   }
 }
@@ -380,6 +383,11 @@
         font-size: 14px;
         color: rgb(132 141 149);
       }
+    }
+  }
+  .collapse {
+    &.show {
+      display: block;
     }
   }
 }
