@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Before_After extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_after_before_widget';
+		return 'spe_after_before_widget'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

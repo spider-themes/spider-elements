@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Pricing_Table_Switcher extends Widget_Base {
 	public function get_name() {
-		return 'pricing_table_switcher';
+		return 'landpagy_pricing_table_switcher'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

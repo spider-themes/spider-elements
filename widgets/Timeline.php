@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Timeline extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_timeline_widget';
+		return 'spe_timeline_widget'; // ID of the widget (Don't change this name)
 	}
 
 

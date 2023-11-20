@@ -45,7 +45,7 @@ class Blog_Grid extends Widget_Base {
 	}
 
 	public function get_name() {
-		return 'docy_blog_grid';
+		return 'docy_blog_grid'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

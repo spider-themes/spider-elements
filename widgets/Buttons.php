@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Buttons extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_buttons';
+		return 'spe_buttons'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

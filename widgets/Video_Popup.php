@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Video_Popup extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_video_popup';
+		return 'docy_video_popup'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {

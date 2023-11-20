@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Fullscreen_Slider extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_fullscreen_slider';
+		return 'spe_fullscreen_slider'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {
