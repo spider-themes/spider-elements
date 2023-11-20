@@ -6,11 +6,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="go_premium" class="spe-tab-box">
     <div class="spe_dashboard_banner premium_banner">
-        <h2>Get Spider Elements Addons Pro</h2>
-        <p>Purchase the premium version of spider Elements Addons to get additional and exclusive features.</p>
-        <a href="#" class="spe_banner_btn">CLICK here to get Spider Elementor Addons PRO!</a>
-        <img class="rocket_img" src="<?php echo SPE_IMG ?>/dashboard-img/rocket.png" alt="spe-logo">
+        <h2><?php esc_html_e('Get Spider Elements Addons Pro', 'spider-elements'); ?></h2>
+        <p><?php esc_html_e('Purchase the premium version of spider Elements Addons to get additional and exclusive features.', 'spider-elements'); ?></p>
+        <a href="#" class="spe_banner_btn">
+            <?php esc_html_e('CLICK here to get Spider Elementor Addons PRO!', 'spider-elements'); ?>
+        </a>
+        <img class="rocket_img" src="<?php echo SPE_IMG . '/dashboard-img/rocket.png' ?>" alt="<?php esc_attr_e('Go Premium Banner', 'spider-elements'); ?>">
     </div>
+
     <div class="ezd-grid ezd-grid-cols-12">
         <div class="ezd-lg-col-6">
             <div class="spe_pr_promo_box ezd-text-center">
@@ -39,6 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
         </div>
     </div>
+
     <div class="spe_filter_content mt-25 ezd-d-flex">
         <div class="ezd-colum-space-4 free">
             <div class="spe_element_box spe_element_switch">
@@ -214,32 +218,34 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 
     <div class="qa_inner ezd-d-flex">
-        <img src="<?php echo SPE_IMG?>/dashboard-img/qa.png" alt="">
+        <img src="<?php echo SPE_IMG . '/dashboard-img/qa.png' ?>" alt="<?php esc_attr_e('Automatic Updates', 'spider-elements'); ?>">
         <div class="content">
-            <h2>Automatic Updates & Priority Support</h2>
-            <p>Get access to automatic updates & keep your website up-to-date with constantly developing features.
-                Having any trouble? Don't worry as you can reach out to our expert Support team any time through live
-                chat or support tickets.</p>
+            <h2><?php esc_html_e('Automatic Updates & Priority Support', 'spider-elements'); ?></h2>
+            <p><?php esc_html_e('Get access to automatic updates & keep your website up-to-date with constantly developing features.
+                Having any trouble? Don\'t worry as you can reach out to our expert Support team any time through live
+                chat or support tickets.', 'spider-elements'); ?></p>
         </div>
     </div>
     <div class="ezd-text-center mt-25">
-        <a href="#" class="spe_dashboard_btn">Upgrade To PRO</a>
+        <a href="#" class="spe_dashboard_btn"><?php esc_html_e('Upgrade To PRO', 'spider-elements'); ?></a>
     </div>
 </div>
 
 <div id="elements_popup1" class="elements_pro_popup">
     <div class="message_content ezd-text-center">
         <div class="close-pro">
-            <img class="pro-close" src="<?php echo SPE_IMG ?>/dashboard-img/modal-close.png; ?>"
-                alt="SPE Elementor Addons">
+            <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>"
+                 alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPE_IMG ?>/dashboard-img/dimond.png; ?>" alt="SPE dimond">
+            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>" alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
         </div>
         <div class="pro-content">
-            <h3>Go Pro</h3>
-            <p>Upgrade to Pro Version for Unlock more features!</p>
-            <a href="#" class="spe_dashboard_btn" target="_blank">Confirme</a>
+            <h3><?php esc_html_e( 'Go Pro', 'spider-elements' ); ?></h3>
+            <p><?php esc_html_e( 'Upgrade to Pro Version for Unlock more features!', 'spider-elements' ); ?></p>
+            <a href="#" class="spe_dashboard_btn" target="_blank">
+                <?php esc_html_e( 'Confirm', 'spider-elements' ); ?>
+            </a>
         </div>
     </div>
 </div>

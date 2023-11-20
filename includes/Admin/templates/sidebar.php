@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </div>
                     <div class="content">
                         <h3><?php esc_html_e('Integration', 'spider-elements'); ?></h3>
-                        <p><?php esc_html_e('Regenerate assets', 'spider-elements'); ?></p>
+                        <p><?php esc_html_e('Install Other Plugins', 'spider-elements'); ?></p>
                     </div>
                 </div>
             </a>
