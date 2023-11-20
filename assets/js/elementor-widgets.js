@@ -6,7 +6,8 @@
     onInit: function () {
       var E_FRONT = elementorFrontend;
       var widgetHandlersMap = {
-        "landpagy_pricing_table_tabs.default": spiderElements.pricing_table_tabs,
+        "landpagy_pricing_table_tabs.default":
+          spiderElements.pricing_table_tabs,
         "docy_tabs.default": spiderElements.tabs,
         "docy_testimonial.default": spiderElements.testimonial,
         "docly_alerts_box.default": spiderElements.alertBox,

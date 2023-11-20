@@ -217,7 +217,7 @@
     position: relative;
 
     .popular {
-      top: 60px;
+      top: -40px;
       right: 35%;
       position: absolute;
     }
@@ -382,6 +382,7 @@
 .tab-content {
   .fade {
     transition: opacity 0.15s linear;
+    opacity: 1;
   }
 }
 

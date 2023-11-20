@@ -1364,7 +1364,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 ul.nav.nav-tabs {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: -1px;
@@ -5287,7 +5287,7 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 .pricing-tabs-content .tab-pane .popular {
-  top: 60px;
+  top: -40px;
   right: 35%;
   position: absolute;
 }
@@ -5428,6 +5428,7 @@ button.swiper-pagination-bullet {
 
 .tab-content .fade {
   transition: opacity 0.15s linear;
+  opacity: 1;
 }
 
 .current-price {
