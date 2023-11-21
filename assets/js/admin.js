@@ -135,6 +135,13 @@
         });
       });
     }
+  }
+
+  $(document).ready(function () {
+    // Initialize Isotope on page load
+    filterMasonryTwo();
+    var filter = $("#api_setting");
+    // Add isotope click function
     $("#api_filter div").on("click", function () {
       $("#api_filter div").removeClass("active");
       $(this).addClass("active");
@@ -148,7 +155,7 @@
       });
       return false;
     });
-  }
+  });
 
   /*===========api isotope js===========*/
 
