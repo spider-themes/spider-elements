@@ -86,6 +86,55 @@
     return false;
   });
 
+  
+   // Function to set a cookie
+   function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  // Function to get a cookie
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+  
+	// Remain the last active settings tab
+  function keep_spe_settings_current_tab() {
+    
+    var activeButton = getCookie('spe_settings_current_tab');
+    if ( activeButton ) {
+      // Tab active
+      $('.spe_dashboard .spe-tab-menu .tab-menu-link[data-content="' + activeButton + '"]').addClass('active');
+      $('.spe_dashboard .spe-tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
+
+      // Tab content active
+      $('.spe_dashboard .tab_contents .spe-tab-box#' + activeButton).addClass('active');
+      $('.spe_dashboard .tab_contents .spe-tab-box:not(#' + activeButton+')').removeClass('active');
+    }
+
+    // Handle button clicks
+    $('.spe-tab-menu .tab-menu-link').on('click', function () {
+      $('.spe-tab-menu .tab-menu-link').removeClass('active');
+      $(this).addClass('active');
+
+      // Set a cookie to remember the active button
+      setCookie('spe_settings_current_tab', $(this).data('content'), 1);
+    });
+  }
+  keep_spe_settings_current_tab();
+
   // filter js
   /*===========elements isotope js===========*/
   function filterMasonry() {
