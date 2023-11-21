@@ -7,11 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="go_premium" class="spe-tab-box">
     <div class="spe_dashboard_banner premium_banner">
         <h2><?php esc_html_e('Get Spider Elements Addons Pro', 'spider-elements'); ?></h2>
-        <p><?php esc_html_e('Purchase the premium version of spider Elements Addons to get additional and exclusive features.', 'spider-elements'); ?></p>
+        <p><?php esc_html_e('Purchase the premium version of spider Elements Addons to get additional and exclusive features.', 'spider-elements'); ?>
+        </p>
         <a href="#" class="spe_banner_btn">
             <?php esc_html_e('CLICK here to get Spider Elementor Addons PRO!', 'spider-elements'); ?>
         </a>
-        <img class="rocket_img" src="<?php echo SPE_IMG . '/dashboard-img/rocket.png' ?>" alt="<?php esc_attr_e('Go Premium Banner', 'spider-elements'); ?>">
+        <img class="rocket_img" src="<?php echo SPE_IMG . '/dashboard-img/rocket.png' ?>"
+            alt="<?php esc_attr_e('Go Premium Banner', 'spider-elements'); ?>">
     </div>
 
     <div class="ezd-grid ezd-grid-cols-12">
@@ -20,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="spe_promo_video">
                     <img src="<?php echo SPE_IMG ?>/dashboard-img/video1.jpg" alt="">
                     <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="spe_popup_youtube"><i
-                            class="icon-hotspot"></i></a>
+                            class="icon-video-play"></i></a>
                 </div>
                 <h2>Protected Content</h2>
                 <p>Restrict important data by setting up user permission or giving password to certain area.</p>
@@ -33,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="spe_promo_video">
                     <img src="<?php echo SPE_IMG ?>/dashboard-img/video2.jpg" alt="">
                     <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="spe_popup_youtube"><i
-                            class="icon-hotspot"></i></a>
+                            class="icon-video-play"></i></a>
                 </div>
                 <h2>Protected Content</h2>
                 <p>Restrict important data by setting up user permission or giving password to certain area.</p>
@@ -218,7 +220,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 
     <div class="qa_inner ezd-d-flex">
-        <img src="<?php echo SPE_IMG . '/dashboard-img/qa.png' ?>" alt="<?php esc_attr_e('Automatic Updates', 'spider-elements'); ?>">
+        <img src="<?php echo SPE_IMG . '/dashboard-img/qa.png' ?>"
+            alt="<?php esc_attr_e('Automatic Updates', 'spider-elements'); ?>">
         <div class="content">
             <h2><?php esc_html_e('Automatic Updates & Priority Support', 'spider-elements'); ?></h2>
             <p><?php esc_html_e('Get access to automatic updates & keep your website up-to-date with constantly developing features.
@@ -235,10 +238,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="message_content ezd-text-center">
         <div class="close-pro">
             <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>"
-                 alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
+                alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>" alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
+            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>"
+                alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
         </div>
         <div class="pro-content">
             <h3><?php esc_html_e( 'Go Pro', 'spider-elements' ); ?></h3>

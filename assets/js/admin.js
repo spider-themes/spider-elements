@@ -95,7 +95,8 @@
         // images have loaded
         // Activate isotope in container
         filter.isotope({
-          // ... (your Isotope options)
+          itemSelector: ".ezd-colum-space-4",
+          filter: "*",
         });
       });
     }
@@ -113,9 +114,6 @@
       var selector = $(this).attr("data-filter");
       filter.isotope({
         filter: selector,
-        animationOptions: {
-          // ... (your animation options)
-        },
       });
       return false;
     });
@@ -131,7 +129,8 @@
         // images have loaded
         // Activate isotope in container
         filters.isotope({
-          // ... (your Isotope options)
+          itemSelector: ".ezd-colum-space-4",
+          filter: "*",
         });
       });
     }
@@ -147,11 +146,8 @@
       $(this).addClass("active");
 
       var selector = $(this).attr("data-filter");
-      filters.isotope({
+      filter.isotope({
         filter: selector,
-        animationOptions: {
-          // ... (your animation options)
-        },
       });
       return false;
     });
@@ -167,7 +163,8 @@
         // images have loaded
         // Activate isotope in container
         filter.isotope({
-          // ... (your Isotope options)
+          itemSelector: ".ezd-colum-space-4",
+          filter: "*",
         });
       });
     }
@@ -185,9 +182,6 @@
       var selector = $(this).attr("data-filter");
       filter.isotope({
         filter: selector,
-        animationOptions: {
-          // ... (your animation options)
-        },
       });
       return false;
     });

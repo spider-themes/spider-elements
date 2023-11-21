@@ -386,12 +386,12 @@ class Cheat_sheet extends Widget_Base {
             </div>
             <div id="collapseAtlas-<?php echo esc_attr( $id ) ?>" class="collapse <?php echo esc_attr( $is_show ) ?>"
                 aria-labelledby="headingAtlas-<?php echo esc_attr( $id ) ?>">
-                <div class="row">
+                <div class="ezd-grid ezd-grid-cols-12">
                     <?php
 							if ( is_array( $cheat_sheet_contents ) ) {
 								foreach ( $cheat_sheet_contents as $item ) {
 									?>
-                    <div class="col-lg-3">
+                    <div class="ezd-lg-col-3">
                         <div class="cheatsheet_item shadow-sm">
                             <?php
 											if ( ! empty( $item['cs_number'] ) ) {
