@@ -111,6 +111,13 @@
     }
   }
 }
+.blog_item {
+  a {
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}
 
 // blog Two
 
@@ -242,7 +249,7 @@
     align-items: center;
     gap: 20px;
     margin-top: 40px;
-
+    color: #b9b9ba;
     .author-img img {
       width: 45px;
       height: 45px;

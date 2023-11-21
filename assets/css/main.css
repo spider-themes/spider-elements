@@ -8722,6 +8722,10 @@ ul.ordered-list li::before {
   border-radius: 15px;
 }
 
+.blog_item a:hover {
+  text-decoration: none !important;
+}
+
 .blog-meta-one {
   margin-top: 35px;
 }
@@ -8828,6 +8832,7 @@ ul.ordered-list li::before {
   align-items: center;
   gap: 20px;
   margin-top: 40px;
+  color: #b9b9ba;
 }
 .blog-item .blog-meta .author-img img {
   width: 45px;
