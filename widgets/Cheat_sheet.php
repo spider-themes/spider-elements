@@ -52,6 +52,14 @@ class Cheat_sheet extends Widget_Base {
 	}
 
 	/**
+	 * Name: get_script_depends()
+	 * Desc: Register the required JS dependencies for the frontend.
+	 */
+	public function get_script_depends() {
+		return [ 'spe-el-widgets', 'spe-script' ];
+	}
+	
+	/**
 	 * Name: register_controls()
 	 * Desc: Register controls for these widgets
 	 * Params: no params
@@ -358,39 +366,34 @@ class Cheat_sheet extends Widget_Base {
 		$id                 = $this->get_ID();
 		$cheat_sheet_title  = ! empty( $settings['cheat_sheet_title'] ) ? $settings['cheat_sheet_title'] : '';
 		$is_collapsed       = $settings['collapse_state'] == 'yes' ? 'true' : 'false';
-		$is_collapsed_class = $settings['collapse_state'] == 'yes' ? '' : 'collapsed';
+		$is_collapsed_class = $settings['collapse_state'] == 'yes' ? '' : 'active';
 		$is_show            = $settings['collapse_state'] == 'yes' ? 'show' : '';
 
 		?>
-        <div class="cheatsheet_info">
-            <div class="accordion cheatsheet_accordian">
+<div class="cheatsheet_info">
+    <div class="accordion cheatsheet_accordian">
 
-                <div id="cheat-<?php echo esc_attr( $id ) ?>" class="card">
-                    <div class="card-header" id="headingAtlas-<?php echo esc_attr( $id ) ?>">
-						<?php if ( $cheat_sheet_title ) : ?>
-                            <h2 class="mb-0">
-                                <button class="btn btn-link <?php echo esc_attr( $is_collapsed_class ) ?>" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#collapseAtlas-<?php echo esc_attr( $id ) ?>"
-                                        aria-expanded="<?php echo esc_attr( $is_collapsed ) ?>"
-                                        aria-controls="collapseAtlas-<?php echo esc_attr( $id ) ?>">
-									<?php echo esc_html( $cheat_sheet_title ) ?>
-                                    <span class="pluse">[+]</span><span class="minus">[-]</span>
-                                </button>
-                            </h2>
-						<?php endif ?>
-                    </div>
-                    <div id="collapseAtlas-<?php echo esc_attr( $id ) ?>"
-                         class="collapse <?php echo esc_attr( $is_show ) ?>"
-                         aria-labelledby="headingAtlas-<?php echo esc_attr( $id ) ?>">
-                        <div class="row">
-							<?php
+        <div id="cheat-<?php echo esc_attr( $id ) ?>" class="card">
+            <div class="card-header" id="headingAtlas-<?php echo esc_attr( $id ) ?>">
+                <?php if ( $cheat_sheet_title ) : ?>
+                <h2 class="mb-0">
+                    <button class="btn btn-link <?php echo esc_attr( $is_collapsed_class ) ?>" type="button">
+                        <?php echo esc_html( $cheat_sheet_title ) ?>
+                        <span class="pluse">[+]</span><span class="minus">[-]</span>
+                    </button>
+                </h2>
+                <?php endif ?>
+            </div>
+            <div id="collapseAtlas-<?php echo esc_attr( $id ) ?>" class="collapse <?php echo esc_attr( $is_show ) ?>"
+                aria-labelledby="headingAtlas-<?php echo esc_attr( $id ) ?>">
+                <div class="row">
+                    <?php
 							if ( is_array( $cheat_sheet_contents ) ) {
 								foreach ( $cheat_sheet_contents as $item ) {
 									?>
-                                    <div class="col-lg-3">
-                                        <div class="cheatsheet_item shadow-sm">
-											<?php
+                    <div class="col-lg-3">
+                        <div class="cheatsheet_item shadow-sm">
+                            <?php
 											if ( ! empty( $item['cs_number'] ) ) {
 												echo '<div class="cheatsheet_num">' . esc_html( $item['cs_number'] ) . '</div>';
 											}
@@ -401,18 +404,18 @@ class Cheat_sheet extends Widget_Base {
 												echo '<h5>' . esc_html( $item['cs_content'] ) . '</h5>';
 											}
 											?>
-                                        </div>
-                                    </div>
-									<?php
+                        </div>
+                    </div>
+                    <?php
 								}
 							}
 							?>
-                        </div>
-                    </div>
                 </div>
-
             </div>
         </div>
-		<?php
+
+    </div>
+</div>
+<?php
 	}
 }

@@ -1,6 +1,6 @@
 /*========== cheatsheet_info css =========*/
 .cheatsheet_info {
-  &+.cheatsheet_info {
+  & + .cheatsheet_info {
     margin-top: 30px;
   }
 }
@@ -37,7 +37,7 @@
           display: none;
         }
 
-        &.collapsed {
+        &.active {
           .pluse {
             display: inline-block;
           }
@@ -49,6 +49,9 @@
       }
     }
   }
+  .collapse.show {
+    display: block;
+  }
 }
 
 .cheatsheet_item {
@@ -57,7 +60,7 @@
   margin-bottom: 30px;
   transition: all 0.3s linear;
   background: #ffffff;
-  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 
   &:hover {
     box-shadow: 0 20px 27px 20px rgba(4, 73, 89, 0.08);
@@ -84,7 +87,7 @@
   width: 100%;
   text-align: center;
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     bottom: -10px;
   }
 
@@ -95,7 +98,7 @@
     line-height: 1;
     margin: 0;
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       font-size: 30px;
       bottom: -10px;
     }

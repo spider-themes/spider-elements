@@ -18,6 +18,7 @@
         "spe_marquee_slides.default": spiderElements.marquee,
         "spe_instagram.default": spiderElements.instagramFeed,
         "docy_accordion.default": spiderElements.accordions,
+        "docly_cheatsheet.default": spiderElements.cheatsheet,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -25,6 +26,20 @@
           "frontend/element_ready/" + widgetName,
           callback
         );
+      });
+    },
+
+    /*============ cheatsheet js ==============*/
+    cheatsheet: function ($scope) {
+      let cheatsht = $scope.find(".card-header button");
+      cheatsht.on("click", function (event) {
+        event.preventDefault(); // This line should prevent the default behavior
+        var $this = $(this);
+        var $parent = $this.parents();
+        var $collapses = $parent.find("> .collapse").first();
+        $(this).toggleClass("active");
+        $collapses.slideToggle(300);
+        return false;
       });
     },
 

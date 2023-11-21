@@ -8151,11 +8151,14 @@ ul.ordered-list li::before {
 .cheatsheet_accordian .card .card-header button .pluse {
   display: none;
 }
-.cheatsheet_accordian .card .card-header button.collapsed .pluse {
+.cheatsheet_accordian .card .card-header button.active .pluse {
   display: inline-block;
 }
-.cheatsheet_accordian .card .card-header button.collapsed .minus {
+.cheatsheet_accordian .card .card-header button.active .minus {
   display: none;
+}
+.cheatsheet_accordian .collapse.show {
+  display: block;
 }
 
 .cheatsheet_item {
