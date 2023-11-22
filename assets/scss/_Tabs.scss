@@ -56,10 +56,28 @@
     border: 1px solid var(--black_50);
     border-radius: 0 5px 5px 5px;
     background-color: #fff;
+    position: relative;
     .ezd_tab_arrow_btn {
       background: #0dcaf0;
       border-color: #0dcaf0;
       color: #fff;
+    }
+    .previous,
+    .nexts {
+      position: absolute;
+      top: 56%;
+      transform: translateY(-50%);
+      padding: 0;
+      border-radius: 0;
+      background: #e1ebf0;
+      border: 0;
+      color: var(--brand_color);
+      outline: none;
+      box-shadow: none;
+      transition: all 0.4s linear;
+      height: 32px;
+      width: 19px;
+      text-align: center;
     }
   }
 }
