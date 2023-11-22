@@ -1018,6 +1018,11 @@ button.btn.btn-link:focus {
   border-radius: 0 5px 5px 5px;
   background-color: #fff;
 }
+.tab_shortcode .tab-content .ezd_tab_arrow_btn {
+  background: #0dcaf0;
+  border-color: #0dcaf0;
+  color: #fff;
+}
 
 .header_tab_items .nav-tabs .numb,
 .tab_shortcode .nav-tabs .numb {
@@ -1188,7 +1193,6 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 }
 .tabs_sliders.sticky_tab_item span.scroller-btn {
   left: 0;
-  height: 100%;
   width: 40px;
   background: #f9f9f9;
   box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
@@ -1364,7 +1368,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 ul.nav.nav-tabs {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: -1px;
@@ -2366,7 +2370,7 @@ ul.nav.nav-tabs {
   height: 60px;
   font-size: 22px;
   text-align: center;
-  line-height: 60px;
+  line-height: 65px;
   color: #fff;
   cursor: pointer;
   transition: all 0.2s linear;
@@ -2582,10 +2586,6 @@ ul.nav.nav-tabs {
 }
 
 /*----------------- Video Playlist Widget CSS ------------------*/
-.video2_wrapper {
-  display: flex;
-}
-
 .ycp .belah .luhur {
   height: 74px;
 }
@@ -2931,7 +2931,7 @@ ul.nav.nav-tabs {
 }
 .video_slider_area .gallery_inner_thumb:before {
   content: "";
-  height: 145px;
+  height: 100%;
   width: 100%;
   background: linear-gradient(180deg, rgba(44, 44, 81, 0) 0%, rgba(44, 44, 81, 0.9) 73.67%);
   position: absolute;
@@ -5029,8 +5029,6 @@ button.swiper-pagination-bullet {
   position: absolute;
   font-size: 22px;
   bottom: 0;
-  left: 0;
-  right: 0;
   margin: auto;
   display: block;
   text-align: center;

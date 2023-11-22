@@ -66,8 +66,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		}
 
 		if ( $is_navigation_arrow == 'yes' ) { ?>
-        <button class="btn btn-info btn-lg previous"><i class="arrow_carrot-left"></i></button>
-        <button class="btn btn-info btn-lg next"><i class="arrow_carrot-right"></i></button>
+        <button class="btn btn-info ezd_tab_arrow_btn previous"><i class="arrow_carrot-left"></i></button>
+        <button class="btn btn-info ezd_tab_arrow_btn nexts"><i class="arrow_carrot-right"></i></button>
         <?php
 		}
 		?>

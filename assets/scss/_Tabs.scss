@@ -56,6 +56,11 @@
     border: 1px solid var(--black_50);
     border-radius: 0 5px 5px 5px;
     background-color: #fff;
+    .ezd_tab_arrow_btn {
+      background: #0dcaf0;
+      border-color: #0dcaf0;
+      color: #fff;
+    }
   }
 }
 
@@ -262,7 +267,6 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     span {
       &.scroller-btn {
         left: 0;
-        height: 100%;
         width: 40px;
         background: #f9f9f9;
         box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
@@ -500,7 +504,7 @@ body.remove {
 }
 
 ul.nav.nav-tabs {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: -1px;

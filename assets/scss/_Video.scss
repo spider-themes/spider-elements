@@ -1,7 +1,4 @@
 /*----------------- Video Playlist Widget CSS ------------------*/
-.video2_wrapper {
-  display: flex;
-}
 
 .ycp {
   .belah {
@@ -462,7 +459,7 @@
 
     &:before {
       content: "";
-      height: 145px;
+      height: 100%;
       width: 100%;
       background: linear-gradient(
         180deg,
