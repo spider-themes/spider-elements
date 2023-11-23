@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
     <div class="ezd-lg-col-<?php echo esc_attr( $column_grid ); ?> ezd-sm-col-6">
         <div class="section-title section-tag wow fadeInRight" data-wow-delay="0.1s">
-            <span class="tag-style heading"><?php esc_html_e( 'article', 'spider-elements' ) ?></span>
             <div class="blog-item blog-meta-two">
                 <div class="blog-meta">
                     <div class="author-img">
@@ -38,7 +37,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </a>
                 </div>
             </div>
-            <span class="tag-style heading mt-10"><?php esc_html_e( '/article', 'spider-elements' ) ?></span>
         </div>
     </div>
     <?php
