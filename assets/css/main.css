@@ -1027,7 +1027,7 @@ button.btn.btn-link:focus {
 .tab_shortcode .tab-content .previous,
 .tab_shortcode .tab-content .nexts {
   position: absolute;
-  top: 56%;
+  top: 50%;
   transform: translateY(-50%);
   padding: 0;
   border-radius: 0;
@@ -1040,6 +1040,17 @@ button.btn.btn-link:focus {
   height: 32px;
   width: 19px;
   text-align: center;
+  opacity: 0;
+}
+.tab_shortcode .tab-content .previous {
+  left: 0;
+}
+.tab_shortcode .tab-content .nexts {
+  right: 0;
+}
+.tab_shortcode .tab-content:hover .previous,
+.tab_shortcode .tab-content:hover .nexts {
+  opacity: 1;
 }
 
 .header_tab_items .nav-tabs .numb,
