@@ -223,6 +223,7 @@ class Alerts_Box extends Widget_Base {
 					'{{WRAPPER}} .explanation::after'            => 'color: {{VALUE}};',
 					'{{WRAPPER}} .notice h5'                     => 'color: {{VALUE}};',
 					'{{WRAPPER}} .nic-content-wrap .note-box h5' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert h5' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -261,6 +262,7 @@ class Alerts_Box extends Widget_Base {
 					'{{WRAPPER}} .explanation p'                => 'color: {{VALUE}};',
 					'{{WRAPPER}} .notice p'                     => 'color: {{VALUE}};',
 					'{{WRAPPER}} .nic-content-wrap .note-box p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert p' => 'color: {{VALUE}};',
 				],
 			]
 		);
