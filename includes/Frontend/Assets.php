@@ -65,13 +65,11 @@ class Assets
 	{
 
 		wp_register_script('ionicons', 'https://unpkg.com/ionicons@latest/dist/ionicons.js', '', SPE_VERSION, true);
-		
 		wp_register_script('slick', SPE_VEND . '/slick/slick.min.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('swiper', SPE_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('text-type', SPE_VEND . '/text-type/text-type.js', array('jquery'), SPE_VERSION, true);
-		wp_register_script('counter', SPE_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), SPE_VERSION, true);
+		wp_register_script('counterup', SPE_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), '', true);
 		wp_register_script('waypoint', SPE_VEND . '/waypoint/jquery.waypoints.min.js', array('jquery'), SPE_VERSION, true);
-		
 		wp_register_script('wow', SPE_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_register_script('artplayer', SPE_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', true);
 		wp_register_script('video-js-nuevo', SPE_VEND . '/video/nuevo.min.js', array('jquery'), '7.6.0', true);
@@ -82,7 +80,6 @@ class Assets
         wp_register_script('charming', SPE_VEND  . '/diagonal/charming.min.js', array('jquery'), SPE_VERSION, true);
         wp_register_script('tweenmax', SPE_VEND  . '/diagonal/TweenMax.min.js', array('jquery'), '1.18.0', true);
         wp_register_script('beforeafter', SPE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
-
         wp_register_script('spe-script', SPE_JS . '/scripts.js', array('jquery'), false, true);
     }
 

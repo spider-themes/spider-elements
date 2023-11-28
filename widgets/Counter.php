@@ -54,7 +54,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets', 'counter','waypoint' ];
+		return [ 'spe-el-widgets', 'counterup','waypoint' ];
 	}
 
 	/**

@@ -19,7 +19,7 @@
         "spe_instagram.default": spiderElements.instagramFeed,
         "docy_accordion.default": spiderElements.accordions,
         "docly_cheatsheet.default": spiderElements.cheatsheet,
-        "Counter.default": spiderElements.counter,
+        //"Counter.default": spiderElements.counter,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
