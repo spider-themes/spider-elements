@@ -12,10 +12,6 @@ svg.radial-progress circle {
   stroke-width: 6px;
 }
 
-//   svg.radial-progress circle.incomplete {
-//     opacity: 0.25;
-//   }
-
 svg.radial-progress circle.complete {
   stroke-dasharray: 219.91148575129;
 }
@@ -45,6 +41,9 @@ svg.radial-progress circle.incomplete {
       &.incomplete {
         stroke: #fff;
       }
+    }
+    text.counter {
+      fill: #fff;
     }
   }
 }

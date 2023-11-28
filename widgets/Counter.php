@@ -161,6 +161,33 @@ class Counter extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+		$this->add_control(
+			'style_bg',
+			[
+				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .skill_item_two .radial-progress' => 'background: {{VALUE}};',
+				],
+				'condition' => [
+					'style' => [ '2' ]
+				]
+			]
+		);
+		$this->add_control(
+			'style_radius',
+			[
+				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px' ],
+				'selectors'  => [
+					'{{WRAPPER}} .skill_item_two .radial-progress' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+					'style' => [ '2' ]
+				]
+			]
+		);
 
 		$this->add_responsive_control(
 			'counter_circle_size',

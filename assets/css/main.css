@@ -9792,6 +9792,9 @@ svg.radial-progress circle.incomplete {
 .skill_item_two .radial-progress circle.incomplete {
   stroke: #fff;
 }
+.skill_item_two .radial-progress text.counter {
+  fill: #fff;
+}
 
 .instagram-area {
   transform: translateY(-50%);

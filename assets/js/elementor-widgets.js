@@ -19,7 +19,7 @@
         "spe_instagram.default": spiderElements.instagramFeed,
         "docy_accordion.default": spiderElements.accordions,
         "docly_cheatsheet.default": spiderElements.cheatsheet,
-        // "Counter.default": spiderElements.counter,
+        "Counter.default": spiderElements.counter,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -709,19 +709,19 @@
 
     /*-------------------------------------------------------------------------------
 	  Counter js
-	// -------------------------------------------------------------------------------*/
-    // counter: function ($scope) {
-    //     function counterUp() {
-    //       if ($(".counter").length) {
-    //         $(".counter").counterUp({
-    //           delay: 1,
-    //           time: 500,
-    //         });
-    //       }
-    //     }
+	-------------------------------------------------------------------------------*/
+    counter: function ($scope) {
+      function counterUp() {
+        if ($(".counter").length) {
+          $(".counter").counterUp({
+            delay: 1,
+            time: 500,
+          });
+        }
+      }
 
-    //     counterUp();
-    // },
+      counterUp();
+    },
 
     //======================== Video Popup style 5 =========================== //
   };
