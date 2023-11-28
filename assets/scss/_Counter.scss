@@ -42,8 +42,17 @@ svg.radial-progress circle.incomplete {
         stroke: #fff;
       }
     }
-    text.counter {
-      fill: #fff;
-    }
+  }
+  .skill_pr {
+    position: relative;
+  }
+  .counter {
+    color: #fff;
+    font-size: 28px;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
   }
 }

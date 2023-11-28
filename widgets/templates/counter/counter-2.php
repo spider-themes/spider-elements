@@ -5,13 +5,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="skill_item skill_item_two ezd-text-center">
-    <svg class="radial-progress" data-percentage="<?php echo esc_attr( $counter_value ); ?>" viewBox="0 0 80 80">
-        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-        <circle class="complete" cx="40" cy="40" r="35"></circle>
-        <text class="percentage counter" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">
-            <?php echo esc_html( $counter_value ) ?></text>
-    </svg>
-
+    <div class="skill_pr">
+        <svg class="radial-progress" data-percentage="<?php echo esc_attr( $counter_value ); ?>" viewBox="0 0 80 80">
+            <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+            <circle class="complete" cx="40" cy="40" r="35"></circle>
+        </svg>
+        <span class="percentage counter">
+            <?php echo esc_html( $counter_value ) ?></span>
+    </div>
+    <?php if ($text_switcher == 'yes'): ?>
+    <h6><?php echo esc_html( $counter_text ); ?></h6>
+    <?php endif; ?>
 </div>
 
 <script type=text/javascript>

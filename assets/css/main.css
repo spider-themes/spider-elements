@@ -9792,8 +9792,17 @@ svg.radial-progress circle.incomplete {
 .skill_item_two .radial-progress circle.incomplete {
   stroke: #fff;
 }
-.skill_item_two .radial-progress text.counter {
-  fill: #fff;
+.skill_item_two .skill_pr {
+  position: relative;
+}
+.skill_item_two .counter {
+  color: #fff;
+  font-size: 28px;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  transform: translateY(-50%);
 }
 
 .instagram-area {

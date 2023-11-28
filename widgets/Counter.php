@@ -109,6 +109,7 @@ class Counter extends Widget_Base {
 			]
 		);
 
+
 		$this->end_controls_section(); // End Preset Skin
 
 		//=================== SecCountertion  ===================//
@@ -137,6 +138,17 @@ class Counter extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'text_switcher', [
+				'label'        => esc_html__( 'Counter Text Show/Hide', 'spider-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
+				'label_off'    => esc_html__( 'No', 'spider-elements' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+				'separator'    => 'before'
+			]
+		);
 
 		$this->end_controls_section();
 
@@ -278,7 +290,8 @@ class Counter extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} svg.radial-progress text' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .skill_item svg.radial-progress text' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .skill_item_two .counter' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -286,7 +299,7 @@ class Counter extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name'     => 'percent_typo',
-				'selector' => '{{WRAPPER}} svg.radial-progress text'
+				'selector' => '{{WRAPPER}} .skill_item svg.radial-progress text,{{WRAPPER}} .skill_item_two .counter'
 			]
 		);
 
@@ -314,6 +327,29 @@ class Counter extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name'     => 'counter_text_typo',
 				'selector' => '{{WRAPPER}} .skill_item h6'
+			]
+		);
+		$this->add_responsive_control(
+			'counter_text_margin',
+			[
+				'label'      => __( 'Margin Top', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 6,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .skill_item h6' => 'margin-top: {{SIZE}}{{UNIT}}',
+				],
+				'separator'  => 'before',
 			]
 		);
 		$this->end_controls_section();
