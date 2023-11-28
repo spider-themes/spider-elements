@@ -19,6 +19,7 @@
         "spe_instagram.default": spiderElements.instagramFeed,
         "docy_accordion.default": spiderElements.accordions,
         "docly_cheatsheet.default": spiderElements.cheatsheet,
+        // "Counter.default": spiderElements.counter,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -301,26 +302,6 @@
           });
         }
       }
-
-      // custom tab js
-      // $(".ezd-tab-menu li a").on("click", function (e) {
-      //   e.preventDefault();
-
-      //   // Remove active class from all tabs within the same menu
-      //   $(this).closest(".ezd-tab-menu").find("li a").removeClass("active");
-
-      //   // Add active class to the clicked tab
-      //   $(this).addClass("active");
-
-      //   var target = $(this).attr("href");
-
-      //   $("" + target)
-      //     .addClass("active")
-      //     .siblings(".ezd-tab-box")
-      //     .removeClass("active");
-
-      //   return false;
-      // });
     },
 
     //======================== Alert Box =========================== //
@@ -725,6 +706,22 @@
         return false;
       });
     },
+
+    /*-------------------------------------------------------------------------------
+	  Counter js
+	// -------------------------------------------------------------------------------*/
+    // counter: function ($scope) {
+    //     function counterUp() {
+    //       if ($(".counter").length) {
+    //         $(".counter").counterUp({
+    //           delay: 1,
+    //           time: 500,
+    //         });
+    //       }
+    //     }
+
+    //     counterUp();
+    // },
 
     //======================== Video Popup style 5 =========================== //
   };

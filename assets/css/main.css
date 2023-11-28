@@ -9779,6 +9779,17 @@ svg.radial-progress circle.incomplete {
   stroke: #5d5b62;
 }
 
+.skill_item_two .radial-progress {
+  background: linear-gradient(rgb(79, 248, 186) 0%, rgb(0, 204, 255) 100%);
+  border-radius: 50%;
+}
+.skill_item_two .radial-progress circle {
+  stroke-width: 4px;
+}
+.skill_item_two .radial-progress circle.incomplete {
+  stroke: #fff;
+}
+
 .instagram-area {
   transform: translateY(-50%);
   position: relative;

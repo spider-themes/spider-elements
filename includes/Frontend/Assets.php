@@ -65,9 +65,15 @@ class Assets
 	{
 
 		wp_register_script('ionicons', 'https://unpkg.com/ionicons@latest/dist/ionicons.js', '', SPE_VERSION, true);
+		
 		wp_register_script('slick', SPE_VEND . '/slick/slick.min.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('swiper', SPE_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('text-type', SPE_VEND . '/text-type/text-type.js', array('jquery'), SPE_VERSION, true);
+		// wp_register_script('counter', SPE_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), SPE_VERSION, true);
+		wp_register_script('counter', 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.7.1/countUp.min.js', '', SPE_VERSION, true);
+		// wp_register_script('waypoint', SPE_VEND . '/waypoint/jquery.waypoints.min.js', array('jquery'), SPE_VERSION, true);
+		wp_register_script('waypoint', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js', '', SPE_VERSION, true);
+		
 		wp_register_script('wow', SPE_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_register_script('artplayer', SPE_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', true);
 		wp_register_script('video-js-nuevo', SPE_VEND . '/video/nuevo.min.js', array('jquery'), '7.6.0', true);

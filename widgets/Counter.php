@@ -54,7 +54,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets' ];
+		return [ 'spe-el-widgets', 'counter','waypoint' ];
 	}
 
 	/**
@@ -99,6 +99,10 @@ class Counter extends Widget_Base {
 					'1' => [
 						'icon'  => 'counter1',
 						'title' => esc_html__( '01 : Counter', 'spider-elements' )
+					],
+					'2' => [
+						'icon'  => 'counter2',
+						'title' => esc_html__( '02 : Counter', 'spider-elements' )
 					],
 				],
 				'default' => '1',
@@ -176,7 +180,7 @@ class Counter extends Widget_Base {
 					'size' => 100,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} svg.radial-progress' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .skill_item  svg.radial-progress' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};'
 				],
 				'separator'  => 'after',
 			]
