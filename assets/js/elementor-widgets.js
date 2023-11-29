@@ -19,7 +19,7 @@
         "spe_instagram.default": spiderElements.instagramFeed,
         "docy_accordion.default": spiderElements.accordions,
         "docly_cheatsheet.default": spiderElements.cheatsheet,
-        //"Counter.default": spiderElements.counter,
+        "Counter.default": spiderElements.counter,
       };
 
       $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -712,8 +712,8 @@
 	-------------------------------------------------------------------------------*/
     counter: function ($scope) {
       function counterUp() {
-        if ($(".counter").length) {
-          $(".counter").counterUp({
+        if ($(".skill_item_two .counter").length) {
+          $(".skill_item_two .counter").counterUp({
             delay: 1,
             time: 500,
           });

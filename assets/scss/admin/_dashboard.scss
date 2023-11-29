@@ -1,10 +1,13 @@
 .spe_dashboard {
   display: flex;
   flex-wrap: wrap;
-  background: #f9f7fc;
-  padding: 60px;
+  padding: 60px 0px;
+  margin-right: 20px;
+  @media (max-width: 1400px) {
+    padding: 40px 0px;
+  }
   .sidebar_navigation {
-    flex: 16% 0 0;
+    width: 18%;
     margin-right: 30px;
     .sticky_sidebar {
       background: #fff;
@@ -31,6 +34,9 @@
           align-items: center;
           margin-right: 12px;
           color: #571fb7;
+          @media (max-width: 1400px) {
+            margin-right: 5px;
+          }
           i {
             font-size: 18px;
           }
@@ -73,6 +79,9 @@
           align-items: center;
           padding: 18px 25px;
           transition: all 0.3s linear;
+          @media (max-width: 1400px) {
+            padding: 16px 10px;
+          }
           .content {
             h3 {
               margin-top: 0;
@@ -91,6 +100,9 @@
               color: #6a737c;
               line-height: 22px;
               margin-top: 0;
+              @media (max-width: 1400px) {
+                font-size: 13px;
+              }
             }
           }
         }
@@ -114,7 +126,8 @@
   }
 
   .tab_contents {
-    flex: 80% 0 0;
+    width: 80%;
+    flex: 1;
     .spe-tab-box {
       display: none;
       &.active {

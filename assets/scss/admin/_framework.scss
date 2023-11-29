@@ -206,6 +206,7 @@ $rob: "Roboto", sans-serif;
   width: 50%;
 }
 .ezd-colum-space-4 {
-  flex: 0 0 31.49%;
-  width: 31.49%;
+  flex: 1;
+  width: calc(100% / 3);
+  box-sizing: border-box;
 }
