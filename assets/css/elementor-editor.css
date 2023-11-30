@@ -132,7 +132,7 @@
     background-size: cover;
     background-position: top;
 }
-/* team Carousel  */
+/*** === team Carousel === ***/
 .team1::before{
     background: url("../images/el-editor-preview/team1.jpg");
     background-repeat: no-repeat;
@@ -146,8 +146,7 @@
     background-position: top;
 }
 
-/* integration  */
-/* team Carousel  */
+/*** === integration  ===***/
 .integration1::before{
     background: url("../images/el-editor-preview/integration1.jpg");
     background-repeat: no-repeat;
@@ -161,7 +160,7 @@
     background-position: center;
 }
 
-/*===== blog grid ===== */
+/***==== blog grid ==== ***/
 .blog-grid1::before{
     background: url("../images/el-editor-preview/blog1.png");
     background-repeat: no-repeat;
@@ -192,7 +191,7 @@
     background-size: cover;
     background-position: center;
 }
-/** === Video Playlist === **/
+/*** === Video Playlist === ***/
 .video-playlist::before {
     background: url("../images/el-editor-preview/video-playlist.jpg");
     background-repeat: no-repeat;
@@ -206,61 +205,61 @@
     background-position: top;
 }
 
-/* image hover style  */
-.img_hover1{
+/*** === image hover style === ***/
+.img_hover1::before{
     background: url("../images/el-editor-preview/image_hover2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
-.img_hover2{
+.img_hover2::before{
     background: url("../images/el-editor-preview/image_hover1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 
-}.img_hover3{
+}.img_hover3::before{
     background: url("../images/el-editor-preview/image_hover3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 
-}.img_hover4{
+}.img_hover4::before{
     background: url("../images/el-editor-preview/image_hover4.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 
-/* Marquee Slides */
-.marquee1{
+/*** === Marquee Slides === ***/
+.marquee1::before{
     background: url("../images/el-editor-preview/marquee1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
-.marquee2{
+.marquee2::before{
     background: url("../images/el-editor-preview/marquee2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 
-/* Counter */
-.counter1{
+/*** === Counter === ***/
+.counter1::before{
     background: url("../images/el-editor-preview/counter1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
-.counter2{
+.counter2::before{
     /* background: url("../images/el-editor-preview/marquee2.png"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 
-.instagram1{
+.instagram1::before{
     background: url("../images/el-editor-preview/instagram1.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -268,7 +267,7 @@
 }
 
 
-/*==================== Widget Preview Icon =====================*/
+/*==== Widget Preview Icon ====*/
 .elementor-panel .elementor-element .icon .spe-icon::after {
     content: url("../images/el-editor-preview/se-icon.svg");
     background-repeat: no-repeat;

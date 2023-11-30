@@ -198,7 +198,6 @@ class Before_After extends Widget_Base {
 		?>
         <section class="before-after-banner">
             <div class="beforeAfter">
-				<?php if ( `` ) ?>
                 <div>
 					<?php echo wp_get_attachment_image( $settings['before_image']['id'], 'full' ) ?>
                     <div class="indicator before"><?php echo esc_html( $settings['before_text'] ); ?></div>
