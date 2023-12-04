@@ -19,8 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Team_Carousel extends Widget_Base {
 
@@ -66,7 +64,6 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -82,7 +79,6 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -155,10 +151,9 @@ class Team_Carousel extends Widget_Base {
 				'placeholder' => esc_html__( 'https://your-link.com', 'spider-elements' ),
 				'options'     => [ 'url', 'is_external', 'nofollow' ],
 				'default'     => [
-					'url'         => '',
+					'url'         => '#',
 					'is_external' => true,
 					'nofollow'    => true,
-					// 'custom_attributes' => '',
 				],
 				'label_block' => true,
 			]
@@ -182,22 +177,18 @@ class Team_Carousel extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Elizabeth Foster', 'spider-elements' ),
 						'team_job_position' => __( 'UI/UX Designer', 'spider-elements' ),
 					],
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Julie Ake', 'spider-elements' ),
 						'team_job_position' => __( 'Product Designer', 'spider-elements' ),
 					],
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Elizabeth Foster', 'spider-elements' ),
 						'team_job_position' => __( 'UI/UX Designer', 'spider-elements' ),
 					],
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Juan Marko', 'spider-elements' ),
 						'team_job_position' => __( 'Java Developer', 'spider-elements' ),
 					],
@@ -214,7 +205,6 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -324,7 +314,6 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

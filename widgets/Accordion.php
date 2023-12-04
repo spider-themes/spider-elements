@@ -66,7 +66,6 @@ class Accordion extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -81,7 +80,6 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -248,7 +246,6 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -271,18 +268,6 @@ class Accordion extends Widget_Base {
 				'selector' => '{{WRAPPER}} .accordion .doc_accordion',
 			]
 		);
-
-//		$this->add_responsive_control(
-//			'accordion_radius',
-//			[
-//				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
-//				'type'       => Controls_Manager::DIMENSIONS,
-//				'size_units' => [ 'px', 'em', '%' ],
-//				'selectors'  => [
-//					'{{WRAPPER}} .accordion .card, {{WRAPPER}} .accordion .card .card-header button, {{WRAPPER}} .accordion .card .toggle_body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
-//				],
-//			]
-//		);
 
 		$this->add_responsive_control(
 			'accordion_bottom_spacing',
@@ -308,7 +293,7 @@ class Accordion extends Widget_Base {
 		$this->end_controls_section();
 
 
-//		=============Accordion Title Style Section===============
+        //=============Accordion Title Style Section===============//
 		$this->start_controls_section(
 			'section_toggle_style_title',
 			[
@@ -621,7 +606,6 @@ class Accordion extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

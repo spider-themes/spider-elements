@@ -25,7 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Elementor widget for Blog Grid.
  *
- * @since 1.7.0
  */
 class Blog_Grid extends Widget_Base {
 
@@ -81,7 +80,6 @@ class Blog_Grid extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -98,7 +96,6 @@ class Blog_Grid extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -165,7 +162,6 @@ class Blog_Grid extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -434,7 +430,6 @@ class Blog_Grid extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

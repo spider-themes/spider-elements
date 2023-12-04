@@ -17,8 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Alerts_box
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Buttons extends Widget_Base {
 
@@ -34,28 +32,8 @@ class Buttons extends Widget_Base {
 		return 'eicon-button spe-icon';
 	}
 
-	public function get_keywords() {
-		return [ '' ];
-	}
-
 	public function get_categories() {
 		return [ 'spider-elements' ];
-	}
-
-	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
-	 */
-	public function get_style_depends() {
-		return [ '' ];
-	}
-
-	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
-	 */
-	public function get_script_depends() {
-		return [ '' ];
 	}
 
 	/**
@@ -63,7 +41,6 @@ class Buttons extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -78,7 +55,6 @@ class Buttons extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -122,7 +98,6 @@ class Buttons extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -136,7 +111,6 @@ class Buttons extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

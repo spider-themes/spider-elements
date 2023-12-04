@@ -1,33 +1,30 @@
 <?php
 /**
  * Plugin Name: Spider Elements
- * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
- * Version: 0.3.0
- * Requires at least: 5.0
- * Tested up to: 6.3
- * Requires PHP: 7.4
  * Author: spider-themes
- * Author URI: https://spider-themes.net/spider-elements
- * Domain Path: /languages
- * License: GPL2 or later
+ * Version: 0.4.0
+ * Requires at least: 5.0
+ * Tested up to: 6.4.1
+ * Requires PHP: 7.4
+ * Elementor requires at least: 3.0.0
+ * Elementor tested up to: 3.19.0
+ * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
- * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.16.5
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
+
 /**
  * Spider_Elements class.
  *
  * The main class that initiates and runs the addon.
  *
- * @since 1.0.0
  */
-
 if ( ! class_exists( 'Spider_Elements') ) {
 
 	/**
@@ -40,15 +37,13 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Holds the version of the plugin.
 		 *
-		 * @since 1.0.0
 		 * @var string The plugin version.
 		 */
-		const VERSION = '0.2.0';
+		const VERSION = '0.4.0';
 
 		/**
 		 * Minimum Elementor Version
 		 *
-		 * @since 1.0.0
 		 * @var string Minimum Elementor version required to run the plugin.
 		 */
 		const MINIMUM_ELEMENTOR_VERSION = '3.0.0';
@@ -57,9 +52,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Minimum PHP Version
 		 *
 		 * Holds the minimum PHP version required to run the plugin.
-		 *
-		 * @since 1.7.0
-		 * @since 1.7.1 Moved from property with that name to a constant.
 		 *
 		 * @var string Minimum PHP version required to run the plugin.
 		 */
@@ -70,8 +62,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Instance
 		 *
 		 * Holds a single instance of the `Spider_Elements` class.
-		 *
-		 * @since 1.7.0
 		 *
 		 * @access private
 		 * @static
@@ -87,7 +77,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Ensures only one instance of the class is loaded or can be loaded.
 		 *
 		 * @return Spider_Elements An instance of the class.
-		 * @since 1.7.0
 		 *
 		 * @access public
 		 * @static
@@ -138,7 +127,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Disable class cloning.
 		 *
 		 * @return void
-		 * @since 1.7.0
 		 *
 		 * @access protected
 		 *
@@ -155,7 +143,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Disable unserializing the class.
 		 *
 		 * @return void
-		 * @since 1.7.0
 		 *
 		 * @access protected
 		 *
@@ -194,8 +181,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Load core files required to run the plugin.
 		 *
-		 * @since 1.7.0
-		 *
 		 * @access public
 		 */
 		public function core_includes() {
@@ -219,8 +204,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Load plugin localization files.
 		 *
-		 * @since 1.7.0
-		 *
 		 * @access public
 		 */
 		public function i18n() {
@@ -237,7 +220,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Fired by `plugins_loaded` action hook.
 		 *
-		 * @since 1.2.0
 		 * @access public
 		 */
 		public function init_plugin() {
@@ -267,8 +249,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Admin notice
 		 *
 		 * Warning when the site doesn't have Elementor installed or activated.
-		 *
-		 * @since 1.0.0
 		 *
 		 * @access public
 		 */
@@ -318,7 +298,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Warning when the site doesn't have a minimum required Elementor version.
 		 *
-		 * @since 1.0.0
 		 * @access public
 		 */
 		public function admin_notice_minimum_elementor_version() {
@@ -352,7 +331,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Warning when the site doesn't have a minimum required PHP version.
 		 *
-		 * @since 1.7.0
 		 *
 		 * @access public
 		 */
@@ -387,10 +365,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Add new Elementor Categories
 		 *
 		 * Register new widget categories for Spider Elements widgets.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @access public
 		 */
 		public function elements_register_category() {
 
@@ -405,8 +379,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Include Spider Elements widgets files and register them in Elementor.
 		 *
-		 * @since 1.0.0
-		 *
 		 * @access public
 		 */
 		public function on_widgets_registered() {
@@ -420,7 +392,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * Load widgets files
 		 *
-		 * @since 1.2.0
 		 * @access private
 		 */
 		private function include_widgets() {
@@ -450,10 +421,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * Register Widgets
 		 *
 		 * Register new Elementor widgets.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @access private
 		 */
 		private function register_widgets() {
 
@@ -482,7 +449,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 
 		/**
 		 * @return void
-		 * @since 1.7.0
 		 * @access public
 		 * @static
 		 */

@@ -18,8 +18,6 @@ if (!defined('ABSPATH')) {
 
 /**
  * Class Alerts_box
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Cheat_sheet extends Widget_Base
 {

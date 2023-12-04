@@ -52,7 +52,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -67,7 +66,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register content
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -80,23 +78,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
 			]
 		);
-
-//        $this->add_control(
-//            'style', [
-//                'label'   => esc_html__( 'Style', 'spider-elements' ),
-//                'type'    => Controls_Manager::SELECT,
-//                'options' => [
-//                    '1' => esc_html__( '01: Button Switcher', 'spider-elements' ),
-//                    '2' => esc_html__( '02: Tab Switcher', 'spider-elements' ),
-//                    '3' => esc_html__( '03: Pricing Cloud', 'spider-elements' ),
-//                    '4' => esc_html__( '04: Button Switcher', 'spider-elements' ),
-//                    '5' => esc_html__( '05: Button Switcher', 'spider-elements' ),
-//                    '6' => esc_html__( '06: Tab Switcher', 'spider-elements' ),
-//                    '7' => esc_html__( '07: Button Switcher', 'spider-elements' ),
-//                ],
-//                'default' => '1',
-//            ]
-//        );
 
 		$this->add_control(
 			'style', [
@@ -813,7 +794,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register style content
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -1342,7 +1322,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Render widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

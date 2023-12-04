@@ -19,8 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Video_Popup extends Widget_Base {
 
@@ -66,7 +64,6 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -81,7 +78,6 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -148,7 +144,6 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -368,7 +363,6 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

@@ -62,7 +62,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -78,7 +77,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -575,22 +573,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'company_image'   => __( '', 'spider-elements' ),
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'company_image'   => __( '', 'spider-elements' ),
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'company_image'   => __( '', 'spider-elements' ),
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -643,19 +635,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -708,19 +697,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -773,19 +759,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -927,7 +910,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -1301,7 +1283,6 @@ class Testimonial extends Widget_Base {
 	 * Floored-rating type is int, to represent the rounded-down stars count.
 	 * In the `for` loop, the index type is float to allow comparing with the rating value.
 	 *
-	 * @since 2.3.0
 	 * @access protected
 	 */
 	protected function render_stars( $icon, $dat = 0 ) {
@@ -1324,7 +1305,6 @@ class Testimonial extends Widget_Base {
 	}
 
 	/**
-	 * @since 2.3.0
 	 * @access protected
 	 */
 	protected function get_rating( $ratting ) {
@@ -1340,7 +1320,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

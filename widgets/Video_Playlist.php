@@ -19,8 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Video_playlist
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Video_Playlist extends Widget_Base {
 	public function get_name() {
@@ -64,7 +62,6 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -78,7 +75,6 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -281,7 +277,6 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -569,7 +564,6 @@ class Video_Playlist extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
-					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
 				],
 			]
 		);
@@ -836,7 +830,6 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

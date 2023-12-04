@@ -18,8 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Alerts_box
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Animated_Heading extends Widget_Base {
 
@@ -56,7 +54,6 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -71,7 +68,6 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -155,7 +151,6 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -264,7 +259,6 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
