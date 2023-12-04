@@ -1353,7 +1353,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 		$tables  = isset( $settings['pricing_table_1'] ) ? $settings['pricing_table_1'] : '';
 		$tables2 = isset( $settings['pricing_table_2'] ) ? $settings['pricing_table_2'] : '';
 
-
 		//Include template parts
 		include "templates/pricing-table-switcher/table-switcher-{$settings['style']}.php";
 

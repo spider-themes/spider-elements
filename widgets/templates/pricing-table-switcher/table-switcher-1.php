@@ -7,20 +7,32 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="wow fadeInUp" data-wow-delay="0.1s">
         <nav>
             <div class="nav justify-content-center pricing-switcher" id="nav-tab" role="tablist">
-                <button class="nav-link spe_pricing_title active"
-                        id="nav-monthly-tab-<?php echo esc_attr( $this->get_id() ); ?>" data-bs-toggle="tab"
-                        data-bs-target="#nav-monthly-<?php echo esc_attr( $this->get_id() ); ?>" type="button"
-                        role="tab"
-                        aria-controls="nav-monthly" aria-selected="true">
-					<?php echo esc_html( $settings['tab1_title'] ) ?>
-                </button>
-                <button class="nav-link spe_pricing_title"
-                        id="nav-annually-tab-<?php echo esc_attr( $this->get_id() ); ?>" data-bs-toggle="tab"
-                        data-bs-target="#nav-annually-<?php echo esc_attr( $this->get_id() ); ?>" type="button"
-                        role="tab"
-                        aria-controls="nav-annually" aria-selected="false">
-					<?php echo esc_html( $settings['tab2_title'] ) ?>
-                </button>
+
+                <?php
+                if ( ! empty( $settings['tab1_title'] ) ) {
+                    ?>
+                    <button class="nav-link spe_pricing_title active"
+                            id="nav-monthly-tab-<?php echo esc_attr( $this->get_id() ); ?>" data-bs-toggle="tab"
+                            data-bs-target="#nav-monthly-<?php echo esc_attr( $this->get_id() ); ?>" type="button"
+                            role="tab"
+                            aria-controls="nav-monthly" aria-selected="true">
+                        <?php echo esc_html( $settings['tab1_title'] ) ?>
+                    </button>
+                    <?php
+                }
+
+                if ( ! empty( $settings['tab2_title'] ) ) {
+                    ?>
+                    <button class="nav-link spe_pricing_title"
+                            id="nav-annually-tab-<?php echo esc_attr( $this->get_id() ); ?>" data-bs-toggle="tab"
+                            data-bs-target="#nav-annually-<?php echo esc_attr( $this->get_id() ); ?>" type="button"
+                            role="tab"
+                            aria-controls="nav-annually" aria-selected="false">
+                        <?php echo esc_html( $settings['tab2_title'] ) ?>
+                    </button>
+                    <?php
+                }
+                ?>
             </div>
         </nav>
         <div class="tab-content features-tab-content" id="nav-tabContent">
@@ -35,8 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							$active      = $index == 1 ? ' active' : '';
 							$is_last_key = $table == end( $tables ) ? ' mx-auto ' : '';
 							?>
-                            <div
-                                    class="ezd-lg-col-<?php echo esc_attr( $settings['column'] ) ?> ezd-md-col-6<?php echo esc_attr( $is_last_key ) ?>">
+                            <div class="ezd-lg-col-<?php echo esc_attr( $settings['column'] ) ?> ezd-md-col-6<?php echo esc_attr( $is_last_key ) ?>">
                                 <div class="pricing-item-2 spe_pricing_item_wrapper wow fadeInUp<?php echo esc_attr( $active ); ?>"
                                      data-wow-delay="<?php echo esc_attr( $delay_time ) ?>s">
 									<?php
@@ -88,8 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						$active      = $index == 1 ? ' active' : '';
 						$is_last_key = $table == end( $tables ) ? ' mx-auto ' : '';
 						?>
-                        <div
-                                class="ezd-lg-col-<?php echo esc_attr( $settings['column'] ) ?> ezd-md-col-6<?php echo esc_attr( $is_last_key ) ?>">
+                        <div class="ezd-lg-col-<?php echo esc_attr( $settings['column'] ) ?> ezd-md-col-6<?php echo esc_attr( $is_last_key ) ?>">
                             <div class="spe_pricing_item_wrapper pricing-item-2<?php echo esc_attr( $active ); ?>">
 								<?php
 								if ( ! empty( $table['table_icon']['id'] ) ) {

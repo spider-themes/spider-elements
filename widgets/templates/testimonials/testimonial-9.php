@@ -5,8 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="feedback-section-two">
     <div class="feedback-slider-two testimonial-slider-<?php echo esc_attr($testimonial_id);?>">
-		<?php if(!empty($testimonials6)):
-			foreach ($testimonials6 as $item ) :
+		<?php
+        if(!empty($testimonials6)) {
+			foreach ($testimonials6 as $item ) {
 				$rating_data = $this->get_rating( $item['author_rating'] );
 				$textual_rating = $rating_data[0] . '/' . $rating_data[1];
 				?>
@@ -41,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php endif; ?>
 
 							<?php if ( $testimonial_ratting_icon == 'yes' ) : ?>
-								<?php echo $stars_element ?>
+								<?php echo wp_kses_post($stars_element) ?>
 							<?php endif; ?>
                         </div>
 						<?php
@@ -67,9 +68,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 						?>
                     </div>
                 </div>
-			<?php
-			endforeach;
-		endif;
+			    <?php
+            }
+        }
 		?>
     </div>
 </div>

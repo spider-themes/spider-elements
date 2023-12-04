@@ -198,14 +198,24 @@ class Before_After extends Widget_Base {
 		?>
         <section class="before-after-banner">
             <div class="beforeAfter">
-                <div>
-					<?php echo wp_get_attachment_image( $settings['before_image']['id'], 'full' ) ?>
-                    <div class="indicator before"><?php echo esc_html( $settings['before_text'] ); ?></div>
-                </div>
-                <div>
-					<?php echo wp_get_attachment_image( $settings['after_image']['id'], 'full' ) ?>
-                    <div class="indicator after"><?php echo esc_html( $settings['after_text'] ); ?></div>
-                </div>
+                <?php
+                if ( ! empty( $settings['before_image']['id'] ) ) {
+                    ?>
+                    <div>
+                        <?php echo wp_get_attachment_image( $settings['before_image']['id'], 'full' ) ?>
+                        <div class="indicator before"><?php echo esc_html( $settings['before_text'] ); ?></div>
+                    </div>
+                    <?php
+                }
+                if ( ! empty( $settings['after_image']['id'] ) ) {
+                    ?>
+                    <div>
+                        <?php echo wp_get_attachment_image( $settings['after_image']['id'], 'full' ) ?>
+                        <div class="indicator after"><?php echo esc_html( $settings['after_text'] ); ?></div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
         </section>
 		<?php

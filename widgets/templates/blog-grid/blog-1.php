@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
 		<?php
 		endwhile;
+        wp_reset_postdata();
 	}
-	wp_reset_postdata();
 	?>
 </div>

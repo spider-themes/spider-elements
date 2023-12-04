@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php endif; ?>
 
 							<?php if ( $testimonial_ratting_icon == 'yes' ) : ?>
-								<?php echo $stars_element ?>
+								<?php echo wp_kses_post($stars_element) ?>
 							<?php endif; ?>
                         </div>
 						<?php

@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 <script>
-    (function ($) {
+    ;(function ($) {
         "use strict";
         $(document).ready(function () {
             if ($(".marquee").length) {

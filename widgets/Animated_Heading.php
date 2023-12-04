@@ -285,10 +285,17 @@ class Animated_Heading extends Widget_Base {
 						$slide_title2 = ! empty( $item['title2'] ) ? $item['title2'] : '';
 						?>
                         <span class="is-<?php echo esc_attr( $vihi ); ?>">
-            <b><?php echo esc_attr( $slide_title1 ); ?></b>
-            <?php echo esc_attr( $slide_title2 ); ?>
-        </span>
-						<?php
+                            <?php
+                            if ( $slide_title1 ) { ?>
+                                <b><?php echo esc_attr( $slide_title1 ); ?></b>
+                                <?php
+                            }
+                            if ( $slide_title2 ) {
+                                echo esc_attr( $slide_title2 );
+                            }
+                            ?>
+                        </span>
+                        <?php
 					}
 				}
 				?>
