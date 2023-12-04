@@ -4,20 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use Spider_Elements\includes\Admin\Module_Settings;
-
 add_image_size( 'spe_270x152', 270, 152, true ); // Video Playlist Thumb
 add_image_size( 'spe_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
-
-/**
- * Constants for widgets badge
- */
-if ( ! defined( 'SPE_TEXT_BADGE' ) ) {
-	define(
-		'SPE_TEXT_BADGE',
-		'<span class="spe-text-badge-control">' . esc_html__( 'SPIDER', 'spider-elements' ) . '</span>'
-	);
-}
 
 
 /**
@@ -165,33 +153,6 @@ function spe_get_the_first_taxonomy_link( $term = 'category' ) {
 	$cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
 
 	return esc_url( $cat );
-}
-
-
-/**
- * Get categories array
- *
- * @param string $term
- *
- * @return array
- */
-function spe_get_the_categories( $term = 'category' ) {
-
-	$cats = get_terms( array(
-		'taxonomy'   => $term,
-		'hide_empty' => true
-	) );
-
-	$cat_array        = [];
-	$cat_array['all'] = esc_html__( 'All', 'spider-elements' );
-
-	if ( is_array( $cats ) ) {
-		foreach ( $cats as $cat ) {
-			$cat_array[ $cat->term_id ] = $cat->name;
-		}
-	}
-
-	return $cat_array;
 }
 
 /**
