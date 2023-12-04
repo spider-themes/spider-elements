@@ -48,7 +48,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets', 'spe-script' ];
+		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets' ];
 	}
 
 	public function get_keywords() {

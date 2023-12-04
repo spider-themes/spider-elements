@@ -17,8 +17,6 @@
  * Elementor tested up to: 3.16.5
  */
 
-use Spider_Elements\includes\Admin\Module_Settings;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -208,14 +206,9 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			//Shortcodes
 			require_once __DIR__ . '/shortcodes/direction.php';
 
-
-			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
-
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
-				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
-				require_once __DIR__ . '/includes/classes/Plugin_Installer.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
@@ -267,16 +260,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			}
-
-
-            //
-            if ( is_admin() ) {
-                //Admin
-                new Spider_Elements\includes\Admin\Admin_Settings();
-
-                //Classes
-                new Spider_Elements\includes\classes\Plugin_Installer();
-            }
 
 		}
 
@@ -442,51 +425,24 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 */
 		private function include_widgets() {
 
-			require_once( __DIR__ . '/widgets/Tabs.php' );
-			require_once( __DIR__ . '/widgets/Video_Playlist.php' );
-			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
-			require_once( __DIR__ . '/widgets/Accordion.php' );
-			require_once( __DIR__ . '/widgets/Testimonial.php' );
-			require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
-			require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
-			require_once( __DIR__ . '/widgets/List_Item.php' );
-			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
-			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
-			require_once( __DIR__ . '/widgets/Integrations.php' );
-			require_once( __DIR__ . '/widgets/Before_after.php' );
-			require_once( __DIR__ . '/widgets/Video_Popup.php' );
-			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
-			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
-			require_once( __DIR__ . '/widgets/Timeline.php' );
-			require_once( __DIR__ . '/widgets/Buttons.php' );
-			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
-            require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
+            require_once( __DIR__ . '/widgets/Accordion.php' );
+            require_once( __DIR__ . '/widgets/Alerts_Box.php' );
+            require_once( __DIR__ . '/widgets/Animated_Heading.php' );
+            require_once( __DIR__ . '/widgets/Before_after.php' );
+            require_once( __DIR__ . '/widgets/Blog_Grid.php' );
+            require_once( __DIR__ . '/widgets/Buttons.php' );
+            require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
-            require_once( __DIR__ . '/widgets/Instagram.php' );
-            require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
-
-
-			/*$widget_settings = Module_Settings::get_widget_settings();
-
-			if (is_array($widget_settings)) {
-				foreach ($widget_settings as $widget) {
-					if (isset($widget['className'])) {
-						$class_name = $widget['className'];
-
-						// Check if the class exists
-						if (class_exists($class_name)) {
-							// Construct the file path
-							$file_path = __DIR__ . '/widgets/' . $class_name . '.php';
-
-							require_once __DIR__ . '/widgets/' . $class_name . '.php';
-
-							//require_once($file_path);
-
-						}
-					}
-				}
-			}*/
-
+            require_once( __DIR__ . '/widgets/Integrations.php' );
+            require_once( __DIR__ . '/widgets/List_Item.php' );
+            require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
+            require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
+            require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
+            require_once( __DIR__ . '/widgets/Tabs.php' );
+            require_once( __DIR__ . '/widgets/Team_Carousel.php' );
+            require_once( __DIR__ . '/widgets/Testimonial.php' );
+            require_once( __DIR__ . '/widgets/Video_Playlist.php' );
+            require_once( __DIR__ . '/widgets/Video_Popup.php' );
 
 		}
 
@@ -500,89 +456,25 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 * @access private
 		 */
 		private function register_widgets() {
-			
-			// Register each widget class
-			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
-			$elements_opt = get_option( 'spe_widget_settings' );
 
-			/*if ( is_array( $widget_settings ) ) {
-				foreach ( $widget_settings as $widget ) {
-					$elements_opt = get_option( 'spe_widget_settings' );
-
-					if ( isset( $widget[ 'className' ] ) ) {
-						$class_name = 'Spider_Elements\Widgets\\' . $widget[ 'className' ];
-						// Check if the class exists
-						if ( class_exists( $class_name ) ) {
-							$widgets_manager->register( new $class_name() );
-						}
-					}
-
-				}
-			}*/
-
-			if ( isset( $elements_opt[ 'docy_accordion' ] ) && $elements_opt[ 'docy_accordion' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Accordion() );
-			}
-			if ( isset( $elements_opt[ 'docly_alerts_box' ] ) && $elements_opt[ 'docly_alerts_box' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Alerts_Box() );
-			}
-			if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Animated_Heading() );
-			}
-			if ( isset( $elements_opt[ 'spe_after_before_widget' ] ) && $elements_opt[ 'spe_after_before_widget' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Before_After() );
-			}
-			if ( isset( $elements_opt[ 'docy_blog_grid' ] ) && $elements_opt[ 'docy_blog_grid' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Blog_Grid() );
-			}
-			if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Buttons() );
-			}
-			if ( isset( $elements_opt[ 'docly_cheatsheet' ] ) && $elements_opt[ 'docly_cheatsheet' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Cheat_sheet() );
-			}
-			if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Counter() );
-			}
-			if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Instagram() );
-			}
-			if ( isset( $elements_opt[ 'docy_integrations' ] ) && $elements_opt[ 'docy_integrations' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Integrations() );
-			}
-			if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\List_Item() );
-			}
-			if ( isset( $elements_opt[ 'spe_marquee_slides' ] ) && $elements_opt[ 'spe_marquee_slides' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Marquee_Slides() );
-			}
-			if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Pricing_Table_Switcher() );
-			}
-			if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Pricing_Table_Tabs() );
-			}
-			if ( isset( $elements_opt[ 'spe_skill_showcase_widget' ] ) && $elements_opt[ 'spe_skill_showcase_widget' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Skill_Showcase() );
-			}
-			if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Tabs() );
-			}
-			if ( isset( $elements_opt[ 'docy_team_carousel' ] ) && $elements_opt[ 'docy_team_carousel' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Team_Carousel() );
-			}
-			if ( isset( $elements_opt[ 'docy_testimonial' ] ) && $elements_opt[ 'docy_testimonial' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Testimonial() );
-			}
-			if ( isset( $elements_opt[ 'spe_timeline_widget' ] ) && $elements_opt[ 'spe_timeline_widget' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Timeline() );
-			}
-			if ( isset( $elements_opt[ 'docy_videos_playlist' ] ) && $elements_opt[ 'docy_videos_playlist' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Video_Playlist() );
-			}
-			if ( isset( $elements_opt[ 'docy_video_popup' ] ) && $elements_opt[ 'docy_video_popup' ] == 'on' ) {
-				$widgets_manager->register( new \Spider_Elements\Widgets\Video_Popup() );
-			}
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Alerts_Box() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Accordion() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Animated_Heading() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Before_After() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Blog_Grid() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Buttons() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Cheat_sheet() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Counter() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Integrations() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\List_Item() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Pricing_Table_Switcher() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Pricing_Table_Tabs() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Skill_Showcase() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Tabs() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Team_Carousel() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Testimonial() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Video_Playlist() );
+            \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Video_Popup() );
 
 
 		}

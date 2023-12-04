@@ -57,7 +57,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets', 'spe-script' ];
+		return [ 'spe-el-widgets' ];
 	}
 
 

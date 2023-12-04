@@ -64,7 +64,7 @@ class Cheat_sheet extends Widget_Base
      */
     public function get_script_depends ()
     {
-        return [ 'spe-el-widgets', 'spe-script' ];
+        return [ 'spe-el-widgets' ];
     }
 
     /**

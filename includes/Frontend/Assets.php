@@ -77,10 +77,8 @@ class Assets
 		wp_register_script('scroll-parallax', SPE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('fancybox', SPE_VEND . '/fancybox/js/jquery.fancybox.min.js', array('jquery'), '3.5.7', true);
 		wp_register_script('ajax-chimp', SPE_JS . '/ajax-chimp.js', 'jquery', SPE_VERSION, true);
-        wp_register_script('charming', SPE_VEND  . '/diagonal/charming.min.js', array('jquery'), SPE_VERSION, true);
-        wp_register_script('tweenmax', SPE_VEND  . '/diagonal/TweenMax.min.js', array('jquery'), '1.18.0', true);
         wp_register_script('beforeafter', SPE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
-        wp_register_script('spe-script', SPE_JS . '/scripts.js', array('jquery'), false, true);
+
     }
 
 
