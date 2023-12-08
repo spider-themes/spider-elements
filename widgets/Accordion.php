@@ -272,18 +272,6 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-//		$this->add_responsive_control(
-//			'accordion_radius',
-//			[
-//				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
-//				'type'       => Controls_Manager::DIMENSIONS,
-//				'size_units' => [ 'px', 'em', '%' ],
-//				'selectors'  => [
-//					'{{WRAPPER}} .accordion .card, {{WRAPPER}} .accordion .card .card-header button, {{WRAPPER}} .accordion .card .toggle_body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
-//				],
-//			]
-//		);
-
 		$this->add_responsive_control(
 			'accordion_bottom_spacing',
 			[
@@ -317,15 +305,13 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'title_background',
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
 			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button.collapsed' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .doc_accordion .card-header button'           => 'background-color: {{VALUE}};',
-				],
+				'name'     => 'accordion_title_bg_color',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .doc_accordion .card-header button.collapsed, {{WRAPPER}} .doc_accordion .card-header button',
 			]
 		);
 
@@ -561,14 +547,13 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'content_background_color',
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
 			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementor-widget-container .toggle_body' => 'background-color: {{VALUE}};',
-				],
+				'name'     => 'accordion_content_bg_color',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body ',
 			]
 		);
 

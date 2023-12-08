@@ -454,16 +454,26 @@ class Blog_Grid extends Widget_Base {
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
-		$this->add_control(
-			'blog_grid_item_bg',
+//		$this->add_control(
+//			'blog_grid_item_bg',
+//			[
+//				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .blog-meta-two' => 'background: {{VALUE}};',
+//				],
+//			]
+//		);
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
 			[
-				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .blog-meta-two' => 'background: {{VALUE}};',
-				],
+				'name' => 'background',
+				'types' => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .blog-meta-two',
 			]
 		);
+
 		$this->add_control(
 			'blog_grid_item_bg_hover',
 			[
@@ -477,7 +487,7 @@ class Blog_Grid extends Widget_Base {
 				]
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'blog_grid_item_radius',
 			[
 				'label'      => __( 'Border Radius', 'spider-elements' ),
@@ -524,7 +534,7 @@ class Blog_Grid extends Widget_Base {
 				]
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'blog_img_radius',
 			[
 				'label'      => __( 'Border Radius', 'spider-elements' ),
@@ -536,7 +546,7 @@ class Blog_Grid extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'blog_img_margin',
 			[
 				'label'     => __( 'Margin Bottom', 'spider-elements' ),
@@ -587,14 +597,15 @@ class Blog_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'blog_content_title',
-				'label'    => __( 'Title Typography', 'spider-elements' ),
+				'label'    => __( 'Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .blog-meta-two .blog-title',
 			]
 		);
+
 		$this->add_control(
 			'blog_title_color',
 			[
-				'label'     => esc_html__( 'Title Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -602,10 +613,10 @@ class Blog_Grid extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'blog_title_spacing',
 			[
-				'label'      => __( 'Title Spacing', 'spider-elements' ),
+				'label'      => __( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'separator'  => 'after',
@@ -621,7 +632,7 @@ class Blog_Grid extends Widget_Base {
 					'size' => 10,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .blog-meta-two .blog-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-meta-two .blog-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -635,7 +646,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_title_hover_color',
 			[
-				'label'     => esc_html__( 'Title Hover Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -657,6 +668,7 @@ class Blog_Grid extends Widget_Base {
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
+
 		// ===== Button Style Tabs
 		$this->start_controls_tabs(
 			'style_btn_tabs'
@@ -670,17 +682,17 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(),
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name'     => 'blog_read_btn',
-				'label'    => __( 'Button Typography', 'spider-elements' ),
+				'name' => 'content_typography',
 				'selector' => '{{WRAPPER}} .blog-meta-two .continue-btn, {{WRAPPER}} .blog-meta-two .read-more-btn a',
 			]
 		);
+
 		$this->add_control(
 			'blog_button_color',
 			[
-				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -689,10 +701,11 @@ class Blog_Grid extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+
+		$this->add_responsive_control(
 			'blog_btn_padding',
 			[
-				'label'      => __( 'Button Padding', 'spider-elements' ),
+				'label'      => __( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -714,6 +727,7 @@ class Blog_Grid extends Widget_Base {
 				],
 			]
 		);
+
 		$this->add_control(
 			'blog_button_bg', [
 				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
@@ -737,7 +751,7 @@ class Blog_Grid extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'button_border_radius',
 			[
 				'label'      => __( 'Border Radius', 'spider-elements' ),
@@ -763,7 +777,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_button_hover_color',
 			[
-				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -819,7 +833,7 @@ class Blog_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'blog_meta_typography',
-				'label'    => __( 'Button Typography', 'spider-elements' ),
+				'label'    => __( 'Meta Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .blog-meta-two .date a',
 			]
 		);
@@ -842,13 +856,13 @@ class Blog_Grid extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .post-img .tags' => 'background: {{VALUE}};',
 				],
-				'separator' => 'after',
+				'separator' => 'before',
 			]
 		);
 		$this->add_control(
 			'blog_category_color',
 			[
-				'label'     => esc_html__( 'category Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [

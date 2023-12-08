@@ -139,7 +139,7 @@ class Timeline extends Widget_Base {
 					],
 					// Add more default timeline items here...
 				],
-				'title_field' => '{{{ timestamp }}}',
+				'title_field' => '{{{ title }}}',
 			]
 		);
 
@@ -324,7 +324,7 @@ class Timeline extends Widget_Base {
                 echo '<div class="timeline-panel">';
                 echo '<h3>' . esc_html($title) . '</h3>';
                 echo '<span>' . esc_html($location) . '</span>';
-                echo '<p>' . esc_html($content) . '</p>';
+                echo spe_kses_post(wpautop($content));
                 echo '</div>';
                 echo '</div>';
                 $is_inverted = !$is_inverted;

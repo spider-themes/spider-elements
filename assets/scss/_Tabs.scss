@@ -35,6 +35,7 @@
           color: var(--black_800);
           border-color: #ebebeb;
           border-bottom-color: transparent;
+          z-index: 1;
           &:before {
             opacity: 1;
             width: 100%;

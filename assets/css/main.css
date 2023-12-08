@@ -1006,6 +1006,7 @@ button.btn.btn-link:focus {
   color: var(--black_800);
   border-color: #ebebeb;
   border-bottom-color: transparent;
+  z-index: 1;
 }
 .tab_shortcode .nav-tabs .nav-item .nav-link.active:before {
   opacity: 1;
