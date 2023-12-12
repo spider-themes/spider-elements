@@ -15,9 +15,10 @@ if (!defined('ABSPATH')) {
 	        ?>
             <div class="card doc_accordion spe_accordion_inner <?php echo esc_attr($is_btn_collapse) ?>">
                 <div class="card-header spe-accordion" id="heading-<?php echo esc_attr($item['_id']); ?>">
-                    <<?php echo esc_attr($title_tag); ?> class="title">
+                    <h3 class="title">
                         <button class="btn btn-link <?php echo esc_attr($icon_align_class); ?>">
                             <?php
+
                             echo esc_html($item['title']);
 
                             if (!empty($settings['plus-icon']['value']) || !empty($settings['minus-icon']['value'])) { ?>
@@ -33,7 +34,7 @@ if (!defined('ABSPATH')) {
                             }
                             ?>
                         </button>
-                    </<?php echo esc_attr($title_tag) ?>>
+                    </h3>
                 </div>
 
                 <div id="<?php echo esc_attr($id) ?>" class="collapse <?php echo esc_attr($is_show) ?>"
@@ -55,29 +56,5 @@ if (!defined('ABSPATH')) {
             <?php
 		}
 	}
-
-	if (isset($settings['faq_schema']) && 'yes' === $settings['faq_schema']) {
-		$json = [
-			'@context'   => 'https://schema.org',
-			'@type'      => 'FAQPage',
-			'mainEntity' => [],
-		];
-
-		foreach ($settings['accordions'] as $index => $item) {
-			$json['mainEntity'][] = [
-				'@type'          => 'Question',
-				'name'           => wp_strip_all_tags($item['title']),
-				'acceptedAnswer' => [
-					'@type' => 'Answer',
-					'text'  => $this->parse_text_editor($item['normal_content']),
-				],
-			];
-		}
-        ?>
-        <script type="application/ld+json">
-          <?php echo wp_json_encode($json); ?>
-        </script>
-        <?php
-    }
     ?>
 </div>

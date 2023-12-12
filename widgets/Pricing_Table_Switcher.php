@@ -23,7 +23,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Pricing Table Switcher', 'spider-elements' );
+		return esc_html__( 'Pricing Table Switcher', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -52,7 +52,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -67,7 +66,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register content
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -80,23 +78,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
 			]
 		);
-
-//        $this->add_control(
-//            'style', [
-//                'label'   => esc_html__( 'Style', 'spider-elements' ),
-//                'type'    => Controls_Manager::SELECT,
-//                'options' => [
-//                    '1' => esc_html__( '01: Button Switcher', 'spider-elements' ),
-//                    '2' => esc_html__( '02: Tab Switcher', 'spider-elements' ),
-//                    '3' => esc_html__( '03: Pricing Cloud', 'spider-elements' ),
-//                    '4' => esc_html__( '04: Button Switcher', 'spider-elements' ),
-//                    '5' => esc_html__( '05: Button Switcher', 'spider-elements' ),
-//                    '6' => esc_html__( '06: Tab Switcher', 'spider-elements' ),
-//                    '7' => esc_html__( '07: Button Switcher', 'spider-elements' ),
-//                ],
-//                'default' => '1',
-//            ]
-//        );
 
 		$this->add_control(
 			'style', [
@@ -154,7 +135,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => 'Monthly',
+				'default'     => esc_html__('Monthly', 'spider-elements')
 			]
 		);
 
@@ -187,7 +168,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 			'price', [
 				'label'       => esc_html__( 'Price', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => '$18.99',
+				'default'     => esc_html__('$18.99', 'spider-elements'),
 				'label_block' => true,
 			]
 		);
@@ -307,10 +288,10 @@ class Pricing_Table_Switcher extends Widget_Base {
 		$tab_3 = new Repeater();
 		$tab_3->add_control(
 			'is_favorite', [
-				'label'        => __( 'Is Favorite', 'spider-elements' ),
+				'label'        => esc_html__( 'Is Favorite', 'spider-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'spider-elements' ),
-				'label_off'    => __( 'Hide', 'spider-elements' ),
+				'label_on'     => esc_html__( 'Show', 'spider-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'spider-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'separator'    => 'after'
@@ -813,7 +794,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register style content
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -841,14 +821,14 @@ class Pricing_Table_Switcher extends Widget_Base {
 		$this->start_controls_tab(
 			'style_title_normal',
 			[
-				'label' => __( 'Normal', 'spider-elements' ),
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'normal_title_text_color',
 			[
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .spe_pricing_title' => 'color: {{VALUE}};',
@@ -859,7 +839,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 		$this->add_control(
 			'normal_title_border',
 			[
-				'label'     => __( 'Border Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => '4'
@@ -877,14 +857,14 @@ class Pricing_Table_Switcher extends Widget_Base {
 		$this->start_controls_tab(
 			'style_tab_title_active',
 			[
-				'label' => __( 'Active', 'spider-elements' ),
+				'label' => esc_html__( 'Active', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'active_title_text_color',
 			[
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .spe_pricing_title.active' => 'color: {{VALUE}};',
@@ -895,7 +875,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 		$this->add_control(
 			'active_title_border',
 			[
-				'label'     => __( 'Border Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => '4'
@@ -1342,7 +1322,6 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Render widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

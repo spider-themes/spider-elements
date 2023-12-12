@@ -1,5 +1,4 @@
-
-(function(doc){
+;(function(doc){
     var scriptElm = doc.scripts[doc.scripts.length - 1];
     var warn = ['[ionicons] Deprecated script, please remove: ' + scriptElm.outerHTML];
 

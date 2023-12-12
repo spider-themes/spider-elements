@@ -18,8 +18,6 @@ if (!defined('ABSPATH')) {
 
 /**
  * Class Alerts_box
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Cheat_sheet extends Widget_Base
 {
@@ -64,7 +62,7 @@ class Cheat_sheet extends Widget_Base
      */
     public function get_script_depends ()
     {
-        return [ 'spe-el-widgets', 'spe-script' ];
+        return [ 'spe-el-widgets' ];
     }
 
     /**
@@ -113,15 +111,15 @@ class Cheat_sheet extends Widget_Base
         $repeater = new Repeater();
         $repeater->add_control(
             'cs_number', [
-                'label' => __('Serial Number', 'spider-elements'),
+                'label' => esc_html__('Serial Number', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => '#1',
+                'default' => esc_html__('#1', 'spider-elements'),
             ]
         );
 
         $repeater->add_control(
             'cs_title', [
-                'label' => __('Top Text', 'spider-elements'),
+                'label' => esc_html__('Top Text', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('be', 'spider-elements'),
             ]
@@ -129,7 +127,7 @@ class Cheat_sheet extends Widget_Base
 
         $repeater->add_control(
             'cs_content', [
-                'label' => __('Content', 'spider-elements'),
+                'label' => esc_html__('Content', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('Sein', 'spider-elements'),
             ]
@@ -137,7 +135,7 @@ class Cheat_sheet extends Widget_Base
 
         $this->add_control(
             'cheat_sheet_contents', [
-                'label' => __('Cheat Sheet List', 'spider-elements'),
+                'label' => esc_html__('Cheat Sheet List', 'spider-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ cs_title }}}',

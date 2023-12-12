@@ -25,7 +25,7 @@ class Before_After extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Before After', 'spider-elements' );
+		return esc_html__( 'Before After', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -62,7 +62,6 @@ class Before_After extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -77,7 +76,6 @@ class Before_After extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -87,14 +85,14 @@ class Before_After extends Widget_Base {
 		$this->start_controls_section(
 			'before_after_images',
 			[
-				'label' => __( 'Images', 'spider-elements' ),
+				'label' => esc_html__( 'Images', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'before_image',
 			[
-				'label' => __( 'Before Image', 'spider-elements' ),
+				'label' => esc_html__( 'Before Image', 'spider-elements' ),
 				'type'  => Controls_Manager::MEDIA,
 			]
 		);
@@ -102,7 +100,7 @@ class Before_After extends Widget_Base {
 		$this->add_control(
 			'after_image',
 			[
-				'label' => __( 'After Image', 'spider-elements' ),
+				'label' => esc_html__( 'After Image', 'spider-elements' ),
 				'type'  => Controls_Manager::MEDIA,
 			]
 		);
@@ -135,7 +133,6 @@ class Before_After extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -145,7 +142,7 @@ class Before_After extends Widget_Base {
 		$this->start_controls_section(
 			'sec_before_after_style',
 			[
-				'label' => __( 'Button Style', 'spider-elements' ),
+				'label' => esc_html__( 'Button Style', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -189,7 +186,6 @@ class Before_After extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

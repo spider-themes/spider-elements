@@ -26,7 +26,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Testimonials', 'spider-elements' );
+		return esc_html__( 'Testimonials', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -62,7 +62,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -78,7 +77,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -151,7 +149,7 @@ class Testimonial extends Widget_Base {
 		//============================ Testimonials =========================//
 		$this->start_controls_section(
 			'sec_testimonials', [
-				'label' => __( 'Testimonials', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonials', 'spider-elements' ),
 			]
 		);
 
@@ -159,7 +157,7 @@ class Testimonial extends Widget_Base {
 		$testimonial = new Repeater();
 		$testimonial->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -169,30 +167,30 @@ class Testimonial extends Widget_Base {
 
 		$testimonial->add_control(
 			'name', [
-				'label'   => __( 'Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Mark Tony', 'spider-elements' ),
+				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
 			]
 		);
 
 		$testimonial->add_control(
 			'designation', [
-				'label'   => __( 'Designation', 'spider-elements' ),
+				'label'   => esc_html__( 'Designation', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Software Developer', 'spider-elements' ),
+				'default' => esc_html__( 'Software Developer', 'spider-elements' ),
 			]
 		);
 
 		$testimonial->add_control(
 			'review_content', [
-				'label' => __( 'Review Content', 'spider-elements' ),
+				'label' => esc_html__( 'Review Content', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$testimonial->add_control(
 			'signature', [
-				'label'   => __( 'Signature', 'spider-elements' ),
+				'label'   => esc_html__( 'Signature', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -202,7 +200,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonials', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial->get_controls(),
 				'title_field'   => '{{{ name }}}',
@@ -235,7 +233,7 @@ class Testimonial extends Widget_Base {
 		$testimonial2 = new Repeater();
 		$testimonial2->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -245,30 +243,30 @@ class Testimonial extends Widget_Base {
 
 		$testimonial2->add_control(
 			'name', [
-				'label'   => __( 'Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Mark Tony', 'spider-elements' ),
+				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
 			]
 		);
 
 		$testimonial2->add_control(
 			'designation', [
-				'label'   => __( 'Designation', 'spider-elements' ),
+				'label'   => esc_html__( 'Designation', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Software Developer', 'spider-elements' ),
+				'default' => esc_html__( 'Software Developer', 'spider-elements' ),
 			]
 		);
 
 		$testimonial2->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$this->add_control(
 			'testimonials2', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial2->get_controls(),
 				'title_field'   => '{{{ name }}}',
@@ -300,7 +298,7 @@ class Testimonial extends Widget_Base {
 		$testimonial3 = new Repeater();
 		$testimonial3->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -310,30 +308,30 @@ class Testimonial extends Widget_Base {
 
 		$testimonial3->add_control(
 			'name', [
-				'label'   => __( 'Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Mark Tony', 'spider-elements' ),
+				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
 			]
 		);
 
 		$testimonial3->add_control(
 			'designation', [
-				'label'   => __( 'Designation', 'spider-elements' ),
+				'label'   => esc_html__( 'Designation', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Software Developer', 'spider-elements' ),
+				'default' => esc_html__( 'Software Developer', 'spider-elements' ),
 			]
 		);
 
 		$testimonial3->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$this->add_control(
 			'testimonials3', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial3->get_controls(),
 				'title_field'   => '{{{ name }}}',
@@ -367,7 +365,7 @@ class Testimonial extends Widget_Base {
 		$testimonial4 = new Repeater();
 		$testimonial4->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -377,30 +375,30 @@ class Testimonial extends Widget_Base {
 
 		$testimonial4->add_control(
 			'name', [
-				'label'   => __( 'Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Mark Tony', 'spider-elements' ),
+				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
 			]
 		);
 
 		$testimonial4->add_control(
 			'designation', [
-				'label'   => __( 'Designation', 'spider-elements' ),
+				'label'   => esc_html__( 'Designation', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Software Developer', 'spider-elements' ),
+				'default' => esc_html__( 'Software Developer', 'spider-elements' ),
 			]
 		);
 
 		$testimonial4->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$testimonial4->add_control(
 			'c_logo', [
-				'label'   => __( 'Company Logo', 'spider-elements' ),
+				'label'   => esc_html__( 'Company Logo', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -410,7 +408,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonials4', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial4->get_controls(),
 				'title_field'   => '{{{ name }}}',
@@ -442,7 +440,7 @@ class Testimonial extends Widget_Base {
 		$testimonial5 = new Repeater();
 		$testimonial5->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -452,38 +450,38 @@ class Testimonial extends Widget_Base {
 
 		$testimonial5->add_control(
 			'company_name', [
-				'label'   => __( 'Company Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Company Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Karina', 'spider-elements' ),
+				'default' => esc_html__( 'Karina', 'spider-elements' ),
 			]
 		);
 
 		$testimonial5->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 
 		$testimonial5->add_control(
 			'title', [
-				'label'   => __( 'Title', 'spider-elements' ),
+				'label'   => esc_html__( 'Title', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Madelyn Press', 'spider-elements' ),
+				'default' => esc_html__( 'Madelyn Press', 'spider-elements' ),
 			]
 		);
 
 		$testimonial5->add_control(
 			'name', [
-				'label'   => __( 'Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Mark Tony', 'spider-elements' ),
+				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'testimonials5', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial5->get_controls(),
 				'title_field'   => '{{{ name }}}',
@@ -507,7 +505,7 @@ class Testimonial extends Widget_Base {
 		$testimonial6->add_control(
 			'author_rating',
 			[
-				'label'   => __( 'Rating', 'spider-elements' ),
+				'label'   => esc_html__( 'Rating', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'min'     => 0,
 				'max'     => 10,
@@ -521,15 +519,15 @@ class Testimonial extends Widget_Base {
 		$testimonial6->add_control(
 			'author_rating_title',
 			[
-				'label'     => __( 'Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Title', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::TEXT,
 				'separator' => 'before',
-				'default'   => __( '4.8 Awesome', 'spider-elements' ),
+				'default'   => esc_html__( '4.8 Awesome', 'spider-elements' ),
 			]
 		);
 		$testimonial6->add_control(
 			'company_image', [
-				'label'   => __( 'Company Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Company Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -538,27 +536,27 @@ class Testimonial extends Widget_Base {
 		);
 		$testimonial6->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 		$testimonial6->add_control(
 			'author_name', [
-				'label'   => __( 'Author Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Karina', 'spider-elements' ),
+				'default' => esc_html__( 'Karina', 'spider-elements' ),
 			]
 		);
 		$testimonial6->add_control(
 			'author_position', [
-				'label'   => __( 'Author Position', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Position', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Lead Designer', 'spider-elements' ),
+				'default' => esc_html__( 'Lead Designer', 'spider-elements' ),
 			]
 		);
 		$testimonial6->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -568,29 +566,23 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonials6', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial6->get_controls(),
 				'title_field'   => '{{{ name }}}',
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'company_image'   => __( '', 'spider-elements' ),
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'company_image'   => __( '', 'spider-elements' ),
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'company_image'   => __( '', 'spider-elements' ),
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -606,27 +598,27 @@ class Testimonial extends Widget_Base {
 		$testimonial8 = new Repeater();
 		$testimonial8->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 		$testimonial8->add_control(
 			'author_name', [
-				'label'   => __( 'Author Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Karina', 'spider-elements' ),
+				'default' => esc_html__( 'Karina', 'spider-elements' ),
 			]
 		);
 		$testimonial8->add_control(
 			'author_position', [
-				'label'   => __( 'Author Position', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Position', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Lead Designer', 'spider-elements' ),
+				'default' => esc_html__( 'Lead Designer', 'spider-elements' ),
 			]
 		);
 		$testimonial8->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -636,26 +628,23 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonials8', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial8->get_controls(),
 				'title_field'   => '{{{ name }}}',
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -671,27 +660,27 @@ class Testimonial extends Widget_Base {
 		$testimonial10 = new Repeater();
 		$testimonial10->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 		$testimonial10->add_control(
 			'author_name', [
-				'label'   => __( 'Author Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Karina', 'spider-elements' ),
+				'default' => esc_html__( 'Karina', 'spider-elements' ),
 			]
 		);
 		$testimonial10->add_control(
 			'author_position', [
-				'label'   => __( 'Author Position', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Position', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Lead Designer', 'spider-elements' ),
+				'default' => esc_html__( 'Lead Designer', 'spider-elements' ),
 			]
 		);
 		$testimonial10->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -701,26 +690,23 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonials10', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial10->get_controls(),
 				'title_field'   => '{{{ name }}}',
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -736,27 +722,27 @@ class Testimonial extends Widget_Base {
 		$testimonial11 = new Repeater();
 		$testimonial11->add_control(
 			'review_content', [
-				'label' => __( 'Testimonial Text', 'spider-elements' ),
+				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXTAREA,
 			]
 		);
 		$testimonial11->add_control(
 			'author_name', [
-				'label'   => __( 'Author Name', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Name', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Karina', 'spider-elements' ),
+				'default' => esc_html__( 'Karina', 'spider-elements' ),
 			]
 		);
 		$testimonial11->add_control(
 			'author_position', [
-				'label'   => __( 'Author Position', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Position', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Lead Designer', 'spider-elements' ),
+				'default' => esc_html__( 'Lead Designer', 'spider-elements' ),
 			]
 		);
 		$testimonial11->add_control(
 			'author_image', [
-				'label'   => __( 'Author Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -766,26 +752,23 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonials11', [
-				'label'         => __( 'Testimonials', 'spider-elements' ),
+				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $testimonial11->get_controls(),
 				'title_field'   => '{{{ name }}}',
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => __( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -800,7 +783,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'shape', [
-				'label'     => __( 'Shape', 'spider-elements' ),
+				'label'     => esc_html__( 'Shape', 'spider-elements' ),
 				'type'      => Controls_Manager::MEDIA,
 				'separator' => 'before',
 				'condition' => [
@@ -810,7 +793,7 @@ class Testimonial extends Widget_Base {
 		);
 		$this->add_control(
 			'quote_img', [
-				'label'     => __( 'Quote Image', 'spider-elements' ),
+				'label'     => esc_html__( 'Quote Image', 'spider-elements' ),
 				'type'      => Controls_Manager::MEDIA,
 				'separator' => 'before',
 				'default'   => [
@@ -846,7 +829,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_rating',
 			[
-				'label'     => __( 'Rating', 'spider-elements' ),
+				'label'     => esc_html__( 'Rating', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '6', '7', '9' ]
 				],
@@ -857,10 +840,10 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'testimonial_ratting_icon',
 			[
-				'label'        => __( 'Show Title', 'spider-elements' ),
+				'label'        => esc_html__( 'Show Title', 'spider-elements' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'spider-elements' ),
-				'label_off'    => __( 'Hide', 'spider-elements' ),
+				'label_on'     => esc_html__( 'Show', 'spider-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'spider-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -870,7 +853,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'rating_scale',
 			[
-				'label'     => __( 'Rating Scale', 'spider-elements' ),
+				'label'     => esc_html__( 'Rating Scale', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
 					'5'  => '0-5',
@@ -886,7 +869,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'star_style',
 			[
-				'label'        => __( 'Icon', 'spider-elements' ),
+				'label'        => esc_html__( 'Icon', 'spider-elements' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'options'      => [
 					'star_fontawesome' => 'Font Awesome',
@@ -902,15 +885,15 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'unmarked_star_style',
 			[
-				'label'   => __( 'Unmarked Style', 'spider-elements' ),
+				'label'   => esc_html__( 'Unmarked Style', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'solid'   => [
-						'title' => __( 'Solid', 'spider-elements' ),
+						'title' => esc_html__( 'Solid', 'spider-elements' ),
 						'icon'  => 'eicon-star',
 					],
 					'outline' => [
-						'title' => __( 'Outline', 'spider-elements' ),
+						'title' => esc_html__( 'Outline', 'spider-elements' ),
 						'icon'  => 'eicon-star-o',
 					],
 				],
@@ -927,7 +910,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -935,7 +917,7 @@ class Testimonial extends Widget_Base {
 	public function elementor_general_style() {
 		$this->start_controls_section(
 			'style_item_tabs', [
-				'label'     => __( 'Testimonial Item Style', 'spider-elements' ),
+				'label'     => esc_html__( 'Testimonial Item Style', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'style' => [ '6', '9' ]
@@ -950,7 +932,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'style_normal',
 			[
-				'label' => __( 'Normal', 'spider-elements' ),
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
 			]
 		);
 		$this->add_group_control(
@@ -964,7 +946,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'testimonial_item_pad',
 			[
-				'label'      => __( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -976,14 +958,14 @@ class Testimonial extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'item_border',
-				'label'    => __( 'Border', 'spider-elements' ),
+				'label'    => esc_html__( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .feedback-block-one',
 			]
 		);
 		$this->add_responsive_control(
 			'item_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -998,7 +980,7 @@ class Testimonial extends Widget_Base {
 		//=== Active icon
 		$this->start_controls_tab(
 			'testimonial_item_hover', [
-				'label' => __( 'Hover', 'spider-elements' ),
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
 			]
 		);
 		$this->add_group_control(
@@ -1012,7 +994,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'testimonial_item_hover_border', [
-				'label'     => __( 'Border Hover Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Border Hover Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .feedback-block-one:hover' => 'border-color: {{VALUE}};',
@@ -1032,7 +1014,7 @@ class Testimonial extends Widget_Base {
 		//========================= Contents =========================//
 		$this->start_controls_section(
 			'style_content_sec', [
-				'label' => __( 'Contents Style', 'spider-elements' ),
+				'label' => esc_html__( 'Contents Style', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1040,7 +1022,7 @@ class Testimonial extends Widget_Base {
 		//=== Author Name
 		$this->add_control(
 			'author_name_options', [
-				'label'     => __( 'Author Name', 'spider-elements' ),
+				'label'     => esc_html__( 'Author Name', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1048,7 +1030,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'author_name_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .se_name,{{WRAPPER}} .feedback-block-one .name,{{WRAPPER}} #feedBack_carousel .name,{{WRAPPER}} .feedback-section-four .bg-wrapper .name' => 'color: {{VALUE}};',
@@ -1066,7 +1048,7 @@ class Testimonial extends Widget_Base {
 		//=== Category Style
 		$this->add_control(
 			'category_options', [
-				'label'     => __( 'Category', 'spider-elements' ),
+				'label'     => esc_html__( 'Category', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1077,7 +1059,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'category_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .se_category' => 'color: {{VALUE}};',
@@ -1101,7 +1083,7 @@ class Testimonial extends Widget_Base {
 		//=== Title Style
 		$this->add_control(
 			'title_style', [
-				'label'     => __( 'Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Title', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1112,7 +1094,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'title_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .se_title' => 'color: {{VALUE}};',
@@ -1137,7 +1119,7 @@ class Testimonial extends Widget_Base {
 		//=== Designation
 		$this->add_control(
 			'designation_options', [
-				'label'     => __( 'Designation', 'spider-elements' ),
+				'label'     => esc_html__( 'Designation', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1148,7 +1130,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'designation_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .se_designation' => 'color: {{VALUE}};',
@@ -1174,7 +1156,7 @@ class Testimonial extends Widget_Base {
 		//=== Review Content
 		$this->add_control(
 			'review_content_options', [
-				'label'     => __( 'Review Content', 'spider-elements' ),
+				'label'     => esc_html__( 'Review Content', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1182,7 +1164,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'review_content_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .se_review_content,{{WRAPPER}} .feedback-block-one h3,{{WRAPPER}} #feedBack_carousel .carousel-inner p,{{WRAPPER}} .feedback-section-four .bg-wrapper p' => 'color: {{VALUE}};',
@@ -1201,7 +1183,7 @@ class Testimonial extends Widget_Base {
 		// Item BG color style 5
 		$this->add_control(
 			'item_bg_color', [
-				'label'     => __( 'Item Background Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Item Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1223,7 +1205,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'feedback-section-four-item-pad',
 			[
-				'label'      => __( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -1239,7 +1221,7 @@ class Testimonial extends Widget_Base {
 		//========================= Contents =========================//
 		$this->start_controls_section(
 			'style_rating_sec', [
-				'label'     => __( 'Rating Style', 'spider-elements' ),
+				'label'     => esc_html__( 'Rating Style', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'style' => [ '6' ]
@@ -1249,7 +1231,7 @@ class Testimonial extends Widget_Base {
 		//=== Author Name
 		$this->add_control(
 			'star_rating_options', [
-				'label'     => __( 'Rating Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Rating Title', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1257,7 +1239,7 @@ class Testimonial extends Widget_Base {
 
 		$this->add_control(
 			'rating_title_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .feedback-block-one .review .text-md' => 'color: {{VALUE}};',
@@ -1274,7 +1256,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'rating_pad',
 			[
-				'label'      => __( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -1286,7 +1268,7 @@ class Testimonial extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'review_border',
-				'label'    => __( 'Border', 'spider-elements' ),
+				'label'    => esc_html__( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .feedback-block-one .review',
 			]
 		);
@@ -1301,7 +1283,6 @@ class Testimonial extends Widget_Base {
 	 * Floored-rating type is int, to represent the rounded-down stars count.
 	 * In the `for` loop, the index type is float to allow comparing with the rating value.
 	 *
-	 * @since 2.3.0
 	 * @access protected
 	 */
 	protected function render_stars( $icon, $dat = 0 ) {
@@ -1324,7 +1305,6 @@ class Testimonial extends Widget_Base {
 	}
 
 	/**
-	 * @since 2.3.0
 	 * @access protected
 	 */
 	protected function get_rating( $ratting ) {
@@ -1340,7 +1320,6 @@ class Testimonial extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

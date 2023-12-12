@@ -19,8 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
- * @package spider\Widgets
- * @since 1.0.0
  */
 class Integrations extends Widget_Base {
 
@@ -66,7 +64,6 @@ class Integrations extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -82,7 +79,6 @@ class Integrations extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -93,14 +89,14 @@ class Integrations extends Widget_Base {
 		$this->start_controls_section(
 			'select_style',
 			[
-				'label' => __( 'Preset Skins', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style',
 			[
-				'label'   => __( 'Integration Style', 'spider-elements' ),
+				'label'   => esc_html__( 'Integration Style', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
@@ -124,7 +120,7 @@ class Integrations extends Widget_Base {
 		//start content layout
 		$this->start_controls_section(
 			'integration_control', [
-				'label' => __( 'Integration Item', 'spider-elements' ),
+				'label' => esc_html__( 'Integration Item', 'spider-elements' ),
 			]
 		);
 
@@ -138,7 +134,7 @@ class Integrations extends Widget_Base {
 
 		$repeater->add_control(
 			'integration_image', [
-				'label'   => __( 'Integration Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Integration Image', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -147,7 +143,7 @@ class Integrations extends Widget_Base {
 		);
 		$this->add_control(
 			'integration_item', [
-				'label'         => __( 'Integration Item', 'spider-elements' ),
+				'label'         => esc_html__( 'Integration Item', 'spider-elements' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => '{{{ align_items }}}',
@@ -165,7 +161,6 @@ class Integrations extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -173,7 +168,7 @@ class Integrations extends Widget_Base {
 
 		$this->start_controls_section(
 			'integration_img_style', [
-				'label' => __( 'Integration Image', 'spider-elements' ),
+				'label' => esc_html__( 'Integration Image', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -198,7 +193,7 @@ class Integrations extends Widget_Base {
 		$this->add_control(
 			'team_img_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -216,15 +211,17 @@ class Integrations extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
-	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
-		//================= Template Parts =================//
+		extract( $settings ); //extract all settings array to variables converted to name of a key
+
+
+        //================= Template Parts =================//
 		include "templates/integration/integration-{$settings['style']}.php";
+
 	}
 
 

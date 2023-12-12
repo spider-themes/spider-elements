@@ -10,10 +10,12 @@ if (!defined('ABSPATH')) {
         </div>
         <div class="ezd-xl-col-7 cezd-lg-col-6 ezd-order-lg-first">
             <div class="bg-wrapper position-relative me-xxl-4 md-mt-40 md-mb-40">
-                <div class="icon ezd-d-flex ezd-align-items-center ezd-justify-content-center ezd-rounded-circle">
-                    <?php echo wp_get_attachment_image($settings[ 'quote_img' ][ 'id' ], 'full', '',
-                        [ 'class' => 'lazy-img' ]) ?>
-                </div>
+                <?php if ( !empty($settings['quote_img']['id']) ) : ?>
+                    <div class="icon ezd-d-flex ezd-align-items-center ezd-justify-content-center ezd-rounded-circle">
+                        <?php echo wp_get_attachment_image($settings[ 'quote_img' ][ 'id' ], 'full', '',
+                            [ 'class' => 'lazy-img' ]) ?>
+                    </div>
+                <?php endif ?>
                 <div class="feedback-slider-three-a">
                     <?php
                     if (!empty($testimonials10)) {
