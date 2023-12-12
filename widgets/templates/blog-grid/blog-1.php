@@ -24,9 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 								echo '<span class="sticky-label fw-500 text-dark">' . esc_html__( 'Featured -', 'spider-elements' ) . '</span>';
 							}
 							?>
-                            <a href="<?php echo get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ); ?>"
+                            <a href="<?php spe_day_link(); ?>"
                                class="meta-item">
-								<?php echo get_the_date( __( 'd M Y' ) ) ?>
+								<?php echo get_the_date('d M Y') ?>
                             </a>
                         </div>
                         <a href="<?php the_permalink(); ?>">
