@@ -18,6 +18,7 @@ if (!defined('ABSPATH')) {
                     <h3 class="title">
                         <button class="btn btn-link <?php echo esc_attr($icon_align_class); ?>">
                             <?php
+
                             echo esc_html($item['title']);
 
                             if (!empty($settings['plus-icon']['value']) || !empty($settings['minus-icon']['value'])) { ?>

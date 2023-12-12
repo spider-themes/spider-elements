@@ -25,7 +25,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
     public function get_title ()
     {
-        return __('Pricing Table Tabs', 'spider-elements');
+        return esc_html__('Pricing Table Tabs', 'spider-elements');
     }
 
     public function get_icon ()
@@ -91,7 +91,7 @@ class Pricing_Table_Tabs extends Widget_Base
         // ------------------------------------------- Pricing Table Tabs ----------------------------------------- //
         $this->start_controls_section(
             'pricing_table_tabs', [
-                'label' => __('Pricing Tables', 'spider-elements'),
+                'label' => esc_html__('Pricing Tables', 'spider-elements'),
             ]
         );
 
@@ -99,7 +99,7 @@ class Pricing_Table_Tabs extends Widget_Base
         $repeater->add_control(
             'is_active',
             [
-                'label' => __('Active Table', 'spider-elements'),
+                'label' => esc_html__('Active Table', 'spider-elements'),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
@@ -108,7 +108,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'tab_title', [
-                'label' => __('Tab Title', 'spider-elements'),
+                'label' => esc_html__('Tab Title', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'separator' => 'after'
             ]
@@ -116,46 +116,46 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'discount', [
-                'label' => __('Discount Badge', 'spider-elements'),
+                'label' => esc_html__('Discount Badge', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
 
         $repeater->add_control(
             'title', [
-                'label' => __('Title', 'spider-elements'),
+                'label' => esc_html__('Title', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('Free', 'spider-elements')
+                'default' => esc_html__('Free', 'spider-elements')
             ]
         );
 
         $repeater->add_control(
             'price_dollar', [
-                'label' => __('Price USD', 'spider-elements'),
+                'label' => esc_html__('Price USD', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('$5', 'spider-elements')
+                'default' => esc_html__('$5', 'spider-elements')
             ]
         );
 
         $repeater->add_control(
             'price_euro', [
-                'label' => __('Price EURO', 'spider-elements'),
+                'label' => esc_html__('Price EURO', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('€4.43', 'spider-elements')
+                'default' => esc_html__('€4.43', 'spider-elements')
             ]
         );
 
         $repeater->add_control(
             'duration', [
-                'label' => __('Duration', 'spider-elements'),
+                'label' => esc_html__('Duration', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('/user/mo', 'spider-elements')
+                'default' => esc_html__('/user/mo', 'spider-elements')
             ]
         );
 
         $repeater->add_control(
             'description', [
-                'label' => __('Description', 'spider-elements'),
+                'label' => esc_html__('Description', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -163,14 +163,14 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'contents', [
-                'label' => __('Contents', 'spider-elements'),
+                'label' => esc_html__('Contents', 'spider-elements'),
                 'type' => Controls_Manager::WYSIWYG,
             ]
         );
 
         $repeater->add_control(
             'btn_group_heading', [
-                'label' => __('Button Group', 'spider-elements'),
+                'label' => esc_html__('Button Group', 'spider-elements'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before'
             ]
@@ -178,7 +178,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'btn_label_1', [
-                'label' => __('Button Title 01', 'spider-elements'),
+                'label' => esc_html__('Button Title 01', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -186,7 +186,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'btn_url_1', [
-                'label' => __('Button URL 01', 'spider-elements'),
+                'label' => esc_html__('Button URL 01', 'spider-elements'),
                 'type' => Controls_Manager::URL,
                 'default' => [
                     'url' => '#'
@@ -197,7 +197,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'btn_label_2', [
-                'label' => __('Button Title 02', 'spider-elements'),
+                'label' => esc_html__('Button Title 02', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -205,7 +205,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $repeater->add_control(
             'btn_url_2', [
-                'label' => __('Button URL 02', 'spider-elements'),
+                'label' => esc_html__('Button URL 02', 'spider-elements'),
                 'type' => Controls_Manager::URL,
                 'default' => [
                     'url' => '#'
@@ -217,7 +217,7 @@ class Pricing_Table_Tabs extends Widget_Base
         $repeater->add_group_control(
             Group_Control_Background::get_type(), [
                 'name' => 'item_box_bg_color',
-                'label' => __('Background', 'spider-elements'),
+                'label' => esc_html__('Background', 'spider-elements'),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}',
             ]
@@ -225,7 +225,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $this->add_control(
             'pricing_tables', [
-                'label' => __('Pricing Table', 'spider-elements'),
+                'label' => esc_html__('Pricing Table', 'spider-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'prevent_empty' => false,
                 'fields' => $repeater->get_controls(),
@@ -235,7 +235,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
         $this->add_control(
             'ribbon_label', [
-                'label' => __('Ribbon Label', 'spider-elements'),
+                'label' => esc_html__('Ribbon Label', 'spider-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'separator' => 'before'
 

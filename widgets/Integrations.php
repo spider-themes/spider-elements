@@ -89,14 +89,14 @@ class Integrations extends Widget_Base {
 		$this->start_controls_section(
 			'select_style',
 			[
-				'label' => __( 'Preset Skins', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style',
 			[
-				'label'   => __( 'Integration Style', 'spider-elements' ),
+				'label'   => esc_html__( 'Integration Style', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
@@ -120,7 +120,7 @@ class Integrations extends Widget_Base {
 		//start content layout
 		$this->start_controls_section(
 			'integration_control', [
-				'label' => __( 'Integration Item', 'spider-elements' ),
+				'label' => esc_html__( 'Integration Item', 'spider-elements' ),
 			]
 		);
 
@@ -134,7 +134,7 @@ class Integrations extends Widget_Base {
 
 		$repeater->add_control(
 			'integration_image', [
-				'label'   => __( 'Integration Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Integration Image', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -143,7 +143,7 @@ class Integrations extends Widget_Base {
 		);
 		$this->add_control(
 			'integration_item', [
-				'label'         => __( 'Integration Item', 'spider-elements' ),
+				'label'         => esc_html__( 'Integration Item', 'spider-elements' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => '{{{ align_items }}}',
@@ -168,7 +168,7 @@ class Integrations extends Widget_Base {
 
 		$this->start_controls_section(
 			'integration_img_style', [
-				'label' => __( 'Integration Image', 'spider-elements' ),
+				'label' => esc_html__( 'Integration Image', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -193,7 +193,7 @@ class Integrations extends Widget_Base {
 		$this->add_control(
 			'team_img_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [

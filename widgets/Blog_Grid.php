@@ -48,7 +48,7 @@ class Blog_Grid extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Blog Grid', 'spider-elements' );
+		return esc_html__( 'Blog Grid', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -104,7 +104,7 @@ class Blog_Grid extends Widget_Base {
 		//============================= Filter Options =================================== //
 		$this->start_controls_section(
 			'blog_layout', [
-				'label' => __( 'Layout', 'spider-elements' ),
+				'label' => esc_html__( 'Layout', 'spider-elements' ),
 			]
 		);
 
@@ -115,23 +115,23 @@ class Blog_Grid extends Widget_Base {
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
-						'title' => __( 'Style 01', 'spider-elements' ),
+						'title' => esc_html__( 'Style 01', 'spider-elements' ),
 						'icon'  => 'blog-grid1',
 					],
 					'2' => [
-						'title' => __( 'Style 02', 'spider-elements' ),
+						'title' => esc_html__( 'Style 02', 'spider-elements' ),
 						'icon'  => 'blog-grid2',
 					],
 					'3' => [
-						'title' => __( 'Style 03', 'spider-elements' ),
+						'title' => esc_html__( 'Style 03', 'spider-elements' ),
 						'icon'  => 'blog-grid3',
 					],
 					'4' => [
-						'title' => __( 'Style 04', 'spider-elements' ),
+						'title' => esc_html__( 'Style 04', 'spider-elements' ),
 						'icon'  => 'blog-grid4',
 					],
 					'5' => [
-						'title' => __( 'Style 05', 'spider-elements' ),
+						'title' => esc_html__( 'Style 05', 'spider-elements' ),
 						'icon'  => 'blog-grid5',
 					],
 				],
@@ -142,13 +142,13 @@ class Blog_Grid extends Widget_Base {
 
 		$this->add_control(
 			'column_grid', [
-				'label'   => __( 'Column', 'spider-elements' ),
+				'label'   => esc_html__( 'Column', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'6' => __( 'Two Column', 'spider-elements' ),
-					'4' => __( 'Three Column', 'spider-elements' ),
-					'3' => __( 'Four Column', 'spider-elements' ),
-					'2' => __( 'Six Column', 'spider-elements' ),
+					'6' => esc_html__( 'Two Column', 'spider-elements' ),
+					'4' => esc_html__( 'Three Column', 'spider-elements' ),
+					'3' => esc_html__( 'Four Column', 'spider-elements' ),
+					'2' => esc_html__( 'Six Column', 'spider-elements' ),
 				],
 				'default' => '6',
 			]
@@ -206,7 +206,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_bycategories',
 			[
-				'label'     => __( 'By Categories', 'spider-elements' ),
+				'label'     => esc_html__( 'By Categories', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
 					'spe_post_blog_queryby' => [ 'categories' ]
@@ -216,7 +216,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_categories',
 			[
-				'label'     => __( 'Select Categories', 'spider-elements' ),
+				'label'     => esc_html__( 'Select Categories', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT2,
 				'multiple'  => true,
 				'options'   => self::get_category(),
@@ -230,7 +230,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_byposts',
 			[
-				'label'     => __( 'By Posts', 'spider-elements' ),
+				'label'     => esc_html__( 'By Posts', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
 					'spe_post_blog_queryby' => [ 'posts' ]
@@ -240,7 +240,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_post',
 			[
-				'label'     => __( 'Select Posts', 'spider-elements' ),
+				'label'     => esc_html__( 'Select Posts', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT2,
 				'multiple'  => true,
 				'options'   => self::get_posts(),
@@ -254,7 +254,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_byposttype',
 			[
-				'label'     => __( 'By Posttype', 'spider-elements' ),
+				'label'     => esc_html__( 'By Posttype', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
 					'spe_post_blog_queryby' => [ 'postype' ]
@@ -264,7 +264,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_posttype',
 			[
-				'label'     => __( 'Select Postype', 'spider-elements' ),
+				'label'     => esc_html__( 'Select Postype', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT2,
 				'multiple'  => true,
 				'options'   => self::get_posttype(),
@@ -278,7 +278,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'spe_post_blog_otherquery',
 			[
-				'label'     => __( 'Others Filter', 'spider-elements' ),
+				'label'     => esc_html__( 'Others Filter', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -445,7 +445,7 @@ class Blog_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'blog_general_styles',
 			[
-				'label' => __( 'Blog Item Style', 'spider-elements' ),
+				'label' => esc_html__( 'Blog Item Style', 'spider-elements' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -475,7 +475,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_grid_item_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -486,7 +486,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'blog_item_padding',
 			[
-				'label'      => __( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -512,7 +512,7 @@ class Blog_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'blog_image_tab',
 			[
-				'label'     => __( 'Image Style', 'spider-elements' ),
+				'label'     => esc_html__( 'Image Style', 'spider-elements' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'style' => [ '1', '2', '3', '4' ]
@@ -522,7 +522,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_img_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'separator'  => 'after',
@@ -534,7 +534,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_img_margin',
 			[
-				'label'     => __( 'Margin Bottom', 'spider-elements' ),
+				'label'     => esc_html__( 'Margin Bottom', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -562,7 +562,7 @@ class Blog_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'blog_content_tab',
 			[
-				'label' => __( 'Content Style', 'spider-elements' ),
+				'label' => esc_html__( 'Content Style', 'spider-elements' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -573,7 +573,7 @@ class Blog_Grid extends Widget_Base {
 		/// Normal Color
 		$this->start_controls_tab(
 			'blog_normal_style', [
-				'label' => __( 'Normal', 'spider-elements' ),
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
 			]
 		);
 
@@ -582,7 +582,7 @@ class Blog_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'blog_content_title',
-				'label'    => __( 'Title Typography', 'spider-elements' ),
+				'label'    => esc_html__( 'Title Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .blog-meta-two .blog-title',
 			]
 		);
@@ -599,7 +599,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_title_spacing',
 			[
-				'label'      => __( 'Title Spacing', 'spider-elements' ),
+				'label'      => esc_html__( 'Title Spacing', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'separator'  => 'after',
@@ -622,7 +622,7 @@ class Blog_Grid extends Widget_Base {
 		$this->end_controls_tab();
 		$this->start_controls_tab(
 			'blog_hover_style', [
-				'label' => __( 'Hover', 'spider-elements' ),
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
 			]
 		);
 
@@ -646,7 +646,7 @@ class Blog_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'blog_button_tab',
 			[
-				'label' => __( 'Button Style', 'spider-elements' ),
+				'label' => esc_html__( 'Button Style', 'spider-elements' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -658,7 +658,7 @@ class Blog_Grid extends Widget_Base {
 		/// Normal Color
 		$this->start_controls_tab(
 			'blog_normal_btn', [
-				'label' => __( 'Normal', 'spider-elements' ),
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
 			]
 		);
 
@@ -666,7 +666,7 @@ class Blog_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'blog_read_btn',
-				'label'    => __( 'Button Typography', 'spider-elements' ),
+				'label'    => esc_html__( 'Button Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .blog-meta-two .continue-btn, {{WRAPPER}} .blog-meta-two .read-more-btn a',
 			]
 		);
@@ -684,7 +684,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'blog_btn_padding',
 			[
-				'label'      => __( 'Button Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Button Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -722,7 +722,7 @@ class Blog_Grid extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'      => 'button_border_color',
-				'label'     => __( 'Border', 'spider-elements' ),
+				'label'     => esc_html__( 'Border', 'spider-elements' ),
 				'selector'  => '{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven',
 				'condition' => [
 					'style' => [ '4' ]
@@ -732,7 +732,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'button_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -749,7 +749,7 @@ class Blog_Grid extends Widget_Base {
 		/// Hover Color
 		$this->start_controls_tab(
 			'blog_hover_btn', [
-				'label' => __( 'Hover', 'spider-elements' ),
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
 			]
 		);
 		$this->add_control(
@@ -778,7 +778,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label'     => __( 'Border Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven:hover' => 'border-color: {{VALUE}}',
@@ -798,7 +798,7 @@ class Blog_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'blog_meta_tab',
 			[
-				'label'     => __( 'Meta Style', 'spider-elements' ),
+				'label'     => esc_html__( 'Meta Style', 'spider-elements' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'style' => [ '1', '2', '3', '4' ]
@@ -810,7 +810,7 @@ class Blog_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'blog_meta_typography',
-				'label'    => __( 'Button Typography', 'spider-elements' ),
+				'label'    => esc_html__( 'Button Typography', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .blog-meta-two .date a',
 			]
 		);

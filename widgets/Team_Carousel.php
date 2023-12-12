@@ -89,14 +89,14 @@ class Team_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'select_style',
 			[
-				'label' => __( 'Preset Skins', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style',
 			[
-				'label'   => __( 'Team Style', 'spider-elements' ),
+				'label'   => esc_html__( 'Team Style', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
@@ -121,13 +121,13 @@ class Team_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_title_control',
 			[
-				'label' => __( 'Content', 'spider-elements' ),
+				'label' => esc_html__( 'Content', 'spider-elements' ),
 			]
 		);
 		$repeater = new \Elementor\Repeater();
 		$repeater->add_control(
 			'team_slider_image', [
-				'label'   => __( 'Slider Image', 'spider-elements' ),
+				'label'   => esc_html__( 'Slider Image', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -136,10 +136,10 @@ class Team_Carousel extends Widget_Base {
 		);
 		$repeater->add_control(
 			'team_name', [
-				'label'       => __( 'Name', 'spider-elements' ),
+				'label'       => esc_html__( 'Name', 'spider-elements' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Name', 'spider-elements' ),
-				'default'     => __( 'John Deo', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Enter Name', 'spider-elements' ),
+				'default'     => esc_html__( 'John Deo', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -158,36 +158,36 @@ class Team_Carousel extends Widget_Base {
 
 		$repeater->add_control(
 			'team_job_position', [
-				'label'       => __( 'Content Text', 'spider-elements' ),
+				'label'       => esc_html__( 'Content Text', 'spider-elements' ),
 				'type'        => \Elementor\Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter text', 'spider-elements' ),
-				'default'     => __( 'Envato Customer', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Enter text', 'spider-elements' ),
+				'default'     => esc_html__( 'Envato Customer', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
 		$this->add_control(
 			'team_slider_item',
 			[
-				'label'         => __( 'Team Item', 'spider-elements' ),
+				'label'         => esc_html__( 'Team Item', 'spider-elements' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'team_name'         => __( 'Elizabeth Foster', 'spider-elements' ),
-						'team_job_position' => __( 'UI/UX Designer', 'spider-elements' ),
+						'team_name'         => esc_html__( 'Elizabeth Foster', 'spider-elements' ),
+						'team_job_position' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
 					],
 					[
-						'team_name'         => __( 'Julie Ake', 'spider-elements' ),
-						'team_job_position' => __( 'Product Designer', 'spider-elements' ),
+						'team_name'         => esc_html__( 'Julie Ake', 'spider-elements' ),
+						'team_job_position' => esc_html__( 'Product Designer', 'spider-elements' ),
 					],
 					[
-						'team_name'         => __( 'Elizabeth Foster', 'spider-elements' ),
-						'team_job_position' => __( 'UI/UX Designer', 'spider-elements' ),
+						'team_name'         => esc_html__( 'Elizabeth Foster', 'spider-elements' ),
+						'team_job_position' => esc_html__( 'UI/UX Designer', 'spider-elements' ),
 					],
 					[
-						'team_name'         => __( 'Juan Marko', 'spider-elements' ),
-						'team_job_position' => __( 'Java Developer', 'spider-elements' ),
+						'team_name'         => esc_html__( 'Juan Marko', 'spider-elements' ),
+						'team_job_position' => esc_html__( 'Java Developer', 'spider-elements' ),
 					],
 
 				],
@@ -209,14 +209,14 @@ class Team_Carousel extends Widget_Base {
 
 		$this->start_controls_section(
 			'team_img_style', [
-				'label' => __( 'Team Image', 'spider-elements' ),
+				'label' => esc_html__( 'Team Image', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 		$this->add_responsive_control(
 			'team_img_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -228,7 +228,7 @@ class Team_Carousel extends Widget_Base {
 		//========================= Contents =========================//
 		$this->start_controls_section(
 			'team_style_content', [
-				'label' => __( 'Team Contents', 'spider-elements' ),
+				'label' => esc_html__( 'Team Contents', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -242,7 +242,7 @@ class Team_Carousel extends Widget_Base {
 		$this->start_controls_tab(
 			'style_normal',
 			[
-				'label' => __( 'Normal', 'spider-elements' ),
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
 			]
 		);
 
@@ -254,7 +254,7 @@ class Team_Carousel extends Widget_Base {
 		); //End Author Name
 		$this->add_control(
 			'team_name_color', [
-				'label'     => __( 'Name Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Name Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-style-three .name,{{WRAPPER}} .card-style-eight .name' => 'color: {{VALUE}};',
@@ -268,13 +268,13 @@ class Team_Carousel extends Widget_Base {
 		//=== Active icon
 		$this->start_controls_tab(
 			'team_title_hover', [
-				'label' => __( 'Hover', 'spider-elements' ),
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'team_name_hover_color', [
-				'label'     => __( 'Name Hover Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Name Hover Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-style-three .name:hover,{{WRAPPER}} .card-style-eight .name:hover' => 'color: {{VALUE}};',
@@ -294,7 +294,7 @@ class Team_Carousel extends Widget_Base {
 		); //End Author Name
 		$this->add_control(
 			'team_position_color', [
-				'label'     => __( 'Position Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Position Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-style-three .post,{{WRAPPER}} .card-style-eight .post' => 'color: {{VALUE}};',

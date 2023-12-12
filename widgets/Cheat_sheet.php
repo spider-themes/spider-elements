@@ -135,7 +135,7 @@ class Cheat_sheet extends Widget_Base
 
         $this->add_control(
             'cheat_sheet_contents', [
-                'label' => __('Cheat Sheet List', 'spider-elements'),
+                'label' => esc_html__('Cheat Sheet List', 'spider-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ cs_title }}}',

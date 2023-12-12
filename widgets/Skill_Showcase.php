@@ -27,7 +27,7 @@ class Skill_Showcase extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Skill Showcase', 'spider-elements' );
+		return esc_html__( 'Skill Showcase', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -74,7 +74,7 @@ class Skill_Showcase extends Widget_Base {
 		$this->start_controls_section(
 			'section_skills',
 			[
-				'label' => __( 'Skills', 'spider-elements' ),
+				'label' => esc_html__( 'Skills', 'spider-elements' ),
 			]
 		);
 
@@ -83,9 +83,9 @@ class Skill_Showcase extends Widget_Base {
 		$repeater->add_control(
 			'name',
 			[
-				'label'       => __( 'Skill Name', 'spider-elements' ),
+				'label'       => esc_html__( 'Skill Name', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Skill Name', 'spider-elements' ),
+				'default'     => esc_html__( 'Skill Name', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -93,12 +93,12 @@ class Skill_Showcase extends Widget_Base {
 		$repeater->add_control(
 			'size',
 			[
-				'label'   => __( 'Size', 'spider-elements' ),
+				'label'   => esc_html__( 'Size', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'default' => __( 'Default', 'spider-elements' ),
-					'small'   => __( 'Small', 'spider-elements' ),
-					'big'     => __( 'Big', 'spider-elements' ),
+					'default' => esc_html__( 'Default', 'spider-elements' ),
+					'small'   => esc_html__( 'Small', 'spider-elements' ),
+					'big'     => esc_html__( 'Big', 'spider-elements' ),
 				],
 				'default' => 'default',
 			]
@@ -107,20 +107,20 @@ class Skill_Showcase extends Widget_Base {
 		$this->add_control(
 			'skills_list',
 			[
-				'label'       => __( 'Skills List', 'spider-elements' ),
+				'label'       => esc_html__( 'Skills List', 'spider-elements' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'name' => __( 'Html', 'spider-elements' ),
+						'name' => esc_html__( 'Html', 'spider-elements' ),
 						'size' => 'default',
 					],
 					[
-						'name' => __( 'Css', 'spider-elements' ),
+						'name' => esc_html__( 'Css', 'spider-elements' ),
 						'size' => 'default',
 					],
 					[
-						'name' => __( 'Java', 'spider-elements' ),
+						'name' => esc_html__( 'Java', 'spider-elements' ),
 						'size' => 'default',
 					]
 				],

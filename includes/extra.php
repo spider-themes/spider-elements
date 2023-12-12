@@ -13,15 +13,15 @@ add_image_size( 'spe_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
  */
 function spe_el_title_tags() {
 	return [
-		'h1'   => __( 'H1', 'spider-elements' ),
-		'h2'   => __( 'H2', 'spider-elements' ),
-		'h3'   => __( 'H3', 'spider-elements' ),
-		'h4'   => __( 'H4', 'spider-elements' ),
-		'h5'   => __( 'H5', 'spider-elements' ),
-		'h6'   => __( 'H6', 'spider-elements' ),
-		'div'  => __( 'Div', 'spider-elements' ),
-		'span' => __( 'Span', 'spider-elements' ),
-		'p'    => __( 'Paragraph', 'spider-elements' ),
+		'h1'   => esc_html__( 'H1', 'spider-elements' ),
+		'h2'   => esc_html__( 'H2', 'spider-elements' ),
+		'h3'   => esc_html__( 'H3', 'spider-elements' ),
+		'h4'   => esc_html__( 'H4', 'spider-elements' ),
+		'h5'   => esc_html__( 'H5', 'spider-elements' ),
+		'h6'   => esc_html__( 'H6', 'spider-elements' ),
+		'div'  => esc_html__( 'Div', 'spider-elements' ),
+		'span' => esc_html__( 'Span', 'spider-elements' ),
+		'p'    => esc_html__( 'Paragraph', 'spider-elements' ),
 	];
 }
 
@@ -168,7 +168,7 @@ function spe_get_reading_time( $words_per_minute ) {
 	$reading_time           = ceil( $word_count / $words_per_minute );
 	$formatted_reading_time = $reading_time . esc_html__( ' min read', 'spider-elements' );
 
-	return $formatted_reading_time;
+	return esc_html($formatted_reading_time);
 }
 
 /**

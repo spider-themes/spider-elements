@@ -84,7 +84,7 @@ class Video_Playlist extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'spe_video_preset', [
-				'label' => __( 'Preset Skin', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -94,11 +94,11 @@ class Video_Playlist extends Widget_Base {
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
-						'title' => __( 'Tab', 'spider-elements' ),
+						'title' => esc_html__( 'Tab', 'spider-elements' ),
 						'icon'  => 'video-playlist',
 					],
 					'2' => [
-						'title' => __( 'Slide', 'spider-elements' ),
+						'title' => esc_html__( 'Slide', 'spider-elements' ),
 						'icon'  => 'video-playlist2',
 					],
 				],
@@ -113,7 +113,7 @@ class Video_Playlist extends Widget_Base {
 		//======================= Title Section =======================//
 		$this->start_controls_section(
 			'title_opt_sec', [
-				'label'     => __( 'Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Title', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '1' ]
 				]
@@ -130,7 +130,7 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_control(
 			'title_tag', [
-				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
+				'label'   => esc_html__( 'Title HTML Tag', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => spe_el_title_tags(),
 				'default' => 'h3',
@@ -139,7 +139,7 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_control(
 			'color_title', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .title' => 'color: {{VALUE}};',
@@ -293,7 +293,7 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_responsive_control(
 			'sec_padding', [
-				'label'      => __( 'Section padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Section padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [

@@ -123,7 +123,7 @@ if (!defined('ABSPATH')) {
                                                                                 <?php
                                                                                 $video_date = $child_video[ 'current_date' ] ?? '';
                                                                                 echo human_time_diff(strtotime($video_date),
-                                                                                        current_time('timestamp')) . __(' ago',
+                                                                                        current_time('timestamp')) . esc_html__(' ago',
                                                                                         'spider-elements');
                                                                                 ?>
                                                                             </div>
