@@ -54,14 +54,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 						if ( !empty($item['author_name']) ) { ?>
                             <div class="block-footer ezd-d-flex ezd-align-items-center ezd-justify-content-between pt-35 lg-pt-20">
                                 <div class="ezd-d-flex ezd-align-items-center">
-                                    <img src="<?php echo esc_url($item['author_image']['url']);?>" alt=""
-                                         class="author-img ezd-rounded-circle">
-                                    <div class="ezd-ms-3">
-                                        <div class="name fw-500"><?php echo esc_html($item['author_name']); ?></div>
-                                        <span class="opacity-50"><?php echo esc_html($item['author_position']); ?></span>
-                                    </div>
+                                    <?php
+                                    if ( !empty($item['author_image']['id']) ) {
+                                        echo wp_get_attachment_image($item['author_image']['id'], 'full', '', ['class' => 'author-img ezd-rounded-circle']);
+                                    }
+                                    if ( !empty($item['author_name']) ) {
+                                        ?>
+                                        <div class="ezd-ms-3">
+                                            <div class="name fw-500"><?php echo esc_html($item['author_name']); ?></div>
+                                            <span class="opacity-50"><?php echo esc_html($item['author_position']); ?></span>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
-                                <img class="quote-icon" src="<?php echo esc_url($item['company_image']['url']);?>" alt="">
+                                <?php echo !empty($item['company_image']['id']) ? wp_get_attachment_image($item['company_image']['id'], 'full', '', ['class' => 'quote-icon']) : '' ?>
                             </div>
 							<?php
 						}

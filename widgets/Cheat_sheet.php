@@ -113,7 +113,7 @@ class Cheat_sheet extends Widget_Base
             'cs_number', [
                 'label' => __('Serial Number', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => '#1',
+                'default' => __('#1', 'spider-elements'),
             ]
         );
 

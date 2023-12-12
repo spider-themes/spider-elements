@@ -97,7 +97,7 @@ if (!defined('ABSPATH')) {
                                                                         <div class="video_tab_img">
                                                                             <img loading="lazy" width="60" height="40"
                                                                                  src="<?php echo esc_url($child_video[ 'thumbnail' ][ 'url' ]) ?>"
-                                                                                 alt="video-thumbnails"/>
+                                                                                 alt="<?php esc_attr_e('video-thumbnails', 'spider-elements'); ?>"/>
                                                                         </div>
                                                                     </div>
                                                                 <?php endif ?>

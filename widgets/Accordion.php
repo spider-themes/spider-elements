@@ -49,7 +49,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'spe-main', 'elegant-icon' ];
+		return [ 'elegant-icon', 'spe-main' ];
 	}
 
 	/**
@@ -157,7 +157,7 @@ class Accordion extends Widget_Base {
 
 		$this->add_control(
 			'accordions', [
-				'label'       => 'Accordion Items',
+				'label'       => esc_html__('Accordion Items', 'spider-elements'),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
@@ -213,7 +213,6 @@ class Accordion extends Widget_Base {
 				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off'    => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
-				'default'      => '',
 			]
 		);
 

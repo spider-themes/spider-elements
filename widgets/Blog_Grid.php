@@ -591,7 +591,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Title Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .blog-title' => 'color: {{VALUE}};',
 				],
@@ -632,7 +631,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Title Hover Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}}  .blog-meta-two .blog-title:hover' => 'color: {{VALUE}};',
 				],
@@ -677,7 +675,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .continue-btn'    => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-meta-two .read-more-btn a' => 'color: {{VALUE}};',
@@ -760,7 +757,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .continue-btn:hover'    => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-meta-two .read-more-btn a:hover' => 'color: {{VALUE}};',
@@ -823,7 +819,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Meta Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .date a' => 'color: {{VALUE}};',
 				],
@@ -845,7 +840,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'category Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .post-img .tags' => 'color: {{VALUE}};',
 				],

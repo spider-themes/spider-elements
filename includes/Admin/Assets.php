@@ -27,7 +27,7 @@ class Assets {
 	public function register_scripts() {
 
 		// Register Elementor Preview Editor Style's
-		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'spe_elementor_editor_scripts' ] );
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'elementor_editor_scripts' ] );
 
 		// Register Admin Panel Scripts
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
@@ -38,10 +38,8 @@ class Assets {
 	 * Register Widget Styles
 	 *
 	 * Register custom styles required to run Spider Elements.
-	 *
-	 * @access public
 	 */
-	public function spe_elementor_editor_scripts() {
+	public function elementor_editor_scripts() {
 		wp_enqueue_style( 'spe-el-editor', SPE_CSS . '/elementor-editor.css');
 	}
 
@@ -50,8 +48,6 @@ class Assets {
 	 * Register Admin Panel Scripts
 	 *
 	 * Register custom scripts required to run Spider Elements.
-	 *
-	 * @access public
 	 */
 	public function admin_scripts() {
 

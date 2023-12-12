@@ -203,7 +203,7 @@ class Video_Playlist extends Widget_Base {
 					'active' => true,
 				],
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				]
 			]
 		);
@@ -385,7 +385,6 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-title' => 'color: {{VALUE}};',
 				],
@@ -413,7 +412,6 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count'          => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i'   => 'color: {{VALUE}};',
@@ -582,7 +580,6 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Style', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
 				'options'   => [
 					''       => esc_html__( 'None', 'spider-elements' ),
 					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
@@ -663,7 +660,6 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#556068',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a' => 'color: {{VALUE}};',
@@ -690,7 +686,6 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration' => 'color: {{VALUE}};',
 				],
@@ -769,7 +764,6 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Style', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
 				'options'   => [
 					''       => esc_html__( 'None', 'spider-elements' ),
 					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),

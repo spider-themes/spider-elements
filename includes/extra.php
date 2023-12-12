@@ -71,13 +71,13 @@ function spe_day_link() {
  * @return array
  */
 function spe_cat_ids() {
-	$taxonomys = get_terms( array(
+	$taxonomies = get_terms( array(
 		'taxonomy'   => 'category',
 		'hide_empty' => true,
 	) );
 	$taxonomy  = [];
-	if ( is_array( $taxonomys ) ) {
-		foreach ( $taxonomys as $cat_id ) {
+	if ( is_array( $taxonomies ) ) {
+		foreach ( $taxonomies as $cat_id ) {
 			$taxonomy[ $cat_id->term_id ] = $cat_id->name;
 		}
 	}
@@ -192,48 +192,6 @@ function spe_posted_by() {
 	echo wp_kses_post( $byline ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
-/**
- * Get Default Image Elementor
- *
- * @param $settins_key
- * @param string $class
- * @param string $alt
- */
-function spe_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
-	if ( ! empty( $settings_key['id'] ) ) {
-		echo wp_get_attachment_image( $settings_key['id'], 'full', '', array( 'class' => $class ) );
-	} elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
-		$class = ! empty( $class ) ? "class='$class'" : '';
-		$attss = '';
-		if ( ! empty( $atts ) ) {
-			foreach ( $atts as $k => $att ) {
-				$attss .= "$k=" . "'$att'";
-			}
-		}
-		echo "<img src='{$settings_key['url']}' $class alt='$alt' $attss>";
-	}
-}
-
-
-/**
- * Get Default Image Elementor
- *
- * @param $settins_key
- * @param string $class
- * @param string $alt
- */
-function spe_el_image_caption( $image_id = '' ) {
-	$img_attachment = get_post( $image_id );
-
-	return array(
-		'alt'     => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
-		'caption' => $img_attachment->post_excerpt,
-		'href'    => get_permalink( $img_attachment->ID ),
-		'src'     => $img_attachment->guid,
-		'title'   => $img_attachment->post_title
-	);
-}
-
 
 /**
  * @param string $content Text content to filter.
@@ -344,16 +302,16 @@ function spe_return_tab_data( $getCats, $event_schedule_cats ) {
 function spe_get_the_reading_time() {
 	$content     = get_post_field( 'post_content', get_the_ID() );
 	$word_count  = str_word_count( strip_tags( $content ) );
-	$readingtime = ceil( $word_count / 200 );
-	if ( $readingtime == 1 ) {
+	$reading_time = ceil( $word_count / 200 );
+	if ( $reading_time == 1 ) {
 		$timer = esc_html__( 'minute', 'spider-elements' );
 	} else {
 		$timer = esc_html__( 'minutes', 'spider-elements' );
 	}
 
-	$totalreadingtime = $readingtime . $timer;
+	$total_reading_time = $reading_time . $timer;
 
-	return $totalreadingtime;
+	return $total_reading_time;
 }
 
 

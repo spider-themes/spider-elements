@@ -216,9 +216,12 @@ class Integrations extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
-		//================= Template Parts =================//
+		extract( $settings ); //extract all settings array to variables converted to name of a key
+
+
+        //================= Template Parts =================//
 		include "templates/integration/integration-{$settings['style']}.php";
+
 	}
 
 

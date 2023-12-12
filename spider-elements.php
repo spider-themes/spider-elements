@@ -3,12 +3,12 @@
  * Plugin Name: Spider Elements
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Author: spider-themes
- * Version: 0.4.0
+ * Version: 0.5.0
  * Requires at least: 5.0
- * Tested up to: 6.4.1
+ * Tested up to: 6.4.2
  * Requires PHP: 7.4
  * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.19.0
+ * Elementor tested up to: 3.18.2
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
@@ -39,7 +39,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		 *
 		 * @var string The plugin version.
 		 */
-		const VERSION = '0.4.0';
+		const VERSION = '0.5.0';
 
 		/**
 		 * Minimum Elementor Version
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Spider_Elements') ) {
             add_action( 'elementor/widgets/register', [ $this, 'on_widgets_registered' ] );
 
             // Register Icon
-            add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'spe_elegant_icons' ] );
+            add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'elegant_icons' ] );
 
         }
 
@@ -156,9 +156,9 @@ if ( ! class_exists( 'Spider_Elements') ) {
 		/***
 		 * Added Custom Font Icon Integrated Elementor Icon Library
 		 */
-		public function spe_elegant_icons( $custom_fonts ) {
+		public function elegant_icons( $custom_fonts ) {
 			$css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
-			$json_data = plugins_url( 'assets/vendors/elegant-icon/eleganticons.json', __FILE__ );
+			$json_data = plugins_url( 'assets/vendors/elegant-icon/elegant-icons.json', __FILE__ );
 
 			$custom_fonts[ 'elegant-icon' ] = [
 				'name'          => 'elegant-icon',
@@ -231,14 +231,14 @@ if ( ! class_exists( 'Spider_Elements') ) {
 				return;
 			}
 
-			// Check for required Elementor version
+			// Check for a required Elementor version
 			if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_elementor_version' ] );
 
 				return;
 			}
 
-			// Check for required PHP version
+			// Check for a required PHP version
 			if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			}
@@ -443,7 +443,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
             \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Video_Playlist() );
             \Elementor\Plugin::instance()->widgets_manager->register( new \Spider_Elements\Widgets\Video_Popup() );
 
-
 		}
 
 
@@ -465,7 +464,6 @@ if ( ! class_exists( 'Spider_Elements') ) {
 			define( 'SPE_IMG', SPE_URL . '/assets/images' );
 			define( 'SPE_VEND', SPE_URL . '/assets/vendors' );
 		}
-
 
 	}
 }

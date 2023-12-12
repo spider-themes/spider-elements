@@ -141,7 +141,7 @@ class Alerts_Box extends Widget_Base {
 				'label'       => __( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => 'Notice Message! Your message here'
+				'default'     => __('Notice Message! Your message here', 'spider-elements'),
 			]
 		);
 

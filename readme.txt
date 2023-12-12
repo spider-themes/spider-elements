@@ -1,14 +1,14 @@
 === Spider Elements - Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015
 Tags:  elementor addons, elementor widget, elementor addon, elementor, addons for elementor, block, elementor blocks, spider element
-Stable tag: 0.4.0
+Stable tag: 0.5.0
 Requires at least: 5.0
-Tested up to: 6.4.1
+Tested up to: 6.4.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor requires at least: 3.0.0
-Elementor tested up to: 3.19.0
+Elementor tested up to: 3.18.2
 
 == Description ==
 Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 9+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.

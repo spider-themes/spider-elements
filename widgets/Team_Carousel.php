@@ -149,11 +149,8 @@ class Team_Carousel extends Widget_Base {
 				'label'       => esc_html__( 'Link', 'spider-elements' ),
 				'type'        => \Elementor\Controls_Manager::URL,
 				'placeholder' => esc_html__( 'https://your-link.com', 'spider-elements' ),
-				'options'     => [ 'url', 'is_external', 'nofollow' ],
 				'default'     => [
 					'url'         => '#',
-					'is_external' => true,
-					'nofollow'    => true,
 				],
 				'label_block' => true,
 			]
@@ -321,8 +318,11 @@ class Team_Carousel extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
 		$team_id = $this->get_id();
-		//================= Template Parts =================//
+
+
+        //================= Template Parts =================//
 		include "templates/team/team-{$settings['style']}.php";
+
 	}
 
 

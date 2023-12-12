@@ -135,7 +135,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => 'Monthly',
+				'default'     => __('Monthly', 'spider-elements')
 			]
 		);
 
@@ -168,7 +168,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 			'price', [
 				'label'       => esc_html__( 'Price', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => '$18.99',
+				'default'     => __('$18.99', 'spider-elements'),
 				'label_block' => true,
 			]
 		);

@@ -182,7 +182,6 @@ class List_Item extends Widget_Base {
 			'text_color', [
 				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li' => 'color: {{VALUE}};',
 				],
@@ -194,7 +193,6 @@ class List_Item extends Widget_Base {
 			'text_color_hover', [
 				'label'     => __( 'Hover', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li:hover' => 'color: {{VALUE}};',
 				],
@@ -238,7 +236,6 @@ class List_Item extends Widget_Base {
 			'icon_color', [
 				'label'     => __( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li::before' => 'color: {{VALUE}};',
 				],
@@ -249,7 +246,6 @@ class List_Item extends Widget_Base {
 			'icon_bg_color', [
 				'label'     => __( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li::before' => 'background: {{VALUE}};',
 				],

@@ -125,7 +125,7 @@ class Pricing_Table_Tabs extends Widget_Base
             'title', [
                 'label' => __('Title', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => 'Free'
+                'default' => __('Free', 'spider-elements')
             ]
         );
 
@@ -133,7 +133,7 @@ class Pricing_Table_Tabs extends Widget_Base
             'price_dollar', [
                 'label' => __('Price USD', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => '$5'
+                'default' => __('$5', 'spider-elements')
             ]
         );
 
@@ -141,7 +141,7 @@ class Pricing_Table_Tabs extends Widget_Base
             'price_euro', [
                 'label' => __('Price EURO', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => '€4.43'
+                'default' => __('€4.43', 'spider-elements')
             ]
         );
 
@@ -149,7 +149,7 @@ class Pricing_Table_Tabs extends Widget_Base
             'duration', [
                 'label' => __('Duration', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => '/user/mo'
+                'default' => __('/user/mo', 'spider-elements')
             ]
         );
 
@@ -158,7 +158,6 @@ class Pricing_Table_Tabs extends Widget_Base
                 'label' => __('Description', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => '1 user'
             ]
         );
 
@@ -182,7 +181,6 @@ class Pricing_Table_Tabs extends Widget_Base
                 'label' => __('Button Title 01', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => 'Continue'
             ]
         );
 
@@ -202,7 +200,6 @@ class Pricing_Table_Tabs extends Widget_Base
                 'label' => __('Button Title 02', 'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => 'Continue'
             ]
         );
 
@@ -392,7 +389,7 @@ class Pricing_Table_Tabs extends Widget_Base
                             }
                             ?>
                         </div>
-                        <?php spe_el_image($settings[ 'ribbon_label' ], 'Popular', 'popular ezd-d-none ezd-d-lg-block') ?>
+                        <?php echo !empty($settings[ 'ribbon_label' ][ 'id' ]) ? wp_get_attachment_image($settings[ 'ribbon_label' ][ 'id' ], '', [ 'class' => 'popular ezd-d-none ezd-d-lg-block' ]) : '' ?>
                     </div>
                     <?php
                 }
