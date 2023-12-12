@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Tabs
+ * @package spider\Widgets
+ * @since 1.0.0
  */
 class Tabs extends Widget_Base {
 
@@ -64,6 +66,7 @@ class Tabs extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -78,6 +81,7 @@ class Tabs extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -87,18 +91,18 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'select_style',
 			[
-				'label' => esc_html__( 'Preset Skins', 'spider-elements' ),
+				'label' => __( 'Preset Skins', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style',
 			[
-				'label'   => esc_html__( 'Style', 'spider-elements' ),
+				'label'   => __( 'Style', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'1' => esc_html__( 'Inline Tab', 'spider-elements' ),
-					'2' => esc_html__( 'Full Width Tab', 'spider-elements' ),
+					'1' => __( 'Inline Tab', 'spider-elements' ),
+					'2' => __( 'Full Width Tab', 'spider-elements' ),
 				],
 				'default' => '1',
 			]
@@ -111,7 +115,7 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'sec_tabs',
 			[
-				'label' => esc_html__( 'Tabs', 'spider-elements' ),
+				'label' => __( 'Tabs', 'spider-elements' ),
 			]
 		);
 
@@ -132,10 +136,10 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_title',
 			[
-				'label'       => esc_html__( 'Tab Title', 'spider-elements' ),
+				'label'       => __( 'Tab Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Tab Title', 'spider-elements' ),
-				'placeholder' => esc_html__( 'Tab Title', 'spider-elements' ),
+				'default'     => __( 'Tab Title', 'spider-elements' ),
+				'placeholder' => __( 'Tab Title', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -143,11 +147,11 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tabs_content_type',
 			[
-				'label'   => esc_html__( 'Content Type', 'spider-elements' ),
+				'label'   => __( 'Content Type', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'content'  => esc_html__( 'Content', 'spider-elements' ),
-					'template' => esc_html__( 'Saved Templates', 'spider-elements' ),
+					'content'  => __( 'Content', 'spider-elements' ),
+					'template' => __( 'Saved Templates', 'spider-elements' ),
 				],
 				'default' => 'content',
 			]
@@ -156,7 +160,7 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'primary_templates',
 			[
-				'label'     => esc_html__( 'Choose Template', 'spider-elements' ),
+				'label'     => __( 'Choose Template', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => spe_get_el_templates(),
 				'condition' => [
@@ -168,9 +172,9 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_content',
 			[
-				'label'       => esc_html__( 'Content', 'spider-elements' ),
-				'default'     => esc_html__( 'Tab Content', 'spider-elements' ),
-				'placeholder' => esc_html__( 'Tab Content', 'spider-elements' ),
+				'label'       => __( 'Content', 'spider-elements' ),
+				'default'     => __( 'Tab Content', 'spider-elements' ),
+				'placeholder' => __( 'Tab Content', 'spider-elements' ),
 				'type'        => Controls_Manager::WYSIWYG,
 				'show_label'  => false,
 				'condition'   => [
@@ -184,7 +188,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'tabs',
 			[
-				'label'       => esc_html__( 'Add Items', 'spider-elements' ),
+				'label'       => __( 'Add Items', 'spider-elements' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ tab_title }}}',
@@ -300,6 +304,7 @@ class Tabs extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -309,7 +314,7 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'style_tabs_sec',
 			[
-				'label' => esc_html__( 'Tab Title', 'spider-elements' ),
+				'label' => __( 'Tab Title', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -351,7 +356,7 @@ class Tabs extends Widget_Base {
 
 		$this->add_responsive_control(
 			'tab_margin', [
-				'label'      => esc_html__( 'margin', 'spider-elements' ),
+				'label'      => __( 'margin', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -364,7 +369,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_pad',
 			[
-				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'label'      => __( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -377,7 +382,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'title_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
+				'label'      => __( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -403,14 +408,14 @@ class Tabs extends Widget_Base {
 		$this->start_controls_tab(
 			'style_tab_title_normal',
 			[
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
+				'label' => __( 'Normal', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'normal_tab_title_text_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab_shortcode .spe_tab_title, {{WRAPPER}} .header_tab_items .spe_tab_title' => 'color: {{VALUE}}',
@@ -435,7 +440,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'normal_tab_icon_bg_color',
 			[
-				'label'     => esc_html__( 'Icon Background Color', 'spider-elements' ),
+				'label'     => __( 'Icon Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab-item-title > .numb' => 'background: {{VALUE}};',
@@ -451,13 +456,13 @@ class Tabs extends Widget_Base {
 		//=== Hover Tab Title
 		$this->start_controls_tab(
 			'style_tab_title_hover', [
-				'label' => esc_html__( 'Hover', 'spider-elements' ),
+				'label' => __( 'Hover', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_tab_title_text_color', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab_shortcode .spe_tab_title:hover, 
@@ -484,13 +489,13 @@ class Tabs extends Widget_Base {
 		//=== Active Tab Title
 		$this->start_controls_tab(
 			'style_tab_title_active', [
-				'label' => esc_html__( 'Active', 'spider-elements' ),
+				'label' => __( 'Active', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'active_tab_title_text_color', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active, 
@@ -517,7 +522,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'active_tab_title_border_color',
 			[
-				'label'     => esc_html__( 'Border Top Color', 'spider-elements' ),
+				'label'     => __( 'Border Top Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active::before,
@@ -532,7 +537,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'active_tab_icon_bg_color',
 			[
-				'label'     => esc_html__( 'Icon Background Color', 'spider-elements' ),
+				'label'     => __( 'Icon Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab-item-title.active > .numb,
@@ -552,7 +557,7 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'style_tabs_progressbar',
 			[
-				'label' => esc_html__( 'Tab ProgressBar', 'spider-elements' ),
+				'label' => __( 'Tab ProgressBar', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'is_auto_play' => 'yes',
@@ -573,7 +578,7 @@ class Tabs extends Widget_Base {
 		);
 		$this->add_responsive_control(
 			'progressbar_height', [
-				'label'      => esc_html__( 'Progress Bar Hegiht', 'spider-elements' ),
+				'label'      => __( 'Progress Bar Hegiht', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -603,7 +608,7 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'style_content',
 			[
-				'label' => esc_html__( 'Content', 'spider-elements' ),
+				'label' => __( 'Content', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -620,7 +625,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'tabs_content_text_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab-content .tab_style, {{WRAPPER}} .tab-content .tab-pane' => 'color: {{VALUE}}',
@@ -640,7 +645,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
+				'label'      => __( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -652,7 +657,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'content-pad',
 			[
-				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'label'      => __( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -678,7 +683,7 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'style_nav_arrow',
 			[
-				'label'     => esc_html__( 'Navigation Arrow', 'spider-elements' ),
+				'label'     => __( 'Navigation Arrow', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'is_navigation_arrow' => 'yes',
@@ -698,6 +703,7 @@ class Tabs extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

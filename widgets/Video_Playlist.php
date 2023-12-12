@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Video_playlist
+ * @package spider\Widgets
+ * @since 1.0.0
  */
 class Video_Playlist extends Widget_Base {
 	public function get_name() {
@@ -46,7 +48,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets' ];
+		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets', 'spe-script' ];
 	}
 
 	public function get_keywords() {
@@ -62,6 +64,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -75,6 +78,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -84,7 +88,7 @@ class Video_Playlist extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'spe_video_preset', [
-				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -94,11 +98,11 @@ class Video_Playlist extends Widget_Base {
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
-						'title' => esc_html__( 'Tab', 'spider-elements' ),
+						'title' => __( 'Tab', 'spider-elements' ),
 						'icon'  => 'video-playlist',
 					],
 					'2' => [
-						'title' => esc_html__( 'Slide', 'spider-elements' ),
+						'title' => __( 'Slide', 'spider-elements' ),
 						'icon'  => 'video-playlist2',
 					],
 				],
@@ -113,7 +117,7 @@ class Video_Playlist extends Widget_Base {
 		//======================= Title Section =======================//
 		$this->start_controls_section(
 			'title_opt_sec', [
-				'label'     => esc_html__( 'Title', 'spider-elements' ),
+				'label'     => __( 'Title', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '1' ]
 				]
@@ -130,7 +134,7 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_control(
 			'title_tag', [
-				'label'   => esc_html__( 'Title HTML Tag', 'spider-elements' ),
+				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => spe_el_title_tags(),
 				'default' => 'h3',
@@ -139,7 +143,7 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_control(
 			'color_title', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .title' => 'color: {{VALUE}};',
@@ -203,7 +207,7 @@ class Video_Playlist extends Widget_Base {
 					'active' => true,
 				],
 				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src(),
 				]
 			]
 		);
@@ -277,6 +281,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -293,7 +298,7 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_responsive_control(
 			'sec_padding', [
-				'label'      => esc_html__( 'Section padding', 'spider-elements' ),
+				'label'      => __( 'Section padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -385,6 +390,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-title' => 'color: {{VALUE}};',
 				],
@@ -412,6 +418,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count'          => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i'   => 'color: {{VALUE}};',
@@ -562,6 +569,7 @@ class Video_Playlist extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
+					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
 				],
 			]
 		);
@@ -580,6 +588,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Style', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
+				'default'   => '',
 				'options'   => [
 					''       => esc_html__( 'None', 'spider-elements' ),
 					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
@@ -660,6 +669,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
+				'default'   => '#556068',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a' => 'color: {{VALUE}};',
@@ -686,6 +696,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration' => 'color: {{VALUE}};',
 				],
@@ -764,6 +775,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Style', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
+				'default'   => '',
 				'options'   => [
 					''       => esc_html__( 'None', 'spider-elements' ),
 					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
@@ -824,6 +836,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

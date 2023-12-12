@@ -97,7 +97,7 @@ if (!defined('ABSPATH')) {
                                                                         <div class="video_tab_img">
                                                                             <img loading="lazy" width="60" height="40"
                                                                                  src="<?php echo esc_url($child_video[ 'thumbnail' ][ 'url' ]) ?>"
-                                                                                 alt="<?php esc_attr_e('video-thumbnails', 'spider-elements'); ?>"/>
+                                                                                 alt="video-thumbnails"/>
                                                                         </div>
                                                                     </div>
                                                                 <?php endif ?>
@@ -123,7 +123,7 @@ if (!defined('ABSPATH')) {
                                                                                 <?php
                                                                                 $video_date = $child_video[ 'current_date' ] ?? '';
                                                                                 echo human_time_diff(strtotime($video_date),
-                                                                                        current_time('timestamp')) . esc_html__(' ago',
+                                                                                        current_time('timestamp')) . __(' ago',
                                                                                         'spider-elements');
                                                                                 ?>
                                                                             </div>

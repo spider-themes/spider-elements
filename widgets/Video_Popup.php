@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
+ * @package spider\Widgets
+ * @since 1.0.0
  */
 class Video_Popup extends Widget_Base {
 
@@ -64,6 +66,7 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -78,6 +81,7 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -87,7 +91,7 @@ class Video_Popup extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'video_popup_sec', [
-				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -126,7 +130,7 @@ class Video_Popup extends Widget_Base {
 
 		$this->add_control(
 			'video_icon', [
-				'label'   => esc_html__( 'Icon', 'spider-elements' ),
+				'label'   => __( 'Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
 					'value'   => 'fas fa-play',
@@ -144,6 +148,7 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -167,7 +172,7 @@ class Video_Popup extends Widget_Base {
 		// Normal tabs
 		$this->start_controls_tab(
 			'icon_normal_tabs', [
-				'label'     => esc_html__( 'Normal', 'spider-elements' ),
+				'label'     => __( 'Normal', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '1' ]
 				]
@@ -177,7 +182,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'icon_font_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
+				'label'     => __( 'Icon Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => [ '1' ]
@@ -191,7 +196,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'icon_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+				'label'     => __( 'Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => [ '1' ]
@@ -207,7 +212,7 @@ class Video_Popup extends Widget_Base {
 		// Hover tabs
 		$this->start_controls_tab(
 			'icon_hover_tabs', [
-				'label'     => esc_html__( 'Hover', 'spider-elements' ),
+				'label'     => __( 'Hover', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '1' ]
 				]
@@ -217,7 +222,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'icon_hover_font_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
+				'label'     => __( 'Icon Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => [ '1' ]
@@ -231,7 +236,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'icon_hover_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+				'label'     => __( 'Background Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => [ '1' ]
@@ -245,7 +250,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'icon_hover_border_color',
 			[
-				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
+				'label'     => __( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'style' => [ '1' ]
@@ -269,7 +274,7 @@ class Video_Popup extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'icon_border',
-				'label'    => esc_html__( 'Border', 'spider-elements' ),
+				'label'    => __( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .video-icon',
 			]
 		);
@@ -277,7 +282,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
+				'label'      => __( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -289,7 +294,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label'      => esc_html__( 'Size', 'spider-elements' ),
+				'label'      => __( 'Size', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -313,7 +318,7 @@ class Video_Popup extends Widget_Base {
 
 		$this->add_responsive_control(
 			'icon_bg_width', [
-				'label'      => esc_html__( 'video Popup Width', 'spider-elements' ),
+				'label'      => __( 'video Popup Width', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -339,7 +344,7 @@ class Video_Popup extends Widget_Base {
 		// Wave switcher
 		$this->add_control(
 			'enable_wave_regular', [
-				'label'   => esc_html__( 'Enable Wave on Regular', 'spider-elements' ),
+				'label'   => __( 'Enable Wave on Regular', 'spider-elements' ),
 				'type'    => Controls_Manager::SWITCHER,
 				'default' => 'no',
 			]
@@ -348,7 +353,7 @@ class Video_Popup extends Widget_Base {
 		// Wave effect Hover switcher
 		$this->add_control(
 			'enable_wave_hover', [
-				'label'   => esc_html__( 'Enable Wave on Hover', 'spider-elements' ),
+				'label'   => __( 'Enable Wave on Hover', 'spider-elements' ),
 				'type'    => Controls_Manager::SWITCHER,
 				'default' => 'no',
 			]
@@ -363,6 +368,7 @@ class Video_Popup extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

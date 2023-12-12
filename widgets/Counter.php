@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
+ * @package spider\Widgets
+ * @since 1.0.0
  */
 class Counter extends Widget_Base {
 
@@ -60,6 +62,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -74,6 +77,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -82,7 +86,7 @@ class Counter extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'counter_preset', [
-				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
+				'label' => __( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -156,6 +160,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -184,7 +189,7 @@ class Counter extends Widget_Base {
 		$this->add_control(
 			'style_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
+				'label'      => __( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -199,7 +204,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_circle_size',
 			[
-				'label'      => esc_html__( 'Size', 'spider-elements' ),
+				'label'      => __( 'Size', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -247,7 +252,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_circle_stroke_width',
 			[
-				'label'      => esc_html__( 'Stroke Width', 'spider-elements' ),
+				'label'      => __( 'Stroke Width', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -327,7 +332,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_text_margin',
 			[
-				'label'      => esc_html__( 'Margin Top', 'spider-elements' ),
+				'label'      => __( 'Margin Top', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -356,6 +361,7 @@ class Counter extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

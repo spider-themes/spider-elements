@@ -12,10 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="ezd-lg-col-<?php echo esc_attr( $column_grid ); ?> ezd-sm-col-6">
                 <div class="blog-meta-two">
                     <figure class="post-img">
-                        <a href="<?php the_permalink(); ?>" class="img">
-                            <?php the_post_thumbnail('full'); ?>
-                        </a>
-						<?php echo '<a href="' . spe_get_the_first_taxonomy_link() . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
+                        <a href="<?php the_permalink(); ?>" class="img"><?php the_post_thumbnail(); ?></a>
+						<?php echo '<a href="' . esc_url( spe_get_the_first_taxonomy_link() ) . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
                     </figure>
                     <div class="post-data">
                         <div class="date">
@@ -24,9 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 								echo '<span class="sticky-label fw-500 text-dark">' . esc_html__( 'Featured -', 'spider-elements' ) . '</span>';
 							}
 							?>
-                            <a href="<?php spe_day_link(); ?>"
+                            <a href="<?php echo get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ); ?>"
                                class="meta-item">
-								<?php echo get_the_date('d M Y') ?>
+								<?php echo get_the_date( __( 'd M Y' ) ) ?>
                             </a>
                         </div>
                         <a href="<?php the_permalink(); ?>">

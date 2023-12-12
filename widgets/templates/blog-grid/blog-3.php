@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
                         <a href="<?php the_permalink(); ?>" class="img"><?php the_post_thumbnail(); ?></a>
                     </figure>
                     <div class="post-data">
-                        <?php echo '<a href="' . spe_get_the_first_taxonomy_link() . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
+                        <?php echo '<a href="' . esc_url(spe_get_the_first_taxonomy_link()) . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
                         <a href="<?php the_permalink(); ?>">
                             <?php the_title('<h2 class="tran3s blog-title">', '</h2>') ?>
                         </a>

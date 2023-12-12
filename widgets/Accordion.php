@@ -49,7 +49,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'spe-main' ];
+		return [ 'spe-main', 'elegant-icon' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets' ];
+		return [ 'spe-el-widgets', 'spe-script' ];
 	}
 
 
@@ -66,6 +66,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -80,6 +81,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -107,9 +109,9 @@ class Accordion extends Widget_Base {
 
 		$repeater->add_control(
 			'title', [
-				'label'       => esc_html__( 'Title', 'spider-elements' ),
+				'label'       => __( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Accordion Title', 'spider-elements' ),
+				'default'     => __( 'Accordion Title', 'spider-elements' ),
 				'label_block' => true,
 				'dynamic'     => [
 					'active' => true,
@@ -131,10 +133,10 @@ class Accordion extends Widget_Base {
 
 		$repeater->add_control(
 			'normal_content', [
-				'label'       => esc_html__( 'Content Text', 'spider-elements' ),
+				'label'       => __( 'Content Text', 'spider-elements' ),
 				'type'        => Controls_Manager::WYSIWYG,
 				'label_block' => true,
-				'default'     => esc_html__( 'Accordion Content', 'spider-elements' ),
+				'default'     => __( 'Accordion Content', 'spider-elements' ),
 				'condition'   => [
 					'content_type' => 'content'
 				]
@@ -144,11 +146,11 @@ class Accordion extends Widget_Base {
 
 		$repeater->add_control(
 			'el_content', [
-				'label'       => esc_html__( 'Select Template', 'spider-elements' ),
+				'label'       => __( 'Select Template', 'spider-elements' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => spe_get_el_templates(),
 				'label_block' => true,
-				'default'     => esc_html__( 'Accordion Content', 'spider-elements' ),
+				'default'     => __( 'Accordion Content', 'spider-elements' ),
 				'condition'   => [
 					'content_type' => 'el_template'
 				]
@@ -157,7 +159,7 @@ class Accordion extends Widget_Base {
 
 		$this->add_control(
 			'accordions', [
-				'label'       => esc_html__('Accordion Items', 'spider-elements'),
+				'label'       => 'Accordion Items',
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
@@ -183,7 +185,7 @@ class Accordion extends Widget_Base {
 
 		$this->add_control(
 			'plus-icon', [
-				'label'       => esc_html__( 'Icon', 'spider-elements' ),
+				'label'       => __( 'Icon', 'spider-elements' ),
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
 				'default'     => [
@@ -196,7 +198,7 @@ class Accordion extends Widget_Base {
 
 		$this->add_control(
 			'minus-icon', [
-				'label'   => esc_html__( 'Active Icon', 'spider-elements' ),
+				'label'   => __( 'Active Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
 					'value'   => 'icon_minus-06',
@@ -213,6 +215,7 @@ class Accordion extends Widget_Base {
 				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off'    => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
+				'default'      => '',
 			]
 		);
 
@@ -227,7 +230,7 @@ class Accordion extends Widget_Base {
 
 		$this->add_control(
 			'title_tag', [
-				'label'     => esc_html__( 'Title Tag', 'spider-elements' ),
+				'label'     => __( 'Title Tag', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'separator' => 'before',
 				'default'   => 'h6',
@@ -245,6 +248,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -292,7 +296,7 @@ class Accordion extends Widget_Base {
 		$this->end_controls_section();
 
 
-        //=============Accordion Title Style Section===============//
+//		=============Accordion Title Style Section===============
 		$this->start_controls_section(
 			'section_toggle_style_title',
 			[
@@ -389,7 +393,7 @@ class Accordion extends Widget_Base {
 		$this->start_controls_tab(
 			'style_accordion_icon_normal',
 			[
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
+				'label' => __( 'Normal', 'spider-elements' ),
 			]
 		);
 
@@ -421,7 +425,7 @@ class Accordion extends Widget_Base {
 		//=== Active icon====
 		$this->start_controls_tab(
 			'style_tab_title_active', [
-				'label' => esc_html__( 'Active', 'spider-elements' ),
+				'label' => __( 'Active', 'spider-elements' ),
 			]
 		);
 
@@ -602,6 +606,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

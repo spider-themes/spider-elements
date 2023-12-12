@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
                                         <?php echo get_the_author(); ?>
                                     </a>
                                 </h5>
-                                <span><?php echo get_the_date('M d, Y') ?></span>
+                                <span><?php echo get_the_date(__('M d, Y')) ?></span>
                             </div>
                         </div>
                         <div class="blog-meta">

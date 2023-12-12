@@ -18,6 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Alerts_box
+ * @package spider\Widgets
+ * @since 1.0.0
  */
 class Animated_Heading extends Widget_Base {
 
@@ -26,7 +28,7 @@ class Animated_Heading extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Animated Heading', 'spider-elements' );
+		return __( 'Animated Heading', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -54,6 +56,7 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Register controls for these widgets
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -68,6 +71,7 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Register the Content Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -76,7 +80,7 @@ class Animated_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'se_animated_headline_sec',
 			[
-				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'label' => __( 'Title', 'spider-elements' ),
 			]
 		);
 
@@ -151,6 +155,7 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Register the Style Tab output on the Elementor editor.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
@@ -159,7 +164,7 @@ class Animated_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'style_animated_headline',
 			[
-				'label' => esc_html__( 'Animated Headline Style', 'spider-elements' ),
+				'label' => __( 'Animated Headline Style', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -168,7 +173,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_before_title',
 			[
-				'label'     => esc_html__( 'Before Title', 'spider-elements' ),
+				'label'     => __( 'Before Title', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -177,7 +182,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_b_t_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} h1.cd-headline' => 'color: {{VALUE}};',
@@ -197,7 +202,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_f_t_title',
 			[
-				'label'     => esc_html__( 'First Text', 'spider-elements' ),
+				'label'     => __( 'First Text', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -206,7 +211,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_f_t_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .single-headline span b' => 'color: {{VALUE}};',
@@ -226,7 +231,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_s_t_title',
 			[
-				'label'     => esc_html__( 'Second Text', 'spider-elements' ),
+				'label'     => __( 'Second Text', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -235,7 +240,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_s_t_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} span.is-visible' => 'color: {{VALUE}};',
@@ -259,6 +264,7 @@ class Animated_Heading extends Widget_Base {
 	 * Desc: Render the widget output on the frontend.
 	 * Params: no params
 	 * Return: @void
+	 * Since: @1.0.0
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */

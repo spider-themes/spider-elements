@@ -64,7 +64,7 @@ class Assets
 	function register_widget_scripts()
 	{
 
-		wp_register_script('ionicons', SPE_VEND . '/ionicons/ionicons.js', '', SPE_VERSION, true);
+		wp_register_script('ionicons', 'https://unpkg.com/ionicons@latest/dist/ionicons.js', '', SPE_VERSION, true);
 		wp_register_script('slick', SPE_VEND . '/slick/slick.min.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('swiper', SPE_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('text-type', SPE_VEND . '/text-type/text-type.js', array('jquery'), SPE_VERSION, true);
@@ -77,8 +77,10 @@ class Assets
 		wp_register_script('scroll-parallax', SPE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array('jquery'), SPE_VERSION, true);
 		wp_register_script('fancybox', SPE_VEND . '/fancybox/js/jquery.fancybox.min.js', array('jquery'), '3.5.7', true);
 		wp_register_script('ajax-chimp', SPE_JS . '/ajax-chimp.js', 'jquery', SPE_VERSION, true);
+        wp_register_script('charming', SPE_VEND  . '/diagonal/charming.min.js', array('jquery'), SPE_VERSION, true);
+        wp_register_script('tweenmax', SPE_VEND  . '/diagonal/TweenMax.min.js', array('jquery'), '1.18.0', true);
         wp_register_script('beforeafter', SPE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
-
+        wp_register_script('spe-script', SPE_JS . '/scripts.js', array('jquery'), false, true);
     }
 
 
