@@ -195,9 +195,6 @@ if (!class_exists('Spider_Elements')) {
             // Extra functions
             require_once __DIR__ . '/includes/extra.php';
 
-            //Shortcodes
-            require_once __DIR__ . '/shortcodes/direction.php';
-
             // Admin and Frontend Scripts Loaded
             if (is_admin()) {
                 require_once __DIR__ . '/includes/Admin/Assets.php';
@@ -432,7 +429,6 @@ if (!class_exists('Spider_Elements')) {
             require_once(__DIR__ . '/widgets/Tabs.php');
             require_once(__DIR__ . '/widgets/Team_Carousel.php');
             require_once(__DIR__ . '/widgets/Testimonial.php');
-            require_once(__DIR__ . '/widgets/Video_Playlist.php');
             require_once(__DIR__ . '/widgets/Video_Popup.php');
 
         }
@@ -461,7 +457,6 @@ if (!class_exists('Spider_Elements')) {
             \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Tabs());
             \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Team_Carousel());
             \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Testimonial());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Video_Playlist());
             \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Video_Popup());
 
         }
@@ -475,16 +470,16 @@ if (!class_exists('Spider_Elements')) {
         public function define_constants ()
         {
 
-            //SPF(Short form - Spider Elements)
-            define('SPE_VERSION', self::VERSION);
-            define('SPE_FILE', __FILE__);
-            define('SPE_PATH', __DIR__);
-            define('SPE_URL', plugins_url('', SPE_FILE));
-            define('SPE_ASSETS', SPE_URL . '/assets');
-            define('SPE_CSS', SPE_URL . '/assets/css');
-            define('SPE_JS', SPE_URL . '/assets/js');
-            define('SPE_IMG', SPE_URL . '/assets/images');
-            define('SPE_VEND', SPE_URL . '/assets/vendors');
+            //SPEL(Short form - Spider Elements)
+            define('SPEL_VERSION', self::VERSION);
+            define('SPEL_FILE', __FILE__);
+            define('SPEL_PATH', __DIR__);
+            define('SPEL_URL', plugins_url('', SPEL_FILE));
+            define('SPEL_ASSETS', SPEL_URL . '/assets');
+            define('SPEL_CSS', SPEL_URL . '/assets/css');
+            define('SPEL_JS', SPEL_URL . '/assets/js');
+            define('SPEL_IMG', SPEL_URL . '/assets/images');
+            define('SPEL_VEND', SPEL_URL . '/assets/vendors');
         }
 
     }

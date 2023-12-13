@@ -33,7 +33,7 @@ class Accordion extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-accordion spe-icon';
+		return 'eicon-accordion spel-icon';
 	}
 
 	public function get_keywords() {
@@ -49,7 +49,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'spe-main' ];
+		return [ 'elegant-icon', 'spel-main' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets' ];
+		return [ 'spel-el-widgets' ];
 	}
 
 
@@ -146,7 +146,7 @@ class Accordion extends Widget_Base {
 			'el_content', [
 				'label'       => esc_html__( 'Select Template', 'spider-elements' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => spe_get_el_templates(),
+				'options'     => spel_get_el_templates(),
 				'label_block' => true,
 				'default'     => esc_html__( 'Accordion Content', 'spider-elements' ),
 				'condition'   => [
@@ -231,7 +231,7 @@ class Accordion extends Widget_Base {
 				'type'      => Controls_Manager::SELECT,
 				'separator' => 'before',
 				'default'   => 'h6',
-				'options'   => spe_el_title_tags(),
+				'options'   => spel_el_title_tags(),
 			]
 		);
 

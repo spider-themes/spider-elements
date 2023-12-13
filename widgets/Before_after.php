@@ -29,7 +29,7 @@ class Before_After extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-thumbnails-half spe-icon';
+		return 'eicon-thumbnails-half spel-icon';
 	}
 
 	public function get_keywords() {
@@ -45,7 +45,7 @@ class Before_After extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'spe-main' ];
+		return [ 'elegant-icon', 'spel-main' ];
 	}
 
 	/**
@@ -53,7 +53,7 @@ class Before_After extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'beforeafter', 'spe-el-widgets' ];
+		return [ 'beforeafter', 'spel-el-widgets' ];
 	}
 
 

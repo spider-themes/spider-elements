@@ -28,7 +28,7 @@ class Counter extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-counter spe-icon';
+		return 'eicon-counter spel-icon';
 	}
 
 	public function get_keywords() {
@@ -44,7 +44,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'spe-main' ];
+		return [ 'spel-main' ];
 	}
 
 	/**
@@ -52,7 +52,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets', 'counterup','waypoint' ];
+		return [ 'spel-el-widgets', 'counterup','waypoint' ];
 	}
 
 	/**

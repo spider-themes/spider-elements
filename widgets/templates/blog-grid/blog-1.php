@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <a href="<?php the_permalink(); ?>" class="img">
                             <?php the_post_thumbnail('full'); ?>
                         </a>
-						<?php echo '<a href="' . spe_get_the_first_taxonomy_link() . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
+						<?php echo '<a href="' . spel_get_the_first_taxonomy_link() . '" class="tags">' . spel_get_the_first_taxonomy() . '</a>'; ?>
                     </figure>
                     <div class="post-data">
                         <div class="date">
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								echo '<span class="sticky-label fw-500 text-dark">' . esc_html__( 'Featured -', 'spider-elements' ) . '</span>';
 							}
 							?>
-                            <a href="<?php spe_day_link(); ?>"
+                            <a href="<?php spel_day_link(); ?>"
                                class="meta-item">
 								<?php echo get_the_date('d M Y') ?>
                             </a>

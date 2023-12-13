@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
                                 echo '<span class="sticky-label fw-500 text-dark">' . esc_html__('Featured -', 'spider-elements') . '</span>';
                             }
                             ?>
-                            <a href="<?php spe_day_link(); ?>" class="meta-item">
+                            <a href="<?php spel_day_link(); ?>" class="meta-item">
                                 <?php echo get_the_date('d M Y') ?>
                             </a>
                         </div>

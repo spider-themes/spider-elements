@@ -40,7 +40,7 @@ class Assets {
 	 * Register custom styles required to run Spider Elements.
 	 */
 	public function elementor_editor_scripts() {
-		wp_enqueue_style( 'spe-el-editor', SPE_CSS . '/elementor-editor.css');
+		wp_enqueue_style( 'spel-el-editor', SPEL_CSS . '/elementor-editor.css');
 	}
 
 
@@ -52,7 +52,7 @@ class Assets {
 	public function admin_scripts() {
 
 		// Register Admin Panel Styles
-		wp_enqueue_style( 'spe-admin', SPE_CSS . '/admin.css');
+		wp_enqueue_style( 'spel-admin', SPEL_CSS . '/admin.css');
 
 	}
 

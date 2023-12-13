@@ -30,7 +30,7 @@ class Pricing_Table_Tabs extends Widget_Base
 
     public function get_icon ()
     {
-        return 'eicon-price-table spe-icon';
+        return 'eicon-price-table spel-icon';
     }
 
     public function get_keywords ()
@@ -49,7 +49,7 @@ class Pricing_Table_Tabs extends Widget_Base
      */
     public function get_style_depends ()
     {
-        return [ 'spe-main' ];
+        return [ 'spel-main' ];
     }
 
     /**
@@ -58,7 +58,7 @@ class Pricing_Table_Tabs extends Widget_Base
      */
     public function get_script_depends ()
     {
-        return [ 'spe-el-widgets' ];
+        return [ 'spel-el-widgets' ];
     }
 
     /**
@@ -279,7 +279,7 @@ class Pricing_Table_Tabs extends Widget_Base
         $pricing_tables = $settings[ 'pricing_tables' ];
         $cats = array_column($pricing_tables, 'tab_title');
         $getCats = array_unique($cats);
-        $table_data = spe_return_tab_data($getCats, $pricing_tables);
+        $table_data = spel_return_tab_data($getCats, $pricing_tables);
 
         ?>
         <div class="ezd-grid ezd-grid-cols-12">
@@ -367,17 +367,17 @@ class Pricing_Table_Tabs extends Widget_Base
                                             <?php
                                         }
                                         if (!empty($table_item[ 'btn_label_1' ])) { ?>
-                                            <a <?php spe_the_button($table_item[ 'btn_url_1' ]) ?> class="pricing-btn">
+                                            <a <?php spel_the_button($table_item[ 'btn_url_1' ]) ?> class="pricing-btn">
                                                 <?php echo esc_html($table_item[ 'btn_label_1' ]) ?>
                                             </a>
                                             <?php
                                         }
                                         if (!empty($table_item[ 'contents' ])) { ?>
-                                            <?php echo spe_kses_post($table_item[ 'contents' ]) ?>
+                                            <?php echo spel_kses_post($table_item[ 'contents' ]) ?>
                                             <?php
                                         }
                                         if (!empty($table_item[ 'btn_label_2' ])) { ?>
-                                            <a <?php spe_the_button($table_item[ 'btn_url_2' ]) ?> class="pricing-btn">
+                                            <a <?php spel_the_button($table_item[ 'btn_url_2' ]) ?> class="pricing-btn">
                                                 <?php echo esc_html($table_item[ 'btn_label_2' ]) ?>
                                             </a>
                                             <?php

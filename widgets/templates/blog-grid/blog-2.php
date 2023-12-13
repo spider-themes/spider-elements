@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php if ( is_sticky() ) : ?>
                                 <span class="sticky-label fw-500 text-dark"><?php echo esc_html__( 'Featured -', 'spider-elements' ); ?></span>
 							<?php endif; ?>
-                            <a href="<?php spe_day_link(); ?>" class="meta-item">
+                            <a href="<?php spel_day_link(); ?>" class="meta-item">
 								<?php echo get_the_date('d M Y'); ?>
                             </a>
                         </div>

@@ -27,7 +27,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-price-table spe-icon';
+		return 'eicon-price-table spel-icon';
 	}
 
 	public function get_keywords() {
@@ -43,7 +43,7 @@ class Pricing_Table_Switcher extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'spe-main' ];
+		return [ 'spel-main' ];
 	}
 
 

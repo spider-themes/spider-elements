@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2023-12-12 13:46+0600\n"
+"POT-Creation-Date: 2023-12-12 18:43+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -61,73 +61,69 @@ msgstr ""
 msgid "Paragraph"
 msgstr ""
 
-#: includes/extra.php:169
-msgid " min read"
+#: includes/extra.php:171
+msgid "minute"
+msgstr ""
+
+#: includes/extra.php:173
+msgid "minutes"
 msgstr ""
 
 #. translators: %s: post author.
-#: includes/extra.php:185
+#: includes/extra.php:193
 #, php-format
 msgctxt "post author"
 msgid "By: %s"
 msgstr ""
 
-#: includes/extra.php:307
-msgid "minute"
-msgstr ""
-
-#: includes/extra.php:309
-msgid "minutes"
-msgstr ""
-
-#: spider-elements.php:136 spider-elements.php:152
+#: spider-elements.php:140 spider-elements.php:157
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: spider-elements.php:165
+#: spider-elements.php:171
 msgid "Elegant Icons"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: spider-elements.php:263 spider-elements.php:321 spider-elements.php:355
-#: spider-elements.php:372
+#: spider-elements.php:273 spider-elements.php:337 spider-elements.php:372
+#: spider-elements.php:390
 msgid "Spider Elements"
 msgstr ""
 
-#: spider-elements.php:271
+#: spider-elements.php:274 spider-elements.php:338
+msgid "Elementor"
+msgstr ""
+
+#: spider-elements.php:282
 msgid "Activate Elementor"
 msgstr ""
 
-#: spider-elements.php:274
+#: spider-elements.php:286
 #, php-format
 msgid ""
-"<strong>%1$s</strong> requires <strong>Elementor</strong> plugin to be "
-"active. Please activate Elementor to continue."
+"%1$s requires %2$s plugin to be active. Please activate the %2$s to "
+"continue."
 msgstr ""
 
-#: spider-elements.php:281
+#: spider-elements.php:294
 msgid "Install Elementor"
 msgstr ""
 
-#: spider-elements.php:284
+#: spider-elements.php:298
 #, php-format
 msgid ""
-"<strong>%1$s requires Elementor</strong> plugin to be installed and "
-"activated. Please install Elementor to continue."
+"%1$s requires %2$s plugin to be installed and activated. Please install "
+"the %2$s to continue."
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: spider-elements.php:320 spider-elements.php:354
+#: spider-elements.php:336 spider-elements.php:371
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: spider-elements.php:322
-msgid "Elementor"
-msgstr ""
-
-#: spider-elements.php:356
+#: spider-elements.php:373
 msgid "PHP"
 msgstr ""
 
@@ -162,8 +158,7 @@ msgstr ""
 #: widgets/Pricing_Table_Switcher.php:443
 #: widgets/Pricing_Table_Switcher.php:527 widgets/Pricing_Table_Tabs.php:126
 #: widgets/Testimonial.php:468 widgets/Testimonial.php:522
-#: widgets/Testimonial.php:1086 widgets/Video_Playlist.php:116
-#: widgets/Video_Playlist.php:175 widgets/Video_Playlist.php:184
+#: widgets/Testimonial.php:1086
 msgid "Title"
 msgstr ""
 
@@ -224,8 +219,7 @@ msgstr ""
 #: widgets/Alerts_Box.php:173 widgets/Alerts_Box.php:393
 #: widgets/Alerts_Box.php:439 widgets/List_Item.php:230
 #: widgets/Pricing_Table_Switcher.php:146 widgets/Tabs.php:122
-#: widgets/Testimonial.php:872 widgets/Video_Playlist.php:518
-#: widgets/Video_Playlist.php:706 widgets/Video_Popup.php:129
+#: widgets/Testimonial.php:872 widgets/Video_Popup.php:129
 #: widgets/Video_Popup.php:155
 msgid "Icon"
 msgstr ""
@@ -264,8 +258,7 @@ msgstr ""
 
 #: widgets/Accordion.php:307 widgets/Accordion.php:551
 #: widgets/List_Item.php:247 widgets/List_Item.php:306
-#: widgets/Pricing_Table_Tabs.php:220 widgets/Video_Playlist.php:375
-#: widgets/Video_Playlist.php:461 widgets/Video_Playlist.php:650
+#: widgets/Pricing_Table_Tabs.php:220
 msgid "Background"
 msgstr ""
 
@@ -274,11 +267,6 @@ msgstr ""
 #: widgets/Alerts_Box.php:449 widgets/Counter.php:285 widgets/Counter.php:313
 #: widgets/List_Item.php:237 widgets/Pricing_Table_Switcher.php:1004
 #: widgets/Pricing_Table_Switcher.php:1068 widgets/Skill_Showcase.php:156
-#: widgets/Video_Playlist.php:386 widgets/Video_Playlist.php:413
-#: widgets/Video_Playlist.php:472 widgets/Video_Playlist.php:499
-#: widgets/Video_Playlist.php:526 widgets/Video_Playlist.php:618
-#: widgets/Video_Playlist.php:661 widgets/Video_Playlist.php:687
-#: widgets/Video_Playlist.php:714 widgets/Video_Playlist.php:802
 msgid "Color"
 msgstr ""
 
@@ -300,12 +288,12 @@ msgstr ""
 #: widgets/Blog_Grid.php:661 widgets/Pricing_Table_Switcher.php:824
 #: widgets/Pricing_Table_Switcher.php:1164 widgets/Tabs.php:406
 #: widgets/Team_Carousel.php:245 widgets/Testimonial.php:935
-#: widgets/Video_Playlist.php:446 widgets/Video_Popup.php:170
+#: widgets/Video_Popup.php:170
 msgid "Normal"
 msgstr ""
 
 #: widgets/Accordion.php:426 widgets/Pricing_Table_Switcher.php:860
-#: widgets/Tabs.php:487 widgets/Video_Playlist.php:635
+#: widgets/Tabs.php:487
 msgid "Active"
 msgstr ""
 
@@ -405,7 +393,7 @@ msgid "Notice Message! Your message here"
 msgstr ""
 
 #: widgets/Alerts_Box.php:150 widgets/Pricing_Table_Switcher.php:162
-#: widgets/Pricing_Table_Tabs.php:158 widgets/Video_Playlist.php:213
+#: widgets/Pricing_Table_Tabs.php:158
 msgid "Description"
 msgstr ""
 
@@ -440,7 +428,6 @@ msgstr ""
 #: widgets/Testimonial.php:1033 widgets/Testimonial.php:1062
 #: widgets/Testimonial.php:1097 widgets/Testimonial.php:1133
 #: widgets/Testimonial.php:1167 widgets/Testimonial.php:1242
-#: widgets/Video_Playlist.php:142
 msgid "Text Color"
 msgstr ""
 
@@ -450,8 +437,8 @@ msgstr ""
 #: widgets/Cheat_sheet.php:349 widgets/Counter.php:174
 #: widgets/Integrations.php:178 widgets/Pricing_Table_Switcher.php:909
 #: widgets/Pricing_Table_Switcher.php:1181
-#: widgets/Pricing_Table_Switcher.php:1234 widgets/Video_Playlist.php:310
-#: widgets/Video_Popup.php:194 widgets/Video_Popup.php:234
+#: widgets/Pricing_Table_Switcher.php:1234 widgets/Video_Popup.php:194
+#: widgets/Video_Popup.php:234
 msgid "Background Color"
 msgstr ""
 
@@ -500,7 +487,6 @@ msgstr ""
 
 #: widgets/Alerts_Box.php:459 widgets/Counter.php:202
 #: widgets/List_Item.php:257 widgets/Skill_Showcase.php:96
-#: widgets/Video_Playlist.php:557 widgets/Video_Playlist.php:740
 #: widgets/Video_Popup.php:292
 msgid "Size"
 msgstr ""
@@ -599,11 +585,10 @@ msgid "Blog Grid"
 msgstr ""
 
 #: widgets/Blog_Grid.php:107 widgets/Buttons.php:65
-#: widgets/Video_Playlist.php:323
 msgid "Layout"
 msgstr ""
 
-#: widgets/Blog_Grid.php:114 widgets/Video_Playlist.php:93
+#: widgets/Blog_Grid.php:114
 msgid "Skin"
 msgstr ""
 
@@ -695,7 +680,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: widgets/Blog_Grid.php:295 widgets/Video_Playlist.php:223
+#: widgets/Blog_Grid.php:295
 msgid "Author"
 msgstr ""
 
@@ -802,8 +787,7 @@ msgstr ""
 msgid "Button"
 msgstr ""
 
-#: widgets/Buttons.php:72 widgets/Tabs.php:97 widgets/Video_Playlist.php:581
-#: widgets/Video_Playlist.php:765
+#: widgets/Buttons.php:72 widgets/Tabs.php:97
 msgid "Style"
 msgstr ""
 
@@ -920,8 +904,7 @@ msgstr ""
 msgid "Counter"
 msgstr ""
 
-#: widgets/Counter.php:85 widgets/Video_Playlist.php:87
-#: widgets/Video_Popup.php:90
+#: widgets/Counter.php:85 widgets/Video_Popup.php:90
 msgid "Preset Skin"
 msgstr ""
 
@@ -1157,7 +1140,6 @@ msgstr ""
 #: widgets/Pricing_Table_Switcher.php:459
 #: widgets/Pricing_Table_Switcher.php:664
 #: widgets/Pricing_Table_Switcher.php:722 widgets/Pricing_Table_Tabs.php:150
-#: widgets/Video_Playlist.php:491 widgets/Video_Playlist.php:679
 msgid "Duration"
 msgstr ""
 
@@ -1857,148 +1839,6 @@ msgstr ""
 msgid "Rating Title"
 msgstr ""
 
-#: widgets/Video_Playlist.php:29
-msgid "Video Playlist"
-msgstr ""
-
-#: widgets/Video_Playlist.php:97
-msgid "Tab"
-msgstr ""
-
-#: widgets/Video_Playlist.php:101
-msgid "Slide"
-msgstr ""
-
-#: widgets/Video_Playlist.php:125
-msgid "Title text"
-msgstr ""
-
-#: widgets/Video_Playlist.php:133
-msgid "Title HTML Tag"
-msgstr ""
-
-#: widgets/Video_Playlist.php:163
-msgid "Playlist"
-msgstr ""
-
-#: widgets/Video_Playlist.php:170
-msgid "Heading"
-msgstr ""
-
-#: widgets/Video_Playlist.php:176
-msgid "Tab Title Text Here"
-msgstr ""
-
-#: widgets/Video_Playlist.php:192
-msgid "Upload Video"
-msgstr ""
-
-#: widgets/Video_Playlist.php:200
-msgid "Thumbnail"
-msgstr ""
-
-#: widgets/Video_Playlist.php:215
-msgid "Default title"
-msgstr ""
-
-#: widgets/Video_Playlist.php:216
-msgid "Type your caption here"
-msgstr ""
-
-#: widgets/Video_Playlist.php:217
-msgid "This field is applicable for Preset Two"
-msgstr ""
-
-#: widgets/Video_Playlist.php:232
-msgid "Current Date"
-msgstr ""
-
-#: widgets/Video_Playlist.php:241 widgets/Video_Playlist.php:256
-msgid "Playlist Items"
-msgstr ""
-
-#: widgets/Video_Playlist.php:246
-msgid "Add Video"
-msgstr ""
-
-#: widgets/Video_Playlist.php:261
-msgid "Insert Video"
-msgstr ""
-
-#: widgets/Video_Playlist.php:289
-msgid "Style Section"
-msgstr ""
-
-#: widgets/Video_Playlist.php:296
-msgid "Section padding"
-msgstr ""
-
-#: widgets/Video_Playlist.php:331
-msgid "Height"
-msgstr ""
-
-#: widgets/Video_Playlist.php:359
-msgid "Top Bar"
-msgstr ""
-
-#: widgets/Video_Playlist.php:367
-msgid "Playlist Name"
-msgstr ""
-
-#: widgets/Video_Playlist.php:405
-msgid "Video Count"
-msgstr ""
-
-#: widgets/Video_Playlist.php:436
-msgid "Videos"
-msgstr ""
-
-#: widgets/Video_Playlist.php:453 widgets/Video_Playlist.php:642
-msgid "Item"
-msgstr ""
-
-#: widgets/Video_Playlist.php:542 widgets/Video_Playlist.php:730
-msgctxt "Text Shadow Control"
-msgid "Shadow"
-msgstr ""
-
-#: widgets/Video_Playlist.php:572 widgets/Video_Playlist.php:756
-msgid "Separator"
-msgstr ""
-
-#: widgets/Video_Playlist.php:584 widgets/Video_Playlist.php:768
-msgid "None"
-msgstr ""
-
-#: widgets/Video_Playlist.php:585 widgets/Video_Playlist.php:769
-msgctxt "Border Control"
-msgid "Solid"
-msgstr ""
-
-#: widgets/Video_Playlist.php:586 widgets/Video_Playlist.php:770
-msgctxt "Border Control"
-msgid "Double"
-msgstr ""
-
-#: widgets/Video_Playlist.php:587 widgets/Video_Playlist.php:771
-msgctxt "Border Control"
-msgid "Dotted"
-msgstr ""
-
-#: widgets/Video_Playlist.php:588 widgets/Video_Playlist.php:772
-msgctxt "Border Control"
-msgid "Dashed"
-msgstr ""
-
-#: widgets/Video_Playlist.php:589 widgets/Video_Playlist.php:773
-msgctxt "Border Control"
-msgid "Groove"
-msgstr ""
-
-#: widgets/Video_Playlist.php:600 widgets/Video_Playlist.php:784
-msgid "Weight"
-msgstr ""
-
 #: widgets/Video_Popup.php:30
 msgid "Video Popup"
 msgstr ""
@@ -2032,15 +1872,9 @@ msgid "Enable Wave on Hover"
 msgstr ""
 
 #: widgets/templates/blog-grid/blog-1.php:24
-#: widgets/templates/blog-grid/blog-2.php:24
+#: widgets/templates/blog-grid/blog-2.php:22
 #: widgets/templates/blog-grid/blog-4.php:23
 msgid "Featured -"
-msgstr ""
-
-#: widgets/templates/blog-grid/blog-1.php:29
-#: widgets/templates/blog-grid/blog-2.php:29
-#: widgets/templates/blog-grid/blog-4.php:27
-msgid "d M Y"
 msgstr ""
 
 #: widgets/templates/blog-grid/blog-1.php:36
@@ -2056,10 +1890,6 @@ msgstr ""
 msgid "Posted by"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-5.php:26
-msgid "M d, Y"
-msgstr ""
-
 #: widgets/templates/testimonials/testimonial-11.php:17
 msgid "REVIEWS"
 msgstr ""
@@ -2070,18 +1900,6 @@ msgstr ""
 
 #: widgets/templates/testimonials/testimonial-3.php:37
 msgid "Quote Image Two"
-msgstr ""
-
-#: widgets/templates/video-playlist/video-playlist-1.php:100
-msgid "video-thumbnails"
-msgstr ""
-
-#: widgets/templates/video-playlist/video-playlist-1.php:126
-msgid " ago"
-msgstr ""
-
-#: widgets/templates/video-playlist/video-playlist-2.php:88
-msgid "Video Poster Image"
 msgstr ""
 
 #: widgets/templates/video-popup/video-popup-3.php:12

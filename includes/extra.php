@@ -4,14 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_image_size( 'spe_270x152', 270, 152, true ); // Video Playlist Thumb
-add_image_size( 'spe_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
-
-
 /**
  * Elementor Title tags
  */
-function spe_el_title_tags() {
+function spel_el_title_tags() {
 	return [
 		'h1'   => esc_html__( 'H1', 'spider-elements' ),
 		'h2'   => esc_html__( 'H2', 'spider-elements' ),
@@ -34,7 +30,7 @@ function spe_el_title_tags() {
  *
  * @return void
  */
-function spe_the_button( $settings_key, $is_echo = true ) {
+function spel_the_button( $settings_key, $is_echo = true ) {
 
 	if ( $is_echo == true ) {
 		echo ! empty( $settings_key['url'] ) ? "href='{$settings_key['url']}'" : '';
@@ -58,70 +54,11 @@ function spe_the_button( $settings_key, $is_echo = true ) {
 /**
  * Day link to archive page
  **/
-function spe_day_link() {
+function spel_day_link() {
 	$archive_year  = get_the_time( 'Y' );
 	$archive_month = get_the_time( 'm' );
 	$archive_day   = get_the_time( 'd' );
 	echo esc_url(get_day_link( $archive_year, $archive_month, $archive_day ));
-}
-
-
-/**
- * Category IDs
- * @return array
- */
-function spe_cat_ids() {
-	$taxonomies = get_terms( array(
-		'taxonomy'   => 'category',
-		'hide_empty' => true,
-	) );
-	$taxonomy  = [];
-	if ( is_array( $taxonomies ) ) {
-		foreach ( $taxonomies as $cat_id ) {
-			$taxonomy[ $cat_id->term_id ] = $cat_id->name;
-		}
-	}
-
-	return $taxonomy;
-}
-
-
-/**
- * Get title excerpt length
- *
- * @param $settings
- * @param $settings_key
- * @param int $default
- *
- * @return string|void
- */
-function spe_get_the_title_length( $settings, $settings_key, $default = 10 ) {
-
-	$title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-	$title        = get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : the_title();
-
-	return $title;
-}
-
-
-/**
- * Post's excerpt text
- *
- * @param $settings_key
- * @param bool $echo
- *
- * @return string
- **/
-function spe_get_the_excerpt_length( $settings, $settings_key, $default = 10 ) {
-
-	$excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-	$excerpt        = get_the_excerpt() ? wp_trim_words(
-		get_the_excerpt(),
-		$excerpt_length,
-		'...'
-	) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
-
-	return $excerpt;
 }
 
 
@@ -132,7 +69,7 @@ function spe_get_the_excerpt_length( $settings, $settings_key, $default = 10 ) {
  *
  * @return string
  */
-function spe_get_the_first_taxonomy( $term = 'category' ) {
+function spel_get_the_first_taxonomy( $term = 'category' ) {
 	$cats = get_the_terms( get_the_ID(), $term );
 	$cat  = is_array( $cats ) ? $cats[0]->name : '';
 
@@ -147,7 +84,7 @@ function spe_get_the_first_taxonomy( $term = 'category' ) {
  *
  * @return string
  */
-function spe_get_the_first_taxonomy_link( $term = 'category' ) {
+function spel_get_the_first_taxonomy_link( $term = 'category' ) {
 
 	$cats = get_the_terms( get_the_ID(), $term );
 	$cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
@@ -162,13 +99,21 @@ function spe_get_the_first_taxonomy_link( $term = 'category' ) {
  *
  * @return string
  */
-function spe_get_reading_time( $words_per_minute ) {
-	$post_content           = get_post_field( 'post_content', get_the_ID() );
-	$word_count             = str_word_count( $post_content );
-	$reading_time           = ceil( $word_count / $words_per_minute );
-	$formatted_reading_time = $reading_time . esc_html__( ' min read', 'spider-elements' );
+function spel_get_reading_time( $words_per_minute = '200' ) {
 
-	return esc_html($formatted_reading_time);
+    $content     = get_post_field( 'post_content', get_the_ID() );
+    $word_count  = str_word_count( strip_tags( $content ) );
+    $reading_time = ceil( $word_count / $words_per_minute );
+    if ( $reading_time == 1 ) {
+        $timer = esc_html__( 'minute', 'spider-elements' );
+    } else {
+        $timer = esc_html__( 'minutes', 'spider-elements' );
+    }
+
+    $total_reading_time = $reading_time . $timer;
+
+    return $total_reading_time;
+
 }
 
 /**
@@ -178,7 +123,7 @@ function spe_get_reading_time( $words_per_minute ) {
  *
  * @return array
  */
-function spe_posted_by() {
+function spel_posted_by() {
 	global $post;
 	$byline = sprintf(
 	/* translators: %s: post author. */
@@ -198,7 +143,7 @@ function spe_posted_by() {
  *
  * @return string Filtered content containing only the allowed HTML.
  */
-function spe_kses_post( $content ) {
+function spel_kses_post( $content ) {
 	$allowed_tag = array(
 		'strong' => [],
 		'br'     => [],
@@ -279,7 +224,7 @@ function spe_kses_post( $content ) {
  *
  * @return array
  */
-function spe_return_tab_data( $getCats, $event_schedule_cats ) {
+function spel_return_tab_data( $getCats, $event_schedule_cats ) {
 	$y = [];
 	foreach ( $getCats as $val ) {
 
@@ -297,32 +242,13 @@ function spe_return_tab_data( $getCats, $event_schedule_cats ) {
 
 
 /**
- * estimated reading time
- **/
-function spe_get_the_reading_time() {
-	$content     = get_post_field( 'post_content', get_the_ID() );
-	$word_count  = str_word_count( strip_tags( $content ) );
-	$reading_time = ceil( $word_count / 200 );
-	if ( $reading_time == 1 ) {
-		$timer = esc_html__( 'minute', 'spider-elements' );
-	} else {
-		$timer = esc_html__( 'minutes', 'spider-elements' );
-	}
-
-	$total_reading_time = $reading_time . $timer;
-
-	return $total_reading_time;
-}
-
-
-/**
  * @param string $post_type
  * @param int $limit
  * @param string $search
  *
  * @return array
  */
-function spe_get_query_post_list( $post_type = 'any', $limit = - 1, $search = '' ) {
+function spel_get_query_post_list( $post_type = 'any', $limit = - 1, $search = '' ) {
 	global $wpdb;
 	$where = '';
 	$data  = [];
@@ -373,7 +299,7 @@ function spe_get_query_post_list( $post_type = 'any', $limit = - 1, $search = ''
  *
  * @return array
  */
-function spe_get_el_templates( $type = null ) {
+function spel_get_el_templates( $type = null ) {
 	$options = [];
 
 	if ( $type ) {
@@ -397,7 +323,7 @@ function spe_get_el_templates( $type = null ) {
 			}
 		}
 	} else {
-		$options = spe_get_query_post_list( 'elementor_library' );
+		$options = spel_get_query_post_list( 'elementor_library' );
 	}
 
 	return $options;

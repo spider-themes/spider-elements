@@ -29,7 +29,7 @@ class Buttons extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-button spe-icon';
+		return 'eicon-button spel-icon';
 	}
 
 	public function get_categories() {

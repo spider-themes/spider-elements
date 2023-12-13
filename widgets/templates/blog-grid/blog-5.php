@@ -27,8 +27,8 @@ if (!defined('ABSPATH')) {
                             </div>
                         </div>
                         <div class="blog-meta">
-                            <?php echo spe_get_the_first_taxonomy(); ?>
-                            <span class="blog-read"><?php echo spe_get_reading_time('200'); ?></span>
+                            <?php echo spel_get_the_first_taxonomy(); ?>
+                            <span class="blog-read"><?php echo spel_get_reading_time(); ?></span>
                         </div>
                         <a href="<?php the_permalink(); ?>"><?php the_title('<h2 class="blog-title">', '</h2>') ?></a>
                         <div class="read-more-btn">

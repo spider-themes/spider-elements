@@ -31,7 +31,7 @@ class Tabs extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-tabs spe-icon';
+		return 'eicon-tabs spel-icon';
 	}
 
 	public function get_keywords() {
@@ -47,7 +47,7 @@ class Tabs extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'spe-main' ];
+		return [ 'elegant-icon', 'spel-main' ];
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Tabs extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets' ];
+		return [ 'spel-el-widgets' ];
 	}
 
 
@@ -158,7 +158,7 @@ class Tabs extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Choose Template', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
-				'options'   => spe_get_el_templates(),
+				'options'   => spel_get_el_templates(),
 				'condition' => [
 					'tabs_content_type' => 'template',
 				],

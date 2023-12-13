@@ -43,15 +43,15 @@ class Assets
 	function register_widget_styles()
 	{
 
-		wp_register_style('ionicons', SPE_VEND . '/ionicons/ionicons.min.css');
-		wp_register_style('slick-theme', SPE_VEND . '/slick/slick-theme.css');
-		wp_register_style('swiper', SPE_VEND . '/swiper/swiper-bundle.min.css');
-		wp_register_style('slick', SPE_VEND . '/slick/slick.css');
-		wp_register_style('video-js', SPE_VEND . '/video/videojs.min.css');
-		wp_register_style('video-js-theaterMode', SPE_VEND . '/video/videojs.theaterMode.css');
-		wp_register_style('elegant-icon', SPE_VEND . '/elegant-icon/style.css');
-		wp_register_style('fancybox', SPE_VEND . '/fancybox/css/jquery.fancybox.min.css');
-		wp_register_style('spe-main', SPE_CSS . '/main.css');
+		wp_register_style('ionicons', SPEL_VEND . '/ionicons/ionicons.min.css');
+		wp_register_style('slick-theme', SPEL_VEND . '/slick/slick-theme.css');
+		wp_register_style('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.css');
+		wp_register_style('slick', SPEL_VEND . '/slick/slick.css');
+		wp_register_style('video-js', SPEL_VEND . '/video/videojs.min.css');
+		wp_register_style('video-js-theaterMode', SPEL_VEND . '/video/videojs.theaterMode.css');
+		wp_register_style('elegant-icon', SPEL_VEND . '/elegant-icon/style.css');
+		wp_register_style('fancybox', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css');
+		wp_register_style('spel-main', SPEL_CSS . '/main.css');
 	}
 
 	/**
@@ -64,20 +64,20 @@ class Assets
 	function register_widget_scripts()
 	{
 
-		wp_register_script('ionicons', SPE_VEND . '/ionicons/ionicons.js', '', SPE_VERSION, true);
-		wp_register_script('slick', SPE_VEND . '/slick/slick.min.js', array('jquery'), SPE_VERSION, true);
-		wp_register_script('swiper', SPE_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPE_VERSION, true);
-		wp_register_script('text-type', SPE_VEND . '/text-type/text-type.js', array('jquery'), SPE_VERSION, true);
-		wp_register_script('counterup', SPE_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), '', true);
-		wp_register_script('waypoint', SPE_VEND . '/waypoint/jquery.waypoints.min.js', array('jquery'), SPE_VERSION, true);
-		wp_register_script('wow', SPE_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', true);
-		wp_register_script('artplayer', SPE_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', true);
-		wp_register_script('video-js-nuevo', SPE_VEND . '/video/nuevo.min.js', array('jquery'), '7.6.0', true);
-		wp_register_script('video-js', SPE_VEND . '/video/video.min.js', array('jquery'), '7.6.0', true);
-		wp_register_script('scroll-parallax', SPE_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array('jquery'), SPE_VERSION, true);
-		wp_register_script('fancybox', SPE_VEND . '/fancybox/js/jquery.fancybox.min.js', array('jquery'), '3.5.7', true);
-		wp_register_script('ajax-chimp', SPE_JS . '/ajax-chimp.js', 'jquery', SPE_VERSION, true);
-        wp_register_script('beforeafter', SPE_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
+		wp_register_script('ionicons', SPEL_VEND . '/ionicons/ionicons.js', '', SPEL_VERSION, true);
+		wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', array('jquery'), SPEL_VERSION, true);
+		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPEL_VERSION, true);
+		wp_register_script('text-type', SPEL_VEND . '/text-type/text-type.js', array('jquery'), SPEL_VERSION, true);
+		wp_register_script('counterup', SPEL_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), '', true);
+		wp_register_script('waypoint', SPEL_VEND . '/waypoint/jquery.waypoints.min.js', array('jquery'), SPEL_VERSION, true);
+		wp_register_script('wow', SPEL_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', true);
+		wp_register_script('artplayer', SPEL_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', true);
+		wp_register_script('video-js-nuevo', SPEL_VEND . '/video/nuevo.min.js', array('jquery'), '7.6.0', true);
+		wp_register_script('video-js', SPEL_VEND . '/video/video.min.js', array('jquery'), '7.6.0', true);
+		wp_register_script('scroll-parallax', SPEL_VEND . '/scroll-parallax/jquery.parallax-scroll.js', array('jquery'), SPEL_VERSION, true);
+		wp_register_script('fancybox', SPEL_VEND . '/fancybox/js/jquery.fancybox.min.js', array('jquery'), '3.5.7', true);
+		wp_register_script('ajax-chimp', SPEL_JS . '/ajax-chimp.js', 'jquery', SPEL_VERSION, true);
+        wp_register_script('beforeafter', SPEL_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
 
     }
 
@@ -91,10 +91,10 @@ class Assets
 	 */
 	function register_editor_scripts()
 	{
-		wp_register_script('spe-el-widgets', SPE_JS . '/elementor-widgets.js', [
+		wp_register_script('spel-el-widgets', SPEL_JS . '/elementor-widgets.js', [
 			'jquery',
 			'elementor-frontend'
-		], SPE_VERSION, true);
+		], SPEL_VERSION, true);
 	}
 }
 

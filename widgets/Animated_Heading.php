@@ -30,7 +30,7 @@ class Animated_Heading extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-heading spe-icon';
+		return 'eicon-heading spel-icon';
 	}
 
 	public function get_keywords() {
