@@ -492,13 +492,13 @@ if (!class_exists('SPEL')) {
  * @return \SPEL
  *
  */
-if (!function_exists('SPEL')) {
+if (!function_exists('spel')) {
 
-    function SPEL ()
+    function spel ()
     {
         return SPEL::instance();
     }
 
     //kick-off the plugin
-    SPEL();
+    spel();
 }

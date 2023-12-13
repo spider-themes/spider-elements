@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2023-12-13 12:26+0600\n"
+"POT-Creation-Date: 2023-12-13 13:35+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"

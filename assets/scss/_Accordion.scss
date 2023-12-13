@@ -137,7 +137,7 @@
 
               svg {
                 display: block;
-                color: var(--spe_p_color);
+                color: var(--spel_p_color);
 
                 & + svg {
                   display: none;
@@ -288,7 +288,7 @@
         text-align: left;
         width: 100%;
         font-size: unset;
-        color: var(--spe_brand_color);
+        color: var(--spel_brand_color);
         font-weight: 500;
         background: var(--black_50);
         text-decoration: none;
@@ -339,7 +339,7 @@
       //border-radius: 0 !important;
       svg {
         display: block;
-        color: var(--spe_p_color);
+        color: var(--spel_p_color);
       }
 
       .card-header button {
