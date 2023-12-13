@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2023-12-12 18:43+0600\n"
+"POT-Creation-Date: 2023-12-13 12:26+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,52 +25,52 @@ msgstr ""
 msgid "Thanks for installing Spider Elements!"
 msgstr ""
 
-#: includes/extra.php:16
+#: includes/extra.php:13
 msgid "H1"
 msgstr ""
 
-#: includes/extra.php:17
+#: includes/extra.php:14
 msgid "H2"
 msgstr ""
 
-#: includes/extra.php:18
+#: includes/extra.php:15
 msgid "H3"
 msgstr ""
 
-#: includes/extra.php:19
+#: includes/extra.php:16
 msgid "H4"
 msgstr ""
 
-#: includes/extra.php:20
+#: includes/extra.php:17
 msgid "H5"
 msgstr ""
 
-#: includes/extra.php:21
+#: includes/extra.php:18
 msgid "H6"
 msgstr ""
 
-#: includes/extra.php:22
+#: includes/extra.php:19
 msgid "Div"
 msgstr ""
 
-#: includes/extra.php:23
+#: includes/extra.php:20
 msgid "Span"
 msgstr ""
 
-#: includes/extra.php:24
+#: includes/extra.php:21
 msgid "Paragraph"
 msgstr ""
 
-#: includes/extra.php:171
+#: includes/extra.php:118
 msgid "minute"
 msgstr ""
 
-#: includes/extra.php:173
+#: includes/extra.php:120
 msgid "minutes"
 msgstr ""
 
 #. translators: %s: post author.
-#: includes/extra.php:193
+#: includes/extra.php:142
 #, php-format
 msgctxt "post author"
 msgid "By: %s"
@@ -85,31 +85,31 @@ msgid "Elegant Icons"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: spider-elements.php:273 spider-elements.php:337 spider-elements.php:372
-#: spider-elements.php:390
+#: spider-elements.php:270 spider-elements.php:334 spider-elements.php:369
+#: spider-elements.php:387
 msgid "Spider Elements"
 msgstr ""
 
-#: spider-elements.php:274 spider-elements.php:338
+#: spider-elements.php:271 spider-elements.php:335
 msgid "Elementor"
 msgstr ""
 
-#: spider-elements.php:282
+#: spider-elements.php:279
 msgid "Activate Elementor"
 msgstr ""
 
-#: spider-elements.php:286
+#: spider-elements.php:283
 #, php-format
 msgid ""
 "%1$s requires %2$s plugin to be active. Please activate the %2$s to "
 "continue."
 msgstr ""
 
-#: spider-elements.php:294
+#: spider-elements.php:291
 msgid "Install Elementor"
 msgstr ""
 
-#: spider-elements.php:298
+#: spider-elements.php:295
 #, php-format
 msgid ""
 "%1$s requires %2$s plugin to be installed and activated. Please install "
@@ -118,12 +118,12 @@ msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: spider-elements.php:336 spider-elements.php:371
+#: spider-elements.php:333 spider-elements.php:368
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: spider-elements.php:373
+#: spider-elements.php:370
 msgid "PHP"
 msgstr ""
 

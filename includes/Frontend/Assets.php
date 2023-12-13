@@ -1,6 +1,6 @@
 <?php
 
-namespace Spider_Elements\includes\Frontend;
+namespace SPEL\includes\Frontend;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {

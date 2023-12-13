@@ -20,17 +20,17 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Spider_Elements class.
+ * SPEL class.
  *
  * The main class that initiates and runs the addon.
  *
  */
-if (!class_exists('Spider_Elements')) {
+if (!class_exists('SPEL')) {
 
     /**
-     * Class Spider_Elements
+     * Class SPEL
      */
-    final class Spider_Elements
+    final class SPEL
     {
 
         /**
@@ -62,12 +62,12 @@ if (!class_exists('Spider_Elements')) {
         /**
          * Instance
          *
-         * Holds a single instance of the `Spider_Elements` class.
+         * Holds a single instance of the `SPEL` class.
          *
          * @access private
          * @static
          *
-         * @var Spider_Elements A single instance of the class.
+         * @var SPEL A single instance of the class.
          */
         private static $_instance = null;
 
@@ -77,7 +77,7 @@ if (!class_exists('Spider_Elements')) {
          *
          * Ensures only one instance of the class is loaded or can be loaded.
          *
-         * @return Spider_Elements An instance of the class.
+         * @return SPEL An instance of the class.
          *
          * @access public
          * @static
@@ -441,23 +441,23 @@ if (!class_exists('Spider_Elements')) {
         private function register_widgets ()
         {
 
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Alerts_Box());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Accordion());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Animated_Heading());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Before_After());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Blog_Grid());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Buttons());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Cheat_sheet());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Counter());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Integrations());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\List_Item());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Pricing_Table_Switcher());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Pricing_Table_Tabs());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Skill_Showcase());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Tabs());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Team_Carousel());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Testimonial());
-            \Elementor\Plugin::instance()->widgets_manager->register(new \Spider_Elements\Widgets\Video_Popup());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Alerts_Box());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Accordion());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Animated_Heading());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Before_After());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Blog_Grid());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Buttons());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Cheat_sheet());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Counter());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Integrations());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\List_Item());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Pricing_Table_Switcher());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Pricing_Table_Tabs());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Skill_Showcase());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Tabs());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Team_Carousel());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Testimonial());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Video_Popup());
 
         }
 
@@ -489,16 +489,16 @@ if (!class_exists('Spider_Elements')) {
 /**
  * Initialize the main plugin class
  *
- * @return \Spider_Elements
+ * @return \SPEL
  *
  */
-if (!function_exists('Spider_Elements')) {
+if (!function_exists('SPEL')) {
 
-    function Spider_Elements ()
+    function SPEL ()
     {
-        return Spider_Elements::instance();
+        return SPEL::instance();
     }
 
     //kick-off the plugin
-    Spider_Elements();
+    SPEL();
 }

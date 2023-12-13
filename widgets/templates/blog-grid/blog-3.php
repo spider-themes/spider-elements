@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
                         <a href="<?php the_permalink(); ?>">
                             <?php the_title('<h2 class="tran3s blog-title">', '</h2>') ?>
                         </a>
-                        <?php spel_posted_by(); ?>
+                        <?php spel_get_author_name(); ?>
                     </div>
                 </div>
             </div>
