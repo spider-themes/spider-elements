@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
                         <div class="date">
                             <?php
                             if (is_sticky()) {
-                                echo '<span class="sticky-label fw-500 text-dark">' . esc_html__('Featured -', 'spider-elements') . '</span>';
+                                echo '<span class="sticky-label fw-500 text-dark spel-">' . esc_html__('Featured -', 'spider-elements') . '</span>';
                             }
                             ?>
                             <a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')); ?>"

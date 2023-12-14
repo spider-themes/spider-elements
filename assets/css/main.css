@@ -970,6 +970,9 @@ button.btn.btn-link:focus {
 
 /*===== accordion style two =====*/
 /*============== Tab =========*/
+.tab_shortcode {
+  margin-bottom: 0 !important;
+}
 .tab_shortcode .nav-tabs {
   border: 0;
 }
@@ -8660,9 +8663,10 @@ ul.ordered-list li::before {
   }
 }
 .blog-meta-two .post-img {
+  display: inline-block;
   overflow: hidden;
   position: relative;
-  margin-bottom: 30px !important;
+  margin-bottom: unset !important;
 }
 .blog-meta-two .post-img img {
   transition: all 0.4s ease-in-out;
@@ -8726,11 +8730,11 @@ ul.ordered-list li::before {
 }
 .blog-meta-two .continue-btn:hover {
   color: #00bf58;
+  text-decoration: none;
 }
 .blog-meta-two .continue-btn.btn-seven {
   font-weight: 500;
-  padding: 13px 28px;
-  min-width: 150px;
+  padding: 13px 36px;
   text-align: center;
   border-radius: 50px;
   color: #00bf58;
@@ -8758,10 +8762,11 @@ ul.ordered-list li::before {
 }
 
 .blog-meta-one {
-  margin-top: 35px;
+  margin-top: 0;
 }
 .blog-meta-one .post-img {
   overflow: hidden;
+  display: inline-block;
 }
 .blog-meta-one .post-img img {
   transition: all 0.3s ease-in-out;
@@ -8802,6 +8807,9 @@ ul.ordered-list li::before {
 .blog-meta-one .continue-btn {
   font-size: 30px;
   color: #000;
+}
+.blog-meta-one .continue-btn:hover {
+  text-decoration: none;
 }
 .blog-meta-one .author {
   font-size: 16px;
@@ -8845,8 +8853,6 @@ ul.ordered-list li::before {
 
 .blog-item {
   padding: 20px;
-  margin-left: 10px;
-  margin-top: 15px;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
@@ -8883,6 +8889,9 @@ ul.ordered-list li::before {
 .blog-item .blog-meta .author-info h5 a {
   color: #b9b9ba;
   font-weight: 600;
+}
+.blog-item .blog-meta .author-info h5 a:hover {
+  text-decoration: none;
 }
 .blog-item .blog-meta .author-info span {
   color: #b9b9ba;
@@ -8933,7 +8942,7 @@ ul.ordered-list li::before {
   line-height: 1;
   font-size: 16px;
   font-family: "IBM Plex Sans", sans-serif;
-  color: #fff;
+  color: #B6B6B6;
   position: relative;
   z-index: 2;
 }
