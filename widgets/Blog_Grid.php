@@ -173,17 +173,17 @@ class Blog_Grid extends Widget_Base {
 	public function elementor_post_setting() {
 
 		$this->start_controls_section(
-			'spe_post_settings_section',
+			'settings_section',
 			[
 				'label' => esc_html__( 'Query Settings', 'spider-elements' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
-			'spe_post_blog_queryby', [
+			'blog_queryby', [
 				'label'   => esc_html__( 'Query by', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::CHOOSE,
-				'options' => apply_filters( 'spe_post_blog_query_by', [
+				'options' => apply_filters( 'blog_query_by', [
 					'all'        => [
 						'title' => esc_html__( 'All', 'spider-elements' ),
 						'icon'  => 'fas fa-border-none',
@@ -208,18 +208,18 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_control(
-			'spe_post_blog_bycategories',
+			'blog_bycategories',
 			[
 				'label'     => esc_html__( 'By Categories', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
-					'spe_post_blog_queryby' => [ 'categories' ]
+					'blog_queryby' => [ 'categories' ]
 				],
 			]
 		);
 
 		$this->add_control(
-			'spe_post_blog_categories',
+			'blog_categories',
 			[
 				'label'     => esc_html__( 'Select Categories', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT2,
@@ -227,24 +227,24 @@ class Blog_Grid extends Widget_Base {
 				'options'   => self::get_category(),
 				'default'   => [],
 				'condition' => [
-					'spe_post_blog_queryby' => [ 'categories' ]
+					'blog_queryby' => [ 'categories' ]
 				],
 			]
 		);
 
 		$this->add_control(
-			'spe_post_blog_byposts',
+			'blog_byposts',
 			[
 				'label'     => esc_html__( 'By Posts', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
-					'spe_post_blog_queryby' => [ 'posts' ]
+					'blog_queryby' => [ 'posts' ]
 				],
 			]
 		);
 
 		$this->add_control(
-			'spe_post_blog_post',
+			'blog_post',
 			[
 				'label'     => esc_html__( 'Select Posts', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT2,
@@ -252,24 +252,24 @@ class Blog_Grid extends Widget_Base {
 				'options'   => self::get_posts(),
 				'default'   => [],
 				'condition' => [
-					'spe_post_blog_queryby' => [ 'posts' ]
+					'blog_queryby' => [ 'posts' ]
 				],
 			]
 		);
 
 		$this->add_control(
-			'spe_post_blog_byposttype',
+			'blog_byposttype',
 			[
 				'label'     => esc_html__( 'By Posttype', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
-					'spe_post_blog_queryby' => [ 'postype' ]
+					'blog_queryby' => [ 'postype' ]
 				],
 			]
 		);
 
 		$this->add_control(
-			'spe_post_blog_posttype',
+			'blog_posttype',
 			[
 				'label'     => esc_html__( 'Select Postype', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::SELECT2,
@@ -277,13 +277,13 @@ class Blog_Grid extends Widget_Base {
 				'options'   => self::get_posttype(),
 				'default'   => [],
 				'condition' => [
-					'spe_post_blog_queryby' => [ 'postype' ]
+					'blog_queryby' => [ 'postype' ]
 				],
 			]
 		);
 
 		$this->add_control(
-			'spe_post_blog_otherquery',
+			'blog_otherquery',
 			[
 				'label'     => esc_html__( 'Others Filter', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
@@ -292,7 +292,7 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_control(
-			'spe_post_blog_order_by',
+			'blog_order_by',
 			[
 				'label'   => esc_html__( 'Order by', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
@@ -307,7 +307,7 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_control(
-			'spe_post_blog_order',
+			'blog_order',
 			[
 				'label'   => esc_html__( 'Order', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
@@ -320,7 +320,7 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_control(
-			'spe_post_blog_offset',
+			'blog_offset',
 			[
 				'label'   => esc_html__( 'Offset', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
@@ -331,7 +331,7 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_control(
-			'spe_post_blog_limit',
+			'blog_limit',
 			[
 				'label'   => esc_html__( 'Limit Display', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
@@ -341,7 +341,7 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'spe_post_content_limit',
+			'content_limit',
 			[
 				'label'     => esc_html__( 'Content Limit Display', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
@@ -353,6 +353,22 @@ class Blog_Grid extends Widget_Base {
 				]
 			]
 		);
+
+		$this->add_control(
+			'title_length', [
+				'label'   => esc_html__( 'Title Length', 'banca-core' ),
+				'type'    => Controls_Manager::NUMBER,
+				'default' => 8
+			]
+		);
+
+		/*$this->add_control(
+			'excerpt_length', [
+				'label' => esc_html__('Excerpt Word Length', 'banca-core'),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 8
+			]
+		);*/
 
 		$this->end_controls_section();
 	}
@@ -470,7 +486,7 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_control(
-			'blog_grid_item_bg_hover',
+			'blog_item_bg_hover',
 			[
 				'label'     => esc_html__( 'Background Hover', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
@@ -482,7 +498,31 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'blog_grid_item_radius',
+			'blog_top_margin',
+			[
+				'label'       => esc_html__( 'Margin Top', 'spider-elements' ),
+				'description' => esc_html__( 'Margin top the blog. ', 'spider-elements' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'       => [
+					'px' => [
+						'max' => 120,
+					],
+					'em' => [
+						'max' => 0,
+					],
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .blog-grid' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+				'condition'   => [
+					'style' => [ '1', '2', '3', '4', '5' ]
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'blog_item_radius',
 			[
 				'label'      => esc_html__( 'Border Radius', 'spider -elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
@@ -744,10 +784,10 @@ class Blog_Grid extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name'     => 'btn_background',
-				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven',
+				'name'      => 'btn_background',
+				'types'     => [ 'classic', 'gradient' ],
+				'exclude'   => [ 'image' ],
+				'selector'  => '{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven',
 				'condition' => [
 					'style' => '4'
 				],
@@ -833,10 +873,10 @@ class Blog_Grid extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name'     => 'btn_hover_background',
-				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven:hover',
+				'name'      => 'btn_hover_background',
+				'types'     => [ 'classic', 'gradient' ],
+				'exclude'   => [ 'image' ],
+				'selector'  => '{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven:hover',
 				'condition' => [
 					'style' => '4'
 				],
@@ -909,9 +949,9 @@ class Blog_Grid extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .blog-meta-two .date a'                  => 'color: {{VALUE}};',
-					'{{WRAPPER}} .blog-meta-one .date a'                  => 'color: {{VALUE}};',
-					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-two .date a'                                                                                                                                  => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-one .date a'                                                                                                                                  => 'color: {{VALUE}};',
+//					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 '                                                                                                                 => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-item .blog-meta .author-info h5, .blog-item .blog-meta .author-info span, .blog-item .blog-meta :is(.blog-category, .blog-category a, .blog-read)' => 'color: {{VALUE}} !important;',
 				],
 				'condition' => [
@@ -972,13 +1012,28 @@ class Blog_Grid extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .post-img .tags' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-meta-one .tags'           => 'color: {{VALUE}};',
-					'{{WRAPPER}} .blog-item .blog-meta .tags'    => 'color: {{VALUE}};',
-
+					'{{WRAPPER}} .blog-item .blog-meta .tags, .blog-read::before'    => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'style'  => [ '1', '3', '5' ],
 					'style!' => [ '2', '4' ]
 				]
+			]
+		);
+
+		$this->add_control(
+			'bg_hover_category',
+			[
+				'label'     => esc_html__( 'Background Hover', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .blog-meta-two .post-img .tags:hover' => 'background: {{VALUE}};',
+				],
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2', '3', '4', '5' ]
+				],
 			]
 		);
 
@@ -989,12 +1044,13 @@ class Blog_Grid extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .blog-meta-one .tags:hover' => 'color: {{VALUE}} !important;',
-					'{{WRAPPER}} .blog-item .blog-meta .tags:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-one .tags:hover'           => 'color: {{VALUE}} !important;',
+					'{{WRAPPER}} .blog-item .blog-meta .tags:hover'    => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-two .post-img .tags:hover' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style'  => [ '3', '5' ],
-					'style!' => [ '1', '2', '4' ]
+					'style'  => [ '3', '5', '1' ],
+					'style!' => [ '2', '4' ]
 				]
 			]
 		);
@@ -1018,7 +1074,7 @@ class Blog_Grid extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'      => 'author_typography',
-				'selector'  => '{{WRAPPER}} .blog-meta-one .author a,
+				'selector'  => '{{WRAPPER}} .blog-meta-one .post-data .by-author .author-name,
 							   {{WRAPPER}} .blog-item .blog-meta .author-info h5 a',
 				'condition' => [
 					'style'  => [ '3', '5' ],
@@ -1033,8 +1089,8 @@ class Blog_Grid extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .blog-meta-one .author a'                => 'color: {{VALUE}}',
-					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .blog-meta-one .post-data .by-author .author-name' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a'           => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'style'  => [ '3', '5' ],
@@ -1050,8 +1106,8 @@ class Blog_Grid extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .blog-meta-one .author a:hover'                => 'color: {{VALUE}};',
-					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-one .post-data .by-author .author-name:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a:hover'           => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'style'  => [ '3', '5' ],
@@ -1059,7 +1115,7 @@ class Blog_Grid extends Widget_Base {
 				],
 			]
 		);
-	//============ End meta Author Style Controls =================//
+		//============ End meta Author Style Controls =================//
 
 		$this->end_controls_section();
 	}
@@ -1073,30 +1129,30 @@ class Blog_Grid extends Widget_Base {
 		// query part
 		$query['post_status']      = 'publish';
 		$query['suppress_filters'] = false;
-		if ( $spe_post_blog_queryby == 'postype' ) {
-			$query['post_type'] = isset( $spe_post_blog_posttype ) ? $spe_post_blog_posttype : [ 'post' ];
+		if ( $blog_queryby == 'postype' ) {
+			$query['post_type'] = isset( $blog_posttype ) ? $blog_posttype : [ 'post' ];
 		} else {
 			$query['post_type'] = [ 'post' ];
 		}
 
-		$query['orderby'] = $spe_post_blog_order_by;
-		if ( ! empty( $spe_post_blog_order ) ) {
-			$query['order'] = $spe_post_blog_order;
+		$query['orderby'] = $blog_order_by;
+		if ( ! empty( $blog_order ) ) {
+			$query['order'] = $blog_order;
 		}
-		if ( ! empty( $spe_post_blog_limit ) ) {
-			$query['posts_per_page'] = (int) $spe_post_blog_limit;
+		if ( ! empty( $blog_limit ) ) {
+			$query['posts_per_page'] = (int) $blog_limit;
 		}
-		if ( ! empty( $spe_post_blog_offset ) ) {
-			$query['offset'] = (int) $spe_post_blog_offset;
+		if ( ! empty( $blog_offset ) ) {
+			$query['offset'] = (int) $blog_offset;
 		}
 
-		if ( $spe_post_blog_queryby == 'categories' ) {
-			if ( is_array( $spe_post_blog_categories ) && sizeof( $spe_post_blog_categories ) > 0 ) {
+		if ( $blog_queryby == 'categories' ) {
+			if ( is_array( $blog_categories ) && sizeof( $blog_categories ) > 0 ) {
 				$cate_query         = [
 					[
 						'taxonomy' => 'category',
 						'field'    => 'term_id',
-						'terms'    => $spe_post_blog_categories,
+						'terms'    => $blog_categories,
 					],
 					'relation' => 'AND',
 				];
@@ -1104,9 +1160,9 @@ class Blog_Grid extends Widget_Base {
 			}
 		}
 
-		if ( $spe_post_blog_queryby == 'posts' ) {
-			if ( is_array( $spe_post_blog_post ) && sizeof( $spe_post_blog_post ) > 0 ) {
-				$query['post__in'] = $spe_post_blog_post;
+		if ( $blog_queryby == 'posts' ) {
+			if ( is_array( $blog_post ) && sizeof( $blog_post ) > 0 ) {
+				$query['post__in'] = $blog_post;
 			}
 		}
 

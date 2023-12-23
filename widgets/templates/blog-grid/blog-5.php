@@ -1,47 +1,52 @@
 <?php
-if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
 }
 ?>
 <div class="ezd-grid ezd-grid-cols-12">
-    <?php
-    if ($post_query->have_posts()) {
-        while ( $post_query->have_posts() ) :
-            $post_query->the_post();
-            ?>
-            <div class="ezd-lg-col-<?php echo esc_attr($column_grid); ?> ezd-sm-col-6">
+	<?php
+	if ( $post_query->have_posts() ) {
+		while ( $post_query->have_posts() ) :
+			$post_query->the_post();
+			?>
+            <div class="ezd-lg-col-<?php echo esc_attr( $column_grid ); ?> ezd-sm-col-6 blog-grid">
                 <div class="section-title section-tag wow fadeInRight" data-wow-delay="0.1s">
                     <div class="blog-item blog-meta-two">
                         <div class="blog-meta">
                             <div class="author-img">
-                                <?php echo get_avatar(get_the_author_meta('ID'), 45); ?>
+								<?php echo get_avatar( get_the_author_meta( 'ID' ), 45 ); ?>
                             </div>
                             <div class="author-info">
-                                <h5>
-                                    <?php esc_html_e('Posted by', 'spider-elements') ?>
-                                    <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-                                        <?php echo get_the_author(); ?>
+                                <h5 class="by-author">
+									<?php esc_html_e( 'Posted by', 'spider-elements' ) ?>
+                                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+										<?php echo get_the_author(); ?>
                                     </a>
                                 </h5>
-                                <span><?php echo get_the_date(__('M d, Y')) ?></span>
+                                <span><?php echo get_the_date( __( 'M d, Y' ) ) ?></span>
                             </div>
                         </div>
-                        <div class="blog-meta">
-	                        <?php echo '<a href="' . esc_url(spe_get_the_first_taxonomy_link()) . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
-                            <span class="blog-read"><?php echo spe_get_reading_time('200'); ?></span>
+                        <div class="blog-meta blog-meta2">
+							<?php echo '<a href="' . esc_url( spe_get_the_first_taxonomy_link() ) . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
+                            <span class="blog-read"><?php echo spe_get_reading_time( '200' ); ?></span>
                         </div>
-                        <a href="<?php the_permalink(); ?>"><?php the_title('<h2 class="blog-title">', '</h2>') ?></a>
+
+                        <a class="blog-five-title" href="<?php the_permalink(); ?>">
+                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?>
+                                <h2>
+                        </a>
+
                         <div class="read-more-btn">
-                            <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'spider-elements') ?>
+                            <a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'spider-elements' ) ?>
                                 <ion-icon name="arrow-forward-sharp"></ion-icon>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        <?php
-        endwhile;
-    }
-    wp_reset_postdata();
-    ?>
+		<?php
+		endwhile;
+	}
+	wp_reset_postdata();
+	?>
 </div>

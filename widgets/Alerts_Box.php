@@ -9,6 +9,7 @@ use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,7 +28,7 @@ class Alerts_Box extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Alerts Box', 'spider-elements' );
+		return esc_html__( 'Alerts Box', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -103,37 +104,37 @@ class Alerts_Box extends Widget_Base {
 		//====================== Alert/Note ======================//
 		$this->start_controls_section(
 			'section_alert', [
-				'label' => __( 'Alert/Note', 'spider-elements' ),
+				'label' => esc_html__( 'Alert/Note', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'display_type', [
-				'label'   => __( 'Display Type', 'spider-elements' ),
+				'label'   => esc_html__( 'Display Type', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'alert',
 				'options' => [
-					'alert'          => __( 'Alert Box', 'spider-elements' ),
-					'note'           => __( 'Note', 'spider-elements' ),
-					'note-with-icon' => __( 'Note With Icon', 'spider-elements' ),
-					'explanation'    => __( 'Explanation', 'spider-elements' ),
-					'dual-box'       => __( 'Dual Box Notice', 'spider-elements' ),
-					'block-notice'   => __( 'Block Notice', 'spider-elements' ),
+					'alert'          => esc_html__( 'Alert Box', 'spider-elements' ),
+					'note'           => esc_html__( 'Note', 'spider-elements' ),
+					'note-with-icon' => esc_html__( 'Note With Icon', 'spider-elements' ),
+					'explanation'    => esc_html__( 'Explanation', 'spider-elements' ),
+					'dual-box'       => esc_html__( 'Dual Box Notice', 'spider-elements' ),
+					'block-notice'   => esc_html__( 'Block Notice', 'spider-elements' ),
 				],
 			]
 		);
 
 		$this->add_control(
 			'alert_type', [
-				'label'          => __( 'Type', 'spider-elements' ),
+				'label'          => esc_html__( 'Type', 'spider-elements' ),
 				'type'           => Controls_Manager::SELECT,
 				'default'        => 'message',
 				'options'        => [
-					'message' => __( 'Message', 'spider-elements' ),
-					'warning' => __( 'Warning', 'spider-elements' ),
-					'info'    => __( 'Info', 'spider-elements' ),
-					'success' => __( 'Success', 'spider-elements' ),
-					'danger'  => __( 'Danger', 'spider-elements' ),
+					'message' => esc_html__( 'Message', 'spider-elements' ),
+					'warning' => esc_html__( 'Warning', 'spider-elements' ),
+					'info'    => esc_html__( 'Info', 'spider-elements' ),
+					'success' => esc_html__( 'Success', 'spider-elements' ),
+					'danger'  => esc_html__( 'Danger', 'spider-elements' ),
 				],
 				'style_transfer' => true,
 			]
@@ -141,7 +142,7 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_control(
 			'alert_title', [
-				'label'       => __( 'Title', 'spider-elements' ),
+				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 				'default'     => 'Notice Message! Your message here'
@@ -150,7 +151,7 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_control(
 			'alert_description', [
-				'label'       => __( 'Description', 'spider-elements' ),
+				'label'       => esc_html__( 'Description', 'spider-elements' ),
 				'type'        => Controls_Manager::WYSIWYG,
 				'label_block' => true,
 			]
@@ -158,12 +159,12 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_control(
 			'show_dismiss', [
-				'label'     => __( 'Dismiss Button', 'spider-elements' ),
+				'label'     => esc_html__( 'Dismiss Button', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'show',
 				'options'   => [
-					'show' => __( 'Show', 'spider-elements' ),
-					'hide' => __( 'Hide', 'spider-elements' ),
+					'show' => esc_html__( 'Show', 'spider-elements' ),
+					'hide' => esc_html__( 'Hide', 'spider-elements' ),
 				],
 				'condition' => [
 					'display_type' => [ 'alert' ]
@@ -173,8 +174,11 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_control(
 			'icon', [
-				'label' => __( 'Icon', 'spider-elements' ),
-				'type'  => Controls_Manager::ICONS,
+				'label'     => esc_html__( 'Icon', 'spider-elements' ),
+				'type'      => Controls_Manager::ICONS,
+				'condition' => [
+					'display_type!' => [ 'explanation' ]
+				]
 			]
 		);
 
@@ -197,7 +201,7 @@ class Alerts_Box extends Widget_Base {
 		//====================== Style Title ======================//
 		$this->start_controls_section(
 			'style_title', [
-				'label' => __( 'Title', 'spider-elements' ),
+				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -207,6 +211,7 @@ class Alerts_Box extends Widget_Base {
 				'name'     => 'typography_title',
 				'selector' => '
 					{{WRAPPER}} .__title, 
+					{{WRAPPER}} .message_alert .title, 
 					{{WRAPPER}} .block-notice-wrapper .title,  
 					{{WRAPPER}} .nic-content-wrap .note-box h5, 
 					{{WRAPPER}} .explanation::after, {{WRAPPER}} .notice h5
@@ -216,27 +221,29 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_control(
 			'color_title', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .__title'                       => 'color: {{VALUE}};',
 					'{{WRAPPER}} .explanation::after'            => 'color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper .title'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .notice h5'                     => 'color: {{VALUE}};',
 					'{{WRAPPER}} .nic-content-wrap .note-box h5' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .message_alert h5' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert .title'          => 'color: {{VALUE}};',
 				],
 			]
 		);
 
-		$this->add_control(
-			'bg_color_title', [
-				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .explanation::after' => 'background-color: {{VALUE}};',
-				],
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'      => 'title_background',
+				'types'     => [ 'classic', 'gradient' ],
+				'exclude'   => [ 'image' ],
+				'selector'  => '{{WRAPPER}} .explanation::after',
 				'condition' => [
-					'display_type' => [ 'explanation' ]
+					'display_type'  => [ 'explanation' ],
+					'display_type!' => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ]
 				]
 			]
 		);
@@ -244,88 +251,97 @@ class Alerts_Box extends Widget_Base {
 		$this->end_controls_section(); //End Style Title
 
 
-		//============================ Style Alert =========================//
+		//============================Start Description  Style section =========================//
 		$this->start_controls_section(
 			'section_type', [
-				'label' => __( 'Alert Description', 'spider-elements' ),
+				'label' => esc_html__( 'Alert Description', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'color_content', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .__content'                    => 'color: {{VALUE}};',
-					'{{WRAPPER}} .__content p'                  => 'color: {{VALUE}};',
-					'{{WRAPPER}} .explanation p'                => 'color: {{VALUE}};',
-					'{{WRAPPER}} .notice p'                     => 'color: {{VALUE}};',
-					'{{WRAPPER}} .nic-content-wrap .note-box p' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .message_alert p' => 'color: {{VALUE}};',
-				],
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name'     => 'typography_content',
-				'selector' => '
-					{{WRAPPER}} .__content,
-					{{WRAPPER}} .__content p,
+				'selector' => '					
+					{{WRAPPER}} .message_alert p,
+					{{WRAPPER}} .notice p,
 					{{WRAPPER}} .explanation p,
-					{{WRAPPER}} .notice p, 
-					{{WRAPPER}} .nic-content-wrap .note-box p
-				'
+					{{WRAPPER}} .dual-box-wrapper .dual-box-content p, 
+					{{WRAPPER}} .nic-content-wrap .note-box p,
+					{{WRAPPER}} .block-notice-wrapper .block-notice-body p
+					',
 			]
 		);
 
 		$this->add_control(
-			'background', [
-				'label'     => __( 'Background Color', 'spider-elements' ),
+			'color_content', [
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .message_alert'                                           => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .notice:not(.dual-box-wrapper .dual-box-content .notice)' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-box'                   => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .dual-box-wrapper'                                        => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .notice p'                                  => 'color: {{VALUE}};',
+					'{{WRAPPER}} .explanation p'                             => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dual-box-wrapper .dual-box-content p'      => 'color: {{VALUE}};',
+					'{{WRAPPER}} .nic-content-wrap .note-box p'              => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert p'                           => 'color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper .block-notice-body p' => 'color: {{VALUE}};',
 
 				],
-				'separator' => 'before'
 			]
 		);
 
-		$this->add_control(
-			'background2', [
-				'label'     => __( 'Background Color 02', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .explanation' => 'background: linear-gradient(90deg, {{background.VALUE}}, {{VALUE}});',
-				],
-				'condition' => [
-					'display_type' => [ 'explanation' ]
-				]
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'background',
+				'types'    => [ 'classic', 'gradient' ],
+				'selector' => '
+							{{WRAPPER}} .notice,
+							{{WRAPPER}} .nic-alert .nic-content-wrap .note-box,
+							{{WRAPPER}} .explanation,
+							{{WRAPPER}} .message_alert,
+							{{WRAPPER}} .block-notice-wrapper, .block-notice-content-wrapper,
+							{{WRAPPER}} .dual-box-wrapper
+							',
 			]
 		);
 
 		$this->add_control(
 			'border_color', [
-				'label'     => __( 'Border Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .message_alert'                                    => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .explanation::before'                              => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .notice'                                           => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .note-with-icon .nic-content-wrap'                 => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .dual-box-wrapper'                                 => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .dual-box-wrapper.notice-danger .dual-box-content' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert'                                                                                      => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .explanation::before'                                                                                => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .notice-box'                                                                                         => 'border-color: {{VALUE}};',
+//					'{{WRAPPER}} .dual-box-wrapper'              => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-box'                                                              => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper.block-notice-message:before, .block-notice-wrapper.block-notice-message:after' => 'border-color: {{VALUE}};',
 				],
+				'condition' => [
+					'display_type'  => [ 'explanation', 'alert', 'note', 'note-with-icon', 'block-notice' ],
+					'display_type!' => [ 'dual-box' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'border2_color', [
+				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .dual-box-wrapper, .dual-box-wrapper .dual-box-content.top-left' => 'border-color: {{VALUE}};',
+				],
+				'condition' => [
+					'display_type'  => [ 'dual-box' ],
+					'display_type!' => [ 'explanation', 'alert', 'note', 'note-with-icon', 'block-notice' ]
+				]
 			]
 		);
 
 		$this->add_control(
 			'border_left-width', [
-				'label'     => __( 'Left Border Width', 'spider-elements' ),
+				'label'     => esc_html__( 'Left Border Width', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -344,7 +360,7 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_responsive_control(
 			'padding', [
-				'label'      => __( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -360,23 +376,23 @@ class Alerts_Box extends Widget_Base {
 
 		$this->add_control(
 			'dual-layer-alignment', [
-				'label'     => __( 'Layer Alignment', 'spider-elements' ),
+				'label'     => esc_html__( 'Layer Alignment', 'spider-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'top-left'     => [
-						'title' => __( 'Top Left', 'spider-elements' ),
+						'title' => esc_html__( 'Top Left', 'spider-elements' ),
 						'icon'  => 'fa fa-align-left',
 					],
 					'top-right'    => [
-						'title' => __( 'Top Right', 'spider-elements' ),
+						'title' => esc_html__( 'Top Right', 'spider-elements' ),
 						'icon'  => 'fa fa-align-right',
 					],
 					'bottom-left'  => [
-						'title' => __( 'Bottom Left', 'spider-elements' ),
+						'title' => esc_html__( 'Bottom Left', 'spider-elements' ),
 						'icon'  => 'fa fa-align-left',
 					],
 					'bottom-right' => [
-						'title' => __( 'Bottom Right', 'spider-elements' ),
+						'title' => esc_html__( 'Bottom Right', 'spider-elements' ),
 						'icon'  => 'fa fa-align-right',
 					],
 				],
@@ -394,73 +410,18 @@ class Alerts_Box extends Widget_Base {
 		//======================== Style Icon ========================//
 		$this->start_controls_section(
 			'section_icon', [
-				'label'     => __( 'Icon', 'spider-elements' ),
+				'label'     => esc_html__( 'Icon', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'display_type' => [ 'note-with-icon' ]
+					'display_type'  => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ],
+					'display_type!' => [ 'explanation' ]
 				]
 			]
 		);
 
 		$this->add_control(
-			'icon_color', [
-				'label'     => __( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .info-tab .icon-wrapper i' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_bgcolor',
-			[
-				'label'     => __( 'Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-icon' => 'background-color: {{VALUE}};',
-				]
-			]
-		);
-
-		$this->add_control(
-			'icon_after_color',
-			[
-				'label'     => __( 'Ribbon Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .nic-alert .note-icon .icon-wrapper::after' => 'background-color: {{VALUE}};',
-				]
-			]
-		);
-
-		$this->end_controls_section(); // End Style Icon
-
-
-		//======================== Style Dual Box Icon ========================//
-		$this->start_controls_section(
-			'dual_box_icon', [
-				'label'     => __( 'Icon', 'spider-elements' ),
-				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'display_type' => [ 'dual-box' ]
-				]
-			]
-		);
-
-		$this->add_control(
-			'dual_box_icon_color', [
-				'label'     => __( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'dual_box_icon_size', [
-				'label'     => __( 'Size', 'spider-elements' ),
+			'icons_size', [
+				'label'     => esc_html__( 'Size', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -469,12 +430,150 @@ class Alerts_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
+					'{{WRAPPER}} .fa-bell-slash:before'                         => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
+				'condition' => [
+					'display_type'  => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ],
+					'display_type!' => [ 'explanation' ]
+				]
 			]
 		);
 
-		$this->end_controls_section(); // End Style Dual Box Icon
+		$this->add_control(
+			'icon_color', [
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .info-tab .icon-wrapper i'                     => 'color: {{VALUE}};',
+					'{{WRAPPER}} .fa-bell-slash:before'                         => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'display_type'  => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ],
+					'display_type!' => [ 'explanation' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'closeicon_heading', [
+				'label'     => esc_html__( 'Close Icon' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'display_type'  => [ 'alert' ],
+					'display_type!' => [ 'note', 'note-with-icon', 'explanation', 'dual-box', 'block-notice' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'close_icon_size', [
+				'label'     => esc_html__( 'Size', 'spider-elements' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .icon_close:before' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'display_type'  => [ 'alert' ],
+					'display_type!' => [ 'note', 'note-with-icon', 'explanation', 'dual-box', 'block-notice' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'close_icon_color', [
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_close:before' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'display_type'  => [ 'alert' ],
+					'display_type!' => [ 'note', 'note-with-icon', 'explanation', 'dual-box', 'block-notice' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'icon_background',
+			[
+				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-icon:after'                => 'background-color: {{VALUE}};',
+				],
+				'condition' => [
+					'display_type'  => [ 'note-with-icon', 'block-notice' ],
+					'display_type!' => [ 'alert', 'note', 'explanation', 'dual-box' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'icon_after_color',
+			[
+				'label'     => esc_html__( 'Ribbon Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .nic-alert .note-icon .icon-wrapper::after' => 'background-color: {{VALUE}};',
+				],
+				'condition' => [
+					'display_type'  => [ 'note-with-icon' ],
+					'display_type!' => [ 'alert', 'note', 'explanation', 'dual-box', 'block-notice' ]
+				]
+			]
+		);
+
+		$this->end_controls_section(); // End Style Icon
+
+
+		//======================== Style Dual Box Icon ========================//
+//		$this->start_controls_section(
+//			'dual_box_icon', [
+//				'label'     => esc_html__( 'Icon', 'spider-elements' ),
+//				'tab'       => Controls_Manager::TAB_STYLE,
+//				'condition' => [
+//					'display_type' => [ 'dual-box' ]
+//				]
+//			]
+//		);
+//
+//		$this->add_control(
+//			'dual_box_icon_color', [
+//				'label'     => esc_html__( 'Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'color: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_control(
+//			'dual_box_icon_size', [
+//				'label'     => esc_html__( 'Size', 'spider-elements' ),
+//				'type'      => Controls_Manager::SLIDER,
+//				'range'     => [
+//					'px' => [
+//						'min' => 0,
+//						'max' => 100,
+//					],
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'font-size: {{SIZE}}{{UNIT}};',
+//				],
+//			]
+//		);
+//
+//		$this->end_controls_section(); // End Style Dual Box Icon
 
 	}
 

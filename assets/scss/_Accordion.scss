@@ -1,7 +1,6 @@
 .toggle_shortcode {
   padding-bottom: 60px;
 }
-
 .toggle_btn {
   display: block;
   font-size: 16px;
@@ -9,7 +8,7 @@
   color: var(--black_800);
   background: var(--black_25);
   text-align: left;
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 12px 30px;
   position: relative;
   text-decoration: none;
@@ -238,11 +237,12 @@
 
 .multi-collapse {
   .toggle_body {
-    border: 1px solid rgb(235 235 235);
+    //border: 1px solid rgb(235 235 235);
     padding: 18px 30px 24px;
     border-radius: 0 0 4px 4px;
     line-height: 26px;
     background: #ffffff;
+    box-shadow: none !important;
     @media only screen and (min-width: 320px) and (max-width: 425px) {
       padding: 18px 15px 24px;
     }
@@ -358,6 +358,10 @@
 }
 
 .accordion-article-wrap {
+  .accordion-article-inner {
+    border: 1px solid rgb(235 235 235);
+    border-radius: 3px;
+  }
   .toggle_btn {
     font-weight: 400;
   }
@@ -367,14 +371,21 @@
     margin: 12px 0;
     min-height: 230px;
 
-    h4 {
+    a {
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+    .post_title {
       color: rgb(36 39 41);
       font-size: 16px;
       font-weight: 600;
       line-height: 22px;
+      transition: color 0.2s linear;
 
       &:hover {
-        color: rgb(76 76 241);
+        color: #00bf58;
       }
     }
     .post-meta {
