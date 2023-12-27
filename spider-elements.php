@@ -3,18 +3,17 @@
  * Plugin Name: Spider Elements
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Author: spider-themes
- * Version: 0.5.0
+ * Version: 0.6.0
  * Requires at least: 5.0
  * Tested up to: 6.4.2
  * Requires PHP: 7.4
  * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.18.2
+ * Elementor tested up to: 3.18.3
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
  * Domain Path: /languages
  */
-
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
@@ -40,7 +39,7 @@ if (!class_exists('SPEL')) {
          *
          * @var string The plugin version.
          */
-        const VERSION = '0.5.0';
+        const VERSION = '0.6.0';
 
         /**
          * Minimum Elementor Version

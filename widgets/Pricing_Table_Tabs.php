@@ -279,7 +279,7 @@ class Pricing_Table_Tabs extends Widget_Base
         $pricing_tables = $settings[ 'pricing_tables' ];
         $cats = array_column($pricing_tables, 'tab_title');
         $getCats = array_unique($cats);
-        $table_data = spel_return_tab_data($getCats, $pricing_tables);
+        $table_data = spel_get_tab_data($getCats, $pricing_tables);
 
         ?>
         <div class="ezd-grid ezd-grid-cols-12">
@@ -367,7 +367,7 @@ class Pricing_Table_Tabs extends Widget_Base
                                             <?php
                                         }
                                         if (!empty($table_item[ 'btn_label_1' ])) { ?>
-                                            <a <?php spel_the_button($table_item[ 'btn_url_1' ]) ?> class="pricing-btn">
+                                            <a <?php spel_button_link($table_item[ 'btn_url_1' ]) ?> class="pricing-btn">
                                                 <?php echo esc_html($table_item[ 'btn_label_1' ]) ?>
                                             </a>
                                             <?php
@@ -377,7 +377,7 @@ class Pricing_Table_Tabs extends Widget_Base
                                             <?php
                                         }
                                         if (!empty($table_item[ 'btn_label_2' ])) { ?>
-                                            <a <?php spel_the_button($table_item[ 'btn_url_2' ]) ?> class="pricing-btn">
+                                            <a <?php spel_button_link($table_item[ 'btn_url_2' ]) ?> class="pricing-btn">
                                                 <?php echo esc_html($table_item[ 'btn_label_2' ]) ?>
                                             </a>
                                             <?php
@@ -389,7 +389,7 @@ class Pricing_Table_Tabs extends Widget_Base
                             }
                             ?>
                         </div>
-                        <?php echo !empty($settings[ 'ribbon_label' ][ 'id' ]) ? wp_get_attachment_image($settings[ 'ribbon_label' ][ 'id' ], '', [ 'class' => 'popular ezd-d-none ezd-d-lg-block' ]) : '' ?>
+                        <?php echo !empty($settings[ 'ribbon_label' ][ 'id' ]) ? wp_get_attachment_image(absint($settings[ 'ribbon_label' ][ 'id' ]), '', [ 'class' => 'popular ezd-d-none ezd-d-lg-block' ]) : '' ?>
                     </div>
                     <?php
                 }

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <div class="swiper-slide">
                             <div class="testimonial testimonial-item">
                                 <div class="author-image">
-									<?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'author-img' ] ) ?>
+									<?php echo wp_get_attachment_image( absint($item[ 'author_image' ][ 'id' ]), 'full', '', [ 'class' => 'author-img' ] ) ?>
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-img-top">

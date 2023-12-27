@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div>
 						<?php if ( ! empty( $item[ 'signature' ][ 'id' ] ) ) : ?>
                             <div class="sign">
-								<?php echo wp_get_attachment_image( $item[ 'signature' ][ 'id' ], 'full' ) ?>
+								<?php echo wp_get_attachment_image( absint($item[ 'signature' ][ 'id' ]), 'full' ) ?>
                             </div>
 						<?php endif; ?>
                     </div>
@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
 						<?php
 						if ( ! empty( $settings[ 'shape' ][ 'id' ] ) ) :
-							echo wp_get_attachment_image( $settings[ 'shape' ][ 'id' ], 'full', '',
+							echo wp_get_attachment_image( absint($settings[ 'shape' ][ 'id' ]), 'full', '',
 								array( 'class' => 'dot' ) );
 						endif;
 
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						echo '<div class="round two"></div>';
 
 						if ( ! empty( $item[ 'author_image' ][ 'id' ] ) ) :
-							echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full' );
+							echo wp_get_attachment_image( absint($item[ 'author_image' ][ 'id' ]), 'full' );
 						endif;
 						?>
                     </div>

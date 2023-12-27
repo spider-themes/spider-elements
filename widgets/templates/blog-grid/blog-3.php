@@ -15,11 +15,11 @@ if (!defined('ABSPATH')) {
                         <a href="<?php the_permalink(); ?>" class="img"><?php the_post_thumbnail(); ?></a>
                     </figure>
                     <div class="post-data">
-                        <?php echo '<a href="' . spel_get_the_first_taxonomy_link() . '" class="tags">' . spel_get_the_first_taxonomy() . '</a>'; ?>
+                        <?php echo '<a href="' . spel_get_first_taxonomy_link() . '" class="tags">' . spel_get_first_taxonomy() . '</a>'; ?>
                         <a href="<?php the_permalink(); ?>">
                             <?php the_title('<h2 class="tran3s blog-title">', '</h2>') ?>
                         </a>
-                        <?php spel_get_author_name(); ?>
+                        <?php spel_get_post_author_name(); ?>
                     </div>
                 </div>
             </div>

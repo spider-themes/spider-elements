@@ -69,7 +69,7 @@ if (!defined('ABSPATH')) {
                                 </div>
                                 <?php
                                 if (!empty($table[ 'btn_label' ])) { ?>
-                                    <a <?php spel_the_button($table[ 'btn_url' ]) ?> class="btn spe_pricing_item_btn">
+                                    <a <?php spel_button_link($table[ 'btn_url' ]) ?> class="btn spe_pricing_item_btn">
                                         <?php echo esc_html($table[ 'btn_label' ]) ?>
                                     </a>
                                     <?php
@@ -125,7 +125,7 @@ if (!defined('ABSPATH')) {
                                 </div>
                                 <?php
                                 if (!empty($table[ 'btn_label' ])) { ?>
-                                    <a <?php spel_the_button($table[ 'btn_url' ]) ?> class="btn spe_pricing_item_btn">
+                                    <a <?php spel_button_link($table[ 'btn_url' ]) ?> class="btn spe_pricing_item_btn">
                                         <?php echo esc_html($table[ 'btn_label' ]) ?>
                                     </a>
                                     <?php

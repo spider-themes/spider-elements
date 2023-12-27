@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                      data-wow-delay="<?php echo esc_attr( $delay_time ) ?>s">
 									<?php
 									if ( ! empty( $table['table_icon']['id'] ) ) {
-										echo wp_get_attachment_image( $table['table_icon']['id'], 'full' );
+										echo wp_get_attachment_image( absint($table['table_icon']['id']), 'full' );
 									}
 									if ( ! empty( $table['title'] ) ) { ?>
                                         <h4 class="spe_pricing_item_header"> <?php echo esc_html( $table['title'] ) ?> </h4>
@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<?php
 									}
 									if ( ! empty( $table['btn_label'] ) ) { ?>
-                                        <a <?php spel_the_button( $table['btn_url'] ) ?>
+                                        <a <?php spel_button_link( $table['btn_url'] ) ?>
                                                 class="btn spe_pricing_item_btn">
 											<?php echo esc_html( $table['btn_label'] ) ?>
                                         </a>
@@ -103,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <div class="spe_pricing_item_wrapper pricing-item-2<?php echo esc_attr( $active ); ?>">
 								<?php
 								if ( ! empty( $table['table_icon']['id'] ) ) {
-									echo wp_get_attachment_image( $table['table_icon']['id'], 'full' );
+									echo wp_get_attachment_image( absint($table['table_icon']['id']), 'full' );
 								}
 								if ( ! empty( $table['title'] ) ) { ?>
                                     <h4 class="spe_pricing_item_header"><?php echo esc_html( $table['title'] ) ?></h4>
@@ -123,7 +123,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<?php
 								}
 								if ( ! empty( $table['btn_label'] ) ) { ?>
-                                    <a <?php spel_the_button( $table['btn_url'] ) ?> class="btn spe_pricing_item_btn">
+                                    <a <?php spel_button_link( $table['btn_url'] ) ?> class="btn spe_pricing_item_btn">
 										<?php echo esc_html( $table['btn_label'] ) ?>
                                     </a>
 									<?php

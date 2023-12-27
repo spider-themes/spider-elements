@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 					if ( ! empty( $item[ 'author_image' ][ 'id' ] ) ) { ?>
                         <div class="author_img">
-							<?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full' ) ?>
+							<?php echo wp_get_attachment_image( absint($item[ 'author_image' ][ 'id' ]), 'full' ) ?>
                         </div>
 						<?php
 					}

@@ -20,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							}
 						} elseif ( 'star_unicode' === $settings['star_style'] ) {
 							$icon = '&#9733;';
-
 							if ( 'outline' === $settings['unmarked_star_style'] ) {
 								$icon = '&#9734;';
 							}
@@ -56,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 <div class="ezd-d-flex ezd-align-items-center">
                                     <?php
                                     if ( !empty($item['author_image']['id']) ) {
-                                        echo wp_get_attachment_image($item['author_image']['id'], 'full', '', ['class' => 'author-img ezd-rounded-circle']);
+                                        echo wp_get_attachment_image(absint($item['author_image']['id']), 'full', '', ['class' => 'author-img ezd-rounded-circle']);
                                     }
                                     if ( !empty($item['author_name']) ) {
                                         ?>
@@ -68,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     }
                                     ?>
                                 </div>
-                                <?php echo !empty($item['company_image']['id']) ? wp_get_attachment_image($item['company_image']['id'], 'full', '', ['class' => 'quote-icon']) : '' ?>
+                                <?php echo !empty($item['company_image']['id']) ? wp_get_attachment_image(absint($item['company_image']['id']), 'full', '', ['class' => 'quote-icon']) : '' ?>
                             </div>
 							<?php
 						}

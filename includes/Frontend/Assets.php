@@ -68,7 +68,7 @@ class Assets
 		wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('text-type', SPEL_VEND . '/text-type/text-type.js', array('jquery'), SPEL_VERSION, true);
-		wp_register_script('counterup', SPEL_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), '', true);
+		wp_register_script('counterup', SPEL_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('waypoint', SPEL_VEND . '/waypoint/jquery.waypoints.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('wow', SPEL_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_register_script('artplayer', SPEL_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', true);

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
                 <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
                     <div class="feedback-block-one feedback-block-three">
-						<?php echo wp_get_attachment_image( $item[ 'company_image' ][ 'id' ], 'full', '',
+						<?php echo wp_get_attachment_image( absint($item[ 'company_image' ][ 'id' ]), 'full', '',
 							[ 'class' => 'quote-icon' ] ) ?>
 						<?php
 						if ( 'star_fontawesome' === $settings[ 'star_style' ] ) {
@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         <span><?php echo esc_html( $item[ 'author_position' ] ); ?></span>
                                     </div>
                                 </div>
-								<?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'author-img ezd-rounded-circle' ] ) ?>
+								<?php echo wp_get_attachment_image( absint($item[ 'author_image' ][ 'id' ]), 'full', '', [ 'class' => 'author-img ezd-rounded-circle' ] ) ?>
                             </div>
 							<?php
 						}
