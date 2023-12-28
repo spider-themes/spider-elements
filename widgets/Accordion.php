@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Accordion extends Widget_Base {
 
 	public function get_name() {
-		return 'docy_accordion'; // ID of the widget (Don't change this name)
+		return 'spel_accordion'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {
