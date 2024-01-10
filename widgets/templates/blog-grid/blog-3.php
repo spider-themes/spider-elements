@@ -17,8 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div class="post-data">
 						<?php echo '<a href="' . esc_url( spe_get_the_first_taxonomy_link() ) . '" class="tags">' . spe_get_the_first_taxonomy() . '</a>'; ?>
                         <a class="blog-tow-title" href="<?php the_permalink(); ?>">
-                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?>
-                                <h2>
+                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?></h2>
                         </a>
                         <h5 class="by-author">
 							<?php esc_html_e( 'by', 'spider-elements' ) ?>

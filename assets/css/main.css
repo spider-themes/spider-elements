@@ -836,6 +836,7 @@ a:hover, a:focus {
 }
 
 .accordion .doc_accordion {
+  overflow: hidden;
   border: 0;
   border-radius: unset;
   margin-bottom: 1rem;
@@ -1722,7 +1723,7 @@ ul.nav.nav-tabs {
 .doc_testimonial_slider .slick-dots li button:before {
   display: none;
 }
-.doc_testimonial_slider .slick-dots li:nth-child(even) button {
+.doc_testimonial_slider .slick-dots li :nth-child(even) button {
   background: #a5a5f8;
 }
 .doc_testimonial_slider .slick-dots li.slick-active button {
@@ -1825,6 +1826,9 @@ ul.nav.nav-tabs {
   opacity: 1;
 }
 
+.testimonial-slider-inner {
+  overflow: hidden;
+}
 .testimonial-slider-inner .testimonial-item {
   display: flex;
   border: 2px solid #e86a42;
@@ -1834,6 +1838,7 @@ ul.nav.nav-tabs {
   align-items: flex-start;
   margin-bottom: 78px;
   flex-direction: row-reverse;
+  transition: 0.3s;
 }
 .testimonial-slider-inner .testimonial-item p {
   font-size: 24px;
@@ -2056,7 +2061,7 @@ ul.nav.nav-tabs {
 }
 .feedback-block-one .name {
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 .feedback-block-one .name span {
   font-weight: 500;
@@ -2064,6 +2069,12 @@ ul.nav.nav-tabs {
 .feedback-block-one .review {
   border-top: 2px solid #000;
   padding-top: 40px;
+}
+@media (max-width: 1024px) {
+  .feedback-block-one .review {
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+  }
 }
 .feedback-block-one .review .text-md {
   font-size: 20px;
@@ -2627,6 +2638,10 @@ ul.nav.nav-tabs {
 .carousel img {
   width: 100%;
   height: auto;
+}
+
+.testimonial-item {
+  transition: 0.3s;
 }
 
 /*----------------- Video Playlist Widget CSS ------------------*/
@@ -8389,6 +8404,8 @@ ul.ordered-list li::before {
   height: 490px;
   z-index: 1;
   border: 1px solid #EEEEEE;
+  border-radius: 50%;
+  margin: 0 !important;
 }
 .big-circle .inner-circle {
   width: 51%;
@@ -8400,7 +8417,7 @@ ul.ordered-list li::before {
   bottom: 30%;
 }
 .big-circle .brand-icon {
-  background: #fff;
+  background: rgba(255, 255, 255, 0);
   position: absolute;
   z-index: 2;
   border: 1px solid #EEEEEE;
@@ -8444,7 +8461,7 @@ ul.ordered-list li::before {
   width: 100px;
   height: 100px;
   top: 22%;
-  left: -7%;
+  left: -5%;
   animation: jumpThree 8s infinite linear;
 }
 
@@ -8671,6 +8688,10 @@ ul.ordered-list li::before {
     left: 1%;
   }
 }
+.blog-meta-two {
+  transition: 0.3s;
+  margin-bottom: 0 !important;
+}
 .blog-meta-two .post-img {
   display: inline-block;
   overflow: hidden;
@@ -8717,8 +8738,8 @@ ul.ordered-list li::before {
   line-height: 1.28em;
   margin: 25px 0;
   font-weight: 500;
-  color: #60173c;
-  transition: color 0.2s linear;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
 }
 .blog-meta-two .blog-title:hover {
   color: #00bf58;
@@ -8775,6 +8796,7 @@ ul.ordered-list li::before {
 
 .blog-meta-one {
   margin-top: 0;
+  transition: 0.3s;
 }
 .blog-meta-one .post-img {
   overflow: hidden;
@@ -8791,18 +8813,18 @@ ul.ordered-list li::before {
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
-  color: #b9b9ba;
+  color: rgba(0, 0, 0, 0.7019607843);
   margin-bottom: 0;
   padding-left: 0;
   text-transform: capitalize;
 }
 .blog-meta-one .post-data .by-author .author-name {
   font-size: 16px;
-  color: #b9b9ba;
+  color: #212529;
   font-weight: 600;
 }
 .blog-meta-one .post-data .by-author .author-name:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .blog-meta-one .date {
   font-size: 14px;
@@ -8823,7 +8845,7 @@ ul.ordered-list li::before {
   line-height: 1.4em;
   color: #000;
   margin: 6px 0px 10px;
-  transition: color 0.2s linear;
+  transition: all 0.3s ease-in-out;
 }
 .blog-meta-one .blog-title:hover {
   color: #00bf58;
@@ -8971,6 +8993,7 @@ ul.ordered-list li::before {
   line-height: 1.5;
   padding-top: 5px;
   padding-left: 0;
+  transition: all 0.3s ease-in-out;
 }
 .blog-item .blog-title a {
   color: #ffffff;

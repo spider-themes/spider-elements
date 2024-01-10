@@ -272,6 +272,29 @@ class Accordion extends Widget_Base {
 			]
 		);
 
+//		$this->add_responsive_control(
+//			'acc_border_radius',
+//			[
+//				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
+//				'type'       => Controls_Manager::DIMENSIONS,
+//				'size_units' => [ 'px', 'em', '%' ],
+//				'selectors'  => [
+//					'{{WRAPPER}} .accordion .doc_accordion.spe_accordion_inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+//				],
+//			]
+//		);
+
+		$this->add_responsive_control(
+			'acc_border_radius', [
+				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
+					'{{WRAPPER}} .accordion .doc_accordion' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_responsive_control(
 			'accordion_bottom_spacing',
 			[
@@ -318,7 +341,7 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .accordion .spe_accordion_inner button.btn' => 'color: {{VALUE}};',
@@ -560,7 +583,7 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-widget-container .toggle_body' => 'color: {{VALUE}};',

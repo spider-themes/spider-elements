@@ -27,14 +27,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<?php echo get_the_date( __( 'd M Y' ) ) ?>
                             </a>
                         </div>
+                        <div>
                         <a class="blog-one-title" href="<?php the_permalink(); ?>">
-                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?>
-                                <h2>
+                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?></h2>
                         </a>
                         <a href="<?php the_permalink(); ?>" class="continue-btn tran3s d-flex align-items-center">
 							<?php esc_html_e( 'Continue Reading', 'spider-elements' ) ?>
                             <i class="arrow_right"></i>
                         </a>
+                        </div>
                     </div>
                 </div>
             </div>

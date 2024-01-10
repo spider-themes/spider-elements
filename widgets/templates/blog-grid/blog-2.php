@@ -30,8 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             </a>
                         </div>
                         <a class="blog-tow-title" href="<?php the_permalink(); ?>">
-                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?>
-                                <h2>
+                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?></h2>
                         </a>
                         <p><?php echo wp_trim_words( get_the_content(), $content_limit ); ?></p>
 

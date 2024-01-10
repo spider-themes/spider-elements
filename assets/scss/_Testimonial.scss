@@ -267,7 +267,7 @@
         }
       }
 
-      &:nth-child(even) {
+      & :nth-child(even) {
         button {
           background: #a5a5f8;
         }
@@ -407,6 +407,7 @@
   }
 }
 .testimonial-slider-inner {
+  overflow: hidden;
   .testimonial-item {
     display: flex;
     border: 2px solid #e86a42;
@@ -416,6 +417,7 @@
     align-items: flex-start;
     margin-bottom: 78px;
     flex-direction: row-reverse;
+    transition: 0.3s;
 
     p {
       font-size: 24px;
@@ -662,7 +664,7 @@
   }
   .name {
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     span {
       font-weight: 500;
     }
@@ -670,6 +672,10 @@
   .review {
     border-top: 2px solid #000;
     padding-top: 40px;
+    @media (max-width: 1024px) {
+      margin-top: 30px !important;
+      padding-top: 20px !important;
+    }
     .text-md {
       font-size: 20px;
       font-weight: 500;
@@ -1277,6 +1283,9 @@
 .carousel img {
   width: 100%;
   height: auto;
+}
+.testimonial-item {
+  transition: 0.3s;
 }
 
 // .carousel-control-prev,

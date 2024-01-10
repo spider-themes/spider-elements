@@ -485,51 +485,25 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'blog_item_bg_hover',
-			[
-				'label'     => esc_html__( 'Background Hover', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .blog-meta-two:hover' => 'background: {{VALUE}};',
-					'{{WRAPPER}} .blog-meta-one:hover' => 'background: {{VALUE}};',
-				],
-			]
-		);
-
 		$this->add_responsive_control(
-			'blog_top_margin',
+			'blog_margin',
 			[
-				'label'       => esc_html__( 'Margin Top', 'spider-elements' ),
-				'description' => esc_html__( 'Margin top the blog. ', 'spider-elements' ),
-				'type'        => Controls_Manager::SLIDER,
-				'size_units'  => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'range'       => [
-					'px' => [
-						'max' => 120,
-					],
-					'em' => [
-						'max' => 0,
-					],
-				],
-				'selectors'   => [
-					'{{WRAPPER}} .blog-grid' => 'margin-top: {{SIZE}}{{UNIT}};',
-				],
-				'condition'   => [
-					'style' => [ '1', '2', '3', '4', '5' ]
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'blog_item_radius',
-			[
-				'label'      => esc_html__( 'Border Radius', 'spider -elements' ),
+				'label'      => esc_html__( 'Margin', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => - 100,
+						'max'  => 100,
+						'step' => 5,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 10,
+				],
 				'selectors'  => [
-					'{{WRAPPER}} .blog-meta-two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .blog-meta-one' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-grid' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -555,6 +529,38 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-meta-two' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .blog-meta-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'blog_item_radius',
+			[
+				'label'      => esc_html__( 'Border Radius', 'spider -elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px' ],
+				'selectors'  => [
+					'{{WRAPPER}} .blog-meta-two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-meta-one' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'hove_blog', [
+				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'hover_background',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .blog-meta-two:hover, 
+							   {{WRAPPER}} .blog-meta-one:hover',
 			]
 		);
 
@@ -590,7 +596,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'blog_img_margin',
 			[
-				'label'       => esc_html__( 'Margin Bottom', 'Qspider-elements' ),
+				'label'       => esc_html__( 'Margin Bottom', 'spider-elements' ),
 				'description' => esc_html__( 'Spacing between the image', 'spider-elements' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -660,9 +666,9 @@ class Blog_Grid extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'blog_title_spacing',
+			'blog_title_margin',
 			[
-				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Margin', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -677,8 +683,8 @@ class Blog_Grid extends Widget_Base {
 					'size' => 10,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .blog-meta-two .blog-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .blog-meta-one .blog-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-meta-two .blog-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-meta-one .blog-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1026,7 +1032,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Background Hover', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .blog-meta-two .post-img .tags:hover' => 'background: {{VALUE}};',
 				],

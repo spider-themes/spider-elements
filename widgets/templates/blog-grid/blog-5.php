@@ -32,8 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div>
 
                         <a class="blog-five-title" href="<?php the_permalink(); ?>">
-                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?>
-                                <h2>
+                            <h2 class="tran3s blog-title"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?></h2>
                         </a>
 
                         <div class="read-more-btn">

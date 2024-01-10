@@ -1,5 +1,7 @@
 // Blog One
 .blog-meta-two {
+  transition: 0.3s;
+  margin-bottom: 0 !important;
   .post-img {
     display: inline-block;
     overflow: hidden;
@@ -59,8 +61,8 @@
     line-height: 1.28em;
     margin: 25px 0;
     font-weight: 500;
-    color: #60173c;
-    transition: color 0.2s linear;
+    color: #000000;
+    transition: all .3s ease-in-out;
 
     &:hover {
       color: #00bf58;
@@ -133,6 +135,7 @@
 
 .blog-meta-one {
   margin-top: 0;
+  transition: 0.3s;
 
   .post-img {
     overflow: hidden;
@@ -151,18 +154,18 @@
       font-size: 15px;
       font-weight: 400;
       line-height: 18px;
-      color: #b9b9ba;
+      color: #000000b3;
       margin-bottom: 0;
       padding-left: 0;
       text-transform: capitalize;
 
       .author-name {
         font-size: 16px;
-        color: #b9b9ba;
+        color: #212529;
         font-weight: 600;
 
         &:hover {
-          text-decoration: none;
+          text-decoration: underline;
         }
       }
     }
@@ -191,7 +194,7 @@
     line-height: 1.4em;
     color: #000;
     margin: 6px 0px 10px;
-    transition: color 0.2s linear;
+    transition: all .3s ease-in-out;
 
     &:hover {
       color: #00bf58;
@@ -374,6 +377,7 @@
     line-height: 1.5;
     padding-top: 5px;
     padding-left: 0;
+    transition: all .3s ease-in-out;
 
     a {
       color: #ffffff;
