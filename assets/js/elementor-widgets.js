@@ -17,7 +17,7 @@
         "docy_video_popup.default": spiderElements.videoPopup,
         "spe_marquee_slides.default": spiderElements.marquee,
         "spe_instagram.default": spiderElements.instagramFeed,
-        "docy_accordion.default": spiderElements.accordions,
+        "spel_accordion.default": spiderElements.accordions,
         "docly_cheatsheet.default": spiderElements.cheatsheet,
         "Counter.default": spiderElements.counter,
       };
