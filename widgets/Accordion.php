@@ -285,7 +285,7 @@ class Accordion extends Widget_Base {
 //		);
 
 		$this->add_responsive_control(
-			'acc_border_radius', [
+			'acc_item_border_radius', [
 				'label'      => __( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],

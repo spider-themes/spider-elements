@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$id                  = 'toggle-' . $item['_id'] ?? '';
 	$is_show             = $is_coFllapsed_class == 'yes' ? 'show' : '';
 	?>
-    <div class="card doc_accordion spe_accordion_inner <?php echo esc_attr( $is_btn_collapse ) ?>">
+    <div class="card doc_accordion spe_accordion_inner <?php echo esc_attr( $is_btn_collapse ).esc_attr( 'ezd-accord-item-'.$item['_id'] ); ?>">
         <div class="card-header spe-accordion" id="heading-<?php echo esc_attr( $item['_id'] ); ?>">
             <<?php echo esc_attr( $title_tag ); ?> class="title">
             <button class="btn btn-link <?php echo esc_attr( $icon_align_class ); ?>">
@@ -24,13 +24,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				if ( ! empty( $settings['plus-icon']['value'] ) || ! empty( $settings['minus-icon']['value'] ) ) { ?>
                     <span class="icon-wrapper">
-                                    <span class="expanded-icon">
-                                        <?php \Elementor\Icons_Manager::render_icon( $settings['plus-icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                    </span>
-                                    <span class="collapsed-icon">
-                                        <?php \Elementor\Icons_Manager::render_icon( $settings['minus-icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                    </span>
-                                </span>
+                        <span class="expanded-icon">
+                            <?php \Elementor\Icons_Manager::render_icon( $settings['plus-icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                        </span>
+                        <span class="collapsed-icon">
+                            <?php \Elementor\Icons_Manager::render_icon( $settings['minus-icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                        </span>
+                    </span>
 					<?php
 				}
 				?>
