@@ -161,36 +161,45 @@
 }
 
 /***==== blog grid ==== ***/
-.blog-grid1::before{
+.blog_1::before{
     background: url("../images/el-editor-preview/blog1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.blog-grid2::before{
+.blog_2::before{
     background: url("../images/el-editor-preview/blog2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.blog-grid3::before{
+.blog_3::before{
     background: url("../images/el-editor-preview/blog3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.blog-grid4::before{
+.blog_4::before{
     background: url("../images/el-editor-preview/blog4.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.blog-grid5::before{
+.blog_5::before{
     background: url("../images/el-editor-preview/blog5.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+.blog_6::before{
+    background: url("../images/el-editor-preview/blog6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 /*** === Video Playlist === ***/
 .video-playlist::before {
     background: url("../images/el-editor-preview/video-playlist.jpg");

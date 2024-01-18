@@ -60,21 +60,21 @@ class Blog_Grid extends Widget_Base {
 		return [ 'spider-elements' ];
 	}
 
-	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
-	 */
-	public function get_style_depends() {
-		return [ 'spe-main', 'ionicons' ];
-	}
+    /**
+     * Name: get_style_depends()
+     * Desc: Register the required CSS dependencies for the frontend.
+     */
+    public function get_style_depends() {
+        return [ 'slick', 'slick-theme', 'ionicons', 'spe-main' ];
+    }
 
-	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
-	 */
-	public function get_script_depends() {
-		return [ 'ionicons' ];
-	}
+    /**
+     * Name: get_script_depends()
+     * Desc: Register the required JS dependencies for the frontend.
+     */
+    public function get_script_depends() {
+        return [ 'slick', 'ionicons', 'spe-el-widgets' ];
+    }
 
 	/**
 	 * Name: register_controls()
@@ -116,28 +116,32 @@ class Blog_Grid extends Widget_Base {
 			'style', [
 				'label'   => esc_html__( 'Skin', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
-				'options' => [
-					'1' => [
-						'title' => esc_html__( 'Style 01', 'spider-elements' ),
-						'icon'  => 'blog-grid1',
-					],
-					'2' => [
-						'title' => esc_html__( 'Style 02', 'spider-elements' ),
-						'icon'  => 'blog-grid2',
-					],
-					'3' => [
-						'title' => esc_html__( 'Style 03', 'spider-elements' ),
-						'icon'  => 'blog-grid3',
-					],
-					'4' => [
-						'title' => esc_html__( 'Style 04', 'spider-elements' ),
-						'icon'  => 'blog-grid4',
-					],
-					'5' => [
-						'title' => esc_html__( 'Style 05', 'spider-elements' ),
-						'icon'  => 'blog-grid5',
-					],
-				],
+                'options' => [
+                    '1' => [
+                        'title' => esc_html__( 'Style 01', 'spider-elements' ),
+                        'icon'  => 'blog_1',
+                    ],
+                    '2' => [
+                        'title' => esc_html__( 'Style 02', 'spider-elements' ),
+                        'icon'  => 'blog_2',
+                    ],
+                    '3' => [
+                        'title' => esc_html__( 'Style 03', 'spider-elements' ),
+                        'icon'  => 'blog_3',
+                    ],
+                    '4' => [
+                        'title' => esc_html__( 'Style 04', 'spider-elements' ),
+                        'icon'  => 'blog_4',
+                    ],
+                    '5' => [
+                        'title' => esc_html__( 'Style 05', 'spider-elements' ),
+                        'icon'  => 'blog_5',
+                    ],
+                    '6' => [
+                        'title' => esc_html__( 'Blog Carousel', 'spider-elements' ),
+                        'icon'  => 'blog_6',
+                    ],
+                ],
 				'toggle'  => false,
 				'default' => '1',
 			]
