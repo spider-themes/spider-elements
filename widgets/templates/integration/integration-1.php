@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
         foreach ( $integration_item as $item ) {
             if (!empty($item[ 'integration_image' ][ 'id' ])) { ?>
                 <div class="brand-icon icon_01 ezd-rounded-circle ezd-d-flex ezd-align-items-center ezd-justify-content-center">
-                    <?php echo wp_get_attachment_image(absint($item[ 'integration_image' ][ 'id' ]), 'full', '', [ 'class' => 'lazy-img' ]) ?>
+                    <?php spel_dynamic_image($item[ 'integration_image' ], 'full', [ 'class' => 'lazy-img' ] ) ?>
                 </div>
                 <?php
             }

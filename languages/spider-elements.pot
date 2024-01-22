@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2023-12-27 17:29+0600\n"
+"POT-Creation-Date: 2024-01-22 18:18+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,50 +25,50 @@ msgstr ""
 msgid "Thanks for installing Spider Elements!"
 msgstr ""
 
-#: includes/extra.php:14
+#: includes/extra.php:13
 msgid "H1"
 msgstr ""
 
-#: includes/extra.php:15
+#: includes/extra.php:14
 msgid "H2"
 msgstr ""
 
-#: includes/extra.php:16
+#: includes/extra.php:15
 msgid "H3"
 msgstr ""
 
-#: includes/extra.php:17
+#: includes/extra.php:16
 msgid "H4"
 msgstr ""
 
-#: includes/extra.php:18
+#: includes/extra.php:17
 msgid "H5"
 msgstr ""
 
-#: includes/extra.php:19
+#: includes/extra.php:18
 msgid "H6"
 msgstr ""
 
-#: includes/extra.php:20
+#: includes/extra.php:19
 msgid "Div"
 msgstr ""
 
-#: includes/extra.php:21
+#: includes/extra.php:20
 msgid "Span"
 msgstr ""
 
-#: includes/extra.php:22
+#: includes/extra.php:21
 msgid "Paragraph"
 msgstr ""
 
-#: includes/extra.php:120
+#: includes/extra.php:114
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: post author.
-#: includes/extra.php:139
+#: includes/extra.php:132
 #, php-format
 msgctxt "post author"
 msgid "By: %s"

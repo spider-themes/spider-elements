@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php
 						if ( ! empty( $item[ 'company_image' ][ 'id' ] ) ) { ?>
                             <div class="logo">
-								<?php echo wp_get_attachment_image( absint($item[ 'company_image' ][ 'id' ]), 'full' ) ?>
+								<?php spel_dynamic_image($item[ 'company_image' ]) ?>
                             </div>
 							<?php
 						}
@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						] );
 
 						$schema_rating = '<span itemprop="ratingValue" class="elementor-screen-only">' . $textual_rating . '</span>';
-						$stars_element = '<div ' . $this->get_render_attribute_string( 'icon_wrapper' ) . '>' . $this->render_stars( $icon, $item[ 'author_rating' ] ) . ' ' . $schema_rating . '</div>';
+						$stars_element = '<div ' . esc_attr($this->get_render_attribute_string( 'icon_wrapper' )) . '>' . $this->render_stars( $icon, $item[ 'author_rating' ] ) . ' ' . $schema_rating . '</div>';
 						?>
                         <div class="review pt-40 md-pt-20 mt-40 md-mt-30 ezd-d-flex ezd-justify-content-between ezd-align-items-center">
 							<?php

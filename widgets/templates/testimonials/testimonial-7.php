@@ -12,8 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
                 <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
                     <div class="feedback-block-one feedback-block-three">
-						<?php echo wp_get_attachment_image( absint($item[ 'company_image' ][ 'id' ]), 'full', '',
-							[ 'class' => 'quote-icon' ] ) ?>
+						<?php spel_dynamic_image($item[ 'company_image' ], 'full', [ 'class' => 'quote-icon' ] ) ?>
 						<?php
 						if ( 'star_fontawesome' === $settings[ 'star_style' ] ) {
 							if ( 'outline' === $settings[ 'unmarked_star_style' ] ) {
@@ -35,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						] );
 
 						$schema_rating = '<span itemprop="ratingValue" class="elementor-screen-only">' . $textual_rating . '</span>';
-						$stars_element = '<div ' . $this->get_render_attribute_string( 'icon_wrapper' ) . '>' . $this->render_stars( $icon, $item[ 'author_rating' ] ) . ' ' . $schema_rating . '</div>';
+						$stars_element = '<div ' . esc_attr($this->get_render_attribute_string( 'icon_wrapper' )) . '>' . $this->render_stars( $icon, $item[ 'author_rating' ] ) . ' ' . $schema_rating . '</div>';
 						?>
                         <div class="review">
 							<?php if ( ! \Elementor\Utils::is_empty( $item[ 'author_rating_title' ] ) ) : ?>
@@ -59,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         <span><?php echo esc_html( $item[ 'author_position' ] ); ?></span>
                                     </div>
                                 </div>
-								<?php echo wp_get_attachment_image( absint($item[ 'author_image' ][ 'id' ]), 'full', '', [ 'class' => 'author-img ezd-rounded-circle' ] ) ?>
+								<?php spel_dynamic_image($item[ 'author_image' ], 'full', [ 'class' => 'author-img ezd-rounded-circle' ] ) ?>
                             </div>
 							<?php
 						}

@@ -389,7 +389,11 @@ class Pricing_Table_Tabs extends Widget_Base
                             }
                             ?>
                         </div>
-                        <?php echo !empty($settings[ 'ribbon_label' ][ 'id' ]) ? wp_get_attachment_image(absint($settings[ 'ribbon_label' ][ 'id' ]), '', [ 'class' => 'popular ezd-d-none ezd-d-lg-block' ]) : '' ?>
+                        <?php
+                        if ( !empty($settings['ribbon_label']['id']) ) :
+                            spel_dynamic_image($settings[ 'ribbon_label' ], 'full', [ 'class' => 'popular ezd-d-none ezd-d-lg-block' ]);
+                        endif;
+                        ?>
                     </div>
                     <?php
                 }

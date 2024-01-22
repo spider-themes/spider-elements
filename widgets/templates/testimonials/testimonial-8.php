@@ -50,7 +50,7 @@ if (!defined('ABSPATH')) {
                 $area_selected = $i == 1 ? 'true' : 'false'
                 ?>
                 <button type="button" class="<?php echo esc_attr($active) ?>" data-target="#feedBack_carousel" data-slide-to="<?php echo esc_attr($i) ?>">
-                    <?php echo wp_get_attachment_image(absint($item[ 'author_image' ][ 'id' ]), 'full', '', [ 'class' => 'lazy-img ezd-rounded-circle' ]) ?>
+                    <?php spel_dynamic_image($item[ 'author_image' ], 'full', [ 'class' => 'lazy-img ezd-rounded-circle' ]) ?>
                 </button>
                 <?php
             }

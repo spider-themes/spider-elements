@@ -52,10 +52,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                                      data-wow-delay="<?php echo esc_attr( $delay_time ) ?>s">
 									<?php
 									if ( ! empty( $table['table_icon']['id'] ) ) {
-										echo wp_get_attachment_image( absint($table['table_icon']['id']), 'full' );
+                                        spel_dynamic_image($table[ 'table_icon' ]);
 									}
 									if ( ! empty( $table['title'] ) ) { ?>
-                                        <h4 class="spe_pricing_item_header"> <?php echo esc_html( $table['title'] ) ?> </h4>
+                                        <h4 class="spe_pricing_item_header"><?php echo esc_html( $table['title'] ) ?> </h4>
 										<?php
 									}
 									if ( ! empty( $table['subtitle'] ) ) { ?>
@@ -103,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <div class="spe_pricing_item_wrapper pricing-item-2<?php echo esc_attr( $active ); ?>">
 								<?php
 								if ( ! empty( $table['table_icon']['id'] ) ) {
-									echo wp_get_attachment_image( absint($table['table_icon']['id']), 'full' );
+                                    spel_dynamic_image($table[ 'table_icon' ]);
 								}
 								if ( ! empty( $table['title'] ) ) { ?>
                                     <h4 class="spe_pricing_item_header"><?php echo esc_html( $table['title'] ) ?></h4>

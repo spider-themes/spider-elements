@@ -3,7 +3,7 @@
  * Plugin Name: Spider Elements
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Author: spider-themes
- * Version: 0.6.0
+ * Version: 0.7.0
  * Requires at least: 5.0
  * Tested up to: 6.4.2
  * Requires PHP: 7.4
@@ -39,7 +39,7 @@ if (!class_exists('SPEL')) {
          *
          * @var string The plugin version.
          */
-        const VERSION = '0.6.0';
+        const VERSION = '0.7.0';
 
         /**
          * Minimum Elementor Version
@@ -440,8 +440,8 @@ if (!class_exists('SPEL')) {
         private function register_widgets ()
         {
 
-            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Alerts_Box());
             \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Accordion());
+            \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Alerts_Box());
             \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Animated_Heading());
             \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Before_After());
             \Elementor\Plugin::instance()->widgets_manager->register(new \SPEL\Widgets\Blog_Grid());

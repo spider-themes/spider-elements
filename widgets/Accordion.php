@@ -248,7 +248,7 @@ class Accordion extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-//	==================Start accordion all style controls===============
+    //	==================Start accordion all style controls===============
 	public function elementor_style_control() {
 
 		//============================= Accordion Settings Style =============================//

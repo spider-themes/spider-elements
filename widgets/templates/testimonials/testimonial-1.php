@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div>
 						<?php if ( ! empty( $item[ 'signature' ][ 'id' ] ) ) : ?>
                             <div class="sign">
-								<?php echo wp_get_attachment_image( absint($item[ 'signature' ][ 'id' ]), 'full' ) ?>
+								<?php spel_dynamic_image($item[ 'signature' ]) ?>
                             </div>
 						<?php endif; ?>
                     </div>
@@ -37,19 +37,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 				foreach ( $testimonials as $item ) {
 					?>
                     <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
-						<?php
-						if ( ! empty( $settings[ 'shape' ][ 'id' ] ) ) :
-							echo wp_get_attachment_image( absint($settings[ 'shape' ][ 'id' ]), 'full', '',
-								array( 'class' => 'dot' ) );
-						endif;
+                        <?php
+                        if ( ! empty( $settings[ 'shape' ][ 'id' ] ) ) {
+                            spel_dynamic_image($settings[ 'shape' ], 'full', ['class' => 'dot'] );
+                        }
 
-						echo '<div class="round one"></div>';
-						echo '<div class="round two"></div>';
+                        echo '<div class="round one"></div>';
+                        echo '<div class="round two"></div>';
 
-						if ( ! empty( $item[ 'author_image' ][ 'id' ] ) ) :
-							echo wp_get_attachment_image( absint($item[ 'author_image' ][ 'id' ]), 'full' );
-						endif;
-						?>
+                        if ( ! empty( $item[ 'author_image' ][ 'id' ] ) ) {
+                            spel_dynamic_image($item[ 'author_image' ]);
+                        }
+                        ?>
                     </div>
 					<?php
 				}

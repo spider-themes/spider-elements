@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							echo ! empty( $item['title'] ) ? '<span class="testimonial-subtitle se_title">' . esc_html( $item['title'] ) . '</span>' : '';
 							?>
                             <div class="author-name">
-								<?php echo wp_get_attachment_image( absint($item['author_image']['id']), 'full', '', [ 'class' => 'author-img', ] ) ?>
+								<?php spel_dynamic_image($item['author_image'], 'full', [ 'class' => 'author-img', ] ) ?>
 								<?php echo ! empty( $item['name'] ) ? '<span class="author-title se_name">' . esc_html( $item['name'] ) . '</span>' : ''; ?>
                             </div>
                         </div>

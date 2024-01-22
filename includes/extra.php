@@ -220,6 +220,27 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
 	}
 }
 
+/**
+ * Render Dynamic Image
+ * @param $key
+ * @param $class
+ * @return void
+ */
+function spel_dynamic_image( $key, $size = 'full', $atts = [] ) {
+    $image = wp_get_attachment_image( $key['id'], $size, '', $atts );
+    echo wp_kses( $image, [
+        'img'    => [
+            'class'  => [],
+            'style'  => [],
+            'height' => [],
+            'width'  => [],
+            'src'    => [],
+            'srcset' => [],
+            'alt'    => [],
+        ],
+    ]);
+}
+
 
 /**
  * Tab data
@@ -251,56 +272,58 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
 
 
 /**
- * @param string $post_type
- * @param int    $limit
- * @param string $search
+ * Retrieve a list of posts based on specified parameters.
  *
- * @return array
+ * @param string $post_type The post-type to query.
+ * @param int    $limit     The maximum number of posts to retrieve.
+ * @param string $search    The search term for post-titles.
+ *
+ * @return array An associative array with post-IDs as keys and post-titles as values.
  */
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
-	function spel_get_query_post_list( $post_type = 'any', $limit = - 1, $search = '' ) {
-		global $wpdb;
-		$where = '';
-		$data  = [];
+    function spel_get_query_post_list( $post_type = 'any', $limit = - 1, $search = '' ) {
+        global $wpdb;
+        $where = '';
+        $data  = [];
 
-		if ( - 1 == $limit ) {
-			$limit = '';
-		} elseif ( 0 == $limit ) {
-			$limit = $wpdb->prepare( "LIMIT %d,1", 0 );
-		} else {
-			$limit = $wpdb->prepare( "LIMIT %d,%d", 0, esc_sql( $limit ) );
-		}
+        if ( -1 === $limit ) {
+            $limit = '';
+        } elseif ( 0 === $limit ) {
+            $limit = $wpdb->prepare( "LIMIT %d,1", 0 );
+        } else {
+            $limit = $wpdb->prepare( "LIMIT %d,%d", 0, esc_sql( $limit ) );
+        }
 
-		if ( 'any' === $post_type ) {
-			$in_search_post_types = get_post_types( [ 'exclude_from_search' => false ] );
-			if ( empty( $in_search_post_types ) ) {
-				$where .= ' AND 1=0 ';
-			} else {
-				$placeholders                     = array_fill( 0, count( $in_search_post_types ), '%s' );
-				$in_search_post_types             = array_map( 'esc_sql', $in_search_post_types );
-				$in_search_post_types_placeholder = implode( ', ', $placeholders );
-				$where                            .= $wpdb->prepare( " AND {$wpdb->posts}.post_type IN ($in_search_post_types_placeholder)", ...
-					$in_search_post_types );
-			}
-		} elseif ( ! empty( $post_type ) ) {
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", esc_sql( $post_type ) );
-		}
+        if ( 'any' === $post_type ) {
+            $in_search_post_types = get_post_types( [ 'exclude_from_search' => false ] );
+            if ( empty( $in_search_post_types ) ) {
+                $where .= ' AND 1=0 ';
+            } else {
+                $placeholders                     = array_fill( 0, count( $in_search_post_types ), '%s' );
+                $in_search_post_types             = array_map( 'esc_sql', $in_search_post_types );
+                $in_search_post_types_placeholder = implode( ', ', $placeholders );
+                $where                            .= $wpdb->prepare( " AND {$wpdb->posts}.post_type IN ($in_search_post_types_placeholder)", ...
+                    $in_search_post_types );
+            }
+        } elseif ( ! empty( $post_type ) ) {
+            $where .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", $post_type );
+        }
 
-		if ( ! empty( $search ) ) {
-			$search_term = '%' . esc_sql( $search ) . '%';
-			$where       .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", $search_term );
-		}
+        if ( ! empty( $search ) ) {
+            $search_term = '%' . esc_sql( $search ) . '%';
+            $where       .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", $search_term );
+        }
 
-		$query   = $wpdb->prepare( "SELECT post_title, ID FROM $wpdb->posts WHERE post_status = %s $where $limit", 'publish' );
-		$results = $wpdb->get_results( $query );
-		if ( ! empty( $results ) ) {
-			foreach ( $results as $row ) {
-				$data[ $row->ID ] = $row->post_title;
-			}
-		}
+        $query   = $wpdb->prepare( "SELECT post_title, ID FROM $wpdb->posts WHERE post_status = %s $where $limit", 'publish' );
+        $results = $wpdb->get_results( $query );
+        if ( ! empty( $results ) ) {
+            foreach ( $results as $row ) {
+                $data[ $row->ID ] = $row->post_title;
+            }
+        }
 
-		return $data;
-	}
+        return $data;
+    }
 }
 
 
