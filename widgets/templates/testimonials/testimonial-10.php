@@ -39,9 +39,9 @@ if (!defined('ABSPATH')) {
                     }
                     ?>
                 </div>
-                <ul class="list-unstyled slider-arrows ezd-d-flex ezd-justify-content-between ezd-justify-content-lg-center style-none">
-                    <li class="prev_d slick-arrow"><i class="arrow_left"></i></li>
-                    <li class="next_d slick-arrow"><i class="arrow_right"></i></li>
+                <ul class="slider-arrows d-flex justify-content-between justify-content-lg-center style-none">
+                    <li class="prev_d slick-arrow"><i class="bi bi-arrow-left"></i></li>
+                    <li class="next_d slick-arrow"><i class="bi bi-arrow-right"></i></li>
                 </ul>
             </div>
             <!-- /.bg-wrapper -->

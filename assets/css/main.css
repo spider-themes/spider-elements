@@ -2385,6 +2385,11 @@ ul.nav.nav-tabs {
   left: auto;
 }
 
+@media (max-width: 1024px) {
+  .feedback-section-four .ezd-grid {
+    display: block;
+  }
+}
 .feedback-section-four .bg-wrapper {
   background: #1ea243;
   padding: 125px 150px 165px 110px;
@@ -2480,6 +2485,7 @@ ul.nav.nav-tabs {
     margin-top: 15px;
     left: 0;
     bottom: 0;
+    display: block;
   }
 }
 .feedback-section-four .slider-wrapper .slick-dots li {

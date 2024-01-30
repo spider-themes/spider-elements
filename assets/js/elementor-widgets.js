@@ -37,7 +37,7 @@
 
             let blogGrid = $scope.find(".category-slider-one");
 
-            if(blogGrid.length > 0) {
+            if (blogGrid.length > 0) {
                 blogGrid.slick({
                     dots: false,
                     arrows: true,
@@ -512,55 +512,57 @@
                 });
             }
 
-            let testimonial10 = $scope.find(".feedback-slider-three-a");
-            if (testimonial10.length) {
-                testimonial10.slick({
+            let testimonial10_a = $scope.find(".feedback-slider-three-a");
+            let testimonial10_b = $scope.find(".feedback-slider-three-b");
+
+
+            if (testimonial10_a.length > 0) {
+                testimonial10_a.slick({
                     dots: false,
                     arrows: true,
-                    prevArrow: $(".prev_d"),
-                    nextArrow: $(".next_d"),
-                    lazyLoad: "ondemand",
-                    centerPadding: "0px",
+                    prevArrow: $('.prev_d'),
+                    nextArrow: $('.next_d'),
+                    lazyLoad: 'ondemand',
+                    centerPadding: '0px',
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: true,
                     fade: true,
                     autoplaySpeed: 300000,
-                    asNavFor: ".feedback-slider-three-b",
+                    asNavFor: '.feedback-slider-three-b',
                 });
+            }
 
-                $(".feedback-slider-three-b").slick({
+            if (testimonial10_b.length > 0 ) {
+                testimonial10_b.slick({
                     dots: true,
                     arrows: false,
-                    lazyLoad: "ondemand",
-                    centerPadding: "0px",
-                    slidesToShow: 4,
+                    lazyLoad: 'ondemand',
+                    centerPadding: '0px',
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                     autoplay: true,
                     autoplaySpeed: 300000,
-                    asNavFor: ".feedback-slider-three-a",
+                    asNavFor: '.feedback-slider-three-a',
                     responsive: [
-                        {
-                            breakpoint: 1922,
-                            settings: {
-                                slidesToShow: 3,
-                            },
-                        },
                         {
                             breakpoint: 992,
                             settings: {
-                                slidesToShow: 2,
-                            },
+                                slidesToShow: 2
+                            }
                         },
                         {
                             breakpoint: 576,
                             settings: {
-                                slidesToShow: 1,
-                            },
-                        },
-                    ],
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
                 });
             }
+
+
+
 
             // Testimonial Style 11
             let testimonial11 = $scope.find(".testimonial-slider");
