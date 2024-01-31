@@ -799,7 +799,7 @@ class Blog_Grid extends Widget_Base {
 				'exclude'   => [ 'image' ],
 				'selector'  => '{{WRAPPER}} .blog-meta-two .continue-btn.btn-seven',
 				'condition' => [
-					'style' => '4'
+					'c' => '4'
 				],
 			]
 		);
@@ -1137,6 +1137,7 @@ class Blog_Grid extends Widget_Base {
 		extract( $settings ); // Array to variable conversation
 		// query part
 		$query['post_status']      = 'publish';
+		$query['ignore_sticky_posts'] = true;
 		$query['suppress_filters'] = false;
 		if ( $blog_queryby == 'postype' ) {
 			$query['post_type'] = isset( $blog_posttype ) ? $blog_posttype : [ 'post' ];

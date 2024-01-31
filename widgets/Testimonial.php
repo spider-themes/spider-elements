@@ -964,21 +964,6 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
-//		$this->add_control(
-//			'testimonial_box_hover', [
-//				'label'     => esc_html__( 'Hover Background', 'spider-elements' ),
-//				'type'      => Controls_Manager::COLOR,
-//				'selectors' => [
-//					'{{WRAPPER}} .feedback-block-one:hover'                => ' background: {{VALUE}};',
-//					'{{WRAPPER}} .testimonial-item:hover'                  => ' background: {{VALUE}};',
-//					'{{WRAPPER}} .feedback-section-four .bg-wrapper:hover' => ' background: {{VALUE}};',
-//				],
-//				'condition' => [
-//					'style' => [ '5', '6', '9', '10' ]
-//				]
-//			]
-//		);
-
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -1025,7 +1010,7 @@ class Testimonial extends Widget_Base {
 			[
 				'name'     => 'item_border',
 				'label'    => esc_html__( 'Border', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .feedback-block-one
+				'selector' => '{{WRAPPER}} .feedback-block-one,
 							   {{WRAPPER}} .testimonial-item,
 							   {{WRAPPER}} .feedback-section-four .bg-wrapper 
 				               ',
@@ -1296,18 +1281,6 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
-//		$this->add_group_control(
-//			Group_Control_Background::get_type(),
-//			[
-//				'name'      => 'background',
-//				'types'     => [ 'classic', 'gradient', 'video' ],
-//				'selector'  => '{{WRAPPER}} .testimonial-item,{{WRAPPER}} .feedback-section-four .bg-wrapper',
-//				'condition' => [
-//					'style' => [ '5', '10' ]
-//				]
-//			]
-//		);
-
 		$this->add_responsive_control(
 			'feedback-section-four-item-pad',
 			[
@@ -1348,8 +1321,8 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .feedback-block-one .review .text-md' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .feedback-block-two .review .text-md' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .feedback-block-one .review .text-md, .feedback-block-one .star-rating i::before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .feedback-block-two .review .text-md'                                             => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'style' => [ '6', '9' ]

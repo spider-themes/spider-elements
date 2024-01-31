@@ -272,18 +272,6 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-//		$this->add_responsive_control(
-//			'acc_border_radius',
-//			[
-//				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
-//				'type'       => Controls_Manager::DIMENSIONS,
-//				'size_units' => [ 'px', 'em', '%' ],
-//				'selectors'  => [
-//					'{{WRAPPER}} .accordion .doc_accordion.spe_accordion_inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-//				],
-//			]
-//		);
-
 		$this->add_responsive_control(
 			'acc_item_border_radius', [
 				'label'      => __( 'Border Radius', 'spider-elements' ),
