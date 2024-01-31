@@ -606,10 +606,11 @@ class Testimonial extends Widget_Base {
 		$testimonial8 = new Repeater();
 		$testimonial8->add_control(
 			'review_content', [
-				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
-				'type'  => Controls_Manager::TEXTAREA,
+				'label' => esc_html__( 'Contents', 'spider-elements' ),
+				'type'  => Controls_Manager::WYSIWYG,
 			]
 		);
+
 		$testimonial8->add_control(
 			'author_name', [
 				'label'   => esc_html__( 'Author Name', 'spider-elements' ),
