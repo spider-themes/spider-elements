@@ -997,7 +997,7 @@ button.btn.btn-link:focus {
   border: 1px solid var(--black_50);
   position: relative;
   text-decoration: none;
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -1240,7 +1240,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   left: 0;
   width: 40px;
   background: #f9f9f9;
-  box-shadow: 4px 0px 9px 1px rgba(0, 0, 0, 0.03);
+  box-shadow: 4px 0 9px 1px rgba(0, 0, 0, 0.03);
   line-height: 44px;
   z-index: 1;
   text-align: center;
@@ -1419,7 +1419,7 @@ ul.nav.nav-tabs {
   margin-bottom: -1px;
   margin-top: 0;
   list-style: none;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .tab_shortcode .nav-link {
