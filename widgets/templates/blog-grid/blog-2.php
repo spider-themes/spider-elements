@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 <span class="sticky-label fw-500 text-dark"><?php echo esc_html__( 'Featured -', 'spider-elements' ); ?></span>
 							<?php endif; ?>
                             <a href="<?php spel_day_link(); ?>" class="meta-item">
-								<?php echo get_the_date('d M Y'); ?>
+                                <?php echo esc_html(get_the_time(get_option('date_format'))); ?>
                             </a>
                         </div>
                         <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="tran3s blog-title">', '</h2>' ); ?></a>

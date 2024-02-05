@@ -20,10 +20,10 @@ if (!defined('ABSPATH')) {
                                 <h5>
                                     <?php esc_html_e('Posted by', 'spider-elements') ?>
                                     <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-                                        <?php echo get_the_author(); ?>
+                                        <?php echo esc_html(get_the_author()); ?>
                                     </a>
                                 </h5>
-                                <span><?php echo get_the_date('M d, Y') ?></span>
+                                <span><?php echo esc_html(get_the_time(get_option('date_format'))); ?></span>
                             </div>
                         </div>
                         <div class="blog-meta">

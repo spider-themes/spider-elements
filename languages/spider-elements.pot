@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2024-01-22 18:18+0600\n"
+"POT-Creation-Date: 2024-02-05 15:51+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -83,8 +83,8 @@ msgid "Elegant Icons"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: spider-elements.php:269 spider-elements.php:333 spider-elements.php:368
-#: spider-elements.php:386
+#: spider-elements.php:269 spider-elements.php:333 spider-elements.php:367
+#: spider-elements.php:385
 msgid "Spider Elements"
 msgstr ""
 
@@ -116,12 +116,12 @@ msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: spider-elements.php:332 spider-elements.php:367
+#: spider-elements.php:332 spider-elements.php:366
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: spider-elements.php:369
+#: spider-elements.php:368
 msgid "PHP"
 msgstr ""
 

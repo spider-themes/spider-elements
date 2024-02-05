@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
                             }
                             ?>
                             <a href="<?php spel_day_link(); ?>" class="meta-item">
-                                <?php echo get_the_date('d M Y') ?>
+                                <?php echo esc_html(get_the_time(get_option('date_format'))); ?>
                             </a>
                         </div>
                         <a href="<?php the_permalink(); ?>">

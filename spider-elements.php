@@ -3,12 +3,12 @@
  * Plugin Name: Spider Elements
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Author: spider-themes
- * Version: 0.7.0
+ * Version: 0.8.0
  * Requires at least: 5.0
- * Tested up to: 6.4.2
+ * Tested up to: 6.4.3
  * Requires PHP: 7.4
  * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.18.3
+ * Elementor tested up to: 3.19.0
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
@@ -39,7 +39,7 @@ if (!class_exists('SPEL')) {
          *
          * @var string The plugin version.
          */
-        const VERSION = '0.7.0';
+        const VERSION = '0.8.0';
 
         /**
          * Minimum Elementor Version
@@ -328,14 +328,13 @@ if (!class_exists('SPEL')) {
             }
 
             $message = sprintf(
-            /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
+                /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
                 esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements'),
                 '<strong>' . esc_html__('Spider Elements', 'spider-elements') . '</strong>',
                 '<strong>' . esc_html__('Elementor', 'spider-elements') . '</strong>',
                 self::MINIMUM_ELEMENTOR_VERSION
             );
-
-            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
+            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, ['strong' => [] ] ) );
         }
 
         /**
@@ -370,7 +369,7 @@ if (!class_exists('SPEL')) {
                 self::MINIMUM_PHP_VERSION
             );
 
-            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
+            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, ['strong' => [] ] ) );
         }
 
 
