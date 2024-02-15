@@ -334,8 +334,7 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'spe_post_content_limit',
-			[
+			'limit_contents', [
 				'label'     => esc_html__( 'Content Limit Display', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'min'       => 1,

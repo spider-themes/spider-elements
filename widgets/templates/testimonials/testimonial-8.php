@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) {
                         }
                         ?>
                     </div>
-                <?php
+                    <?php
                 }
             }
             ?>

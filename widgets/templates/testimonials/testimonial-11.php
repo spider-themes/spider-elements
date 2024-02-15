@@ -39,9 +39,7 @@ if (!defined('ABSPATH')) {
             </div>
             <div class="custom_slider_nav ">
                 <div class="slide_info">
-                    <div class="current_slide me-2"></div>
-                    /
-                    <div class="total_slide ms-2"></div>
+                    <div class="current_slide me-2"></div>/<div class="total_slide ms-2"></div>
                 </div>
             </div>
         </div>

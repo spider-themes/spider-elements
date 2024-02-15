@@ -12,7 +12,9 @@ if (!defined('ABSPATH')) {
             <div class="ezd-lg-col-<?php echo esc_attr($column_grid); ?> ezd-sm-col-6">
                 <div class="blog-meta-one">
                     <figure class="post-img m0">
-                        <a href="<?php the_permalink(); ?>" class="img"><?php the_post_thumbnail(); ?></a>
+                        <a href="<?php the_permalink(); ?>" class="img">
+                            <?php the_post_thumbnail('full'); ?>
+                        </a>
                     </figure>
                     <div class="post-data">
                         <?php echo '<a href="' . spel_get_first_taxonomy_link() . '" class="tags">' . spel_get_first_taxonomy() . '</a>'; ?>

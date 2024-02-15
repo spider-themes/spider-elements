@@ -5,23 +5,28 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="skill_item skill_item_two ezd-text-center">
-    <div class="skill_pr">
-        <svg class="radial-progress" data-percentage="<?php echo esc_attr($counter_value); ?>" viewBox="0 0 80 80">
-            <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-            <circle class="complete" cx="40" cy="40" r="35"></circle>
-        </svg>
-        <span class="percentage counter">
-            <?php echo esc_html($counter_value) ?>
-        </span>
-    </div>
-    <?php if ($text_switcher == 'yes') : ?>
+    <?php
+    if ( !empty($counter_value)) { ?>
+        <div class="skill_pr">
+            <svg class="radial-progress" data-percentage="<?php echo esc_attr($counter_value); ?>" viewBox="0 0 80 80">
+                <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+                <circle class="complete" cx="40" cy="40" r="35"></circle>
+            </svg>
+            <span class="percentage counter">
+                <?php echo esc_html($counter_value) ?>
+            </span>
+        </div>
+        <?php
+    }
+    if ( !empty($counter_text) && ($text_switcher == 'yes') ) { ?>
         <h6><?php echo esc_html($counter_text); ?></h6>
-    <?php endif; ?>
+        <?php
+    }
+    ?>
 </div>
 
 <script type=text/javascript>
-    ;
-    (function ($) {
+    ;(function ($) {
         "use strict";
 
         $(document).ready(function () {

@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						] );
 
 						$schema_rating = '<span itemprop="ratingValue" class="elementor-screen-only">' . $textual_rating . '</span>';
-						$stars_element = '<div ' . esc_attr($this->get_render_attribute_string( 'icon_wrapper' )) . '>' . $this->render_stars( $icon, $item[ 'author_rating' ] ) . ' ' . $schema_rating . '</div>';
+						$stars_element = '<div ' . $this->get_render_attribute_string( 'icon_wrapper' ) . '>' . $this->render_stars( $icon, $item[ 'author_rating' ] ) . ' ' . $schema_rating . '</div>';
 						?>
                         <div class="review">
 							<?php if ( ! \Elementor\Utils::is_empty( $item[ 'author_rating_title' ] ) ) : ?>

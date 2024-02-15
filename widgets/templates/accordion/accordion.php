@@ -24,10 +24,10 @@ if (!defined('ABSPATH')) {
                             if (!empty($settings['plus-icon']['value']) || !empty($settings['minus-icon']['value'])) { ?>
                                 <span class="icon-wrapper">
                                     <span class="expanded-icon">
-                                        <?php \Elementor\Icons_Manager::render_icon($settings['plus-icon'], ['aria-hidden' => 'true']); ?>
+                                        <?php \Elementor\Icons_Manager::render_icon($settings['plus-icon']); ?>
                                     </span>
                                     <span class="collapsed-icon">
-                                        <?php \Elementor\Icons_Manager::render_icon($settings['minus-icon'], ['aria-hidden' => 'true']); ?>
+                                        <?php \Elementor\Icons_Manager::render_icon($settings['minus-icon']); ?>
                                     </span>
                                 </span>
                                 <?php

@@ -273,12 +273,12 @@ class Animated_Heading extends Widget_Base {
 				$i = "";
 				if ( ! empty( $cd_option_list ) ) {
 					foreach ( $cd_option_list as $item ) {
-						$vihi = $i == 1 ? 'visible' : 'hidden';
+						$vi_hi = $i == 1 ? 'visible' : 'hidden';
 						$i ++;
 						$slide_title1 = ! empty( $item['title1'] ) ? $item['title1'] : '';
 						$slide_title2 = ! empty( $item['title2'] ) ? $item['title2'] : '';
 						?>
-                        <span class="is-<?php echo esc_attr( $vihi ); ?>">
+                        <span class="is-<?php echo esc_attr( $vi_hi ); ?>">
                             <?php
                             if ( $slide_title1 ) { ?>
                                 <b><?php echo esc_attr( $slide_title1 ); ?></b>

@@ -536,10 +536,9 @@ class Accordion extends Widget_Base {
 		$this->end_controls_section();
 
 
-//		===========Accordion Content Style Section==========
+        //===========Accordion Content Style Section==========
 		$this->start_controls_section(
-			'section_toggle_style_content',
-			[
+			'section_toggle_style_content', [
 				'label' => esc_html__( 'Content', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]

@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             </a>
                         </div>
                         <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="tran3s blog-title">', '</h2>' ); ?></a>
-                        <p><?php echo wp_kses_post( wp_trim_words( get_the_content(), $spe_post_content_limit ) ); ?></p>
+                        <p><?php echo esc_html( wp_trim_words( get_the_content(), $settings['limit_contents'] ) ); ?></p>
                         <a href="<?php the_permalink(); ?>" class="continue-btn tran3s ezd-d-flex ezd-align-items-center">
                             <i class="arrow_right"></i>
                         </a>

@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
                                 <div class="ezd-md-col-7">
                                     <div class="testimonial-content">
                                         <?php
-                                        \Elementor\Icons_Manager::render_icon($settings[ 'quote_icon' ], [ 'aria-hidden' => 'true' ]); ?>
+                                        \Elementor\Icons_Manager::render_icon($settings[ 'quote_icon' ]); ?>
                                         <div class="section-title section-tag">
                                             <?php echo !empty($item[ 'review_content' ]) ? '<p class="se_review_content">' . esc_html($item[ 'review_content' ]) . '</p>' : ''; ?>
                                         </div>

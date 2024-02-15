@@ -30,9 +30,12 @@ if (!defined('ABSPATH')) {
                             <?php echo spel_get_first_taxonomy(); ?>
                             <span class="blog-read"><?php echo spel_get_reading_time(); ?></span>
                         </div>
-                        <a href="<?php the_permalink(); ?>"><?php the_title('<h2 class="blog-title">', '</h2>') ?></a>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title('<h2 class="blog-title">', '</h2>') ?>
+                        </a>
                         <div class="read-more-btn">
-                            <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'spider-elements') ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php esc_html_e('Read More', 'spider-elements'); ?>
                                 <ion-icon name="arrow-forward-sharp"></ion-icon>
                             </a>
                         </div>

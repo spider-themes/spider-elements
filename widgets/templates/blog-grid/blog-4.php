@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
                 <div class="blog-meta-two">
                     <figure class="post-img">
                         <a href="<?php the_permalink(); ?>" class="img">
-                            <?php the_post_thumbnail(); ?>
+                            <?php the_post_thumbnail('full'); ?>
                         </a>
                     </figure>
                     <div class="post-data">

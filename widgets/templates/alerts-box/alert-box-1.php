@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 if ($settings[ 'display_type' ] == 'alert') : ?>
     <div class="alert media ezd-d-flex message_alert alert-<?php echo esc_attr($settings[ 'alert_type' ]) ?> fade show"
          role="alert" data-id="<?php echo esc_attr($this->get_id()) ?>">
-        <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ], [ 'aria-hidden' => 'true' ]); ?>
+        <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ]); ?>
         <div class="media-body">
             <?php if (!empty($settings[ 'alert_title' ])) : ?>
                 <h5 class="title"> <?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
@@ -23,7 +23,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
 
 <?php if ($settings[ 'display_type' ] == 'note') : ?>
     <blockquote class="media ezd-d-flex notice notice-<?php echo esc_attr($settings[ 'alert_type' ]) ?>">
-        <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ], [ 'aria-hidden' => 'true' ]); ?>
+        <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ]); ?>
         <div class="media-body">
             <?php if (!empty($settings[ 'alert_title' ])) : ?>
                 <h5 class="title"><?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
@@ -37,7 +37,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
     <div class="dual-box-wrapper notice-<?php echo esc_attr($settings[ 'alert_type' ] . ' ' . $settings[ 'dual-layer-alignment' ]) ?>">
         <div class="dual-box-content <?php echo esc_attr($settings[ 'dual-layer-alignment' ]) ?>">
             <div class="ezd-d-flex notice">
-                <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ], [ 'aria-hidden' => 'true' ]); ?>
+                <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ]); ?>
                 <div class="media-body">
                     <?php if (!empty($settings[ 'alert_title' ])) : ?>
                         <h5 class="title __title"><?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
@@ -57,7 +57,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
     <div class="block-notice-wrapper se_box_padding block-notice-<?php echo esc_attr($settings[ 'alert_type' ]) ?>">
         <div class="block-notice-content-wrapper">
             <div class="block-notice-icon">
-                <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ], [ 'aria-hidden' => 'true' ]); ?>
+                <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ]); ?>
             </div>
             <div class="block-notice-body">
                 <?php if (!empty($settings[ 'alert_title' ])) : ?>
@@ -75,8 +75,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
             <?php if (!empty($settings[ 'icon' ][ 'value' ])) : ?>
                 <div class="info-tab note-icon" title="Important Notes">
                     <div class="icon-wrapper">
-                        <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ],
-                            [ 'aria-hidden' => 'true' ]); ?>
+                        <?php \Elementor\Icons_Manager::render_icon($settings[ 'icon' ]); ?>
                     </div>
                 </div>
             <?php endif; ?>

@@ -33,8 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     </div>
                                 </div>
                                 <div class="quote-img-bottom">
-                                    <img src="<?php echo esc_url(SPEL_IMG) . '/quote_img2.png' ?>"
-                                         alt="<?php esc_attr_e( 'Quote Image Two', 'spider-elements' ) ?>">
+                                    <img src="<?php echo SPEL_IMG . '/quote_img2.png' ?>" alt="<?php esc_attr_e( 'Quote Image Two', 'spider-elements' ) ?>">
                                 </div>
                             </div>
                         </div>
