@@ -948,6 +948,9 @@
 
     .item {
       margin: 0 35px;
+      //@media (max-width: 1399px){
+      //  margin: 0 15px;
+      //}
     }
   }
 }
@@ -957,7 +960,7 @@
   padding: 45px 55px 40px;
   background: #fff;
   border-radius: 10px;
-  border: 0px;
+  border: 0;
 
   .quote-icon {
     position: absolute;
@@ -967,7 +970,7 @@
   }
 
   .review {
-    border: 0px;
+    border: 0;
     padding-top: 0;
 
     .text-md {

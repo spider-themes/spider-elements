@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
                                     <?php
                                 }
                                 if (!empty($item[ 'author_name' ])) { ?>
-                                    <div class="name text-md text-white">
+                                    <div class="name text-md">
                                         <?php echo esc_html($item[ 'author_name' ]); ?>
                                         <span class="opacity-50"><?php echo esc_html($item[ 'author_position' ]); ?></span>
                                     </div>

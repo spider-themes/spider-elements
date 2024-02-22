@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
                                 }
                                 if ( !empty($item['author_name']) ) {
                                     ?>
-                                    <div class="ezd-d-inline-block ezd-position-relative name fw-500 text-dark text-lg">
+                                    <div class="ezd-d-inline-block ezd-position-relative name fw-500 text-lg">
                                         <?php echo esc_html($item[ 'author_name' ]); ?>
                                         <span class="fw-normal opacity-50"><?php echo esc_html($item[ 'author_position' ]); ?></span>
                                     </div>

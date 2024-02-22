@@ -317,11 +317,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name'     => 'accordion_title_bg_color',
-				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
+			Group_Control_Typography::get_type(), [
+				'name'     => 'title_typography',
 				'selector' => '{{WRAPPER}} .doc_accordion .card-header button.collapsed, {{WRAPPER}} .doc_accordion .card-header button',
 			]
 		);
@@ -340,7 +337,7 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'tab_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Active Text', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .accordion .spe-collapsed button.btn' => 'color: {{VALUE}};',
@@ -349,8 +346,11 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'title_typography',
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'accordion_title_bg_color',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
 				'selector' => '{{WRAPPER}} .doc_accordion .card-header button.collapsed, {{WRAPPER}} .doc_accordion .card-header button',
 			]
 		);
@@ -395,6 +395,14 @@ class Accordion extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'icon_typography',
+				'selector' => '{{WRAPPER}} .expanded-icon, {{WRAPPER}} .collapsed-icon',
+			]
+		);
+
+
 		// Accordion icon Normal/Active/ State
 		$this->start_controls_tabs(
 			'style_accordion_icon_tabs'
@@ -411,7 +419,7 @@ class Accordion extends Widget_Base {
 		$this->add_control(
 			'acc_icon_color',
 			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
@@ -420,13 +428,15 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
+		$this->add_control(
+			'acc_icon_bg_color',
 			[
-				'name'     => 'normal_accordion_icon_bg_color',
-				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .doc_accordion .card-header button .expanded-icon',
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_accordion .card-header button .expanded-icon' => 'background: {{VALUE}};',
+
+				],
 			]
 		);
 
@@ -435,7 +445,7 @@ class Accordion extends Widget_Base {
 
 		//=== Active icon====
 		$this->start_controls_tab(
-			'style_tab_title_active', [
+			'acc_icon_active', [
 				'label' => esc_html__( 'Active', 'spider-elements' ),
 			]
 		);
@@ -450,13 +460,13 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name'     => 'active_accordion_icon_bg_color',
-				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'
+		$this->add_control(
+			'icon_active_bg_color', [
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon' => 'background: {{VALUE}};',
+				],
 			]
 		);
 
@@ -485,22 +495,16 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'icon_typography',
-				'selector' => '{{WRAPPER}} .expanded-icon, {{WRAPPER}} .collapsed-icon',
-			]
-		);
-
 		$this->add_responsive_control(
 			'icon_space',
 			[
 				'label'     => esc_html__( 'Spacing', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em' ],
 				'range'     => [
 					'px' => [
 						'min' => 0,
-						'max' => 200,
+						'max' => 500,
 					],
 				],
 				'default'   => [
@@ -512,6 +516,19 @@ class Accordion extends Widget_Base {
 					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'                 => 'margin-right: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .doc_accordion .card-header button.icon-align-left .expanded-icon'  => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .doc_accordion .card-header button.icon-align-left .collapsed-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'acc_border_radius',
+			[
+				'label'     => esc_html__( 'Border Radius', 'spider-elements' ),
+				'type'      => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .doc_accordion .card-header button .expanded-icon'  => 'border-radius: {{SIZE}}px;',
+					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon' => 'border-radius: {{SIZE}}px;',
 				],
 			]
 		);
@@ -529,23 +546,6 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'acc_border_radius',
-			[
-				'label'     => esc_html__( 'Border Radius', 'spider-elements' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .doc_accordion .card-header button .expanded-icon'  => 'border-radius: {{SIZE}}px;',
-					'{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon' => 'border-radius: {{SIZE}}px;',
-				],
-			]
-		);
-
 		$this->end_controls_section();
 
 
@@ -559,12 +559,9 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name'     => 'accordion_content_bg_color',
-				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body ',
+			Group_Control_Typography::get_type(), [
+				'name'     => 'content_typography',
+				'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body',
 			]
 		);
 
@@ -580,9 +577,12 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'content_typography',
-				'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body',
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'accordion_content_bg_color',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .elementor-widget-container .toggle_body ',
 			]
 		);
 
