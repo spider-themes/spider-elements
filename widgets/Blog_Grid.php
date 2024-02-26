@@ -157,15 +157,16 @@ class Blog_Grid extends Widget_Base {
 					'3' => esc_html__( 'Four Column', 'spider-elements' ),
 					'2' => esc_html__( 'Six Column', 'spider-elements' ),
 				],
-				'default' => '6',
+				'default' => '4 ',
 				'condition' => [
-					'layout' => [ '1', '2', '3', '4', '5' ]
+					'style' => [ '1', '2', '3', '4', '5' ],
+					'style!' => [ '6' ]
 				]
 			]
 		);
 
 		$this->add_control(
-			'arrow_icon', [
+			'left_arrow_icon', [
 				'label'       => esc_html__( 'Left Icon', 'spider-elements' ),
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
@@ -650,7 +651,7 @@ class Blog_Grid extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
-					'{{WRAPPER}} .blog-meta-two .post-img a img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-meta-two .post-img .blog1-img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .blog-meta-one .post-img a img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -1303,6 +1304,7 @@ class Blog_Grid extends Widget_Base {
 				'selectors'  => [
 					'{{WRAPPER}} .slick-arrow ' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
+				'separator'    => 'before',
 			]
 		);
 
@@ -1311,7 +1313,6 @@ class Blog_Grid extends Widget_Base {
 			[
 				'name' => 'blog_icon_border',
 				'selector' => '{{WRAPPER}} .slick-arrow',
-				'separator'    => 'before',
 			]
 		);
 

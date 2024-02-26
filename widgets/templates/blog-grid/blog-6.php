@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
     </div>
 	<?php
-	if ( ! empty( $settings['arrow_icon']['value'] ) || ! empty( $settings['right_arrow_icon']['value'] ) ) { ?>
-        <span class="slider-arrows d-flex justify-content-center">
-            <span class="prev_d slick-arrow">
-                <?php \Elementor\Icons_Manager::render_icon( $settings['arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+	if ( ! empty( $settings['left_arrow_icon']['value'] ) || ! empty( $settings['right_arrow_icon']['value'] ) ) { ?>
+        <span class="blog-slider-arrows d-flex justify-content-center">
+            <span class="prev_d blog-slick-arrow">
+                <?php \Elementor\Icons_Manager::render_icon( $settings['left_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
             </span>
-            <span class="next_d slick-arrow">
+            <span class="next_d blog-slick-arrow">
                 <?php \Elementor\Icons_Manager::render_icon( $settings['right_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
             </span>
         </span>

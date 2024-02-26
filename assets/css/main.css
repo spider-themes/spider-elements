@@ -8700,11 +8700,13 @@ ul.ordered-list li::before {
 }
 .blog-meta-two .post-img {
   display: inline-block;
-  overflow: hidden;
   position: relative;
   margin-bottom: unset !important;
 }
-.blog-meta-two .post-img img {
+.blog-meta-two .post-img .blog1-img {
+  overflow: hidden;
+}
+.blog-meta-two .post-img .blog1-img img {
   transition: all 0.4s ease-in-out;
 }
 .blog-meta-two .post-img .tags {
@@ -9080,28 +9082,28 @@ ul.ordered-list li::before {
   color: #fff;
 }
 
-.slider-arrows {
+.blog-slider-arrows {
   position: absolute;
-  top: -112px;
+  top: -110px;
   right: -2px;
 }
 @media (min-width: 992px) and (max-width: 1201px) {
-  .slider-arrows {
+  .blog-slider-arrows {
     top: -100px;
   }
 }
 @media (min-width: 541px) and (max-width: 991px) {
-  .slider-arrows {
+  .blog-slider-arrows {
     top: -80px;
   }
 }
 @media only screen and (max-width: 540px) {
-  .slider-arrows {
+  .blog-slider-arrows {
     position: static;
     margin-top: 20px;
   }
 }
-.slider-arrows .slick-arrow {
+.blog-slider-arrows .blog-slick-arrow {
   width: 40px;
   height: 35px;
   cursor: pointer;
@@ -9115,7 +9117,7 @@ ul.ordered-list li::before {
   align-items: center;
   transition: all 0.2s ease-in-out 0s;
 }
-.slider-arrows .slick-arrow:hover {
+.blog-slider-arrows .blog-slick-arrow:hover {
   background: #f5f5f5;
   color: #005025;
 }

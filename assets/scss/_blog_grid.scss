@@ -4,12 +4,13 @@
   margin-bottom: 0 !important;
   .post-img {
     display: inline-block;
-    overflow: hidden;
     position: relative;
     margin-bottom: unset !important;
-
-    img {
-      transition: all 0.4s ease-in-out;
+    .blog1-img {
+      overflow: hidden;
+      img {
+        transition: all 0.4s ease-in-out;
+      }
     }
 
     .tags {
@@ -468,9 +469,9 @@
     }
   }
 }
-.slider-arrows {
+.blog-slider-arrows {
   position: absolute;
-  top: -112px;
+  top: -110px;
   right: -2px;
   @media (min-width: 992px) and (max-width: 1201px) {
     top: -100px;
@@ -482,7 +483,7 @@
     position: static;
     margin-top: 20px;
   }
-  .slick-arrow {
+  .blog-slick-arrow {
     width: 40px;
     height: 35px;
     cursor: pointer;
