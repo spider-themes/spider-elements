@@ -355,6 +355,9 @@
         display: block;
       }
     }
+    &.border-bottom-none {
+      border: none !important;
+    }
   }
 }
 

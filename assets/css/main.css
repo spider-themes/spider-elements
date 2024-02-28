@@ -922,6 +922,9 @@ a:hover, a:focus {
 .accordion .doc_accordion.spe-collapsed .collapse {
   display: block;
 }
+.accordion .doc_accordion.border-bottom-none {
+  border: none !important;
+}
 
 .accordion-article-wrap .accordion-article-inner {
   border: 1px solid rgb(235, 235, 235);

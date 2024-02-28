@@ -257,7 +257,7 @@ class Accordion extends Widget_Base {
 
 		//============================= Accordion Settings Style =============================//
 		$this->start_controls_section(
-			'section_title_style', [
+			'sec_title_style', [
 				'label' => esc_html__( 'Accordion', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
@@ -271,6 +271,18 @@ class Accordion extends Widget_Base {
 				'selector' => '{{WRAPPER}} .accordion .doc_accordion',
 			]
 		);
+
+        $this->add_control(
+            'is_border_bottom', [
+                'label' => esc_html__( 'Border Bottom', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Yes', 'spider-elements' ),
+                'label_off' => esc_html__( 'No', 'spider-elements' ),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+
 
 		$this->add_responsive_control(
 			'acc_item_border_radius', [
