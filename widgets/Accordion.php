@@ -279,7 +279,7 @@ class Accordion extends Widget_Base {
                 'label_on' => esc_html__( 'Yes', 'spider-elements' ),
                 'label_off' => esc_html__( 'No', 'spider-elements' ),
                 'return_value' => 'yes',
-                'default' => 'no',
+                'default' => 'yes',
             ]
         );
 

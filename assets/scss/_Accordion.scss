@@ -356,7 +356,7 @@
       }
     }
     &.border-bottom-none {
-      border: none !important;
+      border: unset !important;
     }
   }
 }

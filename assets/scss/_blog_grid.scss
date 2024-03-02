@@ -6,7 +6,7 @@
     display: inline-block;
     position: relative;
     margin-bottom: unset !important;
-    .blog1-img {
+    a {
       overflow: hidden;
       img {
         transition: all 0.4s ease-in-out;
@@ -141,7 +141,9 @@
   .post-img {
     overflow: hidden;
     display: inline-block;
-
+    a{
+      overflow:hidden;
+    }
     img {
       transition: all 0.3s ease-in-out;
     }

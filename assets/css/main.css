@@ -923,7 +923,7 @@ a:hover, a:focus {
   display: block;
 }
 .accordion .doc_accordion.border-bottom-none {
-  border: none !important;
+  border: unset !important;
 }
 
 .accordion-article-wrap .accordion-article-inner {
@@ -8706,10 +8706,10 @@ ul.ordered-list li::before {
   position: relative;
   margin-bottom: unset !important;
 }
-.blog-meta-two .post-img .blog1-img {
+.blog-meta-two .post-img a {
   overflow: hidden;
 }
-.blog-meta-two .post-img .blog1-img img {
+.blog-meta-two .post-img a img {
   transition: all 0.4s ease-in-out;
 }
 .blog-meta-two .post-img .tags {
@@ -8812,6 +8812,9 @@ ul.ordered-list li::before {
 .blog-meta-one .post-img {
   overflow: hidden;
   display: inline-block;
+}
+.blog-meta-one .post-img a {
+  overflow: hidden;
 }
 .blog-meta-one .post-img img {
   transition: all 0.3s ease-in-out;
