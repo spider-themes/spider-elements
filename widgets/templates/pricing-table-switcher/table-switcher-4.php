@@ -93,7 +93,7 @@ if (!defined('ABSPATH')) {
                                                 <?php
                                             }
                                             if (!empty($table[ 'contents' ])) {
-                                                echo spel_kses_post($table[ 'contents' ]);
+                                                echo wp_kses_post($table[ 'contents' ]);
                                             }
                                             if (!empty($table[ 'btn_label' ])) { ?>
                                                 <a <?php spel_button_link($table[ 'btn_url' ]) ?>
@@ -151,7 +151,7 @@ if (!defined('ABSPATH')) {
                                                 <?php
                                             }
                                             if (!empty($table[ 'contents' ])) {
-                                                echo spel_kses_post($table[ 'contents' ]);
+                                                echo wp_kses_post($table[ 'contents' ]);
                                             }
                                             if (!empty($table[ 'btn_label' ])) { ?>
                                                 <a <?php spel_button_link($table[ 'btn_url' ]) ?>

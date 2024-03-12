@@ -373,7 +373,7 @@ class Pricing_Table_Tabs extends Widget_Base
                                             <?php
                                         }
                                         if (!empty($table_item[ 'contents' ])) { ?>
-                                            <?php echo spel_kses_post($table_item[ 'contents' ]) ?>
+                                            <?php echo wp_kses_post($table_item[ 'contents' ]) ?>
                                             <?php
                                         }
                                         if (!empty($table_item[ 'btn_label_2' ])) { ?>

@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-img-top">
-                                        <img src="<?php echo esc_url(SPEL_IMG) . '/quote_img1.png' ?>"
+                                        <img src="<?php echo esc_url(SPEL_IMG . '/quote_img1.png') ?>"
                                              alt="<?php esc_attr_e( 'Quote Image One', 'spider-elements' ) ?>">
                                     </div>
 									<?php
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     </div>
                                 </div>
                                 <div class="quote-img-bottom">
-                                    <img src="<?php echo SPEL_IMG . '/quote_img2.png' ?>" alt="<?php esc_attr_e( 'Quote Image Two', 'spider-elements' ) ?>">
+                                    <img src="<?php echo esc_url(SPEL_IMG . '/quote_img2.png') ?>" alt="<?php esc_attr_e( 'Quote Image Two', 'spider-elements' ) ?>">
                                 </div>
                             </div>
                         </div>

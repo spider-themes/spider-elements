@@ -109,6 +109,7 @@ if (!class_exists('SPEL')) {
             // Init Plugin
             add_action('plugins_loaded', array( $this, 'init_plugin' ));
 
+            // Load text domain for localization
             add_action('init', [ $this, 'i18n' ]);
 
             // Register Category
@@ -136,7 +137,7 @@ if (!class_exists('SPEL')) {
         public function __clone ()
         {
             // Cloning instances of the class is forbidden
-            _doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&#8217; huh?', 'spider-elements'), self::VERSION);
+            _doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&#8217; huh?', 'spider-elements'), esc_html(self::VERSION));
         }
 
 
@@ -206,11 +207,10 @@ if (!class_exists('SPEL')) {
          * Load Textdomain
          *
          * Load plugin localization files.
-         *
-         * @access public
          */
         public function i18n ()
         {
+            // Translators: %s is the placeholder for the text domain.
             load_plugin_textdomain('spider-elements', false, plugin_basename(dirname(__FILE__)) . '/languages');
         }
 
@@ -279,6 +279,7 @@ if (!class_exists('SPEL')) {
                 $button_link = wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s',
                     'activate-plugin_' . $plugin);
                 $message = sprintf(
+                    /* translators: 1: Plugin name, 2: Elementor plugin name */
                     esc_html__('%1$s requires %2$s plugin to be active. Please activate the %2$s to continue.', 'spider-elements'),
                     '<strong>' . $plugin_name . '</strong>',
                     '<strong>' . $elementor_name . '</strong>'
@@ -291,6 +292,7 @@ if (!class_exists('SPEL')) {
                 $button_link = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=elementor'),
                     'install-plugin_elementor');
                 $message = sprintf(
+                    /* translators: 1: Plugin name, 2: Elementor plugin name */
                     esc_html__('%1$s requires %2$s plugin to be installed and activated. Please install the %2$s to continue.', 'spider-elements'),
                     '<strong>' . $plugin_name . '</strong>',
                     '<strong>' . $elementor_name . '</strong>'
@@ -314,9 +316,10 @@ if (!class_exists('SPEL')) {
         public function admin_notice_minimum_elementor_version ()
         {
 
-            if (isset($_GET[ 'activate' ])) {
+            if (isset($_GET['activate']) && isset($_GET['_wpnonce'])) {
+
                 // Ensure it's a valid action (optional, depending on your needs)
-                if (isset($_GET[ 'activate' ]) && $_GET[ 'activate' ] === 'spider-elements-activation') {
+                if ($_GET['activate'] === 'spider-elements-activation' && wp_verify_nonce($_GET['_wpnonce'], 'spider-elements-activation')) {
 
                     // After activation is complete, remove the 'activate' parameter
                     unset($_GET[ 'activate' ]);
@@ -335,6 +338,7 @@ if (!class_exists('SPEL')) {
                 self::MINIMUM_ELEMENTOR_VERSION
             );
             printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, ['strong' => [] ] ) );
+
         }
 
         /**
@@ -348,28 +352,42 @@ if (!class_exists('SPEL')) {
         public function admin_notice_minimum_php_version ()
         {
 
-            if (isset($_GET[ 'activate' ])) {
-                // Ensure it's a valid action (optional, depending on your needs)
-                if (isset($_GET[ 'activate' ]) && $_GET[ 'activate' ] === 'spider-elements-activation') {
+            // Verify nonce
+            if (isset($_GET['activate']) && isset($_GET['nonce']) && wp_verify_nonce($_GET['nonce'], 'spider-elements-activation')) {
 
-                    // After activation is complete, remove the 'activate' parameter
-                    unset($_GET[ 'activate' ]);
+                // After activation is complete, remove the 'activate' parameter
+                unset($_GET['activate']);
 
-                    // Redirect to a specific page after activation (optional)
-                    wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
-                    exit;
-                }
+                // Redirect to a specific page after activation (optional)
+                wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
+                exit;
             }
 
+            // Create nonce
+            $nonce = wp_create_nonce('spider-elements-activation');
+
+            // Activation URL with nonce
+            $activation_url = add_query_arg(array(
+                'page' => 'spider-elements-settings',
+                'activate' => 'spider-elements-activation',
+                'nonce' => $nonce
+            ), admin_url('admin.php'));
+
+            // Message about minimum PHP version
             $message = sprintf(
-            /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
+                /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
                 esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements'),
                 '<strong>' . esc_html__('Spider Elements', 'spider-elements') . '</strong>',
                 '<strong>' . esc_html__('PHP', 'spider-elements') . '</strong>',
                 self::MINIMUM_PHP_VERSION
             );
 
-            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, ['strong' => [] ] ) );
+            // Display admin notice with activation link
+            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p><p><a href="%2$s">%3$s</a></p></div>',
+                wp_kses($message, ['strong' => []]),
+                esc_url($activation_url),
+                esc_html__('Activate Now', 'spider-elements')
+            );
         }
 
 

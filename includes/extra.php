@@ -109,7 +109,7 @@ if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
 	function spel_get_reading_time( $words_per_minute = 200 ) {
 		$content      = get_post_field( 'post_content', get_the_ID() );
-		$word_count   = str_word_count( strip_tags( $content ) );
+		$word_count   = str_word_count( wp_strip_all_tags( $content ) );
 		$reading_time = ceil( $word_count / $words_per_minute );
 		$timer        = _n( 'minute', 'minutes', $reading_time, 'spider-elements' );
 
@@ -341,7 +341,7 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
 		if ( $type ) {
 			$args              = [
 				'post_type'      => 'elementor_library',
-				'posts_per_page' => - 1,
+				'posts_per_page' => -1,
 			];
 			$args['tax_query'] = [
 				[

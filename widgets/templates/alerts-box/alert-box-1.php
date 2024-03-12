@@ -10,7 +10,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
             <?php if (!empty($settings[ 'alert_title' ])) : ?>
                 <h5 class="title"> <?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
             <?php endif; ?>
-            <?php echo !empty($settings[ 'alert_description' ]) ? spel_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
+            <?php echo !empty($settings[ 'alert_description' ]) ? wp_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
             <?php if ('show' === $settings[ 'show_dismiss' ]) : ?>
                 <button type="button" class="close" data-dismiss="alert"
                         data-id="<?php echo esc_attr($this->get_id()) ?>">
@@ -28,7 +28,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
             <?php if (!empty($settings[ 'alert_title' ])) : ?>
                 <h5 class="title"><?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
             <?php endif; ?>
-            <?php echo !empty($settings[ 'alert_description' ]) ? spel_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
+            <?php echo !empty($settings[ 'alert_description' ]) ? wp_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
         </div>
     </blockquote>
 <?php endif; ?>
@@ -44,7 +44,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
                     <?php endif; ?>
                     <?php if (!empty($settings[ 'alert_description' ])) : ?>
                         <div class="__content">
-                            <?php echo spel_kses_post(wpautop($settings[ 'alert_description' ])) ?>
+                            <?php echo wp_kses_post(wpautop($settings[ 'alert_description' ])) ?>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -63,7 +63,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
                 <?php if (!empty($settings[ 'alert_title' ])) : ?>
                     <h5 class="title"><?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
                 <?php endif; ?>
-                <?php echo !empty($settings[ 'alert_description' ]) ? spel_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
+                <?php echo !empty($settings[ 'alert_description' ]) ? wp_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
             </div>
         </div>
     </div>
@@ -83,7 +83,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
                 <?php if (!empty($settings[ 'alert_title' ])) : ?>
                     <h5 class="title"> <?php echo esc_html($settings[ 'alert_title' ]) ?></h5>
                 <?php endif; ?>
-                <?php echo !empty($settings[ 'alert_description' ]) ? spel_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
+                <?php echo !empty($settings[ 'alert_description' ]) ? wp_kses_post(wpautop($settings[ 'alert_description' ])) : ''; ?>
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@ if ($settings[ 'display_type' ] == 'alert') : ?>
 <?php if ($settings[ 'display_type' ] == 'explanation') : ?>
     <?php if (!empty($settings[ 'alert_description' ])) : ?>
         <div class="explanation expn-left">
-            <?php echo spel_kses_post(wpautop($settings[ 'alert_description' ])) ?>
+            <?php echo wp_kses_post(wpautop($settings[ 'alert_description' ])) ?>
         </div>
     <?php endif ?>
     <?php if (!empty($settings[ 'alert_title' ])) : ?>

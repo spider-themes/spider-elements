@@ -64,7 +64,7 @@ if (!defined('ABSPATH')) {
                                         <p class="list-title"><?php echo esc_html($table[ 'f_title' ]) ?></p>
                                         <?php
                                     }
-                                    echo !empty($table[ 'contents' ]) ? spel_kses_post($table[ 'contents' ]) : '';
+                                    echo !empty($table[ 'contents' ]) ? wp_kses_post($table[ 'contents' ]) : '';
                                     ?>
                                 </div>
                                 <?php
@@ -120,7 +120,7 @@ if (!defined('ABSPATH')) {
                                         <p class="list-title"><?php echo esc_html($table[ 'f_title' ]) ?></p>
                                         <?php
                                     }
-                                    echo !empty($table[ 'contents' ]) ? spel_kses_post($table[ 'contents' ]) : '';
+                                    echo !empty($table[ 'contents' ]) ? wp_kses_post($table[ 'contents' ]) : '';
                                     ?>
                                 </div>
                                 <?php

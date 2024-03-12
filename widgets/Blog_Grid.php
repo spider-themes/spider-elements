@@ -850,7 +850,8 @@ class Blog_Grid extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // Array to variable conversation
-		// query part
+
+        // query part
 		$query['post_status']      = 'publish';
 		$query['suppress_filters'] = false;
 		if ( $spe_post_blog_queryby == 'postype' ) {
@@ -859,35 +860,35 @@ class Blog_Grid extends Widget_Base {
 			$query['post_type'] = [ 'post' ];
 		}
 
-		$query['orderby'] = $spe_post_blog_order_by;
+        if ( $spe_post_blog_queryby == 'categories' && is_array( $spe_post_blog_categories ) && sizeof( $spe_post_blog_categories ) > 0 ) {
+            $query['tax_query'] = [
+                [
+                    'taxonomy' => 'category',
+                    'field'    => 'term_id',
+                    'terms'    => $spe_post_blog_categories,
+                ],
+                'relation' => 'AND',
+            ];
+        }
+
+        if ( ! empty( $spe_post_blog_order_by ) ) {
+            $query['orderby'] = $spe_post_blog_order_by;
+        }
+
 		if ( ! empty( $spe_post_blog_order ) ) {
 			$query['order'] = $spe_post_blog_order;
 		}
+
 		if ( ! empty( $spe_post_blog_limit ) ) {
-			$query['posts_per_page'] = (int) $spe_post_blog_limit;
+			$query['posts_per_page'] = $spe_post_blog_limit;
 		}
+
 		if ( ! empty( $spe_post_blog_offset ) ) {
-			$query['offset'] = (int) $spe_post_blog_offset;
+			$query['offset'] = $spe_post_blog_offset;
 		}
 
-		if ( $spe_post_blog_queryby == 'categories' ) {
-			if ( is_array( $spe_post_blog_categories ) && sizeof( $spe_post_blog_categories ) > 0 ) {
-				$cate_query         = [
-					[
-						'taxonomy' => 'category',
-						'field'    => 'term_id',
-						'terms'    => $spe_post_blog_categories,
-					],
-					'relation' => 'AND',
-				];
-				$query['tax_query'] = $cate_query;
-			}
-		}
-
-		if ( $spe_post_blog_queryby == 'posts' ) {
-			if ( is_array( $spe_post_blog_post ) && sizeof( $spe_post_blog_post ) > 0 ) {
-				$query['post__in'] = $spe_post_blog_post;
-			}
+		if ( $spe_post_blog_queryby == 'posts' && is_array( $spe_post_blog_post ) && sizeof( $spe_post_blog_post ) > 0 )  {
+            $query['post__in'] = $spe_post_blog_post;
 		}
 
 		$post_query = new \WP_Query( $query );
