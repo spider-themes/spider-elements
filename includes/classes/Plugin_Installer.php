@@ -88,15 +88,15 @@ class Plugin_Installer
 
         if ($this->check_installed_plugin($name)) {
             if ($this->check_activated_plugin($name)) {
-                $data[ 'title' ] = __('Activated', 'elementskit-lite');
+                $data[ 'title' ] = __('Activated', 'spider-elements');
                 $data[ 'status' ] = 'activated';
             } else {
-                $data[ 'title' ] = __('Activate Now', 'elementskit-lite');
+                $data[ 'title' ] = __('Activate Now', 'spider-elements');
                 $data[ 'status' ] = 'installed';
                 $data[ 'activation_url' ] = $this->activation_url($name);
             }
         } else {
-            $data[ 'title' ] = __('Install Now', 'elementskit-lite');
+            $data[ 'title' ] = __('Install Now', 'spider-elements');
             $data[ 'status' ] = 'not_installed';
             $data[ 'installation_url' ] = $this->installation_url($name);
             $data[ 'activation_url' ] = $this->activation_url($name);
