@@ -423,7 +423,6 @@ class Tabs extends Widget_Base {
 			[
 				'name'     => 'normal_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title, 
 					{{WRAPPER}} .header_tab_items .spe_tab_title',
@@ -467,11 +466,9 @@ class Tabs extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
+			\Elementor\Group_Control_Background::get_type(), [
 				'name'     => 'hover_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title:hover,
 					{{WRAPPER}} .header_tab_items .spe_tab_title:hover',
@@ -505,7 +502,6 @@ class Tabs extends Widget_Base {
 			[
 				'name'     => 'active_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
 					{{WRAPPER}} .header_tab_items .spe_tab_title.active',
@@ -565,7 +561,6 @@ class Tabs extends Widget_Base {
 			[
 				'name'     => 'progressbar_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .progress-bar,{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link.active .tab_progress:before', 
 

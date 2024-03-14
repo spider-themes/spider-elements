@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2024-02-15 11:39+0600\n"
+"POT-Creation-Date: 2024-03-14 16:05+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -74,21 +74,21 @@ msgctxt "post author"
 msgid "By: %s"
 msgstr ""
 
-#: spider-elements.php:139 spider-elements.php:156
+#: spider-elements.php:140 spider-elements.php:157
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: spider-elements.php:170
+#: spider-elements.php:171
 msgid "Elegant Icons"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: spider-elements.php:269 spider-elements.php:333 spider-elements.php:367
-#: spider-elements.php:385
+#: spider-elements.php:269 spider-elements.php:336 spider-elements.php:380
+#: spider-elements.php:403
 msgid "Spider Elements"
 msgstr ""
 
-#: spider-elements.php:270 spider-elements.php:334
+#: spider-elements.php:270 spider-elements.php:337
 msgid "Elementor"
 msgstr ""
 
@@ -96,18 +96,20 @@ msgstr ""
 msgid "Activate Elementor"
 msgstr ""
 
-#: spider-elements.php:282
+#. translators: 1: Plugin name, 2: Elementor plugin name
+#: spider-elements.php:283
 #, php-format
 msgid ""
 "%1$s requires %2$s plugin to be active. Please activate the %2$s to "
 "continue."
 msgstr ""
 
-#: spider-elements.php:290
+#: spider-elements.php:291
 msgid "Install Elementor"
 msgstr ""
 
-#: spider-elements.php:294
+#. translators: 1: Plugin name, 2: Elementor plugin name
+#: spider-elements.php:296
 #, php-format
 msgid ""
 "%1$s requires %2$s plugin to be installed and activated. Please install "
@@ -116,13 +118,17 @@ msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: spider-elements.php:332 spider-elements.php:366
+#: spider-elements.php:335 spider-elements.php:379
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: spider-elements.php:368
+#: spider-elements.php:381
 msgid "PHP"
+msgstr ""
+
+#: spider-elements.php:389
+msgid "Activate Now"
 msgstr ""
 
 #: widgets/Accordion.php:32 widgets/Accordion.php:91
@@ -240,13 +246,13 @@ msgstr ""
 
 #: widgets/Accordion.php:266 widgets/Blog_Grid.php:724
 #: widgets/Integrations.php:189 widgets/List_Item.php:335
-#: widgets/Pricing_Table_Switcher.php:1193 widgets/Tabs.php:635
+#: widgets/Pricing_Table_Switcher.php:1193 widgets/Tabs.php:630
 #: widgets/Testimonial.php:961 widgets/Testimonial.php:1271
 #: widgets/Video_Popup.php:272
 msgid "Border"
 msgstr ""
 
-#: widgets/Accordion.php:274 widgets/Accordion.php:485
+#: widgets/Accordion.php:274 widgets/Accordion.php:481
 msgid "Spacing"
 msgstr ""
 
@@ -254,30 +260,30 @@ msgstr ""
 msgid "Spacing between the accordions"
 msgstr ""
 
-#: widgets/Accordion.php:307 widgets/Accordion.php:550
+#: widgets/Accordion.php:307 widgets/Accordion.php:546
 #: widgets/List_Item.php:247 widgets/List_Item.php:306
 #: widgets/Pricing_Table_Tabs.php:220
 msgid "Background"
 msgstr ""
 
 #: widgets/Accordion.php:319 widgets/Accordion.php:401
-#: widgets/Accordion.php:561 widgets/Alerts_Box.php:403
+#: widgets/Accordion.php:557 widgets/Alerts_Box.php:403
 #: widgets/Alerts_Box.php:449 widgets/Counter.php:285 widgets/Counter.php:313
 #: widgets/List_Item.php:237 widgets/Pricing_Table_Switcher.php:1004
 #: widgets/Pricing_Table_Switcher.php:1068 widgets/Skill_Showcase.php:156
 msgid "Color"
 msgstr ""
 
-#: widgets/Accordion.php:330 widgets/Accordion.php:432
+#: widgets/Accordion.php:330 widgets/Accordion.php:431
 msgid "Active Color"
 msgstr ""
 
-#: widgets/Accordion.php:363 widgets/Accordion.php:509
-#: widgets/Accordion.php:587 widgets/Alerts_Box.php:343
+#: widgets/Accordion.php:363 widgets/Accordion.php:505
+#: widgets/Accordion.php:583 widgets/Alerts_Box.php:343
 #: widgets/Blog_Grid.php:488 widgets/Cheat_sheet.php:338
 #: widgets/List_Item.php:313 widgets/Pricing_Table_Switcher.php:921
 #: widgets/Pricing_Table_Switcher.php:1130 widgets/Tabs.php:367
-#: widgets/Tabs.php:655 widgets/Testimonial.php:949
+#: widgets/Tabs.php:650 widgets/Testimonial.php:949
 #: widgets/Testimonial.php:1208 widgets/Testimonial.php:1259
 msgid "Padding"
 msgstr ""
@@ -290,39 +296,39 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: widgets/Accordion.php:426 widgets/Pricing_Table_Switcher.php:860
-#: widgets/Tabs.php:487
+#: widgets/Accordion.php:425 widgets/Pricing_Table_Switcher.php:860
+#: widgets/Tabs.php:484
 msgid "Active"
 msgstr ""
 
-#: widgets/Accordion.php:457 widgets/List_Item.php:161 widgets/Tabs.php:267
+#: widgets/Accordion.php:453 widgets/List_Item.php:161 widgets/Tabs.php:267
 msgid "Alignment"
 msgstr ""
 
-#: widgets/Accordion.php:462
+#: widgets/Accordion.php:458
 msgid "Start"
 msgstr ""
 
-#: widgets/Accordion.php:466
+#: widgets/Accordion.php:462
 msgid "End"
 msgstr ""
 
-#: widgets/Accordion.php:522 widgets/Blog_Grid.php:477
+#: widgets/Accordion.php:518 widgets/Blog_Grid.php:477
 #: widgets/Blog_Grid.php:524 widgets/Blog_Grid.php:734
 #: widgets/Counter.php:187 widgets/Integrations.php:196
 #: widgets/List_Item.php:343 widgets/Pricing_Table_Switcher.php:954
 #: widgets/Pricing_Table_Switcher.php:1201 widgets/Tabs.php:380
-#: widgets/Tabs.php:643 widgets/Team_Carousel.php:219
+#: widgets/Tabs.php:638 widgets/Team_Carousel.php:219
 #: widgets/Testimonial.php:968 widgets/Video_Popup.php:280
 msgid "Border Radius"
 msgstr ""
 
-#: widgets/Accordion.php:542 widgets/Cheat_sheet.php:130
+#: widgets/Accordion.php:538 widgets/Cheat_sheet.php:130
 #: widgets/Pricing_Table_Switcher.php:178
 #: widgets/Pricing_Table_Switcher.php:319
 #: widgets/Pricing_Table_Switcher.php:401
 #: widgets/Pricing_Table_Switcher.php:475 widgets/Tabs.php:149
-#: widgets/Tabs.php:171 widgets/Tabs.php:606 widgets/Team_Carousel.php:124
+#: widgets/Tabs.php:171 widgets/Tabs.php:601 widgets/Team_Carousel.php:124
 msgid "Content"
 msgstr ""
 
@@ -422,7 +428,7 @@ msgstr ""
 #: widgets/Pricing_Table_Switcher.php:867
 #: widgets/Pricing_Table_Switcher.php:1169
 #: widgets/Pricing_Table_Switcher.php:1222 widgets/Tabs.php:413
-#: widgets/Tabs.php:460 widgets/Tabs.php:493 widgets/Tabs.php:623
+#: widgets/Tabs.php:459 widgets/Tabs.php:490 widgets/Tabs.php:618
 #: widgets/Testimonial.php:1033 widgets/Testimonial.php:1062
 #: widgets/Testimonial.php:1097 widgets/Testimonial.php:1133
 #: widgets/Testimonial.php:1167 widgets/Testimonial.php:1242
@@ -744,7 +750,7 @@ msgstr ""
 
 #: widgets/Blog_Grid.php:624 widgets/Blog_Grid.php:751
 #: widgets/List_Item.php:194 widgets/Pricing_Table_Switcher.php:1217
-#: widgets/Tabs.php:454 widgets/Team_Carousel.php:271
+#: widgets/Tabs.php:453 widgets/Team_Carousel.php:271
 #: widgets/Testimonial.php:983 widgets/Video_Popup.php:210
 msgid "Hover"
 msgstr ""
@@ -1425,7 +1431,7 @@ msgstr ""
 msgid "Tab Title #3"
 msgstr ""
 
-#: widgets/Tabs.php:211 widgets/Tabs.php:681
+#: widgets/Tabs.php:211 widgets/Tabs.php:676
 msgid "Navigation Arrow"
 msgstr ""
 
@@ -1465,19 +1471,19 @@ msgstr ""
 msgid "margin"
 msgstr ""
 
-#: widgets/Tabs.php:438 widgets/Tabs.php:535
+#: widgets/Tabs.php:437 widgets/Tabs.php:531
 msgid "Icon Background Color"
 msgstr ""
 
-#: widgets/Tabs.php:520
+#: widgets/Tabs.php:516
 msgid "Border Top Color"
 msgstr ""
 
-#: widgets/Tabs.php:555
+#: widgets/Tabs.php:551
 msgid "Tab ProgressBar"
 msgstr ""
 
-#: widgets/Tabs.php:576
+#: widgets/Tabs.php:571
 msgid "Progress Bar Hegiht"
 msgstr ""
 

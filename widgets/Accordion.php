@@ -412,7 +412,6 @@ class Accordion extends Widget_Base {
 			[
 				'name'     => 'normal_accordion_icon_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
 				'selector' => '{{WRAPPER}} .doc_accordion .card-header button .expanded-icon',
 			]
 		);
@@ -438,15 +437,12 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
+			\Elementor\Group_Control_Background::get_type(), [
 				'name'     => 'active_accordion_icon_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
-				'exclude'  => [ 'image' ],
 				'selector' => '{{WRAPPER}} .doc_accordion .card-header button .collapsed-icon'
 			]
 		);
-
 
 		$this->end_controls_tab(); // End Active Tab Title
 		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State

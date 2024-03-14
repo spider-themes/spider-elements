@@ -62,7 +62,7 @@ if (!defined('ABSPATH')) {
                             echo do_shortcode($item[ 'tab_content' ]);
                         } elseif ('template' == $item[ 'tabs_content_type' ]) {
                             if (!empty($item[ 'primary_templates' ])) {
-                                echo \Elementor\plugin::$instance->frontend->get_builder_content($item[ 'primary_templates' ], true);
+                                echo wp_kses_post(\Elementor\plugin::$instance->frontend->get_builder_content($item[ 'primary_templates' ], true));
                             }
                         }
                         ?>

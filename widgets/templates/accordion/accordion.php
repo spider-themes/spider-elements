@@ -46,7 +46,7 @@ if (!defined('ABSPATH')) {
                             echo wp_kses_post($item['normal_content']);
                         } elseif ($content_type == 'el_template') {
                             if (!empty($item['el_content'])) {
-                                echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($item['el_content']);
+                                echo wp_kses_post(\Elementor\Plugin::$instance->frontend->get_builder_content_for_display($item['el_content']));
                             }
                         }
                         ?>
