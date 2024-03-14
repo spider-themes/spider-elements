@@ -559,6 +559,7 @@ add_action( 'admin_init', function () {
 		$spe_timeline_widget             = isset( $_POST['spe_timeline_widget'] ) ? sanitize_text_field( $_POST['spe_timeline_widget'] ) : '';
 		$docy_videos_playlist            = isset( $_POST['docy_videos_playlist'] ) ? sanitize_text_field( $_POST['docy_videos_playlist'] ) : '';
 		$docy_video_popup                = isset( $_POST['docy_video_popup'] ) ? sanitize_text_field( $_POST['docy_video_popup'] ) : '';
+		$spe_global_switcher 		   	 = isset( $_POST['spe_global_switcher'] ) ? sanitize_text_field( $_POST['spe_global_switcher'] ) : '';
 
 		// Create an array to store the field values
 		$data = array(
@@ -583,6 +584,7 @@ add_action( 'admin_init', function () {
 			'spe_timeline_widget'             => $spe_timeline_widget,
 			'docy_videos_playlist'            => $docy_videos_playlist,
 			'docy_video_popup'                => $docy_video_popup,
+			'spe_global_switcher'             => $spe_global_switcher,
 		);
 
 		// Save the data in the options table using update_option

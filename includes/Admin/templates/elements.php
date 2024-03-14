@@ -4,26 +4,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use Spider_Elements\includes\Admin\Module_Settings;
-$elements = Module_Settings::get_widget_settings();
+$elements           = Module_Settings::get_widget_settings();
 
 // Check if any widget setting is 'on'
-$is_checked_btn = '';
-foreach ($elements['spider_elements_widgets'] as $item) {
-    $elements_opt = get_option('spe_widget_settings');
-    $opt_name = $item['name'] ?? '';
-    if (isset($elements_opt[$opt_name]) && $elements_opt[$opt_name] == 'on') {
-        $is_checked_btn = ' checked';
-        break; // Exit the loop if at least one widget is 'on'
-    }
-}
+// $is_checked_btn = '';
+// foreach ($elements['spider_elements_widgets'] as $item) {
+//     $elements_opt = get_option('spe_widget_settings');
+//     $opt_name = $item['name'] ?? '';
+//     if (isset($elements_opt[$opt_name]) && $elements_opt[$opt_name] == 'on') {
+//         $is_checked_btn = ' checked';
+//         break; // Exit the loop if at least one widget is 'on'
+//     }
+// }
 
-$is_checked_class = $is_checked_btn ? ' checked' : '';
+// $is_checked_class = $is_checked_btn ? ' checked' : '';
 
 
-echo '<pre>';
-print_r(print_r($is_checked_class));
-echo '</pre>';
-
+// Global switcher
+$spe_widget_opt     = get_option( 'spe_widget_settings' );
+$global_switcher    = $spe_widget_opt['spe_global_switcher'] ?? '';
+$is_checked         = ! empty ( $global_switcher == 'on' ) ? ' checked' : '';
+$checked            = ! isset ( $spe_widget_opt['spe_global_switcher'] ) ? ' checked' : $is_checked;
 ?>
 <div id="elements" class="spe-tab-box">
     <div class="spe_elements_tab_menu">
@@ -39,7 +40,8 @@ echo '</pre>';
             <div class="plugin_active_switcher">
                 <label class="toggler" id="disable"><?php esc_html_e( 'Disable All', 'spider-elements' ); ?></label>
                 <div class="toggle">
-                    <input type="checkbox" data-id="spe-widget-list" id="switcher" class="check spe_element_global_switcher" <?php echo $is_checked_class; ?>>
+                    <!-- <input type="checkbox" data-id="spe-widget-list" id="switcher" class="check spe_element_global_switcher" <?php echo $is_checked_class; ?>> -->
+                    <input type="checkbox" data-id="spe-widget-list" id="switcher" <?php echo esc_attr( $checked ); ?> name="spe_global_switcher" class="check spe_element_global_switcher">
                     <label class="b switch" for="switcher"></label>
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>
@@ -70,11 +72,14 @@ echo '</pre>';
 				$is_pro_widget         = $widget_type === 'pro' ? ' class=pro_popup' : '';
 				$is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
 
-				$elements_opt = get_option( 'spe_widget_settings' );
-				$opt_name     = $item[ 'name' ] ?? '';
+				$elements_opt   = get_option( 'spe_widget_settings' );
+				$opt_name       = $item[ 'name' ] ?? '';
 
-                $is_checked = isset($elements_opt[$opt_name]) && $elements_opt[$opt_name] == 'on' ? ' checked=on' : '';
-                ?>
+                // By default, all the switcher is checked
+				$opt_input      = $elements_opt[ $opt_name ] ?? '';
+                $is_checked     = ! empty ( $opt_input == 'on' ) ? ' checked' : '';
+                $checked        = ! isset ( $elements_opt[ $opt_name ] ) ? ' checked' : $is_checked;
+				?>
                 <div class="ezd-colum-space-4 <?php echo esc_attr( $item[ 'widget_type' ] ) ?>">
                     <div class="spe_element_box spe_element_switch badge">
                         <div class="spe_element_content">
@@ -110,7 +115,7 @@ echo '</pre>';
                             <label<?php echo esc_attr( $is_pro_widget ) ?> class="spe-switch">
                                 <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
                                        name="<?php echo esc_attr( $item[ 'name' ] ) ?>"
-                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $is_checked . $is_pro_widget_enabled ); ?>>
+                                       id="<?php echo esc_attr( $item[ 'name' ] ) ?>" <?php echo esc_attr( $checked . $is_pro_widget_enabled ); ?>>
                                 <span class="spe_widget_switcher"></span>
                             </label>
                         </div>
