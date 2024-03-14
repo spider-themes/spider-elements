@@ -8,7 +8,7 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor requires at least: 3.0.0
-Elementor tested up to: 3.19.2
+Elementor tested up to: 3.20.1
 
 == Description ==
 Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 9+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.

@@ -8,7 +8,7 @@
  * Tested up to: 6.4.3
  * Requires PHP: 7.4
  * Elementor requires at least: 3.0.0
- * Elementor tested up to: 3.19.2
+ * Elementor tested up to: 3.20.1
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: spider-elements
