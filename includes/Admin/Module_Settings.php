@@ -263,7 +263,7 @@ class Module_Settings {
 
             // All Feature List
             'spider_elements_features' => [
-                [
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Template cloud', 'spider-elements'), // widget label
@@ -273,8 +273,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-cloud',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Mega Menu', 'spider-elements'), // widget label
@@ -284,8 +284,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-mega-menu',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Image Shadow', 'spider-elements'), // widget label
@@ -295,8 +295,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-image-shadow',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Scroll Trigger', 'spider-elements'), // widget label
@@ -306,8 +306,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-hotspot',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Tilt Effect on Hover', 'spider-elements'), // widget label
@@ -317,8 +317,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-effect',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
@@ -328,8 +328,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-revel-animation',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Tooltip / Element', 'spider-elements'), // widget label
@@ -339,8 +339,8 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-tooltip',
-                ],
-                [
+                ],*/
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Badge', 'spider-elements'), // widget label
@@ -350,19 +350,19 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-badge',
-                ],
+                ],*/
                 [
-                    'name'         => '', // widget name
+                    'name'         => 'spel_smooth_animation', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Smooth Animation', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'widget_type'  => 'free',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-smooth-animation',
                 ],
-                [
+                /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Gradient Color from Image', 'spider-elements'), // widget label
@@ -372,7 +372,7 @@ class Module_Settings {
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-gallery',
-                ],
+                ],*/
             ]
         ];
 

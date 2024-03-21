@@ -594,6 +594,28 @@ add_action( 'admin_init', function () {
 
 } );
 
+
+
+// Dashboard Features Setting Save Data
+add_action( 'admin_init', function () {
+
+    if ( isset( $_POST['features-submit'] ) ) {
+
+        // Retrieve the field values from the form
+        $smooth_animation     = isset( $_POST['spel_smooth_animation'] ) ? sanitize_text_field( $_POST['spel_smooth_animation'] ) : '';
+
+        // Create an array to store the field values
+        $data = array(
+            'spel_smooth_animation'                  => $smooth_animation,
+        );
+
+        // Save the data in the options table using update_option
+        update_option( 'spel_features_settings', $data );
+
+    }
+
+} );
+
 /**
  * Get information about the server environment.
  *

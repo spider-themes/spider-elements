@@ -40,8 +40,7 @@ $checked            = ! isset ( $spe_widget_opt['spe_global_switcher'] ) ? ' che
             <div class="plugin_active_switcher">
                 <label class="toggler" id="disable"><?php esc_html_e( 'Disable All', 'spider-elements' ); ?></label>
                 <div class="toggle">
-                    <!-- <input type="checkbox" data-id="spe-widget-list" id="switcher" class="check spe_element_global_switcher" <?php echo $is_checked_class; ?>> -->
-                    <input type="checkbox" data-id="spe-widget-list" id="switcher" <?php echo esc_attr( $checked ); ?> name="spe_global_switcher" class="check spe_element_global_switcher">
+                    <input type="checkbox" data-id="spe-widget-list" id="switcher" name="spe_global_switcher" class="check spe_element_global_switcher">
                     <label class="b switch" for="switcher"></label>
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>

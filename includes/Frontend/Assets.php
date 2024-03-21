@@ -30,6 +30,7 @@ class Assets
 		// Register Elementor Preview Editor Script's
 		add_action('elementor/editor/after_enqueue_scripts', [$this, 'register_editor_scripts']);
 		add_action('elementor/frontend/after_enqueue_scripts', [$this, 'register_editor_scripts']);
+
 	}
 
 
@@ -42,8 +43,14 @@ class Assets
 	 */
 	function register_widget_styles()
 	{
+        $elements_opt   = get_option( 'spel_features_settings' );
 
-		wp_register_style('ionicons', SPE_VEND . '/ionicons/ionicons.min.css');
+        if ( isset($elements_opt['spel_smooth_animation']) && $elements_opt[ 'spel_smooth_animation' ] == 'on' ) {
+            wp_deregister_style('e-animations');
+            wp_enqueue_style('e-animations', SPE_VEND . '/animation/animate.css');
+        }
+
+        wp_register_style('ionicons', SPE_VEND . '/ionicons/ionicons.min.css');
 		wp_register_style('slick-theme', SPE_VEND . '/slick/slick-theme.css');
 		wp_register_style('swiper', SPE_VEND . '/swiper/swiper-bundle.min.css');
 		wp_register_style('slick', SPE_VEND . '/slick/slick.css');

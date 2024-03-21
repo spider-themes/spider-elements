@@ -26,7 +26,7 @@ $elements = Module_Settings::get_widget_settings();
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e('Enabled All', 'spider-elements'); ?></label>
             </div>
-            <button type="submit" class="spe_dashboard_btn">
+            <button type="submit" name="features-submit" class="spe_dashboard_btn">
                 <?php esc_html_e('Save Changes', 'spider-elements'); ?>
             </button>
         </div>
@@ -54,7 +54,15 @@ $elements = Module_Settings::get_widget_settings();
                 $widget_type = $item[ 'widget_type' ] ?? '';
                 $is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
                 $is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
-                $checked = '';
+
+                $elements_opt   = get_option( 'spel_features_settings' );
+                $opt_name       = $item[ 'name' ] ?? '';
+
+
+                // By default, all the switcher is checked
+                $opt_input      = $elements_opt[ $opt_name ] ?? '';
+                $is_checked     = ! empty ( $opt_input == 'on' ) ? ' checked' : '';
+                $checked        = ! isset ( $elements_opt[ $opt_name ] ) ? ' checked' : $is_checked;
                 ?>
                 <div class="ezd-colum-space-4 f_free">
                     <div class="spe_element_box spe_element_switch">
@@ -94,7 +102,7 @@ $elements = Module_Settings::get_widget_settings();
                             <label<?php echo esc_attr($is_pro_widget) ?> class="spe-switch">
                                 <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
                                        name="<?php echo esc_attr($item[ 'name' ]) ?>"
-                                       id="<?php echo esc_attr($item[ 'name' ]) ?>" <?php echo esc_attr($is_pro_widget_enabled); ?>>
+                                       id="<?php echo esc_attr($item[ 'name' ]) ?>" <?php echo esc_attr($checked . $is_pro_widget_enabled); ?>>
                                 <span class="spe_widget_switcher"></span>
                             </label>
                         </div>
