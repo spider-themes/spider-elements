@@ -277,7 +277,7 @@
 
 
 /*==== Widget Preview Icon ====*/
-.elementor-panel .elementor-element .icon .spe-icon::after {
+.elementor-panel .elementor-element .icon .spel-icon::after {
     content: url("../images/el-editor-preview/se-icon.svg");
     background-repeat: no-repeat;
     opacity: .5;

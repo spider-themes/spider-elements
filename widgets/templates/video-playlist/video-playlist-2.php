@@ -52,7 +52,7 @@ if ( $is_preloader == '1' ) {
                                     <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ) ?>">
                                         <ion-icon name="person-outline"></ion-icon> <?php the_author_meta( 'display_name' ); ?>
                                     </a>
-                                    <a href="<?php spe_day_link(); ?>">
+                                    <a href="<?php spel_day_link(); ?>">
                                         <ion-icon name="calendar-clear-outline"></ion-icon>
                                         <?php the_time( get_option( 'date_format' ) ); ?>
                                     </a>

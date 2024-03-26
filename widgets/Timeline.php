@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Repeater;
@@ -31,7 +31,7 @@ class Timeline extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-time-line spe-icon';
+		return 'eicon-time-line spel-icon';
 	}
 
 	public function get_categories() {
@@ -43,7 +43,7 @@ class Timeline extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'spe-main' ];
+		return [ 'spel-main' ];
 	}
 
 
@@ -324,7 +324,7 @@ class Timeline extends Widget_Base {
                 echo '<div class="timeline-panel">';
                 echo '<h3>' . esc_html($title) . '</h3>';
                 echo '<span>' . esc_html($location) . '</span>';
-                echo spe_kses_post(wpautop($content));
+                echo spel_kses_post(wpautop($content));
                 echo '</div>';
                 echo '</div>';
                 $is_inverted = !$is_inverted;

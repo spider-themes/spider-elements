@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
@@ -33,7 +33,7 @@ class List_Item extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-bullet-list spe-icon';
+		return 'eicon-bullet-list spel-icon';
 	}
 
 	public function get_keywords() {
@@ -49,7 +49,7 @@ class List_Item extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'spe-main' ];
+		return [ 'elegant-icon', 'spel-main' ];
 	}
 
 	/**

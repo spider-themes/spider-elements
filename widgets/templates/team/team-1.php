@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
                         }
                         if ( ! empty( $item[ 'team_name' ] ) ) {
                             ?>
-                            <a <?php spe_the_button($item[ 'team_link' ]); ?> class="name text-md fw-500">
+                            <a <?php spel_button_link($item[ 'team_link' ]); ?> class="name text-md fw-500">
                                 <?php echo esc_html($item[ 'team_name' ]); ?>
                             </a>
                             <?php

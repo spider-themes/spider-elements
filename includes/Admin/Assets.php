@@ -1,5 +1,5 @@
 <?php
-namespace Spider_Elements\includes\Admin;
+namespace SPEL\includes\Admin;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
@@ -71,7 +71,7 @@ class Assets {
 	 * @access public
 	 */
 	public function spe_elementor_editor_scripts() {
-		wp_enqueue_style( 'spe-el-editor', SPE_CSS . '/elementor-editor.css');
+		wp_enqueue_style( 'spe-el-editor', SPEL_CSS . '/elementor-editor.css');
 	}
 
 
@@ -86,19 +86,19 @@ class Assets {
 
 		// Register Admin Panel Styles
 		wp_enqueue_style( 'spe-fonts', self::fonts_url(), array(), null );
-		wp_enqueue_style( 'icomoon', SPE_VEND . '/icomoon/style.css' );
-		wp_enqueue_style( 'spe-circle', SPE_VEND . '/circle-progressbar/circularprogress.css' );
-		wp_enqueue_style( 'spe-fancy', SPE_VEND . '/fancybox/css/jquery.fancybox.min.css' );
-		wp_enqueue_style( 'spe-admin', SPE_CSS . '/admin.css');
+		wp_enqueue_style( 'icomoon', SPEL_VEND . '/icomoon/style.css' );
+		wp_enqueue_style( 'spe-circle', SPEL_VEND . '/circle-progressbar/circularprogress.css' );
+		wp_enqueue_style( 'spe-fancy', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css' );
+		wp_enqueue_style( 'spe-admin', SPEL_CSS . '/admin.css');
 
 		// Register Admin Panel Scripts
-		wp_enqueue_script( 'spe-waypoint', SPE_VEND . '/circle-progressbar/jquery.waypoints.min.js', ['jquery'], SPE_VERSION, true );
-		wp_enqueue_script( 'spe-counterup', SPE_VEND . '/circle-progressbar/jquery.counterup.min.js', ['jquery'], SPE_VERSION, true );
-		wp_enqueue_script( 'spe-imageloaded', SPE_VEND . '/imagesloaded/imagesloaded.pkgd.min.js', ['jquery'], SPE_VERSION, true );
-		wp_enqueue_script( 'spe-isotope', SPE_VEND . '/isotope/isotope.min.js', ['jquery'], SPE_VERSION, true );
-		wp_enqueue_script( 'spe-fancy', SPE_VEND . '/fancybox/js/jquery.fancybox.min.js', ['jquery'], SPE_VERSION, true );
-		wp_enqueue_script( 'spe-circle', SPE_VEND . '/circle-progressbar/circle-progress.js', ['jquery'], SPE_VERSION, true );
-		wp_enqueue_script( 'spe-admin', SPE_JS . '/admin.js', ['jquery'], SPE_VERSION, true );
+		wp_enqueue_script( 'spe-waypoint', SPEL_VEND . '/circle-progressbar/jquery.waypoints.min.js', ['jquery'], SPEL_VERSION, true );
+		wp_enqueue_script( 'spe-counterup', SPEL_VEND . '/circle-progressbar/jquery.counterup.min.js', ['jquery'], SPEL_VERSION, true );
+		wp_enqueue_script( 'spe-imageloaded', SPEL_VEND . '/imagesloaded/imagesloaded.pkgd.min.js', ['jquery'], SPEL_VERSION, true );
+		wp_enqueue_script( 'spe-isotope', SPEL_VEND . '/isotope/isotope.min.js', ['jquery'], SPEL_VERSION, true );
+		wp_enqueue_script( 'spe-fancy', SPEL_VEND . '/fancybox/js/jquery.fancybox.min.js', ['jquery'], SPEL_VERSION, true );
+		wp_enqueue_script( 'spe-circle', SPEL_VEND . '/circle-progressbar/circle-progress.js', ['jquery'], SPEL_VERSION, true );
+		wp_enqueue_script( 'spe-admin', SPEL_JS . '/admin.js', ['jquery'], SPEL_VERSION, true );
 	}
 
 

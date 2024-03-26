@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
@@ -32,7 +32,7 @@ class Video_Playlist extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-video-playlist spe-icon';
+		return 'eicon-video-playlist spel-icon';
 	}
 
 	/**
@@ -40,7 +40,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'video-js', 'video-js-theaterMode', 'spe-main' ];
+		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'video-js', 'video-js-theaterMode', 'spel-main' ];
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spe-el-widgets', 'spe-script' ];
+		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spel-el-widgets', 'spel-script' ];
 	}
 
 	public function get_keywords() {
@@ -136,7 +136,7 @@ class Video_Playlist extends Widget_Base {
 			'title_tag', [
 				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => spe_el_title_tags(),
+				'options' => spel_el_title_tags(),
 				'default' => 'h3',
 			]
 		);

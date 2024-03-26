@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
                             }
                             if (!empty($item[ 'title' ])) {
                                 ?>
-                                <a <?php spe_the_button($item[ 'btn_url' ]) ?>
+                                <a <?php spel_button_link($item[ 'btn_url' ]) ?>
                                         class="theme-btn theme-btn-outline-white mt-30">
                                     <?php echo esc_html($item[ 'btn_label' ]) ?>
                                 </a>

@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
@@ -53,7 +53,7 @@ class Blog_Grid extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-post spe-icon';
+		return 'eicon-post spel-icon';
 	}
 
 	public function get_categories() {
@@ -65,7 +65,7 @@ class Blog_Grid extends Widget_Base {
      * Desc: Register the required CSS dependencies for the frontend.
      */
     public function get_style_depends() {
-        return [ 'slick', 'slick-theme', 'ionicons', 'spe-main' ];
+        return [ 'slick', 'slick-theme', 'ionicons', 'spel-main' ];
     }
 
     /**
@@ -73,7 +73,7 @@ class Blog_Grid extends Widget_Base {
      * Desc: Register the required JS dependencies for the frontend.
      */
     public function get_script_depends() {
-        return [ 'slick', 'ionicons', 'spe-el-widgets' ];
+        return [ 'slick', 'ionicons', 'spel-el-widgets' ];
     }
 
 	/**

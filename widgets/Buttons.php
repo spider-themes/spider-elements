@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
@@ -31,7 +31,7 @@ class Buttons extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-button spe-icon';
+		return 'eicon-button spel-icon';
 	}
 
 	public function get_keywords() {

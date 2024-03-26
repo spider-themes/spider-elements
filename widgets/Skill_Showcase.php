@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -31,7 +31,7 @@ class Skill_Showcase extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-woo-settings spe-icon';
+		return 'eicon-woo-settings spel-icon';
 	}
 
 	public function get_categories() {
@@ -43,7 +43,7 @@ class Skill_Showcase extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'spe-main' ];
+		return [ 'spel-main' ];
 	}
 
 	/**

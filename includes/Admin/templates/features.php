@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-use Spider_Elements\includes\Admin\Module_Settings;
+use SPEL\includes\Admin\Module_Settings;
 
 $elements = Module_Settings::get_widget_settings();
 ?>
@@ -86,13 +86,13 @@ $elements = Module_Settings::get_widget_settings();
                                     <a href="<?php echo esc_url($item[ 'demo_url' ]) ?>" class="tooltip-top"
                                        data-tooltip="<?php printf(esc_attr__('View %s Feature Demo', 'spider-elements'), $item[ 'label' ]) ?>"
                                        target="_blank">
-                                        <img src="<?php echo SPE_IMG . '/icon1.svg' ?>"
+                                        <img src="<?php echo SPEL_IMG . '/icon1.svg' ?>"
                                              alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
                                     </a>
                                     <a href="<?php echo esc_url($item[ 'video_url' ]) ?>" class="tooltip-top"
                                        data-tooltip="<?php printf(esc_attr__('View %s Video Tutorial', 'spider-elements'), $item[ 'label' ]) ?>"
                                        target="_blank">
-                                        <img src="<?php echo SPE_IMG . '/icon2.svg' ?>"
+                                        <img src="<?php echo SPEL_IMG . '/icon2.svg' ?>"
                                              alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
                                     </a>
                                 </div>
@@ -119,11 +119,11 @@ $elements = Module_Settings::get_widget_settings();
 <div id="elements_popup1" class="elements_pro_popup">
     <div class="message_content ezd-text-center">
         <div class="close-pro">
-            <img class="pro-close" src="<?php echo SPE_IMG . '/dashboard-img/modal-close.png' ?>"
+            <img class="pro-close" src="<?php echo SPEL_IMG . '/dashboard-img/modal-close.png' ?>"
                  alt="<?php esc_attr_e('Popup Close', 'spider-elements'); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPE_IMG . '/dashboard-img/dimond.png' ?>"
+            <img class="pro-image" src="<?php echo SPEL_IMG . '/dashboard-img/dimond.png' ?>"
                  alt="<?php esc_attr_e('Popup Pro Diamond', 'spider-elements'); ?>">
         </div>
         <div class="pro-content">

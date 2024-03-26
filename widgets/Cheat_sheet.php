@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Repeater;
 use Elementor\Widget_Base;
@@ -36,7 +36,7 @@ class Cheat_sheet extends Widget_Base
 
     public function get_icon ()
     {
-        return 'eicon-apps spe-icon';
+        return 'eicon-apps spel-icon';
     }
 
     public function get_keywords ()
@@ -55,7 +55,7 @@ class Cheat_sheet extends Widget_Base
      */
     public function get_style_depends ()
     {
-        return [ 'spe-main' ];
+        return [ 'spel-main' ];
     }
 
     /**
@@ -64,7 +64,7 @@ class Cheat_sheet extends Widget_Base
      */
     public function get_script_depends ()
     {
-        return [ 'spe-el-widgets', 'spe-script' ];
+        return [ 'spel-el-widgets', 'spel-script' ];
     }
 
     /**

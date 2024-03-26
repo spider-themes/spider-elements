@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Text_Shadow;
@@ -33,7 +33,7 @@ class Accordion extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-accordion spe-icon';
+		return 'eicon-accordion spel-icon';
 	}
 
 	public function get_keywords() {
@@ -49,7 +49,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'spe-main', 'elegant-icon' ];
+		return [ 'spel-main', 'elegant-icon' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Accordion extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spe-el-widgets', 'spe-script' ];
+		return [ 'spel-el-widgets', 'spel-script' ];
 	}
 
 
@@ -148,7 +148,7 @@ class Accordion extends Widget_Base {
 			'el_content', [
 				'label'       => esc_html__( 'Select Template', 'spider-elements' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => spe_get_el_templates(),
+				'options'     => spel_get_el_templates(),
 				'label_block' => true,
 				'default'     => esc_html__( 'Accordion Content', 'spider-elements' ),
 				'condition'   => [
@@ -234,7 +234,7 @@ class Accordion extends Widget_Base {
 				'type'      => Controls_Manager::SELECT,
 				'separator' => 'before',
 				'default'   => 'h6',
-				'options'   => spe_el_title_tags(),
+				'options'   => spel_el_title_tags(),
 			]
 		);
 
@@ -621,7 +621,7 @@ class Accordion extends Widget_Base {
 		$this->end_controls_section();
 
 	}
-//	==================End accordion all style controls===============
+    //	==================End accordion all style controls===============
 
 
 	/**

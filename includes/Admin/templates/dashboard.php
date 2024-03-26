@@ -9,11 +9,11 @@ $uploads = wp_upload_dir();
 $upload_path = $uploads['basedir'];
 $check_icon = '<span class="valid"><i class="icon-check"></i></span>';
 $close_icon = '<span class="invalid"><i class="icon-close"></i></span>';
-$environment = spe_get_environment_info();
+$environment = spel_get_environment_info();
 ?>
 <div id="dashboard" class="spe-tab-box active">
     <div class="spe_dashboard_banner">
-        <img src="<?php echo SPE_IMG . '/dashboard-img/spe-log.png' ?>"
+        <img src="<?php echo SPEL_IMG . '/dashboard-img/spe-log.png' ?>"
             alt="<?php esc_attr_e('Dashboard Banner', 'spider-elements'); ?>">
     </div>
     <div class="ezd-grid ezd-grid-cols-12">
@@ -225,7 +225,7 @@ $environment = spe_get_environment_info();
         </div>
         <div class="ezd-lg-col-6">
             <div class="spe_support_item dashboard_img">
-                <img src="<?php echo SPE_IMG . '/dashboard-img/table_work.png' ?>" alt="work">
+                <img src="<?php echo SPEL_IMG . '/dashboard-img/table_work.png' ?>" alt="work">
             </div>
         </div>
         <div class="ezd-lg-col-6">

@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
                                 <?php  ?>
                                 <?php
                                 if ( !empty($item['review_content']) ) {
-                                    echo spe_kses_post(wpautop($item[ 'review_content' ]));
+                                    echo spel_kses_post(wpautop($item[ 'review_content' ]));
                                 }
                                 if ( !empty($item['author_name']) ) {
                                     ?>

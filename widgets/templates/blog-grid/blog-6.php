@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="item">
                 <div class="card-style-six position-relative" <?php echo $thumbnail_url ?>>
                     <a href="<?php the_permalink(); ?>" class="blog-item-six w-100 h-100 d-flex align-items-end">
-                        <h2 class="blog-six-title text-lg"><?php echo spe_get_the_title_length( $settings, 'title_length' ) ?></h2>
+                        <h2 class="blog-six-title text-lg"><?php echo spel_get_the_title_length( $settings, 'title_length' ) ?></h2>
                     </a>
                 </div>
             </div>

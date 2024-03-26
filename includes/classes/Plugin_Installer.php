@@ -1,6 +1,6 @@
 <?php
 
-namespace Spider_Elements\includes\classes;
+namespace SPEL\includes\classes;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.

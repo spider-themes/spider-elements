@@ -67,7 +67,7 @@ if (!defined('ABSPATH')) {
                                     echo !empty($table[ 'contents' ]) ? spe_kses_post($table[ 'contents' ]) : '';
 
                                     if (!empty($table[ 'btn_label' ])) { ?>
-                                        <a <?php spe_the_button($table[ 'btn_url' ]) ?>
+                                        <a <?php spel_button_link($table[ 'btn_url' ]) ?>
                                                 class="btn spe_pricing_item_btn">
                                             <?php echo esc_html($table[ 'btn_label' ]) ?>
                                         </a>
@@ -120,7 +120,7 @@ if (!defined('ABSPATH')) {
                                     echo !empty($table[ 'contents' ]) ? spe_kses_post($table[ 'contents' ]) : '';
 
                                     if (!empty($table[ 'btn_label' ])) { ?>
-                                        <a <?php spe_the_button($table[ 'btn_url' ]) ?>
+                                        <a <?php spel_button_link($table[ 'btn_url' ]) ?>
                                                 class="btn spe_pricing_item_btn">
                                             <?php echo esc_html($table[ 'btn_label' ]) ?>
                                         </a>

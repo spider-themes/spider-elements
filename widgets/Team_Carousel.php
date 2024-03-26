@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
@@ -33,7 +33,7 @@ class Team_Carousel extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-nested-carousel spe-icon';
+		return 'eicon-nested-carousel spel-icon';
 	}
 
 	public function get_keywords() {
@@ -49,7 +49,7 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'elegant-icon', 'slick', 'slick-theme', 'spe-main' ];
+		return [ 'elegant-icon', 'slick', 'slick-theme', 'spel-main' ];
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Team_Carousel extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'spe-el-widgets' ];
+		return [ 'slick', 'spel-el-widgets' ];
 	}
 
 

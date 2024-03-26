@@ -3,7 +3,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
@@ -30,7 +30,7 @@ class Instagram extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-instagram-post spe-icon';
+		return 'eicon-instagram-post spel-icon';
 	}
 
 	public function get_keywords() {
@@ -46,7 +46,7 @@ class Instagram extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'swiper', 'spe-main' ];
+		return [ 'swiper', 'spel-main' ];
 	}
 
 	/**
@@ -54,7 +54,7 @@ class Instagram extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'swiper', 'spe-el-widgets' ];
+		return [ 'swiper', 'spel-el-widgets' ];
 	}
 
 	/**

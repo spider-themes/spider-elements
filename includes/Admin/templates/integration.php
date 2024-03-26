@@ -7,28 +7,28 @@ $integrations = [
     [
         'slug' => 'advanced-accordion-block',
         'basename' => 'advanced-accordion-block/advanced-accordion-block.php',
-        'logo' => SPE_IMG . '/dashboard-img/accordion.png',
+        'logo' => SPEL_IMG . '/dashboard-img/accordion.png',
         'title' => __('Advanced Accordion Gutenberg Block', 'spider-elements'),
         'desc' => __('Advanced Accordion Block is a custom Gutenberg Block that allows to showcase the content in accordion mode. It also helps to build FAQ sections easily.', 'spider-elements'),
     ],
     [
         'slug' => 'bbp-core',
         'basename' => 'bbp-core/bbp-core.php',
-        'logo' => SPE_IMG . '/dashboard-img/bbp-core.png',
+        'logo' => SPEL_IMG . '/dashboard-img/bbp-core.png',
         'title' => __('BBP Core', 'spider-elements'),
         'desc' => __('Expand bbPress powered forums with useful features like - private reply, solved topics ...', 'spider-elements'),
     ],
     [
         'slug' => 'eazydocs',
         'basename' => 'eazydocs/eazydocs.php',
-        'logo' => SPE_IMG . '/dashboard-img/eazydocs-logo.png',
+        'logo' => SPEL_IMG . '/dashboard-img/eazydocs-logo.png',
         'title' => __('EazyDocs', 'spider-elements'),
         'desc' => __('A powerful & beautiful documentation, knowledge base builder plugin.', 'spider-elements'),
     ],
     [
         'slug' => 'spotlight-search',
         'basename' => 'spotlight-search/spotlight-search.php',
-        'logo' => SPE_IMG . '/dashboard-img/spotlight-search.png',
+        'logo' => SPEL_IMG . '/dashboard-img/spotlight-search.png',
         'title' => __('Spotlight Search', 'spider-elements'),
         'desc' => __('Easily embed beautiful Instagram feeds on your WordPress site.', 'spider-elements'),
     ],
@@ -45,7 +45,7 @@ $integrations = [
         <?php
         if (isset($integrations) && is_array($integrations)) {
             foreach ( $integrations as $plugin ) {
-                $plugin_status = \Spider_Elements\includes\classes\Plugin_Installer::instance();
+                $plugin_status = \SPEL\includes\classes\Plugin_Installer::instance();
                 $plugin_item = $plugin_status->get_status($plugin[ 'basename' ]);
                 ?>
                 <div class="ezd-lg-col-4">

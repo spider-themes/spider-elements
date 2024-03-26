@@ -1,6 +1,6 @@
 <?php
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Repeater;
 use Elementor\Utils;
@@ -30,7 +30,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-testimonial-carousel spe-icon';
+		return 'eicon-testimonial-carousel spel-icon';
 	}
 
 	public function get_keywords() {
@@ -46,7 +46,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'slick', 'slick-theme', 'swiper', 'spe-main' ];
+		return [ 'slick', 'slick-theme', 'swiper', 'spel-main' ];
 	}
 
 	/**
@@ -54,7 +54,7 @@ class Testimonial extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'swiper', 'wow', 'spe-el-widgets' ];
+		return [ 'slick', 'swiper', 'wow', 'spel-el-widgets' ];
 	}
 
 	/**

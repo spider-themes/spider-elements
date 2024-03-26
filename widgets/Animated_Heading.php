@@ -4,7 +4,7 @@
  * Use namespace to avoid conflict
  */
 
-namespace Spider_Elements\Widgets;
+namespace SPEL\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Repeater;
@@ -32,7 +32,7 @@ class Animated_Heading extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-heading spe-icon';
+		return 'eicon-heading spel-icon';
 	}
 
 	public function get_keywords() {
