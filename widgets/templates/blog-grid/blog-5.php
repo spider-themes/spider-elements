@@ -27,12 +27,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                             </div>
                         </div>
                         <div class="blog-meta blog-meta2">
-							<?php echo '<a href="' . esc_url( spel_get_the_first_taxonomy_link() ) . '" class="tags">' . spel_get_the_first_taxonomy() . '</a>'; ?>
+							<?php echo '<a href="' . esc_url( spel_get_first_taxonomy_link() ) . '" class="tags">' . spel_get_first_taxonomy() . '</a>'; ?>
                             <span class="blog-read"><?php echo spel_get_reading_time(); ?></span>
                         </div>
 
                         <a class="blog-five-title" href="<?php the_permalink(); ?>">
-                            <h2 class="tran3s blog-title"><?php echo spel_get_the_title_length( $settings, 'title_length' ) ?></h2>
+                            <h2 class="tran3s blog-title"><?php echo spel_get_title_length( $settings, 'title_length' ) ?></h2>
                         </a>
 
                         <div class="read-more-btn">

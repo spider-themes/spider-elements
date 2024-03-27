@@ -136,7 +136,7 @@ class Video_Playlist extends Widget_Base {
 			'title_tag', [
 				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => spel_el_title_tags(),
+				'options' => spel_get_title_tags(),
 				'default' => 'h3',
 			]
 		);

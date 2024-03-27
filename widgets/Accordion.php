@@ -234,7 +234,7 @@ class Accordion extends Widget_Base {
 				'type'      => Controls_Manager::SELECT,
 				'separator' => 'before',
 				'default'   => 'h6',
-				'options'   => spel_el_title_tags(),
+				'options'   => spel_get_title_tags(),
 			]
 		);
 

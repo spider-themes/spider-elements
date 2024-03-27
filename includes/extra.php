@@ -39,18 +39,20 @@ function spider_elements_is_preview() {
 /**
  * Elementor Title tags
  */
-function spel_el_title_tags() {
-	return [
-		'h1'   => __( 'H1', 'spider-elements' ),
-		'h2'   => __( 'H2', 'spider-elements' ),
-		'h3'   => __( 'H3', 'spider-elements' ),
-		'h4'   => __( 'H4', 'spider-elements' ),
-		'h5'   => __( 'H5', 'spider-elements' ),
-		'h6'   => __( 'H6', 'spider-elements' ),
-		'div'  => __( 'Div', 'spider-elements' ),
-		'span' => __( 'Span', 'spider-elements' ),
-		'p'    => __( 'Paragraph', 'spider-elements' ),
-	];
+if ( ! function_exists( 'spel_get_title_tags' ) ) {
+    function spel_get_title_tags() {
+        return [
+            'h1'   => esc_html__( 'H1', 'spider-elements' ),
+            'h2'   => esc_html__( 'H2', 'spider-elements' ),
+            'h3'   => esc_html__( 'H3', 'spider-elements' ),
+            'h4'   => esc_html__( 'H4', 'spider-elements' ),
+            'h5'   => esc_html__( 'H5', 'spider-elements' ),
+            'h6'   => esc_html__( 'H6', 'spider-elements' ),
+            'div'  => esc_html__( 'Div', 'spider-elements' ),
+            'span' => esc_html__( 'Span', 'spider-elements' ),
+            'p'    => esc_html__( 'Paragraph', 'spider-elements' ),
+        ];
+    }
 }
 
 
@@ -104,13 +106,17 @@ if ( ! function_exists( 'spel_day_link' ) ) {
  *
  * @return string|void
  */
-function spel_get_the_title_length( $settings, $settings_key, $default = 10 ) {
+if ( ! function_exists( 'spel_get_title_length' ) ) {
+    function spel_get_title_length( $settings, $settings_key, $default = 10 ) {
 
-	$title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-	$title        = get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : the_title();
+        $title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
+        $title        = get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : the_title();
 
-	return $title;
+        return $title;
+    }
 }
+
+
 
 
 /**
@@ -121,16 +127,18 @@ function spel_get_the_title_length( $settings, $settings_key, $default = 10 ) {
  *
  * @return string
  **/
-function spel_get_the_excerpt_length( $settings, $settings_key, $default = 10 ) {
+if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
+    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ) {
 
-	$excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-	$excerpt        = get_the_excerpt() ? wp_trim_words(
-		get_the_excerpt(),
-		$excerpt_length,
-		'...'
-	) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
+        $excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
+        $excerpt        = get_the_excerpt() ? wp_trim_words(
+            get_the_excerpt(),
+            $excerpt_length,
+            '...'
+        ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
 
-	return $excerpt;
+        return $excerpt;
+    }
 }
 
 
@@ -141,11 +149,13 @@ function spel_get_the_excerpt_length( $settings, $settings_key, $default = 10 ) 
  *
  * @return string
  */
-function spel_get_the_first_taxonomy( $term = 'category' ) {
-	$cats = get_the_terms( get_the_ID(), $term );
-	$cat  = is_array( $cats ) ? $cats[0]->name : '';
+if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
+    function spel_get_first_taxonomy( $term = 'category' ) {
+        $cats = get_the_terms( get_the_ID(), $term );
+        $cat  = is_array( $cats ) ? $cats[0]->name : '';
 
-	return esc_html( $cat );
+        return esc_html( $cat );
+    }
 }
 
 
@@ -156,12 +166,14 @@ function spel_get_the_first_taxonomy( $term = 'category' ) {
  *
  * @return string
  */
-function spel_get_the_first_taxonomy_link( $term = 'category' ) {
+if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
+    function spel_get_first_taxonomy_link( $term = 'category' ) {
 
-	$cats = get_the_terms( get_the_ID(), $term );
-	$cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
+        $cats = get_the_terms( get_the_ID(), $term );
+        $cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
 
-	return esc_url( $cat );
+        return esc_url( $cat );
+    }
 }
 
 
@@ -172,23 +184,25 @@ function spel_get_the_first_taxonomy_link( $term = 'category' ) {
  *
  * @return array
  */
-function spel_get_the_categories( $term = 'category' ) {
+if ( ! function_exists( 'spel_get_categories' ) ) {
+    function spel_get_categories( $term = 'category' ) {
 
-	$cats = get_terms( array(
-		'taxonomy'   => $term,
-		'hide_empty' => true
-	) );
+        $cats = get_terms( array(
+            'taxonomy'   => $term,
+            'hide_empty' => true
+        ) );
 
-	$cat_array        = [];
-	$cat_array['all'] = esc_html__( 'All', 'spider-elements' );
+        $cat_array        = [];
+        $cat_array['all'] = esc_html__( 'All', 'spider-elements' );
 
-	if ( is_array( $cats ) ) {
-		foreach ( $cats as $cat ) {
-			$cat_array[ $cat->term_id ] = $cat->name;
-		}
-	}
+        if ( is_array( $cats ) ) {
+            foreach ( $cats as $cat ) {
+                $cat_array[ $cat->term_id ] = $cat->name;
+            }
+        }
 
-	return $cat_array;
+        return $cat_array;
+    }
 }
 
 
@@ -199,27 +213,29 @@ function spel_get_the_categories( $term = 'category' ) {
  *
  * @return string
  */
-function spel_get_post_category_list() {
-	$categories = get_categories();
+if ( ! function_exists( 'spel_get_post_category_list' ) ) {
+    function spel_get_post_category_list() {
+        $categories = get_categories();
 
-	if ( ! empty( $categories ) ) {
-		echo '<span class="blog-category">';
+        if ( ! empty( $categories ) ) {
+            echo '<span class="blog-category">';
 
-		$category_names = array();
+            $category_names = array();
 
-		if ( is_array( $categories ) ) {
-			foreach ( $categories as $category ) {
-				$category_link    = get_category_link( $category->term_id );
-				$category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
-			}
-		}
+            if ( is_array( $categories ) ) {
+                foreach ( $categories as $category ) {
+                    $category_link    = get_category_link( $category->term_id );
+                    $category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
+                }
+            }
 
-		echo esc_html( implode( ', ', $category_names ) );
+            echo esc_html( implode( ', ', $category_names ) );
 
-		echo '</span>';
-	} else {
-		echo esc_html__( 'No categories found.', 'spider-elements' );
-	}
+            echo '</span>';
+        } else {
+            echo esc_html__( 'No categories found.', 'spider-elements' );
+        }
+    }
 }
 
 
@@ -253,19 +269,21 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
  * @param string $class
  * @param string $alt
  */
-function spel_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
-	if ( ! empty( $settings_key['id'] ) ) {
-		echo wp_get_attachment_image( $settings_key['id'], 'full', '', array( 'class' => $class ) );
-	} elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
-		$class = ! empty( $class ) ? "class='$class'" : '';
-		$attss = '';
-		if ( ! empty( $atts ) ) {
-			foreach ( $atts as $k => $att ) {
-				$attss .= "$k=" . "'$att'";
-			}
-		}
-		echo "<img src='{$settings_key['url']}' $class alt='$alt' $attss>";
-	}
+if ( ! function_exists( 'spel_el_image' ) ) {
+    function spel_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
+        if ( ! empty( $settings_key['id'] ) ) {
+            echo wp_get_attachment_image( $settings_key['id'], 'full', '', array( 'class' => $class ) );
+        } elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
+            $class = ! empty( $class ) ? "class='$class'" : '';
+            $attss = '';
+            if ( ! empty( $atts ) ) {
+                foreach ( $atts as $k => $att ) {
+                    $attss .= "$k=" . "'$att'";
+                }
+            }
+            echo "<img src='{$settings_key['url']}' $class alt='$alt' $attss>";
+        }
+    }
 }
 
 
@@ -276,16 +294,18 @@ function spel_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] )
  * @param string $class
  * @param string $alt
  */
-function spel_el_image_caption( $image_id = '' ) {
-	$img_attachment = get_post( $image_id );
+if ( ! function_exists( 'spel_el_image_caption' ) ) {
+    function spel_el_image_caption( $image_id = '' ) {
+        $img_attachment = get_post( $image_id );
 
-	return array(
-		'alt'     => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
-		'caption' => $img_attachment->post_excerpt,
-		'href'    => get_permalink( $img_attachment->ID ),
-		'src'     => $img_attachment->guid,
-		'title'   => $img_attachment->post_title
-	);
+        return array(
+            'alt'     => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
+            'caption' => $img_attachment->post_excerpt,
+            'href'    => get_permalink( $img_attachment->ID ),
+            'src'     => $img_attachment->guid,
+            'title'   => $img_attachment->post_title
+        );
+    }
 }
 
 
@@ -294,101 +314,107 @@ function spel_el_image_caption( $image_id = '' ) {
  *
  * @return string Filtered content containing only the allowed HTML.
  */
-function spel_kses_post( $content ) {
-	$allowed_tag = array(
-		'strong' => [],
-		'br'     => [],
-		'p'      => [
-			'class' => [],
-			'style' => [],
-		],
-		'i'      => [
-			'class' => [],
-			'style' => [],
-		],
-		'ul'     => [
-			'class' => [],
-			'style' => [],
-		],
-		'li'     => [
-			'class' => [],
-			'style' => [],
-		],
-		'span'   => [
-			'class' => [],
-			'style' => [],
-		],
-		'a'      => [
-			'href'  => [],
-			'class' => [],
-			'title' => []
-		],
-		'div'    => [
-			'class' => [],
-			'style' => [],
-		],
-		'h1'     => [
-			'class' => [],
-			'style' => []
-		],
-		'h2'     => [
-			'class' => [],
-			'style' => []
-		],
-		'h3'     => [
-			'class' => [],
-			'style' => []
-		],
-		'h4'     => [
-			'class' => [],
-			'style' => []
-		],
-		'h5'     => [
-			'class' => [],
-			'style' => []
-		],
-		'h6'     => [
-			'class' => [],
-			'style' => []
-		],
-		'img'    => [
-			'class'  => [],
-			'style'  => [],
-			'height' => [],
-			'width'  => [],
-			'src'    => [],
-			'srcset' => [],
-			'alt'    => [],
-		],
+if ( ! function_exists( 'spel_kses_post' ) ) {
+    function spel_kses_post( $content ) {
+        $allowed_tag = array(
+            'strong' => [],
+            'br'     => [],
+            'p'      => [
+                'class' => [],
+                'style' => [],
+            ],
+            'i'      => [
+                'class' => [],
+                'style' => [],
+            ],
+            'ul'     => [
+                'class' => [],
+                'style' => [],
+            ],
+            'li'     => [
+                'class' => [],
+                'style' => [],
+            ],
+            'span'   => [
+                'class' => [],
+                'style' => [],
+            ],
+            'a'      => [
+                'href'  => [],
+                'class' => [],
+                'title' => []
+            ],
+            'div'    => [
+                'class' => [],
+                'style' => [],
+            ],
+            'h1'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h2'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h3'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h4'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h5'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h6'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'img'    => [
+                'class'  => [],
+                'style'  => [],
+                'height' => [],
+                'width'  => [],
+                'src'    => [],
+                'srcset' => [],
+                'alt'    => [],
+            ],
 
-	);
+        );
 
-	return wp_kses( $content, $allowed_tag );
+        return wp_kses( $content, $allowed_tag );
+    }
 }
 
 
 /**
- * Event Tab data
+ * Tab data
  *
  * @param $getCats
- * @param $event_schedule_cats
+ * @param $schedule_cats
  *
  * @return array
  */
-function spel_return_tab_data( $getCats, $event_schedule_cats ) {
-	$y = [];
-	foreach ( $getCats as $val ) {
+if ( ! function_exists( 'spel_get_tab_data' ) ) {
+    function spel_get_tab_data( $getCats, $schedule_cats ) {
+        $tab_data = [];
 
-		$t = [];
-		foreach ( $event_schedule_cats as $data ) {
-			if ( $data['tab_title'] == $val ) {
-				$t[] = $data;
-			}
-		}
-		$y[ $val ] = $t;
-	}
+        foreach ( $getCats as $val ) {
+            $matching_data = [];
 
-	return $y;
+            foreach ( $schedule_cats as $data ) {
+                if ( $data['tab_title'] == $val ) {
+                    $matching_data[] = $data;
+                }
+            }
+
+            $tab_data[ $val ] = $matching_data;
+        }
+
+        return $tab_data;
+    }
 }
 
 
@@ -409,6 +435,30 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
         return sprintf( '%d %s', $reading_time, $timer );
     }
 }
+
+/**
+ * Render Dynamic Image
+ * @param $key
+ * @param $class
+ * @return void
+ */
+if ( ! function_exists( 'spel_dynamic_image' ) ) {
+    function spel_dynamic_image( $key, $size = 'full', $atts = [] ) {
+        $image = wp_get_attachment_image( $key['id'], $size, '', $atts );
+        echo wp_kses( $image, [
+            'img'    => [
+                'class'  => [],
+                'style'  => [],
+                'height' => [],
+                'width'  => [],
+                'src'    => [],
+                'srcset' => [],
+                'alt'    => [],
+            ],
+        ]);
+    }
+}
+
 
 
 /**
@@ -574,48 +624,50 @@ add_action( 'admin_init', function () {
  *
  * @return array Server environment information.
  */
-function spel_get_environment_info() {
+if ( ! function_exists( 'spel_get_environment_info' ) ) {
+    function spel_get_environment_info() {
 
-    // Figure out cURL version, if installed.
-    $curl_version = '';
-    if ( function_exists( 'curl_version' ) ) {
-        $curl_version = curl_version();
-        $curl_version = $curl_version['version'] . ', ' . $curl_version['ssl_version'];
+        // Figure out cURL version, if installed.
+        $curl_version = '';
+        if ( function_exists( 'curl_version' ) ) {
+            $curl_version = curl_version();
+            $curl_version = $curl_version['version'] . ', ' . $curl_version['ssl_version'];
+        }
+
+        // WP memory limit.
+        $wp_memory_limit = spel_readable_number(WP_MEMORY_LIMIT);
+        if ( function_exists( 'memory_get_usage' ) ) {
+            $wp_memory_limit = max( $wp_memory_limit, spel_readable_number( @ini_get( 'memory_limit' ) ) );
+        }
+
+        return array(
+            'home_url'                  => get_option( 'home' ),
+            'site_url'                  => get_option( 'siteurl' ),
+            'version'                   => SPEL_VERSION,
+            'wp_version'                => get_bloginfo( 'version' ),
+            'wp_multisite'              => is_multisite(),
+            'wp_memory_limit'           => $wp_memory_limit,
+            'wp_debug_mode'             => ( defined( 'WP_DEBUG' ) && WP_DEBUG ),
+            'wp_cron'                   => ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ),
+            'language'                  => get_locale(),
+            'external_object_cache'     => wp_using_ext_object_cache(),
+            'server_info'               => isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '',
+            'php_version'               => phpversion(),
+            'php_post_max_size'         => spel_readable_number( ini_get( 'post_max_size' ) ),
+            'php_max_execution_time'    => ini_get( 'max_execution_time' ),
+            'php_max_input_vars'        => ini_get( 'max_input_vars' ),
+            'curl_version'              => $curl_version,
+            'suhosin_installed'         => extension_loaded( 'suhosin' ),
+            'max_upload_size'           => wp_max_upload_size(),
+            'default_timezone'          => date_default_timezone_get(),
+            'fsockopen_or_curl_enabled' => ( function_exists( 'fsockopen' ) || function_exists( 'curl_init' ) ),
+            'soapclient_enabled'        => class_exists( 'SoapClient' ),
+            'domdocument_enabled'       => class_exists( 'DOMDocument' ),
+            'gzip_enabled'              => is_callable( 'gzopen' ),
+            'mbstring_enabled'          => extension_loaded( 'mbstring' ),
+        );
+
     }
-
-    // WP memory limit.
-    $wp_memory_limit = spel_readable_number(WP_MEMORY_LIMIT);
-    if ( function_exists( 'memory_get_usage' ) ) {
-        $wp_memory_limit = max( $wp_memory_limit, spel_readable_number( @ini_get( 'memory_limit' ) ) );
-    }
-
-    return array(
-        'home_url'                  => get_option( 'home' ),
-        'site_url'                  => get_option( 'siteurl' ),
-        'version'                   => SPEL_VERSION,
-        'wp_version'                => get_bloginfo( 'version' ),
-        'wp_multisite'              => is_multisite(),
-        'wp_memory_limit'           => $wp_memory_limit,
-        'wp_debug_mode'             => ( defined( 'WP_DEBUG' ) && WP_DEBUG ),
-        'wp_cron'                   => ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ),
-        'language'                  => get_locale(),
-        'external_object_cache'     => wp_using_ext_object_cache(),
-        'server_info'               => isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '',
-        'php_version'               => phpversion(),
-        'php_post_max_size'         => spel_readable_number( ini_get( 'post_max_size' ) ),
-        'php_max_execution_time'    => ini_get( 'max_execution_time' ),
-        'php_max_input_vars'        => ini_get( 'max_input_vars' ),
-        'curl_version'              => $curl_version,
-        'suhosin_installed'         => extension_loaded( 'suhosin' ),
-        'max_upload_size'           => wp_max_upload_size(),
-        'default_timezone'          => date_default_timezone_get(),
-        'fsockopen_or_curl_enabled' => ( function_exists( 'fsockopen' ) || function_exists( 'curl_init' ) ),
-        'soapclient_enabled'        => class_exists( 'SoapClient' ),
-        'domdocument_enabled'       => class_exists( 'DOMDocument' ),
-        'gzip_enabled'              => is_callable( 'gzopen' ),
-        'mbstring_enabled'          => extension_loaded( 'mbstring' ),
-    );
-
 }
 
 
@@ -625,31 +677,34 @@ function spel_get_environment_info() {
  * @param string $size The size string (e.g., "1M", "2G", "500K").
  * @return int The equivalent size in bytes.
  */
-function spel_readable_number( $size ) {
+if ( ! function_exists( 'spel_readable_number' ) ) {
+    function spel_readable_number($size)
+    {
 
-    // Get the last character of the size string
-    $suffix = substr($size, -1);
+        // Get the last character of the size string
+        $suffix = substr($size, -1);
 
-    // Remove the last character from the size string
-    $value = substr($size, 0, -1);
+        // Remove the last character from the size string
+        $value = substr($size, 0, -1);
 
-    // Convert suffix to lowercase for case-insensitive comparison
-    $suffix = strtolower($suffix);
+        // Convert suffix to lowercase for case-insensitive comparison
+        $suffix = strtolower($suffix);
 
-    $multipliers = [
-        'p' => 1024,
-        't' => 1024,
-        'g' => 1024,
-        'm' => 1024,
-        'k' => 1024,
-    ];
+        $multipliers = [
+            'p' => 1024,
+            't' => 1024,
+            'g' => 1024,
+            'm' => 1024,
+            'k' => 1024,
+        ];
 
-    // Check if the suffix is a valid multiplier
-    if (array_key_exists($suffix, $multipliers)) {
-        $value *= $multipliers[$suffix];
+        // Check if the suffix is a valid multiplier
+        if (array_key_exists($suffix, $multipliers)) {
+            $value *= $multipliers[$suffix];
+        }
+
+        // Return the result
+        return (int)$value;
+
     }
-
-    // Return the result
-    return (int) $value;
-
 }

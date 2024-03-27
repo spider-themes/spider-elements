@@ -207,8 +207,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video-three">

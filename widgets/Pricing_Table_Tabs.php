@@ -282,7 +282,7 @@ class Pricing_Table_Tabs extends Widget_Base
         $pricing_tables = $settings[ 'pricing_tables' ];
         $cats = array_column($pricing_tables, 'tab_title');
         $getCats = array_unique($cats);
-        $table_data = spel_return_tab_data($getCats, $pricing_tables);
+        $table_data = spel_get_tab_data($getCats, $pricing_tables);
 
         ?>
         <div class="ezd-grid ezd-grid-cols-12">
