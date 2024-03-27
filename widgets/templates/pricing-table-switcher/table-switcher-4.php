@@ -13,14 +13,14 @@ if (!defined('ABSPATH')) {
         if (!empty($settings[ 'obj1' ][ 'id' ])) {
             ?>
             <div class="shape">
-                <?php echo wp_get_attachment_image($settings[ 'obj1' ][ 'id' ], 'full') ?>
+                <?php spel_dynamic_image($settings[ 'obj1' ]) ?>
             </div>
             <?php
         }
         if (!empty($settings[ 'obj2' ][ 'id' ])) {
             ?>
             <div class="shape">
-                <?php echo wp_get_attachment_image($settings[ 'obj2' ][ 'id' ], 'full') ?>
+                <?php spel_dynamic_image($settings[ 'obj2' ]) ?>
             </div>
             <?php
         }

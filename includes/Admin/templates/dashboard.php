@@ -13,7 +13,7 @@ $environment = spel_get_environment_info();
 ?>
 <div id="dashboard" class="spe-tab-box active">
     <div class="spe_dashboard_banner">
-        <img src="<?php echo SPEL_IMG . '/dashboard-img/spe-log.png' ?>"
+        <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/spe-log.png') ?>"
             alt="<?php esc_attr_e('Dashboard Banner', 'spider-elements'); ?>">
     </div>
     <div class="ezd-grid ezd-grid-cols-12">
@@ -225,7 +225,7 @@ $environment = spel_get_environment_info();
         </div>
         <div class="ezd-lg-col-6">
             <div class="spe_support_item dashboard_img">
-                <img src="<?php echo SPEL_IMG . '/dashboard-img/table_work.png' ?>" alt="work">
+                <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/table_work.png') ?>" alt="work">
             </div>
         </div>
         <div class="ezd-lg-col-6">

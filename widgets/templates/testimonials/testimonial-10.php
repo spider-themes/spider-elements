@@ -11,8 +11,7 @@ if (!defined('ABSPATH')) {
         <div class="ezd-xl-col-7 cezd-lg-col-6 ezd-order-lg-first">
             <div class="bg-wrapper position-relative me-xxl-4 md-mt-40 md-mb-40">
                 <div class="icon ezd-d-flex ezd-align-items-center ezd-justify-content-center ezd-rounded-circle">
-                    <?php echo wp_get_attachment_image($settings[ 'quote_img' ][ 'id' ], 'full', '',
-                        [ 'class' => 'lazy-img' ]) ?>
+                    <?php spel_dynamic_image($settings[ 'quote_img' ], 'full', [ 'class' => 'lazy-img' ]) ?>
                 </div>
                 <div class="feedback-slider-three-a">
                     <?php
@@ -55,7 +54,7 @@ if (!defined('ABSPATH')) {
                     if (!empty($item[ 'author_image' ][ 'id' ])) {
                         ?>
                         <div class="item">
-                            <?php echo wp_get_attachment_image($item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'lazy-img' ]) ?>
+                            <?php spel_dynamic_image($item[ 'author_image' ], 'full', [ 'class' => 'lazy-img' ]) ?>
                         </div>
                         <?php
                     }

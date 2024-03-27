@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 					if ( ! empty( $item['team_slider_image']['id'] ) ) { ?>
                         <div class="img-meta mb-20">
-							<?php echo wp_get_attachment_image( $item['team_slider_image']['id'], 'full', '', [ 'class' => 'm-auto' ] ) ?>
+							<?php spel_dynamic_image( $item['team_slider_image'], 'full', [ 'class' => 'm-auto' ] ) ?>
                         </div>
 						<?php
 					}

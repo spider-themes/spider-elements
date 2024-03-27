@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     </div>
                                 </div>
                                 <div class="ezd-lg-col-6">
-									<?php echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'author-img' ] ) ?>
+									<?php spel_dynamic_image( $item[ 'author_image' ], 'full', [ 'class' => 'author-img' ] ) ?>
                                 </div>
                             </div>
                         </div>

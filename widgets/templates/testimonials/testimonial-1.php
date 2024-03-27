@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div>
 						<?php if ( ! empty( $item[ 'signature' ][ 'id' ] ) ) : ?>
                             <div class="sign">
-								<?php echo wp_get_attachment_image( $item[ 'signature' ][ 'id' ], 'full' ) ?>
+								<?php spel_dynamic_image( $item[ 'signature' ] ) ?>
                             </div>
 						<?php endif; ?>
                     </div>
@@ -39,15 +39,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
 						<?php
 						if ( ! empty( $settings[ 'shape' ][ 'id' ] ) ) :
-							echo wp_get_attachment_image( $settings[ 'shape' ][ 'id' ], 'full', '',
-								array( 'class' => 'dot' ) );
+							spel_dynamic_image( $settings[ 'shape' ], 'full', array( 'class' => 'dot' ) );
 						endif;
 
 						echo '<div class="round one"></div>';
 						echo '<div class="round two"></div>';
 
 						if ( ! empty( $item[ 'author_image' ][ 'id' ] ) ) :
-							echo wp_get_attachment_image( $item[ 'author_image' ][ 'id' ], 'full' );
+							spel_dynamic_image( $item[ 'author_image' ] );
 						endif;
 						?>
                     </div>

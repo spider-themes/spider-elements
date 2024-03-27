@@ -55,7 +55,7 @@ if (!defined('ABSPATH')) {
                         $current_area = $index == 1 ? 'aria-current="true"' : '';
                         ?>
                         <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="<?php echo esc_attr($index) ?>" class="<?php echo esc_attr($active) ?>" <?php echo $current_area ?> aria-label="Slide <?php echo esc_attr($index) ?>">
-                            <?php echo wp_get_attachment_image($item[ 'author_image' ][ 'id' ], 'full', '', [ 'class' => 'lazy-img ezd-rounded-circle' ]) ?>
+                            <?php spel_dynamic_image($item[ 'author_image' ], 'full', [ 'class' => 'lazy-img ezd-rounded-circle' ]) ?>
                         </button>
                         <?php
                     }

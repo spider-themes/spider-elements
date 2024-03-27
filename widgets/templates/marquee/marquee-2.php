@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
                 <div class="slide">
                     <h2 class="se_marquee_title">
-						<?php echo wp_get_attachment_image( $settings['shape_img']['id'], 'full' ); ?>
+						<?php spel_dynamic_image( $settings['shape_img'] ); ?>
 						<?php echo esc_html( $item['title'] ); ?>
                     </h2>
                 </div>

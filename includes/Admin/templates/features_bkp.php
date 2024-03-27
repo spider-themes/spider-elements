@@ -58,8 +58,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url( SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url( SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video" checked>
@@ -77,8 +77,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label class="pro_popup">
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-menu" disabled>
@@ -95,8 +95,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-video-three" checked>
@@ -113,8 +113,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-scroll" checked>
@@ -131,8 +131,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-hover">
@@ -149,8 +149,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-reveal">
@@ -168,8 +168,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-table">
@@ -186,8 +186,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-tooltip">
@@ -204,8 +204,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-badge">
@@ -222,8 +222,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-smooth" checked>
@@ -240,8 +240,8 @@ echo '</pre>';
                 </div>
                 <div class="spe_element_right">
                     <div class="spe_link">
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon1.svg; ?>" alt=""></a>
-                        <a href="#"><img src="<?php echo SPEL_IMG ?>/icon2.svg; ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt=""></a>
+                        <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
                         <input type="checkbox" class="spe_widget_checkbox" id="spe-elementor-gradient">
@@ -255,11 +255,11 @@ echo '</pre>';
 <div id="elements_popup1" class="elements_pro_popup">
     <div class="message_content ezd-text-center">
         <div class="close-pro">
-            <img class="pro-close" src="<?php echo SPEL_IMG . '/dashboard-img/modal-close.png' ?>"
+            <img class="pro-close" src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/modal-close.png') ?>"
                 alt="<?php esc_attr_e( 'Popup Close', 'spider-elements' ); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo SPEL_IMG . '/dashboard-img/dimond.png' ?>"
+            <img class="pro-image" src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/dimond.png') ?>"
                 alt="<?php esc_attr_e( 'Popup Pro Diamond', 'spider-elements' ); ?>">
         </div>
         <div class="pro-content">

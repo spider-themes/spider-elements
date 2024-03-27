@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php
 						if ( ! empty( $item[ 'company_image' ][ 'id' ] ) ) { ?>
                             <div class="logo">
-								<?php echo wp_get_attachment_image( $item[ 'company_image' ][ 'id' ], 'full' ) ?>
+								<?php spel_dynamic_image( $item[ 'company_image' ] ) ?>
                             </div>
 							<?php
 						}

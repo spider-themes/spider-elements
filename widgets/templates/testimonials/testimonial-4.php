@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
                             <div class="ezd-grid ezd-grid-cols-12 align-items-center">
                                 <div class="ezd-md-col-5">
                                     <div class="testimonial-slider-img">
-                                        <?php echo wp_get_attachment_image($item[ 'author_image' ][ 'id' ], 'full') ?>
+                                        <?php spel_dynamic_image($item[ 'author_image' ]) ?>
                                     </div>
                                 </div>
                                 <div class="ezd-md-col-7">

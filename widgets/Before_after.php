@@ -202,7 +202,7 @@ class Before_After extends Widget_Base {
                 if ( ! empty( $settings['before_image']['id'] ) ) {
                     ?>
                     <div>
-                        <?php echo wp_get_attachment_image( $settings['before_image']['id'], 'full' ) ?>
+                        <?php spel_dynamic_image( $settings['before_image']) ?>
                         <div class="indicator before"><?php echo esc_html( $settings['before_text'] ); ?></div>
                     </div>
                     <?php
@@ -210,7 +210,7 @@ class Before_After extends Widget_Base {
                 if ( ! empty( $settings['after_image']['id'] ) ) {
                     ?>
                     <div>
-                        <?php echo wp_get_attachment_image( $settings['after_image']['id'], 'full' ) ?>
+                        <?php spel_dynamic_image( $settings['after_image'] ) ?>
                         <div class="indicator after"><?php echo esc_html( $settings['after_text'] ); ?></div>
                     </div>
                     <?php

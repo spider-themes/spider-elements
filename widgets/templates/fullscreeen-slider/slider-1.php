@@ -50,7 +50,7 @@ if (!defined('ABSPATH')) {
                         ?>
                         <div class="swiper-slide">
                             <div class="banner-thumb-img">
-                                <?php echo wp_get_attachment_image($item[ 'bg_img' ][ 'id' ], 'spe_120x70'); ?>
+                                <?php spel_dynamic_image($item[ 'bg_img' ], 'spe_120x70'); ?>
                             </div>
                         </div>
                         <?php
