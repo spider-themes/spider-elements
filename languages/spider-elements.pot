@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spider Elements\n"
-"POT-Creation-Date: 2023-11-08 18:34+0600\n"
+"POT-Creation-Date: 2024-03-28 17:16+0600\n"
 "PO-Revision-Date: 2023-10-15 21:25+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: spider-elements.php\n"
@@ -22,130 +22,598 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #. Plugin Name of the plugin/theme
-#: includes/Admin/Admin_Settings.php:35 includes/Admin/Admin_Settings.php:36
-#: spider-elements.php:286 spider-elements.php:345 spider-elements.php:380
-#: spider-elements.php:401
+#: includes/Admin/Admin_Settings.php:32 includes/Admin/Admin_Settings.php:33
+#: spider-elements.php:281 spider-elements.php:347 spider-elements.php:387
+#: spider-elements.php:410
 msgid "Spider Elements"
 msgstr ""
 
-#: includes/Admin/notices.php:4
+#: includes/Admin/Module_Settings.php:20 widgets/Accordion.php:32
+#: widgets/Accordion.php:93 widgets/Accordion.php:261
+msgid "Accordion"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:31 widgets/Alerts_Box.php:31
+msgid "Alerts Box"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:42 widgets/Animated_Heading.php:31
+msgid "Animated Heading"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:53 widgets/Before_after.php:28
+msgid "Before After"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:64 widgets/Blog_Grid.php:52
+msgid "Blog Grid"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:75
+msgid "Buttons"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:86 widgets/Cheat_sheet.php:34
+#: widgets/Cheat_sheet.php:100
+msgid "Cheat Sheet"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:97 widgets/Counter.php:29
+#: widgets/Counter.php:118 widgets/Counter.php:172
+msgid "Counter"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:108 widgets/Instagram.php:29
+msgid "Instagram"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:119 widgets/Integrations.php:32
+#: widgets/Integrations.php:127
+msgid "Integrations"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:130 widgets/List_Item.php:32
+msgid "List Items"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:141 widgets/Marquee_Slides.php:30
+#: widgets/Marquee_Slides.php:92 widgets/Marquee_Slides.php:202
+msgid "Marquee Slides"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:152 widgets/Pricing_Table_Switcher.php:26
+msgid "Pricing Table Switcher"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:163 widgets/Pricing_Table_Tabs.php:28
+msgid "Pricing Table Tabs"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:174 widgets/Skill_Showcase.php:30
+#: widgets/Skill_Showcase.php:151
+msgid "Skill Showcase"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:185 widgets/Tabs.php:32
+#: widgets/Tabs.php:118
+msgid "Tabs"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:196 widgets/Team_Carousel.php:32
+msgid "Team Carousel"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:207 widgets/Testimonial.php:29
+#: widgets/Testimonial.php:96 widgets/Testimonial.php:154
+#: widgets/Testimonial.php:205 widgets/Testimonial.php:271
+#: widgets/Testimonial.php:336 widgets/Testimonial.php:413
+#: widgets/Testimonial.php:486 widgets/Testimonial.php:571
+#: widgets/Testimonial.php:634 widgets/Testimonial.php:696
+#: widgets/Testimonial.php:758
+msgid "Testimonials"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:218 widgets/Timeline.php:30
+#: widgets/Timeline.php:79
+msgid "Timeline"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:229 widgets/Video_Playlist.php:31
+msgid "Video Playlist"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:240 widgets/Video_Popup.php:32
+msgid "Video Popup"
+msgstr ""
+
+#: includes/Admin/Module_Settings.php:357
+msgid "Smooth Animation"
+msgstr ""
+
+#: includes/Admin/notices.php:10
 msgid "Thanks for installing Spider Elements!"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:8
+msgid "Api Settings"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:13
+#: includes/Admin/templates/elements.php:41
+#: includes/Admin/templates/features.php:22
+#: includes/Admin/templates/features_bkp.php:26
+msgid "Disable All"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:18
+#: includes/Admin/templates/elements.php:46
+#: includes/Admin/templates/features.php:27
+#: includes/Admin/templates/features_bkp.php:31
+msgid "Enabled All"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:21
+#: includes/Admin/templates/elements.php:49
+#: includes/Admin/templates/features.php:30
+#: includes/Admin/templates/features_bkp.php:34
+msgid "Save Changes"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:28
+#: includes/Admin/templates/elements.php:56
+#: includes/Admin/templates/features.php:38 includes/extra.php:218
+#: widgets/Blog_Grid.php:229
+msgid "All"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:31
+#: includes/Admin/templates/elements.php:59
+#: includes/Admin/templates/features.php:42
+#: widgets/Pricing_Table_Switcher.php:243
+msgid "Free"
+msgstr ""
+
+#: includes/Admin/templates/api-settings.php:34
+#: includes/Admin/templates/elements.php:62
+#: includes/Admin/templates/features.php:46
+msgid "Pro"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:17
+msgid "Dashboard Banner"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:22
+msgid "All Widgets"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:39
+msgid "Core"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:74 widgets/Accordion.php:461
+#: widgets/Pricing_Table_Switcher.php:880 widgets/Tabs.php:500
+#: widgets/Video_Playlist.php:644
+msgid "Active"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:94
+msgid "Documentation"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:95
+msgid ""
+"Get detailed and guided instruction to level up your website with the "
+"necessary set up."
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:97
+#: includes/Admin/templates/dashboard.php:238
+msgid "Check Documentation"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:104
+msgid "Need Help"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:105
+msgid ""
+"If you are stuck at anything while using our product, reach out to us "
+"immediately"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:108
+#: includes/Admin/templates/dashboard.php:248
+msgid "Support Ticket"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:117
+msgid "System Requirement"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:123
+msgid "PHP Version:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:132
+msgid "Memory Limit:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:141
+msgid "Uploads Folder Writable:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:150
+msgid "GZip Enabled:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:163
+msgid "Max Execution Time:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:172
+msgid "Max Post Limit:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:182
+msgid "Multisite:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:192
+msgid "Debug Mode:"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:205
+msgid ""
+"Note: If you have multiple addons like <strong>Spider Elements</strong> so "
+"you need some more requirement some cases\n"
+"                        so make sure you added more memory for others addon "
+"too."
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:218
+msgid "Missing Features"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:219
+msgid ""
+"Send us a message if you believe the plugin is<br> lacking any features."
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:222
+msgid "Request Features"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:234
+msgid "Show Your Love"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:235
+msgid ""
+"Leave your feedback to help us out if you liked<br> our product and customer "
+"service."
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:245
+msgid "Facing an issues?"
+msgstr ""
+
+#: includes/Admin/templates/dashboard.php:246
+msgid "You think there is a bug in the product? Inform<br> us please!"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:36
+#: includes/Admin/templates/sidebar.php:32
+msgid "Elements"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:100
+#, php-format
+msgid "View %s Widget Demo"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:105
+#: includes/Admin/templates/features.php:90
+msgid "Widget Demo"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:108
+#: includes/Admin/templates/features.php:93
+#, php-format
+msgid "View %s Video Tutorial"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:111
+#: includes/Admin/templates/features.php:96
+msgid "Video Tutorial"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:138
+#: includes/Admin/templates/features.php:123
+#: includes/Admin/templates/features_bkp.php:259
+#: includes/Admin/templates/go-premium.php:241
+msgid "Popup Close"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:142
+#: includes/Admin/templates/features.php:127
+#: includes/Admin/templates/features_bkp.php:263
+#: includes/Admin/templates/go-premium.php:245
+msgid "Popup Pro Diamond"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:145
+#: includes/Admin/templates/features.php:130
+#: includes/Admin/templates/features_bkp.php:266
+#: includes/Admin/templates/go-premium.php:248
+msgid "Go Pro"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:146
+#: includes/Admin/templates/features.php:131
+#: includes/Admin/templates/features_bkp.php:267
+#: includes/Admin/templates/go-premium.php:249
+msgid "Upgrade to Pro Version for Unlock more features!"
+msgstr ""
+
+#: includes/Admin/templates/elements.php:148
+#: includes/Admin/templates/features.php:133
+#: includes/Admin/templates/features_bkp.php:269
+#: includes/Admin/templates/go-premium.php:251
+msgid "Confirm"
+msgstr ""
+
+#: includes/Admin/templates/features.php:17
+#: includes/Admin/templates/features_bkp.php:21
+#: includes/Admin/templates/sidebar.php:46
+msgid "Features"
+msgstr ""
+
+#: includes/Admin/templates/features.php:87
+#, php-format
+msgid "View %s Feature Demo"
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:9
+msgid "Get Spider Elements Addons Pro"
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:10
+msgid ""
+"Purchase the premium version of spider Elements Addons to get additional and "
+"exclusive features."
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:13
+msgid "CLICK here to get Spider Elementor Addons PRO!"
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:16
+msgid "Go Premium Banner"
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:224
+msgid "Automatic Updates"
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:226
+msgid "Automatic Updates & Priority Support"
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:227
+msgid ""
+"Get access to automatic updates & keep your website up-to-date with "
+"constantly developing features.\n"
+"                Having any trouble? Don't worry as you can reach out to our "
+"expert Support team any time through live\n"
+"                chat or support tickets."
+msgstr ""
+
+#: includes/Admin/templates/go-premium.php:233
+msgid "Upgrade To PRO"
+msgstr ""
+
+#: includes/Admin/templates/integration.php:11
+msgid "Advanced Accordion Gutenberg Block"
+msgstr ""
+
+#: includes/Admin/templates/integration.php:12
+msgid ""
+"Advanced Accordion Block is a custom Gutenberg Block that allows to showcase "
+"the content in accordion mode. It also helps to build FAQ sections easily."
+msgstr ""
+
+#: includes/Admin/templates/integration.php:18
+msgid "BBP Core"
+msgstr ""
+
+#: includes/Admin/templates/integration.php:19
+msgid ""
+"Expand bbPress powered forums with useful features like - private reply, "
+"solved topics ..."
+msgstr ""
+
+#: includes/Admin/templates/integration.php:25
+msgid "EazyDocs"
+msgstr ""
+
+#: includes/Admin/templates/integration.php:26
+msgid "A powerful & beautiful documentation, knowledge base builder plugin."
+msgstr ""
+
+#: includes/Admin/templates/integration.php:32
+msgid "Spotlight Search"
+msgstr ""
+
+#: includes/Admin/templates/integration.php:33
+msgid "Easily embed beautiful Instagram feeds on your WordPress site."
+msgstr ""
+
+#: includes/Admin/templates/integration.php:40
+msgid "Integration Our other plugins"
+msgstr ""
+
+#: includes/Admin/templates/integration.php:41
+msgid ""
+"We are excited to announce that we have added new Widgets, Template Kits, "
+"and other Elementor<br> features to\n"
+"            enhance your website building experience. Stay tuned for the "
+"weekly updates!"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:18
+msgid "Dashboard"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:19
+msgid "Find all information"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:33
+msgid "Control All the Widgets"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:47
+msgid "Control All Features"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:60
+msgid "API Settings"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:61
+msgid "Added api here"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:74
+msgid "Integration"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:75
+msgid "Install Other Plugins"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:88
+msgid "Go Premium"
+msgstr ""
+
+#: includes/Admin/templates/sidebar.php:89
+msgid "Get Premium Features"
+msgstr ""
+
+#: includes/classes/Plugin_Installer.php:91
+msgid "Activated"
+msgstr ""
+
+#: includes/classes/Plugin_Installer.php:94 spider-elements.php:396
+msgid "Activate Now"
+msgstr ""
+
+#: includes/classes/Plugin_Installer.php:99
+msgid "Install Now"
 msgstr ""
 
 #: includes/extra.php:15
 msgid "SPIDER"
 msgstr ""
 
-#: includes/extra.php:41
+#: includes/extra.php:43
 msgid "H1"
 msgstr ""
 
-#: includes/extra.php:42
+#: includes/extra.php:44
 msgid "H2"
 msgstr ""
 
-#: includes/extra.php:43
+#: includes/extra.php:45
 msgid "H3"
 msgstr ""
 
-#: includes/extra.php:44
+#: includes/extra.php:46
 msgid "H4"
 msgstr ""
 
-#: includes/extra.php:45
+#: includes/extra.php:47
 msgid "H5"
 msgstr ""
 
-#: includes/extra.php:46
+#: includes/extra.php:48
 msgid "H6"
 msgstr ""
 
-#: includes/extra.php:47
+#: includes/extra.php:49
 msgid "Div"
 msgstr ""
 
-#: includes/extra.php:48
+#: includes/extra.php:50
 msgid "Span"
 msgstr ""
 
-#: includes/extra.php:49
+#: includes/extra.php:51
 msgid "Paragraph"
 msgstr ""
 
-#: includes/extra.php:197 widgets/Blog_Grid.php:172
-msgid "All"
-msgstr ""
-
-#: includes/extra.php:235
+#: includes/extra.php:258
 msgid "No categories found."
 msgstr ""
 
-#: includes/extra.php:250
-msgid " min read"
-msgstr ""
-
 #. translators: %s: post author.
-#: includes/extra.php:266
+#: includes/extra.php:276
 #, php-format
 msgctxt "post author"
 msgid "By: %s"
 msgstr ""
 
-#: includes/extra.php:428
+#: includes/extra.php:455
 msgid "minute"
-msgstr ""
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
 
-#: includes/extra.php:430
-msgid "minutes"
-msgstr ""
-
-#: spider-elements.php:116 spider-elements.php:133
+#: spider-elements.php:141 spider-elements.php:158
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: spider-elements.php:180
+#: spider-elements.php:171
 msgid "Elegant Icons"
 msgstr ""
 
-#: spider-elements.php:294
+#: spider-elements.php:282 spider-elements.php:348
+msgid "Elementor"
+msgstr ""
+
+#: spider-elements.php:290
 msgid "Activate Elementor"
 msgstr ""
 
-#: spider-elements.php:297
+#. translators: 1: Plugin name, 2: Elementor plugin name
+#: spider-elements.php:295
 #, php-format
 msgid ""
-"<strong>%1$s</strong> requires <strong>Elementor</strong> plugin to be "
-"active. Please activate Elementor to continue."
+"%1$s requires %2$s plugin to be active. Please activate the %2$s to continue."
 msgstr ""
 
-#: spider-elements.php:304
+#: spider-elements.php:303
 msgid "Install Elementor"
 msgstr ""
 
-#: spider-elements.php:307
+#. translators: 1: Plugin name, 2: Elementor plugin name
+#: spider-elements.php:308
 #, php-format
 msgid ""
-"<strong>%1$s requires Elementor</strong> plugin to be installed and "
-"activated. Please install Elementor to continue."
+"%1$s requires %2$s plugin to be installed and activated. Please install the "
+"%2$s to continue."
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: spider-elements.php:344 spider-elements.php:379
+#: spider-elements.php:346 spider-elements.php:386
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: spider-elements.php:346
-msgid "Elementor"
-msgstr ""
-
-#: spider-elements.php:381
+#: spider-elements.php:388
 msgid "PHP"
-msgstr ""
-
-#: widgets/Accordion.php:32 widgets/Accordion.php:93 widgets/Accordion.php:260
-msgid "Accordion"
 msgstr ""
 
 #: widgets/Accordion.php:100
@@ -153,30 +621,33 @@ msgid "Expanded"
 msgstr ""
 
 #: widgets/Accordion.php:102 widgets/Accordion.php:215
-#: widgets/Cheat_sheet.php:163
+#: widgets/Accordion.php:279 widgets/Cheat_sheet.php:174
+#: widgets/Counter.php:145
 msgid "Yes"
 msgstr ""
 
 #: widgets/Accordion.php:103 widgets/Accordion.php:216
-#: widgets/Cheat_sheet.php:164
+#: widgets/Accordion.php:280 widgets/Cheat_sheet.php:175
+#: widgets/Counter.php:146
 msgid "No"
 msgstr ""
 
-#: widgets/Accordion.php:112 widgets/Accordion.php:312
-#: widgets/Alerts_Box.php:128 widgets/Alerts_Box.php:184
-#: widgets/Animated_Heading.php:83 widgets/Blog_Grid.php:282
-#: widgets/Cheat_sheet.php:95 widgets/Cheat_sheet.php:189
-#: widgets/Counter.php:130 widgets/Counter.php:267 widgets/List_Item.php:102
-#: widgets/Marquee_Slides.php:148 widgets/Pricing_Table_Switcher.php:124
-#: widgets/Pricing_Table_Switcher.php:142
-#: widgets/Pricing_Table_Switcher.php:211
-#: widgets/Pricing_Table_Switcher.php:292
-#: widgets/Pricing_Table_Switcher.php:432
-#: widgets/Pricing_Table_Switcher.php:516 widgets/Pricing_Table_Tabs.php:115
-#: widgets/Testimonial.php:469 widgets/Testimonial.php:523
-#: widgets/Testimonial.php:1104 widgets/Timeline.php:99
-#: widgets/Timeline.php:182 widgets/Video_Playlist.php:128
-#: widgets/Video_Playlist.php:187 widgets/Video_Playlist.php:196
+#: widgets/Accordion.php:112 widgets/Accordion.php:326
+#: widgets/Alerts_Box.php:145 widgets/Alerts_Box.php:204
+#: widgets/Animated_Heading.php:83 widgets/Blog_Grid.php:342
+#: widgets/Blog_Grid.php:703 widgets/Cheat_sheet.php:106
+#: widgets/Cheat_sheet.php:201 widgets/Counter.php:135 widgets/Counter.php:311
+#: widgets/Fullscreen_Slider.php:120 widgets/List_Item.php:103
+#: widgets/Marquee_Slides.php:148 widgets/Pricing_Table_Switcher.php:154
+#: widgets/Pricing_Table_Switcher.php:172
+#: widgets/Pricing_Table_Switcher.php:241
+#: widgets/Pricing_Table_Switcher.php:322
+#: widgets/Pricing_Table_Switcher.php:462
+#: widgets/Pricing_Table_Switcher.php:546 widgets/Pricing_Table_Tabs.php:126
+#: widgets/Testimonial.php:470 widgets/Testimonial.php:524
+#: widgets/Testimonial.php:1070 widgets/Timeline.php:99
+#: widgets/Timeline.php:182 widgets/Video_Playlist.php:120
+#: widgets/Video_Playlist.php:179 widgets/Video_Playlist.php:188
 msgid "Title"
 msgstr ""
 
@@ -184,13 +655,14 @@ msgstr ""
 msgid "Accordion Title"
 msgstr ""
 
-#: widgets/Accordion.php:124 widgets/Tabs.php:151
+#: widgets/Accordion.php:124 widgets/Tabs.php:150
 msgid "Content Type"
 msgstr ""
 
-#: widgets/Accordion.php:127 widgets/Pricing_Table_Switcher.php:236
-#: widgets/Pricing_Table_Switcher.php:661
-#: widgets/Pricing_Table_Switcher.php:719 widgets/Pricing_Table_Tabs.php:156
+#: widgets/Accordion.php:127 widgets/Pricing_Table_Switcher.php:266
+#: widgets/Pricing_Table_Switcher.php:691
+#: widgets/Pricing_Table_Switcher.php:749 widgets/Pricing_Table_Tabs.php:167
+#: widgets/Testimonial.php:603 widgets/Testimonial.php:1062
 msgid "Contents"
 msgstr ""
 
@@ -198,7 +670,7 @@ msgstr ""
 msgid "Saved Template"
 msgstr ""
 
-#: widgets/Accordion.php:136 widgets/Team_Carousel.php:177
+#: widgets/Accordion.php:136 widgets/Team_Carousel.php:169
 msgid "Content Text"
 msgstr ""
 
@@ -229,13 +701,13 @@ msgstr ""
 msgid "Accordion #3"
 msgstr ""
 
-#: widgets/Accordion.php:188 widgets/Accordion.php:393
-#: widgets/Alerts_Box.php:160 widgets/Alerts_Box.php:379
-#: widgets/Alerts_Box.php:425 widgets/List_Item.php:236
-#: widgets/Pricing_Table_Switcher.php:135 widgets/Tabs.php:127
-#: widgets/Testimonial.php:889 widgets/Video_Playlist.php:533
-#: widgets/Video_Playlist.php:725 widgets/Video_Popup.php:141
-#: widgets/Video_Popup.php:168
+#: widgets/Accordion.php:188 widgets/Accordion.php:405
+#: widgets/Alerts_Box.php:177 widgets/Alerts_Box.php:413
+#: widgets/Blog_Grid.php:1205 widgets/List_Item.php:237
+#: widgets/Pricing_Table_Switcher.php:165 widgets/Tabs.php:126
+#: widgets/Testimonial.php:875 widgets/Video_Playlist.php:525
+#: widgets/Video_Playlist.php:717 widgets/Video_Popup.php:133
+#: widgets/Video_Popup.php:160
 msgid "Icon"
 msgstr ""
 
@@ -255,263 +727,275 @@ msgstr ""
 msgid "Title Tag"
 msgstr ""
 
-#: widgets/Accordion.php:269 widgets/Blog_Grid.php:643
-#: widgets/Integrations.php:194 widgets/List_Item.php:343
-#: widgets/Pricing_Table_Switcher.php:1187 widgets/Tabs.php:560
-#: widgets/Testimonial.php:979 widgets/Testimonial.php:1289
-#: widgets/Video_Popup.php:285
+#: widgets/Accordion.php:270 widgets/Blog_Grid.php:918
+#: widgets/Integrations.php:195 widgets/List_Item.php:344
+#: widgets/Pricing_Table_Switcher.php:1213 widgets/Tabs.php:648
+#: widgets/Testimonial.php:1001 widgets/Testimonial.php:1368
+#: widgets/Video_Popup.php:277
 msgid "Border"
 msgstr ""
 
-#: widgets/Accordion.php:277 widgets/Accordion.php:546
-#: widgets/Blog_Grid.php:393 widgets/Blog_Grid.php:440
-#: widgets/Blog_Grid.php:653 widgets/Integrations.php:201
-#: widgets/List_Item.php:351 widgets/Pricing_Table_Switcher.php:945
-#: widgets/Pricing_Table_Switcher.php:1195 widgets/Tabs.php:568
-#: widgets/Team_Carousel.php:240 widgets/Testimonial.php:986
-#: widgets/Video_Popup.php:293
+#: widgets/Accordion.php:277
+msgid "Border Bottom"
+msgstr ""
+
+#: widgets/Accordion.php:289 widgets/Accordion.php:538
+#: widgets/Blog_Grid.php:589 widgets/Blog_Grid.php:650
+#: widgets/Blog_Grid.php:929 widgets/Blog_Grid.php:1322 widgets/Counter.php:192
+#: widgets/Integrations.php:203 widgets/List_Item.php:352
+#: widgets/Pricing_Table_Switcher.php:974
+#: widgets/Pricing_Table_Switcher.php:1221 widgets/Tabs.php:368
+#: widgets/Tabs.php:656 widgets/Team_Carousel.php:228
+#: widgets/Testimonial.php:1012 widgets/Video_Popup.php:285
 msgid "Border Radius"
 msgstr ""
 
-#: widgets/Accordion.php:289 widgets/Accordion.php:492
+#: widgets/Accordion.php:301 widgets/Accordion.php:513
 msgid "Spacing"
 msgstr ""
 
-#: widgets/Accordion.php:290
+#: widgets/Accordion.php:302
 msgid "Spacing between the accordions"
 msgstr ""
 
-#: widgets/Accordion.php:320 widgets/Accordion.php:573
-#: widgets/List_Item.php:254 widgets/List_Item.php:314
-#: widgets/Pricing_Table_Tabs.php:212 widgets/Video_Playlist.php:388
-#: widgets/Video_Playlist.php:476 widgets/Video_Playlist.php:667
-msgid "Background"
+#: widgets/Accordion.php:341 widgets/Accordion.php:583
+#: widgets/Animated_Heading.php:185 widgets/Animated_Heading.php:214
+#: widgets/Animated_Heading.php:243 widgets/Before_after.php:156
+#: widgets/Blog_Grid.php:723 widgets/Blog_Grid.php:806
+#: widgets/Blog_Grid.php:877 widgets/Blog_Grid.php:966
+#: widgets/Blog_Grid.php:1025 widgets/Blog_Grid.php:1086
+#: widgets/Blog_Grid.php:1165 widgets/Cheat_sheet.php:208
+#: widgets/Cheat_sheet.php:246 widgets/Cheat_sheet.php:274
+#: widgets/Cheat_sheet.php:301 widgets/List_Item.php:188
+#: widgets/Pricing_Table_Switcher.php:851
+#: widgets/Pricing_Table_Switcher.php:887
+#: widgets/Pricing_Table_Switcher.php:1189
+#: widgets/Pricing_Table_Switcher.php:1242 widgets/Tabs.php:426
+#: widgets/Tabs.php:473 widgets/Tabs.php:506 widgets/Tabs.php:636
+#: widgets/Testimonial.php:1093 widgets/Testimonial.php:1128
+#: widgets/Testimonial.php:1161 widgets/Testimonial.php:1229
+#: widgets/Testimonial.php:1267 widgets/Testimonial.php:1336
+#: widgets/Timeline.php:190 widgets/Timeline.php:217 widgets/Timeline.php:244
+#: widgets/Timeline.php:281 widgets/Video_Playlist.php:146
+msgid "Text Color"
 msgstr ""
 
-#: widgets/Accordion.php:332 widgets/Accordion.php:414
-#: widgets/Accordion.php:584 widgets/Alerts_Box.php:389
-#: widgets/Alerts_Box.php:435 widgets/Counter.php:247 widgets/Counter.php:274
-#: widgets/List_Item.php:243 widgets/Pricing_Table_Switcher.php:996
-#: widgets/Pricing_Table_Switcher.php:1061 widgets/Skill_Showcase.php:159
-#: widgets/Video_Playlist.php:399 widgets/Video_Playlist.php:427
-#: widgets/Video_Playlist.php:487 widgets/Video_Playlist.php:514
-#: widgets/Video_Playlist.php:541 widgets/Video_Playlist.php:635
-#: widgets/Video_Playlist.php:678 widgets/Video_Playlist.php:705
-#: widgets/Video_Playlist.php:733 widgets/Video_Playlist.php:822
-msgid "Color"
+#: widgets/Accordion.php:352
+msgid "Active Text"
 msgstr ""
 
-#: widgets/Accordion.php:344 widgets/Accordion.php:445
-msgid "Active Color"
-msgstr ""
-
-#: widgets/Accordion.php:378 widgets/Accordion.php:533
-#: widgets/Accordion.php:610 widgets/Alerts_Box.php:329
-#: widgets/Blog_Grid.php:404 widgets/Cheat_sheet.php:328
-#: widgets/List_Item.php:321 widgets/Pricing_Table_Switcher.php:912
-#: widgets/Pricing_Table_Switcher.php:1123 widgets/Tabs.php:361
-#: widgets/Tabs.php:580 widgets/Testimonial.php:967
-#: widgets/Testimonial.php:1226 widgets/Testimonial.php:1277
+#: widgets/Accordion.php:388 widgets/Accordion.php:551
+#: widgets/Accordion.php:612 widgets/Alerts_Box.php:363
+#: widgets/Blog_Grid.php:564 widgets/Blog_Grid.php:891
+#: widgets/Blog_Grid.php:1334 widgets/Cheat_sheet.php:340
+#: widgets/List_Item.php:322 widgets/Pricing_Table_Switcher.php:941
+#: widgets/Pricing_Table_Switcher.php:1150 widgets/Tabs.php:393
+#: widgets/Tabs.php:668 widgets/Testimonial.php:972
+#: widgets/Testimonial.php:1352
 msgid "Padding"
 msgstr ""
 
-#: widgets/Accordion.php:407 widgets/Blog_Grid.php:491
-#: widgets/Blog_Grid.php:578 widgets/Pricing_Table_Switcher.php:815
-#: widgets/Pricing_Table_Switcher.php:1158 widgets/Tabs.php:386
-#: widgets/Team_Carousel.php:266 widgets/Testimonial.php:953
-#: widgets/Video_Playlist.php:461 widgets/Video_Popup.php:183
+#: widgets/Accordion.php:427 widgets/Blog_Grid.php:846
+#: widgets/Blog_Grid.php:1223 widgets/Pricing_Table_Switcher.php:844
+#: widgets/Pricing_Table_Switcher.php:1184 widgets/Tabs.php:419
+#: widgets/Team_Carousel.php:254 widgets/Testimonial.php:940
+#: widgets/Video_Playlist.php:453 widgets/Video_Popup.php:175
 msgid "Normal"
 msgstr ""
 
-#: widgets/Accordion.php:439 widgets/Pricing_Table_Switcher.php:851
-#: widgets/Tabs.php:462 widgets/Video_Playlist.php:652
-msgid "Active"
+#: widgets/Accordion.php:434 widgets/Video_Popup.php:185
+#: widgets/Video_Popup.php:225
+msgid "Icon Color"
 msgstr ""
 
-#: widgets/Accordion.php:471 widgets/List_Item.php:165 widgets/Tabs.php:261
+#: widgets/Accordion.php:446 widgets/Accordion.php:477
+#: widgets/Blog_Grid.php:1058 widgets/Blog_Grid.php:1241
+#: widgets/Blog_Grid.php:1272 widgets/List_Item.php:255
+#: widgets/List_Item.php:315 widgets/Pricing_Table_Tabs.php:223
+#: widgets/Video_Playlist.php:380 widgets/Video_Playlist.php:468
+#: widgets/Video_Playlist.php:659
+msgid "Background"
+msgstr ""
+
+#: widgets/Accordion.php:467
+msgid "Active Color"
+msgstr ""
+
+#: widgets/Accordion.php:492 widgets/List_Item.php:166 widgets/Tabs.php:271
 msgid "Alignment"
 msgstr ""
 
-#: widgets/Accordion.php:476
+#: widgets/Accordion.php:497
 msgid "Start"
 msgstr ""
 
-#: widgets/Accordion.php:480
+#: widgets/Accordion.php:501
 msgid "End"
 msgstr ""
 
-#: widgets/Accordion.php:515 widgets/Alerts_Box.php:445 widgets/Counter.php:164
-#: widgets/List_Item.php:265 widgets/Skill_Showcase.php:98
-#: widgets/Video_Playlist.php:572 widgets/Video_Playlist.php:759
-#: widgets/Video_Popup.php:305
-msgid "Size"
-msgstr ""
-
-#: widgets/Accordion.php:565 widgets/Cheat_sheet.php:121
-#: widgets/Marquee_Slides.php:115 widgets/Pricing_Table_Switcher.php:167
-#: widgets/Pricing_Table_Switcher.php:308
-#: widgets/Pricing_Table_Switcher.php:390
-#: widgets/Pricing_Table_Switcher.php:464 widgets/Tabs.php:154
-#: widgets/Tabs.php:176 widgets/Tabs.php:531 widgets/Team_Carousel.php:136
+#: widgets/Accordion.php:568 widgets/Blog_Grid.php:696
+#: widgets/Cheat_sheet.php:132 widgets/Marquee_Slides.php:115
+#: widgets/Pricing_Table_Switcher.php:197
+#: widgets/Pricing_Table_Switcher.php:338
+#: widgets/Pricing_Table_Switcher.php:420
+#: widgets/Pricing_Table_Switcher.php:494 widgets/Tabs.php:153
+#: widgets/Tabs.php:175 widgets/Tabs.php:619 widgets/Team_Carousel.php:128
 #: widgets/Timeline.php:119
 msgid "Content"
 msgstr ""
 
-#: widgets/Alerts_Box.php:29
-msgid "Alerts Box"
-msgstr ""
-
-#: widgets/Alerts_Box.php:90
+#: widgets/Alerts_Box.php:107
 msgid "Alert/Note"
 msgstr ""
 
-#: widgets/Alerts_Box.php:96
+#: widgets/Alerts_Box.php:113
 msgid "Display Type"
 msgstr ""
 
-#: widgets/Alerts_Box.php:100
+#: widgets/Alerts_Box.php:117
 msgid "Alert Box"
 msgstr ""
 
-#: widgets/Alerts_Box.php:101
+#: widgets/Alerts_Box.php:118
 msgid "Note"
 msgstr ""
 
-#: widgets/Alerts_Box.php:102
+#: widgets/Alerts_Box.php:119
 msgid "Note With Icon"
 msgstr ""
 
-#: widgets/Alerts_Box.php:103
+#: widgets/Alerts_Box.php:120
 msgid "Explanation"
 msgstr ""
 
-#: widgets/Alerts_Box.php:104
+#: widgets/Alerts_Box.php:121
 msgid "Dual Box Notice"
 msgstr ""
 
-#: widgets/Alerts_Box.php:105
+#: widgets/Alerts_Box.php:122
 msgid "Block Notice"
 msgstr ""
 
-#: widgets/Alerts_Box.php:112
+#: widgets/Alerts_Box.php:129
 msgid "Type"
 msgstr ""
 
-#: widgets/Alerts_Box.php:116
+#: widgets/Alerts_Box.php:133
 msgid "Message"
 msgstr ""
 
-#: widgets/Alerts_Box.php:117
+#: widgets/Alerts_Box.php:134
 msgid "Warning"
 msgstr ""
 
-#: widgets/Alerts_Box.php:118
+#: widgets/Alerts_Box.php:135
 msgid "Info"
 msgstr ""
 
-#: widgets/Alerts_Box.php:119
+#: widgets/Alerts_Box.php:136
 msgid "Success"
 msgstr ""
 
-#: widgets/Alerts_Box.php:120
+#: widgets/Alerts_Box.php:137
 msgid "Danger"
 msgstr ""
 
-#: widgets/Alerts_Box.php:137 widgets/Pricing_Table_Switcher.php:151
-#: widgets/Pricing_Table_Tabs.php:147 widgets/Video_Playlist.php:225
+#: widgets/Alerts_Box.php:154 widgets/Blog_Grid.php:780
+#: widgets/Pricing_Table_Switcher.php:181 widgets/Pricing_Table_Tabs.php:158
+#: widgets/Video_Playlist.php:217
 msgid "Description"
 msgstr ""
 
-#: widgets/Alerts_Box.php:145
+#: widgets/Alerts_Box.php:162
 msgid "Dismiss Button"
 msgstr ""
 
-#: widgets/Alerts_Box.php:149 widgets/Pricing_Table_Switcher.php:282
-#: widgets/Pricing_Table_Switcher.php:1281 widgets/Tabs.php:222
-#: widgets/Tabs.php:236 widgets/Tabs.php:250 widgets/Testimonial.php:862
+#: widgets/Alerts_Box.php:166 widgets/Pricing_Table_Switcher.php:312
+#: widgets/Pricing_Table_Switcher.php:1307 widgets/Tabs.php:218
+#: widgets/Tabs.php:232 widgets/Tabs.php:246 widgets/Tabs.php:260
+#: widgets/Testimonial.php:848
 msgid "Show"
 msgstr ""
 
-#: widgets/Alerts_Box.php:150 widgets/Pricing_Table_Switcher.php:283
-#: widgets/Pricing_Table_Switcher.php:1282 widgets/Tabs.php:223
-#: widgets/Tabs.php:237 widgets/Tabs.php:251 widgets/Testimonial.php:863
+#: widgets/Alerts_Box.php:167 widgets/Pricing_Table_Switcher.php:313
+#: widgets/Pricing_Table_Switcher.php:1308 widgets/Tabs.php:219
+#: widgets/Tabs.php:233 widgets/Tabs.php:247 widgets/Tabs.php:261
+#: widgets/Testimonial.php:849
 msgid "Hide"
 msgstr ""
 
-#: widgets/Alerts_Box.php:203 widgets/Alerts_Box.php:240
-#: widgets/Animated_Heading.php:185 widgets/Animated_Heading.php:214
-#: widgets/Animated_Heading.php:243 widgets/Before_after.php:156
-#: widgets/Cheat_sheet.php:196 widgets/Cheat_sheet.php:234
-#: widgets/Cheat_sheet.php:262 widgets/Cheat_sheet.php:289
-#: widgets/List_Item.php:187 widgets/Pricing_Table_Switcher.php:822
-#: widgets/Pricing_Table_Switcher.php:858
-#: widgets/Pricing_Table_Switcher.php:1163
-#: widgets/Pricing_Table_Switcher.php:1216 widgets/Tabs.php:393
-#: widgets/Tabs.php:436 widgets/Tabs.php:468 widgets/Tabs.php:548
-#: widgets/Testimonial.php:1051 widgets/Testimonial.php:1080
-#: widgets/Testimonial.php:1115 widgets/Testimonial.php:1151
-#: widgets/Testimonial.php:1185 widgets/Testimonial.php:1260
-#: widgets/Timeline.php:190 widgets/Timeline.php:217 widgets/Timeline.php:244
-#: widgets/Timeline.php:281 widgets/Video_Playlist.php:154
-msgid "Text Color"
+#: widgets/Alerts_Box.php:224 widgets/Alerts_Box.php:278
+#: widgets/Alerts_Box.php:445 widgets/Alerts_Box.php:493
+#: widgets/Blog_Grid.php:1230 widgets/Blog_Grid.php:1262
+#: widgets/Counter.php:290 widgets/Counter.php:318 widgets/List_Item.php:244
+#: widgets/Pricing_Table_Switcher.php:1024
+#: widgets/Pricing_Table_Switcher.php:1088 widgets/Skill_Showcase.php:159
+#: widgets/Video_Playlist.php:391 widgets/Video_Playlist.php:419
+#: widgets/Video_Playlist.php:479 widgets/Video_Playlist.php:506
+#: widgets/Video_Playlist.php:533 widgets/Video_Playlist.php:627
+#: widgets/Video_Playlist.php:670 widgets/Video_Playlist.php:697
+#: widgets/Video_Playlist.php:725 widgets/Video_Playlist.php:814
+msgid "Color"
 msgstr ""
 
-#: widgets/Alerts_Box.php:216 widgets/Alerts_Box.php:267
-#: widgets/Alerts_Box.php:400 widgets/Blog_Grid.php:370
-#: widgets/Blog_Grid.php:629 widgets/Blog_Grid.php:687
-#: widgets/Cheat_sheet.php:339 widgets/Integrations.php:183
-#: widgets/Pricing_Table_Switcher.php:900
-#: widgets/Pricing_Table_Switcher.php:1175
-#: widgets/Pricing_Table_Switcher.php:1228 widgets/Video_Playlist.php:323
-#: widgets/Video_Popup.php:207 widgets/Video_Popup.php:247
-msgid "Background Color"
-msgstr ""
-
-#: widgets/Alerts_Box.php:233
+#: widgets/Alerts_Box.php:257
 msgid "Alert Description"
 msgstr ""
 
-#: widgets/Alerts_Box.php:282
-msgid "Background Color 02"
-msgstr ""
-
-#: widgets/Alerts_Box.php:295 widgets/Blog_Grid.php:700
-#: widgets/Pricing_Table_Switcher.php:833
-#: widgets/Pricing_Table_Switcher.php:869
-#: widgets/Pricing_Table_Switcher.php:1240 widgets/Video_Popup.php:261
+#: widgets/Alerts_Box.php:311 widgets/Alerts_Box.php:330
+#: widgets/Blog_Grid.php:980 widgets/Pricing_Table_Switcher.php:862
+#: widgets/Pricing_Table_Switcher.php:898
+#: widgets/Pricing_Table_Switcher.php:1266 widgets/Testimonial.php:1044
+#: widgets/Testimonial.php:1191 widgets/Video_Popup.php:253
 msgid "Border Color"
 msgstr ""
 
-#: widgets/Alerts_Box.php:310
+#: widgets/Alerts_Box.php:344
 msgid "Left Border Width"
 msgstr ""
 
-#: widgets/Alerts_Box.php:345
+#: widgets/Alerts_Box.php:379
 msgid "Layer Alignment"
 msgstr ""
 
-#: widgets/Alerts_Box.php:349
+#: widgets/Alerts_Box.php:383
 msgid "Top Left"
 msgstr ""
 
-#: widgets/Alerts_Box.php:353
+#: widgets/Alerts_Box.php:387
 msgid "Top Right"
 msgstr ""
 
-#: widgets/Alerts_Box.php:357
+#: widgets/Alerts_Box.php:391
 msgid "Bottom Left"
 msgstr ""
 
-#: widgets/Alerts_Box.php:361
+#: widgets/Alerts_Box.php:395
 msgid "Bottom Right"
 msgstr ""
 
-#: widgets/Alerts_Box.php:411
-msgid "Ribbon Color"
+#: widgets/Alerts_Box.php:424 widgets/Alerts_Box.php:473
+#: widgets/Counter.php:207 widgets/List_Item.php:266
+#: widgets/Skill_Showcase.php:98 widgets/Video_Playlist.php:564
+#: widgets/Video_Playlist.php:751 widgets/Video_Popup.php:297
+msgid "Size"
 msgstr ""
 
-#: widgets/Animated_Heading.php:31
-msgid "Animated Heading"
+#: widgets/Alerts_Box.php:461
+msgid "Close Icon"
+msgstr ""
+
+#: widgets/Alerts_Box.php:508 widgets/Cheat_sheet.php:351
+#: widgets/Counter.php:179 widgets/Integrations.php:183
+#: widgets/Pricing_Table_Switcher.php:929
+#: widgets/Pricing_Table_Switcher.php:1201
+#: widgets/Pricing_Table_Switcher.php:1254 widgets/Video_Playlist.php:315
+#: widgets/Video_Popup.php:199 widgets/Video_Popup.php:239
+msgid "Background Color"
+msgstr ""
+
+#: widgets/Alerts_Box.php:524
+msgid "Ribbon Color"
 msgstr ""
 
 #: widgets/Animated_Heading.php:89 widgets/Animated_Heading.php:176
@@ -522,7 +1006,7 @@ msgstr ""
 msgid "I’m a"
 msgstr ""
 
-#: widgets/Animated_Heading.php:92 widgets/Buttons.php:110
+#: widgets/Animated_Heading.php:92 widgets/Buttons.php:111
 msgid "Type your section ID here"
 msgstr ""
 
@@ -559,10 +1043,6 @@ msgstr ""
 msgid "Animated Headline Style"
 msgstr ""
 
-#: widgets/Before_after.php:28
-msgid "Before_After"
-msgstr ""
-
 #: widgets/Before_after.php:90
 msgid "Images"
 msgstr ""
@@ -591,7 +1071,7 @@ msgstr ""
 msgid "After"
 msgstr ""
 
-#: widgets/Before_after.php:148 widgets/Blog_Grid.php:566
+#: widgets/Before_after.php:148
 msgid "Button Style"
 msgstr ""
 
@@ -599,331 +1079,322 @@ msgstr ""
 msgid "Button Background Color"
 msgstr ""
 
-#: widgets/Blog_Grid.php:36
-msgid "Blog Grid"
-msgstr ""
-
-#: widgets/Blog_Grid.php:94 widgets/Buttons.php:88
-#: widgets/Video_Playlist.php:336
+#: widgets/Blog_Grid.php:110 widgets/Buttons.php:89
+#: widgets/Video_Playlist.php:328
 msgid "Layout"
 msgstr ""
 
-#: widgets/Blog_Grid.php:101 widgets/Video_Playlist.php:105
+#: widgets/Blog_Grid.php:117 widgets/Video_Playlist.php:97
 msgid "Skin"
 msgstr ""
 
-#: widgets/Blog_Grid.php:105 widgets/Video_Popup.php:112
+#: widgets/Blog_Grid.php:121 widgets/Video_Popup.php:104
 msgid "Style 01"
 msgstr ""
 
-#: widgets/Blog_Grid.php:109 widgets/Video_Popup.php:113
+#: widgets/Blog_Grid.php:125 widgets/Video_Popup.php:105
 msgid "Style 02"
 msgstr ""
 
-#: widgets/Blog_Grid.php:113 widgets/Video_Popup.php:114
+#: widgets/Blog_Grid.php:129 widgets/Video_Popup.php:106
 msgid "Style 03"
 msgstr ""
 
-#: widgets/Blog_Grid.php:117
+#: widgets/Blog_Grid.php:133
 msgid "Style 04"
 msgstr ""
 
-#: widgets/Blog_Grid.php:121
+#: widgets/Blog_Grid.php:137
 msgid "Style 05"
 msgstr ""
 
-#: widgets/Blog_Grid.php:132 widgets/Pricing_Table_Switcher.php:745
+#: widgets/Blog_Grid.php:141
+msgid "Blog Carousel"
+msgstr ""
+
+#: widgets/Blog_Grid.php:152 widgets/Pricing_Table_Switcher.php:775
 msgid "Column"
 msgstr ""
 
-#: widgets/Blog_Grid.php:135
+#: widgets/Blog_Grid.php:155
 msgid "Two Column"
 msgstr ""
 
-#: widgets/Blog_Grid.php:136
+#: widgets/Blog_Grid.php:156
 msgid "Three Column"
 msgstr ""
 
-#: widgets/Blog_Grid.php:137
+#: widgets/Blog_Grid.php:157
 msgid "Four Column"
 msgstr ""
 
-#: widgets/Blog_Grid.php:138
+#: widgets/Blog_Grid.php:158
 msgid "Six Column"
 msgstr ""
 
-#: widgets/Blog_Grid.php:162
+#: widgets/Blog_Grid.php:170
+msgid "Left Icon"
+msgstr ""
+
+#: widgets/Blog_Grid.php:187
+msgid "Right Icon"
+msgstr ""
+
+#: widgets/Blog_Grid.php:219
 msgid "Query Settings"
 msgstr ""
 
-#: widgets/Blog_Grid.php:168
+#: widgets/Blog_Grid.php:225
 msgid "Query by"
 msgstr ""
 
-#: widgets/Blog_Grid.php:176 widgets/Blog_Grid.php:197
+#: widgets/Blog_Grid.php:233 widgets/Blog_Grid.php:254
 msgid "By Categories"
 msgstr ""
 
-#: widgets/Blog_Grid.php:180 widgets/Blog_Grid.php:221
+#: widgets/Blog_Grid.php:237 widgets/Blog_Grid.php:279
 msgid "By Posts"
 msgstr ""
 
-#: widgets/Blog_Grid.php:184 widgets/Blog_Grid.php:245
+#: widgets/Blog_Grid.php:241 widgets/Blog_Grid.php:304
 msgid "By Posttype"
 msgstr ""
 
-#: widgets/Blog_Grid.php:207
+#: widgets/Blog_Grid.php:265
 msgid "Select Categories"
 msgstr ""
 
-#: widgets/Blog_Grid.php:231
+#: widgets/Blog_Grid.php:290
 msgid "Select Posts"
 msgstr ""
 
-#: widgets/Blog_Grid.php:255
+#: widgets/Blog_Grid.php:315
 msgid "Select Postype"
 msgstr ""
 
-#: widgets/Blog_Grid.php:269
+#: widgets/Blog_Grid.php:329
 msgid "Others Filter"
 msgstr ""
 
-#: widgets/Blog_Grid.php:278
+#: widgets/Blog_Grid.php:338
 msgid "Order by"
 msgstr ""
 
-#: widgets/Blog_Grid.php:281 widgets/Timeline.php:263
+#: widgets/Blog_Grid.php:341 widgets/Timeline.php:263
 msgid "Date"
 msgstr ""
 
-#: widgets/Blog_Grid.php:283 widgets/Video_Playlist.php:235
+#: widgets/Blog_Grid.php:343 widgets/Video_Playlist.php:227
 msgid "Author"
 msgstr ""
 
-#: widgets/Blog_Grid.php:284
+#: widgets/Blog_Grid.php:344
 msgid "Comments"
 msgstr ""
 
-#: widgets/Blog_Grid.php:293
+#: widgets/Blog_Grid.php:353
 msgid "Order"
 msgstr ""
 
-#: widgets/Blog_Grid.php:296
+#: widgets/Blog_Grid.php:356
 msgid "ASC"
 msgstr ""
 
-#: widgets/Blog_Grid.php:297
+#: widgets/Blog_Grid.php:357
 msgid "DESC"
 msgstr ""
 
-#: widgets/Blog_Grid.php:306
+#: widgets/Blog_Grid.php:366
 msgid "Offset"
 msgstr ""
 
-#: widgets/Blog_Grid.php:317
+#: widgets/Blog_Grid.php:377
 msgid "Limit Display"
 msgstr ""
 
-#: widgets/Blog_Grid.php:327
+#: widgets/Blog_Grid.php:387
 msgid "Content Limit Display"
 msgstr ""
 
-#: widgets/Blog_Grid.php:363
-msgid "Blog Item Style"
+#: widgets/Blog_Grid.php:400
+msgid "Title Length"
 msgstr ""
 
-#: widgets/Blog_Grid.php:380
-msgid "Background Hover Color"
+#: widgets/Blog_Grid.php:514
+msgid "Blog Item"
 msgstr ""
 
-#: widgets/Blog_Grid.php:430
-msgid "Image Style"
-msgstr ""
-
-#: widgets/Blog_Grid.php:452
-msgid "Margin Bottom"
-msgstr ""
-
-#: widgets/Blog_Grid.php:480
-msgid "Content Style"
-msgstr ""
-
-#: widgets/Blog_Grid.php:500
-msgid "Title Typography"
-msgstr ""
-
-#: widgets/Blog_Grid.php:507 widgets/Marquee_Slides.php:212
-msgid "Title Color"
-msgstr ""
-
-#: widgets/Blog_Grid.php:518
-msgid "Title Spacing"
-msgstr ""
-
-#: widgets/Blog_Grid.php:541 widgets/Blog_Grid.php:670
-#: widgets/List_Item.php:199 widgets/Pricing_Table_Switcher.php:1211
-#: widgets/Tabs.php:430 widgets/Team_Carousel.php:292
-#: widgets/Testimonial.php:1001 widgets/Video_Popup.php:223
-msgid "Hover"
-msgstr ""
-
-#: widgets/Blog_Grid.php:548
-msgid "Title Hover Color"
-msgstr ""
-
-#: widgets/Blog_Grid.php:586 widgets/Blog_Grid.php:732
-msgid "Button Typography"
-msgstr ""
-
-#: widgets/Blog_Grid.php:593 widgets/Blog_Grid.php:676
-msgid "Button Color"
-msgstr ""
-
-#: widgets/Blog_Grid.php:605
-msgid "Button Padding"
-msgstr ""
-
-#: widgets/Blog_Grid.php:720
-msgid "Meta Style"
-msgstr ""
-
-#: widgets/Blog_Grid.php:739
-msgid "Meta Color"
-msgstr ""
-
-#: widgets/Blog_Grid.php:750
-msgid "Category_Background Color"
-msgstr ""
-
-#: widgets/Blog_Grid.php:761
-msgid "category Color"
-msgstr ""
-
-#: widgets/Buttons.php:29 widgets/Pricing_Table_Switcher.php:1115
-msgid "Button"
-msgstr ""
-
-#: widgets/Buttons.php:95 widgets/Instagram.php:95
-#: widgets/Pricing_Table_Switcher.php:93 widgets/Tabs.php:102
-#: widgets/Video_Playlist.php:597 widgets/Video_Playlist.php:784
-msgid "Style"
-msgstr ""
-
-#: widgets/Buttons.php:99
-msgid "01: Scroll Button"
-msgstr ""
-
-#: widgets/Buttons.php:108
-msgid "Section ID"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:30 widgets/Cheat_sheet.php:89
-msgid "Cheat Sheet"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:98
-msgid "Auxiliary"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:105
-msgid "Serial Number"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:113
-msgid "Top Text"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:115 widgets/Cheat_sheet.php:136
-msgid "be"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:123
-msgid "Sein"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:129
-msgid "Cheat Sheet List"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:135
-msgid "#1"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:137
-msgid "sein"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:140
-msgid "#2"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:141
-msgid "have"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:142
-msgid "haben"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:145
-msgid "#3"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:146
-msgid "become"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:147
-msgid "werden"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:150
-msgid "#4"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:151
-msgid "can"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:152
-msgid "konnen"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:161
-msgid "Extended Collapse"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:218
-msgid "Cheat Sheet Item"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:226
-msgid "Number Options"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:254
-msgid "Top Text Options"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:281
-msgid "Bottom Text Options"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:310
-msgid "Background Box Item"
-msgstr ""
-
-#: widgets/Cheat_sheet.php:317 widgets/Pricing_Table_Switcher.php:924
-#: widgets/Pricing_Table_Switcher.php:1135
+#: widgets/Blog_Grid.php:537 widgets/Blog_Grid.php:737
+#: widgets/Cheat_sheet.php:329 widgets/Pricing_Table_Switcher.php:953
+#: widgets/Pricing_Table_Switcher.php:1162 widgets/Testimonial.php:985
+#: widgets/Testimonial.php:1175
 msgid "Margin"
 msgstr ""
 
-#: widgets/Counter.php:29 widgets/Counter.php:113 widgets/Counter.php:156
-msgid "Counter"
+#: widgets/Blog_Grid.php:605 widgets/Blog_Grid.php:765
+#: widgets/Blog_Grid.php:1119 widgets/Blog_Grid.php:1181
+msgid "Hover Color"
 msgstr ""
 
-#: widgets/Counter.php:89 widgets/Instagram.php:89
-#: widgets/Video_Playlist.php:99 widgets/Video_Popup.php:102
+#: widgets/Blog_Grid.php:639
+msgid "Image"
+msgstr ""
+
+#: widgets/Blog_Grid.php:663
+msgid "Margin Bottom"
+msgstr ""
+
+#: widgets/Blog_Grid.php:664
+msgid "Spacing between the image"
+msgstr ""
+
+#: widgets/Blog_Grid.php:712
+msgid "Typography"
+msgstr ""
+
+#: widgets/Blog_Grid.php:830 widgets/Buttons.php:30
+#: widgets/Pricing_Table_Switcher.php:1142
+msgid "Button"
+msgstr ""
+
+#: widgets/Blog_Grid.php:946 widgets/Blog_Grid.php:1256
+#: widgets/List_Item.php:200 widgets/Pricing_Table_Switcher.php:1237
+#: widgets/Tabs.php:467 widgets/Team_Carousel.php:280
+#: widgets/Testimonial.php:1029 widgets/Video_Popup.php:215
+msgid "Hover"
+msgstr ""
+
+#: widgets/Blog_Grid.php:1001
+msgid "Meta"
+msgstr ""
+
+#: widgets/Blog_Grid.php:1045 widgets/Testimonial.php:1208
+msgid "Category"
+msgstr ""
+
+#: widgets/Blog_Grid.php:1104
+msgid "Background Hover"
+msgstr ""
+
+#: widgets/Blog_Grid.php:1139 widgets/Testimonial.php:547
+#: widgets/Testimonial.php:610 widgets/Testimonial.php:672
+#: widgets/Testimonial.php:734 widgets/Testimonial.php:1110
+msgid "Author Name"
+msgstr ""
+
+#: widgets/Blog_Grid.php:1287 widgets/Tabs.php:334
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/Buttons.php:96 widgets/Fullscreen_Slider.php:96
+#: widgets/Instagram.php:96 widgets/Tabs.php:101 widgets/Video_Playlist.php:589
+#: widgets/Video_Playlist.php:776
+msgid "Style"
+msgstr ""
+
+#: widgets/Buttons.php:100
+msgid "01: Scroll Button"
+msgstr ""
+
+#: widgets/Buttons.php:109
+msgid "Section ID"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:109
+msgid "Auxiliary"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:116
+msgid "Serial Number"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:124
+msgid "Top Text"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:126 widgets/Cheat_sheet.php:147
+msgid "be"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:134
+msgid "Sein"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:140
+msgid "Cheat Sheet List"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:146
+msgid "#1"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:148
+msgid "sein"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:151
+msgid "#2"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:152
+msgid "have"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:153
+msgid "haben"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:156
+msgid "#3"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:157
+msgid "become"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:158
+msgid "werden"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:161
+msgid "#4"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:162
+msgid "can"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:163
+msgid "konnen"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:172
+msgid "Extended Collapse"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:230
+msgid "Cheat Sheet Item"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:238
+msgid "Number Options"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:266
+msgid "Top Text Options"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:293
+msgid "Bottom Text Options"
+msgstr ""
+
+#: widgets/Cheat_sheet.php:322
+msgid "Background Box Item"
+msgstr ""
+
+#: widgets/Counter.php:89 widgets/Fullscreen_Slider.php:89
+#: widgets/Instagram.php:90 widgets/Video_Playlist.php:91
+#: widgets/Video_Popup.php:94
 msgid "Preset Skin"
 msgstr ""
 
@@ -935,61 +1406,98 @@ msgstr ""
 msgid "01 : Counter"
 msgstr ""
 
-#: widgets/Counter.php:119
+#: widgets/Counter.php:105
+msgid "02 : Counter"
+msgstr ""
+
+#: widgets/Counter.php:124
 msgid "Value"
 msgstr ""
 
-#: widgets/Counter.php:132
+#: widgets/Counter.php:137
 msgid "User research"
 msgstr ""
 
-#: widgets/Counter.php:188
+#: widgets/Counter.php:143
+msgid "Counter Text Show/Hide"
+msgstr ""
+
+#: widgets/Counter.php:231
 msgid "Fill Color"
 msgstr ""
 
-#: widgets/Counter.php:200
+#: widgets/Counter.php:243
 msgid "Stroke Color"
 msgstr ""
 
-#: widgets/Counter.php:212
+#: widgets/Counter.php:255
 msgid "Stroke Width"
 msgstr ""
 
-#: widgets/Counter.php:239
+#: widgets/Counter.php:282
 msgid "Percent"
 msgstr ""
 
-#: widgets/Instagram.php:28
-msgid "Instagram"
+#: widgets/Counter.php:335
+msgid "Margin Top"
 msgstr ""
 
-#: widgets/Instagram.php:100
+#: widgets/Fullscreen_Slider.php:29
+msgid "Fullscreen Slider"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:101
+msgid "01 : Fullscreen Slider"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:113
+msgid "Sliders"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:129 widgets/Pricing_Table_Switcher.php:330
+#: widgets/Pricing_Table_Switcher.php:396
+msgid "Subtitle"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:137 widgets/Fullscreen_Slider.php:145
+msgid "Button Label"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:139
+msgid "View More"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:155
+msgid "Background Image"
+msgstr ""
+
+#: widgets/Fullscreen_Slider.php:162
+msgid "Add Slides"
+msgstr ""
+
+#: widgets/Instagram.php:101
 msgid "01 : Instagram"
 msgstr ""
 
-#: widgets/Instagram.php:113
+#: widgets/Instagram.php:114
 msgid "Instagram Feed"
 msgstr ""
 
-#: widgets/Instagram.php:137
+#: widgets/Instagram.php:138
 msgid "Instagram Token"
 msgstr ""
 
-#: widgets/Instagram.php:138
+#: widgets/Instagram.php:139
 msgid "Enter instagram User Token if you want to show separated user's photos"
 msgstr ""
 
-#: widgets/Instagram.php:141
+#: widgets/Instagram.php:142
 msgid "---------------"
 msgstr ""
 
-#: widgets/Integrations.php:32
-msgid "Integrations"
-msgstr ""
-
 #: widgets/Integrations.php:96 widgets/Marquee_Slides.php:86
-#: widgets/Pricing_Table_Switcher.php:87 widgets/Tabs.php:95
-#: widgets/Team_Carousel.php:105 widgets/Testimonial.php:89
+#: widgets/Pricing_Table_Switcher.php:80 widgets/Tabs.php:94
+#: widgets/Team_Carousel.php:96 widgets/Testimonial.php:90
 msgid "Preset Skins"
 msgstr ""
 
@@ -1005,73 +1513,64 @@ msgstr ""
 msgid "02 : Integration"
 msgstr ""
 
-#: widgets/Integrations.php:127 widgets/Integrations.php:150
-msgid "Integration Item"
-msgstr ""
-
-#: widgets/Integrations.php:141 widgets/Integrations.php:176
+#: widgets/Integrations.php:140 widgets/Integrations.php:175
 msgid "Integration Image"
 msgstr ""
 
-#: widgets/List_Item.php:31
-msgid "List Items"
+#: widgets/Integrations.php:149
+msgid "Integration Item"
 msgstr ""
 
-#: widgets/List_Item.php:83
+#: widgets/List_Item.php:84
 msgid "Icon List"
 msgstr ""
 
-#: widgets/List_Item.php:89
+#: widgets/List_Item.php:90
 msgid "Order Type"
 msgstr ""
 
-#: widgets/List_Item.php:92
+#: widgets/List_Item.php:93
 msgid "Unordered List"
 msgstr ""
 
-#: widgets/List_Item.php:93
+#: widgets/List_Item.php:94
 msgid "Ordered List"
 msgstr ""
 
-#: widgets/List_Item.php:105 widgets/List_Item.php:106
+#: widgets/List_Item.php:106 widgets/List_Item.php:107
 msgid "List Item"
 msgstr ""
 
-#: widgets/List_Item.php:143
+#: widgets/List_Item.php:144
 msgid "List"
 msgstr ""
 
-#: widgets/List_Item.php:150
+#: widgets/List_Item.php:151
 msgid "Space Between"
 msgstr ""
 
-#: widgets/List_Item.php:169 widgets/Tabs.php:265
+#: widgets/List_Item.php:170 widgets/Tabs.php:275
 msgid "Left"
 msgstr ""
 
-#: widgets/List_Item.php:173 widgets/Tabs.php:269
+#: widgets/List_Item.php:174 widgets/Tabs.php:279
 msgid "Center"
 msgstr ""
 
-#: widgets/List_Item.php:177 widgets/Tabs.php:273
+#: widgets/List_Item.php:178 widgets/Tabs.php:283
 msgid "Right"
 msgstr ""
 
-#: widgets/List_Item.php:210
+#: widgets/List_Item.php:211
 msgid "Text Indent"
 msgstr ""
 
-#: widgets/List_Item.php:280
+#: widgets/List_Item.php:281
 msgid "Background Size"
 msgstr ""
 
-#: widgets/List_Item.php:295
+#: widgets/List_Item.php:296
 msgid "Line Height"
-msgstr ""
-
-#: widgets/Marquee_Slides.php:30 widgets/Marquee_Slides.php:92
-#: widgets/Marquee_Slides.php:202
-msgid "Marquee Slides"
 msgstr ""
 
 #: widgets/Marquee_Slides.php:97
@@ -1102,291 +1601,278 @@ msgstr ""
 msgid "Shape Image"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:25
-msgid "Pricing Table Switcher"
+#: widgets/Marquee_Slides.php:212
+msgid "Title Color"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:96
-msgid "01: Button Switcher"
+#: widgets/Pricing_Table_Switcher.php:103
+msgid "Pricing Style"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:97
-msgid "02: Tab Switcher"
+#: widgets/Pricing_Table_Switcher.php:108
+msgid "01 : Button Switcher"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:98
-msgid "03: Pricing Cloud"
+#: widgets/Pricing_Table_Switcher.php:112
+msgid "02 : Tab Switcher"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:99
-msgid "04: Button Switcher"
+#: widgets/Pricing_Table_Switcher.php:116
+msgid "03 : Pricing Cloud"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:100
-msgid "05: Button Switcher"
+#: widgets/Pricing_Table_Switcher.php:120
+msgid "04 : Button Switcher"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:101
-msgid "06: Tab Switcher"
+#: widgets/Pricing_Table_Switcher.php:124
+msgid "05 : Button Switcher"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:102
-msgid "07: Button Switcher"
+#: widgets/Pricing_Table_Switcher.php:128
+msgid "06 : Tab Switcher"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:115
-#: widgets/Pricing_Table_Switcher.php:614
+#: widgets/Pricing_Table_Switcher.php:132
+msgid "07 : Button Switcher"
+msgstr ""
+
+#: widgets/Pricing_Table_Switcher.php:145
+#: widgets/Pricing_Table_Switcher.php:644
 msgid "Tab 01"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:144
+#: widgets/Pricing_Table_Switcher.php:174
 msgid "STARTER"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:158
-#: widgets/Pricing_Table_Switcher.php:220
-#: widgets/Pricing_Table_Switcher.php:315
-#: widgets/Pricing_Table_Switcher.php:374
-#: widgets/Pricing_Table_Switcher.php:440
+#: widgets/Pricing_Table_Switcher.php:188
+#: widgets/Pricing_Table_Switcher.php:250
+#: widgets/Pricing_Table_Switcher.php:345
+#: widgets/Pricing_Table_Switcher.php:404
+#: widgets/Pricing_Table_Switcher.php:470
 msgid "Price"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:175
-#: widgets/Pricing_Table_Switcher.php:243
-#: widgets/Pricing_Table_Switcher.php:323
-#: widgets/Pricing_Table_Switcher.php:397
-#: widgets/Pricing_Table_Switcher.php:471
+#: widgets/Pricing_Table_Switcher.php:205
+#: widgets/Pricing_Table_Switcher.php:273
+#: widgets/Pricing_Table_Switcher.php:353
+#: widgets/Pricing_Table_Switcher.php:427
+#: widgets/Pricing_Table_Switcher.php:501
 msgid "Button label"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:177
-#: widgets/Pricing_Table_Switcher.php:245
+#: widgets/Pricing_Table_Switcher.php:207
+#: widgets/Pricing_Table_Switcher.php:275
 msgid "Buy Plan"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:184
-#: widgets/Pricing_Table_Switcher.php:253
-#: widgets/Pricing_Table_Switcher.php:332
-#: widgets/Pricing_Table_Switcher.php:406
-#: widgets/Pricing_Table_Switcher.php:480
+#: widgets/Pricing_Table_Switcher.php:214
+#: widgets/Pricing_Table_Switcher.php:283
+#: widgets/Pricing_Table_Switcher.php:362
+#: widgets/Pricing_Table_Switcher.php:436
+#: widgets/Pricing_Table_Switcher.php:510
 msgid "Button URL"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:194
-#: widgets/Pricing_Table_Switcher.php:342
-#: widgets/Pricing_Table_Switcher.php:416
-#: widgets/Pricing_Table_Switcher.php:490
-#: widgets/Pricing_Table_Switcher.php:554
-#: widgets/Pricing_Table_Switcher.php:568
-#: widgets/Pricing_Table_Switcher.php:583
+#: widgets/Pricing_Table_Switcher.php:224
+#: widgets/Pricing_Table_Switcher.php:372
+#: widgets/Pricing_Table_Switcher.php:446
+#: widgets/Pricing_Table_Switcher.php:520
+#: widgets/Pricing_Table_Switcher.php:584
+#: widgets/Pricing_Table_Switcher.php:598
+#: widgets/Pricing_Table_Switcher.php:613
 msgid "Tab 01 List"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:213
-msgid "Free"
-msgstr ""
-
-#: widgets/Pricing_Table_Switcher.php:222
+#: widgets/Pricing_Table_Switcher.php:252
 msgid "$18.99"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:228
-#: widgets/Pricing_Table_Switcher.php:382
-#: widgets/Pricing_Table_Switcher.php:448
-#: widgets/Pricing_Table_Switcher.php:653
-#: widgets/Pricing_Table_Switcher.php:711 widgets/Pricing_Table_Tabs.php:139
-#: widgets/Video_Playlist.php:506 widgets/Video_Playlist.php:697
+#: widgets/Pricing_Table_Switcher.php:258
+#: widgets/Pricing_Table_Switcher.php:412
+#: widgets/Pricing_Table_Switcher.php:478
+#: widgets/Pricing_Table_Switcher.php:683
+#: widgets/Pricing_Table_Switcher.php:741 widgets/Pricing_Table_Tabs.php:150
+#: widgets/Video_Playlist.php:498 widgets/Video_Playlist.php:689
 msgid "Duration"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:230
+#: widgets/Pricing_Table_Switcher.php:260
 msgid "m"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:263
-#: widgets/Pricing_Table_Switcher.php:526
-#: widgets/Pricing_Table_Switcher.php:540
+#: widgets/Pricing_Table_Switcher.php:293
+#: widgets/Pricing_Table_Switcher.php:556
+#: widgets/Pricing_Table_Switcher.php:570
 msgid "Tab 02 List"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:280
+#: widgets/Pricing_Table_Switcher.php:310
 msgid "Is Favorite"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:300
-#: widgets/Pricing_Table_Switcher.php:366
-msgid "Subtitle"
-msgstr ""
-
-#: widgets/Pricing_Table_Switcher.php:358
+#: widgets/Pricing_Table_Switcher.php:388
 msgid "Title 1"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:456
+#: widgets/Pricing_Table_Switcher.php:486
 msgid "Features Title"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:507
-#: widgets/Pricing_Table_Switcher.php:673
+#: widgets/Pricing_Table_Switcher.php:537
+#: widgets/Pricing_Table_Switcher.php:703
 msgid "Tab 02"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:600 widgets/Pricing_Table_Tabs.php:220
+#: widgets/Pricing_Table_Switcher.php:630 widgets/Pricing_Table_Tabs.php:231
 msgid "Pricing Table"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:620
+#: widgets/Pricing_Table_Switcher.php:650
 msgid "Tab Title 2"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:629
-#: widgets/Pricing_Table_Switcher.php:687
+#: widgets/Pricing_Table_Switcher.php:659
+#: widgets/Pricing_Table_Switcher.php:717
 msgid "Old Price"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:637
-#: widgets/Pricing_Table_Switcher.php:695
+#: widgets/Pricing_Table_Switcher.php:667
+#: widgets/Pricing_Table_Switcher.php:725
 msgid "Current Price"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:645
-#: widgets/Pricing_Table_Switcher.php:703
+#: widgets/Pricing_Table_Switcher.php:675
+#: widgets/Pricing_Table_Switcher.php:733
 msgid "Discount Price"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:679 widgets/Pricing_Table_Tabs.php:100
-#: widgets/Tabs.php:140 widgets/Tabs.php:142 widgets/Tabs.php:143
-#: widgets/Tabs.php:307
+#: widgets/Pricing_Table_Switcher.php:709 widgets/Pricing_Table_Tabs.php:111
+#: widgets/Tabs.php:139 widgets/Tabs.php:141 widgets/Tabs.php:142
+#: widgets/Tabs.php:317
 msgid "Tab Title"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:736
+#: widgets/Pricing_Table_Switcher.php:766
 msgid "Column Grid"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:748
+#: widgets/Pricing_Table_Switcher.php:778
 msgid "Two"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:749
+#: widgets/Pricing_Table_Switcher.php:779
 msgid "Three"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:750
+#: widgets/Pricing_Table_Switcher.php:780
 msgid "Four"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:759
+#: widgets/Pricing_Table_Switcher.php:789
 msgid "Gap"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:797
+#: widgets/Pricing_Table_Switcher.php:826
 msgid "Switcher Title"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:892
+#: widgets/Pricing_Table_Switcher.php:921
 msgid "Pricing Table Style"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:937
+#: widgets/Pricing_Table_Switcher.php:966
 msgid "Border Type"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:980
+#: widgets/Pricing_Table_Switcher.php:1008
 msgid "Header"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:988
-#: widgets/Pricing_Table_Switcher.php:1053
+#: widgets/Pricing_Table_Switcher.php:1016
+#: widgets/Pricing_Table_Switcher.php:1080
 msgid "Title Style"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1017
+#: widgets/Pricing_Table_Switcher.php:1045
 msgid "Content Color"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1045
+#: widgets/Pricing_Table_Switcher.php:1072
 msgid "Pricing"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1082
+#: widgets/Pricing_Table_Switcher.php:1109
 msgid "Duration Color"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1269
+#: widgets/Pricing_Table_Switcher.php:1295
 msgid "Shape Images"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1279
+#: widgets/Pricing_Table_Switcher.php:1305
 msgid "Show Shape Image"
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1290
+#: widgets/Pricing_Table_Switcher.php:1316
 msgid "Shape "
 msgstr ""
 
-#: widgets/Pricing_Table_Switcher.php:1300
+#: widgets/Pricing_Table_Switcher.php:1326
 msgid "Shape 2"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:24
-msgid "Pricing Table Tabs"
-msgstr ""
-
-#: widgets/Pricing_Table_Tabs.php:83
+#: widgets/Pricing_Table_Tabs.php:94
 msgid "Pricing Tables"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:91
+#: widgets/Pricing_Table_Tabs.php:102
 msgid "Active Table"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:108
+#: widgets/Pricing_Table_Tabs.php:119
 msgid "Discount Badge"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:123
+#: widgets/Pricing_Table_Tabs.php:134
 msgid "Price USD"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:131
+#: widgets/Pricing_Table_Tabs.php:142
 msgid "Price EURO"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:163
+#: widgets/Pricing_Table_Tabs.php:174
 msgid "Button Group"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:171
+#: widgets/Pricing_Table_Tabs.php:182
 msgid "Button Title 01"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:180
+#: widgets/Pricing_Table_Tabs.php:191
 msgid "Button URL 01"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:191
+#: widgets/Pricing_Table_Tabs.php:202
 msgid "Button Title 02"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:200
+#: widgets/Pricing_Table_Tabs.php:211
 msgid "Button URL 02"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:230
+#: widgets/Pricing_Table_Tabs.php:241
 msgid "Ribbon Label"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:302
+#: widgets/Pricing_Table_Tabs.php:315
 msgid "USD"
 msgstr ""
 
-#: widgets/Pricing_Table_Tabs.php:303
+#: widgets/Pricing_Table_Tabs.php:316
 msgid "EURO"
-msgstr ""
-
-#: widgets/Skill_Showcase.php:30 widgets/Skill_Showcase.php:151
-msgid "Skill Showcase"
 msgstr ""
 
 #: widgets/Skill_Showcase.php:79
@@ -1425,449 +1911,415 @@ msgstr ""
 msgid "Java"
 msgstr ""
 
-#: widgets/Tabs.php:33 widgets/Tabs.php:119
-msgid "Tabs"
-msgstr ""
-
-#: widgets/Tabs.php:105
+#: widgets/Tabs.php:104
 msgid "Inline Tab"
 msgstr ""
 
-#: widgets/Tabs.php:106
+#: widgets/Tabs.php:105
 msgid "Full Width Tab"
 msgstr ""
 
-#: widgets/Tabs.php:155
+#: widgets/Tabs.php:154
 msgid "Saved Templates"
 msgstr ""
 
-#: widgets/Tabs.php:164
+#: widgets/Tabs.php:163
 msgid "Choose Template"
 msgstr ""
 
-#: widgets/Tabs.php:177 widgets/Tabs.php:178
+#: widgets/Tabs.php:176 widgets/Tabs.php:177
 msgid "Tab Content"
 msgstr ""
 
-#: widgets/Tabs.php:192
+#: widgets/Tabs.php:191
 msgid "Add Items"
 msgstr ""
 
-#: widgets/Tabs.php:198
+#: widgets/Tabs.php:197
 msgid "Tab Title #1"
 msgstr ""
 
-#: widgets/Tabs.php:199 widgets/Tabs.php:204 widgets/Tabs.php:209
+#: widgets/Tabs.php:198 widgets/Tabs.php:202 widgets/Tabs.php:206
 msgid ""
 "Nostra adipiscing sequi nisi hic venenatis pede aliquid eget aperiam commodi "
 "gravida?"
 msgstr ""
 
-#: widgets/Tabs.php:203
+#: widgets/Tabs.php:201
 msgid "Tab Title #2"
 msgstr ""
 
-#: widgets/Tabs.php:208
+#: widgets/Tabs.php:205
 msgid "Tab Title #3"
 msgstr ""
 
-#: widgets/Tabs.php:219 widgets/Tabs.php:606
+#: widgets/Tabs.php:215 widgets/Tabs.php:694
 msgid "Navigation Arrow"
 msgstr ""
 
-#: widgets/Tabs.php:221
+#: widgets/Tabs.php:217
 msgid "Show/Hide navigation arrow button for content area"
 msgstr ""
 
-#: widgets/Tabs.php:233
+#: widgets/Tabs.php:229
 msgid "Auto Numbering"
 msgstr ""
 
-#: widgets/Tabs.php:235
+#: widgets/Tabs.php:231
 msgid "Show/Hide auto numbering for tab title"
 msgstr ""
 
-#: widgets/Tabs.php:247
+#: widgets/Tabs.php:243
+msgid "Auto Play"
+msgstr ""
+
+#: widgets/Tabs.php:245
+msgid "Show/Hide auto play for tab"
+msgstr ""
+
+#: widgets/Tabs.php:257
 msgid "Sticky Mode"
 msgstr ""
 
-#: widgets/Tabs.php:249
+#: widgets/Tabs.php:259
 msgid "Show/Hide sticky mode for tab title"
 msgstr ""
 
-#: widgets/Tabs.php:324
-msgid "Icon Size"
-msgstr ""
-
-#: widgets/Tabs.php:349
+#: widgets/Tabs.php:380
 msgid "margin"
 msgstr ""
 
-#: widgets/Tabs.php:414 widgets/Tabs.php:510
+#: widgets/Tabs.php:451 widgets/Tabs.php:548
 msgid "Icon Background Color"
 msgstr ""
 
-#: widgets/Tabs.php:495
+#: widgets/Tabs.php:533
 msgid "Border Top Color"
 msgstr ""
 
-#: widgets/Team_Carousel.php:34
-msgid "Team Carousel"
+#: widgets/Tabs.php:568
+msgid "Tab ProgressBar"
 msgstr ""
 
-#: widgets/Team_Carousel.php:112
+#: widgets/Tabs.php:589
+msgid "Progress Bar Hegiht"
+msgstr ""
+
+#: widgets/Team_Carousel.php:103
 msgid "Team Style"
 msgstr ""
 
-#: widgets/Team_Carousel.php:117
+#: widgets/Team_Carousel.php:108
 msgid "01 : Team Carousel"
 msgstr ""
 
-#: widgets/Team_Carousel.php:121
+#: widgets/Team_Carousel.php:112
 msgid "02 : Team Carousel"
 msgstr ""
 
-#: widgets/Team_Carousel.php:142
+#: widgets/Team_Carousel.php:134
 msgid "Slider Image"
 msgstr ""
 
-#: widgets/Team_Carousel.php:151 widgets/Testimonial.php:171
-#: widgets/Testimonial.php:247 widgets/Testimonial.php:312
-#: widgets/Testimonial.php:379 widgets/Testimonial.php:477
+#: widgets/Team_Carousel.php:143 widgets/Testimonial.php:172
+#: widgets/Testimonial.php:248 widgets/Testimonial.php:313
+#: widgets/Testimonial.php:380 widgets/Testimonial.php:478
 msgid "Name"
 msgstr ""
 
-#: widgets/Team_Carousel.php:153
+#: widgets/Team_Carousel.php:145
 msgid "Enter Name"
 msgstr ""
 
-#: widgets/Team_Carousel.php:154
+#: widgets/Team_Carousel.php:146
 msgid "John Deo"
 msgstr ""
 
-#: widgets/Team_Carousel.php:161
+#: widgets/Team_Carousel.php:153
 msgid "Link"
 msgstr ""
 
-#: widgets/Team_Carousel.php:163
+#: widgets/Team_Carousel.php:155
 msgid "https://your-link.com"
 msgstr ""
 
-#: widgets/Team_Carousel.php:179
+#: widgets/Team_Carousel.php:171
 msgid "Enter text"
 msgstr ""
 
-#: widgets/Team_Carousel.php:180
+#: widgets/Team_Carousel.php:172
 msgid "Envato Customer"
 msgstr ""
 
-#: widgets/Team_Carousel.php:187
+#: widgets/Team_Carousel.php:179
 msgid "Team Item"
 msgstr ""
 
-#: widgets/Team_Carousel.php:194 widgets/Team_Carousel.php:204
+#: widgets/Team_Carousel.php:185 widgets/Team_Carousel.php:193
 msgid "Elizabeth Foster"
 msgstr ""
 
-#: widgets/Team_Carousel.php:195 widgets/Team_Carousel.php:205
-#: widgets/Testimonial.php:222 widgets/Testimonial.php:288
-#: widgets/Testimonial.php:353 widgets/Testimonial.php:430
+#: widgets/Team_Carousel.php:186 widgets/Team_Carousel.php:194
+#: widgets/Testimonial.php:223 widgets/Testimonial.php:289
+#: widgets/Testimonial.php:354 widgets/Testimonial.php:431
 msgid "UI/UX Designer"
 msgstr ""
 
-#: widgets/Team_Carousel.php:199
+#: widgets/Team_Carousel.php:189
 msgid "Julie Ake"
 msgstr ""
 
-#: widgets/Team_Carousel.php:200
+#: widgets/Team_Carousel.php:190
 msgid "Product Designer"
 msgstr ""
 
-#: widgets/Team_Carousel.php:209
+#: widgets/Team_Carousel.php:197
 msgid "Juan Marko"
 msgstr ""
 
-#: widgets/Team_Carousel.php:210
+#: widgets/Team_Carousel.php:198
 msgid "Java Developer"
 msgstr ""
 
-#: widgets/Team_Carousel.php:233
+#: widgets/Team_Carousel.php:221
 msgid "Team Image"
 msgstr ""
 
-#: widgets/Team_Carousel.php:252
+#: widgets/Team_Carousel.php:240
 msgid "Team Contents"
 msgstr ""
 
-#: widgets/Team_Carousel.php:278
+#: widgets/Team_Carousel.php:266
 msgid "Name Color"
 msgstr ""
 
-#: widgets/Team_Carousel.php:298
+#: widgets/Team_Carousel.php:286
 msgid "Name Hover Color"
 msgstr ""
 
-#: widgets/Team_Carousel.php:318
+#: widgets/Team_Carousel.php:306
 msgid "Position Color"
 msgstr ""
 
-#: widgets/Testimonial.php:28 widgets/Testimonial.php:95
-#: widgets/Testimonial.php:153 widgets/Testimonial.php:204
-#: widgets/Testimonial.php:270 widgets/Testimonial.php:335
-#: widgets/Testimonial.php:412 widgets/Testimonial.php:485
-#: widgets/Testimonial.php:570 widgets/Testimonial.php:638
-#: widgets/Testimonial.php:703 widgets/Testimonial.php:768
-msgid "Testimonials"
-msgstr ""
-
-#: widgets/Testimonial.php:100
+#: widgets/Testimonial.php:101
 msgid "01 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:104
+#: widgets/Testimonial.php:105
 msgid "02 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:108
+#: widgets/Testimonial.php:109
 msgid "03 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:112
+#: widgets/Testimonial.php:113
 msgid "04 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:116
+#: widgets/Testimonial.php:117
 msgid "05 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:120
+#: widgets/Testimonial.php:121
 msgid "06 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:124
+#: widgets/Testimonial.php:125
 msgid "07 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:128
+#: widgets/Testimonial.php:129
 msgid "08 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:132
+#: widgets/Testimonial.php:133
 msgid "09 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:136
+#: widgets/Testimonial.php:137
 msgid "10 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:140
+#: widgets/Testimonial.php:141
 msgid "11 : Carousel Testimonials"
 msgstr ""
 
-#: widgets/Testimonial.php:161 widgets/Testimonial.php:237
-#: widgets/Testimonial.php:302 widgets/Testimonial.php:369
-#: widgets/Testimonial.php:444 widgets/Testimonial.php:560
-#: widgets/Testimonial.php:628 widgets/Testimonial.php:693
-#: widgets/Testimonial.php:758
+#: widgets/Testimonial.php:162 widgets/Testimonial.php:238
+#: widgets/Testimonial.php:303 widgets/Testimonial.php:370
+#: widgets/Testimonial.php:445 widgets/Testimonial.php:561
+#: widgets/Testimonial.php:624 widgets/Testimonial.php:686
+#: widgets/Testimonial.php:748
 msgid "Author Image"
 msgstr ""
 
-#: widgets/Testimonial.php:173 widgets/Testimonial.php:211
-#: widgets/Testimonial.php:216 widgets/Testimonial.php:221
-#: widgets/Testimonial.php:249 widgets/Testimonial.php:277
-#: widgets/Testimonial.php:282 widgets/Testimonial.php:287
-#: widgets/Testimonial.php:314 widgets/Testimonial.php:342
-#: widgets/Testimonial.php:347 widgets/Testimonial.php:352
-#: widgets/Testimonial.php:381 widgets/Testimonial.php:419
-#: widgets/Testimonial.php:424 widgets/Testimonial.php:429
-#: widgets/Testimonial.php:479 widgets/Testimonial.php:492
+#: widgets/Testimonial.php:174 widgets/Testimonial.php:212
+#: widgets/Testimonial.php:217 widgets/Testimonial.php:222
+#: widgets/Testimonial.php:250 widgets/Testimonial.php:278
+#: widgets/Testimonial.php:283 widgets/Testimonial.php:288
+#: widgets/Testimonial.php:315 widgets/Testimonial.php:343
+#: widgets/Testimonial.php:348 widgets/Testimonial.php:353
+#: widgets/Testimonial.php:382 widgets/Testimonial.php:420
+#: widgets/Testimonial.php:425 widgets/Testimonial.php:430
+#: widgets/Testimonial.php:480 widgets/Testimonial.php:493
 msgid "Mark Tony"
 msgstr ""
 
-#: widgets/Testimonial.php:179 widgets/Testimonial.php:255
-#: widgets/Testimonial.php:320 widgets/Testimonial.php:387
-#: widgets/Testimonial.php:1140
+#: widgets/Testimonial.php:180 widgets/Testimonial.php:256
+#: widgets/Testimonial.php:321 widgets/Testimonial.php:388
+#: widgets/Testimonial.php:1244
 msgid "Designation"
 msgstr ""
 
-#: widgets/Testimonial.php:181 widgets/Testimonial.php:212
-#: widgets/Testimonial.php:257 widgets/Testimonial.php:278
-#: widgets/Testimonial.php:322 widgets/Testimonial.php:343
-#: widgets/Testimonial.php:389 widgets/Testimonial.php:420
+#: widgets/Testimonial.php:182 widgets/Testimonial.php:213
+#: widgets/Testimonial.php:258 widgets/Testimonial.php:279
+#: widgets/Testimonial.php:323 widgets/Testimonial.php:344
+#: widgets/Testimonial.php:390 widgets/Testimonial.php:421
 msgid "Software Developer"
 msgstr ""
 
-#: widgets/Testimonial.php:187 widgets/Testimonial.php:1177
+#: widgets/Testimonial.php:188 widgets/Testimonial.php:1143
 msgid "Review Content"
 msgstr ""
 
-#: widgets/Testimonial.php:194
+#: widgets/Testimonial.php:195
 msgid "Signature"
 msgstr ""
 
-#: widgets/Testimonial.php:213 widgets/Testimonial.php:218
-#: widgets/Testimonial.php:223 widgets/Testimonial.php:279
-#: widgets/Testimonial.php:284 widgets/Testimonial.php:289
-#: widgets/Testimonial.php:344 widgets/Testimonial.php:349
-#: widgets/Testimonial.php:354 widgets/Testimonial.php:421
-#: widgets/Testimonial.php:426 widgets/Testimonial.php:431
-#: widgets/Testimonial.php:495
+#: widgets/Testimonial.php:214 widgets/Testimonial.php:219
+#: widgets/Testimonial.php:224 widgets/Testimonial.php:280
+#: widgets/Testimonial.php:285 widgets/Testimonial.php:290
+#: widgets/Testimonial.php:345 widgets/Testimonial.php:350
+#: widgets/Testimonial.php:355 widgets/Testimonial.php:422
+#: widgets/Testimonial.php:427 widgets/Testimonial.php:432
+#: widgets/Testimonial.php:496
 msgid ""
 "Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas "
 "incididunt aperiam tempora cumque quos?”"
 msgstr ""
 
-#: widgets/Testimonial.php:217 widgets/Testimonial.php:283
-#: widgets/Testimonial.php:348 widgets/Testimonial.php:425
+#: widgets/Testimonial.php:218 widgets/Testimonial.php:284
+#: widgets/Testimonial.php:349 widgets/Testimonial.php:426
 msgid "App Developer"
 msgstr ""
 
-#: widgets/Testimonial.php:263 widgets/Testimonial.php:328
-#: widgets/Testimonial.php:395 widgets/Testimonial.php:462
-#: widgets/Testimonial.php:540 widgets/Testimonial.php:608
-#: widgets/Testimonial.php:673 widgets/Testimonial.php:738
+#: widgets/Testimonial.php:264 widgets/Testimonial.php:329
+#: widgets/Testimonial.php:396 widgets/Testimonial.php:463
+#: widgets/Testimonial.php:541 widgets/Testimonial.php:666
+#: widgets/Testimonial.php:728
 msgid "Testimonial Text"
 msgstr ""
 
-#: widgets/Testimonial.php:402
+#: widgets/Testimonial.php:403
 msgid "Company Logo"
 msgstr ""
 
-#: widgets/Testimonial.php:454
+#: widgets/Testimonial.php:455
 msgid "Company Name"
 msgstr ""
 
-#: widgets/Testimonial.php:456 widgets/Testimonial.php:493
-#: widgets/Testimonial.php:548 widgets/Testimonial.php:579
-#: widgets/Testimonial.php:586 widgets/Testimonial.php:593
-#: widgets/Testimonial.php:616 widgets/Testimonial.php:646
-#: widgets/Testimonial.php:652 widgets/Testimonial.php:658
-#: widgets/Testimonial.php:681 widgets/Testimonial.php:711
-#: widgets/Testimonial.php:717 widgets/Testimonial.php:723
-#: widgets/Testimonial.php:746 widgets/Testimonial.php:776
-#: widgets/Testimonial.php:782 widgets/Testimonial.php:788
+#: widgets/Testimonial.php:457 widgets/Testimonial.php:494
+#: widgets/Testimonial.php:549 widgets/Testimonial.php:578
+#: widgets/Testimonial.php:583 widgets/Testimonial.php:588
+#: widgets/Testimonial.php:612 widgets/Testimonial.php:641
+#: widgets/Testimonial.php:646 widgets/Testimonial.php:651
+#: widgets/Testimonial.php:674 widgets/Testimonial.php:703
+#: widgets/Testimonial.php:708 widgets/Testimonial.php:713
+#: widgets/Testimonial.php:736 widgets/Testimonial.php:765
+#: widgets/Testimonial.php:770 widgets/Testimonial.php:775
 msgid "Karina"
 msgstr ""
 
-#: widgets/Testimonial.php:471 widgets/Testimonial.php:494
+#: widgets/Testimonial.php:472 widgets/Testimonial.php:495
 msgid "Madelyn Press"
 msgstr ""
 
-#: widgets/Testimonial.php:509 widgets/Testimonial.php:849
+#: widgets/Testimonial.php:510 widgets/Testimonial.php:835
+#: widgets/Testimonial.php:1314
 msgid "Rating"
 msgstr ""
 
-#: widgets/Testimonial.php:526
+#: widgets/Testimonial.php:527
 msgid "4.8 Awesome"
 msgstr ""
 
-#: widgets/Testimonial.php:531
+#: widgets/Testimonial.php:532
 msgid "Company Image"
 msgstr ""
 
-#: widgets/Testimonial.php:546 widgets/Testimonial.php:614
-#: widgets/Testimonial.php:679 widgets/Testimonial.php:744
-#: widgets/Testimonial.php:1043
-msgid "Author Name"
-msgstr ""
-
-#: widgets/Testimonial.php:553 widgets/Testimonial.php:621
-#: widgets/Testimonial.php:686 widgets/Testimonial.php:751
+#: widgets/Testimonial.php:554 widgets/Testimonial.php:617
+#: widgets/Testimonial.php:679 widgets/Testimonial.php:741
 msgid "Author Position"
 msgstr ""
 
-#: widgets/Testimonial.php:555 widgets/Testimonial.php:580
-#: widgets/Testimonial.php:587 widgets/Testimonial.php:594
-#: widgets/Testimonial.php:623 widgets/Testimonial.php:653
-#: widgets/Testimonial.php:659 widgets/Testimonial.php:688
-#: widgets/Testimonial.php:718 widgets/Testimonial.php:724
-#: widgets/Testimonial.php:753 widgets/Testimonial.php:783
-#: widgets/Testimonial.php:789
+#: widgets/Testimonial.php:556 widgets/Testimonial.php:579
+#: widgets/Testimonial.php:584 widgets/Testimonial.php:589
+#: widgets/Testimonial.php:619 widgets/Testimonial.php:647
+#: widgets/Testimonial.php:652 widgets/Testimonial.php:681
+#: widgets/Testimonial.php:709 widgets/Testimonial.php:714
+#: widgets/Testimonial.php:743 widgets/Testimonial.php:771
+#: widgets/Testimonial.php:776
 msgid "Lead Designer"
 msgstr ""
 
-#: widgets/Testimonial.php:581 widgets/Testimonial.php:588
-#: widgets/Testimonial.php:595 widgets/Testimonial.php:654
-#: widgets/Testimonial.php:660 widgets/Testimonial.php:719
-#: widgets/Testimonial.php:725 widgets/Testimonial.php:784
-#: widgets/Testimonial.php:790
+#: widgets/Testimonial.php:580 widgets/Testimonial.php:585
+#: widgets/Testimonial.php:590 widgets/Testimonial.php:648
+#: widgets/Testimonial.php:653 widgets/Testimonial.php:710
+#: widgets/Testimonial.php:715 widgets/Testimonial.php:772
+#: widgets/Testimonial.php:777
 msgid "“Seattle opera simplifies Performance planning with deski eSignature.”"
 msgstr ""
 
-#: widgets/Testimonial.php:647 widgets/Testimonial.php:712
-#: widgets/Testimonial.php:777
+#: widgets/Testimonial.php:642 widgets/Testimonial.php:704
+#: widgets/Testimonial.php:766
 msgid "Italy"
 msgstr ""
 
-#: widgets/Testimonial.php:648 widgets/Testimonial.php:713
-#: widgets/Testimonial.php:778
+#: widgets/Testimonial.php:643 widgets/Testimonial.php:705
+#: widgets/Testimonial.php:767
 msgid ""
 "“Very easy to set-up. I had no experience with hosting before signing up "
 "with Jobi but they have made everything seem simple.”"
 msgstr ""
 
-#: widgets/Testimonial.php:802
+#: widgets/Testimonial.php:789
 msgid "Shape"
 msgstr ""
 
-#: widgets/Testimonial.php:812
+#: widgets/Testimonial.php:799
 msgid "Quote Image"
 msgstr ""
 
-#: widgets/Testimonial.php:827
+#: widgets/Testimonial.php:814
 msgid "Quote Icon"
 msgstr ""
 
-#: widgets/Testimonial.php:860
+#: widgets/Testimonial.php:846
 msgid "Show Title"
 msgstr ""
 
-#: widgets/Testimonial.php:873
+#: widgets/Testimonial.php:859
 msgid "Rating Scale"
 msgstr ""
 
-#: widgets/Testimonial.php:905
+#: widgets/Testimonial.php:891
 msgid "Unmarked Style"
 msgstr ""
 
-#: widgets/Testimonial.php:909
+#: widgets/Testimonial.php:895
 msgid "Solid"
 msgstr ""
 
-#: widgets/Testimonial.php:913
+#: widgets/Testimonial.php:899
 msgid "Outline"
 msgstr ""
 
-#: widgets/Testimonial.php:938
-msgid "Testimonial Item Style"
+#: widgets/Testimonial.php:924
+msgid "Testimonial Item"
 msgstr ""
 
-#: widgets/Testimonial.php:1015
-msgid "Border Hover Color"
-msgstr ""
-
-#: widgets/Testimonial.php:1035
-msgid "Contents Style"
-msgstr ""
-
-#: widgets/Testimonial.php:1069
-msgid "Category"
-msgstr ""
-
-#: widgets/Testimonial.php:1204
-msgid "Item Background Color"
-msgstr ""
-
-#: widgets/Testimonial.php:1242
-msgid "Rating Style"
-msgstr ""
-
-#: widgets/Testimonial.php:1252
-msgid "Rating Title"
-msgstr ""
-
-#: widgets/Timeline.php:30 widgets/Timeline.php:79
-msgid "Timeline"
+#: widgets/Testimonial.php:1379
+msgid "Star Color"
 msgstr ""
 
 #: widgets/Timeline.php:89
@@ -1902,244 +2354,224 @@ msgstr ""
 msgid "Timeline Content"
 msgstr ""
 
-#: widgets/Video_Playlist.php:30
-msgid "Video Playlist"
-msgstr ""
-
-#: widgets/Video_Playlist.php:109
+#: widgets/Video_Playlist.php:101
 msgid "Tab"
 msgstr ""
 
-#: widgets/Video_Playlist.php:113
+#: widgets/Video_Playlist.php:105
 msgid "Slide"
 msgstr ""
 
-#: widgets/Video_Playlist.php:137
+#: widgets/Video_Playlist.php:129
 msgid "Title text"
 msgstr ""
 
-#: widgets/Video_Playlist.php:145
+#: widgets/Video_Playlist.php:137
 msgid "Title HTML Tag"
 msgstr ""
 
-#: widgets/Video_Playlist.php:175
+#: widgets/Video_Playlist.php:167
 msgid "Playlist"
 msgstr ""
 
-#: widgets/Video_Playlist.php:182
+#: widgets/Video_Playlist.php:174
 msgid "Heading"
 msgstr ""
 
-#: widgets/Video_Playlist.php:188
+#: widgets/Video_Playlist.php:180
 msgid "Tab Title Text Here"
 msgstr ""
 
-#: widgets/Video_Playlist.php:204
+#: widgets/Video_Playlist.php:196
 msgid "Upload Video"
 msgstr ""
 
-#: widgets/Video_Playlist.php:212
+#: widgets/Video_Playlist.php:204
 msgid "Thumbnail"
 msgstr ""
 
-#: widgets/Video_Playlist.php:227
+#: widgets/Video_Playlist.php:219
 msgid "Default title"
 msgstr ""
 
-#: widgets/Video_Playlist.php:228
+#: widgets/Video_Playlist.php:220
 msgid "Type your caption here"
 msgstr ""
 
-#: widgets/Video_Playlist.php:229
+#: widgets/Video_Playlist.php:221
 msgid "This field is applicable for Preset Two"
 msgstr ""
 
-#: widgets/Video_Playlist.php:244
+#: widgets/Video_Playlist.php:236
 msgid "Current Date"
 msgstr ""
 
-#: widgets/Video_Playlist.php:253 widgets/Video_Playlist.php:268
+#: widgets/Video_Playlist.php:245 widgets/Video_Playlist.php:260
 msgid "Playlist Items"
 msgstr ""
 
-#: widgets/Video_Playlist.php:258
+#: widgets/Video_Playlist.php:250
 msgid "Add Video"
 msgstr ""
 
-#: widgets/Video_Playlist.php:273
+#: widgets/Video_Playlist.php:265
 msgid "Insert Video"
 msgstr ""
 
-#: widgets/Video_Playlist.php:302
+#: widgets/Video_Playlist.php:294
 msgid "Style Section"
 msgstr ""
 
-#: widgets/Video_Playlist.php:309
+#: widgets/Video_Playlist.php:301
 msgid "Section padding"
 msgstr ""
 
-#: widgets/Video_Playlist.php:344
+#: widgets/Video_Playlist.php:336
 msgid "Height"
 msgstr ""
 
-#: widgets/Video_Playlist.php:372
+#: widgets/Video_Playlist.php:364
 msgid "Top Bar"
 msgstr ""
 
-#: widgets/Video_Playlist.php:380
+#: widgets/Video_Playlist.php:372
 msgid "Playlist Name"
 msgstr ""
 
-#: widgets/Video_Playlist.php:419
+#: widgets/Video_Playlist.php:411
 msgid "Video Count"
 msgstr ""
 
-#: widgets/Video_Playlist.php:451
+#: widgets/Video_Playlist.php:443
 msgid "Videos"
 msgstr ""
 
-#: widgets/Video_Playlist.php:468 widgets/Video_Playlist.php:659
+#: widgets/Video_Playlist.php:460 widgets/Video_Playlist.php:651
 msgid "Item"
 msgstr ""
 
-#: widgets/Video_Playlist.php:557 widgets/Video_Playlist.php:749
+#: widgets/Video_Playlist.php:549 widgets/Video_Playlist.php:741
 msgctxt "Text Shadow Control"
 msgid "Shadow"
 msgstr ""
 
-#: widgets/Video_Playlist.php:588 widgets/Video_Playlist.php:775
+#: widgets/Video_Playlist.php:580 widgets/Video_Playlist.php:767
 msgid "Separator"
 msgstr ""
 
-#: widgets/Video_Playlist.php:601 widgets/Video_Playlist.php:788
+#: widgets/Video_Playlist.php:593 widgets/Video_Playlist.php:780
 msgid "None"
 msgstr ""
 
-#: widgets/Video_Playlist.php:602 widgets/Video_Playlist.php:789
+#: widgets/Video_Playlist.php:594 widgets/Video_Playlist.php:781
 msgctxt "Border Control"
 msgid "Solid"
 msgstr ""
 
-#: widgets/Video_Playlist.php:603 widgets/Video_Playlist.php:790
+#: widgets/Video_Playlist.php:595 widgets/Video_Playlist.php:782
 msgctxt "Border Control"
 msgid "Double"
 msgstr ""
 
-#: widgets/Video_Playlist.php:604 widgets/Video_Playlist.php:791
+#: widgets/Video_Playlist.php:596 widgets/Video_Playlist.php:783
 msgctxt "Border Control"
 msgid "Dotted"
 msgstr ""
 
-#: widgets/Video_Playlist.php:605 widgets/Video_Playlist.php:792
+#: widgets/Video_Playlist.php:597 widgets/Video_Playlist.php:784
 msgctxt "Border Control"
 msgid "Dashed"
 msgstr ""
 
-#: widgets/Video_Playlist.php:606 widgets/Video_Playlist.php:793
+#: widgets/Video_Playlist.php:598 widgets/Video_Playlist.php:785
 msgctxt "Border Control"
 msgid "Groove"
 msgstr ""
 
-#: widgets/Video_Playlist.php:617 widgets/Video_Playlist.php:804
+#: widgets/Video_Playlist.php:609 widgets/Video_Playlist.php:796
 msgid "Weight"
 msgstr ""
 
-#: widgets/Video_Popup.php:34
-msgid "Video Popup"
-msgstr ""
-
-#: widgets/Video_Popup.php:109
+#: widgets/Video_Popup.php:101
 msgid "Video Popup Style"
 msgstr ""
 
-#: widgets/Video_Popup.php:126
+#: widgets/Video_Popup.php:118
 msgid "Video"
 msgstr ""
 
-#: widgets/Video_Popup.php:132
+#: widgets/Video_Popup.php:124
 msgid "Video URL"
 msgstr ""
 
-#: widgets/Video_Popup.php:193 widgets/Video_Popup.php:233
-msgid "Icon Color"
-msgstr ""
-
-#: widgets/Video_Popup.php:329
+#: widgets/Video_Popup.php:321
 msgid "video Popup Width"
 msgstr ""
 
-#: widgets/Video_Popup.php:355
+#: widgets/Video_Popup.php:347
 msgid "Enable Wave on Regular"
 msgstr ""
 
-#: widgets/Video_Popup.php:364
+#: widgets/Video_Popup.php:356
 msgid "Enable Wave on Hover"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-1.php:17
-#: widgets/templates/blog-grid/blog-2.php:18
-#: widgets/templates/blog-grid/blog-4.php:16
+#: widgets/templates/blog-grid/blog-1.php:22
+#: widgets/templates/blog-grid/blog-2.php:24
+#: widgets/templates/blog-grid/blog-4.php:23
 msgid "Featured -"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-1.php:21
-#: widgets/templates/blog-grid/blog-2.php:22
-#: widgets/templates/blog-grid/blog-4.php:21
+#: widgets/templates/blog-grid/blog-1.php:27
+#: widgets/templates/blog-grid/blog-2.php:29
+#: widgets/templates/blog-grid/blog-4.php:28
 msgid "d M Y"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-1.php:28
+#: widgets/templates/blog-grid/blog-1.php:35
 msgid "Continue Reading"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-4.php:28
-#: widgets/templates/blog-grid/blog-5.php:31
+#: widgets/templates/blog-grid/blog-4.php:35
+#: widgets/templates/blog-grid/blog-5.php:39
 msgid "Read More"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-5.php:9
-msgid "article"
-msgstr ""
-
-#: widgets/templates/blog-grid/blog-5.php:17
+#: widgets/templates/blog-grid/blog-5.php:21
 msgid "Posted by"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-5.php:22
+#: widgets/templates/blog-grid/blog-5.php:26
 msgid "M d, Y"
 msgstr ""
 
-#: widgets/templates/blog-grid/blog-5.php:36
-msgid "/article"
-msgstr ""
-
-#: widgets/templates/marquee/marquee-1.php:8
-#: widgets/templates/marquee/marquee-1.php:22
+#: widgets/templates/marquee/marquee-1.php:14
+#: widgets/templates/marquee/marquee-1.php:29
 msgid "Marque Gallery Image"
 msgstr ""
 
-#: widgets/templates/testimonials/testimonial-11.php:10
+#: widgets/templates/testimonials/testimonial-11.php:17
 msgid "REVIEWS"
 msgstr ""
 
-#: widgets/templates/testimonials/testimonial-3.php:16
+#: widgets/templates/testimonials/testimonial-3.php:22
 msgid "Quote Image One"
 msgstr ""
 
-#: widgets/templates/testimonials/testimonial-3.php:28
+#: widgets/templates/testimonials/testimonial-3.php:37
 msgid "Quote Image Two"
 msgstr ""
 
-#: widgets/templates/video-playlist/video-playlist-1.php:97
-msgid "video-thumbnails"
-msgstr ""
-
-#: widgets/templates/video-playlist/video-playlist-1.php:121
+#: widgets/templates/video-playlist/video-playlist-1.php:126
 msgid " ago"
 msgstr ""
 
-#: widgets/templates/video-playlist/video-playlist-2.php:84
+#: widgets/templates/video-playlist/video-playlist-2.php:88
 msgid "Video Poster Image"
+msgstr ""
+
+#: widgets/templates/video-popup/video-popup-3.php:12
+msgid ".Know About MY Self. By A Quick Video"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

@@ -182,22 +182,18 @@ class Team_Carousel extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Elizabeth Foster', 'spider-elements' ),
 						'team_job_position' => __( 'UI/UX Designer', 'spider-elements' ),
 					],
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Julie Ake', 'spider-elements' ),
 						'team_job_position' => __( 'Product Designer', 'spider-elements' ),
 					],
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Elizabeth Foster', 'spider-elements' ),
 						'team_job_position' => __( 'UI/UX Designer', 'spider-elements' ),
 					],
 					[
-						'team_slider_image' => __( "", "spider-elements" ),
 						'team_name'         => __( 'Juan Marko', 'spider-elements' ),
 						'team_job_position' => __( 'Java Developer', 'spider-elements' ),
 					],

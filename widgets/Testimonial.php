@@ -575,22 +575,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'company_image'   => esc_html__( '', 'spider-elements' ),
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'company_image'   => esc_html__( '', 'spider-elements' ),
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'company_image'   => esc_html__( '', 'spider-elements' ),
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -644,19 +638,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -709,19 +700,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
@@ -774,19 +762,16 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),
 					],
 					[
-						'author_image'    => esc_html__( '', 'spider-elements' ),
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
 						'review_content'  => esc_html__( '“Seattle opera simplifies Performance planning with deski eSignature.”', 'spider-elements' ),

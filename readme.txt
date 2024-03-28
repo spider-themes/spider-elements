@@ -1,14 +1,14 @@
 === Spider Elements - Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, block, elementor blocks, spider element, spider
-Stable tag: 0.4.0
+Stable tag: 1.0.0
 Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor requires at least: 3.0.0
-Elementor tested up to: 3.17.2
+Elementor tested up to: 3.20.3
 
 == Description ==
 Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 9+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.
@@ -17,12 +17,22 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 
 * Accordion
 * Alerts Box
+* Before After
+* Blog
+* Buttons
 * Cheat Sheet
+* Counter
+* Instagram
+* Integrations
 * List Items
+* Marquee Slides
 * Pricing Table Switcher
 * Pricing Table Tabs
+* Skill Showcase
 * Tabs
+* Team Carousel
 * Testimonials
+* Timeline
 * Video Playlist
 
 
