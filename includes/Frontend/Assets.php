@@ -1,5 +1,4 @@
 <?php
-
 namespace SPEL\includes\Frontend;
 
 // Exit if accessed directly
@@ -47,18 +46,18 @@ class Assets
 
         if ( isset($elements_opt['spel_smooth_animation']) && $elements_opt[ 'spel_smooth_animation' ] == 'on' ) {
             wp_deregister_style('e-animations');
-            wp_enqueue_style('e-animations', SPEL_VEND . '/animation/animate.css');
+            wp_enqueue_style('e-animations', SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
         }
 
-        wp_register_style('ionicons', SPEL_VEND . '/ionicons/ionicons.min.css');
-		wp_register_style('slick-theme', SPEL_VEND . '/slick/slick-theme.css');
-		wp_register_style('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.css');
-		wp_register_style('slick', SPEL_VEND . '/slick/slick.css');
-		wp_register_style('video-js', SPEL_VEND . '/video/videojs.min.css');
-		wp_register_style('video-js-theaterMode', SPEL_VEND . '/video/videojs.theaterMode.css');
-		wp_register_style('elegant-icon', SPEL_VEND . '/elegant-icon/style.css');
-		wp_register_style('fancybox', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css');
-		wp_register_style('spel-main', SPEL_CSS . '/main.css');
+        wp_register_style('ionicons', SPEL_VEND . '/ionicons/ionicons.min.css', [], '2.0.1');
+		wp_register_style('slick-theme', SPEL_VEND . '/slick/slick-theme.css', [], SPEL_VERSION);
+        wp_register_style('slick', SPEL_VEND . '/slick/slick.css', [], SPEL_VERSION);
+        wp_register_style('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.css', [], '7.2.0');
+		wp_register_style('video-js', SPEL_VEND . '/video/videojs.min.css', [], SPEL_VERSION);
+		wp_register_style('video-js-theaterMode', SPEL_VEND . '/video/videojs.theaterMode.css', [], SPEL_VERSION);
+		wp_register_style('elegant-icon', SPEL_VEND . '/elegant-icon/style.css', [], SPEL_VERSION);
+		wp_register_style('fancybox', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css', [], SPEL_VERSION);
+		wp_register_style('spel-main', SPEL_CSS . '/main.css', [], SPEL_VERSION);
 	}
 
 	/**
@@ -75,7 +74,7 @@ class Assets
 		wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('text-type', SPEL_VEND . '/text-type/text-type.js', array('jquery'), SPEL_VERSION, true);
-		wp_register_script('counterup', SPEL_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), '', true);
+		wp_register_script('counterup', SPEL_VEND . '/counterup/jquery.counterup.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('waypoint', SPEL_VEND . '/waypoint/jquery.waypoints.min.js', array('jquery'), SPEL_VERSION, true);
 		wp_register_script('wow', SPEL_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_register_script('artplayer', SPEL_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', true);
@@ -87,7 +86,7 @@ class Assets
         wp_register_script('charming', SPEL_VEND  . '/diagonal/charming.min.js', array('jquery'), SPEL_VERSION, true);
         wp_register_script('tweenmax', SPEL_VEND  . '/diagonal/TweenMax.min.js', array('jquery'), '1.18.0', true);
         wp_register_script('beforeafter', SPEL_VEND  . '/before/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
-        wp_register_script('spel-script', SPEL_JS . '/scripts.js', array('jquery'), false, true);
+        wp_register_script('spel-script', SPEL_JS . '/scripts.js', array('jquery'), SPEL_VERSION, true);
     }
 
 

@@ -96,9 +96,12 @@ $checked            = ! isset ( $spe_widget_opt['spe_global_switcher'] ) ? ' che
                         <div class="spe_element_right">
 							<?php
 							if ( ! empty( $item[ 'label' ] ) ) {
+                                // Translators: %s is a placeholder for the item label.
+                                $item_label = esc_attr__( 'View %s Widget Demo', 'spider-elements' );
+                                $item_label = sprintf( $item_label, $item['label'] );
 								?>
                                 <div class="spe_link">
-                                    <a href="<?php echo esc_url( $item[ 'demo_url' ] ) ?>" class="tooltip-top" data-tooltip="<?php printf( esc_attr__( 'View %s Widget Demo', 'spider-elements' ), $item[ 'label' ] ) ?>" target="_blank">
+                                    <a href="<?php echo esc_url( $item[ 'demo_url' ] ) ?>" class="tooltip-top" data-tooltip="<<?php echo esc_attr( $item_label ); ?>" target="_blank">
                                         <img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
                                     </a>
                                     <a href="<?php echo esc_url( $item[ 'video_url' ] ) ?>" class="tooltip-top"
