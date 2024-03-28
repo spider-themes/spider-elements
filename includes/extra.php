@@ -4,8 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SPEL\includes\Admin\Module_Settings;
-
 add_image_size( 'spe_270x152', 270, 152, true ); // Video Playlist Thumb
 add_image_size( 'spe_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
 
@@ -82,6 +80,30 @@ if ( ! function_exists( 'spel_button_link' ) ) {
         }
     }
 }
+
+/**
+ * Category IDs
+ * @return array
+ */
+if ( ! function_exists( 'spel_cat_ids') ) {
+    function spel_cat_ids() {
+
+        $taxonomys = get_terms( array(
+            'taxonomy'   => 'category',
+            'hide_empty' => true,
+        ) );
+        $taxonomy  = [];
+        if ( is_array( $taxonomys ) ) {
+            foreach ( $taxonomys as $cat_id ) {
+                $taxonomy[ $cat_id->term_id ] = $cat_id->name;
+            }
+        }
+
+        return $taxonomy;
+
+    }
+}
+
 
 
 /**

@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 
 /**
  * Class Assets
- * @package spiderElements\Admin
+ * @package SPEL\Admin
  */
 class Assets {
 

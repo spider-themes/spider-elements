@@ -1,6 +1,6 @@
 === Spider Elements - Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01
-Tags:  elementor addons, elementor widget, elementor addon, elementor, addons for elementor, block, elementor blocks, spider element
+Tags:  elementor addons, elementor widget, elementor, addons for elementor, block, elementor blocks, spider element, spider
 Stable tag: 0.4.0
 Requires at least: 5.0
 Tested up to: 6.4
