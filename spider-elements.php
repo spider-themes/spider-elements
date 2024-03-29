@@ -16,7 +16,6 @@
  * Elementor requires at least: 3.0.0
  * Elementor tested up to: 3.20.3
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

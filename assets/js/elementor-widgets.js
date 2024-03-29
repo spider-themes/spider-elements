@@ -6,21 +6,19 @@
         onInit: function () {
             var E_FRONT = elementorFrontend;
             var widgetHandlersMap = {
-                "landpagy_pricing_table_tabs.default":
-                spiderElements.pricing_table_tabs,
-                "docy_tabs.default": spiderElements.tabs,
-                "docy_testimonial.default": spiderElements.testimonial,
-                "docly_alerts_box.default": spiderElements.alertBox,
-                "docy_videos_playlist.default": spiderElements.videoPlaylist,
-                "docy_team_carousel.default": spiderElements.teamslider,
-                "spe_after_before_widget.default": spiderElements.beforeAfter,
-                "docy_video_popup.default": spiderElements.videoPopup,
-                "spe_marquee_slides.default": spiderElements.marquee,
-                "spe_instagram.default": spiderElements.instagramFeed,
-                "spel_accordion.default": spiderElements.accordions,
-                "docly_cheatsheet.default": spiderElements.cheatsheet,
-                "Counter.default": spiderElements.counter,
-                "docy_blog_grid.default": spiderElements.blogGrid,
+                "landpagy_pricing_table_tabs.default":          spiderElements.pricing_table_tabs,
+                "docy_tabs.default":                            spiderElements.tabs,
+                "docy_testimonial.default":                     spiderElements.testimonial,
+                "docly_alerts_box.default":                     spiderElements.alertBox,
+                "docy_videos_playlist.default":                 spiderElements.videoPlaylist,
+                "docy_team_carousel.default":                   spiderElements.teamslider,
+                "spe_after_before_widget.default":              spiderElements.beforeAfter,
+                "docy_video_popup.default":                     spiderElements.videoPopup,
+                "spe_marquee_slides.default":                   spiderElements.marquee,
+                "spe_instagram.default":                        spiderElements.instagramFeed,
+                "spel_accordion.default":                       spiderElements.accordions,
+                "docly_cheatsheet.default":                     spiderElements.cheatsheet,
+                "docy_blog_grid.default":                       spiderElements.blogGrid,
             };
 
             $.each(widgetHandlersMap, function (widgetName, callback) {
@@ -754,23 +752,7 @@
             });
         },
 
-        /*-------------------------------------------------------------------------------
-          Counter js
-        -------------------------------------------------------------------------------*/
-        counter: function ($scope) {
-            function counterUp() {
-                if ($(".skill_item_two .counter").length) {
-                    $(".skill_item_two .counter").counterUp({
-                        delay: 1,
-                        time: 500,
-                    });
-                }
-            }
 
-            counterUp();
-        },
-
-        //======================== Video Popup style 5 =========================== //
     };
 
     $window.on("elementor/frontend/init", spiderElements.onInit);

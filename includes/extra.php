@@ -628,10 +628,14 @@ add_action( 'admin_init', function () {
 
         // Retrieve the field values from the form
         $smooth_animation     = isset( $_POST['spel_smooth_animation'] ) ? sanitize_text_field( $_POST['spel_smooth_animation'] ) : '';
+        $badge                = isset( $_POST['spel_badge'] ) ? sanitize_text_field( $_POST['spel_badge'] ) : '';
+        $reveal_animation     = isset( $_POST['spel_reveal_animation'] ) ? sanitize_text_field( $_POST['spel_reveal_animation'] ) : '';
 
         // Create an array to store the field values
         $data = array(
-            'spel_smooth_animation'                  => $smooth_animation,
+            'spel_smooth_animation'       => $smooth_animation,
+            'spel_badge'                  => $badge,
+            'spel_reveal_animation'       => $reveal_animation,
         );
 
         // Save the data in the options table using update_option

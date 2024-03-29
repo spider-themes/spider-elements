@@ -318,17 +318,17 @@ class Module_Settings {
                     'video_url'    => '',
                     'icon'         => 'icon-effect',
                 ],*/
-                /*[
-                    'name'         => '', // widget name
+                [
+                    'name'         => 'spel_reveal_animation', // widget name
                     'className'    => '', // widget class name
                     'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'widget_type'  => 'free',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-revel-animation',
-                ],*/
+                ],
                 /*[
                     'name'         => '', // widget name
                     'className'    => '', // widget class name
@@ -340,20 +340,18 @@ class Module_Settings {
                     'video_url'    => '',
                     'icon'         => 'icon-tooltip',
                 ],*/
-                /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
+                [
+                    'name'         => 'spel_badge', // widget name
                     'label'        => esc_html__('Badge', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'widget_type'  => 'free',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-badge',
-                ],*/
+                ],
                 [
                     'name'         => 'spel_smooth_animation', // widget name
-                    'className'    => '', // widget class name
                     'label'        => esc_html__('Smooth Animation', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
