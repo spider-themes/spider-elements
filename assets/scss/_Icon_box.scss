@@ -1,0 +1,135 @@
+.icon_box {
+  background-image: url("../images/box-shep.svg");
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+  display: flex;
+  column-gap: unset;
+  transition: 0.3s;
+  padding: 20px 20px 20px 55px;
+  background-color: #fff;
+  border: 1px solid #F0E9FC;
+  border-radius: 6px;
+  &:hover {
+    background-color: #7460FF;
+    border-color: transparent;
+    background-image: url("../images/vector1.svg");
+  }
+  &:hover .box_icon .box_main_icon {
+    color: #fff;
+  }
+  &:hover .box_title {
+    color: #fff;
+  }
+  &:hover .icon_box_description {
+    color: #fff;
+  }
+  &:hover .icon_box_button .button_items {
+    color: #fff;
+  }
+  .full_box_link{
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .box_title {
+    font-weight: 500;
+    line-height: 28px;
+    font-family: 'Poppins';
+    color: #00000E;
+    transition: 0.3s;
+    margin: 0;
+  }
+  .icon_box_description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    font-family: 'Roboto';
+    color: #6A737C;
+    transition: 0.3s;
+    margin: 0;
+    padding: 0;
+  }
+  .box_icon {
+    line-height: normal;
+    height: 100%;
+    .box_main_icon {
+      font-size: 50px;
+      transition: 0.3s;
+      color: #69727d ;
+    }
+  }
+  .box_button {
+    transition: 0.3s;
+    line-height: 18px
+  }
+  .icon_box_button {
+    .button_items {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      color: #E9336B;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 28px;
+      font-family: 'Inter';
+      text-decoration: none;
+      &:hover{
+        text-decoration:none;
+      }
+      .box_button {
+        transition: 0.3s;
+      }
+      i {
+        transition: 0.3s;
+      }
+    }
+  }
+}
+.icon_box_two {
+  padding: 32px;
+  border-radius: 8px;
+  transition: 0.3s;
+  overflow: hidden;
+  box-shadow: 0 1.6px 3.6px 0 #334D7235;
+  background-image: url("../images/box-shep3.svg");
+  background-repeat: no-repeat;
+  background-position: 267px 0;
+  &:hover {
+    background-image: url("../images/box-shep2.svg");
+    background-repeat: no-repeat;
+    background-position: 267px 0;
+    background-color: #9A6FFF;
+    box-shadow: 0 20px 45px 0 #334D7225;
+  }
+  &:hover .box_main_icon {
+    background: #FFFFFF20;
+    color: #fff;
+  }
+  &:hover .box_two_title {
+    color:#fff;
+  }
+  .box2_url {
+    display: block;
+    text-decoration: none !important;
+  }
+  .box_main_icon {
+    display: inline-flex;
+    padding: 14px 12px;
+    background: #F0E9FC;
+    border-radius: 100px;
+    color: #cf7272;
+    font-size: 45px;
+    transition: 0.3s;
+  }
+  .box_pro_icon {
+    color: #FAA629;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+  .box_two_title {
+    transition: 0.3s;
+    margin: 0;
+  }
+}

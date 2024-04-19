@@ -270,6 +270,7 @@
     border: 0;
     border-radius: unset;
     margin-bottom: 1rem;
+    background: unset;
     &:last-child {
       margin-bottom: 0;
     }
@@ -281,6 +282,7 @@
       .title {
         padding: 0;
         margin: 0;
+        background: unset;
       }
       button {
         padding: 12px 30px;

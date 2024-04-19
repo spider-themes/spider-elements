@@ -840,6 +840,7 @@ a:hover, a:focus {
   border: 0;
   border-radius: unset;
   margin-bottom: 1rem;
+  background: unset;
 }
 .accordion .doc_accordion:last-child {
   margin-bottom: 0;
@@ -853,6 +854,7 @@ a:hover, a:focus {
 .accordion .doc_accordion .card-header .title {
   padding: 0;
   margin: 0;
+  background: unset;
 }
 .accordion .doc_accordion .card-header button {
   padding: 12px 30px;
@@ -10281,6 +10283,141 @@ svg.radial-progress circle.incomplete {
   color: black;
   -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
+}
+
+.icon_box {
+  background-image: url("../images/box-shep.svg");
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+  display: flex;
+  column-gap: unset;
+  transition: 0.3s;
+  padding: 20px 20px 20px 55px;
+  background-color: #fff;
+  border: 1px solid #F0E9FC;
+  border-radius: 6px;
+}
+.icon_box:hover {
+  background-color: #7460FF;
+  border-color: transparent;
+  background-image: url("../images/vector1.svg");
+}
+.icon_box:hover .box_icon .box_main_icon {
+  color: #fff;
+}
+.icon_box:hover .box_title {
+  color: #fff;
+}
+.icon_box:hover .icon_box_description {
+  color: #fff;
+}
+.icon_box:hover .icon_box_button .button_items {
+  color: #fff;
+}
+.icon_box .full_box_link {
+  text-decoration: none;
+}
+.icon_box .full_box_link:hover {
+  text-decoration: none;
+}
+.icon_box .box_title {
+  font-weight: 500;
+  line-height: 28px;
+  font-family: "Poppins";
+  color: #00000E;
+  transition: 0.3s;
+  margin: 0;
+}
+.icon_box .icon_box_description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "Roboto";
+  color: #6A737C;
+  transition: 0.3s;
+  margin: 0;
+  padding: 0;
+}
+.icon_box .box_icon {
+  line-height: normal;
+  height: 100%;
+}
+.icon_box .box_icon .box_main_icon {
+  font-size: 50px;
+  transition: 0.3s;
+  color: #69727d;
+}
+.icon_box .box_button {
+  transition: 0.3s;
+  line-height: 18px;
+}
+.icon_box .icon_box_button .button_items {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #E9336B;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  font-family: "Inter";
+  text-decoration: none;
+}
+.icon_box .icon_box_button .button_items:hover {
+  text-decoration: none;
+}
+.icon_box .icon_box_button .button_items .box_button {
+  transition: 0.3s;
+}
+.icon_box .icon_box_button .button_items i {
+  transition: 0.3s;
+}
+
+.icon_box_two {
+  padding: 32px;
+  border-radius: 8px;
+  transition: 0.3s;
+  overflow: hidden;
+  box-shadow: 0 1.6px 3.6px 0 rgba(51, 77, 114, 0.2078431373);
+  background-image: url("../images/box-shep3.svg");
+  background-repeat: no-repeat;
+  background-position: 267px 0;
+}
+.icon_box_two:hover {
+  background-image: url("../images/box-shep2.svg");
+  background-repeat: no-repeat;
+  background-position: 267px 0;
+  background-color: #9A6FFF;
+  box-shadow: 0 20px 45px 0 rgba(51, 77, 114, 0.1450980392);
+}
+.icon_box_two:hover .box_main_icon {
+  background: rgba(255, 255, 255, 0.1254901961);
+  color: #fff;
+}
+.icon_box_two:hover .box_two_title {
+  color: #fff;
+}
+.icon_box_two .box2_url {
+  display: block;
+  text-decoration: none !important;
+}
+.icon_box_two .box_main_icon {
+  display: inline-flex;
+  padding: 14px 12px;
+  background: #F0E9FC;
+  border-radius: 100px;
+  color: #cf7272;
+  font-size: 45px;
+  transition: 0.3s;
+}
+.icon_box_two .box_pro_icon {
+  color: #FAA629;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.icon_box_two .box_two_title {
+  transition: 0.3s;
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -380,3 +380,17 @@
     background-size: cover;
     background-position: top;
 }
+
+/*=======Icon box style=======*/
+.icon-box1::before {
+    background: url("../images/el-editor-preview/icon_box1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.icon-box2::before {
+    background: url("../images/el-editor-preview/icon_box2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

@@ -458,6 +458,7 @@ if (!class_exists('SPEL')) {
             require_once( __DIR__ . '/widgets/Counter.php' );
             require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
+            require_once( __DIR__ . '/widgets/Icon_box.php' );
 
 
 		}
@@ -539,6 +540,9 @@ if (!class_exists('SPEL')) {
 			}
 			if ( isset( $elements_opt[ 'docy_video_popup' ] ) && $elements_opt[ 'docy_video_popup' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\Video_Popup() );
+			}
+			if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
+				$widgets_manager->register( new \SPEL\Widgets\Icon_box() );
 			}
 
 

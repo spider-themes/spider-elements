@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         }
                         ?>
                     </button>
-                </<?php echo esc_attr( $title_tag ) ?>>
+                    </<?php echo esc_attr( $title_tag ) ?>>
             </div>
 
             <div id="<?php echo esc_attr( $id ) ?>" class="collapse <?php echo esc_attr( $is_show ) ?>"

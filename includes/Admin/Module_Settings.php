@@ -245,6 +245,17 @@ class Module_Settings {
                     'video_url'    => '#',
                     'icon'         => 'eicon-play',
                 ],
+	            [
+		            'name'         => 'spel_icon_box',
+		            'className'    => 'Icon_box', // widget class name
+		            'label'        => esc_html__('Icon Box', 'spider-elements'),
+		            'type'         => 'checkbox',
+		            'default'      => 'on',
+		            'widget_type'  => 'free',
+		            'demo_url'     => '#',
+		            'video_url'    => '#',
+		            'icon'         => 'eicon-icon-box',
+	            ],
 
 
                 /*[

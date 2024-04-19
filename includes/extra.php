@@ -584,6 +584,8 @@ add_action( 'admin_init', function () {
 		$spe_timeline_widget             = isset( $_POST['spe_timeline_widget'] ) ? sanitize_text_field( $_POST['spe_timeline_widget'] ) : '';
 		$docy_videos_playlist            = isset( $_POST['docy_videos_playlist'] ) ? sanitize_text_field( $_POST['docy_videos_playlist'] ) : '';
 		$docy_video_popup                = isset( $_POST['docy_video_popup'] ) ? sanitize_text_field( $_POST['docy_video_popup'] ) : '';
+		$dual_button                     = isset( $_POST['spel_dual_button'] ) ? sanitize_text_field( $_POST['spel_dual_button'] ) : '';
+		$icon_box                     = isset( $_POST['spel_icon_box'] ) ? sanitize_text_field( $_POST['spel_icon_box'] ) : '';
 		$spe_global_switcher 		   	 = isset( $_POST['spe_global_switcher'] ) ? sanitize_text_field( $_POST['spe_global_switcher'] ) : '';
 
 		// Create an array to store the field values
@@ -609,6 +611,7 @@ add_action( 'admin_init', function () {
 			'spe_timeline_widget'             => $spe_timeline_widget,
 			'docy_videos_playlist'            => $docy_videos_playlist,
 			'docy_video_popup'                => $docy_video_popup,
+			'spel_icon_box'                   => $icon_box,
 			'spe_global_switcher'             => $spe_global_switcher,
 		);
 

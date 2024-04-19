@@ -535,46 +535,6 @@ class Alerts_Box extends Widget_Base {
 
 		$this->end_controls_section(); // End Style Icon
 
-
-		//======================== Style Dual Box Icon ========================//
-//		$this->start_controls_section(
-//			'dual_box_icon', [
-//				'label'     => esc_html__( 'Icon', 'spider-elements' ),
-//				'tab'       => Controls_Manager::TAB_STYLE,
-//				'condition' => [
-//					'display_type' => [ 'dual-box' ]
-//				]
-//			]
-//		);
-//
-//		$this->add_control(
-//			'dual_box_icon_color', [
-//				'label'     => esc_html__( 'Color', 'spider-elements' ),
-//				'type'      => Controls_Manager::COLOR,
-//				'selectors' => [
-//					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'color: {{VALUE}};',
-//				],
-//			]
-//		);
-//
-//		$this->add_control(
-//			'dual_box_icon_size', [
-//				'label'     => esc_html__( 'Size', 'spider-elements' ),
-//				'type'      => Controls_Manager::SLIDER,
-//				'range'     => [
-//					'px' => [
-//						'min' => 0,
-//						'max' => 100,
-//					],
-//				],
-//				'selectors' => [
-//					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'font-size: {{SIZE}}{{UNIT}};',
-//				],
-//			]
-//		);
-//
-//		$this->end_controls_section(); // End Style Dual Box Icon
-
 	}
 
 
