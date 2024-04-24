@@ -171,8 +171,8 @@ class Icon_box extends Widget_Base {
 			'title', [
 				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Icon box title', 'spider-elements' ),
-				'placeholder' => esc_html__( '50+ New Feature', 'spider-elements' ),
+				'default'     => esc_html__( '50+ New Feature', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Enter your title', 'spider-elements' ),
 				'label_block' => true,
 				'dynamic'     => [
 					'active' => true,
@@ -265,24 +265,6 @@ class Icon_box extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'box_btn_link',
-			[
-				'label'       => esc_html__( 'Link', 'spider-elements' ),
-				'type'        => Controls_Manager::URL,
-				'options'     => [ 'url', 'is_external', 'spider-elements' ],
-				'label_block' => true,
-				'dynamic'     => [
-					'active' => true,
-				],
-				'default'     => [
-					'url'         => '#',
-					'is_external' => false,
-					'nofollow'    => false,
-				],
-			]
-		);
-
 		$this->end_controls_section(); // End icon box button Settings
 
 	}
@@ -307,6 +289,7 @@ class Icon_box extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+
 
 		$this->add_responsive_control(
 			'box_text_align',
@@ -371,21 +354,23 @@ class Icon_box extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .icon_box'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .icon_box_two' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .box_bg_shape'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .box2_bg_shape' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+				'separator'=> 'after',
 			]
 		);
 
 		//star icon box normal/hover style tabs------------//
 		$this->start_controls_tabs(
-			'bocx_style_tabs'
+			'box_style_tabs'
 		);
 		//start icon box normal style tab-------------//
 		$this->start_controls_tab(
 			'box_normal_tab',
 			[
 				'label' => esc_html__( 'Normal', 'spider-elements' ),
+
 			]
 		);
 
@@ -528,158 +513,6 @@ class Icon_box extends Widget_Base {
 		$this->end_controls_section();
 		//end Box style control section------------------------------//
 
-		//start icon box contents section-----------------------------//
-		$this->start_controls_section(
-			'box_contents',
-			[
-				'label' => esc_html__( 'Contents', 'spider-elements' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		//start icon box title style controls-------------//
-		$this->add_control(
-			'title_heading',
-			[
-				'label' => esc_html__( 'Title', 'spider-elements' ),
-				'type'  => Controls_Manager::HEADING
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name'     => 'box_content_typo',
-				'selector' => '{{WRAPPER}} .box_title,
-							   {{WRAPPER}} .box_two_title',
-			]
-		);
-
-		$this->add_control(
-			'title_color',
-			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_title' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .box_two_title' => 'color: {{VALUE}}',
-				],
-			]
-		);
-		//end icon box title style controls------------------//
-
-		//start icon box description style controls----------------//
-		$this->add_control(
-			'desc_heading',
-			[
-				'label'     => esc_html__( 'Description', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name'      => 'box_description_typo',
-				'selector'  => '{{WRAPPER}} .icon_box_description',
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_control(
-			'desc_color',
-			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon_box_description' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'box_desc_margin',
-			[
-				'label'      => esc_html__( 'Margin', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px' ],
-				'range'      => [
-					'px' => [
-						'min'  => - 100,
-						'max'  => 100,
-						'step' => 5,
-					],
-				],
-				'default'    => [
-					'unit' => 'px',
-					'size' => 10,
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .icon_box_description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition'  => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_control(
-			'box_btn_hrading',
-			[
-				'label'     => esc_html__( 'Button', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name'      => 'box_btn_typo',
-				'selector'  => '{{WRAPPER}} .box_button,
-							   {{WRAPPER}} .button_items i',
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_control(
-			'box_btn_color',
-			[
-				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_button' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .button_items i'   => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->end_controls_section();
-		//end icon box description style controls-------------------//
 
 		//start Icon style section----------------------//
 		$this->start_controls_section(
@@ -874,14 +707,231 @@ class Icon_box extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-		//end icon box Icon style section------------------------//
+		$this->add_control(
+			'svg_heading',
+			[
+				'label' =>  esc_html__('Svg Color','spider-elements'),
+				'type'=> Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
 
-	//start icon box background style section------------//
+		$this->start_controls_tabs(
+			'svg_style_tabs'
+		);
+
+		//start svg normal----
+		$this->start_controls_tab(
+			'svg_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'svg_color',
+			[
+				'label' => esc_html__( 'Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					//			'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+		//end svg normal-----//
+
+		//start svg Hover ------
+		$this->start_controls_tab(
+			'svg_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'svg_hover_color',
+			[
+				'label' => esc_html__( 'Color', 'spider-elements' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path' => 'stroke: {{VALUE}}',
+//					'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+		//end svg hover//------
+
+		$this->end_controls_tabs();
+		//end normal/hover tabs/////-----
+
+		$this->end_controls_section();
+		//end icon box Icon and svg style section------------------------//
+
+
+		//start icon box contents section-----------------------------//
+		$this->start_controls_section(
+			'box_contents',
+			[
+				'label' => esc_html__( 'Contents', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		//start icon box title style controls-------------//
+		$this->add_control(
+			'title_heading',
+			[
+				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'     => 'box_content_typo',
+				'selector' => '{{WRAPPER}} .box_title,
+							   {{WRAPPER}} .box_two_title',
+			]
+		);
+
+		$this->add_control(
+			'title_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .box_two_title' => 'color: {{VALUE}}',
+				],
+			]
+		);
+		//end icon box title style controls------------------//
+
+		//start icon box description style controls----------------//
+		$this->add_control(
+			'desc_heading',
+			[
+				'label'     => esc_html__( 'Description', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'      => 'box_description_typo',
+				'selector'  => '{{WRAPPER}} .icon_box_description',
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_control(
+			'desc_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box_description' => 'color: {{VALUE}}',
+				],
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'box_desc_margin',
+			[
+				'label'      => esc_html__( 'Margin', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => - 100,
+						'max'  => 100,
+						'step' => 5,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 10,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .icon_box_description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition'  => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_control(
+			'box_btn_hrading',
+			[
+				'label'     => esc_html__( 'Button', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'      => 'box_btn_typo',
+				'selector'  => '{{WRAPPER}} .box_button,
+							   {{WRAPPER}} .button_items i',
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_control(
+			'box_btn_color',
+			[
+				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_button' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .button_items i'   => 'color: {{VALUE}}',
+				],
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		//end icon box description style controls-------------------//
+
+		//start icon box background style section------------//
 		$this->start_controls_section(
 			'bg_section',
 			[
-				'label' => esc_html__( 'Background', 'spider-elements' ),
+				'label' => esc_html__( 'Background Shape', 'spider-elements' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -903,8 +953,8 @@ class Icon_box extends Widget_Base {
 			[
 				'name' => 'box_normal_background',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .icon_box,
-							   {{WRAPPER}} .icon_box_two',
+				'selector' => '{{WRAPPER}} .box_bg_shape,
+							   {{WRAPPER}} .box2_bg_shape',
 			]
 		);
 
@@ -924,8 +974,8 @@ class Icon_box extends Widget_Base {
 			[
 				'name' => 'hover_background',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .icon_box:hover,
-							   {{WRAPPER}} .icon_box_two:hover',
+				'selector' => '{{WRAPPER}} .box_bg_shape:hover,
+							   {{WRAPPER}} .box2_bg_shape:hover',
 			]
 		);
 

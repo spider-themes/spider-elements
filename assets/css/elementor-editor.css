@@ -394,3 +394,23 @@
     background-size: cover;
     background-position: center;
 }
+
+/*=======video popup style=======*/
+.video-popup-1::before {
+    background: url("../images/el-editor-preview/video_popup1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.video-popup-2::before {
+    background: url("../images/el-editor-preview/video_popup2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.video-popup-3::before {
+    background: url("../images/el-editor-preview/video_popup3.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}

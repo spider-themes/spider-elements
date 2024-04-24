@@ -9772,12 +9772,12 @@ ul.ordered-list li::before {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.play-button2 a::before {
+.play-button2 .video2-icon::before {
   animation: pulse-red 2s infinite;
   width: 110px;
   height: 110px;
 }
-.play-button2 a {
+.play-button2 .video2-icon {
   width: 90px;
   height: 90px;
   line-height: 90px;
@@ -9790,7 +9790,7 @@ ul.ordered-list li::before {
   padding-top: 5px;
   transition: 0.3s ease-out;
 }
-.play-button2 a::before {
+.play-button2 .video2-icon::before {
   content: "";
   width: 110px;
   height: 110px;
@@ -9799,7 +9799,7 @@ ul.ordered-list li::before {
   position: absolute;
   border-radius: 50%;
 }
-.play-button2.play-button-white a {
+.play-button2.play-button-white .video2-icon {
   background: #fff;
   color: #d92c0a;
   width: 50px;
@@ -9809,14 +9809,14 @@ ul.ordered-list li::before {
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
-  .play-button2.play-button-white a {
+  .play-button2.play-button-white .video2-icon {
     width: 78px;
     height: 78px;
     line-height: 78px;
     font-size: 35px;
   }
 }
-.play-button2.play-button-white a::before {
+.play-button2.play-button-white .video2-icon::before {
   content: "";
   top: -15px;
   left: -15px;
@@ -9829,12 +9829,12 @@ ul.ordered-list li::before {
   z-index: -1;
 }
 @media screen and (min-width: 768px) {
-  .play-button2.play-button-white a::before {
+  .play-button2.play-button-white .video2-icon::before {
     width: 106px;
     height: 106px;
   }
 }
-.play-button2.play-button-white a::after {
+.play-button2.play-button-white .video2-icon::after {
   content: "";
   top: -30px;
   left: -30px;
@@ -9848,7 +9848,7 @@ ul.ordered-list li::before {
   z-index: -2;
 }
 @media screen and (min-width: 768px) {
-  .play-button2.play-button-white a::after {
+  .play-button2.play-button-white .video2-icon::after {
     height: 136px;
     width: 136px;
   }
@@ -10286,21 +10286,15 @@ svg.radial-progress circle.incomplete {
 }
 
 .icon_box {
-  background-image: url("../images/box-shep.svg");
-  background-repeat: no-repeat;
-  background-position: 20px 20px;
-  display: flex;
-  column-gap: unset;
   transition: 0.3s;
-  padding: 20px 20px 20px 55px;
   background-color: #fff;
   border: 1px solid #F0E9FC;
   border-radius: 6px;
+  overflow: hidden;
 }
 .icon_box:hover {
   background-color: #7460FF;
   border-color: transparent;
-  background-image: url("../images/vector1.svg");
 }
 .icon_box:hover .box_icon .box_main_icon {
   color: #fff;
@@ -10314,6 +10308,12 @@ svg.radial-progress circle.incomplete {
 .icon_box:hover .icon_box_button .button_items {
   color: #fff;
 }
+.icon_box .box_bg_shape {
+  display: flex;
+  transition: 0.3s;
+  background-repeat: no-repeat;
+  padding: 20px 20px 20px 55px;
+}
 .icon_box .full_box_link {
   text-decoration: none;
 }
@@ -10323,7 +10323,6 @@ svg.radial-progress circle.incomplete {
 .icon_box .box_title {
   font-weight: 500;
   line-height: 28px;
-  font-family: "Poppins";
   color: #00000E;
   transition: 0.3s;
   margin: 0;
@@ -10332,7 +10331,6 @@ svg.radial-progress circle.incomplete {
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
-  font-family: "Roboto";
   color: #6A737C;
   transition: 0.3s;
   margin: 0;
@@ -10347,6 +10345,9 @@ svg.radial-progress circle.incomplete {
   transition: 0.3s;
   color: #69727d;
 }
+.icon_box .box_icon .box_main_icon svg path {
+  transition: 0.3s;
+}
 .icon_box .box_button {
   transition: 0.3s;
   line-height: 18px;
@@ -10359,7 +10360,6 @@ svg.radial-progress circle.incomplete {
   font-size: 14px;
   font-weight: 500;
   line-height: 28px;
-  font-family: "Inter";
   text-decoration: none;
 }
 .icon_box .icon_box_button .button_items:hover {
@@ -10373,19 +10373,12 @@ svg.radial-progress circle.incomplete {
 }
 
 .icon_box_two {
-  padding: 32px;
   border-radius: 8px;
   transition: 0.3s;
   overflow: hidden;
   box-shadow: 0 1.6px 3.6px 0 rgba(51, 77, 114, 0.2078431373);
-  background-image: url("../images/box-shep3.svg");
-  background-repeat: no-repeat;
-  background-position: 267px 0;
 }
 .icon_box_two:hover {
-  background-image: url("../images/box-shep2.svg");
-  background-repeat: no-repeat;
-  background-position: 267px 0;
   background-color: #9A6FFF;
   box-shadow: 0 20px 45px 0 rgba(51, 77, 114, 0.1450980392);
 }
@@ -10395,6 +10388,14 @@ svg.radial-progress circle.incomplete {
 }
 .icon_box_two:hover .box_two_title {
   color: #fff;
+}
+.icon_box_two .box2_bg_shape {
+  padding: 32px;
+  transition: 0.3s;
+  background-repeat: no-repeat;
+}
+.icon_box_two .box2_bg_shape svg path {
+  transition: 0.3s;
 }
 .icon_box_two .box2_url {
   display: block;

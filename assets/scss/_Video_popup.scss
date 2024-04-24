@@ -102,7 +102,7 @@
 
 /*======== video popup 2========*/
 .play-button2 {
-  a {
+  .video2-icon {
     &::before {
       animation: pulse-red 2s infinite;
       width: 110px;
@@ -115,7 +115,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  a {
+  .video2-icon {
     width: 90px;
     height: 90px;
     line-height: 90px;
@@ -140,7 +140,7 @@
   }
 
   &.play-button-white {
-    a {
+    .video2-icon {
       background: #fff;
       color: #d92c0a;
       width: 50px;
