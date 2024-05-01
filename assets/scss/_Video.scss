@@ -2290,7 +2290,7 @@ button.swiper-pagination-bullet {
 .swiper-slide img {
   display: block;
   margin: auto;
-  width: 100%;
+  max-width: 100%;
 }
 
 .js-slider--main .swiper-slide {

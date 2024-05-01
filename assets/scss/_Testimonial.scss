@@ -23,7 +23,6 @@
       transition: all 0.3s ease-in-out;
     }
   }
-
   .prev,
   .next {
     height: 25px;
@@ -443,7 +442,7 @@
 
   .testimonial-item {
     display: flex;
-    border: 2px solid #e86a42;
+    border: 2px solid rgba(239, 72, 83, 0.1);
     padding: 50px 110px 50px 50px;
     border-radius: 8px;
     margin-top: 280px;
@@ -451,7 +450,6 @@
     margin-bottom: 78px;
     flex-direction: row-reverse;
     transition: 0.3s;
-
     p {
       font-size: 24px;
       font-weight: 500;
@@ -506,6 +504,7 @@
 
     img {
       border-radius: 8px;
+      width: revert-layer;
     }
   }
 }

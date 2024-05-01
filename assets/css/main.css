@@ -1836,7 +1836,7 @@ ul.nav.nav-tabs {
 }
 .testimonial-slider-inner .testimonial-item {
   display: flex;
-  border: 2px solid #e86a42;
+  border: 2px solid rgba(239, 72, 83, 0.1);
   padding: 50px 110px 50px 50px;
   border-radius: 8px;
   margin-top: 280px;
@@ -1890,6 +1890,7 @@ ul.nav.nav-tabs {
 }
 .testimonial-slider-inner .author-image img {
   border-radius: 8px;
+  width: revert-layer;
 }
 
 /*============ testimonial slider 4 ===========*/
@@ -4556,7 +4557,7 @@ button.swiper-pagination-bullet {
 .swiper-slide img {
   display: block;
   margin: auto;
-  width: 100%;
+  max-width: 100%;
 }
 
 .js-slider--main .swiper-slide {

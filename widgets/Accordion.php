@@ -653,3 +653,4 @@ class Accordion extends Widget_Base {
 
 	}
 }
+
