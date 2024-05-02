@@ -1844,6 +1844,10 @@ ul.nav.nav-tabs {
   margin-bottom: 78px;
   flex-direction: row-reverse;
   transition: 0.3s;
+  box-shadow: unset;
+}
+.testimonial-slider-inner .testimonial-item:hover {
+  box-shadow: unset !important;
 }
 .testimonial-slider-inner .testimonial-item p {
   font-size: 24px;
@@ -2534,12 +2538,29 @@ ul.nav.nav-tabs {
 }
 .testimonial-area span {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #b9b9ba;
+  text-transform: capitalize;
+  color: #3d3d4e;
+}
+.testimonial-area .se_review_content {
+  font-size: 36px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+.testimonial-area .se_title {
+  margin-top: 70px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 0;
+  color: #17161a;
+  text-transform: capitalize;
 }
 .testimonial-area .review-text {
   font-size: 36px;
@@ -2550,10 +2571,23 @@ ul.nav.nav-tabs {
   margin-bottom: 55px;
   margin-top: 50px;
 }
-.testimonial-area .author-img {
+.testimonial-area .author-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.testimonial-area .author-name .author-img {
   border-radius: 10px;
   max-width: 100%;
   margin-left: auto;
+  margin-left: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: inherit;
 }
 .testimonial-area .author-info h5 {
   font-family: "IBM Plex Sans", sans-serif;
@@ -2654,6 +2688,15 @@ ul.nav.nav-tabs {
 
 .testimonial-item {
   transition: 0.3s;
+  background: var(--white);
+  box-shadow: 0 5px 15px -3px rgba(131, 146, 167, 0.25);
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 70px;
+  transition: 0.3s ease-out;
+}
+.testimonial-item:hover {
+  box-shadow: 0 30px 60px -15px rgba(131, 146, 167, 0.3) !important;
 }
 
 /*----------------- Video Playlist Widget CSS ------------------*/
