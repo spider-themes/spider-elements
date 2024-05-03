@@ -116,7 +116,7 @@ if (!class_exists('SPEL')) {
             add_action('elementor/elements/categories_registered', [ $this, 'elements_register_category' ]);
 
             // Register widgets
-            add_action('elementor/widgets/register', [ $this, 'on_widgets_registered' ]);
+            add_action('elementor/widgets/register', [ $this, 'on_widgets_registered' ], 99 );
 
             // Register Icon
             add_filter('elementor/icons_manager/additional_tabs', [ $this, 'elegant_icons' ]);
