@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="ezd-grid ezd-grid-cols-12">
 	<?php
 	if ( $post_query->have_posts() ) {
-		while ( $post_query->have_posts() ) :
+		while ( $post_query->have_posts() ) {
 			$post_query->the_post();
 			?>
             <div class="ezd-lg-col-<?php echo esc_attr( $column_grid ); ?> ezd-sm-col-6 blog-grid">
@@ -28,20 +28,27 @@ if ( ! defined( 'ABSPATH' ) ) {
                             </a>
                         </div>
                         <div>
-                        <a class="blog-one-title" href="<?php the_permalink(); ?>">
-                            <h2 class="tran3s blog-title"><?php echo spel_get_title_length( $settings, 'title_length' ) ?></h2>
-                        </a>
-                        <a href="<?php the_permalink(); ?>" class="continue-btn tran3s d-flex align-items-center">
-							<?php esc_html_e( 'Continue Reading', 'spider-elements' ) ?>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                            <a class="blog-one-title" href="<?php the_permalink(); ?>">
+                                <h2 class="tran3s blog-title"><?php echo spel_get_title_length( $settings, 'title_length' ) ?></h2>
+                            </a>
+                            <a href="<?php the_permalink(); ?>" class="continue-btn tran3s d-flex align-items-center">
+								<?php esc_html_e( 'Continue Reading', 'spider-elements' ) ?>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-		<?php
-		endwhile;
+			<?php
+		}
 		wp_reset_postdata();
 	}
 	?>
+
+    <div class="ezd-grid">
+
+
+	    <?php spel_pagination($post_query) ?>
+
+    </div>
 </div>

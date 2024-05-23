@@ -30,7 +30,7 @@ class Icon_box extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'icon Box', 'spider-elements' );
+		return esc_html__( 'Icon Box', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -139,10 +139,10 @@ class Icon_box extends Widget_Base {
 		$this->add_control(
 			'i_box_icon',
 			[
-				'label'       => esc_html__( 'Icon', 'spider-elements' ),
-				'type'        => Controls_Manager::ICONS,
+				'label'     => esc_html__( 'Icon', 'spider-elements' ),
+				'type'      => Controls_Manager::ICONS,
 				'separator' => 'before',
-				'default'     => [
+				'default'   => [
 					'value'   => 'fas fa-star',
 					'library' => 'fa-solid',
 				],
@@ -160,7 +160,7 @@ class Icon_box extends Widget_Base {
 					'value'   => 'fas fa-crown',
 					'library' => 'fa-solid',
 				],
-				'condition'  => [
+				'condition'   => [
 					'style'  => [ '2' ],
 					'style!' => [ '1' ]
 				],
@@ -228,8 +228,8 @@ class Icon_box extends Widget_Base {
 
 		$this->start_controls_section(
 			'icon_box_btn', [
-				'label' => esc_html__( 'Button', 'spider-elements' ),
-				'condition'   => [
+				'label'     => esc_html__( 'Button', 'spider-elements' ),
+				'condition' => [
 					'style'  => [ '1' ],
 					'style!' => [ '2' ]
 				],
@@ -316,7 +316,7 @@ class Icon_box extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .icon_box_content' => 'text-align: {{VALUE}};',
-					'{{WRAPPER}} .icon_box_two' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .icon_box_two'     => 'text-align: {{VALUE}};',
 				],
 //				'condition' => [
 //					'style'  => [ '1' ],
@@ -341,7 +341,7 @@ class Icon_box extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .icon_box'  => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .icon_box'     => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .icon_box_two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -357,7 +357,7 @@ class Icon_box extends Widget_Base {
 					'{{WRAPPER}} .box_bg_shape'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .box2_bg_shape' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'separator'=> 'after',
+				'separator'  => 'after',
 			]
 		);
 
@@ -422,7 +422,7 @@ class Icon_box extends Widget_Base {
 				'label'     => esc_html__( 'Title Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_title'  => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box:hover .box_title'         => 'color: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box_two_title' => 'color: {{VALUE}}',
 				],
 			]
@@ -449,7 +449,7 @@ class Icon_box extends Widget_Base {
 				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_main_icon'  => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box:hover .box_main_icon'     => 'color: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box_main_icon' => 'color: {{VALUE}}',
 				],
 			]
@@ -476,8 +476,8 @@ class Icon_box extends Widget_Base {
 				'label'     => esc_html__( 'Button hover', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_button' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .icon_box:hover .button_items i'   => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box:hover .box_button'     => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box:hover .button_items i' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'style'  => [ '1' ],
@@ -492,7 +492,7 @@ class Icon_box extends Widget_Base {
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover'  => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box:hover'     => 'border-color: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover' => 'border-color: {{VALUE}}',
 				],
 			]
@@ -526,23 +526,23 @@ class Icon_box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_vertical_alignment',
 			[
-				'label' => esc_html__( 'Vertical Alignment', 'spider-elements' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
+				'label'     => esc_html__( 'Vertical Alignment', 'spider-elements' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
 					'flex-start' => [
 						'title' => esc_html__( 'Top', 'spider-elements' ),
-						'icon' => 'eicon-v-align-top',
+						'icon'  => 'eicon-v-align-top',
 					],
-					'center' => [
+					'center'     => [
 						'title' => esc_html__( 'Middle', 'spider-elements' ),
-						'icon' => 'eicon-v-align-middle',
+						'icon'  => 'eicon-v-align-middle',
 					],
-					'flex-end' => [
+					'flex-end'   => [
 						'title' => esc_html__( 'Bottom', 'spider-elements' ),
-						'icon' => 'eicon-v-align-bottom',
+						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
-				'default' => 'flex-start',
+				'default'   => 'flex-start',
 				'selectors' => [
 					'{{WRAPPER}} .box_icon' => 'display: flex; align-items: {{VALUE}};',
 				],
@@ -580,30 +580,48 @@ class Icon_box extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'box_icon_size',
+			'icon_size',
 			[
-				'label'      => esc_html__( 'Size', 'spider-elements' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range'      => [
+				'label' => esc_html__( 'Size', 'spider-elements' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range' => [
 					'px' => [
-						'min'  => 0,
-						'max'  => 200,
-						'step' => 1,
-					],
-					'%'  => [
-						'min' => 0,
-						'max' => 100,
+						'min' => 6,
+						'max' => 300,
 					],
 				],
-				'default'    => [
-					'unit' => 'px',
-				],
-				'selectors'  => [
+				'selectors' => [
 					'{{WRAPPER}} .box_main_icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
+
+//		$this->add_responsive_control(
+//			'box_icon_size',
+//			[
+//				'label'      => esc_html__( 'Size', 'spider-elements' ),
+//				'type'       => Controls_Manager::SLIDER,
+//				'size_units' => [ 'px', '%' ],
+//				'range'      => [
+//					'px' => [
+//						'min'  => 0,
+//						'max'  => 200,
+//						'step' => 1,
+//					],
+//					'%'  => [
+//						'min' => 0,
+//						'max' => 100,
+//					],
+//				],
+//				'default'    => [
+//					'unit' => 'px',
+//				],
+//				'selectors'  => [
+//					'{{WRAPPER}} .box_main_icon' => 'font-size: {{SIZE}}{{UNIT}};',
+//				],
+//			]
+//		);
 
 		$this->add_responsive_control(
 			'box_icon_space',
@@ -710,8 +728,8 @@ class Icon_box extends Widget_Base {
 		$this->add_control(
 			'svg_heading',
 			[
-				'label' =>  esc_html__('Svg Color','spider-elements'),
-				'type'=> Controls_Manager::HEADING,
+				'label'     => esc_html__( 'Svg Color', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
@@ -731,10 +749,21 @@ class Icon_box extends Widget_Base {
 		$this->add_control(
 			'svg_color',
 			[
-				'label' => esc_html__( 'Color', 'spider-elements' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					//			'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
+				],
+			]
+		);
+		$this->add_control(
+			'svg_fill_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}',
 					//			'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
 				],
 			]
@@ -754,11 +783,24 @@ class Icon_box extends Widget_Base {
 		$this->add_control(
 			'svg_hover_color',
 			[
-				'label' => esc_html__( 'Color', 'spider-elements' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
-					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'stroke: {{VALUE}}',
+//					'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'svg_fill_hover_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'fill: {{VALUE}}',
 //					'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
 				],
 			]
@@ -807,7 +849,7 @@ class Icon_box extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .box_title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .box_title'     => 'color: {{VALUE}}',
 					'{{WRAPPER}} .box_two_title' => 'color: {{VALUE}}',
 				],
 			]
@@ -914,8 +956,8 @@ class Icon_box extends Widget_Base {
 				'label'     => esc_html__( 'Button Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .box_button' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .button_items i'   => 'color: {{VALUE}}',
+					'{{WRAPPER}} .box_button'     => 'color: {{VALUE}}',
+					'{{WRAPPER}} .button_items i' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'style'  => [ '1' ],
@@ -932,7 +974,7 @@ class Icon_box extends Widget_Base {
 			'bg_section',
 			[
 				'label' => esc_html__( 'Background Shape', 'spider-elements' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -951,8 +993,8 @@ class Icon_box extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'box_normal_background',
-				'types' => [ 'classic', 'gradient' ],
+				'name'     => 'box_normal_background',
+				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .box_bg_shape,
 							   {{WRAPPER}} .box2_bg_shape',
 			]
@@ -972,8 +1014,8 @@ class Icon_box extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'hover_background',
-				'types' => [ 'classic', 'gradient' ],
+				'name'     => 'hover_background',
+				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .box_bg_shape:hover,
 							   {{WRAPPER}} .box2_bg_shape:hover',
 			]
@@ -994,7 +1036,7 @@ class Icon_box extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
-		$box_title_tag        = ! empty ( $settings['box_title_tag'] ) ? $settings['box_title_tag'] : 'h5';
+		$box_title_tag = ! empty ( $settings['box_title_tag'] ) ? $settings['box_title_tag'] : 'h5';
 
 		//================= Template Parts =================//
 		include "templates/Icon-box/icon-box{$settings['style']}.php";

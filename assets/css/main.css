@@ -9174,6 +9174,32 @@ ul.ordered-list li::before {
   color: #005025;
 }
 
+.spel-pagination {
+  display: flex;
+  align-items: center;
+}
+.spel-pagination .current {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  background: #31795a;
+}
+.spel-pagination a {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 17px;
+  font-weight: 500;
+  color: #31795a;
+}
+
 .before-after-banner {
   position: relative;
 }
