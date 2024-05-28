@@ -1347,10 +1347,14 @@ class Blog_Grid extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // Array to variable conversation
-		// query part
+
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+        // query part
 		$query['post_status']      = 'publish';
 		$query['ignore_sticky_posts'] = true;
 		$query['suppress_filters'] = false;
+		$query['paged'] = $paged;
 		if ( $blog_queryby == 'postype' ) {
 			$query['post_type'] = isset( $blog_posttype ) ? $blog_posttype : [ 'post' ];
 		} else {

@@ -1,7 +1,13 @@
 // Blog One
+.spel-blog-grid-1 {
+  .blog-meta-two {
+    margin-bottom: 80px;
+  }
+}
+
 .blog-meta-two {
   transition: 0.3s;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   .post-img {
     display: inline-block;
     position: relative;
@@ -528,5 +534,11 @@
     font-size: 17px;
     font-weight: 500;
     color: #31795a;
+    &.prev, &.next {
+      display: flex;
+      align-items: center;
+      width: auto;
+      height: auto;
+    }
   }
 }
