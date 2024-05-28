@@ -11671,8 +11671,8 @@ ul.ordered-list li::before {
     left: 1%;
   }
 }
-.spel-blog-grid-1 .blog-meta-two {
-  margin-bottom: 80px;
+.blog_grid_gap {
+  row-gap: 50px;
 }
 
 .blog-meta-two {

@@ -4,14 +4,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="spel-blog-grid-1">
-    <div class="ezd-grid ezd-grid-cols-12">
+    <div class="ezd-grid ezd-grid-cols-12 blog_grid_gap">
         <?php
         if ( $post_query->have_posts() ) :
             while ( $post_query->have_posts() ) :
                 $post_query->the_post();
                 ?>
-                <div class="ezd-lg-col-<?php echo esc_attr($column_grid); ?>ezd-sm-col-6 blog-grid">
-                    <div class="blog-meta-two spel-mb-80">
+                <div class="ezd-lg-col-<?php echo esc_attr($column_grid); ?> ezd-sm-col-6 blog-grid">
+                    <div class="blog-meta-two">
                         <figure class="post-img">
                             <a href="<?php the_permalink(); ?>" class="img blog1-img"><?php the_post_thumbnail(); ?></a>
                             <?php echo '<a href="' . esc_url( spel_get_first_taxonomy_link() ) . '" class="tags">' . spel_get_first_taxonomy() . '</a>'; ?>
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         ?>
     </div>
 
-    <?php spel_pagination($post_query, 'spel-pagination spel-pl-0'); ?>
+    <?php spel_pagination($post_query, 'spel-pagination spel-pl-0 spel-mt-48 '); ?>
 
 </div>
 
