@@ -592,7 +592,7 @@ class Icon_box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .box_main_icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .box_main_icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
