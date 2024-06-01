@@ -39,6 +39,9 @@ svg.radial-progress circle.incomplete {
     circle {
       stroke-width: 4px;
       &.incomplete {
+        stroke: rgb(255 255 255 / 50%);
+      }
+      &.complete {
         stroke: #fff;
       }
     }

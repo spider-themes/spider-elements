@@ -230,7 +230,6 @@ class Counter extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#5d5b62',
 				'selectors' => [
 					'{{WRAPPER}} svg.radial-progress circle.incomplete' => 'stroke: {{VALUE}};',
 				],
@@ -242,7 +241,6 @@ class Counter extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ef4953',
 				'selectors' => [
 					'{{WRAPPER}} .radial-progress .complete' => 'stroke: {{VALUE}};',
 				],
