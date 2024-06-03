@@ -265,10 +265,10 @@
     background-position: top;
 }
 .counter2::before{
-    /* background: url("../images/el-editor-preview/marquee2.png"); */
+    background: url("../images/el-editor-preview/counter2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: center center;
 }
 
 .instagram1::before{

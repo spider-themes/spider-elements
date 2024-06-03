@@ -9,12 +9,41 @@ if ( ! defined( 'ABSPATH' ) ) {
         <svg class="radial-progress" data-percentage="<?php echo esc_attr( $counter_value ); ?>" viewBox="0 0 80 80">
             <circle class="incomplete" cx="40" cy="40" r="35"></circle>
             <circle class="complete" cx="40" cy="40" r="35"></circle>
-            <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">
-                <?php echo esc_html( $counter_value ) . '%'; ?>
-            </text>
+            
+            <div class="counter-wrap">
+            <?php
+                    if (!empty($settings['counter_prefix'])) {
+                        ?>
+                        <span class="counter-prefix">
+                            <?php echo $settings['counter_prefix']; ?>
+                        </span>
+                        <?php
+                    }
+                ?>
+                <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">
+                    <?php echo esc_html( $counter_value ) ?>
+                </text>
+                <?php
+                    if (!empty($settings['counter_suffix'])) {
+                        ?>
+                        <span class="counter-suffix">
+                            <?php echo $settings['counter_suffix']; ?>
+                        </span>
+                        <?php
+                    }
+                ?>
+            </div>
         </svg>
-        <h6><?php echo esc_html( $counter_text ); ?></h6>
     </div>
+    <?php
+        if (!empty($settings['counter_text'])) {
+            ?>
+            <h6>
+                <?php echo $settings['counter_text'];?>
+            </h6>
+            <?php
+        }
+            ?>
 </div>
 
 <script type=text/javascript>

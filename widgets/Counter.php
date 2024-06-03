@@ -129,6 +129,25 @@ class Counter extends Widget_Base {
 			]
 		);
 
+		// Control for Number Prefix & Suffix
+		$this->add_control(
+			'counter_prefix',
+			[
+				'label' => esc_html__('Number Prefix', 'spider-elements'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
+			'counter_suffix',
+			[
+				'label' => esc_html__('Number Suffix', 'spider-elements'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '%',
+			]
+		);
+
 		// Control for Counter Text
 		$this->add_control(
 			'counter_text', [
@@ -138,17 +157,17 @@ class Counter extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'text_switcher', [
-				'label'        => esc_html__( 'Counter Text Show/Hide', 'spider-elements' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
-				'label_off'    => esc_html__( 'No', 'spider-elements' ),
-				'return_value' => 'yes',
-				'default'      => 'yes',
-				'separator'    => 'before'
-			]
-		);
+		// $this->add_control(
+		// 	'text_switcher', [
+		// 		'label'        => esc_html__( 'Counter Text Show/Hide', 'spider-elements' ),
+		// 		'type'         => Controls_Manager::SWITCHER,
+		// 		'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
+		// 		'label_off'    => esc_html__( 'No', 'spider-elements' ),
+		// 		'return_value' => 'yes',
+		// 		'default'      => 'yes',
+		// 		'separator'    => 'before'
+		// 	]
+		// );
 
 		$this->end_controls_section();
 
@@ -276,30 +295,34 @@ class Counter extends Widget_Base {
 
 		// Control for percent color
 		$this->start_controls_section(
-			'percent', [
-				'label' => esc_html__( 'Percent', 'spider-elements' ),
+			'number_style', [
+				'label' => esc_html__( 'Number', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
-			'percent_color',
+			'number_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .skill_item svg.radial-progress text' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .skill_item_two .counter' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .counters-container .skill_item .counter-wrap' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
-				'name'     => 'percent_typo',
-				'selector' => '{{WRAPPER}} .skill_item svg.radial-progress text,{{WRAPPER}} .skill_item_two .counter'
+				'name'     => 'number_typo',
+				'selector' => '{{WRAPPER}} .counters-container .skill_item .counter-wrap,
+							   {{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap',
 			]
+	
 		);
+
+
 
 		$this->end_controls_section();
 
@@ -310,13 +333,14 @@ class Counter extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+
 		$this->add_control(
 			'counter_text_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .skill_item h6' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .counters-container h6' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -324,7 +348,7 @@ class Counter extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name'     => 'counter_text_typo',
-				'selector' => '{{WRAPPER}} .skill_item h6'
+				'selector' => '{{WRAPPER}} .counters-container h6'
 			]
 		);
 		$this->add_responsive_control(
@@ -332,7 +356,7 @@ class Counter extends Widget_Base {
 			[
 				'label'      => __( 'Margin Top', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
+				'size_units' => [ 'px', '%' ],
 				'range'      => [
 					'px' => [
 						'min'  => 0,
@@ -341,13 +365,13 @@ class Counter extends Widget_Base {
 					],
 				],
 				'default'    => [
-					'unit' => 'px',
 					'size' => 6,
 				],
 				'selectors'  => [
 					'{{WRAPPER}} .skill_item h6' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .counters-container h6' => 'margin-top: {{SIZE}}{{UNIT}}',
+
 				],
-				'separator'  => 'before',
 			]
 		);
 		$this->end_controls_section();

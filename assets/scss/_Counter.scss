@@ -17,7 +17,6 @@ svg.radial-progress circle.complete {
 }
 
 svg.radial-progress text {
-  fill: #e8e6e6;
   font-size: 16px;
   font-weight: 500;
   text-anchor: middle;
@@ -48,14 +47,39 @@ svg.radial-progress circle.incomplete {
   }
   .skill_pr {
     position: relative;
+    .counter2-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 28px;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      transform: translateY(-50%);
+    }
   }
-  .counter {
-    color: #fff;
-    font-size: 28px;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    transform: translateY(-50%);
+}
+ 
+
+.counters-container {
+  text-align: center;
+  .skill_item {
+    position: relative;
+    .counter-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000000;
+      font-size: 18px;
+      top: 50%;
+      width: 100%;
+      position: absolute;
+      transform: translateY(-50%);
+    }
+  }
+  h6 {
+    margin: 0;
   }
 }

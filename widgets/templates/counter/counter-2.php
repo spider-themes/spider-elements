@@ -6,24 +6,48 @@ if (!defined('ABSPATH')) {
 
 <div class="skill_item skill_item_two ezd-text-center">
     <?php
-    if ( !empty($counter_value) ) {
+    if (!empty($counter_value)) {
         ?>
         <div class="skill_pr">
             <svg class="radial-progress" data-percentage="<?php echo esc_attr($counter_value); ?>" viewBox="0 0 80 80">
                 <circle class="incomplete" cx="40" cy="40" r="35"></circle>
                 <circle class="complete" cx="40" cy="40" r="35"></circle>
             </svg>
-            <span class="percentage counter">
-            <?php echo esc_html($counter_value) ?>
-        </span>
+            <div class="counter2-wrap">
+                <?php
+                    if (!empty($settings['counter_prefix'])) {
+                        ?>
+                        <span class="counter-prefix">
+                            <?php echo $settings['counter_prefix']; ?>
+                        </span>
+                        <?php
+                    }
+                ?>
+                <span class="percentage counter">
+                    <?php echo esc_html($counter_value) ?>
+                </span>
+                <?php
+                    if (!empty($settings['counter_suffix'])) {
+                        ?>
+                        <span class="counter-suffix">
+                            <?php echo $settings['counter_suffix']; ?>
+                        </span>
+                        <?php
+                    }
+                ?>
+            </div>
+
         </div>
         <?php
     }
-    if ( $text_switcher == 'yes') { ?>
-        <h6><?php echo esc_html($counter_text); ?></h6>
-        <?php
-    }
-    ?>
+        if (!empty($settings['counter_text'])) {
+            ?>
+            <h6>
+                <?php echo $settings['counter_text'];?>
+            </h6>
+            <?php
+        }
+            ?>
 </div>
 
 <script type=text/javascript>
@@ -98,7 +122,6 @@ if (!defined('ABSPATH')) {
             window.dispatchEvent(new Event("scroll"));
 
         });
-
 
     })(jQuery);
 </script>
