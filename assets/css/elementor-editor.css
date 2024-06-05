@@ -262,7 +262,7 @@
     background: url("../images/el-editor-preview/counter1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: center center;
 }
 .counter2::before{
     background: url("../images/el-editor-preview/counter2.jpg");
