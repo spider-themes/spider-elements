@@ -109,7 +109,6 @@ class Counter extends Widget_Base {
 			]
 		);
 
-
 		$this->end_controls_section(); // End Preset Skin
 
 		//=================== SecCountertion  ===================//
@@ -336,7 +335,42 @@ class Counter extends Widget_Base {
 
 		);
 
-
+		$this->add_responsive_control(
+			'prefix_suffix_size',
+			[
+				'label'      => __( 'Number Gap', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem', '%' ],
+				'range'      => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'min'  => 0,
+						'max'  => 50,
+						'step' => 0.1,
+					],
+					'rem' => [
+						'min'  => 0,
+						'max'  => 50,
+						'step' => 0.1,
+					],
+					'%' => [
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .counter-wrap' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .counter2-wrap' => 'gap: {{SIZE}}{{UNIT}};'
+				],
+				'separator'  => 'before',
+			]
+		);
+		
 		$this->end_controls_section();
 
 		// Control for text color
