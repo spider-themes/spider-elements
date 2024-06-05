@@ -54,7 +54,7 @@ class Counter extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spel-el-widgets', 'counterup','waypoint' ];
+		return [ 'spel-el-widgets', 'counterup', 'waypoint' ];
 	}
 
 	/**
@@ -133,8 +133,8 @@ class Counter extends Widget_Base {
 		$this->add_control(
 			'counter_prefix',
 			[
-				'label' => esc_html__('Number Prefix', 'spider-elements'),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'label'   => esc_html__( 'Number Prefix', 'spider-elements' ),
+				'type'    => \Elementor\Controls_Manager::TEXT,
 				'default' => '',
 			]
 		);
@@ -142,8 +142,8 @@ class Counter extends Widget_Base {
 		$this->add_control(
 			'counter_suffix',
 			[
-				'label' => esc_html__('Number Suffix', 'spider-elements'),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'label'   => esc_html__( 'Number Suffix', 'spider-elements' ),
+				'type'    => \Elementor\Controls_Manager::TEXT,
 				'default' => '%',
 			]
 		);
@@ -192,19 +192,33 @@ class Counter extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-		$this->add_control(
-			'style_bg',
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
 			[
-				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .skill_item_two .radial-progress' => 'background: {{VALUE}};',
-				],
+				'name' => 'style_bg',
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .skill_item_two .radial-progress',
 				'condition' => [
 					'style' => [ '2' ]
 				]
 			]
 		);
+
+//		$this->add_control(
+//			'style_bg',
+//			[
+//				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .skill_item_two .radial-progress' => 'background: {{VALUE}};',
+//				],
+//				'condition' => [
+//					'style' => [ '2' ]
+//				]
+//			]
+//		);
+
 		$this->add_control(
 			'style_radius',
 			[
@@ -214,7 +228,7 @@ class Counter extends Widget_Base {
 				'selectors'  => [
 					'{{WRAPPER}} .skill_item_two .radial-progress' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'condition' => [
+				'condition'  => [
 					'style' => [ '2' ]
 				]
 			]
@@ -308,7 +322,7 @@ class Counter extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .counters-container .skill_item .counter-wrap' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap'      => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -319,9 +333,8 @@ class Counter extends Widget_Base {
 				'selector' => '{{WRAPPER}} .counters-container .skill_item .counter-wrap,
 							   {{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap',
 			]
-	
-		);
 
+		);
 
 
 		$this->end_controls_section();
@@ -340,6 +353,7 @@ class Counter extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
+					'{{WRAPPER}} .skill_item h6' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .counters-container h6' => 'color: {{VALUE}};',
 				],
 			]
@@ -368,7 +382,7 @@ class Counter extends Widget_Base {
 					'size' => 6,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .skill_item h6' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .skill_item h6'         => 'margin-top: {{SIZE}}{{UNIT}}',
 					'{{WRAPPER}} .counters-container h6' => 'margin-top: {{SIZE}}{{UNIT}}',
 
 				],

@@ -12936,7 +12936,6 @@ svg.radial-progress {
 
 svg.radial-progress circle {
   fill: transparent;
-  stroke: #fff;
   stroke-dashoffset: 219.9114857513;
   stroke-width: 6px;
 }
@@ -12951,13 +12950,13 @@ svg.radial-progress text {
   text-anchor: middle;
 }
 
-svg.radial-progress circle.complete {
-  stroke: #ef4953;
+svg .complete {
+  stroke: #D31E1E;
   stroke-linecap: round;
 }
 
-svg.radial-progress circle.incomplete {
-  stroke: #5d5b62;
+svg .incomplete {
+  stroke: rgba(213, 166, 166, 0.431372549);
 }
 
 .skill_item_two .radial-progress {

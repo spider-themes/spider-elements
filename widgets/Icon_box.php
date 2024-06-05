@@ -148,6 +148,7 @@ class Icon_box extends Widget_Base {
 				],
 			]
 		);
+		
 
 		$this->add_control(
 			'pro_box_icon',

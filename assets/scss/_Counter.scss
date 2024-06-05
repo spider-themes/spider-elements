@@ -7,7 +7,6 @@ svg.radial-progress {
 
 svg.radial-progress circle {
   fill: transparent;
-  stroke: #fff;
   stroke-dashoffset: 219.91148575129;
   stroke-width: 6px;
 }
@@ -22,13 +21,17 @@ svg.radial-progress text {
   text-anchor: middle;
 }
 
-svg.radial-progress circle.complete {
-  stroke: #ef4953;
-  stroke-linecap: round;
+svg {
+  .complete {
+    stroke: #D31E1E;
+    stroke-linecap: round;
+  }
 }
 
-svg.radial-progress circle.incomplete {
-  stroke: #5d5b62;
+svg {
+  .incomplete {
+    stroke: #D5A6A66E;
+  }
 }
 
 .skill_item_two {
