@@ -177,8 +177,9 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Icon', 'spider-elements' ),
 				'type'      => Controls_Manager::ICONS,
 				'condition' => [
+					'display_type'  => [ 'alert', 'note-with-icon', 'dual-box', 'block-notice', 'note' ],
 					'display_type!' => [ 'explanation' ]
-				]
+				],
 			]
 		);
 
@@ -211,7 +212,8 @@ class Alerts_Box extends Widget_Base {
 				'name'     => 'typography_title',
 				'selector' => '
 					{{WRAPPER}} .__title, 
-					{{WRAPPER}} .message_alert .title, 
+					{{WRAPPER}} .message_alert .title,
+					{{WRAPPER}} .notice-box h5,
 					{{WRAPPER}} .block-notice-wrapper .title,  
 					{{WRAPPER}} .nic-content-wrap .note-box h5, 
 					{{WRAPPER}} .explanation::after, {{WRAPPER}} .notice h5
@@ -226,10 +228,12 @@ class Alerts_Box extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .__title'                       => 'color: {{VALUE}};',
 					'{{WRAPPER}} .explanation::after'            => 'color: {{VALUE}};',
-					'{{WRAPPER}} .block-notice-wrapper .title'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .title'   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .notice h5'                     => 'color: {{VALUE}};',
 					'{{WRAPPER}} .nic-content-wrap .note-box h5' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .message_alert .title'          => 'color: {{VALUE}};',
+					'{{WRAPPER}} .notice-box h5'                 => 'color: {{VALUE}};',
+
 				],
 			]
 		);
@@ -263,13 +267,7 @@ class Alerts_Box extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name'     => 'typography_content',
 				'selector' => '					
-					{{WRAPPER}} .message_alert p,
-					{{WRAPPER}} .notice p,
-					{{WRAPPER}} .explanation p,
-					{{WRAPPER}} .dual-box-wrapper .dual-box-content p, 
-					{{WRAPPER}} .nic-content-wrap .note-box p,
-					{{WRAPPER}} .block-notice-wrapper .block-notice-body p
-					',
+					{{WRAPPER}} .spel_alert_box p',
 			]
 		);
 
@@ -278,17 +276,24 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .notice p'                                  => 'color: {{VALUE}};',
-					'{{WRAPPER}} .explanation p'                             => 'color: {{VALUE}};',
-					'{{WRAPPER}} .dual-box-wrapper .dual-box-content p'      => 'color: {{VALUE}};',
-					'{{WRAPPER}} .nic-content-wrap .note-box p'              => 'color: {{VALUE}};',
-					'{{WRAPPER}} .message_alert p'                           => 'color: {{VALUE}};',
-					'{{WRAPPER}} .block-notice-wrapper .block-notice-body p' => 'color: {{VALUE}};',
-
+					'{{WRAPPER}} .spel_alert_box p' => 'color: {{VALUE}} !important;',
 				],
 			]
 		);
 
+//		$this->add_group_control(
+//			\Elementor\Group_Control_Background::get_type(),
+//			[
+//				'name' => 'box_background',
+//				'types' => [ 'classic', 'gradient', ],
+//				'selector' => '{{WRAPPER}} {{WRAPPER}} .message_alert,
+//							{{WRAPPER}} .notice-box,
+//							{{WRAPPER}} .nic-content-wrap .note-box,
+//							{{WRAPPER}} .explanation,
+//							{{WRAPPER}} .dual-box-content,
+//							{{WRAPPER}} .block-notice-wrapper,',
+//			]
+//		);
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
@@ -296,13 +301,12 @@ class Alerts_Box extends Widget_Base {
 				'name'     => 'background',
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '
-							{{WRAPPER}} .notice,
 							{{WRAPPER}} .nic-alert .nic-content-wrap .note-box,
+							{{WRAPPER}} .notice-box,
 							{{WRAPPER}} .explanation,
 							{{WRAPPER}} .message_alert,
-							{{WRAPPER}} .block-notice-wrapper, .block-notice-content-wrapper,
-							{{WRAPPER}} .dual-box-wrapper
-							',
+							{{WRAPPER}} .block-notice-content-wrapper,
+							{{WRAPPER}} .spel_alert_box .dual-box-content',
 			]
 		);
 
@@ -314,7 +318,6 @@ class Alerts_Box extends Widget_Base {
 					'{{WRAPPER}} .message_alert'                                                                                      => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .explanation::before'                                                                                => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .notice-box'                                                                                         => 'border-color: {{VALUE}};',
-//					'{{WRAPPER}} .dual-box-wrapper'              => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-box'                                                              => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .block-notice-wrapper.block-notice-message:before, .block-notice-wrapper.block-notice-message:after' => 'border-color: {{VALUE}};',
 				],
@@ -350,7 +353,7 @@ class Alerts_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .notice' => 'border-left-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .notice-box' => 'border-left-width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'display_type' => [ 'note' ]
@@ -365,7 +368,7 @@ class Alerts_Box extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
 					'{{WRAPPER}} .message_alert'                              => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .media.notice'                               => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .notice-box'                               => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .explanation'                                => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .note-box'                                   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -413,7 +416,7 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Icon', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'display_type'  => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ],
+					'display_type'  => [ 'alert', 'note-with-icon', 'dual-box', 'block-notice', 'note' ],
 					'display_type!' => [ 'explanation' ]
 				]
 			]
@@ -432,9 +435,11 @@ class Alerts_Box extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .fa-bell-slash:before'                         => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .block-notice-wrapper .block-notice-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .notice-box i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'display_type'  => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ],
+					'display_type'  => [ 'note', 'note-with-icon', 'dual-box', 'block-notice', 'alert' ],
 					'display_type!' => [ 'explanation' ]
 				]
 			]
@@ -448,9 +453,11 @@ class Alerts_Box extends Widget_Base {
 					'{{WRAPPER}} .info-tab .icon-wrapper i'                     => 'color: {{VALUE}};',
 					'{{WRAPPER}} .fa-bell-slash:before'                         => 'color: {{VALUE}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper .block-notice-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .notice-box i' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'display_type'  => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ],
+					'display_type'  => [ 'note', 'note-with-icon', 'dual-box', 'block-notice','alert' ],
 					'display_type!' => [ 'explanation' ]
 				]
 			]
@@ -460,7 +467,6 @@ class Alerts_Box extends Widget_Base {
 			'closeicon_heading', [
 				'label'     => esc_html__( 'Close Icon' ),
 				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
 				'condition' => [
 					'display_type'  => [ 'alert' ],
 					'display_type!' => [ 'note', 'note-with-icon', 'explanation', 'dual-box', 'block-notice' ]

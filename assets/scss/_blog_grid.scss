@@ -201,7 +201,7 @@
     font-size: 24px;
     line-height: 1.4em;
     color: #000;
-    margin: 6px 0px 10px;
+    margin: 6px 0 10px 0;
     transition: all .3s ease-in-out;
 
     &:hover {
@@ -383,7 +383,8 @@
     font-size: 24px;
     font-weight: 500;
     line-height: 1.5;
-    padding-top: 5px;
+    margin: 25px 0 50px 0;
+    padding-top: 0;
     padding-left: 0;
     transition: all .3s ease-in-out;
 
@@ -393,7 +394,6 @@
   }
 
   .read-more-btn {
-    margin-top: 50px;
     display: inline-block;
 
     a {

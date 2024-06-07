@@ -11368,6 +11368,9 @@ ul.ordered-list li::before {
   bottom: -25px;
   transform: rotate(45deg);
 }
+.card-style-eight .img-meta img {
+  width: 100%;
+}
 
 .card-style-eight .name {
   font-size: 18px;
@@ -11836,7 +11839,7 @@ ul.ordered-list li::before {
   font-size: 24px;
   line-height: 1.4em;
   color: #000;
-  margin: 6px 0px 10px;
+  margin: 6px 0 10px 0;
   transition: all 0.3s ease-in-out;
 }
 .blog-meta-one .blog-title:hover {
@@ -11983,7 +11986,8 @@ ul.ordered-list li::before {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.5;
-  padding-top: 5px;
+  margin: 25px 0 50px 0;
+  padding-top: 0;
   padding-left: 0;
   transition: all 0.3s ease-in-out;
 }
@@ -11991,7 +11995,6 @@ ul.ordered-list li::before {
   color: #ffffff;
 }
 .blog-item .read-more-btn {
-  margin-top: 50px;
   display: inline-block;
 }
 .blog-item .read-more-btn a {
