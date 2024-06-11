@@ -598,31 +598,6 @@ class Icon_box extends Widget_Base {
 			]
 		);
 
-//		$this->add_responsive_control(
-//			'box_icon_size',
-//			[
-//				'label'      => esc_html__( 'Size', 'spider-elements' ),
-//				'type'       => Controls_Manager::SLIDER,
-//				'size_units' => [ 'px', '%' ],
-//				'range'      => [
-//					'px' => [
-//						'min'  => 0,
-//						'max'  => 200,
-//						'step' => 1,
-//					],
-//					'%'  => [
-//						'min' => 0,
-//						'max' => 100,
-//					],
-//				],
-//				'default'    => [
-//					'unit' => 'px',
-//				],
-//				'selectors'  => [
-//					'{{WRAPPER}} .box_main_icon' => 'font-size: {{SIZE}}{{UNIT}};',
-//				],
-//			]
-//		);
 
 		$this->add_responsive_control(
 			'box_icon_space',
@@ -754,10 +729,10 @@ class Icon_box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
-					//			'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
 				],
 			]
 		);
+
 		$this->add_control(
 			'svg_fill_color',
 			[

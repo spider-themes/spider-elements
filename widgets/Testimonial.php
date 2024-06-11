@@ -1171,23 +1171,6 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->add_responsive_control(
-			'Content_margin',
-			[
-				'label'      => esc_html__( 'Margin', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .feedback-block-two h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .feedback-block-one h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .feedback-block-three h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition'  => [
-					'style' => [ '6', '7', '9' ]
-				]
-			]
-		);
-
 		$this->add_control(
 			'border_color', [
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
@@ -1198,6 +1181,24 @@ class Testimonial extends Widget_Base {
 				'condition' => [
 					'style'  => [ '3' ],
 					'style!' => [ '1', '2', '4', '5', '6', '7', '8', '9' ]
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'Content_margin',
+			[
+				'label'      => esc_html__( 'Margin', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
+					'{{WRAPPER}} .feedback-block-two h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .feedback-block-one h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .feedback-block-three h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .testimonial-slider-inner .testimonial-content se_review_content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition'  => [
+					'style' => [ '3','6', '7', '9' ]
 				]
 			]
 		);
@@ -1238,6 +1239,66 @@ class Testimonial extends Widget_Base {
 				]
 			]
 		);//End Category Style
+
+		//=== Image Style
+		$this->add_control(
+			'image_style', [
+				'label'     => esc_html__( 'Image', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style' => [ '3' ]
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'image_size',
+			[
+				'label' => esc_html__( 'Size', 'spider-elements' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 6,
+						'max' => 1000,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .testimonial-slider-inner .author-image' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'img_bg_color',
+			[
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .testimonial-slider-inner .author-image' => 'background: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'shape_size',
+			[
+				'label' => esc_html__( 'Shape Size', 'spider-elements' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'separator' => 'before',
+				'range' => [
+					'px' => [
+						'min' => 6,
+						'max' => 500,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .quote-img-top img, .quote-img-bottom img' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 
 		//=== Designation
