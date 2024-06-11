@@ -202,98 +202,10 @@ class Alerts_Box extends Widget_Base {
 		//====================== Style Title ======================//
 		$this->start_controls_section(
 			'style_title', [
-				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'label' => esc_html__( 'Alert Box', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'typography_title',
-				'selector' => '
-					{{WRAPPER}} .__title, 
-					{{WRAPPER}} .message_alert .title,
-					{{WRAPPER}} .notice-box h5,
-					{{WRAPPER}} .block-notice-wrapper .title,  
-					{{WRAPPER}} .nic-content-wrap .note-box h5, 
-					{{WRAPPER}} .explanation::after, {{WRAPPER}} .notice h5
-				',
-			]
-		);
-
-		$this->add_control(
-			'color_title', [
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .__title'                       => 'color: {{VALUE}};',
-					'{{WRAPPER}} .explanation::after'            => 'color: {{VALUE}};',
-					'{{WRAPPER}} .title'   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .notice h5'                     => 'color: {{VALUE}};',
-					'{{WRAPPER}} .nic-content-wrap .note-box h5' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .message_alert .title'          => 'color: {{VALUE}};',
-					'{{WRAPPER}} .notice-box h5'                 => 'color: {{VALUE}};',
-
-				],
-			]
-		);
-
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name'      => 'title_background',
-				'types'     => [ 'classic', 'gradient' ],
-				'exclude'   => [ 'image' ],
-				'selector'  => '{{WRAPPER}} .explanation::after',
-				'condition' => [
-					'display_type'  => [ 'explanation' ],
-					'display_type!' => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ]
-				]
-			]
-		);
-
-		$this->end_controls_section(); //End Style Title
-
-
-		//============================Start Description  Style section =========================//
-		$this->start_controls_section(
-			'section_type', [
-				'label' => esc_html__( 'Alert Description', 'spider-elements' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'typography_content',
-				'selector' => '					
-					{{WRAPPER}} .spel_alert_box p',
-			]
-		);
-
-		$this->add_control(
-			'color_content', [
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .spel_alert_box p' => 'color: {{VALUE}} !important;',
-				],
-			]
-		);
-
-//		$this->add_group_control(
-//			\Elementor\Group_Control_Background::get_type(),
-//			[
-//				'name' => 'box_background',
-//				'types' => [ 'classic', 'gradient', ],
-//				'selector' => '{{WRAPPER}} {{WRAPPER}} .message_alert,
-//							{{WRAPPER}} .notice-box,
-//							{{WRAPPER}} .nic-content-wrap .note-box,
-//							{{WRAPPER}} .explanation,
-//							{{WRAPPER}} .dual-box-content,
-//							{{WRAPPER}} .block-notice-wrapper,',
-//			]
-//		);
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
@@ -315,16 +227,18 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .message_alert'                                                                                      => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .explanation::before'                                                                                => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .notice-box'                                                                                         => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-box'                                                              => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .block-notice-wrapper.block-notice-message:before, .block-notice-wrapper.block-notice-message:after' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert'                         => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .explanation::before'                   => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .notice-box'                            => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .nic-alert .nic-content-wrap .note-box' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper::before'          => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper::after'           => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
 					'display_type'  => [ 'explanation', 'alert', 'note', 'note-with-icon', 'block-notice' ],
 					'display_type!' => [ 'dual-box' ]
 				]
+
 			]
 		);
 
@@ -333,7 +247,7 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .dual-box-wrapper, .dual-box-wrapper .dual-box-content.top-left' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dual-box-wrapper, .dual-box-wrapper .dual-box-content' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
 					'display_type'  => [ 'dual-box' ],
@@ -368,7 +282,7 @@ class Alerts_Box extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
 					'{{WRAPPER}} .message_alert'                              => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .notice-box'                               => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .notice-box'                                 => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .explanation'                                => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .note-box'                                   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -407,6 +321,95 @@ class Alerts_Box extends Widget_Base {
 			]
 		);
 
+		$this->end_controls_section(); //End Style Title
+
+
+		//============================Start Description  Style section =========================//
+		$this->start_controls_section(
+			'section_type', [
+				'label' => esc_html__( 'Contents', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'box_title-heading', [
+				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'typography_title',
+				'selector' => '
+					{{WRAPPER}} .__title, 
+					{{WRAPPER}} .message_alert .title,
+					{{WRAPPER}} .notice-box h5,
+					{{WRAPPER}} .block-notice-wrapper .title,  
+					{{WRAPPER}} .nic-content-wrap .note-box h5, 
+					{{WRAPPER}} .explanation::after, {{WRAPPER}} .notice h5
+				',
+			]
+		);
+
+		$this->add_control(
+			'color_title', [
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .__title'                       => 'color: {{VALUE}};',
+					'{{WRAPPER}} .explanation::after'            => 'color: {{VALUE}};',
+					'{{WRAPPER}} .title'                         => 'color: {{VALUE}};',
+					'{{WRAPPER}} .notice h5'                     => 'color: {{VALUE}};',
+					'{{WRAPPER}} .nic-content-wrap .note-box h5' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert .title'          => 'color: {{VALUE}};',
+					'{{WRAPPER}} .notice-box h5'                 => 'color: {{VALUE}};',
+
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'      => 'title_background',
+				'types'     => [ 'classic', 'gradient' ],
+				'exclude'   => [ 'image' ],
+				'selector'  => '{{WRAPPER}} .explanation::after',
+				'condition' => [
+					'display_type'  => [ 'explanation' ],
+					'display_type!' => [ 'alert', 'note', 'note-with-icon', 'dual-box', 'block-notice' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'box_desc-heading', [
+				'label'     => esc_html__( 'Description', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'typography_content',
+				'selector' => '					
+					{{WRAPPER}} .spel_alert_box p',
+			]
+		);
+
+		$this->add_control(
+			'color_content', [
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .spel_alert_box p' => 'color: {{VALUE}} !important;',
+				],
+			]
+		);
+
 		$this->end_controls_section(); // End Style Alert
 
 
@@ -435,8 +438,10 @@ class Alerts_Box extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .fa-bell-slash:before'                         => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .block-notice-wrapper .block-notice-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .notice-box i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .block-notice-wrapper .block-notice-icon i'    => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .notice-box i'                                 => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .info-tab .icon-wrapper i'                     => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .message_alert i'                              => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'display_type'  => [ 'note', 'note-with-icon', 'dual-box', 'block-notice', 'alert' ],
@@ -453,11 +458,12 @@ class Alerts_Box extends Widget_Base {
 					'{{WRAPPER}} .info-tab .icon-wrapper i'                     => 'color: {{VALUE}};',
 					'{{WRAPPER}} .fa-bell-slash:before'                         => 'color: {{VALUE}};',
 					'{{WRAPPER}} .dual-box-wrapper .dual-box-content .notice i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .block-notice-wrapper .block-notice-icon i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .notice-box i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .block-notice-wrapper .block-notice-icon i'    => 'color: {{VALUE}};',
+					'{{WRAPPER}} .notice-box i'                                 => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert i'                              => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'display_type'  => [ 'note', 'note-with-icon', 'dual-box', 'block-notice','alert' ],
+					'display_type'  => [ 'note', 'note-with-icon', 'dual-box', 'block-notice', 'alert' ],
 					'display_type!' => [ 'explanation' ]
 				]
 			]
@@ -467,6 +473,7 @@ class Alerts_Box extends Widget_Base {
 			'closeicon_heading', [
 				'label'     => esc_html__( 'Close Icon' ),
 				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
 				'condition' => [
 					'display_type'  => [ 'alert' ],
 					'display_type!' => [ 'note', 'note-with-icon', 'explanation', 'dual-box', 'block-notice' ]
@@ -485,7 +492,7 @@ class Alerts_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .icon_close:before' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .message_alert .close i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'display_type'  => [ 'alert' ],
@@ -499,7 +506,7 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_close:before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .message_alert .close i' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'display_type'  => [ 'alert' ],

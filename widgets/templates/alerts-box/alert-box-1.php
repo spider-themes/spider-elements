@@ -43,7 +43,8 @@ if ( $settings['display_type'] == 'alert' ) : ?>
                         <h5 class="title __title"><?php echo esc_html( $settings['alert_title'] ) ?></h5>
 					<?php endif; ?>
                     <div class="__content">
-						<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?></div>
+						<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?>
+                    </div>
                 </div>
             </div>
         </div>
