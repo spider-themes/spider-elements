@@ -1054,6 +1054,42 @@ class Testimonial extends Widget_Base {
 
 		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
 		$this->end_controls_section(); // End Contents Style
+
+
+        //========================= Arrow Icons =======================//
+        $this->start_controls_section(
+            'arrow_icons_sec', [
+                'label' => esc_html__( 'Arrow Icon', 'textdomain' ),
+                'condition' => [
+                    'style' => ['8']
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'prev_arrow_icon', [
+                'label' => esc_html__( 'Prev Icon', 'textdomain' ),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'arrow_carrot-left',
+                    'library' => 'ElegantIcons'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'next_arrow_icon', [
+                'label' => esc_html__( 'Next Icon', 'textdomain' ),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'arrow_carrot-right',
+                    'library' => 'ElegantIcons'
+                ],
+            ]
+        );
+
+        $this->end_controls_section(); //End Arrow Icons
+
 	}
 
 

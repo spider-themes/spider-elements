@@ -38,12 +38,10 @@ if (!defined('ABSPATH')) {
 
 
             <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#feedBack_carousel" data-bs-slide="prev">
-                <i class="bi bi-chevron-left"></i>
-                <span class="visually-hidden">Previous</span>
+                <?php \Elementor\Icons_Manager::render_icon( $settings['prev_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
             </button>
             <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#feedBack_carousel" data-bs-slide="next">
-                <i class="bi bi-chevron-right"></i>
-                <span class="visually-hidden">Next</span>
+                <?php \Elementor\Icons_Manager::render_icon( $settings['next_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
             </button>
 
             <div class="carousel-indicators">
