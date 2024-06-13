@@ -108,10 +108,6 @@ class Video_Popup extends Widget_Base {
 						'title' => esc_html__( 'Style 02', 'spider-elements' ),
 						'icon'  => 'video-popup-2',
 					],
-					'3' => [
-						'title' => esc_html__( 'Style 03', 'spider-elements' ),
-						'icon'  => 'video-popup-3',
-					],
 				],
 				'toggle'  => false,
 				'default' => '1',
@@ -183,9 +179,8 @@ class Video_Popup extends Widget_Base {
 				'label'     => esc_html__( 'Icon', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -200,8 +195,7 @@ class Video_Popup extends Widget_Base {
 			'icon_normal_tabs', [
 				'label'     => __( 'Normal', 'spider-elements' ),
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
+					'style' => [ '1', '2' ]
 				],
 			]
 		);
@@ -216,9 +210,8 @@ class Video_Popup extends Widget_Base {
 					'{{WRAPPER}} .video2-icon' => 'color: {{VALUE}}',
 				],
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -232,9 +225,8 @@ class Video_Popup extends Widget_Base {
 					'{{WRAPPER}} .video2-icon' => 'background-color: {{VALUE}}',
 				],
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -245,9 +237,8 @@ class Video_Popup extends Widget_Base {
 			'icon_hover_tabs', [
 				'label'     => __( 'Hover', 'spider-elements' ),
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -261,9 +252,8 @@ class Video_Popup extends Widget_Base {
 					'{{WRAPPER}} .video2-icon:hover' => 'color: {{VALUE}}',
 				],
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -277,9 +267,8 @@ class Video_Popup extends Widget_Base {
 					'{{WRAPPER}} .video2-icon:hover' => 'background-color: {{VALUE}}',
 				],
 				'condition' => [
-					'style' => [ '1', '2' ],
-					'style!' => [ '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -293,7 +282,7 @@ class Video_Popup extends Widget_Base {
 				],
 				'condition' => [
 					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
+					'style!' => [ '2' ]
 				]
 			]
 		);
@@ -315,7 +304,7 @@ class Video_Popup extends Widget_Base {
 				'selector' => '{{WRAPPER}} .video-icon',
 				'condition' => [
 					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
+					'style!' => [ '2']
 				]
 			]
 		);
@@ -331,7 +320,7 @@ class Video_Popup extends Widget_Base {
 				],
 				'condition' => [
 					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
+					'style!' => [ '2']
 				]
 			]
 		);
@@ -356,18 +345,32 @@ class Video_Popup extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .video-icon, .play-button a i ' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video2-icon ' => 'font-size: {{SIZE}}{{UNIT}};',
+
 				],
+			]
+		);
+
+		$this->add_control(
+			'popup_shadow',
+			[
+				'label'     => __( 'Popup Shadow', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .video2-icon::after ' => 'background: {{VALUE}}',
+				],
+				'separator' => 'after',
 				'condition' => [
-					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
+					'style' => [ '2' ],
+					'style!' => [ '1']
 				]
 			]
 		);
 
 		$this->add_responsive_control(
 			'icon_bg_width', [
-				'label'      => __( 'video Popup Width', 'spider-elements' ),
+				'label'      => __( 'Video Popup Width', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -385,12 +388,13 @@ class Video_Popup extends Widget_Base {
 					'size' => '90',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .video-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video-icon, {{WRAPPER}}, {{WRAPPER}} .video2-icon::after' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video2-icon::before' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video2-icon, {{WRAPPER}} .video2-icon::before, {{WRAPPER}} .video2-icon::after' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
-				]
+					'style' => [ '1', '2' ]
+				],
 			]
 		);
 
@@ -402,7 +406,7 @@ class Video_Popup extends Widget_Base {
 				'default' => 'no',
 				'condition' => [
 					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
+					'style!' => [ '2']
 				]
 			]
 		);
@@ -415,7 +419,7 @@ class Video_Popup extends Widget_Base {
 				'default' => 'no',
 				'condition' => [
 					'style' => [ '1' ],
-					'style!' => [ '2', '3' ]
+					'style!' => [ '2']
 				]
 			]
 		);

@@ -102,6 +102,7 @@
 
 /*======== video popup 2========*/
 .play-button2 {
+  display: inline-block;
   .video2-icon {
     &::before {
       animation: pulse-red 2s infinite;
@@ -110,11 +111,6 @@
     }
   }
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   .video2-icon {
     width: 90px;
     height: 90px;
@@ -122,10 +118,9 @@
     border-radius: 50%;
     color: #fff;
     background: #d92c0a;
-    display: block;
     text-align: center;
     font-size: 40px;
-    padding-top: 5px;
+    padding-top: 1px;
     transition: 0.3s ease-out;
 
     &::before {
@@ -148,12 +143,12 @@
       line-height: 50px;
       font-size: 25px;
       z-index: 1;
+      position: relative;
 
       @media screen and (min-width: 768px) {
         width: 78px;
         height: 78px;
         line-height: 78px;
-        font-size: 35px;
       }
 
       &::before {
