@@ -602,6 +602,7 @@
 
         //======================== Tabs =========================== //
         tabs: function ($scope) {
+
             let nextBtn = $scope.find("button.ezd_tab_arrow_btn.nexts");
             let prevBtn = $scope.find("button.ezd_tab_arrow_btn.previous");
 
@@ -621,68 +622,65 @@
                 });
             }
 
-            // === Tabs Slider
             let tabSliderContainers = $scope.find(".tabs_sliders");
 
             tabSliderContainers.each(function () {
-                let $scope = $(this);
-                let tabWrapWidth = $scope.outerWidth();
+                let tabWrapWidth = $(this).outerWidth();
                 let totalWidth = 0;
 
-                let slideArrowBtn = $scope.find(".scroller-btn");
-                let slideBtnLeft = $scope.find(".scroller-btn.left");
-                let slideBtnRight = $scope.find(".scroller-btn.right");
-                let navWrap = $scope.find(".slide_nav_tabs");
-                let navWrapItem = $scope.find(".slide_nav_tabs li");
+                let slideBtnLeft = $("#scroll_left_btn");
+                let slideBtnRight = $("#scroll_right_btn");
+                let navWrap = $(".slide_nav_tabs");
+                let navWrapItem = $(".slide_nav_tabs > li");
 
                 navWrapItem.each(function () {
                     totalWidth += $(this).outerWidth();
                 });
 
+                // Set initial scroll position to zero
+                navWrap.scrollLeft(0);
+
                 if (totalWidth > tabWrapWidth) {
-                    slideArrowBtn.removeClass("inactive");
-                } else {
-                    slideArrowBtn.addClass("inactive");
-                }
-
-                if (navWrap.scrollLeft() === 0) {
-                    slideBtnLeft.addClass("inactive");
-                } else {
                     slideBtnLeft.removeClass("inactive");
+                    slideBtnRight.removeClass("inactive");
+                } else {
+                    slideBtnLeft.addClass("inactive");
+                    slideBtnRight.addClass("inactive");
                 }
 
-                slideBtnRight.on("click", function () {
-                    navWrap.animate({scrollLeft: "+=200px"}, 300);
-                    console.log(navWrap.scrollLeft() + " px");
-                });
+                function updateScrollerButtons() {
+                    let scrollLeft = navWrap.scrollLeft();
+                    let scrollWidth = navWrap[0].scrollWidth;  // Corrected from navWrap.scrollWidth
+                    let navWidth = navWrap.outerWidth();
 
-                slideBtnLeft.on("click", function () {
-                    navWrap.animate({scrollLeft: "-=200px"}, 300);
-                });
-
-                scrollerHide(navWrap, slideBtnLeft, slideBtnRight);
-            });
-
-            function scrollerHide(navWrap, slideBtnLeft, slideBtnRight) {
-                let scrollLeftPrev = 0;
-                navWrap.scroll(function () {
-                    let $elem = $(this);
-                    let newScrollLeft = $elem.scrollLeft(),
-                        width = $elem.outerWidth(),
-                        scrollWidth = $elem.get(0).scrollWidth;
-                    if (scrollWidth - newScrollLeft === width) {
-                        slideBtnRight.addClass("inactive");
-                    } else {
-                        slideBtnRight.removeClass("inactive");
-                    }
-                    if (newScrollLeft === 0) {
+                    if (scrollLeft === 0) {
                         slideBtnLeft.addClass("inactive");
                     } else {
                         slideBtnLeft.removeClass("inactive");
                     }
-                    scrollLeftPrev = newScrollLeft;
+
+                    if (scrollLeft + navWidth >= scrollWidth) {
+                        slideBtnRight.addClass("inactive");
+                    } else {
+                        slideBtnRight.removeClass("inactive");
+                    }
+                }
+
+                slideBtnRight.on("click", function () {
+                    navWrap.animate({ scrollLeft: "+=200px" }, 300, function() {
+                        updateScrollerButtons();
+                    });
                 });
-            }
+
+                slideBtnLeft.on("click", function () {
+                    navWrap.animate({ scrollLeft: "-=200px" }, 300, function() {
+                        updateScrollerButtons();
+                    });
+                });
+
+                navWrap.on('scroll', updateScrollerButtons);
+                updateScrollerButtons();
+            });
 
             //=== Sticky Tab
             let stickyTab = $scope.find(".sticky_tab");

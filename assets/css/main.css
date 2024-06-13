@@ -12895,93 +12895,66 @@ ul.ordered-list li::before {
 }
 
 /*======== video popup 2========*/
-.play-button2 {
-  display: inline-block;
-}
-.play-button2 .video2-icon::before {
-  animation: pulse-red 2s infinite;
-  width: 110px;
-  height: 110px;
-}
 .play-button2 .video2-icon {
-  width: 90px;
-  height: 90px;
-  line-height: 90px;
-  border-radius: 50%;
-  color: #fff;
-  background: #d92c0a;
-  text-align: center;
-  font-size: 40px;
-  padding-top: 1px;
-  transition: 0.3s ease-out;
-}
-.play-button2 .video2-icon::before {
-  content: "";
-  width: 110px;
-  height: 110px;
-  top: -10px;
-  left: -10px;
-  position: absolute;
-  border-radius: 50%;
-}
-.play-button2.play-button-white .video2-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   color: #d92c0a;
   width: 50px;
   height: 50px;
-  line-height: 50px;
   font-size: 25px;
   z-index: 1;
   position: relative;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
 }
 @media screen and (min-width: 768px) {
-  .play-button2.play-button-white .video2-icon {
+  .play-button2 .video2-icon {
     width: 78px;
     height: 78px;
-    line-height: 78px;
   }
 }
-.play-button2.play-button-white .video2-icon::before {
+.play-button2 .video2-icon::before {
   content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
   top: -15px;
   left: -15px;
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
   animation: pulse-white 2s infinite;
-  z-index: -1;
 }
 @media screen and (min-width: 768px) {
-  .play-button2.play-button-white .video2-icon::before {
-    width: 106px;
-    height: 106px;
+  .play-button2 .video2-icon::before {
+    width: calc(100% + 28px);
+    height: calc(100% + 28px);
   }
 }
-.play-button2.play-button-white .video2-icon::after {
+.play-button2 .video2-icon::after {
   content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
   top: -30px;
   left: -30px;
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
   animation: pulse-white 2s infinite;
   animation-delay: 1.3s;
-  z-index: -2;
 }
 @media screen and (min-width: 768px) {
-  .play-button2.play-button-white .video2-icon::after {
-    height: 136px;
-    width: 136px;
+  .play-button2 .video2-icon::after {
+    width: calc(100% + 58px);
+    height: calc(100% + 58px);
   }
 }
 
 /*======== video popup 3========*/
 .btn-circle {
-  position: relative;
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -12994,7 +12967,7 @@ ul.ordered-list li::before {
 .btn-circle .text {
   position: absolute;
   height: 100%;
-  margin-top: 0px;
+  margin-top: 0;
   animation: rotate 8s linear infinite;
   color: #B9B9BA;
 }

@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 ?>
 <div class="wrapper tab_shortcode">
     <div class="sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
-        <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>
+        <span class="scroller-btn left" id="scroll_left_btn"><i class="arrow_carrot-left"></i></span>
         <ul class="nav nav-tabs ezd-d-flex slide_nav_tabs ezd-tab-menu <?php echo esc_attr($tab_auto_class); ?>">
             <?php
             $i = 0.2;
@@ -38,7 +38,7 @@ if (!defined('ABSPATH')) {
             endforeach;
             ?>
         </ul>
-        <span class="scroller-btn right" id="right"><i class="arrow_carrot-right"></i></span>
+        <span class="scroller-btn right" id="scroll_right_btn"><i class="arrow_carrot-right"></i></span>
     </div>
     <div class="tab-content">
         <?php

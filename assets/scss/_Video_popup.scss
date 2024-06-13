@@ -102,92 +102,57 @@
 
 /*======== video popup 2========*/
 .play-button2 {
-  display: inline-block;
   .video2-icon {
-    &::before {
-      animation: pulse-red 2s infinite;
-      width: 110px;
-      height: 110px;
-    }
-  }
-
-  .video2-icon {
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #d92c0a;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    z-index: 1;
+    position: relative;
     border-radius: 50%;
-    color: #fff;
-    background: #d92c0a;
-    text-align: center;
-    font-size: 40px;
-    padding-top: 1px;
     transition: 0.3s ease-out;
-
+    @media screen and (min-width: 768px) {
+      width: 78px;
+      height: 78px;
+    }
     &::before {
       content: "";
-      width: 110px;
-      height: 110px;
-      top: -10px;
-      left: -10px;
       position: absolute;
       border-radius: 50%;
-    }
-  }
-
-  &.play-button-white {
-    .video2-icon {
-      background: #fff;
-      color: #d92c0a;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      font-size: 25px;
-      z-index: 1;
-      position: relative;
-
+      background: rgba(255, 255, 255, 0.3);
+      z-index: -1;
+      top: -15px;
+      left: -15px;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      animation: pulse-white 2s infinite;
       @media screen and (min-width: 768px) {
-        width: 78px;
-        height: 78px;
-        line-height: 78px;
-      }
-
-      &::before {
-        content: "";
-        top: -15px;
-        left: -15px;
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        animation: pulse-white 2s infinite;
-        z-index: -1;
-
-        @media screen and (min-width: 768px) {
-          width: 106px;
-          height: 106px;
-        }
-      }
-
-      &::after {
-        content: "";
-        top: -30px;
-        left: -30px;
-        position: absolute;
-        width: 110px;
-        height: 110px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        animation: pulse-white 2s infinite;
-        animation-delay: 1.3s;
-        z-index: -2;
-
-        @media screen and (min-width: 768px) {
-          height: 136px;
-          width: 136px;
-        }
+        width: calc(100% + 28px);
+        height: calc(100% + 28px);
       }
     }
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: -1;
+      top: -30px;
+      left: -30px;
+      width: calc(100% + 60px);
+      height: calc(100% + 60px);
+      animation: pulse-white 2s infinite;
+      animation-delay: 1.3s;
+      @media screen and (min-width: 768px) {
+        width: calc(100% + 58px);
+        height: calc(100% + 58px);
+      }
+    }
+
   }
 }
 
@@ -195,7 +160,6 @@
 
 /*======== video popup 3========*/
 .btn-circle {
-  position: relative;
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -208,7 +172,7 @@
   .text {
     position: absolute;
     height: 100%;
-    margin-top: 0px;
+    margin-top: 0;
     animation: rotate 8s linear infinite;
     color: #B9B9BA;
     p {

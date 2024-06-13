@@ -1,11 +1,12 @@
 <?php
 /**
  * Plugin Name: Spider Elements
+ * Requires Plugins: elementor
  * Plugin URI: https://wordpress-plugins.spider-themes.net/spider-elements/
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Version: 1.0.0
  * Requires at least: 5.0
- * Tested up to: 6.4
+ * Tested up to: 6.5.4
  * Requires PHP: 7.4
  * Author: spider-themes
  * Author URI: https://spider-themes.net/spider-elements

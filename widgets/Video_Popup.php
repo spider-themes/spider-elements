@@ -387,11 +387,12 @@ class Video_Popup extends Widget_Base {
 					'unit' => 'px',
 					'size' => '90',
 				],
-				'selectors'  => [
-					'{{WRAPPER}} .video-icon, {{WRAPPER}}, {{WRAPPER}} .video2-icon::after' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .video2-icon::before' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .video2-icon, {{WRAPPER}} .video2-icon::before, {{WRAPPER}} .video2-icon::after' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-				],
+                'selectors'  => [
+                    '{{WRAPPER}} .video-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .video2-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .video2-icon::before' => 'width: calc({{SIZE}}{{UNIT}} + 30px); height: calc({{SIZE}}{{UNIT}} + 30px); top: -15px; left: -15px;',
+                    '{{WRAPPER}} .video2-icon::after' => 'width: calc({{SIZE}}{{UNIT}} + 60px); height: calc({{SIZE}}{{UNIT}} + 60px); top: -30px; left: -30px;',
+                ],
 				'condition' => [
 					'style' => [ '1', '2' ]
 				],

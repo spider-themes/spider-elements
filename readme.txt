@@ -3,7 +3,7 @@ Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, block, elementor blocks, spider element, spider
 Stable tag: 1.0.0
 Requires at least: 5.0
-Tested up to: 6.4
+Tested up to: 6.5.4
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
