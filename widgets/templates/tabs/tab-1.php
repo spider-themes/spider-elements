@@ -12,10 +12,10 @@ if (!defined('ABSPATH')) {
             foreach ( $tabs as $index => $item ) :
                 $tab_count = $index + 1;
                 $tab_title_setting_key = $this->get_repeater_setting_key('tab_title', 'tabs', $index);
-                $active = $tab_count == 1 ? 'active' : '';
+                $active = $tab_count == 1 ? ' active' : '';
                 $selected = $tab_count == 1 ? 'true' : 'false';
                 $this->add_render_attribute($tab_title_setting_key, [
-                    'class' => [ 'nav-link tab-item-title spe_tab_title', $active ],
+                    'class' => [ 'nav-link tab-item-title spel_tab_title', $active ],
                     'data-rel' => 'tab-content-' . $id_int . $tab_count,
                 ]);
                 ?>

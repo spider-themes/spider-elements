@@ -4,8 +4,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <section class="header_tabs_area">
-    <div
-            class="header_tab_items sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
+    <div class="header_tab_items sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
         <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>
         <ul class="nav nav-tabs slide_nav_tabs ezd-tab-menu <?php echo esc_attr($tab_auto_class); ?>">
             <?php

@@ -1,11 +1,12 @@
 (function ($, elementor) {
     "use strict";
-    var $window = $(elementor);
 
-    var spiderElements = {
+    const $window = $(elementor);
+
+    const spiderElements = {
         onInit: function () {
-            var E_FRONT = elementorFrontend;
-            var widgetHandlersMap = {
+            const E_FRONT = elementorFrontend;
+            const widgetHandlersMap = {
                 "landpagy_pricing_table_tabs.default":          spiderElements.pricing_table_tabs,
                 "docy_tabs.default":                            spiderElements.tabs,
                 "docy_testimonial.default":                     spiderElements.testimonial,
@@ -622,16 +623,18 @@
                 });
             }
 
+
+            // Tabs Arrow Icons show/hide automatic when item is more than container
             let tabSliderContainers = $scope.find(".tabs_sliders");
 
             tabSliderContainers.each(function () {
                 let tabWrapWidth = $(this).outerWidth();
                 let totalWidth = 0;
 
-                let slideBtnLeft = $("#scroll_left_btn");
-                let slideBtnRight = $("#scroll_right_btn");
-                let navWrap = $(".slide_nav_tabs");
-                let navWrapItem = $(".slide_nav_tabs > li");
+                let slideBtnLeft = $(this).find("#scroll_left_btn");
+                let slideBtnRight = $(this).find("#scroll_right_btn");
+                let navWrap = $(this).find(".slide_nav_tabs");
+                let navWrapItem = navWrap.children("li");
 
                 navWrapItem.each(function () {
                     totalWidth += $(this).outerWidth();
@@ -641,28 +644,28 @@
                 navWrap.scrollLeft(0);
 
                 if (totalWidth > tabWrapWidth) {
-                    slideBtnLeft.removeClass("inactive");
-                    slideBtnRight.removeClass("inactive");
+                    slideBtnLeft.removeClass("inactive-left-arrow");
+                    slideBtnRight.removeClass("inactive-right-arrow");
                 } else {
-                    slideBtnLeft.addClass("inactive");
-                    slideBtnRight.addClass("inactive");
+                    slideBtnLeft.addClass("inactive-left-arrow");
+                    slideBtnRight.addClass("inactive-right-arrow");
                 }
 
                 function updateScrollerButtons() {
                     let scrollLeft = navWrap.scrollLeft();
-                    let scrollWidth = navWrap[0].scrollWidth;  // Corrected from navWrap.scrollWidth
+                    let scrollWidth = navWrap[0].scrollWidth;
                     let navWidth = navWrap.outerWidth();
 
-                    if (scrollLeft === 0) {
-                        slideBtnLeft.addClass("inactive");
+                    if (scrollLeft <= 0) {
+                        slideBtnLeft.addClass("inactive-left-arrow");
                     } else {
-                        slideBtnLeft.removeClass("inactive");
+                        slideBtnLeft.removeClass("inactive-left-arrow");
                     }
 
-                    if (scrollLeft + navWidth >= scrollWidth) {
-                        slideBtnRight.addClass("inactive");
+                    if (scrollLeft + navWidth >= scrollWidth - 1) {
+                        slideBtnRight.addClass("inactive-right-arrow");
                     } else {
-                        slideBtnRight.removeClass("inactive");
+                        slideBtnRight.removeClass("inactive-right-arrow");
                     }
                 }
 
@@ -680,7 +683,19 @@
 
                 navWrap.on('scroll', updateScrollerButtons);
                 updateScrollerButtons();
+
+                // Center the active tab on load
+                let activeTab = navWrap.find(".nav-item .nav-link.active");
+                if (activeTab.length) {
+                    let activeTabPosition = activeTab.position().left;
+                    let activeTabWidth = activeTab.outerWidth();
+                    let navWrapCenter = navWrap.outerWidth() / 2;
+
+                    navWrap.scrollLeft(activeTabPosition - navWrapCenter + (activeTabWidth / 2));
+                    updateScrollerButtons();
+                }
             });
+
 
             //=== Sticky Tab
             let stickyTab = $scope.find(".sticky_tab");

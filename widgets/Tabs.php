@@ -426,7 +426,7 @@ class Tabs extends Widget_Base {
 				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spe_tab_title, {{WRAPPER}} .header_tab_items .spe_tab_title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tab_shortcode .spel_tab_title , {{WRAPPER}} .header_tab_items .spel_tab_title ' => 'color: {{VALUE}}',
 				)
 			]
 		);
@@ -439,7 +439,7 @@ class Tabs extends Widget_Base {
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title, 
-					{{WRAPPER}} .header_tab_items .spe_tab_title',
+					{{WRAPPER}} .header_tab_items .spel_tab_title ',
 
 			]
 		);
@@ -473,8 +473,8 @@ class Tabs extends Widget_Base {
 				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spe_tab_title:hover, 
-					 {{WRAPPER}} .header_tab_items .spe_tab_title:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tab_shortcode .spel_tab_title :hover, 
+					 {{WRAPPER}} .header_tab_items .spel_tab_title :hover' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -487,7 +487,7 @@ class Tabs extends Widget_Base {
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title:hover,
-					{{WRAPPER}} .header_tab_items .spe_tab_title:hover',
+					{{WRAPPER}} .header_tab_items .spel_tab_title :hover',
 			]
 		);
 
@@ -506,8 +506,8 @@ class Tabs extends Widget_Base {
 				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active, 
-					 {{WRAPPER}} .header_tab_items .spe_tab_title.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tab_shortcode .spel_tab_title .active, 
+					 {{WRAPPER}} .header_tab_items .spel_tab_title .active' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -521,7 +521,7 @@ class Tabs extends Widget_Base {
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					{{WRAPPER}} .header_tab_items .spe_tab_title.active',
+					{{WRAPPER}} .header_tab_items .spel_tab_title .active',
 
 			]
 		);
@@ -533,7 +533,7 @@ class Tabs extends Widget_Base {
 				'label'     => __( 'Border Top Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spe_tab_title.active::before,
+					'{{WRAPPER}} .tab_shortcode .spel_tab_title .active::before,
 					 {{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover::before' => 'background: {{VALUE}};',
 				),
 				'condition' => [
@@ -676,8 +676,7 @@ class Tabs extends Widget_Base {
 
 
 		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
+			Group_Control_Background::get_type(), [
 				'name'     => 'content_background',
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .tab-content',
@@ -699,8 +698,6 @@ class Tabs extends Widget_Base {
 			]
 		);
 
-		//
-
 		$this->end_controls_section(); // End Navigation Arrow
 
 	}
@@ -716,6 +713,7 @@ class Tabs extends Widget_Base {
 	 * Author: spider-themes
 	 */
 	protected function render() {
+
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
 
@@ -728,6 +726,7 @@ class Tabs extends Widget_Base {
 
 		//================= Template Parts =================//
 		include "templates/tabs/tab-{$settings['style']}.php";
+
 	}
 
 
