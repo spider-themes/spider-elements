@@ -5472,13 +5472,18 @@ ul.nav.nav-tabs {
 .feedback-section-four .slider-wrapper {
   position: absolute;
   width: 79vw;
-  right: -28vw;
+  right: -40vw;
   bottom: 9%;
 }
 @media (min-width: 1921px) {
   .feedback-section-four .slider-wrapper {
     right: -28vw;
     width: 55vw;
+  }
+}
+@media (max-width: 1600px) {
+  .feedback-section-four .slider-wrapper {
+    right: -30vw;
   }
 }
 @media (max-width: 1400px) {
