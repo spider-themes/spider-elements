@@ -455,7 +455,7 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Timeline.php' );
 			require_once( __DIR__ . '/widgets/Buttons.php' );
 			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
-            require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
+//            require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
             require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
@@ -512,9 +512,9 @@ if (!class_exists('SPEL')) {
 			if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\List_Item() );
 			}
-			if ( isset( $elements_opt[ 'spe_marquee_slides' ] ) && $elements_opt[ 'spe_marquee_slides' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Marquee_Slides() );
-			}
+//			if ( isset( $elements_opt[ 'spe_marquee_slides' ] ) && $elements_opt[ 'spe_marquee_slides' ] == 'on' ) {
+//				$widgets_manager->register( new \SPEL\Widgets\Marquee_Slides() );
+//			}
 			if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
 			}
