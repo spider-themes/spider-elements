@@ -1,7 +1,7 @@
 === Spider Elements - Addons for Elementor ===
-Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01
+Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01, codersajjad
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, block, elementor blocks, spider element, spider
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires at least: 5.0
 Tested up to: 6.5.4
 Requires PHP: 7.4
@@ -15,55 +15,38 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 
 = Widget List: available in the free version =
 
-* Accordion
-* Alerts Box
-* Before After
-* Blog
-* Buttons
-* Cheat Sheet
-* Counter
-* Instagram
-* Integrations
-* List Items
-* Marquee Slides
-* Pricing Table Switcher
-* Pricing Table Tabs
-* Skill Showcase
-* Tabs
-* Team Carousel
-* Testimonials
-* Timeline
-* Video Playlist
+#[**Accordion**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion/) - Effortlessly showcase text with the Accordion Widget.
+#[**Alerts Box**](https://wordpress-plugins.spider-themes.net/spider-elements/notice-message-widget/) - Create eye-catching alerts: customizable styles, colors, icons.
+#[**Before After**](https://wordpress-plugins.spider-themes.net/spider-elements/before-after/) - Compare images with interactive slider.
+#[**Blog**](https://wordpress-plugins.spider-themes.net/spider-elements/blog-grid/) - Display posts with customizable layout.
+#[**Sticky Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/sticky-tabs/) - Persistent navigation for easy access.
+#[**Cheat Sheet**](https://wordpress-plugins.spider-themes.net/spider-elements/cheatsheet/) - Quick reference guide for efficiency.
+#[**Counter**](https://wordpress-plugins.spider-themes.net/spider-elements/counter/) - Track and display statistics dynamically.
+#[**Video Popup**](https://wordpress-plugins.spider-themes.net/spider-elements/video-popup/) - Display videos in a pop-up window.
+#[**Integrations**](https://wordpress-plugins.spider-themes.net/spider-elements/integration/) - Showcase compatible platforms seamlessly.
+#[**List Items**](https://wordpress-plugins.spider-themes.net/spider-elements/list-item/) - Create stylish, organized items list.
+#[**Pricing Table Switcher**](https://wordpress-plugins.spider-themes.net/spider-elements/pricing-table-switcher/) - Create interactive, engaging pricing tables.
+#[**Pricing Table Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/pricing-table-tabs/) - Interactive, comparative pricing tables.
+#[**Skill Showcase**](https://wordpress-plugins.spider-themes.net/spider-elements/skill-showcase/) - Highlight skills effectively.
+#[**Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/tabs/) - Organize content, enhance user experience.
+#[**Team Carousel**](https://wordpress-plugins.spider-themes.net/spider-elements/team-carousel/) - Showcase team members dynamically.
+#[**Testimonials**](https://wordpress-plugins.spider-themes.net/spider-elements/testimonials/) - Showcase client feedback, build trust.
+#[**Timeline**](https://wordpress-plugins.spider-themes.net/spider-elements/timeline/) - Display events in chronological order.
+#[**Video Playlist**](https://wordpress-plugins.spider-themes.net/spider-elements/video-playlist/) - Engaging, curated video collections.
 
 
-## Widgets Short Description:
+= Widget List: available in the Pro version =
 
-## Accordion:
-#[**Accordion**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion/) - Effortlessly showcase your text in a concise and foldable manner with the Accordion Widget. Use it on your pages, posts, or anywhere on your site to condense page length, while enjoying custom options for color, icons, and styles.
+#[**Accordion Articles**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion-articles/) - Organize content with collapsible sections.
+#[**Box Hover**](https://wordpress-plugins.spider-themes.net/spider-elements/box-hover/) - Add interactive hover effects to boxes.
+#[**Flip Box**](https://wordpress-plugins.spider-themes.net/spider-elements/flipbox/) - Create interactive flip effects for content.
+#[**Feature Box**](https://wordpress-plugins.spider-themes.net/spider-elements/feature-box/) - Highlight features with style.
+#[**Hotspot**](https://wordpress-plugins.spider-themes.net/spider-elements/hotspot/) - Add interactive points of interest.
+#[**Image Hover**](https://wordpress-plugins.spider-themes.net/spider-elements/image-hover/) - Create dynamic hover effects for images.
+#[**Image Slider**](https://wordpress-plugins.spider-themes.net/spider-elements/image-slider/) - Display images in a dynamic slideshow.
+#[**Marquee Slider**](https://wordpress-plugins.spider-themes.net/spider-elements/marquee-slider/) - Display scrolling content dynamically.
+#[**Stack Image**](https://wordpress-plugins.spider-themes.net/spider-elements/stack-image/) - Display images in a stacked layout.
 
-## Alerts Box:
-#[**Alerts Box**](https://wordpress-plugins.spider-themes.net/spider-elements/notice-message-widget/) - Create eye-catching and informative alert messages with Elementor's Alerts Box widgets. Easily customize styles, colors, and icons to grab your visitors' attention.
-
-## Cheat Sheet:
-#[**Cheat Sheet**](https://wordpress-plugins.spider-themes.net/spider-elements/cheatsheet/) - A cheat sheet is a concise and handy reference guide that provides quick access to important information or instructions on a specific topic, allowing users to save time and increase productivity.
-
-## List Items:
-#[**List Items**](https://wordpress-plugins.spider-themes.net/spider-elements/list-item/) - The List Items Elementor Widget helps you create stylish and organized lists with ease. Perfect for showcasing content and key points on your website.
-
-## Pricing Table Switcher:
-#[**Pricing Table Switcher**](https://wordpress-plugins.spider-themes.net/spider-elements/pricing-table-switcher/) - Create interactive pricing tables with ease using the Pricing Table Switcher Elementor Widget. Engage visitors and showcase different pricing options effortlessly.
-
-## Pricing Table Tabs:
-#[**Pricing Table Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/pricing-table-tabs/) - Engage visitors with interactive pricing tables using the Pricing Table Tabs Elementor Widget. Compare and explore pricing options effortlessly.
-
-## Tabs:
-#[**Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/tabs/) - Create interactive and organized content sections with the Tabs Elementor Widget. Streamline information and enhance user experience.
-
-## Testimonials:
-#[**Testimonials**](https://wordpress-plugins.spider-themes.net/spider-elements/testimonials/) - The Testimonials Widget is a powerful tool for showcasing client feedback and testimonials on your website. Capture customer experiences and build trust with ease.
-
-## Video Playlist:
-#[**Video Playlist**](https://wordpress-plugins.spider-themes.net/spider-elements/video-playlist/) - The Video Playlist Widget allows you to create engaging video playlists on your website. Showcase multiple videos in a curated collection effortlessly.
 
 
 == Frequently Asked Questions ==
@@ -100,6 +83,12 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.1.0 (15 June 2024) =
+New: Added 'Icon Box' Widget 
+New: Pagination added in the blog widget
+Fixed: Testimonial Widget
+Fixed: Left/right arrow in the tabs widget
 
 = v1.0.0 =
 * Initial release
