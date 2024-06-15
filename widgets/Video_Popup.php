@@ -114,20 +114,6 @@ class Video_Popup extends Widget_Base {
 			]
 		);
 
-//		$this->add_control(
-//			'style',
-//			[
-//				'label'   => esc_html__( 'Video Popup Style', 'spider-elements' ),
-//				'type'    => Controls_Manager::SELECT,
-//				'options' => [
-//					'1' => esc_html__( 'Style 01', 'spider-elements' ),
-//					'2' => esc_html__( 'Style 02', 'spider-elements' ),
-//					'3' => esc_html__( 'Style 03', 'spider-elements' ),
-//				],
-//				'default' => '1',
-//			]
-//		);
-
 		$this->end_controls_section(); // End Preset Skin
 
 
