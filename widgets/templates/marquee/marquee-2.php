@@ -6,8 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="promo_area">
     <div class="marquee">
 		<?php
-		if ( ! empty ( $brand_name ) ) {
-			foreach ( $brand_name as $item ) {
+		if ( ! empty ( $brand_names ) ) {
+			foreach ( $brand_names as $item ) {
 				?>
                 <div class="slide">
                     <h2 class="se_marquee_title">

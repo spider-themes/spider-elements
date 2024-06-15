@@ -245,12 +245,18 @@
 
 /*** === Marquee Slides === ***/
 .marquee1::before{
-    background: url("../images/el-editor-preview/marquee1.png");
+    background: url("../images/el-editor-preview/marquee-slider-0.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 }
 .marquee2::before{
+    background: url("../images/el-editor-preview/marquee1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.marquee3::before{
     background: url("../images/el-editor-preview/marquee2.png");
     background-repeat: no-repeat;
     background-size: cover;
