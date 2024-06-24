@@ -506,7 +506,7 @@ class Tabs extends Widget_Base {
 				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spel_tab_title .active, 
+					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
 					 {{WRAPPER}} .header_tab_items .spel_tab_title .active' => 'color: {{VALUE}};',
 				)
 			]
