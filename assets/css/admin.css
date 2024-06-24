@@ -1243,4 +1243,133 @@ Table of Content:
   font-weight: 700;
 }
 
+.spel_theme_builder_wrapper.spel-modal.spel-fade {
+  transition: opacity 0.15s linear;
+}
+.spel_theme_builder_wrapper.spel-modal .modal-dialog {
+  max-width: 500px;
+  margin: 30px auto;
+}
+.spel_theme_builder_wrapper.spel-modal .modal-dialog.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+.spel_theme_builder_wrapper.spel-modal form {
+  width: 100%;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .close:hover {
+  color: #000;
+  text-decoration: none;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .modal-header,
+.spel_theme_builder_wrapper.spel-modal form .modal-content .modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .modal-footer {
+  border-top: 1px solid #e9ecef;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .modal-title {
+  margin: 0;
+  line-height: 1.5;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .modal-body .input-group {
+  margin-bottom: 1rem;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .btn.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .btn.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .btn.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .btn.btn-primary:hover {
+  color: #fff;
+  background-color: #0056b3;
+  border-color: #004085;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group {
+  display: flex;
+  align-items: center;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch {
+  margin-left: 1rem;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input {
+  display: none;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input + .admin-control-label {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 1rem;
+  background-color: #ccc;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input + .admin-control-label:before {
+  content: "";
+  position: absolute;
+  top: 0.1rem;
+  left: 0.1rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input:checked + .admin-control-label {
+  background-color: #007bff;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input:checked + .admin-control-label:before {
+  transform: translateX(1rem);
+}
+
 /*# sourceMappingURL=admin.css.map */

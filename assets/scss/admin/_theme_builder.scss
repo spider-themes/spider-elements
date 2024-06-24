@@ -1,0 +1,162 @@
+// Basic styling for the modal
+.spel_theme_builder_wrapper {
+  &.spel-modal {
+    &.spel-fade {
+      transition: opacity 0.15s linear;
+    }
+
+    .modal-dialog {
+      max-width: 500px;
+      margin: 30px auto;
+
+      &.modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        min-height: calc(100% - 1rem);
+      }
+    }
+
+    form {
+      width: 100%;
+
+      .modal-content {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0.3rem;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+
+        .close {
+          float: right;
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1;
+          color: #000;
+          text-shadow: 0 1px 0 #fff;
+          opacity: 0.5;
+
+          &:hover {
+            color: #000;
+            text-decoration: none;
+          }
+        }
+
+        .modal-header,
+        .modal-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          border-bottom: 1px solid #e9ecef;
+        }
+
+        .modal-footer {
+          border-top: 1px solid #e9ecef;
+        }
+
+        .modal-title {
+          margin: 0;
+          line-height: 1.5;
+        }
+
+        .modal-body {
+          position: relative;
+          flex: 1 1 auto;
+          padding: 1rem;
+
+          .input-group {
+            margin-bottom: 1rem;
+          }
+        }
+
+        .form-control {
+          display: block;
+          width: 100%;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn {
+          &.btn-default {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+
+            &:hover {
+              color: #333;
+              background-color: #e6e6e6;
+              border-color: #adadad;
+            }
+          }
+
+          &.btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+
+            &:hover {
+              color: #fff;
+              background-color: #0056b3;
+              border-color: #004085;
+            }
+          }
+        }
+
+        .switch-group {
+          display: flex;
+          align-items: center;
+
+          .admin-input-switch {
+            margin-left: 1rem;
+
+            .admin-control-input {
+              display: none;
+
+              & + .admin-control-label {
+                position: relative;
+                display: inline-block;
+                width: 2rem;
+                height: 1rem;
+                background-color: #ccc;
+                border-radius: 1rem;
+                cursor: pointer;
+
+                &:before {
+                  content: "";
+                  position: absolute;
+                  top: 0.1rem;
+                  left: 0.1rem;
+                  width: 0.8rem;
+                  height: 0.8rem;
+                  background-color: #fff;
+                  border-radius: 50%;
+                  transition: 0.2s;
+                }
+              }
+
+              &:checked + .admin-control-label {
+                background-color: #007bff;
+
+                &:before {
+                  transform: translateX(1rem);
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+}

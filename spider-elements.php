@@ -191,7 +191,8 @@ if (!class_exists('SPEL')) {
 		 *
 		 * @access public
 		 */
-		public function core_includes() {
+		public function core_includes(): void
+        {
 
 			// Extra functions
 			require_once __DIR__ . '/includes/extra.php';
@@ -203,6 +204,7 @@ if (!class_exists('SPEL')) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 				require_once __DIR__ . '/includes/classes/Plugin_Installer.php';
+                require_once __DIR__ . '/includes/classes/Theme_Builder.php';
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
@@ -257,6 +259,7 @@ if (!class_exists('SPEL')) {
 
                 //Classes
                 new SPEL\includes\classes\Plugin_Installer();
+                new SPEL\includes\classes\Theme_Builder();
             }
 
 		}
