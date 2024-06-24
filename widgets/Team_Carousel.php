@@ -242,6 +242,12 @@ class Team_Carousel extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'name_heading', [
+				'label'     => __( 'Name', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+			]
+		);
 
 		$this->start_controls_tabs(
 			'style_team_title_tabs'
@@ -263,12 +269,11 @@ class Team_Carousel extends Widget_Base {
 		); //End Author Name
 		$this->add_control(
 			'team_name_color', [
-				'label'     => __( 'Name Color', 'spider-elements' ),
+				'label'     => __( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-style-three .name,{{WRAPPER}} .card-style-eight .name' => 'color: {{VALUE}};',
 				],
-				'separator' => 'after'
 			]
 		);
 
@@ -283,17 +288,24 @@ class Team_Carousel extends Widget_Base {
 
 		$this->add_control(
 			'team_name_hover_color', [
-				'label'     => __( 'Name Hover Color', 'spider-elements' ),
+				'label'     => __( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-style-three .name:hover,{{WRAPPER}} .card-style-eight .name:hover' => 'color: {{VALUE}};',
 				],
-				'separator' => 'after'
 			]
 		);
 
 		$this->end_controls_tab(); // End Active Tab Title
 		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+
+		$this->add_control(
+			'designation_heading', [
+				'label'     => __( 'Designation', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
@@ -303,7 +315,7 @@ class Team_Carousel extends Widget_Base {
 		); //End Author Name
 		$this->add_control(
 			'team_position_color', [
-				'label'     => __( 'Position Color', 'spider-elements' ),
+				'label'     => __( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .card-style-three .post,{{WRAPPER}} .card-style-eight .post' => 'color: {{VALUE}};',

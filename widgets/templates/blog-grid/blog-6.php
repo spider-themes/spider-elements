@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 			$thumbnail_url = $thumbnail_url ? 'style="background-image: url(' . esc_url( $thumbnail_url ) . ');"' : '';
 			?>
-            <div class="item">
+            <div class="item item-margin">
                 <div class="card-style-six position-relative" <?php echo $thumbnail_url ?>>
                     <a href="<?php the_permalink(); ?>" class="blog-item-six w-100 h-100 d-flex align-items-end">
                         <h2 class="blog-six-title text-lg"><?php echo spel_get_title_length( $settings, 'title_length' ) ?></h2>

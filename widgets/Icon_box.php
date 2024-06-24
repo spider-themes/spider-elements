@@ -515,283 +515,6 @@ class Icon_box extends Widget_Base {
 		//end Box style control section------------------------------//
 
 
-		//start Icon style section----------------------//
-		$this->start_controls_section(
-			'icon_style',
-			[
-				'label' => esc_html__( 'Icon', 'spider-elements' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_responsive_control(
-			'icon_vertical_alignment',
-			[
-				'label'     => esc_html__( 'Vertical Alignment', 'spider-elements' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => [
-					'flex-start' => [
-						'title' => esc_html__( 'Top', 'spider-elements' ),
-						'icon'  => 'eicon-v-align-top',
-					],
-					'center'     => [
-						'title' => esc_html__( 'Middle', 'spider-elements' ),
-						'icon'  => 'eicon-v-align-middle',
-					],
-					'flex-end'   => [
-						'title' => esc_html__( 'Bottom', 'spider-elements' ),
-						'icon'  => 'eicon-v-align-bottom',
-					],
-				],
-				'default'   => 'flex-start',
-				'selectors' => [
-					'{{WRAPPER}} .box_icon' => 'display: flex; align-items: {{VALUE}};',
-				],
-				'condition' => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_bg_color',
-			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon' => 'background: {{VALUE}}',
-				],
-				'condition' => [
-					'style'  => [ '2' ],
-					'style!' => [ '1' ]
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'icon_size',
-			[
-				'label' => esc_html__( 'Size', 'spider-elements' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'range' => [
-					'px' => [
-						'min' => 6,
-						'max' => 300,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-
-		$this->add_responsive_control(
-			'box_icon_space',
-			[
-				'label'      => esc_html__( 'Spacing', 'spider-elements' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'default'    => [
-					'size' => 20,
-				],
-				'range'      => [
-					'px'  => [
-						'max' => 200,
-					],
-					'em'  => [
-						'max' => 10,
-					],
-					'rem' => [
-						'max' => 10,
-					],
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .box_main_icon' => 'margin-right: {{SIZE}}{{UNIT}}',
-				],
-				'condition'  => [
-					'style'  => [ '1' ],
-					'style!' => [ '2' ]
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'box2_icon_space',
-			[
-				'label'      => esc_html__( 'Spacing', 'spider-elements' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'default'    => [
-					'size' => 10,
-				],
-				'range'      => [
-					'px'  => [
-						'max' => 200,
-					],
-					'em'  => [
-						'max' => 10,
-					],
-					'rem' => [
-						'max' => 10,
-					],
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .box_two_title' => 'margin-top: {{SIZE}}{{UNIT}}',
-				],
-				'condition'  => [
-					'style'  => [ '2' ],
-					'style!' => [ '1' ]
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'box_icon_padding',
-			[
-				'label'      => esc_html__( 'Padding', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px' ],
-				'range'      => [
-					'px' => [
-						'min'  => - 100,
-						'max'  => 100,
-						'step' => 5,
-					],
-				],
-				'default'    => [
-					'unit' => 'px',
-					'size' => 10,
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .box_main_icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition'  => [
-					'style'  => [ '2' ],
-					'style!' => [ '1' ]
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'box_icon_radius', [
-				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .box_main_icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition'  => [
-					'style'  => [ '2' ],
-					'style!' => [ '1' ]
-				],
-			]
-		);
-
-		$this->add_control(
-			'svg_heading',
-			[
-				'label'     => esc_html__( 'Svg Color', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->start_controls_tabs(
-			'svg_style_tabs'
-		);
-
-		//start svg normal----
-		$this->start_controls_tab(
-			'svg_normal_tab',
-			[
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'svg_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'svg_fill_color',
-			[
-				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}',
-					//			'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-		//end svg normal-----//
-
-		//start svg Hover ------
-		$this->start_controls_tab(
-			'svg_hover_tab',
-			[
-				'label' => esc_html__( 'Hover', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'svg_hover_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
-					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'stroke: {{VALUE}}',
-//					'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'svg_fill_hover_color',
-			[
-				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
-					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'fill: {{VALUE}}',
-//					'{{WRAPPER}} .box_main_icon svg stop' => 'stop-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-		//end svg hover//------
-
-		$this->end_controls_tabs();
-		//end normal/hover tabs/////-----
-
-		$this->end_controls_section();
-		//end icon box Icon and svg style section------------------------//
-
-
 		//start icon box contents section-----------------------------//
 		$this->start_controls_section(
 			'box_contents',
@@ -943,7 +666,250 @@ class Icon_box extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		//end icon box description style controls-------------------//
+		//end icon box content style controls-------------------//
+
+
+		//start Icon style section----------------------//
+		$this->start_controls_section(
+			'icon_style',
+			[
+				'label' => esc_html__( 'Icon', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'icon_vertical_alignment',
+			[
+				'label'     => esc_html__( 'Vertical Alignment', 'spider-elements' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
+					'flex-start' => [
+						'title' => esc_html__( 'Top', 'spider-elements' ),
+						'icon'  => 'eicon-v-align-top',
+					],
+					'center'     => [
+						'title' => esc_html__( 'Middle', 'spider-elements' ),
+						'icon'  => 'eicon-v-align-middle',
+					],
+					'flex-end'   => [
+						'title' => esc_html__( 'Bottom', 'spider-elements' ),
+						'icon'  => 'eicon-v-align-bottom',
+					],
+				],
+				'default'   => 'flex-start',
+				'selectors' => [
+					'{{WRAPPER}} .box_icon' => 'display: flex; align-items: {{VALUE}};',
+				],
+				'condition' => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_bg_color',
+			[
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon' => 'background: {{VALUE}}',
+				],
+				'condition' => [
+					'style'  => [ '2' ],
+					'style!' => [ '1' ]
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'icon_size',
+			[
+				'label' => esc_html__( 'Size', 'spider-elements' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 6,
+						'max' => 300,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .box_main_icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+
+		$this->add_responsive_control(
+			'box_icon_space',
+			[
+				'label'      => esc_html__( 'Spacing', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'default'    => [
+					'size' => 20,
+				],
+				'range'      => [
+					'px'  => [
+						'max' => 200,
+					],
+					'em'  => [
+						'max' => 10,
+					],
+					'rem' => [
+						'max' => 10,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .box_main_icon' => 'margin-right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .box_two_title' => 'margin-top: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'box_icon_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => - 100,
+						'max'  => 100,
+						'step' => 5,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 10,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .box_main_icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition'  => [
+					'style'  => [ '2' ],
+					'style!' => [ '1' ]
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'box_icon_radius', [
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
+					'{{WRAPPER}} .box_main_icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition'  => [
+					'style'  => [ '2' ],
+					'style!' => [ '1' ]
+				],
+			]
+		);
+
+		$this->add_control(
+			'svg_heading',
+			[
+				'label'     => esc_html__( 'Svg Color', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->start_controls_tabs(
+			'svg_style_tabs'
+		);
+
+		//start svg normal----
+		$this->start_controls_tab(
+			'svg_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'svg_color',
+			[
+				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'svg_fill_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+		//end svg normal-----//
+
+		//start svg Hover ------
+		$this->start_controls_tab(
+			'svg_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'svg_hover_color',
+			[
+				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'stroke: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'svg_fill_hover_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'fill: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+		//end svg hover//------
+
+		$this->end_controls_tabs();
+		//end normal/hover tabs/////-----
+
+		$this->end_controls_section();
+		//end icon box Icon and svg style section------------------------//
+
 
 		//start icon box background style section------------//
 		$this->start_controls_section(

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php
 							echo ! empty( $item['company_name'] ) ? '<span class="category se_category">' . esc_html( $item['company_name'] ) . '</span>' : '';
 
-							echo ! empty( $item['review_content'] ) ? '<h3 class="testimonial-title se_review_content">' . esc_html( $item['review_content'] ) . '</h3>' : '';
+							echo ! empty( $item['review_content'] ) ? '<h3 class="testimonial-title spel_review_content">' . esc_html( $item['review_content'] ) . '</h3>' : '';
 
 							echo ! empty( $item['title'] ) ? '<span class="testimonial-subtitle se_title">' . esc_html( $item['title'] ) . '</span>' : '';
 							?>

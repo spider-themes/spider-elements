@@ -1,7 +1,6 @@
 .blog_grid_gap {
   row-gap: 50px;
 }
-//=======================//
 
 // Blog One
 .blog-meta-two {
@@ -11,6 +10,8 @@
     display: inline-block;
     position: relative;
     margin-bottom: unset !important;
+    overflow: hidden;
+    padding: 0;
     a {
       overflow: hidden;
       img {
@@ -138,7 +139,6 @@
 }
 
 // blog Two
-
 .blog-meta-one {
   margin-top: 0;
   transition: 0.3s;
@@ -146,9 +146,7 @@
   .post-img {
     overflow: hidden;
     display: inline-block;
-    a{
-      overflow:hidden;
-    }
+    padding: 0;
     img {
       transition: all 0.3s ease-in-out;
     }
@@ -445,6 +443,9 @@
 
 
 // Card Six
+.item-margin {
+  margin: 0 12px;
+}
 .card-style-six {
   background-position: center;
   background-repeat: no-repeat;
@@ -467,6 +468,7 @@
   }
   .blog-item-six {
     padding: 0 0 20px 24px;
+    text-decoration: none !important;
     .blog-six-title {
       font-family: "gordita";
       font-size: 22px;
@@ -533,6 +535,9 @@
     font-size: 17px;
     font-weight: 500;
     color: #31795a;
+    &:hover {
+      text-decoration: none;
+    }
     &.prev, &.next {
       display: flex;
       align-items: center;

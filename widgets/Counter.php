@@ -16,8 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
+ *
  * @package spider\Widgets
- * @since 1.0.0
+ * @since   1.0.0
  */
 class Counter extends Widget_Base {
 
@@ -195,28 +196,15 @@ class Counter extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'style_bg',
-				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .skill_item_two .radial-progress',
+				'name'      => 'style_bg',
+				'types'     => [ 'classic', 'gradient' ],
+				'exclude'   => [ 'image' ],
+				'selector'  => '{{WRAPPER}} .skill_item_two .radial-progress',
 				'condition' => [
 					'style' => [ '2' ]
 				]
 			]
 		);
-
-//		$this->add_control(
-//			'style_bg',
-//			[
-//				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
-//				'type'      => Controls_Manager::COLOR,
-//				'selectors' => [
-//					'{{WRAPPER}} .skill_item_two .radial-progress' => 'background: {{VALUE}};',
-//				],
-//				'condition' => [
-//					'style' => [ '2' ]
-//				]
-//			]
-//		);
 
 		$this->add_control(
 			'style_radius',
@@ -314,6 +302,15 @@ class Counter extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'number_typo',
+				'selector' => '{{WRAPPER}} .counters-container .skill_item .counter-wrap,
+							   {{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap',
+			]
+
+		);
+
 		$this->add_control(
 			'number_color',
 			[
@@ -326,15 +323,6 @@ class Counter extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'number_typo',
-				'selector' => '{{WRAPPER}} .counters-container .skill_item .counter-wrap,
-							   {{WRAPPER}} .skill_item_two .skill_pr .counter2-wrap',
-			]
-
-		);
-
 		$this->add_responsive_control(
 			'prefix_suffix_size',
 			[
@@ -342,12 +330,12 @@ class Counter extends Widget_Base {
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', '%' ],
 				'range'      => [
-					'px' => [
+					'px'  => [
 						'min'  => 0,
 						'max'  => 500,
 						'step' => 1,
 					],
-					'em' => [
+					'em'  => [
 						'min'  => 0,
 						'max'  => 50,
 						'step' => 0.1,
@@ -357,20 +345,20 @@ class Counter extends Widget_Base {
 						'max'  => 50,
 						'step' => 0.1,
 					],
-					'%' => [
+					'%'   => [
 						'min'  => 0,
 						'max'  => 100,
 						'step' => 1,
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .counter-wrap' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .counter-wrap'  => 'gap: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .counter2-wrap' => 'gap: {{SIZE}}{{UNIT}};'
 				],
 				'separator'  => 'before',
 			]
 		);
-		
+
 		$this->end_controls_section();
 
 		// Control for text color
@@ -381,24 +369,26 @@ class Counter extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'counter_text_typo',
+				'selector' => '{{WRAPPER}} .counters-container .spel_counter_title,
+							   {{WRAPPER}} .skill_item .spel_counter_title'
+			]
+		);
+
 		$this->add_control(
 			'counter_text_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .skill_item h6' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .counters-container h6' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .skill_item .spel_counter_title'         => 'color: {{VALUE}};',
+					'{{WRAPPER}} .counters-container .spel_counter_title' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'counter_text_typo',
-				'selector' => '{{WRAPPER}} .counters-container h6'
-			]
-		);
 		$this->add_responsive_control(
 			'counter_text_margin',
 			[
@@ -416,8 +406,8 @@ class Counter extends Widget_Base {
 					'size' => 6,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .skill_item h6'         => 'margin-top: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .counters-container h6' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .skill_item .spel_counter_title'         => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .counters-container .spel_counter_title' => 'margin-top: {{SIZE}}{{UNIT}}',
 
 				],
 			]

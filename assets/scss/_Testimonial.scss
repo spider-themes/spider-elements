@@ -965,7 +965,6 @@
 }
 
 // feedback-section-five css
-
 .feedback-section-five {
   .slick-arrow-one {
     position: absolute;
@@ -985,12 +984,19 @@
   .feedback-slider-one {
     margin-left: -35px;
     margin-right: -35px;
-
     .item {
       margin: 0 35px;
-      //@media (max-width: 1399px){
+      //@media  screen and (max-width: 1399px) {
       //  margin: 0 15px;
       //}
+      .feedback-block-one {
+        .review {
+          @media (max-width: 1024px) {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+          }
+        }
+      }
     }
   }
 }
@@ -1166,6 +1172,7 @@
   .bg-wrapper {
     background: #1ea243;
     padding: 125px 150px 165px 110px;
+    transition: 0.3s;
     @media (min-width: 1200px) and (max-width: 1399px) {
       padding: 80px 100px 130px 70px;
     }
@@ -1184,9 +1191,11 @@
 
     p {
       font-size: 40px;
-      line-height: 1.7em;
       color: #fff;
+      line-height: 1.7em;
       margin: 50px 0 95px;
+      transition: 0.3s;
+
       @media (min-width: 1200px) and (max-width: 1399px) {
         font-size: 35px;
         margin-bottom: 70px;
@@ -1203,6 +1212,7 @@
 
     .name {
       font-size: 20px;
+      transition: 0.3s;
     }
 
     .slider-arrows {
@@ -1412,7 +1422,7 @@
       font-size: 20px;
       font-weight: 500;
       line-height: 30px;
-      color: #fff;
+      color: #cecece;
       margin-bottom: 2px;
     }
 
@@ -1539,25 +1549,27 @@
   }
 }
 
-// .carousel-control-prev,
-// .carousel-control-next {
-//   width: 40px;
-//   height: 40px;
-//   background-color: #333;
-//   text-align: center;
-//   border-radius: 50%;
-//   line-height: 40px;
-//   color: #fff;
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   cursor: pointer;
-// }
-
-// .carousel-control-prev {
-//   left: 0;
-// }
-
-// .carousel-control-next {
-//   right: 0;
-// }
+// testimonial 5 css
+.testimonial-area {
+  .spel_review_content {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-family: "Playfair Display", serif;
+    color: #000;
+  }
+  .se_title {
+    @media screen and (max - width: 1201px) {
+      margin-top: 50px;
+    }
+  }
+  .navigation {
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 28px;
+      color: #000;
+    }
+  }
+}

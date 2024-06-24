@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	if ( ! empty( $settings['counter_text'] ) ) {
 		?>
-        <h6>
+        <h6 class="spel_counter_title">
 			<?php echo $settings['counter_text']; ?>
         </h6>
 		<?php

@@ -154,6 +154,7 @@ class Alerts_Box extends Widget_Base {
 				'label'       => esc_html__( 'Description', 'spider-elements' ),
 				'type'        => Controls_Manager::WYSIWYG,
 				'label_block' => true,
+				'default'     => 'Do one don’t get shirty with me naff only a quid the full monty at public school burke Jeffrey smashing, blatant ruddy fanny around Charles.'
 			]
 		);
 
@@ -247,7 +248,8 @@ class Alerts_Box extends Widget_Base {
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .dual-box-wrapper, .dual-box-wrapper .dual-box-content' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dual-box-wrapper' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dual-box-wrapper .dual-box-content' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
 					'display_type'  => [ 'dual-box' ],

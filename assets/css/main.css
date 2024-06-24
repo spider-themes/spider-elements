@@ -4484,9 +4484,11 @@ a:hover, a:focus {
 }
 .accordion .doc_accordion .card-header button .collapsed-icon {
   display: none;
+  line-height: 0;
 }
 .accordion .doc_accordion .card-header button .expanded-icon {
   display: block;
+  line-height: 0;
 }
 .accordion .doc_accordion .card-header button.icon-align-left {
   padding-left: 60px;
@@ -4820,6 +4822,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
+  margin-bottom: -1px;
   border: 0;
 }
 .tabs_sliders ul.nav-tabs .nav-item {
@@ -5892,6 +5895,12 @@ body.remove .tab_fixed.header_tab_items {
 .feedback-section-five .feedback-slider-one .item {
   margin: 0 35px;
 }
+@media (max-width: 1024px) {
+  .feedback-section-five .feedback-slider-one .item .feedback-block-one .review {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
 
 .feedback-block-three {
   position: relative;
@@ -6035,6 +6044,7 @@ body.remove .tab_fixed.header_tab_items {
 .feedback-section-four .bg-wrapper {
   background: #1ea243;
   padding: 125px 150px 165px 110px;
+  transition: 0.3s;
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
   .feedback-section-four .bg-wrapper {
@@ -6058,9 +6068,10 @@ body.remove .tab_fixed.header_tab_items {
 }
 .feedback-section-four .bg-wrapper p {
   font-size: 40px;
-  line-height: 1.7em;
   color: #fff;
+  line-height: 1.7em;
   margin: 50px 0 95px;
+  transition: 0.3s;
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
   .feedback-section-four .bg-wrapper p {
@@ -6082,6 +6093,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 .feedback-section-four .bg-wrapper .name {
   font-size: 20px;
+  transition: 0.3s;
 }
 .feedback-section-four .bg-wrapper .slider-arrows {
   position: absolute;
@@ -6284,7 +6296,7 @@ body.remove .tab_fixed.header_tab_items {
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
-  color: #fff;
+  color: #cecece;
   margin-bottom: 2px;
 }
 .testimonial-area .author-info p {
@@ -6387,6 +6399,26 @@ body.remove .tab_fixed.header_tab_items {
 }
 .testimonial-item:hover {
   box-shadow: 0 30px 60px -15px rgba(131, 146, 167, 0.3) !important;
+}
+
+.testimonial-area .spel_review_content {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  color: #000;
+}
+@media screen and (max-width: 1201px) {
+  .testimonial-area .se_title {
+    margin-top: 50px;
+  }
+}
+.testimonial-area .navigation .swiper-button-next:after,
+.testimonial-area .navigation .swiper-button-prev:after {
+  font-size: 28px;
+  color: #000;
 }
 
 /*----------------- Video Playlist Widget CSS ------------------*/
@@ -11927,19 +11959,19 @@ ul.ordered-list li::before {
   margin-top: 30px;
 }
 
-.cheatsheet_accordian .card {
+.cheatsheet_accordion .card {
   border: 0;
   padding: 0;
   overflow: visible;
   margin-top: 10px;
   background: transparent;
 }
-.cheatsheet_accordian .card .card-header {
+.cheatsheet_accordion .card .card-header {
   padding: 0;
   border: 0;
   background: transparent;
 }
-.cheatsheet_accordian .card .card-header button {
+.cheatsheet_accordion .card .card-header button {
   padding: 0;
   font-size: 20px;
   font-weight: 600;
@@ -11950,19 +11982,19 @@ ul.ordered-list li::before {
   margin-left: 8px;
   border: none;
 }
-.cheatsheet_accordian .card .card-header button .minus {
+.cheatsheet_accordion .card .card-header button .minus {
   display: inline-block;
 }
-.cheatsheet_accordian .card .card-header button .pluse {
+.cheatsheet_accordion .card .card-header button .pluse {
   display: none;
 }
-.cheatsheet_accordian .card .card-header button.active .pluse {
+.cheatsheet_accordion .card .card-header button.active .pluse {
   display: inline-block;
 }
-.cheatsheet_accordian .card .card-header button.active .minus {
+.cheatsheet_accordion .card .card-header button.active .minus {
   display: none;
 }
-.cheatsheet_accordian .collapse.show {
+.cheatsheet_accordion .collapse.show {
   display: block;
 }
 
@@ -12022,6 +12054,7 @@ ul.ordered-list li::before {
   font-weight: 500;
   font-size: 20px;
   color: #212529;
+  cursor: pointer;
 }
 .card-style-three .name:hover {
   color: #244034;
@@ -12452,6 +12485,8 @@ ul.ordered-list li::before {
   display: inline-block;
   position: relative;
   margin-bottom: unset !important;
+  overflow: hidden;
+  padding: 0;
 }
 .blog-meta-two .post-img a {
   overflow: hidden;
@@ -12559,9 +12594,7 @@ ul.ordered-list li::before {
 .blog-meta-one .post-img {
   overflow: hidden;
   display: inline-block;
-}
-.blog-meta-one .post-img a {
-  overflow: hidden;
+  padding: 0;
 }
 .blog-meta-one .post-img img {
   transition: all 0.3s ease-in-out;
@@ -12799,6 +12832,10 @@ ul.ordered-list li::before {
   text-decoration: none;
 }
 
+.item-margin {
+  margin: 0 12px;
+}
+
 .card-style-six {
   background-position: center;
   background-repeat: no-repeat;
@@ -12826,6 +12863,7 @@ ul.ordered-list li::before {
 }
 .card-style-six .blog-item-six {
   padding: 0 0 20px 24px;
+  text-decoration: none !important;
 }
 .card-style-six .blog-item-six .blog-six-title {
   font-family: "gordita";
@@ -12899,6 +12937,9 @@ ul.ordered-list li::before {
   font-size: 17px;
   font-weight: 500;
   color: #31795a;
+}
+.spel-pagination a:hover {
+  text-decoration: none;
 }
 .spel-pagination a.prev, .spel-pagination a.next {
   display: flex;

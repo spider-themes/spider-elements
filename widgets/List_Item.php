@@ -161,10 +161,26 @@ class List_Item extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'text_indent', [
+				'label'     => __( 'Text Indent', 'spider-elements' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .steps-panel .ordered-list li' => is_rtl() ? 'padding-right: {{SIZE}}{{UNIT}};' : 'padding-left: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_responsive_control(
 			'icon_align', [
 				'label'        => __( 'Alignment', 'spider-elements' ),
 				'type'         => Controls_Manager::CHOOSE,
+				'separator' => 'after',
 				'options'      => [
 					'left'   => [
 						'title' => __( 'Left', 'spider-elements' ),
@@ -183,48 +199,32 @@ class List_Item extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'content_typography',
+				'selector' => '{{WRAPPER}} .steps-panel .ordered-list li',
+			]
+		);
+
 		$this->add_control(
 			'text_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => __( 'Normal Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li' => 'color: {{VALUE}};',
 				],
-				'separator' => 'before'
 			]
 		);
 
 		$this->add_control(
 			'text_color_hover', [
-				'label'     => __( 'Hover', 'spider-elements' ),
+				'label'     => __( 'Hover Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li:hover' => 'color: {{VALUE}};',
 				],
-			]
-		);
-
-		$this->add_control(
-			'text_indent', [
-				'label'     => __( 'Text Indent', 'spider-elements' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .steps-panel .ordered-list li' => is_rtl() ? 'padding-right: {{SIZE}}{{UNIT}};' : 'padding-left: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'content_typography',
-				'selector' => '{{WRAPPER}} .steps-panel .ordered-list li',
 			]
 		);
 
@@ -317,6 +317,22 @@ class List_Item extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'list_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .steps-panel',
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(), [
+				'name'     => 'sec_box_shadow',
+				'selector' => '{{WRAPPER}} .steps-panel',
+			]
+		);
+
 		$this->add_responsive_control(
 			'sec_margin', [
 				'label'      => __( 'Padding', 'spider-elements' ),
@@ -328,13 +344,6 @@ class List_Item extends Widget_Base {
 				'default'    => [
 					'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
 				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(), [
-				'name'     => 'sec_box_shadow',
-				'selector' => '{{WRAPPER}} .steps-panel',
 			]
 		);
 

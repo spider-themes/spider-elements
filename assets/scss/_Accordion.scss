@@ -321,9 +321,11 @@
         }
         .collapsed-icon {
           display: none;
+          line-height: 0;
         }
         .expanded-icon {
           display: block;
+          line-height: 0;
         }
         &.icon-align-left {
           padding-left: 60px;

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <div class="single-slide">
                             <div class="ezd-grid ezd-grid-cols-12 testimonial-widget">
                                 <div class="ezd-lg-col-6">
-                                    <span><?php esc_html_e('REVIEWS', 'spider-elements'); ?></span>
+                                    <span class="spel_top_text"><?php esc_html_e('REVIEWS', 'spider-elements'); ?></span>
 									<?php
 									echo ! empty( $item[ 'review_content' ] ) ? '<p class="review-text se_review_content">' . esc_html( $item[ 'review_content' ] ) . '</p>' : '';
 									?>

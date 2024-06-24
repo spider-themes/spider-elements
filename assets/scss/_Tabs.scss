@@ -290,6 +290,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       display: flex;
       flex-wrap: nowrap;
       overflow: hidden;
+      margin-bottom: -1px;
       border: 0;
       .nav-item {
         margin: 0;

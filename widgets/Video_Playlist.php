@@ -296,6 +296,15 @@ class Video_Playlist extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .video_list_area',
+			]
+		);
+
 		$this->add_responsive_control(
 			'sec_padding', [
 				'label'      => __( 'Section padding', 'spider-elements' ),
@@ -306,16 +315,6 @@ class Video_Playlist extends Widget_Base {
 				],
 				'default'    => [
 					'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
-				],
-			]
-		);
-
-		$this->add_control(
-			'sec_bg_color', [
-				'label'     => esc_html__( 'Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .video_list_area' => 'background-color: {{VALUE}};',
 				],
 			]
 		);

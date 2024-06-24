@@ -145,8 +145,15 @@ class Before_After extends Widget_Base {
 		$this->start_controls_section(
 			'sec_before_after_style',
 			[
-				'label' => __( 'Button Style', 'spider-elements' ),
+				'label' => __( 'Buttons', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'before_after_text_typography',
+				'selector' => '{{WRAPPER}} .indicator',
 			]
 		);
 
@@ -156,28 +163,34 @@ class Before_After extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .before-after-banner .indicator' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .indicator' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'before_after_text_typography',
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'background',
+				'types' => [ 'classic', 'gradient'],
+                'exclude' => [
+                    'image'
+                ],
 				'selector' => '{{WRAPPER}} .before-after-banner .indicator',
 			]
 		);
 
-		$this->add_control(
-			'beforeAfter_text_bg_color',
-			[
-				'label'     => esc_html__( 'Button Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .before-after-banner .indicator' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
+        $this->add_control(
+                'button_padding',
+                [
+                    'label' => __( 'Padding', 'spider-elements' ),
+                    'type' => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', 'em', '%' ],
+                    'selectors' => [
+                        '{{WRAPPER}} .indicator' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
+                ]
+        );
 
 		$this->end_controls_section(); // end beforeAfter Text style
 

@@ -473,8 +473,8 @@ class Tabs extends Widget_Base {
 				'label'     => __( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spel_tab_title :hover, 
-					 {{WRAPPER}} .header_tab_items .spel_tab_title :hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tab_shortcode .spel_tab_title:hover, 
+					 {{WRAPPER}} .header_tab_items .spel_tab_title:hover' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -487,7 +487,7 @@ class Tabs extends Widget_Base {
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title:hover,
-					{{WRAPPER}} .header_tab_items .spel_tab_title :hover',
+					 {{WRAPPER}} .header_tab_items .spel_tab_title:hover',
 			]
 		);
 
@@ -507,7 +507,8 @@ class Tabs extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					 {{WRAPPER}} .header_tab_items .spel_tab_title .active' => 'color: {{VALUE}};',
+					 {{WRAPPER}} .header_tab_items .spel_tab_title.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link.active' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -530,11 +531,10 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'active_tab_title_border_color',
 			[
-				'label'     => __( 'Border Top Color', 'spider-elements' ),
+				'label'     => __( 'Top Border', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spel_tab_title .active::before,
-					 {{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link:hover::before' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .tabs_sliders ul.nav-tabs .nav-item .nav-link:before' => 'background: {{VALUE}};',
 				),
 				'condition' => [
 					'style' => [ '1' ]
@@ -642,6 +642,14 @@ class Tabs extends Widget_Base {
 		);
 
 		$this->add_group_control(
+			Group_Control_Background::get_type(), [
+				'name'     => 'content_background',
+				'types'    => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .tab-content',
+			]
+		);
+
+		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'tabs_border',
@@ -671,15 +679,6 @@ class Tabs extends Widget_Base {
 				'selectors'  => [
 					'{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-			]
-		);
-
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(), [
-				'name'     => 'content_background',
-				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .tab-content',
 			]
 		);
 

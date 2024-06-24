@@ -927,7 +927,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Testimonial Item', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '6', '7', '9', '10' ]
 				]
 			]
 		);
@@ -955,47 +955,19 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name'      => 'background',
-				'types'     => [ 'classic', 'gradient', 'video' ],
-				'selector'  => '{{WRAPPER}} .testimonial-item,
-								{{WRAPPER}} .feedback-section-four .bg-wrapper',
-				'condition' => [
-					'style'  => [ '5', '10' ],
-					'style!' => [ '9' ]
-				]
-			]
-		);
-
-		$this->add_responsive_control(
-			'testimonial_item_pad',
-			[
-				'label'      => esc_html__( 'Padding', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .feedback-block-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .testimonial-item'   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'testimonial_item_mar',
-			[
-				'label'      => esc_html__( 'Margin', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .feedback-slider-two .item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition'  => [
-					'style' => '9'
-				]
-			]
-		);
+//		$this->add_group_control(
+//			Group_Control_Background::get_type(),
+//			[
+//				'name'      => 'background',
+//				'types'     => [ 'classic', 'gradient', 'video' ],
+//				'selector'  => '{{WRAPPER}} .testimonial-item,
+//								{{WRAPPER}} .feedback-section-four .bg-wrapper',
+//				'condition' => [
+//					'style'  => [ '5', '10' ],
+//					'style!' => [ '9' ]
+//				]
+//			]
+//		);
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
@@ -1023,6 +995,35 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'testimonial_item_mar',
+			[
+				'label'      => esc_html__( 'Margin', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
+					'{{WRAPPER}} .feedback-slider-two .item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition'  => [
+					'style' => '9'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'testimonial_item_pad',
+			[
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors'  => [
+					'{{WRAPPER}} .feedback-block-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .testimonial-item'   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .feedback-section-four .bg-wrapper'   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->end_controls_tab(); //End Normal  Testimonial
 
 
@@ -1038,7 +1039,36 @@ class Testimonial extends Widget_Base {
 			[
 				'name'     => 'item_hover_background',
 				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .feedback-block-one:hover',
+				'selector' => '{{WRAPPER}} .feedback-block-one:hover,
+					           {{WRAPPER}} .feedback-section-four .bg-wrapper:hover',
+			]
+		);
+
+		$this->add_control(
+			'relative_hover_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .feedback-section-four:hover .bg-wrapper p' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'style' => '10'
+				]
+			]
+		);
+
+		$this->add_control(
+			'author_hover_color',
+			[
+				'label'     => esc_html__( 'Name Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .feedback-section-four:hover .bg-wrapper .name' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'style' => '10'
+				]
 			]
 		);
 
@@ -1048,6 +1078,7 @@ class Testimonial extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .feedback-block-one:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .feedback-section-four .bg-wrapper:hover' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1136,12 +1167,27 @@ class Testimonial extends Widget_Base {
 				],
 				'condition' => [
 					'style'  => [ '5' ],
-					'style!' => [ '1', '2', '3', ]
+					'style!' => [ '1', '2', '3', '4' ]
 				]
 			]
 		);
-
 		//End Title Style
+
+		$this->add_control(
+			'box-padding',
+			[
+				'label' => esc_html__( 'Box Padding', 'spider-elements' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .testimonial-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+					'style'  => [ '3' ],
+					'style!' => [ '1', '2', '4', '5', '6', '7', '8', '9', '10', '11' ]
+				]
+			]
+		);
 
 		//=== Author Name
 		$this->add_control(
@@ -1191,6 +1237,7 @@ class Testimonial extends Widget_Base {
 				'selector' => '{{WRAPPER}} .se_review_content,
 								{{WRAPPER}} .feedback-block-one h3,
 								{{WRAPPER}} #feedBack_carousel .carousel-inner p,
+								{{WRAPPER}} .spel_review_content,
 								{{WRAPPER}} .feedback-section-four .bg-wrapper p',
 			]
 		);
@@ -1204,6 +1251,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-block-one h3'               => 'color: {{VALUE}};',
 					'{{WRAPPER}} #feedBack_carousel .carousel-inner p' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .feedback-section-four .bg-wrapper p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .spel_review_content' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1316,35 +1364,44 @@ class Testimonial extends Widget_Base {
 				]
 			]
 		);
-
 		//End Designation
 
-//		// Item BG color style 5
-//		$this->add_control(
-//			'item_bg_color', [
-//				'label'     => esc_html__( 'Item Background Color', 'spider-elements' ),
-//				'type'      => Controls_Manager::HEADING,
-//				'separator' => 'before',
-//				'condition' => [
-//					'style' => [ '5', '10' ]
-//				]
-//			]
-//		);
-//
-//		$this->add_responsive_control(
-//			'feedback-section-four-item-pad',
-//			[
-//				'label'      => esc_html__( 'Padding', 'spider-elements' ),
-//				'type'       => Controls_Manager::DIMENSIONS,
-//				'size_units' => [ 'px', '%', 'em' ],
-//				'selectors'  => [
-//					'{{WRAPPER}} .feedback-section-four .bg-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-//				],
-//				'condition'  => [
-//					'style' => [ '5', '10' ]
-//				]
-//			]
-//		);
+		$this->add_control(
+			'top_text_options', [
+				'label'     => esc_html__( 'Top Text', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style' => [ '11' ],
+					'style!' => [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ]
+				]
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'      => 'top_text_typo',
+				'selector'  => '.testimonial-area .spel_top_text',
+				'condition' => [
+					'style' => [ '11' ],
+					'style!' => [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'top_text_color', [
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .testimonial-area .spel_top_text' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'style'  => [ '11' ],
+					'style!' => [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ]
+				]
+			]
+		);
 
 		$this->end_controls_section();
 
@@ -1401,6 +1458,7 @@ class Testimonial extends Widget_Base {
 				]
 			]
 		);
+
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
