@@ -24,9 +24,15 @@ class Theme_Builder {
         // Admin column
         add_filter('manage_spel_template_posts_columns', [$this, 'set_columns']);
         add_action('manage_spel_template_posts_custom_column', [$this, 'set_column_content'], 10, 2);
+        add_action('admin_init', [$this, 'add_author_support_to_column']);
 
         //After Footer
         add_action('admin_footer', [$this, 'modal_popup_view']);
+
+
+        // enqueue scripts
+        //add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
     }
 
     public function cpt(): void
@@ -109,7 +115,7 @@ class Theme_Builder {
         return $columns;
     }
 
-    public function set_column_content($column, $post_id)
+    public function set_column_content($column, $post_id): void
     {
         switch ($column) {
             case 'type':
@@ -123,9 +129,14 @@ class Theme_Builder {
                 break;
 
             case 'actions':
-                echo '<button class="column-edit-button btn btn-secondary" data-post-id="' . esc_attr($post_id) . '">Edit</button>';
+                echo '<a href="' . get_edit_post_link($post_id) . '" class="column-edit-button btn btn-secondary" data-post-id="' . esc_attr($post_id) . '">Edit dsfsdafdsf</a>';
                 break;
         }
+    }
+
+    public function add_author_support_to_column(): void
+    {
+        add_post_type_support('spel_template', 'author');
     }
 
 
@@ -134,6 +145,15 @@ class Theme_Builder {
         $screen = get_current_screen();
         if ( $screen->id == 'edit-spel_template' ) {
             include_once $this->dir . '/theme-builder/modal-editor.php';
+        }
+    }
+
+
+    public function enqueue_scripts(): void
+    {
+        $screen = get_current_screen();
+        if ( $screen->id == 'edit-spel_template' ) {
+            wp_enqueue_script('spel-tb-admin-script', $this->url . 'theme-builder/assets/js/admin-script.js', ['jquery'], SPEL_VERSION, true);
         }
     }
 

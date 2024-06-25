@@ -7,8 +7,8 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="spel_theme_builder_modal_label"><?php esc_html_e( 'Template Settings', 'spider-elements' ); ?></h4>
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="<?php esc_attr_e('Close', 'spider-elements'); ?>"><span aria-hidden="true">&times;</span></button>
                 </div>
 
                 <div class="modal-body" id="spel_theme_builder_modal_body">
@@ -72,12 +72,13 @@
                                 </label>
                             </div>
                         </div>
+
                     </div>
                     <br>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default template-save-btn-editor"><?php esc_html_e( 'Edit content', 'spider-elements' ); ?></button>
+                    <button type="button" class="btn btn-default template-save-btn-editor"><?php esc_html_e( 'Edit with Elementor', 'spider-elements' ); ?></button>
                     <button type="submit" class="btn btn-primary template-save-btn"><?php esc_html_e( 'Save changes', 'spider-elements' ); ?></button>
                 </div>
 
