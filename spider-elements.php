@@ -197,6 +197,9 @@ if (!class_exists('SPEL')) {
 			// Extra functions
 			require_once __DIR__ . '/includes/extra.php';
 
+            //Action Filter
+            require_once __DIR__ . '/includes/filters.php';
+
 			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
 
 			// Admin and Frontend Scripts Loaded

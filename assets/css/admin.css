@@ -1365,36 +1365,43 @@ Table of Content:
   align-items: center;
 }
 .spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch {
-  margin-left: 1rem;
-}
-.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input {
-  display: none;
-}
-.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input + .admin-control-label {
   position: relative;
   display: inline-block;
-  width: 2rem;
-  height: 1rem;
-  background-color: #ccc;
-  border-radius: 1rem;
-  cursor: pointer;
+  width: 50px;
+  height: 25px;
 }
-.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input + .admin-control-label:before {
-  content: "";
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-label {
   position: absolute;
-  top: 0.1rem;
-  left: 0.1rem;
-  width: 0.8rem;
-  height: 0.8rem;
-  background-color: #fff;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-label:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
   border-radius: 50%;
-  transition: 0.2s;
 }
-.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input:checked + .admin-control-label {
-  background-color: #007bff;
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch input:checked + .admin-control-label {
+  background-color: #2196F3;
 }
-.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch .admin-control-input:checked + .admin-control-label:before {
-  transform: translateX(1rem);
+.spel_theme_builder_wrapper.spel-modal form .modal-content .switch-group .admin-input-switch input:checked + .admin-control-label:before {
+  transform: translateX(25px);
 }
 
 /*# sourceMappingURL=admin.css.map */
