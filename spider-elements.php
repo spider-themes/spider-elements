@@ -198,16 +198,17 @@ if (!class_exists('SPEL')) {
 			require_once __DIR__ . '/includes/extra.php';
 
             //Action Filter
-            require_once __DIR__ . '/includes/filters.php';
+            //require_once __DIR__ . '/includes/filters.php';
 
 			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+            require_once __DIR__ . '/includes/classes/Theme_Builder.php';
 
 			// Admin and Frontend Scripts Loaded
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 				require_once __DIR__ . '/includes/classes/Plugin_Installer.php';
-                require_once __DIR__ . '/includes/classes/Theme_Builder.php';
+
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
@@ -255,6 +256,7 @@ if (!class_exists('SPEL')) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			}
 
+            new SPEL\includes\classes\Theme_Builder();
 
             if ( is_admin() ) {
                 //Admin
@@ -262,8 +264,10 @@ if (!class_exists('SPEL')) {
 
                 //Classes
                 new SPEL\includes\classes\Plugin_Installer();
-                new SPEL\includes\classes\Theme_Builder();
+
             }
+
+
 
 		}
 

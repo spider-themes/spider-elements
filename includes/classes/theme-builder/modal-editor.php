@@ -2,7 +2,7 @@
 
     <div class="modal-dialog modal-dialog-centered" role="document">
 
-        <form action="" name="spel_template_form" id="template-modal-input-form" method="post"  data-open-editor="0" data-editor-url="<?php echo esc_url(get_admin_url()); ?>" data-nonce="<?php echo esc_attr(wp_create_nonce( 'wp_rest' )); ?>">
+        <form action="" name="spel_template_form" id="spel_template_form" method="post"  data-open-editor="0" data-editor-url="<?php echo esc_url(get_admin_url()); ?>" data-nonce="<?php echo esc_attr(wp_create_nonce( 'wp_rest' )); ?>">
 
             <div class="modal-content">
 
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default template-save-btn-editor"><?php esc_html_e( 'Edit with Elementor', 'spider-elements' ); ?></button>
+                    <button type="button" class="btn btn-default template-save-btn-editor" id="spel_template_elementor_edit_mode_btn" target="_blank"><?php esc_html_e( 'Edit with Elementor', 'spider-elements' ); ?></button>
                     <button type="submit" class="btn btn-primary template-save-btn"><?php esc_html_e( 'Save changes', 'spider-elements' ); ?></button>
                 </div>
 

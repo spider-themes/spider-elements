@@ -21,10 +21,8 @@ class Theme_Builder {
         // Get the current URL
         $this->url = plugin_dir_url( __FILE__ );
 
-        // Register custom post type
-        $this->cpt();
-
-        // Add admin menu
+        // Register actions and filters
+        add_action('init', [$this, 'cpt']);
         add_action('admin_menu', [$this, 'theme_builder_menu'], 99);
 
         // Set default page template for new posts
@@ -51,45 +49,46 @@ class Theme_Builder {
 
     }
 
-    /**
-     * Registers the custom post type 'spel_template'.
-     */
-    public function cpt(): void
-    {
+    public function cpt(): void {
         $labels = array(
-            'name'               => esc_html__( 'Templates', 'spider-elements' ),
-            'singular_name'      => esc_html__( 'Template', 'spider-elements' ),
-            'menu_name'          => esc_html__( 'Theme Builder', 'spider-elements' ),
-            'name_admin_bar'     => esc_html__( 'Theme Builder', 'spider-elements' ),
-            'add_new'            => esc_html__( 'Add New', 'spider-elements' ),
-            'add_new_item'       => esc_html__( 'Add New Template', 'spider-elements' ),
-            'new_item'           => esc_html__( 'New Template', 'spider-elements' ),
-            'edit_item'          => esc_html__( 'Edit Template', 'spider-elements' ),
-            'view_item'          => esc_html__( 'View Template', 'spider-elements' ),
-            'all_items'          => esc_html__( 'All Templates', 'spider-elements' ),
-            'search_items'       => esc_html__( 'Search Templates', 'spider-elements' ),
-            'parent_item_colon'  => esc_html__( 'Parent Templates:', 'spider-elements' ),
-            'not_found'          => esc_html__( 'No Templates found.', 'spider-elements' ),
-            'not_found_in_trash' => esc_html__( 'No Templates found in Trash.', 'spider-elements' ),
+            'name'               => esc_html__('Theme Builders', 'spider-elements'),
+            'singular_name'      => esc_html__('Theme Builder', 'spider-elements'),
+            'menu_name'          => esc_html__('Theme Builder', 'spider-elements'),
+            'name_admin_bar'     => esc_html__('Theme Builder', 'spider-elements'),
+            'add_new'            => esc_html__('Add New', 'spider-elements'),
+            'add_new_item'       => esc_html__('Add New Template', 'spider-elements'),
+            'new_item'           => esc_html__('New Template', 'spider-elements'),
+            'edit_item'          => esc_html__('Edit Template', 'spider-elements'),
+            'view_item'          => esc_html__('View Template', 'spider-elements'),
+            'all_items'          => esc_html__('All Templates', 'spider-elements'),
+            'search_items'       => esc_html__('Search Templates', 'spider-elements'),
+            'parent_item_colon'  => esc_html__('Parent Templates:', 'spider-elements'),
+            'not_found'          => esc_html__('No Templates found.', 'spider-elements'),
+            'not_found_in_trash' => esc_html__('No Templates found in Trash.', 'spider-elements'),
         );
 
         $args = array(
-            'labels'              => $labels,
-            'public'              => true,
-            'rewrite'             => false,
-            'show_ui'             => true,
-            'show_in_menu'        => false,
-            'show_in_nav_menus'   => false,
-            'exclude_from_search' => true,
-            'capability_type'     => 'page',
-            'hierarchical'        => false,
-            'supports'            => array( 'title', 'elementor' ),
-            'can_export'          => true,
-            'has_archive'         => true,
+            'labels'                => $labels,
+            'public'                => true,
+            'publicly_queryable'    => true,
+            'show_in_rest'          => true, // Enable REST API support
+            'rest_base'             => 'spel_template', // Custom REST API base
+            'show_ui'               => true,
+            'show_in_menu'          => false,
+            'query_var'             => true,
+            'rewrite'               => array('slug' => 'spel_template'),
+            'capability_type'       => 'post',
+            'has_archive'           => true,
+            'hierarchical'          => true,
+            'map_meta_cap'          => true,
+            'supports'              => ['title', 'elementor'],
+            'yarpp_support'         => true,
+            'show_admin_column'     => true,
         );
 
-        register_post_type( 'spel_template', $args );
+        register_post_type('spel_template', $args);
     }
+
 
     /**
      * Adds the theme builder menu to the admin menu.
@@ -104,15 +103,16 @@ class Theme_Builder {
             'edit.php?post_type=spel_template', // Slug
             false // Function
         );
+
     }
 
     /**
      * Sets the default page template for new posts of type 'elementor_canvas'.
      *
      * @param string $post_type The post type.
-     * @param WP_Post $post The post object.
+     * @param /WP_Post $post The post object.
      */
-    public function default_page_template($post_type, $post): void
+    public function default_page_template(string $post_type, $post): void
     {
         if ($post_type == 'spel_template' && $post->post_status == 'auto-draft') {
             $default_template = 'elementor_canvas';
@@ -206,10 +206,10 @@ class Theme_Builder {
         $screen = get_current_screen();
         if ( $screen->id == 'edit-spel_template' ) {
             wp_enqueue_script('spel-tb-admin-script', $this->url . 'theme-builder/assets/js/admin-script.js', ['jquery'], SPEL_VERSION, true);
-
             wp_localize_script('spel-tb-admin-script', 'spel_template_object', array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
-                'nonce' => wp_create_nonce('spel_create_template_post_nonce')
+                'nonce' => wp_create_nonce('spel_create_template_post_nonce'),
+                'editor_url' => admin_url('post.php')
             ));
 
         }
@@ -255,6 +255,7 @@ class Theme_Builder {
         if ($post_id) {
 
             // Update post meta
+            update_post_meta($post_id, '_wp_page_template', 'elementor_canvas');
             update_post_meta($post_id, 'spel_template_type', $post_type);
             update_post_meta($post_id, 'spel_template_condition', $post_conditions);
             update_post_meta($post_id, 'spel_template_status', $post_status);

@@ -6,7 +6,7 @@
 
         const wrapperId = $('#spel_theme_builder_modal');
         const modalContent = $('.spel_theme_builder_wrapper .modal-content');
-        const formModalId = $('#template-modal-input-form');
+        const formModalId = $('#spel_template_form');
 
         /**
          * Extracts the post ID from a given URL.
@@ -102,7 +102,7 @@
          * Event handler for form submission.
          * Submits the form data via AJAX to create or update a post.
          */
-        $(document).on('submit', '#template-modal-input-form', function(event) {
+        $(document).on('submit', '#spel_template_form', function(event) {
             event.preventDefault();
 
             let formData = $(this).serialize();
@@ -131,9 +131,25 @@
 
             })
 
-            console.log(formData)
+        })
+
+
+        /**
+         * Event handler for the edit with Elementor button
+         */
+        $(document).on('click', '#spel_template_elementor_edit_mode_btn', function (event) {
+            event.preventDefault();
+
+            let postId = $('#spel_template_form').attr('data-id');
+            if (postId) {
+                // Redirect to the Elementor editor
+                window.location.href = spel_template_object.editor_url + '?post=' + postId + '&action=elementor';
+            } else {
+                console.log('Post ID is missing.');
+            }
 
         })
+
 
 
     })
