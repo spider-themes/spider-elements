@@ -1,5 +1,8 @@
 <?php
 namespace SPEL\includes\classes;
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 
 use SPEL\includes\Admin\Admin_Settings;
 
@@ -47,7 +50,56 @@ class Theme_Builder {
         add_action('wp_ajax_spel_edit_template_post', [$this, 'ajax_edit_template_post']);
         add_action('wp_ajax_nopriv_spel_edit_template_post', [$this, 'ajax_edit_template_post']);
 
+
+        // Override the Header templates
+        add_action('get_header', [$this, 'override_get_header'], 99);
     }
+
+
+    public function override_get_header(): void
+    {
+
+        $active_header_template_id = get_option('active_spel_header_template_id');
+
+        if ($active_header_template_id) {
+
+            $condition = get_post_meta($active_header_template_id, 'spel_template_condition', true);
+            $status = get_post_meta($active_header_template_id, 'spel_template_status', true);
+
+            if ($status == 'yes' && $condition == 'entire_site' ) {
+                include_once $this->dir . '/theme-builder/header.php';
+
+                add_action('after_setup_theme', 'override_header_template', 100);
+            }
+
+        }
+
+    }
+
+
+    public function override_header_template(): void
+    {
+        // Remove WordPress version number
+        remove_action('wp_head', 'wp_generator');
+
+        // Remove wlwmanifest link
+        remove_action('wp_head', 'wlwmanifest_link');
+
+        // Remove RSD link
+        remove_action('wp_head', 'rsd_link');
+
+        // Remove shortlink
+        remove_action('wp_head', 'wp_shortlink_wp_head');
+
+        // Remove oEmbed discovery links
+        remove_action('wp_head', 'rest_output_link_wp_head');
+        remove_action('wp_head', 'wp_oembed_add_discovery_links');
+
+        // Remove emojis
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('wp_print_styles', 'print_emoji_styles');
+    }
+
 
     public function cpt(): void {
         $labels = array(
@@ -260,7 +312,15 @@ class Theme_Builder {
             update_post_meta($post_id, 'spel_template_condition', $post_conditions);
             update_post_meta($post_id, 'spel_template_status', $post_status);
 
+            // Set active header/footer template ID if the status is active
+            if ($post_type === 'header' && $post_status === 'yes') {
+                update_option('active_spel_header_template_id', $post_id);
+            } elseif ($post_type === 'footer' && $post_status === 'yes') {
+                update_option('active_spel_footer_template_id', $post_id);
+            }
+
             wp_send_json_success(array('post_id' => $post_id));
+
         } else {
             wp_send_json_error();
         }

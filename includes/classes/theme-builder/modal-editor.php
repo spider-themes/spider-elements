@@ -39,9 +39,6 @@
                         </div>
                         <br>
 
-
-
-
                         <div class="switch-group">
                             <label class="input-label"><?php esc_html_e( 'Activate/Deactivate:', 'spider-elements' ); ?></label>
 
