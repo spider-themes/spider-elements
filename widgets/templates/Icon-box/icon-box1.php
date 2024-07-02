@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
             <div class="icon_box_content">
 				<?php
-				if ( ! empty( $settings['title'] ) ) { ?>
-                <<?php echo esc_attr( $box_title_tag ); ?> class="box_title">
+        if ( ! empty( $settings['title'] ) ) { ?>
+            <<?php echo esc_attr( $box_title_tag ); ?> class="box_title">
 				<?php echo esc_html( $settings['title'] ); ?>
             </<?php echo esc_attr( $box_title_tag ) ?>>
 		<?php
-		}
+		    }
 		if ( ! empty( $settings['description'] ) ) {
 			?>
             <p class="icon_box_description">

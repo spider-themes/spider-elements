@@ -461,7 +461,7 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Before_after.php' );
 			require_once( __DIR__ . '/widgets/Video_Popup.php' );
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
-			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
+//			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
 			require_once( __DIR__ . '/widgets/Buttons.php' );
 			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
@@ -489,7 +489,7 @@ if (!class_exists('SPEL')) {
 			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
 			$elements_opt = get_option( 'spe_widget_settings' );
 
-			if ( isset( $elements_opt[ 'docy_accordion' ] ) && $elements_opt[ 'docy_accordion' ] == 'on' ) {
+			if ( isset( $elements_opt[ 'spel_accordion' ] ) && $elements_opt[ 'spel_accordion' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\Accordion() );
 			}
 			if ( isset( $elements_opt[ 'docly_alerts_box' ] ) && $elements_opt[ 'docly_alerts_box' ] == 'on' ) {
@@ -531,9 +531,9 @@ if (!class_exists('SPEL')) {
 			if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
 			}
-			if ( isset( $elements_opt[ 'spe_skill_showcase_widget' ] ) && $elements_opt[ 'spe_skill_showcase_widget' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Skill_Showcase() );
-			}
+//			if ( isset( $elements_opt[ 'spe_skill_showcase_widget' ] ) && $elements_opt[ 'spe_skill_showcase_widget' ] == 'on' ) {
+//				$widgets_manager->register( new \SPEL\Widgets\Skill_Showcase() );
+//			}
 			if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\Tabs() );
 			}

@@ -20,10 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class Skill_Showcase
  * @package spider\Widgets
  */
-class Skill_Showcase extends Widget_Base {
+class Skill_showcase extends Widget_Base {
 
 	public function get_name() {
-		return 'spe_skill_showcase_widget'; // ID of the widget (Don't change this name)
+		return 'spel_skill_showcase_widget'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title() {
@@ -153,6 +153,13 @@ class Skill_Showcase extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(), [
+				'name'     => 'showcase_text_typography',
+				'selector' => '{{WRAPPER}} .skill-showcase span',
+			]
+		);
+
 		$this->add_control(
 			'skill_text_color',
 			[
@@ -161,13 +168,6 @@ class Skill_Showcase extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .skill-showcase span' => 'color: {{VALUE}};',
 				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'showcase_text_typography',
-				'selector' => '{{WRAPPER}} .skill-showcase span',
 			]
 		);
 

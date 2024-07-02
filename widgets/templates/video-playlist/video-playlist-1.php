@@ -1,67 +1,73 @@
 <?php
-if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
 }
 ?>
 <section class="video_list_area">
     <div class="ezd-grid ezd-grid-cols-12 ezd-justify-content-sm-between">
         <div class="ezd-lg-col-7">
             <div class="video_player">
-                <div class="tab-content video_tabs" id="<?php esc_attr(get_the_ID()); ?>">
-                    <?php
-                    $all_videos = $settings[ 'tabs' ] ?? '';
-                    $i = '0';
-                    $active = '';
-                    foreach ( $all_videos as $video_item ) {
-                        $child_videos = $video_item[ 'videos' ] ?? '';
-                        foreach ( $child_videos as $child_video ) {
-                            ?>
-                            <div class="tab-pane ezd-tab-box pt-0 <?php echo esc_attr($active); ?>"
-                                 id="video_<?php echo esc_attr($i++); ?>">
+                <div class="tab-content video_tabs" id="<?php esc_attr( get_the_ID() ); ?>">
+					<?php
+					$all_videos = $settings['tabs'] ?? '';
+					$i          = '0';
+					$active     = '';
+					foreach ( $all_videos as $video_item ) {
+						$child_videos = $video_item['videos'] ?? '';
+						foreach ( $child_videos as $child_video ) {
+							?>
+                            <div class="tab-pane ezd-tab-box pt-0 <?php echo esc_attr( $active ); ?>"
+                                 id="video_<?php echo esc_attr( $i ++ ); ?>">
                                 <div class="artplayer-app"
-                                     data-src="<?php echo esc_url($child_video[ 'video_upload' ][ 'url' ]); ?>"></div>
+                                     data-src="<?php echo esc_url( $child_video['video_upload']['url'] ); ?>">
+                                </div>
                             </div>
-                            <?php
-                        }
-                    }
-                    ?>
+							<?php
+						}
+					}
+					?>
                 </div>
             </div>
         </div>
-        <div class="ezd-lg-col-5">
+        <div class="ezd-lg-col-5 spel_video_list">
             <div class="video_list">
-                <<?php echo esc_attr($title_tag); ?> class="title" data-animation="wow fadeInUp" data-wow-delay="0.2s">
-                    <?php echo esc_html($settings[ 'title' ]); ?>
-                </<?php echo esc_attr($title_tag); ?>>
+                    <?php
+                    if ( ! empty( $settings['playlist_title'] ) ) { ?>
+                    <<?php echo esc_attr( $title_tag ); ?> class="play_list_title" data-animation="wow fadeInUp" data-wow-delay="0.2s">
+                    <?php echo esc_html( $settings['playlist_title'] ); ?>
+                </<?php echo esc_attr( $title_tag ) ?>>
+                <?php
+                }
+                ?>
                 <div class="video_list_inner scroll">
                     <div class="accordion">
-                        <?php
-                        $all_videos = $settings[ 'tabs' ] ?? '';
-                        $i = '0';
-                        $count = '0';
-                        $collapse = '';
-                        foreach ($all_videos as $video_item) {
-                            $count++;
-                            $child_videos = $video_item[ 'videos' ] ?? '';
-                            $total_item = count($child_videos);
-                            $total_item = $total_item - 0;
+					<?php
+					$all_videos = $settings['tabs'] ?? '';
+					$i          = '0';
+					$count      = '0';
+					$collapse   = '';
+					foreach ( $all_videos as $video_item ) {
+						$count ++;
+						$child_videos = $video_item['videos'] ?? '';
+						$total_item   = count( $child_videos );
+						$total_item   = $total_item - 0;
 
-                            if ($total_item < 10) {
-                                $total_item = '0' . $total_item;
-                            }
+						if ( $total_item < 10 ) {
+							$total_item = '0' . $total_item;
+						}
 
-                            $nav_collapse = 'collapsed';
-                            if ($count == 1) {
-                                $nav_collapse = 'expand';
-                            }
-                            ?>
-                            <div class="card accordion-panel spe_accordion_inner">
-                                <div class="card spe-accordion" id="configuration<?php echo esc_attr($count); ?>-tab">
-                                    <div class="card-header">
-                                        <button class="text-left accordion-header <?php echo esc_attr($nav_collapse); ?>">
-                                            <span class="title"><?php echo esc_html($video_item[ 'title' ]); ?> </span>
-                                            <span class="count">(<?php echo esc_html($total_item); ?>)</span>
-                                            <span class="plus-minus">
+						$nav_collapse = 'collapsed';
+						if ( $count == 1 ) {
+							$nav_collapse = 'expand';
+						}
+						?>
+                        <div class="card accordion-panel spe_accordion_inner">
+                            <div class="card spe-accordion" id="configuration<?php echo esc_attr( $count ); ?>-tab">
+                                <div class="card-header">
+                                    <button class="text-left accordion-header <?php echo esc_attr( $nav_collapse ); ?>">
+                                        <span class="list_title"><?php echo esc_html( $video_item['title'] ); ?> </span>
+                                        <span class="list_count">(<?php echo esc_html( $total_item ); ?>)</span>
+                                        <span class="plus-minus">
                                                     <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24" id="plus"
                                                          data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
                                                          class="icon line-color">
@@ -77,75 +83,75 @@ if (!defined('ABSPATH')) {
                                                         </line>
                                                     </svg>
                                                 </span>
-                                        </button>
-                                    </div>
+                                    </button>
                                 </div>
-                                <div id="configuration<?php echo esc_attr($count); ?>" class="accordion-content collapse">
-                                    <div class="card-body">
-                                        <ul class="nav nav-tabs ezd-tab-menu">
-                                            <?php
-                                            if (!empty($child_videos)) {
-                                                foreach ( $child_videos as $child_video ) {
-                                                    $is_active = $i == 0 ? ' active' : '';
-                                                    ?>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link<?php esc_attr($is_active); ?>"
-                                                           href="#video_<?php echo esc_attr($i++); ?>">
-                                                            <div class="media ezd-d-flex">
-                                                                <?php if (!empty($child_video[ 'thumbnail' ][ 'url' ])) : ?>
-                                                                    <div class="ezd-d-flex">
-                                                                        <div class="video_tab_img">
-                                                                            <img loading="lazy" width="60" height="40"
-                                                                                 src="<?php echo esc_url($child_video[ 'thumbnail' ][ 'url' ]) ?>"
-                                                                                 alt="video-thumbnails"/>
-                                                                        </div>
+                            </div>
+                            <div id="configuration<?php echo esc_attr( $count ); ?>" class="accordion-content collapse">
+                                <div class="card-body">
+                                    <ul class="nav nav-tabs ezd-tab-menu">
+										<?php
+										if ( ! empty( $child_videos ) ) {
+											foreach ( $child_videos as $child_video ) {
+												$is_active = $i == 0 ? ' active' : '';
+												?>
+                                                <li class="nav-item">
+                                                    <a class="nav-link<?php esc_attr( $is_active ); ?>"
+                                                       href="#video_<?php echo esc_attr( $i ++ ); ?>">
+                                                        <div class="media ezd-d-flex">
+															<?php if ( ! empty( $child_video['thumbnail']['url'] ) ) : ?>
+                                                                <div class="ezd-d-flex">
+                                                                    <div class="video_tab_img">
+                                                                        <img loading="lazy" width="60" height="40"
+                                                                             src="<?php echo esc_url( $child_video['thumbnail']['url'] ) ?>"
+                                                                             alt="video-thumbnails"/>
                                                                     </div>
-                                                                <?php endif ?>
-                                                                <div class="media-body">
-                                                                    <h4><?php echo esc_html($child_video[ 'title2' ]); ?></h4>
-                                                                    <div class="list">
-                                                                        <div>
-                                                                            <div>
-                                                                                <ion-icon name="person-outline" role="img"
-                                                                                          class="md hydrated"
-                                                                                          aria-label="person outline">
-                                                                                </ion-icon>
-                                                                                <?php
-                                                                                $author = $child_video[ 'current_author' ] ?? '';
-                                                                                echo ucwords($author);
-                                                                                ?>
-                                                                            </div>
-                                                                            <div>
-                                                                                <ion-icon name="calendar-clear-outline"
-                                                                                          role="img"
-                                                                                          class="md hydrated"
-                                                                                          aria-label="calendar clear outline"></ion-icon>
-                                                                                <?php
-                                                                                $video_date = $child_video[ 'current_date' ] ?? '';
-                                                                                echo human_time_diff(strtotime($video_date),
-                                                                                        current_time('timestamp')) . __(' ago',
-                                                                                        'spider-elements');
-                                                                                ?>
-                                                                            </div>
+                                                                </div>
+															<?php endif ?>
+                                                            <div class="media-body">
+                                                                <h4 class="body_title"><?php echo esc_html( $child_video['title2'] ); ?></h4>
+                                                                <div class="list">
+                                                                    <div>
+                                                                        <div class="videos_meta">
+                                                                            <ion-icon name="person-outline" role="img"
+                                                                                      class="md hydrated"
+                                                                                      aria-label="person outline">
+                                                                            </ion-icon>
+																			<?php
+																			$author = $child_video['current_author'] ?? '';
+																			echo ucwords( $author );
+																			?>
+                                                                        </div>
+                                                                        <div class="videos_meta">
+                                                                            <ion-icon name="calendar-clear-outline"
+                                                                                      role="img"
+                                                                                      class="md hydrated"
+                                                                                      aria-label="calendar clear outline"></ion-icon>
+																			<?php
+																			$video_date = $child_video['current_date'] ?? '';
+																			echo human_time_diff( strtotime( $video_date ),
+																					current_time( 'timestamp' ) ) . __( ' ago',
+																					'spider-elements' );
+																			?>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </a>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                        </ul>
-                                    </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+												<?php
+											}
+										}
+										?>
+                                    </ul>
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
+                        </div>
+						<?php
+					}
+					?>
                 </div>
+            </div>
             </div>
         </div>
     </div>

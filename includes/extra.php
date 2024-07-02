@@ -563,7 +563,7 @@ add_action( 'admin_init', function () {
 	if ( isset( $_POST['elements-submit'] ) ) {
 
 		// Retrieve the field values from the form
-		$accordion                       = isset( $_POST['docy_accordion'] ) ? sanitize_text_field( $_POST['docy_accordion'] ) : '';
+		$accordion                       = isset( $_POST['spel_accordion'] ) ? sanitize_text_field( $_POST['spel_accordion'] ) : '';
 		$alerts_box                      = isset( $_POST['docly_alerts_box'] ) ? sanitize_text_field( $_POST['docly_alerts_box'] ) : '';
 		$animated_heading                = isset( $_POST['spe_animated_heading'] ) ? sanitize_text_field( $_POST['spe_animated_heading'] ) : '';
 		$after_before_widget             = isset( $_POST['spe_after_before_widget'] ) ? sanitize_text_field( $_POST['spe_after_before_widget'] ) : '';
@@ -590,7 +590,7 @@ add_action( 'admin_init', function () {
 
 		// Create an array to store the field values
 		$data = array(
-			'docy_accordion'                  => $accordion,
+			'spel_accordion'                  => $accordion,
 			'docly_alerts_box'                => $alerts_box,
 			'spe_animated_heading'            => $animated_heading,
 			'spe_after_before_widget'         => $after_before_widget,

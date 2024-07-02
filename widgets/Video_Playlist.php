@@ -125,29 +125,10 @@ class Video_Playlist extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title', [
-				'label'     => esc_html__( 'Title text', 'spider-elements' ),
+			'playlist_title', [
+				'label'     => esc_html__( 'Text', 'spider-elements' ),
 				'type'      => Controls_Manager::TEXTAREA,
 				'separator' => 'before'
-			]
-		);
-
-		$this->add_control(
-			'title_tag', [
-				'label'   => __( 'Title HTML Tag', 'spider-elements' ),
-				'type'    => Controls_Manager::SELECT,
-				'options' => spel_get_title_tags(),
-				'default' => 'h3',
-			]
-		);
-
-		$this->add_control(
-			'color_title', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}};',
-				],
 			]
 		);
 
@@ -155,6 +136,26 @@ class Video_Playlist extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name'     => 'typography_title',
 				'selector' => '{{WRAPPER}} .title'
+			]
+		);
+
+		$this->add_control(
+			'color_title', [
+				'label'     => __( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'title_tag', [
+				'label'     => esc_html__( 'Title Tag', 'spider-elements' ),
+				'type'      => Controls_Manager::SELECT,
+				'separator' => 'before',
+				'default'   => 'h3',
+				'options'   => spel_get_title_tags(),
 			]
 		);
 
@@ -177,7 +178,7 @@ class Video_Playlist extends Widget_Base {
 					'active' => true,
 				],
 				'default'     => esc_html__( 'Title', 'spider-elements' ),
-				'placeholder' => esc_html__( 'Tab Title Text Here', 'spider-elements' ),
+				'placeholder' => esc_html__( 'Tab title text here', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -226,7 +227,7 @@ class Video_Playlist extends Widget_Base {
 			'current_author', [
 				'label'   => esc_html__( 'Author', 'spider-elements' ),
 				'type'    => Controls_Manager::HIDDEN,
-				// current login user name
+				// current login user-name //
 				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''
 			]
 		);
@@ -268,6 +269,9 @@ class Video_Playlist extends Widget_Base {
 				'frontend_available' => true,
 				'title_field'        => '{{{ title }}}',
 				'prevent_empty'      => true,
+//				'condition' => [
+//					'style' => [ '1' ]
+//				]
 			]
 		);
 
@@ -291,7 +295,7 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'style_sec',
 			[
-				'label' => esc_html__( 'Style Section', 'spider-elements' ),
+				'label' => esc_html__( 'Playlist Section', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -301,17 +305,19 @@ class Video_Playlist extends Widget_Base {
 			[
 				'name' => 'background',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .video_list_area',
+				'selector' => '{{WRAPPER}} .video_list_area,
+							   {{WRAPPER}} .video_slider_area',
 			]
 		);
 
 		$this->add_responsive_control(
 			'sec_padding', [
-				'label'      => __( 'Section padding', 'spider-elements' ),
+				'label'      => __( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
 					'{{WRAPPER}} .video_list_area' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .video_slider_area' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'default'    => [
 					'unit' => 'px', // The selected CSS Unit. 'px', '%', 'em',
@@ -319,13 +325,15 @@ class Video_Playlist extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'section_style_layout',
+		$this->add_control(
+			'laaout_headin',
 			[
-				'label' => esc_html__( 'Layout', 'spider-elements' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
+				'label'     => esc_html__( 'Layout', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'style' => [ '1' ]
+				]
 			]
 		);
 
@@ -350,8 +358,11 @@ class Video_Playlist extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .e-tabs .e-tabs-main-area' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .spel_video_list' => 'height: {{SIZE}}{{UNIT}};',
 				],
+				'condition'  => [
+					'style' => [ '1' ]
+				]
 			]
 		);
 
@@ -360,39 +371,19 @@ class Video_Playlist extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_top_bar',
 			[
-				'label' => esc_html__( 'Top Bar', 'spider-elements' ),
+				'label' => esc_html__( 'Video List', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => [ '1' ]
+				]
 			]
 		);
 
 		$this->add_control(
 			'heading_playlist_name',
 			[
-				'label' => esc_html__( 'Playlist Name', 'spider-elements' ),
+				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'playlist_name_background',
-			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-header' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'playlist_name_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-header .e-tabs-title' => 'color: {{VALUE}};',
-				],
 			]
 		);
 
@@ -400,7 +391,111 @@ class Video_Playlist extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'playlist_name_typography',
-				'selector' => '{{WRAPPER}} .e-tabs-header .e-tabs-title',
+				'selector' => '{{WRAPPER}} .list_title',
+			]
+		);
+
+		$this->start_controls_tabs(
+			'video_list_tabs'
+		);
+
+		$this->start_controls_tab(
+			'list_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'playlist_name_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .list_title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'playlist_name_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'exclude' => [ 'image' ],
+				'selector' => '{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-panel',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'list_hover_tab',
+			[
+				'label' => esc_html__( 'Active', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'active_name_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .spe-collapsed .spe-accordion .card-header .list_title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'active_count_color',
+			[
+				'label'     => esc_html__( 'Count Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .spe-collapsed .spe-accordion .card-header button .list_count' => 'color: {{VALUE}} !important;',
+				],
+			]
+		);
+
+		$this->add_control(
+			'activer_icon_color',
+			[
+				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .spe-collapsed .spe-accordion .card-header button .plus-minus svg path' => 'stroke: {{VALUE}} !important',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'active_name_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'exclude' => [ 'image' ],
+				'selector' => '{{WRAPPER}} .video_list .video_list_inner .accordion .spe-collapsed',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'playlist_name_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'separator'  => 'before',
+				'selectors'  => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -409,20 +504,7 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label' => esc_html__( 'Video Count', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'videos_amount_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-header .e-tabs-videos-count'          => 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side i'   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-header .e-tabs-header-right-side svg' => 'fill: {{VALUE}};',
-				],
+				'separator' => 'before',
 			]
 		);
 
@@ -430,7 +512,55 @@ class Video_Playlist extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'videos_amount_typography',
-				'selector' => '{{WRAPPER}} .e-tabs-header .e-tabs-videos-count',
+				'selector' => '{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button .list_count',
+			]
+		);
+
+		$this->add_control(
+			'count_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'separator' => 'after',
+				'selectors' => [
+					'{{WRAPPER}} .list_count' => 'color: {{VALUE}} !important;',
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_heading',
+			[
+				'label' => esc_html__( 'Icon', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'playlist_icon_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button .plus-minus #plus path' => 'stroke: {{VALUE}} !important',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'icon_size',
+			[
+				'label'     => esc_html__( 'Size', 'spider-elements' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'min' => 6,
+					'max' => 100,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button .plus-minus #plus' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}} !important',
+				],
 			]
 		);
 
@@ -441,72 +571,71 @@ class Video_Playlist extends Widget_Base {
 			[
 				'label' => esc_html__( 'Videos', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => [ '1' ]
+				]
 			]
 		);
 
-		$this->start_controls_tabs( 'playlist_tabs' );
-
-		$this->start_controls_tab(
-			'playlist_tabs_normal',
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
 			[
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
+				'name' => 'playlist_content_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'exclude' => [ 'image' ],
+				'selector' => '{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-content .card-body',
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'separator'  => 'after',
+				'selectors'  => [
+					'{{WRAPPER}} .video_list .video_list_inner .accordion .accordion-content .card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
 		$this->add_control(
 			'heading_tab_normal',
 			[
-				'label' => esc_html__( 'Item', 'spider-elements' ),
+				'label' => esc_html__( 'Title', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
+				'separator' => 'before',
 			]
 		);
 
-		$this->add_control(
-			'normal_background',
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
 			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .video_list .video_list_inner .card' => 'background-color: {{VALUE}};',
-				],
+				'name'     => 'normal_typography',
+				'selector' => '{{WRAPPER}} .video_list .video_list_inner .card .card-body .nav li a .media .media-body  .body_title',
 			]
 		);
 
 		$this->add_control(
 			'normal_color',
 			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
+				'separator' => 'after',
 				'selectors' => [
-					'{{WRAPPER}} .e-tab-title .e-tab-title-text'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .video_list .video_list_inner .card .card-body .nav li a .media .media-body .body_title' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .e-tab-title .e-tab-title-text a' => 'color: {{VALUE}};',
 				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'normal_typography',
-				'selector' => '{{WRAPPER}} .e-tab-title .e-tab-title-text',
 			]
 		);
 
 		$this->add_control(
 			'heading_duration_normal',
 			[
-				'label' => esc_html__( 'Duration', 'spider-elements' ),
+				'label' => esc_html__( 'Meta', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'normal_duration_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .e-tab-title .e-tab-duration' => 'color: {{VALUE}};',
-				],
+				'separator' => 'before',
 			]
 		);
 
@@ -514,318 +643,531 @@ class Video_Playlist extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'normal_duration_typography',
-				'selector' => '{{WRAPPER}} .e-tab-title .e-tab-duration',
+				'selector' => '{{WRAPPER}} .video_list .video_list_inner .card .card-body .nav li a .media .media-body .list .videos_meta',
 			]
 		);
 
 		$this->add_control(
-			'heading_icon_normal',
-			[
-				'label' => esc_html__( 'Icon', 'spider-elements' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'normal_icon_color',
+			'meta_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .video_list .video_list_inner .card .card-body .nav li a .media .d-flex .video_tab_img:after' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .videos_meta' => 'color: {{VALUE}} !important;',
 				],
 			]
 		);
 
 
-		// Default shadow values for the icon.
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
+//		$this->start_controls_tabs( 'playlist_tabs' );
+//
+//		$this->start_controls_tab(
+//			'playlist_tabs_normal',
+//			[
+//				'label' => esc_html__( 'Normal', 'spider-elements' ),
+//			]
+//		);
+//
+//
+//
+//		$this->add_control(
+//			'heading_icon_normal',
+//			[
+//				'label' => esc_html__( 'Icon', 'spider-elements' ),
+//				'type'  => Controls_Manager::HEADING,
+//				'separator' => 'before',
+//			]
+//		);
+//
+//		// Default shadow values for the icon.
+//		$this->add_group_control(
+//			Group_Control_Text_Shadow::get_type(),
+//			[
+//				'name'           => 'normal_icon_top_text_shadow',
+//				'fields_options' => [
+//					'text_shadow_type' => [
+//						'label' => _x( 'Shadow', 'Text Shadow Control', 'spider-elements' ),
+//					],
+//					'text_shadow'      => [
+//						'selectors' => [
+//							'{{WRAPPER}} .e-tab-title i'   => 'text-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}};',
+//							'{{WRAPPER}} .e-tab-title svg' => 'filter: drop-shadow({{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}});',
+//						],
+//					],
+//				],
+//			]
+//		);
+//
+//		$this->add_responsive_control(
+//			'normal_icon_size',
+//			[
+//				'label'     => esc_html__( 'Size', 'spider-elements' ),
+//				'type'      => Controls_Manager::SLIDER,
+//				'range'     => [
+//					'min' => 10,
+//					'max' => 30,
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
+////					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
+//				],
+//			]
+//		);
+//
+//		$this->add_control(
+//			'heading_separator_normal',
+//			[
+//				'label'     => esc_html__( 'Separator', 'spider-elements' ),
+//				'type'      => Controls_Manager::HEADING,
+//				'separator' => 'before',
+//			]
+//		);
+//
+//		$this->add_control(
+//			'normal_separator_style',
+//			[
+//				'label'     => esc_html__( 'Style', 'spider-elements' ),
+//				'type'      => Controls_Manager::SELECT,
+//				'default'   => '',
+//				'options'   => [
+//					''       => esc_html__( 'None', 'spider-elements' ),
+//					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
+//					'double' => _x( 'Double', 'Border Control', 'spider-elements' ),
+//					'dotted' => _x( 'Dotted', 'Border Control', 'spider-elements' ),
+//					'dashed' => _x( 'Dashed', 'Border Control', 'spider-elements' ),
+//					'groove' => _x( 'Groove', 'Border Control', 'spider-elements' ),
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tab-title' => 'border-style: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_responsive_control(
+//			'normal_separator_weight',
+//			[
+//				'label'     => esc_html__( 'Weight', 'spider-elements' ),
+//				'type'      => Controls_Manager::SLIDER,
+//				'range'     => [
+//					'min' => 0,
+//					'max' => 10,
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tab-title' => 'border-width: 0 0 {{SIZE}}px 0;',
+//				],
+//				'condition' => [
+//					'normal_separator_style!' => '',
+//				],
+//			]
+//		);
+//
+//		$this->add_control(
+//			'normal_separator_color',
+//			[
+//				'label'     => esc_html__( 'Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tab-title' => 'border-color: {{VALUE}};',
+//				],
+//				'condition' => [
+//					'normal_separator_style!' => '',
+//				],
+//			]
+//		);
+//
+//		$this->end_controls_tab();
+//
+//
+//		$this->start_controls_tab(
+//			'playlist_tabs_active',
+//			[
+//				'label' => esc_html__( 'Active', 'spider-elements' ),
+//			]
+//		);
+//
+//		$this->add_control(
+//			'heading_tab_active',
+//			[
+//				'label' => esc_html__( 'Item', 'spider-elements' ),
+//				'type'  => Controls_Manager::HEADING,
+//			]
+//		);
+//
+//		$this->add_control(
+//			'active_background',
+//			[
+//				'label'     => esc_html__( 'Background', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tabs-items .e-tab-title:where( .e-active, :hover )' => 'background-color: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_control(
+//			'active_color',
+//			[
+//				'label'     => esc_html__( 'Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'default'   => '#556068',
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text'   => 'color: {{VALUE}};',
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a' => 'color: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_group_control(
+//			Group_Control_Typography::get_type(), [
+//				'name'     => 'active_typography',
+//				'selector' => '{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text',
+//			]
+//		);
+//
+//		$this->add_control(
+//			'heading_duration_active', [
+//				'label' => esc_html__( 'Duration', 'spider-elements' ),
+//				'type'  => Controls_Manager::HEADING,
+//				'separator' => 'before',
+//			]
+//		);
+//
+//		$this->add_control(
+//			'active_duration_color',
+//			[
+//				'label'     => esc_html__( 'Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'default'   => '',
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration' => 'color: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_group_control(
+//			Group_Control_Typography::get_type(),
+//			[
+//				'name'     => 'active_duration_typography',
+//				'selector' => '{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration',
+//			]
+//		);
+//
+//		$this->add_control(
+//			'heading_icon_active',
+//			[
+//				'label' => esc_html__( 'Icon', 'spider-elements' ),
+//				'type'  => Controls_Manager::HEADING,
+//				'separator' => 'before',
+//			]
+//		);
+//
+//		$this->add_control(
+//			'active_icon_color',
+//			[
+//				'label'     => esc_html__( 'Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) i'        => 'color: {{VALUE}};',
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) svg'      => 'color: {{VALUE}};',
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) svg path' => 'fill: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_group_control(
+//			Group_Control_Text_Shadow::get_type(),
+//			[
+//				'name'           => 'active_icon_top_text_shadow',
+//				'fields_options' => [
+//					'text_shadow_type' => [
+//						'label' => _x( 'Shadow', 'Text Shadow Control', 'spider-elements' ),
+//					],
+//				],
+//				'selector'       => '{{WRAPPER}} .e-tab-title:where( .e-active, :hover ) i, {{WRAPPER}} .e-tab-title:where( .e-active, :hover ) svg',
+//			]
+//		);
+//
+//		$this->add_responsive_control(
+//			'active_icon_size',
+//			[
+//				'label'     => esc_html__( 'Size', 'spider-elements' ),
+//				'type'      => Controls_Manager::SLIDER,
+//				'range'     => [
+//					'min' => 10,
+//					'max' => 30,
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tab-title:where( .e-active, :hover ) span i'   => 'font-size: {{SIZE}}px',
+//					'{{WRAPPER}} .e-tab-title:where( .e-active, :hover ) span svg' => 'width: {{SIZE}}px; height: {{SIZE}}px;',
+//				],
+//			]
+//		);
+//
+//		$this->add_control(
+//			'heading_separator_active',
+//			[
+//				'label'     => esc_html__( 'Separator', 'spider-elements' ),
+//				'type'      => Controls_Manager::HEADING,
+//				'separator' => 'before',
+//			]
+//		);
+//
+//		$this->add_control(
+//			'active_separator_style',
+//			[
+//				'label'     => esc_html__( 'Style', 'spider-elements' ),
+//				'type'      => Controls_Manager::SELECT,
+//				'default'   => '',
+//				'options'   => [
+//					''       => esc_html__( 'None', 'spider-elements' ),
+//					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
+//					'double' => _x( 'Double', 'Border Control', 'spider-elements' ),
+//					'dotted' => _x( 'Dotted', 'Border Control', 'spider-elements' ),
+//					'dashed' => _x( 'Dashed', 'Border Control', 'spider-elements' ),
+//					'groove' => _x( 'Groove', 'Border Control', 'spider-elements' ),
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title.e-active' => 'border-style: {{VALUE}};',
+//				],
+//			]
+//		);
+//
+//		$this->add_responsive_control(
+//			'active_separator_weight',
+//			[
+//				'label'     => esc_html__( 'Weight', 'spider-elements' ),
+//				'type'      => Controls_Manager::SLIDER,
+//				'range'     => [
+//					'min' => 0,
+//					'max' => 10,
+//				],
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title.e-active' => 'border-width: 0 0 {{SIZE}}px 0;',
+//				],
+//				'condition' => [
+//					'active_separator_style!' => '',
+//				],
+//			]
+//		);
+//
+//		$this->add_control(
+//			'active_separator_color',
+//			[
+//				'label'     => esc_html__( 'Color', 'spider-elements' ),
+//				'type'      => Controls_Manager::COLOR,
+//				'selectors' => [
+//					'{{WRAPPER}} .e-tabs-items-wrapper .e-tabs-items .e-tab-title.e-active' => 'border-color: {{VALUE}};',
+//				],
+//				'condition' => [
+//					'active_separator_style!' => '',
+//				],
+//			]
+//		);
+//
+//		$this->end_controls_tab();
+//
+//		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+
+	// Style 2 controls
+		$this->start_controls_section(
+			'style2_videos_slider',
 			[
-				'name'           => 'normal_icon_top_text_shadow',
-				'fields_options' => [
-					'text_shadow_type' => [
-						'label' => _x( 'Shadow', 'Text Shadow Control', 'spider-elements' ),
-					],
-					'text_shadow'      => [
-						'selectors' => [
-							'{{WRAPPER}} .e-tab-title i'   => 'text-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}};',
-							'{{WRAPPER}} .e-tab-title svg' => 'filter: drop-shadow({{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{COLOR}});',
-						],
-					],
-				],
+				'label' => esc_html__( 'Video', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => [ '2' ]
+				]
 			]
 		);
 
-		$this->add_responsive_control(
-			'normal_icon_size',
+		$this->add_control(
+			'slider_heading',
 			[
-				'label'     => esc_html__( 'Size', 'spider-elements' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'min' => 10,
-					'max' => 30,
-				],
+				'label' => esc_html__( 'Title', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING,
+			]
+		);
+
+		$this-> add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'     => 'title_typography',
+				'selector' => '{{WRAPPER}} .slide_text a .video_title',
+			]
+		);
+
+		$this->add_control(
+			'title_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
-					'{{WRAPPER}}' => '--playlist-item-icon-size: {{SIZE}}px',
+					'{{WRAPPER}} .slide_text a .video_title' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'heading_separator_normal',
+			'title_hover_color',
 			[
-				'label'     => esc_html__( 'Separator', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
+				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .slide_text a .video_title:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'description_heading',
+			[
+				'label' => esc_html__( 'Description', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
-			]
-		);
-
-		$this->add_control(
-			'normal_separator_style',
-			[
-				'label'     => esc_html__( 'Style', 'spider-elements' ),
-				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
-				'options'   => [
-					''       => esc_html__( 'None', 'spider-elements' ),
-					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
-					'double' => _x( 'Double', 'Border Control', 'spider-elements' ),
-					'dotted' => _x( 'Dotted', 'Border Control', 'spider-elements' ),
-					'dashed' => _x( 'Dashed', 'Border Control', 'spider-elements' ),
-					'groove' => _x( 'Groove', 'Border Control', 'spider-elements' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .e-tab-title' => 'border-style: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'normal_separator_weight',
-			[
-				'label'     => esc_html__( 'Weight', 'spider-elements' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'min' => 0,
-					'max' => 10,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .e-tab-title' => 'border-width: 0 0 {{SIZE}}px 0;',
-				],
-				'condition' => [
-					'normal_separator_style!' => '',
-				],
-			]
-		);
-
-		$this->add_control(
-			'normal_separator_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .e-tab-title' => 'border-color: {{VALUE}};',
-				],
-				'condition' => [
-					'normal_separator_style!' => '',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-
-		$this->start_controls_tab(
-			'playlist_tabs_active',
-			[
-				'label' => esc_html__( 'Active', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'heading_tab_active',
-			[
-				'label' => esc_html__( 'Item', 'spider-elements' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'active_background',
-			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tabs-items .e-tab-title:where( .e-active, :hover )' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'active_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#556068',
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text'   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'     => 'active_typography',
-				'selector' => '{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text',
-			]
-		);
-
-		$this->add_control(
-			'heading_duration_active', [
-				'label' => esc_html__( 'Duration', 'spider-elements' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'active_duration_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration' => 'color: {{VALUE}};',
-				],
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'active_duration_typography',
-				'selector' => '{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration',
+				'name'     => 'description_typography',
+				'selector' => '{{WRAPPER}} .slide_text p',
 			]
 		);
 
 		$this->add_control(
-			'heading_icon_active',
-			[
-				'label' => esc_html__( 'Icon', 'spider-elements' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'active_icon_color',
+			'desc_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) i'        => 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) svg'      => 'color: {{VALUE}};',
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) svg path' => 'fill: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name'           => 'active_icon_top_text_shadow',
-				'fields_options' => [
-					'text_shadow_type' => [
-						'label' => _x( 'Shadow', 'Text Shadow Control', 'spider-elements' ),
-					],
-				],
-				'selector'       => '{{WRAPPER}} .e-tab-title:where( .e-active, :hover ) i, {{WRAPPER}} .e-tab-title:where( .e-active, :hover ) svg',
-			]
-		);
-
-		$this->add_responsive_control(
-			'active_icon_size',
-			[
-				'label'     => esc_html__( 'Size', 'spider-elements' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'min' => 10,
-					'max' => 30,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .e-tab-title:where( .e-active, :hover ) span i'   => 'font-size: {{SIZE}}px',
-					'{{WRAPPER}} .e-tab-title:where( .e-active, :hover ) span svg' => 'width: {{SIZE}}px; height: {{SIZE}}px;',
+					'{{WRAPPER}} .slide_text p' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'heading_separator_active',
+			'desc_margin',
 			[
-				'label'     => esc_html__( 'Separator', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
+				'label'      => esc_html__( 'Margin', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} .slide_text p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'meta_heading',
+			[
+				'label' => esc_html__( 'Meta', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
 
-		$this->add_control(
-			'active_separator_style',
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
 			[
-				'label'     => esc_html__( 'Style', 'spider-elements' ),
-				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
-				'options'   => [
-					''       => esc_html__( 'None', 'spider-elements' ),
-					'solid'  => _x( 'Solid', 'Border Control', 'spider-elements' ),
-					'double' => _x( 'Double', 'Border Control', 'spider-elements' ),
-					'dotted' => _x( 'Dotted', 'Border Control', 'spider-elements' ),
-					'dashed' => _x( 'Dashed', 'Border Control', 'spider-elements' ),
-					'groove' => _x( 'Groove', 'Border Control', 'spider-elements' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title.e-active' => 'border-style: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'active_separator_weight',
-			[
-				'label'     => esc_html__( 'Weight', 'spider-elements' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'min' => 0,
-					'max' => 10,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tab-title.e-active' => 'border-width: 0 0 {{SIZE}}px 0;',
-				],
-				'condition' => [
-					'active_separator_style!' => '',
-				],
+				'name'     => 'meta_typography',
+				'selector' => '{{WRAPPER}} .slide_text .video_user a',
 			]
 		);
 
 		$this->add_control(
-			'active_separator_color',
+			'meta2_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .e-tabs-items-wrapper .e-tabs-items .e-tab-title.e-active' => 'border-color: {{VALUE}};',
-				],
-				'condition' => [
-					'active_separator_style!' => '',
+					'{{WRAPPER}} .slide_text .video_user a' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
+		$this->add_control(
+			'meta_hover_color',
+			[
+				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .slide_text .video_user a:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'style2_slider',
+			[
+				'label' => esc_html__( 'Slider', 'spider-elements' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => [ '2' ]
+				]
+			]
+		);
+
+		$this->add_control(
+			'slider_heading',
+			[
+				'label' => esc_html__( 'Thumbnail Title', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'     => 'thumbnail_title_typography',
+				'selector' => '{{WRAPPER}} .gallery_main_area .gallery-thumbs .item .caption_text .thumbnail_title',
+			]
+		);
+
+		$this->add_control(
+			'thumbnail_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .gallery_main_area .gallery-thumbs .item .caption_text .thumbnail_title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+//		$this->add_control(
+//			'icon-heading',
+//			[
+//				'label' => esc_html__('Icon', 'spider-elements'),
+//				'type' => Controls_Manager::HEADING,
+//			]
+//		);
+//
+//		$this->add_control(
+//			'video_icon_color',
+//			[
+//				'label' => esc_html__('Color', 'spider-elements'),
+//				'type' => Controls_Manager::COLOR,
+//				'selector' => [
+//					'{{WRAPPER}} .art-state ion-icon, .play-icon ion-icon' => 'color: {{VALUE}};',
+//				]
+//			]
+//		);
+//
+//		$this->add_control(
+//			'video_icon_bg',
+//			[
+//				'label' => esc_html__('Background', 'spider-elements'),
+//				'type' => Controls_Manager::COLOR,
+//				'selector' => [
+//					'{{WRAPPER}} .art-state, .play-icon' => 'background: {{VALUE}};',
+//				]
+//			]
+//		);
 
 	}
 

@@ -15,7 +15,7 @@ class Module_Settings {
             // All Widget List
             'spider_elements_widgets' => [
                 [
-                    'name'         => 'docy_accordion', // widget name
+                    'name'         => 'spel_accordion', // widget name
                     'className'    => 'Accordion', // widget class name
                     'label'        => esc_html__('Accordion', 'spider-elements'), // widget label
                     'type'         => 'checkbox',

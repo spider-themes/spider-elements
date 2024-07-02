@@ -45,7 +45,7 @@ if ( $is_preloader == '1' ) {
                         <div class="ezd-lg-col-5">
                             <div class="slide_text">
                                 <a href="#">
-                                    <h4> <?php echo esc_html( $child_video['title2'] ); ?> </h4>
+                                    <h4 class="video_title"> <?php echo esc_html( $child_video['title2'] ); ?> </h4>
                                 </a>
                                 <?php echo wpautop( $child_video['video_caption'] ); ?>
                                 <div class="video_user">
@@ -91,7 +91,7 @@ if ( $is_preloader == '1' ) {
                                     <div class="play-icon">
                                         <ion-icon name="play"></ion-icon>
                                     </div>
-                                    <h4> <?php echo esc_html( $child_video['title2'] ); ?></h4>
+                                    <h4 class="thumbnail_title"> <?php echo esc_html( $child_video['title2'] ); ?></h4>
                                 </div>
                             </div>
                         </div>
