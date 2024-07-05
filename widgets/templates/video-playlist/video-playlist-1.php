@@ -68,21 +68,21 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         <span class="list_title"><?php echo esc_html( $video_item['title'] ); ?> </span>
                                         <span class="list_count">(<?php echo esc_html( $total_item ); ?>)</span>
                                         <span class="plus-minus">
-                                                    <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24" id="plus"
-                                                         data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
-                                                         class="icon line-color">
-                                                        <path id="primary" d="M5,12H19M12,5V19"
-                                                              style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
-                                                        </path>
-                                                    </svg>
-                                                    <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24"
-                                                         id="minus" data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
-                                                         class="icon line-color">
-                                                        <line id="primary" x1="19" y1="12" x2="5" y2="12"
-                                                              style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
-                                                        </line>
-                                                    </svg>
-                                                </span>
+                                            <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24" id="plus"
+                                                 data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
+                                                 class="icon line-color">
+                                                <path id="primary" d="M5,12H19M12,5V19"
+                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                </path>
+                                            </svg>
+                                            <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24"
+                                                 id="minus" data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
+                                                 class="icon line-color">
+                                                <line id="primary" x1="19" y1="12" x2="5" y2="12"
+                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                </line>
+                                            </svg>
+                                        </span>
                                     </button>
                                 </div>
                             </div>

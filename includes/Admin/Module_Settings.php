@@ -135,17 +135,17 @@ class Module_Settings {
                     'video_url'    => '#',
                     'icon'         => 'eicon-bullet-list',
                 ],
-                [
-                    'name'         => 'spe_marquee_slides',
-                    'className'    => 'Marquee_Slides', // widget class name
-                    'label'        => esc_html__('Marquee Slides', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-slider-push',
-                ],
+//                [
+//                    'name'         => 'spe_marquee_slides',
+//                    'className'    => 'Marquee_Slides', // widget class name
+//                    'label'        => esc_html__('Marquee Slides', 'spider-elements'),
+//                    'type'         => 'checkbox',
+//                    'default'      => 'on',
+//                    'widget_type'  => 'free',
+//                    'demo_url'     => '#',
+//                    'video_url'    => '#',
+//                    'icon'         => 'eicon-slider-push',
+//                ],
                 [
                     'name'         => 'landpagy_pricing_table_switcher',
                     'className'    => 'Pricing_Table_Switcher', // widget class name
@@ -168,17 +168,17 @@ class Module_Settings {
                     'video_url'    => '#',
                     'icon'         => 'eicon-price-table',
                 ],
-                [
-                    'name'         => 'spe_skill_showcase_widget',
-                    'className'    => 'Skill_Showcase', // widget class name
-                    'label'        => esc_html__('Skill Showcase', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-woo-settings',
-                ],
+//                [
+//                    'name'         => 'spe_skill_showcase_widget',
+//                    'className'    => 'Skill_Showcase', // widget class name
+//                    'label'        => esc_html__('Skill Showcase', 'spider-elements'),
+//                    'type'         => 'checkbox',
+//                    'default'      => 'on',
+//                    'widget_type'  => 'free',
+//                    'demo_url'     => '#',
+//                    'video_url'    => '#',
+//                    'icon'         => 'eicon-woo-settings',
+//                ],
                 [
                     'name'         => 'docy_tabs',
                     'className'    => 'Tabs',

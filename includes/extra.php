@@ -574,10 +574,10 @@ add_action( 'admin_init', function () {
 		$spe_instagram                   = isset( $_POST['spe_instagram'] ) ? sanitize_text_field( $_POST['spe_instagram'] ) : '';
 		$docy_integrations               = isset( $_POST['docy_integrations'] ) ? sanitize_text_field( $_POST['docy_integrations'] ) : '';
 		$docly_list_item                 = isset( $_POST['docly_list_item'] ) ? sanitize_text_field( $_POST['docly_list_item'] ) : '';
-		$spe_marquee_slides              = isset( $_POST['spe_marquee_slides'] ) ? sanitize_text_field( $_POST['spe_marquee_slides'] ) : '';
+//		$spe_marquee_slides              = isset( $_POST['spe_marquee_slides'] ) ? sanitize_text_field( $_POST['spe_marquee_slides'] ) : '';
 		$landpagy_pricing_table_switcher = isset( $_POST['landpagy_pricing_table_switcher'] ) ? sanitize_text_field( $_POST['landpagy_pricing_table_switcher'] ) : '';
 		$landpagy_pricing_table_tabs     = isset( $_POST['landpagy_pricing_table_tabs'] ) ? sanitize_text_field( $_POST['landpagy_pricing_table_tabs'] ) : '';
-		$spe_skill_showcase_widget       = isset( $_POST['spe_skill_showcase_widget'] ) ? sanitize_text_field( $_POST['spe_skill_showcase_widget'] ) : '';
+//		$spe_skill_showcase_widget       = isset( $_POST['spe_skill_showcase_widget'] ) ? sanitize_text_field( $_POST['spe_skill_showcase_widget'] ) : '';
 		$docy_tabs                       = isset( $_POST['docy_tabs'] ) ? sanitize_text_field( $_POST['docy_tabs'] ) : '';
 		$docy_team_carousel              = isset( $_POST['docy_team_carousel'] ) ? sanitize_text_field( $_POST['docy_team_carousel'] ) : '';
 		$docy_testimonial                = isset( $_POST['docy_testimonial'] ) ? sanitize_text_field( $_POST['docy_testimonial'] ) : '';
@@ -601,10 +601,10 @@ add_action( 'admin_init', function () {
 			'spe_instagram'                   => $spe_instagram,
 			'docy_integrations'               => $docy_integrations,
 			'docly_list_item'                 => $docly_list_item,
-			'spe_marquee_slides'              => $spe_marquee_slides,
+//			'spe_marquee_slides'              => $spe_marquee_slides,
 			'landpagy_pricing_table_switcher' => $landpagy_pricing_table_switcher,
 			'landpagy_pricing_table_tabs'     => $landpagy_pricing_table_tabs,
-			'spe_skill_showcase_widget'       => $spe_skill_showcase_widget,
+//			'spe_skill_showcase_widget'       => $spe_skill_showcase_widget,
 			'docy_tabs'                       => $docy_tabs,
 			'docy_team_carousel'              => $docy_team_carousel,
 			'docy_testimonial'                => $docy_testimonial,

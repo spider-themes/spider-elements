@@ -6559,12 +6559,6 @@ body.remove .tab_fixed.header_tab_items {
 .video_list .video_list_inner .accordion .accordion-panel .spe-accordion:last-child {
   margin-bottom: 0;
 }
-.video_list .video_list_inner .accordion .accordion-panel .spe-accordion.spe_accordion_inner.spe-collapsed #minus {
-  display: block;
-}
-.video_list .video_list_inner .accordion .accordion-panel .spe-accordion.spe_accordion_inner.spe-collapsed #plus {
-  display: none !important;
-}
 .video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header {
   border: none !important;
   background: transparent;
@@ -6604,9 +6598,6 @@ body.remove .tab_fixed.header_tab_items {
   min-width: 20px;
   border-radius: 2em;
 }
-.video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button #minus {
-  display: none;
-}
 .video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button .plus-minus {
   margin-left: auto;
   right: 20px;
@@ -6616,8 +6607,21 @@ body.remove .tab_fixed.header_tab_items {
   line-height: 26px;
   color: #425466;
 }
-.video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button .plus-minus #plus {
-  display: inline-block;
+
+.video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button #plus {
+  display: block;
+}
+
+.video_list .video_list_inner .accordion .spe-collapsed .spe-accordion .card-header button #plus {
+  display: none;
+}
+
+.video_list .video_list_inner .accordion .spe-collapsed .spe-accordion .card-header button #minus {
+  display: block !important;
+}
+
+.video_list .video_list_inner .accordion .accordion-panel .spe-accordion .card-header button #minus {
+  display: none;
 }
 
 .video_list .video_list_inner .card .card-body {

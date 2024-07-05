@@ -15,7 +15,7 @@
                 "docy_team_carousel.default":                   spiderElements.teamslider,
                 "spe_after_before_widget.default":              spiderElements.beforeAfter,
                 "docy_video_popup.default":                     spiderElements.videoPopup,
-                "spe_marquee_slides.default":                   spiderElements.marquee,
+                // "spe_marquee_slides.default":                   spiderElements.marquee,
                 "spe_instagram.default":                        spiderElements.instagramFeed,
                 "spel_accordion.default":                       spiderElements.accordions,
                 "docly_cheatsheet.default":                     spiderElements.cheatsheet,
