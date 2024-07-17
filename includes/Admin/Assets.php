@@ -23,7 +23,8 @@ class Assets {
 
 	}
 
-    public function fonts_url() {
+    public function fonts_url(): string
+    {
 
         $fonts_url = '';
         $fonts     = array();

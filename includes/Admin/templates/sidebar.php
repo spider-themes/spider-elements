@@ -50,19 +50,19 @@ if ( ! defined( 'ABSPATH' ) ) {
             </a>
         </li>
 
-        <li>
+        <!--<li>
             <a href="#api_settings" class="tab-menu-link" data-content="api_settings">
                 <div class="spe_tab_content">
                     <div class="icon">
                         <i class="icon-api"></i>
                     </div>
                     <div class="content">
-                        <h3><?php esc_html_e('API Settings', 'spider-elements'); ?></h3>
-                        <p><?php esc_html_e('Added api here', 'spider-elements'); ?></p>
+                        <h3><?php /*esc_html_e('API Settings', 'spider-elements'); */?></h3>
+                        <p><?php /*esc_html_e('Added api here', 'spider-elements'); */?></p>
                     </div>
                 </div>
             </a>
-        </li>
+        </li>-->
 
         <li>
             <a href="#integration" class="tab-menu-link" data-content="integration">
@@ -78,19 +78,19 @@ if ( ! defined( 'ABSPATH' ) ) {
             </a>
         </li>
 
-        <li>
+        <!--<li>
             <a href="#go_premium" class="tab-menu-link" data-content="go_premium">
                 <div class="spe_tab_content">
                     <div class="icon">
                         <i class="icon-premium"></i>
                     </div>
                     <div class="content">
-                        <h3><?php esc_html_e('Go Premium', 'spider-elements'); ?></h3>
-                        <p><?php esc_html_e('Get Premium Features', 'spider-elements'); ?></p>
+                        <h3><?php /*esc_html_e('Go Premium', 'spider-elements'); */?></h3>
+                        <p><?php /*esc_html_e('Get Premium Features', 'spider-elements'); */?></p>
                     </div>
                 </div>
             </a>
-        </li>
+        </li>-->
 
     </ul>
 </div>

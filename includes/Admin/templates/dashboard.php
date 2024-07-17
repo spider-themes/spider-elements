@@ -12,14 +12,16 @@ $close_icon = '<span class="invalid"><i class="icon-close"></i></span>';
 $environment = spel_get_environment_info();
 ?>
 <div id="dashboard" class="spe-tab-box active">
+
     <div class="spe_dashboard_banner">
         <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/spe-log.png') ?>"
             alt="<?php esc_attr_e('Dashboard Banner', 'spider-elements'); ?>">
     </div>
-    <div class="ezd-grid ezd-grid-cols-12">
+
+    <!--<div class="ezd-grid ezd-grid-cols-12">
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
-                <h3><?php esc_html_e('All Widgets', 'spider-elements'); ?></h3>
+                <h3><?php /*esc_html_e('All Widgets', 'spider-elements'); */?></h3>
                 <div class="circle_progress">
                     <svg class="radial-progress" data-percentage="85" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
@@ -36,7 +38,7 @@ $environment = spel_get_environment_info();
         </div>
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
-                <h3><?php esc_html_e('Core', 'spider-elements'); ?></h3>
+                <h3><?php /*esc_html_e('Core', 'spider-elements'); */?></h3>
                 <div class="circle_progress">
                     <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
@@ -71,7 +73,7 @@ $environment = spel_get_environment_info();
         </div>
         <div class="ezd-lg-col-3">
             <div class="spe_widget_progress_item ezd-text-center">
-                <h3><?php esc_html_e('Active', 'spider-elements'); ?></h3>
+                <h3><?php /*esc_html_e('Active', 'spider-elements'); */?></h3>
                 <div class="circle_progress">
                     <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
@@ -86,14 +88,15 @@ $environment = spel_get_environment_info();
                 </ul>
             </div>
         </div>
-    </div>
+    </div>-->
+
     <div class="ezd-grid ezd-grid-cols-12">
         <div class="ezd-lg-col-6">
             <div class="spe_support_item">
                 <span class="spe_icon icon-documentation"></span>
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Documentation', 'spider-elements'); ?></h2>
                 <p><?php esc_html_e('Get detailed and guided instruction to level up your website with the necessary set up.', 'spider-elements'); ?></p>
-                <a href="javascript:void(0)" class="spe_dashboard_btn">
+                <a href="https://helpdesk.spider-themes.net/docs/spider-elements" class="spe_dashboard_btn" target="_blank">
                     <?php esc_html_e('Check Documentation', 'spider-elements'); ?>
                 </a>
             </div>
@@ -104,7 +107,7 @@ $environment = spel_get_environment_info();
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Need Help', 'spider-elements'); ?></h2>
                 <p><?php esc_html_e('If you are stuck at anything while using our product, reach out to us immediately', 'spider-elements'); ?>
                 </p>
-                <a href="javascript:void(0)" class="spe_dashboard_btn">
+                <a href="#" class="spe_dashboard_btn">
                     <?php esc_html_e('Support Ticket', 'spider-elements'); ?>
                 </a>
             </div>
@@ -212,29 +215,13 @@ $environment = spel_get_environment_info();
 
 
     <div class="ezd-grid ezd-grid-cols-12">
-        <div class="ezd-lg-col-6">
-            <div class="spe_support_item">
-                <span class="spe_icon icon-features"></span>
-                <h2 class="spe_dashboard_title"><?php esc_html_e('Missing Features', 'spider-elements'); ?></h2>
-                <p><?php _e('Send us a message if you believe the plugin is<br> lacking any features.', 'spider-elements'); ?>
-                </p>
-                <a href="javascript:void(0)" class="spe_dashboard_btn">
-                    <?php esc_html_e('Request Features', 'spider-elements'); ?>
-                </a>
-            </div>
-        </div>
-        <div class="ezd-lg-col-6">
-            <div class="spe_support_item dashboard_img">
-                <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/table_work.png') ?>" alt="work">
-            </div>
-        </div>
+
         <div class="ezd-lg-col-6">
             <div class="spe_support_item">
                 <span class="spe_icon icon-love"></span>
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Show Your Love', 'spider-elements'); ?></h2>
-                <p><?php _e('Leave your feedback to help us out if you liked<br> our product and customer service.', 'spider-elements'); ?>
-                </p>
-                <a href="javascript:void(0)" class="spe_dashboard_btn">
+                <p><?php _e('Leave your feedback to help us out if you liked<br> our product and customer service.', 'spider-elements'); ?></p>
+                <a href="https://wordpress.org/support/plugin/spider-elements/reviews/#new-post" class="spe_dashboard_btn">
                     <?php esc_html_e('Check Documentation', 'spider-elements'); ?>
                 </a>
             </div>
@@ -244,7 +231,7 @@ $environment = spel_get_environment_info();
                 <span class="spe_icon icon-debug"></span>
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Facing an issues?', 'spider-elements'); ?></h2>
                 <p><?php _e('You think there is a bug in the product? Inform<br> us please!', 'spider-elements'); ?></p>
-                <a href="javascript:void(0)" class="spe_dashboard_btn">
+                <a href="#" class="spe_dashboard_btn">
                     <?php esc_html_e('Support Ticket', 'spider-elements'); ?>
                 </a>
             </div>

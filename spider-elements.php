@@ -181,8 +181,17 @@ if (!class_exists('SPEL')) {
 			return $custom_fonts;
 		}
 
+        /**
+         * Load Textdomain
+         *
+         * Load plugin localization files.
+         */
+        public function i18n() {
+            load_plugin_textdomain( 'spider-elements', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+        }
 
-		/**
+
+        /**
 		 * Include Files
 		 *
 		 * Load core files required to run the plugin.
@@ -204,25 +213,16 @@ if (!class_exists('SPEL')) {
             //require_once __DIR__ . '/includes/classes/Theme_Builder.php';
 
 			// Admin and Frontend Scripts Loaded
+            require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
-				require_once __DIR__ . '/includes/classes/Plugin_Installer.php';
+
 
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
 		}
-
-        /**
-         * Load Textdomain
-         *
-         * Load plugin localization files.
-         */
-		public function i18n() {
-			load_plugin_textdomain( 'spider-elements', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-		}
-
 
         /**
          * Initialize the plugin
@@ -258,12 +258,12 @@ if (!class_exists('SPEL')) {
 
             //new SPEL\includes\classes\Theme_Builder();
 
+            new SPEL\includes\Admin\Plugin_Installer();
+
             if ( is_admin() ) {
                 //Admin
                 new SPEL\includes\Admin\Admin_Settings();
 
-                //Classes
-                new SPEL\includes\classes\Plugin_Installer();
 
             }
 
