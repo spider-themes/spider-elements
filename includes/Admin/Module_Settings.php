@@ -15,15 +15,26 @@ class Module_Settings {
             // All Widget List
             'spider_elements_widgets' => [
                 [
-                    'name'         => 'spel_accordion', // widget name
-                    'className'    => 'Accordion', // widget class name
-                    'label'        => esc_html__('Accordion', 'spider-elements'), // widget label
+                    'name'         => 'docy_tabs',
+                    'className'    => 'Tabs',
+                    'label'        => esc_html__('Tabs', 'spider-elements'),
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => '#',
                     'video_url'    => '#',
-                    'icon'         => 'eicon-accordion',
+                    'icon'         => 'eicon-tabs',
+                ],
+                [
+                    'name'         => 'docy_videos_playlist',
+                    'className'    => 'Video_Playlist', // widget class name
+                    'label'        => esc_html__('Video Playlist', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-video-playlist',
                 ],
                 [
                     'name'         => 'docly_alerts_box',
@@ -37,15 +48,92 @@ class Module_Settings {
                     'icon'         => 'eicon-alert',
                 ],
                 [
-                    'name'         => 'spe_animated_heading',
-                    'className'    => 'Animated_Heading', // widget class name
-                    'label'        => esc_html__('Animated Heading', 'spider-elements'),
+                    'name'         => 'spel_accordion', // widget name
+                    'className'    => 'Accordion', // widget class name
+                    'label'        => esc_html__('Accordion', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => '#',
                     'video_url'    => '#',
-                    'icon'         => 'eicon-heading',
+                    'icon'         => 'eicon-accordion',
+                ],
+                [
+                    'name'         => 'docy_testimonial',
+                    'className'    => 'Testimonial', // widget class name
+                    'label'        => esc_html__('Testimonials', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-testimonial-carousel',
+                ],
+                [
+                    'name'         => 'landpagy_pricing_table_tabs',
+                    'className'    => 'Pricing_Table_Tabs', // widget class name
+                    'label'        => esc_html__('Pricing Table Tabs', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-price-table',
+                ],
+                [
+                    'name'         => 'landpagy_pricing_table_switcher',
+                    'className'    => 'Pricing_Table_Switcher', // widget class name
+                    'label'        => esc_html__('Pricing Table Switcher', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-price-table',
+                ],
+                [
+                    'name'         => 'docly_list_item',
+                    'className'    => 'List_Item', // widget class name
+                    'label'        => esc_html__('List Items', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-bullet-list',
+                ],
+                [
+                    'name'         => 'docly_cheatsheet',
+                    'className'    => 'Cheat_sheet', // widget class name
+                    'label'        => esc_html__('Cheat Sheet', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-apps',
+                ],
+                [
+                    'name'         => 'docy_team_carousel',
+                    'className'    => 'Team_Carousel', // widget class name
+                    'label'        => esc_html__('Team Carousel', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-nested-carousel',
+                ],
+                [
+                    'name'         => 'docy_integrations',
+                    'className'    => 'Integrations', // widget class name
+                    'label'        => esc_html__('Integrations', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-integration',
                 ],
                 [
                     'name'         => 'spe_after_before_widget',
@@ -59,6 +147,17 @@ class Module_Settings {
                     'icon'         => 'eicon-thumbnails-half',
                 ],
                 [
+                    'name'         => 'docy_video_popup',
+                    'className'    => 'Video_Popup', // widget class name
+                    'label'        => esc_html__('Video Popup', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-play',
+                ],
+                [
                     'name'         => 'docy_blog_grid',
                     'className'    => 'Blog_Grid', // widget class name
                     'label'        => esc_html__('Blog Grid', 'spider-elements'),
@@ -68,6 +167,17 @@ class Module_Settings {
                     'demo_url'     => '#',
                     'video_url'    => '#',
                     'icon'         => 'eicon-post',
+                ],
+                [
+                    'name'         => 'spe_timeline_widget',
+                    'className'    => 'Timeline', // widget class name
+                    'label'        => esc_html__('Timeline', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'on',
+                    'widget_type'  => 'free',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-time-line',
                 ],
                 [
                     'name'         => 'spe_buttons',
@@ -81,15 +191,15 @@ class Module_Settings {
                     'icon'         => 'eicon-button',
                 ],
                 [
-                    'name'         => 'docly_cheatsheet',
-                    'className'    => 'Cheat_sheet', // widget class name
-                    'label'        => esc_html__('Cheat Sheet', 'spider-elements'),
+                    'name'         => 'spe_animated_heading',
+                    'className'    => 'Animated_Heading', // widget class name
+                    'label'        => esc_html__('Animated Heading', 'spider-elements'),
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => '#',
                     'video_url'    => '#',
-                    'icon'         => 'eicon-apps',
+                    'icon'         => 'eicon-heading',
                 ],
                 [
                     'name'         => 'spe_counter',
@@ -114,161 +224,141 @@ class Module_Settings {
                     'icon'         => 'eicon-instagram-post',
                 ],
                 [
-                    'name'         => 'docy_integrations',
-                    'className'    => 'Integrations', // widget class name
-                    'label'        => esc_html__('Integrations', 'spider-elements'),
+                    'name'         => 'spel_icon_box',
+                    'className'    => 'Icon_box', // widget class name
+                    'label'        => esc_html__('Icon Box', 'spider-elements'),
                     'type'         => 'checkbox',
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => '#',
                     'video_url'    => '#',
-                    'icon'         => 'eicon-integration',
+                    'icon'         => 'eicon-icon-box',
                 ],
-                [
-                    'name'         => 'docly_list_item',
-                    'className'    => 'List_Item', // widget class name
-                    'label'        => esc_html__('List Items', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-bullet-list',
-                ],
-//                [
-//                    'name'         => 'spe_marquee_slides',
-//                    'className'    => 'Marquee_Slides', // widget class name
-//                    'label'        => esc_html__('Marquee Slides', 'spider-elements'),
-//                    'type'         => 'checkbox',
-//                    'default'      => 'on',
-//                    'widget_type'  => 'free',
-//                    'demo_url'     => '#',
-//                    'video_url'    => '#',
-//                    'icon'         => 'eicon-slider-push',
-//                ],
-                [
-                    'name'         => 'landpagy_pricing_table_switcher',
-                    'className'    => 'Pricing_Table_Switcher', // widget class name
-                    'label'        => esc_html__('Pricing Table Switcher', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-price-table',
-                ],
-                [
-                    'name'         => 'landpagy_pricing_table_tabs',
-                    'className'    => 'Pricing_Table_Tabs', // widget class name
-                    'label'        => esc_html__('Pricing Table Tabs', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-price-table',
-                ],
-//                [
-//                    'name'         => 'spe_skill_showcase_widget',
-//                    'className'    => 'Skill_Showcase', // widget class name
-//                    'label'        => esc_html__('Skill Showcase', 'spider-elements'),
-//                    'type'         => 'checkbox',
-//                    'default'      => 'on',
-//                    'widget_type'  => 'free',
-//                    'demo_url'     => '#',
-//                    'video_url'    => '#',
-//                    'icon'         => 'eicon-woo-settings',
-//                ],
-                [
-                    'name'         => 'docy_tabs',
-                    'className'    => 'Tabs',
-                    'label'        => esc_html__('Tabs', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-tabs',
-                ],
-                [
-                    'name'         => 'docy_team_carousel',
-                    'className'    => 'Team_Carousel', // widget class name
-                    'label'        => esc_html__('Team Carousel', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-nested-carousel',
-                ],
-                [
-                    'name'         => 'docy_testimonial',
-                    'className'    => 'Testimonial', // widget class name
-                    'label'        => esc_html__('Testimonials', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-testimonial-carousel',
-                ],
-                [
-                    'name'         => 'spe_timeline_widget',
-                    'className'    => 'Timeline', // widget class name
-                    'label'        => esc_html__('Timeline', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-time-line',
-                ],
-                [
-                    'name'         => 'docy_videos_playlist',
-                    'className'    => 'Video_Playlist', // widget class name
-                    'label'        => esc_html__('Video Playlist', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-video-playlist',
-                ],
-                [
-                    'name'         => 'docy_video_popup',
-                    'className'    => 'Video_Popup', // widget class name
-                    'label'        => esc_html__('Video Popup', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => '#',
-                    'video_url'    => '#',
-                    'icon'         => 'eicon-play',
-                ],
-	            [
-		            'name'         => 'spel_icon_box',
-		            'className'    => 'Icon_box', // widget class name
-		            'label'        => esc_html__('Icon Box', 'spider-elements'),
-		            'type'         => 'checkbox',
-		            'default'      => 'on',
-		            'widget_type'  => 'free',
-		            'demo_url'     => '#',
-		            'video_url'    => '#',
-		            'icon'         => 'eicon-icon-box',
-	            ],
 
 
-                /*[
-                    'name'         => 'spe_animated_heading',
-                    'className'    => 'Animated_Heading', // widget class name
-                    'label'        => esc_html__('Animated Heading', 'spider-elements'),
+                //All Pro Widget Listed
+                [
+                    'name'         => 'spel_accordion_article',
+                    'className'    => 'Accordion_Article', // widget class name
+                    'label'        => esc_html__('Accordion Articles', 'spider-elements'),
                     'type'         => 'checkbox',
-                    'default'      => 'on',
+                    'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => '#',
                     'video_url'    => '#',
-                    'icon'         => 'eicon-heading',
-                ],*/
+                    'icon'         => 'eicon-accordion',
+                ],
+                [
+                    'name'         => 'docy_box_hover',
+                    'className'    => 'Box_Hover', // widget class name
+                    'label'        => esc_html__('Box Hover', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-image-box',
+                ],
+                [
+                    'name'         => 'spel_business_hours',
+                    'className'    => 'Business_Hours', // widget class name
+                    'label'        => esc_html__('Business Hours', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-clock-o',
+                ],
+                [
+                    'name'         => 'spe_feature_box',
+                    'className'    => 'Feature_Box', // widget class name
+                    'label'        => esc_html__('Feature Box', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-info-box',
+                ],
+                [
+                    'name'         => 'docy_flip_box',
+                    'className'    => 'Flip_Box', // widget class name
+                    'label'        => esc_html__('Flip Box', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-flip-box',
+                ],
+                [
+                    'name'         => 'docly_hotspot',
+                    'className'    => 'Hotspot', // widget class name
+                    'label'        => esc_html__('Hotspot', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-image-hotspot',
+                ],
+                [
+                    'name'         => 'docy_image_hover',
+                    'className'    => 'Image_hover', // widget class name
+                    'label'        => esc_html__('Image Hover', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-image-rollover',
+                ],
+                [
+                    'name'         => 'docy_image_slides',
+                    'className'    => 'Image_Slides', // widget class name
+                    'label'        => esc_html__('Image Slides', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-slides',
+                ],
+                [
+                    'name'         => 'spel_marquee_slider',
+                    'className'    => 'Marquee_Slider', // widget class name
+                    'label'        => esc_html__('Marquee Slides', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-slider-push',
+                ],
+                [
+                    'name'         => 'spe_skill_showcase_widget',
+                    'className'    => 'Skill_Showcase', // widget class name
+                    'label'        => esc_html__('Skill Showcase', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-slideshow',
+                ],
+                [
+                    'name'         => 'spel_stacked_image',
+                    'className'    => 'Stacked_Image', // widget class name
+                    'label'        => esc_html__('Stacked Image', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'video_url'    => '#',
+                    'icon'         => 'eicon-featured-image',
+                ],
+
 
             ],
 

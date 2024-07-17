@@ -207,7 +207,7 @@ if (!class_exists('SPEL')) {
 			require_once __DIR__ . '/includes/extra.php';
 
             //Action Filter
-            //require_once __DIR__ . '/includes/filters.php';
+            require_once __DIR__ . '/includes/filters.php';
 
 			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
             //require_once __DIR__ . '/includes/classes/Theme_Builder.php';
@@ -461,16 +461,12 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Before_after.php' );
 			require_once( __DIR__ . '/widgets/Video_Popup.php' );
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
-//			require_once( __DIR__ . '/widgets/Skill_Showcase.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
 			require_once( __DIR__ . '/widgets/Buttons.php' );
 			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
-//            require_once( __DIR__ . '/widgets/Marquee_Slides.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
             require_once( __DIR__ . '/widgets/Instagram.php' );
-            require_once( __DIR__ . '/widgets/Fullscreen_Slider.php' );
             require_once( __DIR__ . '/widgets/Icon_box.php' );
-
 
 		}
 
@@ -489,73 +485,67 @@ if (!class_exists('SPEL')) {
 			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
 			$elements_opt = get_option( 'spe_widget_settings' );
 
+
+            if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Tabs() );
+            }
+            if ( isset( $elements_opt[ 'docy_videos_playlist' ] ) && $elements_opt[ 'docy_videos_playlist' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Video_Playlist() );
+            }
+            if ( isset( $elements_opt[ 'docly_alerts_box' ] ) && $elements_opt[ 'docly_alerts_box' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Alerts_Box() );
+            }
 			if ( isset( $elements_opt[ 'spel_accordion' ] ) && $elements_opt[ 'spel_accordion' ] == 'on' ) {
 				$widgets_manager->register( new \SPEL\Widgets\Accordion() );
 			}
-			if ( isset( $elements_opt[ 'docly_alerts_box' ] ) && $elements_opt[ 'docly_alerts_box' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Alerts_Box() );
-			}
-			if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
-			}
-			if ( isset( $elements_opt[ 'spe_after_before_widget' ] ) && $elements_opt[ 'spe_after_before_widget' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Before_After() );
-			}
-			if ( isset( $elements_opt[ 'docy_blog_grid' ] ) && $elements_opt[ 'docy_blog_grid' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Blog_Grid() );
-			}
-			if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Buttons() );
-			}
-			if ( isset( $elements_opt[ 'docly_cheatsheet' ] ) && $elements_opt[ 'docly_cheatsheet' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Cheat_sheet() );
-			}
-			if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Counter() );
-			}
-			if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Instagram() );
-			}
-			if ( isset( $elements_opt[ 'docy_integrations' ] ) && $elements_opt[ 'docy_integrations' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Integrations() );
-			}
-			if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\List_Item() );
-			}
-//			if ( isset( $elements_opt[ 'spe_marquee_slides' ] ) && $elements_opt[ 'spe_marquee_slides' ] == 'on' ) {
-//				$widgets_manager->register( new \SPEL\Widgets\Marquee_Slides() );
-//			}
-			if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
-			}
-			if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
-			}
-//			if ( isset( $elements_opt[ 'spe_skill_showcase_widget' ] ) && $elements_opt[ 'spe_skill_showcase_widget' ] == 'on' ) {
-//				$widgets_manager->register( new \SPEL\Widgets\Skill_Showcase() );
-//			}
-			if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Tabs() );
-			}
-			if ( isset( $elements_opt[ 'docy_team_carousel' ] ) && $elements_opt[ 'docy_team_carousel' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Team_Carousel() );
-			}
-			if ( isset( $elements_opt[ 'docy_testimonial' ] ) && $elements_opt[ 'docy_testimonial' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Testimonial() );
-			}
-			if ( isset( $elements_opt[ 'spe_timeline_widget' ] ) && $elements_opt[ 'spe_timeline_widget' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Timeline() );
-			}
-			if ( isset( $elements_opt[ 'docy_videos_playlist' ] ) && $elements_opt[ 'docy_videos_playlist' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Video_Playlist() );
-			}
-			if ( isset( $elements_opt[ 'docy_video_popup' ] ) && $elements_opt[ 'docy_video_popup' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Video_Popup() );
-			}
-			if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Icon_box() );
-			}
-
+            if ( isset( $elements_opt[ 'docy_testimonial' ] ) && $elements_opt[ 'docy_testimonial' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Testimonial() );
+            }
+            if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
+            }
+            if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
+            }
+            if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\List_Item() );
+            }
+            if ( isset( $elements_opt[ 'docly_cheatsheet' ] ) && $elements_opt[ 'docly_cheatsheet' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Cheat_sheet() );
+            }
+            if ( isset( $elements_opt[ 'docy_team_carousel' ] ) && $elements_opt[ 'docy_team_carousel' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Team_Carousel() );
+            }
+            if ( isset( $elements_opt[ 'docy_integrations' ] ) && $elements_opt[ 'docy_integrations' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Integrations() );
+            }
+            if ( isset( $elements_opt[ 'spe_after_before_widget' ] ) && $elements_opt[ 'spe_after_before_widget' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Before_After() );
+            }
+            if ( isset( $elements_opt[ 'docy_video_popup' ] ) && $elements_opt[ 'docy_video_popup' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Video_Popup() );
+            }
+            if ( isset( $elements_opt[ 'docy_blog_grid' ] ) && $elements_opt[ 'docy_blog_grid' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Blog_Grid() );
+            }
+            if ( isset( $elements_opt[ 'spe_timeline_widget' ] ) && $elements_opt[ 'spe_timeline_widget' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Timeline() );
+            }
+            if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Buttons() );
+            }
+            if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
+            }
+            if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Counter() );
+            }
+            if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Instagram() );
+            }
+            if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
+                $widgets_manager->register( new \SPEL\Widgets\Icon_box() );
+            }
 
 		}
 
@@ -588,7 +578,7 @@ if (!class_exists('SPEL')) {
 /**
  * Initialize the main plugin class
  *
- * @return \SPEL
+ * @return SPEL
  *
  */
 if (!function_exists('spel')) {
