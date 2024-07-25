@@ -78,7 +78,7 @@ $integrations = [
     </div>
 </div>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     jQuery(document).ready(function($) {
         $('.spe_dashboard_btn').on('click', function(e) {
             e.preventDefault();
@@ -114,4 +114,4 @@ $integrations = [
             }
         });
     });
-</script>
+</script>-->

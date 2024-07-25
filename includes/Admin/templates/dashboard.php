@@ -107,8 +107,33 @@ $environment = spel_get_environment_info();
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Need Help', 'spider-elements'); ?></h2>
                 <p><?php esc_html_e('If you are stuck at anything while using our product, reach out to us immediately', 'spider-elements'); ?>
                 </p>
-                <a href="#" class="spe_dashboard_btn">
+                <a href="https://wordpress.org/support/plugin/spider-elements/" class="spe_dashboard_btn" target="_blank">
                     <?php esc_html_e('Support Ticket', 'spider-elements'); ?>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ezd-grid ezd-grid-cols-12">
+
+        <div class="ezd-lg-col-6">
+            <div class="spe_support_item">
+                <span class="spe_icon icon-love"></span>
+                <h2 class="spe_dashboard_title"><?php esc_html_e('Show Your Love', 'spider-elements'); ?></h2>
+                <p><?php echo wp_kses_post(__('Leave your feedback to help us out if you liked<br> our product and customer service.', 'spider-elements')); ?></p>
+                <a href="https://wordpress.org/support/plugin/spider-elements/reviews/#new-post" class="spe_dashboard_btn" target="_blank">
+                    <?php esc_html_e('Leave a Review', 'spider-elements'); ?>
+                </a>
+            </div>
+        </div>
+        <div class="ezd-lg-col-6">
+            <div class="spe_support_item">
+                <span class="spe_icon icon-debug"></span>
+                <h2 class="spe_dashboard_title"><?php esc_html_e('Facing an issues?', 'spider-elements'); ?></h2>
+                <p><?php echo wp_kses_post(__('You think there is a bug in the product? Inform<br> us please!', 'spider-elements')); ?></p>
+                <a href="#" class="spe_dashboard_btn" target="_blank">
+                    <?php esc_html_e('Get Help Now', 'spider-elements'); ?>
                 </a>
             </div>
         </div>
@@ -121,27 +146,30 @@ $environment = spel_get_environment_info();
                 <div class="ezd-grid ezd-grid-cols-12">
 
                     <ul class="spe-list-unstyled spe_requirment_list ezd-lg-col-6">
-
                         <li>
                             <strong><?php esc_html_e('PHP Version:', 'spider-elements'); ?></strong>
                             <?php
-                            if ( version_compare($php_version, '7.4', '<' ) ) {
-                                echo '<span title="Minimum: 7.4 Recommended">'.$close_icon.'Currently ' . $php_version . '</span>';
+                            if (version_compare($php_version, '7.4', '<')) {
+                                echo '<span title="' . esc_attr__('Minimum: 7.4 Recommended', 'spider-elements') . '">'
+                                    . $close_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($php_version) . '</span>';
                             } else {
-                                echo '<span>'.$check_icon.'Currently ' . $php_version . '</span>';
+                                echo '<span>' . $check_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($php_version) . '</span>';
                             }
                             ?>
                         </li>
-                        <li><strong><?php esc_html_e('Memory Limit:', 'spider-elements'); ?></strong>
+                        <li>
+                            <strong><?php esc_html_e('Memory Limit:', 'spider-elements'); ?></strong>
                             <?php
-                            if ( intval($memory_limit) < 512  ) {
-                                echo '<span title="Minimum 512M Recommended">'.$close_icon.'Currently ' . $memory_limit . '</span>';
+                            if (intval($memory_limit) < 512) {
+                                echo '<span title="' . esc_attr__('Minimum 512M Recommended', 'spider-elements') . '">'
+                                    . $close_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($memory_limit) . '</span>';
                             } else {
-                                echo '<span>'.$check_icon.'Currently ' . $memory_limit . '</span>';
+                                echo '<span>' . $check_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($memory_limit) . '</span>';
                             }
                             ?>
                         </li>
-                        <li><strong><?php esc_html_e('Uploads Folder Writable:', 'spider-elements'); ?></strong>
+                        <li>
+                            <strong><?php esc_html_e('Uploads Folder Writable:', 'spider-elements'); ?></strong>
                             <?php
                             if (!is_writable($upload_path)) {
                                 echo $close_icon;
@@ -150,9 +178,10 @@ $environment = spel_get_environment_info();
                             }
                             ?>
                         </li>
-                        <li><strong><?php esc_html_e('GZip Enabled:', 'spider-elements'); ?></strong>
+                        <li>
+                            <strong><?php esc_html_e('GZip Enabled:', 'spider-elements'); ?></strong>
                             <?php
-                            if ($environment[ 'gzip_enabled' ]) {
+                            if ($environment['gzip_enabled']) {
                                 echo $check_icon;
                             } else {
                                 echo $close_icon;
@@ -165,76 +194,66 @@ $environment = spel_get_environment_info();
                         <li>
                             <strong><?php esc_html_e('Max Execution Time:', 'spider-elements'); ?></strong>
                             <?php
-                            if ( intval($max_execution_time) < 90 ) {
-                                echo '<span title="Minimum 90 Recommended">'.$close_icon.'Currently ' . $max_execution_time . '</span>';
+                            if (intval($max_execution_time) < 90) {
+                                echo '<span title="' . esc_attr__('Minimum 90 Recommended', 'spider-elements') . '">'
+                                    . $close_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($max_execution_time) . '</span>';
                             } else {
-                                echo '<span>'.$check_icon.'Currently ' . $max_execution_time . '</span>';
+                                echo '<span>' . $check_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($max_execution_time) . '</span>';
                             }
                             ?>
                         </li>
-                        <li><strong><?php esc_html_e('Max Post Limit:', 'spider-elements'); ?></strong>
+                        <li>
+                            <strong><?php esc_html_e('Max Post Limit:', 'spider-elements'); ?></strong>
                             <?php
-                            if ( intval($post_limit) < 32 ) {
-                                echo '<span title="Minimum 32M Recommended">'.$close_icon.'Currently ' . $post_limit . '</span>';
+                            if (intval($post_limit) < 32) {
+                                echo '<span title="' . esc_attr__('Minimum 32M Recommended', 'spider-elements') . '">'
+                                    . $close_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($post_limit) . '</span>';
                             } else {
-                                echo '<span>'.$check_icon .'Currently ' . $post_limit . '</span>';
+                                echo '<span>' . $check_icon . esc_html__('Currently:', 'spider-elements') . ' ' . esc_html($post_limit) . '</span>';
                             }
                             ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e('Multisite:', 'spider-elements'); ?></strong>
                             <?php
-                            if ( $environment['wp_multisite'] ) {
-                                echo '<span>'.$check_icon.'Multisite</span>';
+                            if ($environment['wp_multisite']) {
+                                echo '<span>' . $check_icon . esc_html__('Multisite', 'spider-elements') . '</span>';
                             } else {
-                                echo '<span>'.$close_icon.'No Multisite</span>';
+                                echo '<span>' . $close_icon . esc_html__('No Multisite', 'spider-elements') . '</span>';
                             }
                             ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e('Debug Mode:', 'spider-elements'); ?></strong>
                             <?php
-                            if ($environment[ 'wp_debug_mode' ]) {
-                                echo '<span>'.$check_icon.'Currently Turned On</span>';
+                            if ($environment['wp_debug_mode']) {
+                                echo '<span>' . $check_icon . esc_html__('Currently Turned On', 'spider-elements') . '</span>';
                             } else {
-                                echo '<span>'.$close_icon.'Currently Turned Off</span>';
+                                echo '<span>' . $close_icon . esc_html__('Currently Turned Off', 'spider-elements') . '</span>';
                             }
                             ?>
                         </li>
                     </ul>
+
                 </div>
 
                 <div class="note">
-                    <p><?php _e('Note: If you have multiple addons like <strong>Spider Elements</strong> so you need some more requirement some cases
-                        so make sure you added more memory for others addon too.', 'spider-elements'); ?></p>
+                    <p>
+                        <?php
+                        printf(
+                            esc_html__(
+                                'Note: If you have multiple addons like %1$s Spider Elements %2$s, you may need more resources. Ensure you allocate more memory for other addons as well.',
+                                'spider-elements'
+                            ),
+                            '<strong>',
+                            '</strong>'
+                        );
+                        ?>
+                    </p>
                 </div>
 
             </div>
         </div>
     </div>
 
-
-    <div class="ezd-grid ezd-grid-cols-12">
-
-        <div class="ezd-lg-col-6">
-            <div class="spe_support_item">
-                <span class="spe_icon icon-love"></span>
-                <h2 class="spe_dashboard_title"><?php esc_html_e('Show Your Love', 'spider-elements'); ?></h2>
-                <p><?php _e('Leave your feedback to help us out if you liked<br> our product and customer service.', 'spider-elements'); ?></p>
-                <a href="https://wordpress.org/support/plugin/spider-elements/reviews/#new-post" class="spe_dashboard_btn">
-                    <?php esc_html_e('Check Documentation', 'spider-elements'); ?>
-                </a>
-            </div>
-        </div>
-        <div class="ezd-lg-col-6">
-            <div class="spe_support_item">
-                <span class="spe_icon icon-debug"></span>
-                <h2 class="spe_dashboard_title"><?php esc_html_e('Facing an issues?', 'spider-elements'); ?></h2>
-                <p><?php _e('You think there is a bug in the product? Inform<br> us please!', 'spider-elements'); ?></p>
-                <a href="#" class="spe_dashboard_btn">
-                    <?php esc_html_e('Support Ticket', 'spider-elements'); ?>
-                </a>
-            </div>
-        </div>
-    </div>
 </div>

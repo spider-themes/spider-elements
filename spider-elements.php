@@ -21,6 +21,81 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( function_exists( 'spel_fs' ) ) {
+    spel_fs()->set_basename( false, __FILE__ );
+} else {
+    // DO NOT REMOVE THIS IF, IT IS ESSENTIAL FOR THE `function_exists` CALL ABOVE TO PROPERLY WORK.
+
+    if ( ! function_exists( 'spel_fs' ) ) {
+
+        // Create a helper function for easy SDK access.
+        function spel_fs() {
+            global $spel_fs;
+
+            if ( ! isset( $spel_fs ) ) {
+
+                // Include Freemius SDK.
+                require_once dirname(__FILE__) . '/includes/freemius/start.php';
+
+                $spel_fs = fs_dynamic_init( array(
+                    'id'                  => '16034',
+                    'slug'                => 'spider-elements',
+                    'premium_slug'        => 'spider-elements-pro',
+                    'type'                => 'plugin',
+                    'public_key'          => 'pk_711f20dd503c8eb713171079ffeb5',
+                    'is_premium'          => false,
+                    'has_premium_version' => false,
+                    'has_addons'          => false,
+                    'has_paid_plans'      => true,
+                    'trial'               => [
+                        'days'               => 14,
+                        'is_require_payment' => true,
+                    ],
+                    'menu'               => array(
+                        'slug'           => 'spider-elements',
+                        /*'parent'         => array(
+                            'slug' => 'admin.php?page=spider_elements_settings',
+                        ),*/
+                        'first-path'     => 'admin.php?page=spider_elements_settings',
+                        'contact'        => true,
+                        'support'        => true,
+                    ),
+                ) );
+            }
+
+            return $spel_fs;
+        }
+
+        // Init Freemius.
+        spel_fs()->add_filter( 'deactivate_on_activation', '__return_false' );
+        spel_fs()->add_filter( 'hide_freemius_powered_by', '__return_true' );
+
+        spel_fs();
+
+        // Signal that SDK was initiated.
+        do_action( 'spel_fs_loaded' );
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * SPEL class.
  *
