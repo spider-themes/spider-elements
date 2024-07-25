@@ -28,16 +28,14 @@ class Admin_Settings {
 	public function add_menu_page() {
 
 		add_menu_page(
-			__( 'Spider Elements', 'spider-elements' ),
-			__( 'Spider Elements', 'spider-elements' ),
+			esc_html__( 'Spider Elements', 'spider-elements' ),
+            esc_html__( 'Spider Elements', 'spider-elements' ),
 			'manage_options',
-			self::PAGE_ID,
+			'spider_elements_settings',
 			[ $this, 'render_plugin_page' ],
 			$this->spel_icon(),
 			30
 		);
-
-
 	}
 
 
