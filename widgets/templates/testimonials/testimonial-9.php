@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="feedback-section-two">
-    <div class="feedback-slider-two testimonial-slider-<?php echo esc_attr($testimonial_id);?>">
+    <div class="feedback-slider-two testimonial-slider-<?php echo esc_attr($testimonial_id);?>" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 		<?php
         if(!empty($testimonials6)) {
 			foreach ($testimonials6 as $item ) {

@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="expert-section-one">
-    <div class="expert-slider-one slider-<?php echo esc_attr($team_id); ?>">
+    <div class="expert-slider-one slider-<?php echo esc_attr($team_id); ?>" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
         <?php
         if (!empty($team_slider_item) && is_array($team_slider_item)) {
             foreach ( $team_slider_item as $item ) { ?>

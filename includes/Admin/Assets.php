@@ -92,6 +92,7 @@ class Assets {
 		wp_enqueue_style( 'spel-fancy', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css', [], SPEL_VERSION );
 		wp_enqueue_style( 'spel-admin', SPEL_CSS . '/admin.css', [], SPEL_VERSION);
 
+
 		// Register Admin Panel Scripts
 		wp_enqueue_script( 'spel-waypoint', SPEL_VEND . '/circle-progressbar/jquery.waypoints.min.js', ['jquery'], SPEL_VERSION, true );
 		wp_enqueue_script( 'spel-counterup', SPEL_VEND . '/circle-progressbar/jquery.counterup.min.js', ['jquery'], SPEL_VERSION, true );

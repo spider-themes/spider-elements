@@ -58,6 +58,11 @@ class Assets
 		wp_register_style('elegant-icon', SPEL_VEND . '/elegant-icon/style.css', [], SPEL_VERSION);
 		wp_register_style('fancybox', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css', [], SPEL_VERSION);
 		wp_register_style('spel-main', SPEL_CSS . '/main.css', [], SPEL_VERSION);
+
+		if ( is_rtl() ) {
+			wp_enqueue_style( 'spel-rtl', SPEL_CSS . '/rtl.css' );
+		}
+
 	}
 
 	/**

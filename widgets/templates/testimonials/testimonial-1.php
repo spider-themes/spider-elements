@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="ezd-grid ezd-grid-cols-12">
     <div class="ezd-lg-col-6">
-        <div class="doc_testimonial_slider">
+        <div class="doc_testimonial_slider" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 			<?php
 			if ( ! empty( $testimonials ) ) {
 				foreach ( $testimonials as $item ) {

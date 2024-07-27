@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
                 <div class="icon ezd-d-flex ezd-align-items-center ezd-justify-content-center ezd-rounded-circle">
                     <?php spel_dynamic_image($settings[ 'quote_img' ], 'full', [ 'class' => 'lazy-img' ]) ?>
                 </div>
-                <div class="feedback-slider-three-a">
+                <div class="feedback-slider-three-a" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
                     <?php
                     if (!empty($testimonials10)) {
                         foreach ( $testimonials10 as $item ) {
@@ -51,7 +51,7 @@ if (!defined('ABSPATH')) {
         </div>
     </div>
     <div class="slider-wrapper">
-        <div class="feedback-slider-three-b">
+        <div class="feedback-slider-three-b" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
             <?php
             if (!empty($testimonials10)) {
                 foreach ( $testimonials10 as $item ) {

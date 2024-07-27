@@ -260,8 +260,10 @@
         //============================== Team Slider =============================//
         teamslider: function ($scope) {
             let teamSlider = $scope.find(".expert-slider-one");
+            let dataRtlTeam = teamSlider.data("rtl");
             if (teamSlider.length) {
                 teamSlider.slick({
+                    rtl: dataRtlTeam,
                     arrows: true,
                     lazyLoad: "ondemand",
                     prevArrow: $(".prev_a"),
@@ -290,6 +292,7 @@
 
             if ($(".expert-slider-two").length) {
                 $(".expert-slider-two").slick({
+                    rtl: dataRtlTeam,
                     dots: true,
                     arrows: false,
                     lazyLoad: "ondemand",
@@ -360,6 +363,7 @@
         testimonial: function ($scope) {
             let testimonialSlider = $scope.find(".doc_testimonial_slider");
             let imageSlider = $scope.find(".doc_img_slider");
+            let dataRtl = imageSlider.data("rtl");
 
             // Testi
             if (testimonialSlider.length > 0) {
@@ -367,6 +371,7 @@
                     autoplay: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    rtl: dataRtl,
                     autoplaySpeed: 2000,
                     speed: 2000,
                     dots: true,
@@ -456,10 +461,14 @@
                 });
             }
 
+
+            //== Testimonial Style 6
             let testimonial6 = $scope.find(".feedback-slider-one");
+            let dataRtl6 = testimonial6.data("rtl");
             if (testimonial6.length > 0) {
                 testimonial6.each(function () {
                     $(this).slick({
+                        rtl: dataRtl6,
                         dots: false,
                         arrows: true,
                         lazyLoad: "ondemand",
@@ -484,8 +493,10 @@
 
             // feedback-slider-two slider js
             let testimonial8 = $scope.find(".feedback-slider-two");
+            let dataRtl8 = testimonial8.data("rtl");
             if (testimonial8.length) {
                 testimonial8.slick({
+                    rtl: dataRtl8,
                     dots: true,
                     arrows: false,
                     lazyLoad: "ondemand",
@@ -512,11 +523,13 @@
             }
 
             let testimonial10_a = $scope.find(".feedback-slider-three-a");
+            let dataRtl10a = testimonial10_a.data("rtl");
             let testimonial10_b = $scope.find(".feedback-slider-three-b");
-
+            let dataRtl10b = testimonial10_b.data("rtl");
 
             if (testimonial10_a.length > 0) {
                 testimonial10_a.slick({
+                    rtl: dataRtl10b,
                     dots: false,
                     arrows: true,
                     prevArrow: $('.prev_d'),
@@ -534,6 +547,7 @@
 
             if (testimonial10_b.length > 0 ) {
                 testimonial10_b.slick({
+                    rtl: dataRtl10a,
                     dots: true,
                     arrows: false,
                     lazyLoad: 'ondemand',
@@ -565,8 +579,10 @@
 
             // Testimonial Style 11
             let testimonial11 = $scope.find(".testimonial-slider");
+            let dataRtl11 = testimonial11.data("rtl");
             if (testimonial11.length) {
                 testimonial11.slick({
+                    rtl: dataRtl11,
                     autoplay: true,
                     infinite: true,
                     slidesToShow: 1,

@@ -13,6 +13,12 @@ if ( ! defined( 'SPEL_TEXT_BADGE' ) ) {
 	);
 }
 
+if ( ! function_exists( 'spel_rtl') ) {
+	function spel_rtl(): string {
+		return is_rtl() ? 'true' : 'false';
+	}
+}
+
 
 /**
  * @return bool
