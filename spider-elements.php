@@ -505,8 +505,8 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
 			require_once( __DIR__ . '/widgets/Accordion.php' );
 			require_once( __DIR__ . '/widgets/Testimonial.php' );
-			require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
-			require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
+			// require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
+			// require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
 			require_once( __DIR__ . '/widgets/List_Item.php' );
 			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
@@ -515,10 +515,10 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Video_Popup.php' );
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
-			require_once( __DIR__ . '/widgets/Buttons.php' );
-			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
+			// require_once( __DIR__ . '/widgets/Buttons.php' );
+			// require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
-            require_once( __DIR__ . '/widgets/Instagram.php' );
+            // require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Icon_box.php' );
 
 		}
