@@ -505,8 +505,8 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
 			require_once( __DIR__ . '/widgets/Accordion.php' );
 			require_once( __DIR__ . '/widgets/Testimonial.php' );
-			// require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
-			// require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
+			require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
+			require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
 			require_once( __DIR__ . '/widgets/List_Item.php' );
 			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
@@ -515,10 +515,10 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Video_Popup.php' );
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
-			// require_once( __DIR__ . '/widgets/Buttons.php' );
-			// require_once( __DIR__ . '/widgets/Animated_Heading.php' );
+			require_once( __DIR__ . '/widgets/Buttons.php' );
+			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
-            // require_once( __DIR__ . '/widgets/Instagram.php' );
+            require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Icon_box.php' );
 
 		}
@@ -554,12 +554,12 @@ if (!class_exists('SPEL')) {
             if ( isset( $elements_opt[ 'docy_testimonial' ] ) && $elements_opt[ 'docy_testimonial' ] == 'on' ) {
                 $widgets_manager->register( new \SPEL\Widgets\Testimonial() );
             }
-            if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
-                $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
-            }
-            if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
-                $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
-            }
+            // if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
+            //     $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
+            // }
+            // if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
+            //     $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
+            // }
             if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
                 $widgets_manager->register( new \SPEL\Widgets\List_Item() );
             }
@@ -584,18 +584,18 @@ if (!class_exists('SPEL')) {
             if ( isset( $elements_opt[ 'spe_timeline_widget' ] ) && $elements_opt[ 'spe_timeline_widget' ] == 'on' ) {
                 $widgets_manager->register( new \SPEL\Widgets\Timeline() );
             }
-            if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
-                $widgets_manager->register( new \SPEL\Widgets\Buttons() );
-            }
-            if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
-                $widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
-            }
+            // if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
+            //     $widgets_manager->register( new \SPEL\Widgets\Buttons() );
+            // }
+            // if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
+            //     $widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
+            // }
             if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
                 $widgets_manager->register( new \SPEL\Widgets\Counter() );
             }
-            if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
-                $widgets_manager->register( new \SPEL\Widgets\Instagram() );
-            }
+            // if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
+            //     $widgets_manager->register( new \SPEL\Widgets\Instagram() );
+            // }
             if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
                 $widgets_manager->register( new \SPEL\Widgets\Icon_box() );
             }
