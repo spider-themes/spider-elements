@@ -33,29 +33,31 @@ if ( function_exists( 'spel_fs' ) ) {
             global $spel_fs;
 
             if ( ! isset( $spel_fs ) ) {
+
                 // Include Freemius SDK.
                 require_once dirname(__FILE__) . '/includes/freemius/start.php';
 
                 $spel_fs = fs_dynamic_init(
                     [
-                        'id'              => '16034',
-                        'slug'            => 'spider-elements',
-                        'premium_slug'    => 'spider-elements-pro',
-                        'type'            => 'plugin',
-                        'public_key'      => 'pk_711f20dd503c8eb713171079ffeb5',
-                        'is_premium'      => false,
-                        'is_premium_only' => false,
-                        'has_addons'      => false,
-                        'has_paid_plans'  => true,
-                        'trial'           => [
-                            'days'               => 14,
-                            'is_require_payment' => true,
+                        'id'                    => '16034',
+                        'slug'                  => 'spider-elements',
+                        'premium_slug'          => 'spider-elements-pro',
+                        'type'                  => 'plugin',
+                        'public_key'            => 'pk_711f20dd503c8eb713171079ffeb5',
+                        'is_premium'            => true,
+                        'premium_suffix'        => 'Pro',
+                        'has_premium_version'   => true,
+                        'has_addons'            => false,
+                        'has_paid_plans'        => true,
+                        'trial'                 => [
+                            'days'              => 14,
+                            'is_require_payment'=> true,
                         ],
-                        'menu'            => [
-                            'slug'       => 'spider_elements_settings',
-                            'contact'    => true,
-                            'support'    => true,
-                            'first-path' => 'admin.php?page=spider_elements_settings'
+                        'menu'                  => [
+                            'slug'              => 'spider_elements_settings',
+                            'contact'           => true,
+                            'support'           => true,
+                            'first-path'        => 'admin.php?page=spider_elements_settings'
                         ],
                     ]
                 );
@@ -67,6 +69,9 @@ if ( function_exists( 'spel_fs' ) ) {
         // Init Freemius.
         spel_fs()->add_filter( 'deactivate_on_activation', '__return_false' );
         spel_fs()->add_filter( 'hide_freemius_powered_by', '__return_true' );
+
+        // Init Freemius.
+        spel_fs();
 
         // Signal that SDK was initiated.
         do_action( 'spel_fs_loaded' );
@@ -257,7 +262,7 @@ if (!class_exists('SPEL')) {
         {
 
 			// Extra functions
-			require_once __DIR__ . '/includes/extra.php';
+			require_once __DIR__ . '/includes/functions.php';
 
             //Action Filter
             require_once __DIR__ . '/includes/filters.php';

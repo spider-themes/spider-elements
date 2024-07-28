@@ -9,9 +9,9 @@ $elements = Module_Settings::get_widget_settings();
 
 // Global switcher
 $spe_widget_opt = get_option('spe_widget_settings');
-$global_switcher = $spe_widget_opt['spe_global_switcher'] ?? '';
+$global_switcher = $spe_widget_opt['spel_element_global_switcher'] ?? '';
 $is_checked = !empty ($global_switcher == 'on') ? ' checked' : '';
-$checked = !isset ($spe_widget_opt['spe_global_switcher']) ? ' checked' : $is_checked;
+$checked = !isset ($spe_widget_opt['spel_element_global_switcher']) ? ' checked' : $is_checked;
 ?>
 <div id="elements" class="spe-tab-box">
     <div class="spe_elements_tab_menu">
@@ -27,8 +27,8 @@ $checked = !isset ($spe_widget_opt['spe_global_switcher']) ? ' checked' : $is_ch
             <div class="plugin_active_switcher">
                 <label class="toggler" id="disable"><?php esc_html_e('Disable All', 'spider-elements'); ?></label>
                 <div class="toggle">
-                    <input type="checkbox" data-id="spe-widget-list" id="switcher" name="spe_global_switcher"
-                           class="check spe_element_global_switcher">
+                    <input type="checkbox" data-id="spe-widget-list" id="switcher" name="spel_element_global_switcher"
+                           class="check spel_element_global_switcher">
                     <label class="b switch" for="switcher"></label>
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e('Enabled All', 'spider-elements'); ?></label>
@@ -56,16 +56,24 @@ $checked = !isset ($spe_widget_opt['spe_global_switcher']) ? ' checked' : $is_ch
         if (is_array($elements['spider_elements_widgets'])) {
             foreach ($elements['spider_elements_widgets'] as $item) {
                 $widget_type = $item['widget_type'] ?? '';
-                $is_pro_widget = $widget_type === 'pro' ? ' class=pro_popup' : '';
+
+                // Default class and attributes for widgets
+                $is_pro_widget = $widget_type === 'pro' ? ' pro_popup' : '';
                 $is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
 
-                $elements_opt = get_option('spe_widget_settings');
+                // If premium, enable pro widgets
+                if (spel_is_premium()) {
+                    $is_pro_widget = ''; // Remove pro_popup class
+                    $is_pro_widget_enabled = ''; // Enable widget
+                }
+
+                $opt = get_option('spe_widget_settings');
                 $opt_name = $item['name'] ?? '';
 
                 // By default, all the switcher is checked
-                $opt_input = $elements_opt[$opt_name] ?? '';
+                $opt_input = $opt[$opt_name] ?? '';
                 $is_checked = !empty ($opt_input == 'on') ? ' checked' : '';
-                $checked = !isset ($elements_opt[$opt_name]) ? ' checked' : $is_checked;
+                $checked = !isset ($opt[$opt_name]) ? ' checked' : $is_checked;
                 ?>
                 <div class="ezd-colum-space-4 <?php echo esc_attr($item['widget_type']) ?>">
                     <div class="spe_element_box spe_element_switch badge">
@@ -104,7 +112,8 @@ $checked = !isset ($spe_widget_opt['spe_global_switcher']) ? ' checked' : $is_ch
                                 <?php
                             }
                             ?>
-                            <label<?php echo esc_attr($is_pro_widget) ?> class="spe-switch">
+                            <label for="<?php echo esc_attr($item['name']) ?>"
+                                   class="spe-switch<?php echo esc_attr($is_pro_widget) ?>">
                                 <input type="checkbox" class="spe_widget_checkbox spe-widget-list"
                                        name="<?php echo esc_attr($item['name']) ?>"
                                        id="<?php echo esc_attr($item['name']) ?>" <?php echo esc_attr($checked . $is_pro_widget_enabled); ?>>
@@ -135,7 +144,7 @@ $checked = !isset ($spe_widget_opt['spe_global_switcher']) ? ' checked' : $is_ch
             <h3><?php esc_html_e('Go Pro', 'spider-elements'); ?></h3>
             <p><?php esc_html_e('Upgrade to Pro Version for Unlock more features!', 'spider-elements'); ?></p>
             <a href="#" class="spe_dashboard_btn" target="_blank">
-                <?php esc_html_e('Confirm', 'spider-elements'); ?>
+                <?php esc_html_e('Upgrade Now', 'spider-elements'); ?>
             </a>
         </div>
     </div>
