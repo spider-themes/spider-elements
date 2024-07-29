@@ -106,6 +106,7 @@
     font-size: 16px;
     margin-left: 40px;
     cursor: pointer;
+
     &.save-now {
       background: #6d27e5;
     }
@@ -117,9 +118,9 @@
   background: #f0e9fc;
   padding: 15px 24px;
   display: flex;
-  margin: 32px 0px;
+  margin: 32px 0;
 
-  .spe_fiter_data {
+  .spel_filter_data {
     font-size: 14px;
     font-family: $rob;
     color: #535a60;
@@ -265,6 +266,7 @@
       position: relative;
       display: inline-block;
       text-decoration: none;
+
       &::before {
         content: attr(data-tooltip);
         top: -40px;
@@ -281,6 +283,7 @@
         position: absolute;
         width: 190px;
       }
+
       &:hover::before {
         opacity: 1;
         visibility: visible;
@@ -369,6 +372,7 @@
 .spe_integration_item {
   margin-top: 25px;
   padding: 40px 50px;
+
   img {
     max-width: 50px;
   }
@@ -398,6 +402,7 @@
     &.active_btn {
       background: #848d95;
       cursor: not-allowed;
+
       &:hover {
         box-shadow: none;
       }

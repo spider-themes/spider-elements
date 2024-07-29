@@ -85,6 +85,10 @@ class Admin_Settings {
 					require_once __DIR__ . '/templates/go-premium.php';
 				}*/
 
+                if ( file_exists(require_once __DIR__ . '/templates/popup-pro.php') ) {
+                    require_once __DIR__ . '/templates/popup-pro.php';
+                }
+
 			echo '</div>'; //End of tab contents
 
 		echo '</form>'; //End of wrapper

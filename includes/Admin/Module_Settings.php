@@ -425,7 +425,7 @@ class Module_Settings {
                     'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'free',
+                    'widget_type'  => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-revel-animation',
@@ -446,7 +446,7 @@ class Module_Settings {
                     'label'        => esc_html__('Badge', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'free',
+                    'widget_type'  => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-badge',
@@ -456,7 +456,7 @@ class Module_Settings {
                     'label'        => esc_html__('Smooth Animation', 'spider-elements'), // widget label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'free',
+                    'widget_type'  => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-smooth-animation',

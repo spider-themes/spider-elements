@@ -41,7 +41,7 @@
     // switcher js
 
     document.addEventListener("DOMContentLoaded", function () {
-        var eventDisable = document.getElementById("disable"),
+        let eventDisable = document.getElementById("disable"),
             eventEnable = document.getElementById("enabled"),
             eventSwitcher = document.getElementById("switcher");
 
@@ -71,7 +71,7 @@
         // Add active class to the clicked tab
         $(this).addClass("active");
 
-        var target = $(this).attr("href");
+        let target = $(this).attr("href");
 
         $(".spe-tab-box")
             .removeClass("active")
@@ -89,7 +89,7 @@
 
     // Function to set a cookie
     function setCookie(name, value, days) {
-        var expires = "";
+        let expires = "";
         if (days) {
             var date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -111,7 +111,7 @@
     }
 
     // Remain the last active settings tab
-    function keep_spe_settings_current_tab() {
+    function spel_keep_settings_current_tab() {
 
         var activeButton = getCookie('spe_settings_current_tab');
         if (activeButton) {
@@ -134,7 +134,7 @@
         });
     }
 
-    keep_spe_settings_current_tab();
+    spel_keep_settings_current_tab();
 
     // filter js
     /*===========elements isotope js===========*/
@@ -155,13 +155,14 @@
     $(document).ready(function () {
         // Initialize Isotope on page load
         filterMasonry();
-        var filter = $("#elements_gallery");
+        let filter = $("#elements_gallery, #features_gallery");
+
         // Add isotope click function
         $("#elements_filter div").on("click", function () {
             $("#elements_filter div").removeClass("active");
             $(this).addClass("active");
 
-            var selector = $(this).attr("data-filter");
+            let selector = $(this).attr("data-filter");
             filter.isotope({
                 filter: selector,
             });
@@ -270,7 +271,8 @@
                 $(".spe_dashboard_btn")
                     .removeClass("save-now")
                     .removeAttr("disabled")
-                    .css("cursor", "pointer");
+                    .css("cursor", "pointer"
+                );
             }
         });
 
@@ -301,9 +303,7 @@
         });
 
         // Button Setting Switcher Enable/Disable
-        let elementsSettingBtn = $(
-            ".spe_elements_tab_menu .menu_right_content .save_btn"
-        );
+        let elementsSettingBtn = $(".spe_elements_tab_menu .menu_right_content .save_btn");
         elementsSettingBtn.on("click", function (event) {
             //event.preventDefault();
             //alert('Saved Successfully');

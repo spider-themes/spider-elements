@@ -803,9 +803,9 @@ Table of Content:
   background: #f0e9fc;
   padding: 15px 24px;
   display: flex;
-  margin: 32px 0px;
+  margin: 32px 0;
 }
-.spe_elements_tab .spe_fiter_data {
+.spe_elements_tab .spel_filter_data {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   color: #535a60;
@@ -814,10 +814,10 @@ Table of Content:
   transition: all 0.3s;
   cursor: pointer;
 }
-.spe_elements_tab .spe_fiter_data i {
+.spe_elements_tab .spel_filter_data i {
   margin-right: 8px;
 }
-.spe_elements_tab .spe_fiter_data.active {
+.spe_elements_tab .spel_filter_data.active {
   background: #6d27e5;
   color: #fff;
 }
