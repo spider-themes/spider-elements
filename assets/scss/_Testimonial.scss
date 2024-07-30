@@ -1171,7 +1171,7 @@
   }
   .bg-wrapper {
     background: #1ea243;
-    padding: 125px 150px 165px 110px;
+    padding: 125px 110px 165px 110px;
     transition: 0.3s;
     @media (min-width: 1200px) and (max-width: 1399px) {
       padding: 80px 100px 130px 70px;
@@ -1249,10 +1249,9 @@
 
 .feedback-section-four {
   .slider-wrapper {
-
     position: absolute;
     width: 79vw;
-    right: -40vw;
+    right: -42vw;
     bottom: 9%;
     @media (min-width: 1921px) {
       right: -28vw;

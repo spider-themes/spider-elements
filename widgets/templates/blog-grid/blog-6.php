@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <section class="blog-section-six">
-    <div class="card-wrapper category-slider-one">
+    <div class="card-wrapper category-slider-one" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 		<?php
 		while ( $post_query->have_posts() ) {
 			$post_query->the_post();

@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="ezd-lg-col-6">
-        <div class="doc_img_slider">
+        <div class="doc_img_slider" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 			<?php
 			if ( ! empty( $testimonials ) ) {
 				foreach ( $testimonials as $item ) {

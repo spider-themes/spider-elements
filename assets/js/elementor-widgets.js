@@ -9,7 +9,7 @@
             const widgetHandlersMap = {
                 "landpagy_pricing_table_tabs.default":          spiderElements.pricing_table_tabs,
                 "docy_tabs.default":                            spiderElements.tabs,
-                "docy_testimonial.default":                     spiderElements.testimonial,
+                //"docy_testimonial.default":                     spiderElements.testimonial,
                 "docly_alerts_box.default":                     spiderElements.alertBox,
                 "docy_videos_playlist.default":                 spiderElements.videoPlaylist,
                 "docy_team_carousel.default":                   spiderElements.teamslider,
@@ -35,9 +35,10 @@
 
 
             let blogGrid = $scope.find(".category-slider-one");
-
+            let dataRtlblog = blogGrid.data("rtl");
             if (blogGrid.length > 0) {
                 blogGrid.slick({
+                    rtl: dataRtlblog,
                     dots: false,
                     arrows: true,
                     lazyLoad: 'ondemand',
@@ -260,10 +261,10 @@
         //============================== Team Slider =============================//
         teamslider: function ($scope) {
             let teamSlider = $scope.find(".expert-slider-one");
-            let dataRtlTeam = teamSlider.data("rtl");
+            let dataRtlTeam1 = teamSlider.data("rtl");
             if (teamSlider.length) {
                 teamSlider.slick({
-                    rtl: dataRtlTeam,
+                    rtl: dataRtlTeam1,
                     arrows: true,
                     lazyLoad: "ondemand",
                     prevArrow: $(".prev_a"),
@@ -290,9 +291,11 @@
                 });
             }
 
-            if ($(".expert-slider-two").length) {
-                $(".expert-slider-two").slick({
-                    rtl: dataRtlTeam,
+            let teamSlider2 = $scope.find(".expert-slider-two");
+            let dataRtlTeam2 = teamSlider2.data("rtl");
+            if (teamSlider2.length) {
+                teamSlider2.slick({
+                    rtl: dataRtlTeam2,
                     dots: true,
                     arrows: false,
                     lazyLoad: "ondemand",
@@ -362,8 +365,9 @@
         //======================== Testimonial =========================== //
         testimonial: function ($scope) {
             let testimonialSlider = $scope.find(".doc_testimonial_slider");
+            let dataRtldoc = testimonialSlider.data("rtl");
             let imageSlider = $scope.find(".doc_img_slider");
-            let dataRtl = imageSlider.data("rtl");
+            let dataRtlimg = imageSlider.data("rtl");
 
             // Testi
             if (testimonialSlider.length > 0) {
@@ -371,7 +375,7 @@
                     autoplay: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    rtl: dataRtl,
+                    rtl: dataRtlimg,
                     autoplaySpeed: 2000,
                     speed: 2000,
                     dots: true,
@@ -379,6 +383,7 @@
                     asNavFor: imageSlider, //.doc_img_slider class
                 });
                 imageSlider.slick({
+                    rtl: dataRtldoc,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     asNavFor: testimonialSlider, //.doc_testimonial_slider class
@@ -389,8 +394,10 @@
             }
 
             let feedbackSlider = $scope.find(".doc_feedback_slider");
+            let dataRtfdb = feedbackSlider.data("rtl");
             if (feedbackSlider.length > 0) {
                 feedbackSlider.slick({
+                    rtl: dataRtfdb,
                     autoplay: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -403,14 +410,12 @@
                 });
             }
 
-            // Testimonial Style 3
+            //==== Testimonial Style 3
             let testimonialSliderInner = $scope.find(".testimonial-slider-inner");
             if (testimonialSliderInner.length > 0) {
                 var Testimonial = new Swiper(".testimonial-slider-inner", {
                     slidesPerView: 1,
                     spaceBetween: 10,
-                    // speed: 500,
-                    // effect: 'fade',
                     loop: true,
                     navigation: {
                         nextEl: ".swiper-button-next",
@@ -419,7 +424,7 @@
                 });
             }
 
-            // Testimonial Style 4
+            //=== Testimonial Style 4
             let testimonialSlide4 = $scope.find(".testimonial-slide-4");
             if (testimonialSlide4.length > 0) {
                 var swiper4 = new Swiper(".testimonial-slide-4", {
@@ -437,7 +442,7 @@
                 });
             }
 
-            // Testimonial Style 5
+            //=== Testimonial Style 5
             let testimonialSliderActive = $scope.find(".testimonial-slider-active");
             if (testimonialSliderActive.length > 0) {
                 var swiper5 = new Swiper(".testimonial-slider-active", {
@@ -460,7 +465,6 @@
                     },
                 });
             }
-
 
             //== Testimonial Style 6
             let testimonial6 = $scope.find(".feedback-slider-one");
@@ -522,6 +526,7 @@
                 });
             }
 
+            //=== Testimonial Style 10
             let testimonial10_a = $scope.find(".feedback-slider-three-a");
             let dataRtl10a = testimonial10_a.data("rtl");
             let testimonial10_b = $scope.find(".feedback-slider-three-b");
@@ -573,8 +578,6 @@
                     ]
                 });
             }
-
-
 
 
             // Testimonial Style 11

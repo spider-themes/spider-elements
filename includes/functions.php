@@ -25,6 +25,12 @@ function spel_unlock_themes() {
     }
 }
 
+if ( ! function_exists( 'spel_rtl') ) {
+	function spel_rtl(): string {
+		return is_rtl() ? 'true' : 'false';
+	}
+}
+
 
 /**
  * @return bool
