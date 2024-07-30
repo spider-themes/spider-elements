@@ -8,7 +8,6 @@ namespace SPEL\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,20 +20,24 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Timeline extends Widget_Base {
 
-	public function get_name() {
+	public function get_name(): string
+    {
 		return 'spe_timeline_widget'; // ID of the widget (Don't change this name)
 	}
 
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return __( 'Timeline', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-time-line spel-icon';
 	}
 
-	public function get_categories() {
+	public function get_categories(): array
+    {
 		return [ 'spider-elements' ];
 	}
 
@@ -42,7 +45,8 @@ class Timeline extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends() {
+	public function get_style_depends(): array
+    {
 		return [ 'spel-main' ];
 	}
 
@@ -334,32 +338,3 @@ class Timeline extends Widget_Base {
         }
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

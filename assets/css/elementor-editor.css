@@ -1,6 +1,3 @@
-
-
-
 .elementor-control-raw-html.elementor-warning {
     padding: 10px;
     background-color: #ffffcc;
@@ -67,221 +64,27 @@
 .elementor-control.elementor-control-style .elementor-choices input:checked+.elementor-choices-label i::before {
     opacity: 1;
 }
-
-/** === Testimonials === **/
-.testimonial1::before {
-    background: url("../images/el-editor-preview/testimonial1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial2::before {
-    background: url("../images/el-editor-preview/testimonial2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial3::before {
-    background: url("../images/el-editor-preview/testimonial3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial4::before {
-    background: url("../images/el-editor-preview/testimonial4.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial5::before {
-    background: url("../images/el-editor-preview/testimonial5.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial6::before {
-    background: url("../images/el-editor-preview/testimonial6.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial7::before {
-    background: url("../images/el-editor-preview/testimonial7.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial8::before {
-    background: url("../images/el-editor-preview/testimonial8.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial9::before {
-    background: url("../images/el-editor-preview/testimonial9.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial10::before {
-    background: url("../images/el-editor-preview/testimonial10.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.testimonial11::before {
-    background: url("../images/el-editor-preview/testimonial11.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-/*** === team Carousel === ***/
-.team1::before{
-    background: url("../images/el-editor-preview/team1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.team2::before{
-    background: url("../images/el-editor-preview/team2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label[data-tooltip="spel-pro-label"],
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label i.spel-pro-label {
+    pointer-events: none;
 }
 
-/*** === integration  ===***/
-.integration1::before{
-    background: url("../images/el-editor-preview/integration1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.integration2::before{
-    background: url("../images/el-editor-preview/integration2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-/***==== blog grid ==== ***/
-.blog_1::before{
-    background: url("../images/el-editor-preview/blog1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.blog_2::before{
-    background: url("../images/el-editor-preview/blog2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.blog_3::before{
-    background: url("../images/el-editor-preview/blog3.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.blog_4::before{
-    background: url("../images/el-editor-preview/blog4.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.blog_5::before{
-    background: url("../images/el-editor-preview/blog5.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.blog_6::before{
-    background: url("../images/el-editor-preview/blog6.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-
-/*** === Video Playlist === ***/
-.video-playlist::before {
-    background: url("../images/el-editor-preview/video-playlist.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.video-playlist2::before {
-    background: url("../images/el-editor-preview/video-playlist2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-
-/*** === image hover style === ***/
-.img_hover1::before{
-    background: url("../images/el-editor-preview/image_hover2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.img_hover2::before{
-    background: url("../images/el-editor-preview/image_hover1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-
-}.img_hover3::before{
-    background: url("../images/el-editor-preview/image_hover3.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-
-}.img_hover4::before{
-    background: url("../images/el-editor-preview/image_hover4.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-
-/*** === Marquee Slides === ***/
-.marquee1::before{
-    background: url("../images/el-editor-preview/marquee-slider-0.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.marquee2::before{
-    background: url("../images/el-editor-preview/marquee1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-.marquee3::before{
-    background: url("../images/el-editor-preview/marquee2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-
-/*** === Counter === ***/
-.counter1::before{
-    background: url("../images/el-editor-preview/counter1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-.counter2::before{
-    background: url("../images/el-editor-preview/counter2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
-.instagram1::before{
-    background: url("../images/el-editor-preview/instagram1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label i.spel-pro-label::after {
+    content: "PRO";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: #39b54a61;
+    pointer-events: none;
+    color: white;
+    z-index: 999999;
+    font-weight: 700;
+    cursor: pointer;
+    font-style: normal;
+    padding-top: 45px;
 }
 
 
@@ -307,120 +110,235 @@
     vertical-align: middle;
 }
 
+/** === Testimonials === **/
+.testimonial1::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial1.jpg") no-repeat top;
+}
+.testimonial2::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial2.jpg") no-repeat top;
+}
+.testimonial3::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial3.jpg") no-repeat top;
+}
+.testimonial4::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial4.jpg") no-repeat top;
+}
+.testimonial5::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial5.jpg") no-repeat top;
+}
+.testimonial6::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial6.jpg") no-repeat top;
+}
+.testimonial7::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial7.jpg") no-repeat top;
+}
+.testimonial8::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial8.jpg") no-repeat top;
+}
+.testimonial9::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial9.jpg") no-repeat top;
+}
+.testimonial10::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial10.jpg") no-repeat top;
+}
+.testimonial11::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/testimonial11.jpg") no-repeat top;
+}
+
+/*** === team Carousel === ***/
+.team1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/team1.jpg") no-repeat top;
+}
+.team2::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/team2.jpg") no-repeat top;
+}
+
+/*** === integration  ===***/
+.integration1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/integration1.jpg") no-repeat center;
+}
+.integration2::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/integration2.jpg") no-repeat center;
+}
+
+/***==== blog grid ==== ***/
+.blog_1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/blog1.png") no-repeat center;
+}
+.blog_2::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/blog2.png") no-repeat center;
+}
+.blog_3::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/blog3.png") no-repeat center;
+}
+.blog_4::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/blog4.png") no-repeat center;
+}
+.blog_5::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/blog5.png") no-repeat center;
+}
+
+.blog_6::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/blog6.png") no-repeat center;
+}
+
+/*** === Video Playlist === ***/
+.video-playlist::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/video-playlist.jpg") no-repeat top;
+}
+.video-playlist2::before {
+    background-size: cover;
+    background: url("../images/el-editor-preview/video-playlist2.jpg") no-repeat top;
+}
+
+/*** === image hover style === ***/
+.img_hover1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/image_hover2.png") no-repeat top;
+}
+.img_hover2::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/image_hover1.png") no-repeat top;
+
+}
+.img_hover3::before{
+     background-size: cover;
+     background: url("../images/el-editor-preview/image_hover3.png") no-repeat top;
+}
+.img_hover4::before{
+   background-size: cover;
+   background: url("../images/el-editor-preview/image_hover4.png") no-repeat top;
+}
+
+/*** === Marquee Slides === ***/
+.marquee1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/marquee-slider-0.png") no-repeat top;
+}
+.marquee2::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/marquee1.png") no-repeat top;
+}
+.marquee3::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/marquee2.png") no-repeat top;
+}
+
+/*** === Counter === ***/
+.counter1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/counter1.jpg") no-repeat center center;
+}
+.counter2::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/counter2.jpg") no-repeat center center;
+}
+
+.instagram1::before{
+    background-size: cover;
+    background: url("../images/el-editor-preview/instagram1.png") no-repeat top;
+}
+
 /*====Pricing style====*/
 .pricing_style1::before {
-    background: url("../images/el-editor-preview/pricing_style1.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style1.jpg") no-repeat top;
 }
 .pricing_style2::before {
-    background: url("../images/el-editor-preview/pricing_style2.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style2.jpg") no-repeat top;
 }
 .pricing_style3::before {
-    background: url("../images/el-editor-preview/pricing_style3.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style3.jpg") no-repeat top;
 }
 .pricing_style4::before {
-    background: url("../images/el-editor-preview/pricing_style4.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style4.jpg") no-repeat top;
 }
 .pricing_style5::before {
-    background: url("../images/el-editor-preview/pricing_style5.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style5.jpg") no-repeat top;
 }
 .pricing_style6::before {
-    background: url("../images/el-editor-preview/pricing_style6.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style6.jpg") no-repeat top;
 }
 .pricing_style7::before {
-    background: url("../images/el-editor-preview/pricing_style7.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/pricing_style7.jpg") no-repeat top;
 }
-/*========Stackey image style==========*/
+/*======== Stacked image style==========*/
 .style1::before {
-    background: url("../images/el-editor-preview/quote_img1.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/quote_img1.png") no-repeat top;
 }
 .style2::before {
-    background: url("../images/el-editor-preview/stack_img_2.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/stack_img_2.png") no-repeat top;
 }
 .style3::before {
-    background: url("../images/el-editor-preview/stacky_img3.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/stacky_img3.png") no-repeat top;
 }
 .style4::before {
-    background: url("../images/el-editor-preview/stacky_img4.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/stacky_img4.png") no-repeat top;
 }
 
 /*=======Image slider Image style=======*/
 .img_slid1::before {
-    background: url("../images/el-editor-preview/img_slider1.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/img_slider1.png") no-repeat top;
 }
 .img_slid2::before {
-    background: url("../images/el-editor-preview/img_silder2.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: url("../images/el-editor-preview/img_silder2.png") no-repeat top;
 }
 
 /*=======Icon box style=======*/
 .icon-box1::before {
-    background: url("../images/el-editor-preview/icon_box1.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background: url("../images/el-editor-preview/icon_box1.png") no-repeat center;
 }
 .icon-box2::before {
-    background: url("../images/el-editor-preview/icon_box2.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background: url("../images/el-editor-preview/icon_box2.png") no-repeat center;
 }
 
 /*=======video popup style=======*/
 .video-popup-1::before {
-    background: url("../images/el-editor-preview/video_popup1.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background: url("../images/el-editor-preview/video_popup1.png") no-repeat center;
 }
 .video-popup-2::before {
-    background: url("../images/el-editor-preview/video_popup2.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background: url("../images/el-editor-preview/video_popup2.png") no-repeat center;
 }
 .video-popup-3::before {
-    background: url("../images/el-editor-preview/video_popup3.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
+    background-size: cover;
+    background: url("../images/el-editor-preview/video_popup3.png") no-repeat center;
 }
 

@@ -83,6 +83,37 @@ class Counter extends Widget_Base {
 	 * Author: spider-themes
 	 */
 
+    private function counter_layout_option(): array
+    {
+
+        if ( spel_is_premium() ) {
+            $options = [
+                '1' => [
+                    'icon'  => 'counter1',
+                    'title' => esc_html__( '01 : Counter', 'spider-elements' )
+                ],
+                '2' => [
+                    'icon'  => 'counter2',
+                    'title' => esc_html__( '02 : Counter', 'spider-elements' )
+                ],
+            ];
+        } else {
+            $options = [
+                '1' => [
+                    'icon'  => 'counter1',
+                    'title' => esc_html__( '01 : Counter', 'spider-elements' )
+                ],
+                '2' => [
+                    'icon'  => 'counter2 spel-pro-label',
+                    'title' => esc_html__( 'spel-pro-label', 'spider-elements' )
+                ],
+            ];
+        }
+
+        return $options;
+    }
+
+
 	public function elementor_content_control() {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
@@ -91,21 +122,13 @@ class Counter extends Widget_Base {
 			]
 		);
 
+
 		$this->add_control(
 			'style',
 			[
 				'label'   => esc_html__( 'Counter Style', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
-				'options' => [
-					'1' => [
-						'icon'  => 'counter1',
-						'title' => esc_html__( '01 : Counter', 'spider-elements' )
-					],
-					'2' => [
-						'icon'  => 'counter2',
-						'title' => esc_html__( '02 : Counter', 'spider-elements' )
-					],
-				],
+                'options' => $this->counter_layout_option(),
 				'default' => '1',
 			]
 		);
@@ -430,6 +453,11 @@ class Counter extends Widget_Base {
 		extract( $settings ); //extract all settings array to variables converted to name of key
 
 		//================= Template Parts =================//
-		include "templates/counter/counter-{$settings['style']}.php";
+        if (spel_is_premium()) {
+            include "templates/counter/counter-{$settings['style']}.php";
+        } else {
+            include "templates/counter/counter-1.php";
+        }
+
 	}
 }

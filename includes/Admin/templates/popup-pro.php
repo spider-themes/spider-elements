@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
         <div class="pro-content">
             <h3><?php esc_html_e('Go Pro', 'spider-elements'); ?></h3>
             <p><?php esc_html_e('Upgrade to Pro Version for Unlock more features!', 'spider-elements'); ?></p>
-            <a href="#" class="spe_dashboard_btn" target="_blank">
+            <a href="admin.php?page=spider_elements_settings-pricing" class="spe_dashboard_btn" target="_blank">
                 <?php esc_html_e('Upgrade Now', 'spider-elements'); ?>
             </a>
         </div>

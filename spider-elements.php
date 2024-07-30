@@ -44,10 +44,9 @@ if ( function_exists( 'spel_fs' ) ) {
                         'premium_slug'          => 'spider-elements-pro',
                         'type'                  => 'plugin',
                         'public_key'            => 'pk_711f20dd503c8eb713171079ffeb5',
-                        'is_premium'            => true,
+                        'is_premium'            => false,
                         'premium_suffix'        => 'Pro',
                         'has_premium_version'   => true,
-                        'has_addons'            => false,
                         'has_paid_plans'        => true,
                         'trial'                 => [
                             'days'              => 14,
@@ -275,11 +274,10 @@ if (!class_exists('SPEL')) {
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
-
-
 			} else {
 				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
+
 		}
 
         /**
@@ -321,11 +319,7 @@ if (!class_exists('SPEL')) {
             if ( is_admin() ) {
                 //Admin
                 new SPEL\includes\Admin\Admin_Settings();
-
-
             }
-
-
 
 		}
 
@@ -510,8 +504,8 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
 			require_once( __DIR__ . '/widgets/Accordion.php' );
 			require_once( __DIR__ . '/widgets/Testimonial.php' );
-			require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
-			require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
+			//require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
+			//require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
 			require_once( __DIR__ . '/widgets/List_Item.php' );
 			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
 			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
@@ -520,10 +514,10 @@ if (!class_exists('SPEL')) {
 			require_once( __DIR__ . '/widgets/Video_Popup.php' );
 			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
 			require_once( __DIR__ . '/widgets/Timeline.php' );
-			require_once( __DIR__ . '/widgets/Buttons.php' );
-			require_once( __DIR__ . '/widgets/Animated_Heading.php' );
+			//require_once( __DIR__ . '/widgets/Buttons.php' );
+			//require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             require_once( __DIR__ . '/widgets/Counter.php' );
-            require_once( __DIR__ . '/widgets/Instagram.php' );
+            //require_once( __DIR__ . '/widgets/Instagram.php' );
             require_once( __DIR__ . '/widgets/Icon_box.php' );
 
 		}
