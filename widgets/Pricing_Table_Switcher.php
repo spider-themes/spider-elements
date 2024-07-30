@@ -104,31 +104,31 @@ class Pricing_Table_Switcher extends Widget_Base {
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'1' => [
-						'icon'  => 'pricing_style1',
+						'icon'  => 'pricing_table_switcher_1',
 						'title' => esc_html__( '01 : Button Switcher', 'spider-elements' )
 					],
 					'2' => [
-						'icon'  => 'pricing_style2',
+						'icon'  => 'pricing_table_switcher_2',
 						'title' => esc_html__( '02 : Tab Switcher', 'spider-elements' ),
 					],
 					'3' => [
-						'icon'  => 'pricing_style3',
+						'icon'  => 'pricing_table_switcher_3',
 						'title' => esc_html__( '03 : Pricing Cloud', 'spider-elements' ),
 					],
 					'4' => [
-						'icon'  => 'pricing_style4',
+						'icon'  => 'pricing_table_switcher_4',
 						'title' => esc_html__( '04 : Button Switcher', 'spider-elements' ),
 					],
 					'5' => [
-						'icon'  => 'pricing_style5',
+						'icon'  => 'pricing_table_switcher_5',
 						'title' => esc_html__( '05 : Button Switcher', 'spider-elements' ),
 					],
 					'6' => [
-						'icon'  => 'pricing_style6',
+						'icon'  => 'pricing_table_switcher_6',
 						'title' => esc_html__( '06 : Tab Switcher', 'spider-elements' ),
 					],
 					'7' => [
-						'icon'  => 'pricing_style7',
+						'icon'  => 'pricing_table_switcher_7',
 						'title' => esc_html__( '07 : Button Switcher', 'spider-elements' ),
 					],
 				],

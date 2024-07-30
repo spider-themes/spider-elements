@@ -232,21 +232,21 @@
    background: url("../images/el-editor-preview/image_hover4.png") no-repeat top;
 }
 
-/*** === Marquee Slides === ***/
-.marquee1::before{
+/*** ====== Marquee Slides ====== ***/
+.marquee_slides_1::before{
     background-size: cover;
-    background: url("../images/el-editor-preview/marquee-slider-0.png") no-repeat top;
+    background: url("../images/el-editor-preview/marquee_slides_img_1.png") no-repeat top;
 }
-.marquee2::before{
+.marquee_slides_2::before{
     background-size: cover;
-    background: url("../images/el-editor-preview/marquee1.png") no-repeat top;
+    background: url("../images/el-editor-preview/marquee_slides_img_2.png") no-repeat top;
 }
-.marquee3::before{
+.marquee_slides_3::before{
     background-size: cover;
-    background: url("../images/el-editor-preview/marquee2.png") no-repeat top;
+    background: url("../images/el-editor-preview/marquee_slides_img_3.png") no-repeat top;
 }
 
-/*** === Counter === ***/
+/*** ====== Counter ====== ***/
 .counter1::before{
     background-size: cover;
     background: url("../images/el-editor-preview/counter1.jpg") no-repeat center center;
@@ -261,59 +261,60 @@
     background: url("../images/el-editor-preview/instagram1.png") no-repeat top;
 }
 
-/*====Pricing style====*/
-.pricing_style1::before {
+/*====Pricing Table Switcher Style====*/
+.pricing_table_switcher_1::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style1.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_1.jpg") no-repeat top;
 }
-.pricing_style2::before {
+.pricing_table_switcher_2::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style2.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_2.jpg") no-repeat top;
 }
-.pricing_style3::before {
+.pricing_table_switcher_3::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style3.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_3.jpg") no-repeat top;
 }
-.pricing_style4::before {
+.pricing_table_switcher_4::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style4.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_4.jpg") no-repeat top;
 }
-.pricing_style5::before {
+.pricing_table_switcher_5::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style5.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_5.jpg") no-repeat top;
 }
-.pricing_style6::before {
+.pricing_table_switcher_6::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style6.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_6.jpg") no-repeat top;
 }
-.pricing_style7::before {
+.pricing_table_switcher_7::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/pricing_style7.jpg") no-repeat top;
+    background: url("../images/el-editor-preview/pricing_table_switcher_img_7.jpg") no-repeat top;
 }
-/*======== Stacked image style==========*/
-.style1::before {
+
+/*======== Stacke image style==========*/
+.stack_img_1::before {
     background-size: cover;
-    background: url("../images/el-editor-preview/quote_img1.png") no-repeat top;
+    background: url("../images/el-editor-preview/stack_img_1.png") no-repeat top;
 }
-.style2::before {
+.stack_img_2::before {
     background-size: cover;
     background: url("../images/el-editor-preview/stack_img_2.png") no-repeat top;
 }
-.style3::before {
+.stack_img_3::before {
     background-size: cover;
     background: url("../images/el-editor-preview/stacky_img3.png") no-repeat top;
 }
-.style4::before {
+.stack_img_4::before {
     background-size: cover;
     background: url("../images/el-editor-preview/stacky_img4.png") no-repeat top;
 }
 
-/*=======Image slider Image style=======*/
-.img_slid1::before {
+/*=======Image Slider Image style=======*/
+.img_slider1::before {
     background-size: cover;
     background: url("../images/el-editor-preview/img_slider1.png") no-repeat top;
 }
-.img_slid2::before {
+.img_slider2::before {
     background-size: cover;
     background: url("../images/el-editor-preview/img_silder2.png") no-repeat top;
 }
@@ -328,7 +329,7 @@
     background: url("../images/el-editor-preview/icon_box2.png") no-repeat center;
 }
 
-/*=======video popup style=======*/
+/*=======Video popup style=======*/
 .video-popup-1::before {
     background-size: cover;
     background: url("../images/el-editor-preview/video_popup1.png") no-repeat center;
