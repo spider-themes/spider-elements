@@ -29,58 +29,31 @@ Table of Content:
 
 
 =====================================================================*/
-@import "Mixins";
-
-@import "prefix";
-
-@import "Variables";
-
-@import "framework";
-
-@import "Common";
-
-@import "Accordion";
-
-@import "Tabs";
-
-@import "Testimonial";
-
-@import "Video";
-
-@import "Alerts_box";
-
-@import "Pricing_Table";
-
-@import "Pricing_Table_Switcher";
-
-@import "Animation";
-
-@import "List_Item";
-
-@import "Cheat_sheet";
-
-@import "Team";
-
-@import "Integration";
-
-@import "Blog_grid";
-
-@import "Before_after";
-
-@import "Skill_Showcase";
-
-@import "Timeline";
-
-@import "Buttons";
-
-@import "Animated_Headline";
-
-@import "video_popup";
-
-@import "Counter";
-
-@import "Instagram";
-
-@import "Fullscreen_Slider";
-
-@import "Icon_box";
+@import "frontend/Mixins";
+@import "frontend/prefix";
+@import "frontend/Variables";
+@import "frontend/framework";
+@import "frontend/Common";
+@import "frontend/Accordion";
+@import "frontend/Tabs";
+@import "frontend/Testimonial";
+@import "frontend/Video";
+@import "frontend/Alerts_box";
+@import "frontend/Pricing_Table";
+@import "frontend/Pricing_Table_Switcher";
+@import "frontend/Animation";
+@import "frontend/List_Item";
+@import "frontend/Cheat_sheet";
+@import "frontend/Team";
+@import "frontend/Integration";
+@import "frontend/Blog_grid";
+@import "frontend/Before_after";
+@import "frontend/Skill_Showcase";
+@import "frontend/Timeline";
+@import "frontend/Buttons";
+@import "frontend/Animated_Headline";
+@import "frontend/video_popup";
+@import "frontend/Counter";
+@import "frontend/Instagram";
+@import "frontend/Fullscreen_Slider";
+@import "frontend/Icon_box";

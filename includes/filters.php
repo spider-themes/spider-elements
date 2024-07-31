@@ -15,6 +15,12 @@ if ( ! defined( 'SPEL_TEXT_BADGE' ) ) {
     );
 }
 
+if ( ! defined( 'SPEL_PRO_BADGE' ) ) {
+    define('SPEL_PRO_BADGE',
+        '<span class="spel-pro-badge-control">' . esc_html__( 'PRO', 'spider-elements' ) . '</span>'
+    );
+}
+
 
 add_action( 'admin_init', function () {
 
@@ -97,14 +103,8 @@ add_action( 'admin_init', function () {
 
     if ( isset( $_POST['features-submit'] ) ) {
 
-
-        // Free Features List
-        $free_features = [
-            //'spel_smooth_animation',
-        ];
-
         // Pro Widgets
-        $pro_widgets = [
+        $pro_features = [
             'spel_badge',
             'spel_reveal_animation',
             'spel_smooth_animation',
@@ -112,14 +112,10 @@ add_action( 'admin_init', function () {
 
 
         $data = [];
-        // Collect Free Widgets Values
-        foreach ($free_features as $feature) {
-            $data[$feature] = isset($_POST[$feature]) ? sanitize_text_field($_POST[$feature]) : '';
-        }
 
-        // Collect Pro Widgets Values
-        foreach ($pro_widgets as $widget) {
-            $data[$widget] = isset($_POST[$widget]) ? sanitize_text_field($_POST[$widget]) : '';
+        // Collect Pro Features Values
+        foreach ($pro_features as $feature) {
+            $data[$feature] = isset($_POST[$feature]) ? sanitize_text_field($_POST[$feature]) : '';
         }
 
         // Global Switcher
@@ -131,8 +127,8 @@ add_action( 'admin_init', function () {
 
         // If the user is not on a pro plan, reset pro widgets
         if (!spel_is_premium()) {
-            foreach ($pro_widgets as $widget) {
-                $data[$widget] = 'off';
+            foreach ($pro_features as $feature) {
+                $data[$feature] = 'off';
             }
             update_option('spel_features_settings', $data);
         }
