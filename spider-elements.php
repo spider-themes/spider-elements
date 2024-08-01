@@ -261,7 +261,6 @@ if (!class_exists('SPEL')) {
         {
 
 
-
 			// Extra functions
 			require_once __DIR__ . '/includes/functions.php';
 
@@ -275,8 +274,9 @@ if (!class_exists('SPEL')) {
             require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 
             $theme = wp_get_theme();
-            if ( spel_is_premium() || $theme == 'jobi' || $theme == 'Jobi' || $theme == 'jobi-child' || $theme == 'Jobi Child' ) {
-                require_once __DIR__ . '/includes/Admin/Extension/common.php';
+            if ( spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']) ) {
+                require_once __DIR__ . '/includes/Admin/extension/common.php';
+                require_once __DIR__ . '/includes/Admin/extension/Features_Box.php';
             }
 
             if ( is_admin() ) {
@@ -301,8 +301,6 @@ if (!class_exists('SPEL')) {
          */
 		public function init_plugin() {
 
-
-
 			// Check if Elementor installed and activated
 			if ( ! did_action( 'elementor/loaded' ) ) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_missing_main_plugin' ] );
@@ -323,8 +321,10 @@ if (!class_exists('SPEL')) {
 			}
 
             $theme = wp_get_theme();
-            if ( spel_is_premium() || $theme == 'jobi' || $theme == 'Jobi' || $theme == 'jobi-child' || $theme == 'Jobi Child' ) {
-                new SPEL\includes\Admin\Extension\Common();
+            
+            if ( spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']) ) {
+                new SPEL\includes\Admin\extension\Common();
+                new SPEL\includes\Admin\extension\Features_Box();
             }
 
             //new SPEL\includes\classes\Theme_Builder();

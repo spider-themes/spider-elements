@@ -1,0 +1,511 @@
+<?php
+namespace Elementor;
+namespace SPEL\includes\Admin\extension;
+
+use Elementor\Controls_Manager;
+use Elementor\Core\Files\CSS\Post;
+use Elementor\Element_Base;
+use Elementor\Group_Control_Background;
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+/**
+ * Register Advance Features Control Tab
+ * Container & Section Features
+ */
+class Features_Box {
+
+    public function __construct ()
+    {
+
+        // Section Elements Fields
+        add_action('elementor/element/section/section_advanced/after_section_end', [ $this, 'register_section_controls' ]);
+        add_action('elementor/element/column/section_advanced/after_section_end', [ $this, 'register_section_controls' ]);
+        add_action('elementor/element/container/section_layout/after_section_end', [ $this, 'register_section_controls' ]);
+
+        // Add the 'before_render' action hook to the widget
+        add_action('elementor/editor/before_render', [ $this, 'callback_render_display_content' ], 10, 1);
+        add_action('elementor/frontend/before_render', [ $this, 'callback_render_display_content' ], 10, 1);
+
+        //Frontend Before View
+        add_action('elementor/frontend/container/before_render', [ $this, 'frontend_render_before' ]);
+        add_action('elementor/frontend/column/before_render', [ $this, 'frontend_render_before' ]);
+        add_action('elementor/frontend/section/before_render', [ $this, 'frontend_render_before' ]);
+
+        //Frontend After View
+        add_action('elementor/frontend/container/after_render', [ $this, 'frontend_render_after' ]);
+        add_action('elementor/frontend/column/after_render', [ $this, 'frontend_render_after' ]);
+        add_action('elementor/frontend/section/after_render', [ $this, 'frontend_render_after' ]);
+
+        //Editor View
+        add_action('elementor/section/print_template', [ $this, 'render_display_on_editor' ], 10, 2);
+        add_action('elementor/column/print_template', [ $this, 'render_display_on_editor' ], 10, 2);
+        add_action('elementor/container/print_template', [ $this, 'render_display_on_editor' ], 10, 2);
+
+        // Add custom CSS rules to a post's CSS file.
+        add_action('elementor/element/parse_css', [ $this, 'add_custom_rules_to_css_file' ], 10, 2);
+
+        // Add Render Scripts
+        add_action('elementor/frontend/after_register_scripts', [ $this, 'enqueue_scripts' ]);
+
+    }
+
+
+    /**
+     * Section Controls
+     */
+    public function register_section_controls (Element_Base $element)
+    {
+
+        //=============== Start Features Box ===============//
+        $element->start_controls_section(
+            'spe_features_box_sec', [
+                'label' => esc_html__('Features Box', 'elementskit-lite'),
+                'tab' => Controls_Manager::TAB_LAYOUT,
+            ]
+        );
+
+        $element->add_control(
+            'spe_features_box_enable', [
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label' => esc_html__('Enable Section', 'spider-elements-pro'),
+                'frontend_available' => true,
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+
+
+        //============= Start Icon Settings =============//
+        $element->add_control(
+            'spe_fb_icon', [
+                'label' => esc_html__('Icon', 'spider-elements-pro'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->start_controls_tabs(
+            'spe_fb_icon_tabs'
+        );
+
+        $element->start_controls_tab(
+            'spe_fb_icon_normal_tab', [
+                'label' => esc_html__('Normal', 'spider-elements-pro'),
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->add_group_control(
+            Group_Control_Background::get_type(), [
+                'name' => 'title_normal_bg_color',
+                'types' => [ 'classic', 'gradient' ],
+                'exclude' => [ 'image' ],
+                'selector' => '{{WRAPPER}} .wrapper_icon',
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->add_control(
+            'spe_fb_icon_normal_color',
+            [
+                'label' => esc_html__('Icon Color', 'spider-elements-pro'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .wrapper_icon' => 'color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->end_controls_tab();
+
+        $element->start_controls_tab(
+            'spe_fb_icon_hover_tab',
+            [
+                'label' => esc_html__('Hover', 'spider-elements-pro'),
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->add_group_control(
+            Group_Control_Background::get_type(), [
+                'name' => 'title_hover_bg_color',
+                'types' => [ 'classic', 'gradient' ],
+                'exclude' => [ 'image' ],
+                'selector' => '{{WRAPPER}}.spe-features-box-enable:hover .wrapper_icon',
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->add_control(
+            'spe_fb_icon_hover_color',
+            [
+                'label' => esc_html__('Icon Color', 'spider-elements-pro'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}.spe-features-box-enable:hover .wrapper_icon' => 'color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        $element->end_controls_tab();
+        $element->end_controls_tabs(); //End Icon Settings
+
+        $element->add_control(
+            'spe_fb_icon_size', [
+                'label' => esc_html__('Icon Font Size', 'spider-elements-pro'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 16,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .wrapper_icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+                'separator' => 'before',
+            ]
+        ); //End Icon Settings
+        $element->add_control(
+            'spe_fb_icon_width',
+            [
+                'label' => __('Icon Box Width', 'spider-elements-pro'),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => '',
+                    'unit' => 'px',
+                ],
+                'size_units' => [ 'px', '%' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .wrapper_icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
+                ],
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        // Wrapper Link
+        $element->add_control(
+            'spe_fb_wrapper_link',
+            [
+                'label' => __('Wrapper Link', 'spider-elements-pro'),
+                'type' => Controls_Manager::URL,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'placeholder' => 'https://example.com',
+                'condition' => [
+                    'spe_features_box_enable' => 'yes',
+                ],
+            ]
+        );
+
+        // Check if the user is on a premium plan or using the Jobi theme
+        $theme = wp_get_theme();
+        $features_opt = get_option('spel_features_settings');
+        $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
+
+        // Get the feature badge status
+        $feature_badge = $is_premium_or_theme ? ($features_opt['spel_badge'] ?? 'on') : 'off';
+
+        // Only add the control if the feature badge is enabled
+        if ($feature_badge ) {
+
+            //Badge Label Settings
+            $element->add_control(
+                'spe_fb_badge_enable', [
+                    'type' => \Elementor\Controls_Manager::SWITCHER,
+                    'label' => esc_html__('Enable Badge', 'spider-elements-pro'),
+                    'frontend_available' => true,
+                    'label_on' => esc_html__('Yes', 'spider-elements-pro'),
+                    'label_off' => esc_html__('No', 'spider-elements-pro'),
+                    'return_value' => 'yes',
+                    'default' => 'no',
+                    'separator' => 'before',
+                ]
+            );
+
+            $element->add_control(
+                'spe_fb_badge_text',
+                [
+                    'label' => __('Badge Label', 'spider-elements-pro'),
+                    'type' => Controls_Manager::TEXT,
+                    'dynamic' => [
+                        'active' => true,
+                    ],
+                    'condition' => [
+                        'spe_fb_badge_enable' => 'yes',
+                    ],
+                ]
+            );
+
+            // Badge Text Color Settings
+            $element->add_control(
+                'spe_fb_badge_color',
+                [
+                    'label' => __('Text Color', 'spider-elements-pro'),
+                    'type' => Controls_Manager::COLOR,
+                    'condition' => [
+                        'spe_fb_badge_enable' => 'yes',
+                    ],
+                    'separator' => 'before',
+                ]
+            );
+
+            // Badge Background Color Settings
+            $element->add_control(
+                'spe_fb_badge_bg_color',
+                [
+                    'label' => __('Background Color', 'spider-elements-pro'),
+                    'type' => Controls_Manager::COLOR,
+                    'condition' => [
+                        'spe_fb_badge_enable' => 'yes',
+                    ],
+                ]
+            );
+
+            // Badge Text Typography Settings
+            $element->add_responsive_control(
+                'spe_fb_badge_position_top', [
+                    'label' => esc_html__('Position Top', 'spider-elements-pro'),
+                    'type' => \Elementor\Controls_Manager::SLIDER,
+                    'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                    'range' => [
+                        'px' => [
+                            'min' => 0,
+                            'max' => 100,
+                        ],
+                        '%' => [
+                            'min' => 0,
+                            'max' => 100,
+                        ],
+                    ],
+                    'default' => [
+                        'unit' => 'px',
+                        'size' => '',
+                    ],
+                    'selectors' => [
+                        '{{WRAPPER}} .wrapper_badge_text .badge_text' => 'top: {{SIZE}}{{UNIT}};',
+                    ],
+                    'condition' => [
+                        'spe_fb_badge_enable' => 'yes',
+                    ],
+                ]
+            );
+        }
+
+        $element->end_controls_section(); // End Section
+
+    }
+
+
+    /**
+     * @param Element_Base $element
+     *
+     * @return void
+     */
+    public function callback_render_display_content (Element_Base $element)
+    {
+
+        $spe_wrapper_link = $element->get_settings_for_display('spe_fb_wrapper_link');
+        $feature_icon = $element->get_settings_for_display('spe_fb_icon');
+
+        // It's render elementor wrapper div - Icon
+        if ($feature_icon && !empty($feature_icon[ 'value' ])) {
+
+            //It's render elementor wrapper div
+            $element->add_render_attribute(
+                '_wrapper', [
+                    'class' => 'spe-features-box-enable',
+                    'data-spe-element-icon' => $feature_icon[ 'value' ],
+                ]
+            );
+
+        }
+
+        // It's render elementor wrapper div - Link
+        if ($spe_wrapper_link && !empty($spe_wrapper_link[ 'url' ])) {
+            $element->add_render_attribute(
+                '_wrapper', [
+                    'data-spe-element-link' => json_encode($spe_wrapper_link),
+                    'style' => 'cursor: pointer'
+                ]
+            );
+
+        }
+
+    }
+
+
+    /**
+     * Renders content before a section, column, or container in the frontend.
+     *
+     * @param Element_Base $section The section, column, or container element.
+     */
+    public function frontend_render_before (Element_Base $section)
+    {
+
+        if ($section->get_name() === 'container' || $section->get_name() === 'column' || $section->get_name() === 'section') {
+            $settings = $section->get_settings_for_display();
+
+            if (isset($settings[ 'spe_fb_badge_enable' ]) && !empty($settings[ 'spe_fb_badge_enable' ] === 'yes')) {
+                $badge_text = !empty($settings[ 'spe_fb_badge_text' ]) ? $settings[ 'spe_fb_badge_text' ] : '';
+                ?>
+                <div class="wrapper_badge_text position-relative">
+                <span class="badge_text">
+                    <span class="badge-element before"></span>
+                    <?php echo esc_html($badge_text) ?>
+                    <span class="badge-element after"></span>
+                </span>
+                <?php
+            }
+        }
+
+    }
+
+
+    /**
+     * Renders content after a section, column, or container in the frontend.
+     *
+     * @param Element_Base $section The section, column, or container element.
+     */
+    public function frontend_render_after (Element_Base $section)
+    {
+
+        if ($section->get_name() === 'container' || $section->get_name() === 'column' || $section->get_name() === 'section') {
+            $settings = $section->get_settings_for_display();
+
+            if (isset($settings[ 'spe_fb_badge_enable' ]) && ($settings[ 'spe_fb_badge_enable' ] === 'yes')) {
+                ?>
+                </div>
+                <?php
+            }
+        }
+    }
+
+    /**
+     * Inject Image Editor
+     *
+     * @param $template
+     * @return string
+     */
+    public function render_display_on_editor ($template): string
+    {
+
+        ob_start();
+        $old_template = $template;
+        ?>
+        <# if ( settings.spe_fb_badge_enable==='yes' ) { #>
+        <# let badge_text=settings.spe_fb_badge_text; let badge_text_color=settings.spe_fb_badge_color ?
+        settings.spe_fb_badge_color : '#ffffff' ; let badge_bg_color=settings.spe_fb_badge_bg_color ?
+        settings.spe_fb_badge_bg_color : '#31795A' ; let span_style='color: ' + badge_text_color + ';' ; let
+        span_style_before='background: ' + badge_bg_color + ';' ; let span_style_after='background: ' + badge_bg_color
+        + ';' ; #>
+
+        <div class="wrapper_badge_text">
+            <span class="badge_text" style="{{span_style}}">
+                <span class="badge-element before" style="{{span_style_before}}"></span>
+                {{badge_text}}
+                <span class="badge-element after" style="{{span_style_after}}"></span>
+            </span>
+        </div>
+        <# } #>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content . $old_template;
+
+    }
+
+    /**
+     * Add custom CSS rules to a post's CSS file.
+     *
+     * @param Post $post_css_file The post's CSS file.
+     * @param Element_Base $element The Elementor element.
+     *
+     * @return void
+     */
+    public function add_custom_rules_to_css_file (Post $post_css_file, Element_Base $element)
+    {
+
+        // Get the display settings for the element.
+        $settings = $element->get_settings_for_display();
+
+        // Check if the badge is enabled
+        if (isset($settings[ 'spe_fb_badge_enable' ]) && !empty($settings[ 'spe_fb_badge_enable' ] === 'yes')) {
+
+            // Add the custom CSS rules to the post's CSS file.
+            $text_color = !empty($settings[ 'spe_fb_badge_color' ]) ? $settings[ 'spe_fb_badge_color' ] : '';
+            $position_top = !empty($settings[ 'spe_fb_badge_position_top' ]) ? $settings[ 'spe_fb_badge_position_top' ][ 'size' ] . $settings[ 'spe_fb_badge_position_top' ][ 'unit' ] : '';
+
+            $post_css_file->get_stylesheet()->add_rules(
+                '.wrapper_badge_text .badge_text',
+                [
+                    'color' => $text_color,
+                    'top' => $position_top,
+                ],
+            );
+
+            if (!empty($settings[ 'spe_fb_badge_bg_color' ])) {
+                $post_css_file->get_stylesheet()->add_rules(
+                    '.wrapper_badge_text .badge_text .badge-element',
+                    [
+                        'background' => $settings[ 'spe_fb_badge_bg_color' ] . ' !important',
+                    ],
+                );
+            }
+
+        }
+
+    }
+
+    /**
+     * @return void
+     * Enqueue Scripts
+     */
+    public function enqueue_scripts ()
+    {
+        wp_enqueue_script('spel-features-box', SPEL_JS . '/extension/features-box.js', [ 'jquery' ], SPEL_VERSION, true);
+    }
+
+
+}

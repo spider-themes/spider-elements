@@ -1,6 +1,6 @@
 <?php
 namespace Elementor;
-namespace SPEL\includes\Admin\Extension;
+namespace SPEL\includes\Admin\extension;
 
 use Elementor\Controls_Manager;
 use Elementor\Element_Base;

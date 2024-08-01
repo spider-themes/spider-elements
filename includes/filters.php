@@ -125,8 +125,8 @@ add_action( 'admin_init', function () {
         update_option( 'spel_features_settings', $data );
 
 
-        // If the user is not on a pro plan, reset pro widgets
-        if (!spel_is_premium()) {
+        // If the user is not on a pro plan or using Jobi theme, reset pro widgets
+        if (!spel_is_premium() && !in_array(wp_get_theme()->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child'])) {
             foreach ($pro_features as $feature) {
                 $data[$feature] = 'off';
             }

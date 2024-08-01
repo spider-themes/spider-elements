@@ -4,14 +4,26 @@ if (!defined('ABSPATH')) {
 }
 
 use SPEL\includes\Admin\Module_Settings;
-$elements = Module_Settings::get_widget_settings();
+$features = Module_Settings::get_widget_settings();
 
 
 // Global switcher
-$spe_widget_opt = get_option('spel_features_settings');
-$global_switcher = $spe_widget_opt['spel_features_global_switcher'] ?? '';
+$feature_opt = get_option('spel_features_settings');
+$global_switcher = $feature_opt['spel_features_global_switcher'] ?? '';
 $is_checked = !empty ($global_switcher == 'on') ? ' checked' : '';
-$checked = !isset ($spe_widget_opt['spel_features_global_switcher']) ? ' checked' : $is_checked;
+$checked = !isset ($feature_opt['spel_features_global_switcher']) ? ' checked' : $is_checked;
+
+// Get the current theme
+$theme = wp_get_theme();
+// Check if the current theme is Jobi or the plugin is on a premium plan
+$is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
+
+// Ensure spel_badge is on if the theme is Jobi or the plugin is on a premium plan
+if ($is_premium_or_theme) {
+    $feature_opt['spel_badge'] = $feature_opt['spel_badge'] ?? 'on';
+    update_option('spel_features_settings', $feature_opt);
+}
+
 ?>
 <div id="features" class="spe-tab-box">
     <div class="spe_elements_tab_menu">
@@ -58,30 +70,30 @@ $checked = !isset ($spe_widget_opt['spel_features_global_switcher']) ? ' checked
 
     <div class="spe_filter_content ezd-d-flex" id="features_gallery">
         <?php
-        if (isset($elements[ 'spider_elements_features' ]) && is_array($elements[ 'spider_elements_features' ])) {
-            foreach ( $elements[ 'spider_elements_features' ] as $item ) {
-                $feature_type = $item[ 'widget_type' ] ?? '';
+        if (isset($features[ 'spider_elements_features' ]) && is_array($features[ 'spider_elements_features' ])) {
+            foreach ( $features[ 'spider_elements_features' ] as $item ) {
+
+                $feature_type = $item[ 'feature_type' ] ?? '';
+                $feature_name = $item['name'] ?? '';
 
                 // Default class and attributes for widgets
                 $is_pro_feature = $feature_type === 'pro' ? ' pro_popup' : '';
                 $is_pro_feature_enabled = $feature_type === 'pro' ? ' disabled' : '';
 
                 // If premium, enable pro widgets
-                if (spel_is_premium()) {
+                if ($feature_name == 'spel_badge' && $is_premium_or_theme) {
                     $is_pro_feature = ''; // Remove pro_popup class
-                    $is_pro_feature_enabled = ''; // Enable widget
+                    $is_pro_feature_enabled = ''; // Enable feature
                 }
 
-                $opt   = get_option( 'spel_features_settings' );
-                $opt_name   = $item[ 'name' ] ?? '';
-
+                $opt = get_option('spel_features_settings');
 
                 // By default, all the switcher is checked
-                $opt_input      = $opt[ $opt_name ] ?? '';
+                $opt_input      = $opt[ $feature_name ] ?? '';
                 $is_checked     = ! empty ( $opt_input == 'on' ) ? ' checked' : '';
-                $checked        = ! isset ( $opt[ $opt_name ] ) ? ' checked' : $is_checked;
+                $checked        = ! isset ( $opt[ $feature_name ] ) ? ' checked' : $is_checked;
                 ?>
-                <div class="ezd-colum-space-4 <?php echo esc_attr($item['widget_type']) ?>">
+                <div class="ezd-colum-space-4 <?php echo esc_attr($item['feature_type']) ?>">
                     <div class="spe_element_box spe_element_switch badge">
                         <div class="spe_element_content">
                             <?php
