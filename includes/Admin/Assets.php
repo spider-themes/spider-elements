@@ -72,7 +72,13 @@ class Assets {
 	 * @access public
 	 */
 	public function elementor_editor_scripts() {
-		wp_enqueue_style( 'spel-el-editor', SPEL_CSS . '/elementor-editor.css', [],  SPEL_VERSION );
+
+        wp_enqueue_style( 'spel-elementor-editor', SPEL_CSS . '/spel-elementor-editor.css', [],  SPEL_VERSION );
+
+        if ( spel_is_premium() ) {
+            wp_enqueue_style( 'spel-pro-elementor-editor', SPEL_CSS . '/spel-pro-elementor-editor.css', [],  SPEL_VERSION );
+        }
+
 	}
 
 

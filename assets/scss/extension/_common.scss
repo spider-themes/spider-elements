@@ -1,0 +1,23 @@
+.spe-highlighted-text-bg {
+  .elementor-heading-title {
+    span {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+      &::after {
+        content: "";
+        height: 37%;
+        width: 101%;
+        background: #ef4953;
+        left: 50%;
+        transform: translateX(-50%) scaleY(1);
+        transform-origin: bottom;
+        position: absolute;
+        z-index: -1;
+        bottom: 10px;
+        transition: transform 0.7s linear;
+        transition-delay: 0.7s;
+      }
+    }
+  }
+}

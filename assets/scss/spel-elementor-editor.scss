@@ -1,0 +1,449 @@
+.elementor-control-raw-html {
+  &.elementor-warning {
+    padding: 10px;
+    background-color: #ffffcc;
+    border-left: 6px solid #ffeb3b;
+    line-height: 1.4;
+  }
+}
+
+
+/** === Style Variations === **/
+.elementor-control {
+  &.elementor-control-style {
+    &.elementor-control-type-choose {
+      &.elementor-label-inline {
+        .elementor-control-input-wrapper {
+          display: block;
+          margin-left: 0;
+        }
+
+        .elementor-control-content,
+        .elementor-control-field {
+          display: block;
+        }
+      }
+
+      label.elementor-control-title {
+        padding-bottom: 10px;
+        display: block;
+      }
+    }
+
+    .elementor-choices {
+      display: block;
+      height: auto;
+      width: 266px;
+
+      .elementor-choices-label {
+        display: block;
+        width: 266px;
+        height: 110px;
+
+        &:hover {
+          border: 1px solid #6d7882;
+        }
+
+        i {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: block;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .5;
+          }
+        }
+
+        input:checked + & {
+          border-width: 2px;
+          padding-right: 2px;
+
+          i::before {
+            opacity: 1;
+          }
+        }
+
+        &:not(:first-of-type) {
+          margin-top: 10px;
+        }
+
+        input + &:hover i::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+/*==== Widget Preview Icon ====*/
+.elementor-panel {
+  .elementor-element {
+    .icon {
+      .spel-icon {
+        &::after {
+          content: url("../images/el-editor-preview/se-icon.svg");
+          background-repeat: no-repeat;
+          opacity: .5;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+        }
+      }
+    }
+  }
+}
+
+/**=== Badge Text ===**/
+.spe-text-badge-control {
+  background-color: #A77DEF;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 3px 4px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+
+/** === Testimonials === **/
+.testimonial1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial1.jpg") no-repeat top;
+}
+
+.testimonial2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial2.jpg") no-repeat top;
+}
+
+.testimonial3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial3.jpg") no-repeat top;
+}
+
+.testimonial4::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial4.jpg") no-repeat top;
+}
+
+.testimonial5::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial5.jpg") no-repeat top;
+}
+
+.testimonial6::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial6.jpg") no-repeat top;
+}
+
+.testimonial7::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial7.jpg") no-repeat top;
+}
+
+.testimonial8::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial8.jpg") no-repeat top;
+}
+
+.testimonial9::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial9.jpg") no-repeat top;
+}
+
+.testimonial10::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial10.jpg") no-repeat top;
+}
+
+.testimonial11::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/testimonial11.jpg") no-repeat top;
+}
+
+/*** === team Carousel === ***/
+.team1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/team1.jpg") no-repeat top;
+}
+
+.team2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/team2.jpg") no-repeat top;
+}
+
+/*** === integration  ===***/
+.integration1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/integration1.jpg") no-repeat center;
+}
+
+.integration2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/integration2.jpg") no-repeat center;
+}
+
+/***==== blog grid ==== ***/
+.blog_1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/blog1.png") no-repeat center;
+}
+
+.blog_2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/blog2.png") no-repeat center;
+}
+
+.blog_3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/blog3.png") no-repeat center;
+}
+
+.blog_4::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/blog4.png") no-repeat center;
+}
+
+.blog_5::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/blog5.png") no-repeat center;
+}
+
+.blog_6::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/blog6.png") no-repeat center;
+}
+
+/*** === Video Playlist === ***/
+.video-playlist::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/video-playlist.jpg") no-repeat top;
+}
+
+.video-playlist2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/video-playlist2.jpg") no-repeat top;
+}
+
+/*** === image hover style === ***/
+.img_hover1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/image_hover2.png") no-repeat top;
+}
+
+.img_hover2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/image_hover1.png") no-repeat top;
+
+}
+
+.img_hover3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/image_hover3.png") no-repeat top;
+}
+
+.img_hover4::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/image_hover4.png") no-repeat top;
+}
+
+/*** ====== Marquee Slides ====== ***/
+.marquee_slides_1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/marquee_slides_img_1.png") no-repeat top;
+}
+
+.marquee_slides_2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/marquee_slides_img_2.png") no-repeat top;
+}
+
+.marquee_slides_3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/marquee_slides_img_3.png") no-repeat top;
+}
+
+/*** ====== Counter ====== ***/
+.counter1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/counter1.jpg") no-repeat center center;
+}
+
+.counter2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/counter2.jpg") no-repeat center center;
+}
+
+.instagram1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/instagram1.png") no-repeat top;
+}
+
+/*====Pricing Table Switcher Style====*/
+.pricing_table_switcher_1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_1.jpg") no-repeat top;
+}
+
+.pricing_table_switcher_2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_2.jpg") no-repeat top;
+}
+
+.pricing_table_switcher_3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_3.jpg") no-repeat top;
+}
+
+.pricing_table_switcher_4::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_4.jpg") no-repeat top;
+}
+
+.pricing_table_switcher_5::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_5.jpg") no-repeat top;
+}
+
+.pricing_table_switcher_6::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_6.jpg") no-repeat top;
+}
+
+.pricing_table_switcher_7::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_7.jpg") no-repeat top;
+}
+
+/*======== Stacke image style==========*/
+.stack_img_1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/stack_img_1.png") no-repeat top;
+}
+
+.stack_img_2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/stack_img_2.png") no-repeat top;
+}
+
+.stack_img_3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/stacky_img3.png") no-repeat top;
+}
+
+.stack_img_4::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/stacky_img4.png") no-repeat top;
+}
+
+/*=======Image Slider Image style=======*/
+.img_slider1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/img_slider1.png") no-repeat top;
+}
+
+.img_slider2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/img_silder2.png") no-repeat top;
+}
+
+/*=======Icon box style=======*/
+.icon-box1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/icon_box1.png") no-repeat center;
+}
+
+.icon-box2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/icon_box2.png") no-repeat center;
+}
+
+/*=======Video popup style=======*/
+.video-popup-1::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/video_popup1.png") no-repeat center;
+}
+
+.video-popup-2::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/video_popup2.png") no-repeat center;
+}
+
+.video-popup-3::before {
+  background-size: cover;
+  background: url("../images/el-editor-preview/video_popup3.png") no-repeat center;
+}
+
+
+/*============== Pro Label Badge ====================*/
+.elementor-control {
+  &.elementor-control-style {
+    .elementor-choices {
+      .elementor-choices-label {
+        &[data-tooltip="spel-pro-label"],
+        i.spel-pro-label {
+          pointer-events: none;
+        }
+
+        i.spel-pro-label::after {
+          content: "PRO";
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          background: #39b54a61;
+          pointer-events: none;
+          color: white;
+          z-index: 999999;
+          font-weight: 700;
+          cursor: pointer;
+          font-style: normal;
+          padding-top: 45px;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+.elementor-control-spel_highlighted_text_style {
+  pointer-events: none;
+
+  &::after {
+    content: "PRO";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: #39b54a61;
+    pointer-events: none;
+    color: white;
+    z-index: 999999;
+    font-weight: 700;
+    cursor: pointer;
+    font-style: normal;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 18px;
+  }
+
+  .elementor-control-content {
+    pointer-events: none;
+  }
+
+}
+*/

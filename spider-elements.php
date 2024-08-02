@@ -260,6 +260,7 @@ if (!class_exists('SPEL')) {
 		public function core_includes(): void
         {
 
+
 			// Extra functions
 			require_once __DIR__ . '/includes/functions.php';
 
@@ -271,7 +272,14 @@ if (!class_exists('SPEL')) {
 
 			// Admin and Frontend Scripts Loaded
             require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
-			if ( is_admin() ) {
+
+            $theme = wp_get_theme();
+            if ( spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']) ) {
+                require_once __DIR__ . '/includes/Admin/extension/common.php';
+                require_once __DIR__ . '/includes/Admin/extension/Features_Box.php';
+            }
+
+            if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
 			} else {
@@ -312,12 +320,19 @@ if (!class_exists('SPEL')) {
 				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			}
 
+            $theme = wp_get_theme();
+            
+            if ( spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']) ) {
+                new SPEL\includes\Admin\extension\Common();
+                new SPEL\includes\Admin\extension\Features_Box();
+            }
+
             //new SPEL\includes\classes\Theme_Builder();
 
             new SPEL\includes\Admin\Plugin_Installer();
 
+
             if ( is_admin() ) {
-                //Admin
                 new SPEL\includes\Admin\Admin_Settings();
             }
 

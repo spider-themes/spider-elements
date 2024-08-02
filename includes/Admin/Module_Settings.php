@@ -365,113 +365,115 @@ class Module_Settings {
             // All Feature List
             'spider_elements_features' => [
                 /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Template cloud', 'spider-elements'), // widget label
+                    'name'         => '', // feature name
+                    'label'        => esc_html__('Template cloud', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-cloud',
                 ],*/
                 /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Mega Menu', 'spider-elements'), // widget label
+                    'name'         => '', // feature name
+                    'label'        => esc_html__('Mega Menu', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-mega-menu',
                 ],*/
                 /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Image Shadow', 'spider-elements'), // widget label
+                    'name'         => '', // feature name
+                    'label'        => esc_html__('Image Shadow', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-image-shadow',
                 ],*/
                 /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Scroll Trigger', 'spider-elements'), // widget label
+                    'name'         => '', // feature name
+                    'label'        => esc_html__('Scroll Trigger', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-hotspot',
                 ],*/
                 /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Tilt Effect on Hover', 'spider-elements'), // widget label
+                    'name'         => '', // feature name
+                    'label'        => esc_html__('Tilt Effect on Hover', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-effect',
                 ],*/
-                [
-                    'name'         => 'spel_reveal_animation', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'icon'         => 'icon-revel-animation',
-                ],
                 /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Tooltip / Element', 'spider-elements'), // widget label
+                    'name'         => '', // feature name
+                    'label'        => esc_html__('Tooltip / Element', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-tooltip',
                 ],*/
-                [
-                    'name'         => 'spel_badge', // widget name
-                    'label'        => esc_html__('Badge', 'spider-elements'), // widget label
+                /*[
+                    'name'         => '', // widget name
+                    'label'        => esc_html__('Gradient Color from Image', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
                     'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-gallery',
+                ],*/
+                [
+                    'name'         => 'spel_reveal_animation', // widget name
+                    'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-revel-animation',
+                ],
+                [
+                    'name'         => 'spel_badge', // feature name
+                    'label'        => esc_html__('Badge', 'spider-elements'), // feature label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-badge',
                 ],
                 [
-                    'name'         => 'spel_smooth_animation', // widget name
-                    'label'        => esc_html__('Smooth Animation', 'spider-elements'), // widget label
+                    'name'         => 'spel_heading_highlighted', // feature name
+                    'label'        => esc_html__('Heading Highlighted', 'spider-elements'), // feature label
                     'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'pro',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'eicon-t-letter',
+                ],
+                [
+                    'name'         => 'spel_smooth_animation', // feature name
+                    'label'        => esc_html__('Smooth Animation', 'spider-elements'), // feature label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
                     'demo_url'     => '',
                     'video_url'    => '',
                     'icon'         => 'icon-smooth-animation',
-                ],
-                /*[
-                    'name'         => '', // widget name
-                    'className'    => '', // widget class name
-                    'label'        => esc_html__('Gradient Color from Image', 'spider-elements'), // widget label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'icon'         => 'icon-gallery',
-                ],*/
+                ]
             ]
         ];
 

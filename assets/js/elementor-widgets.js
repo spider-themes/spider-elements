@@ -1,4 +1,4 @@
-(function ($, elementor) {
+;(function ($, elementor) {
     "use strict";
 
     const $window = $(elementor);
@@ -15,7 +15,6 @@
                 "docy_team_carousel.default":                   spiderElements.teamslider,
                 "spe_after_before_widget.default":              spiderElements.beforeAfter,
                 "docy_video_popup.default":                     spiderElements.videoPopup,
-                // "spe_marquee_slides.default":                   spiderElements.marquee,
                 "spe_instagram.default":                        spiderElements.instagramFeed,
                 "spel_accordion.default":                       spiderElements.accordions,
                 "docly_cheatsheet.default":                     spiderElements.cheatsheet,
@@ -143,73 +142,6 @@
             }
         },
 
-        //============================== Start Marquee =============================//
-        marquee: function ($scope) {
-            let left_slides = $scope.find(".branding-slider");
-            let right_slides = $scope.find(".branding-reverse-slider");
-
-            if (left_slides.length > 0) {
-                left_slides.slick({
-                    autoplay: true,
-                    infinite: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    dots: false,
-                    speed: 5000,
-                    prevArrow: false,
-                    nextArrow: false,
-                    pauseOnHover: false,
-                    cssEase: "linear",
-                    autoplaySpeed: 10,
-                    responsive: [
-                        {
-                            breakpoint: 765,
-                            settings: {
-                                slidesToShow: 2,
-                            },
-                        },
-                        {
-                            breakpoint: 576,
-                            settings: {
-                                slidesToShow: 1,
-                            },
-                        },
-                    ],
-                });
-            }
-
-            if (right_slides.length > 0) {
-                right_slides.slick({
-                    autoplay: true,
-                    infinite: true,
-                    rtl: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    dots: false,
-                    prevArrow: false,
-                    nextArrow: false,
-                    speed: 5000,
-                    pauseOnHover: false,
-                    cssEase: "linear",
-                    autoplaySpeed: 10,
-                    responsive: [
-                        {
-                            breakpoint: 765,
-                            settings: {
-                                slidesToShow: 2,
-                            },
-                        },
-                        {
-                            breakpoint: 576,
-                            settings: {
-                                slidesToShow: 1,
-                            },
-                        },
-                    ],
-                });
-            }
-        }, // End Marquee
-
         //============================== Start Before After =============================//
         beforeAfter: function ($scope) {
             let beforeAfter = $scope.find(".beforeAfter");
@@ -233,10 +165,7 @@
                     arrows: true,
                     buttons: [
                         "zoom",
-                        //"share",
                         "slideShow",
-                        //"fullScreen",
-                        //"download",
                         "thumbs",
                         "close",
                     ],
