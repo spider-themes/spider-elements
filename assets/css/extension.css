@@ -10,8 +10,8 @@ template.
 
 @Default Styles
 Table of Content:
-01/ Common
-02/ Feature Box
+01/ Heading Highlighted
+02/ Badge
 
 
 =====================================================================*/
@@ -33,42 +33,6 @@ Table of Content:
   bottom: 10px;
   transition: transform 0.7s linear;
   transition-delay: 0.7s;
-}
-
-.spe-features-box-enable {
-  transition: all 0.5s ease-in-out;
-}
-.spe-features-box-enable .elementor-widget-wrap.elementor-element-populated {
-  transition: all 0.5s ease-in-out;
-  background-size: 100% 444px;
-  background-position: 0 -50%;
-}
-.spe-features-box-enable .wrapper_icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  transition: all 0.5s ease-in-out;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 11px;
-  border-radius: 50%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #999;
-  color: #fff;
-}
-.spe-features-box-enable:hover {
-  transform: scale(1.01, 1.01);
-}
-.spe-features-box-enable:hover .elementor-widget-wrap.elementor-element-populated {
-  background-position: 0 0;
-}
-.spe-features-box-enable:hover .wrapper_icon {
-  right: 5px;
-  background: purple;
 }
 
 /*============= Badge Label ===============*/

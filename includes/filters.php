@@ -108,6 +108,7 @@ add_action( 'admin_init', function () {
             'spel_badge',
             'spel_reveal_animation',
             'spel_heading_highlighted',
+            'spel_feature_box',
             'spel_smooth_animation',
         ];
 

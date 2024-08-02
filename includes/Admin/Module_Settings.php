@@ -435,6 +435,16 @@ class Module_Settings {
                     'icon'         => 'icon-gallery',
                 ],*/
                 [
+                    'name'         => 'spel_feature_box', // widget name
+                    'label'        => esc_html__('Feature Box', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'eicon-info-box',
+                ],
+                [
                     'name'         => 'spel_reveal_animation', // widget name
                     'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
                     'type'         => 'checkbox',

@@ -63,6 +63,9 @@ class Assets
 			wp_enqueue_style( 'spel-rtl', SPEL_CSS . '/rtl.css' );
 		}
 
+        wp_enqueue_style('spel-extension', SPEL_CSS . '/extension.css');
+
+
 	}
 
 	/**
