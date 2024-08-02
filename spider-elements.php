@@ -275,7 +275,7 @@ if (!class_exists('SPEL')) {
 
             $theme = wp_get_theme();
             if ( spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']) ) {
-                require_once __DIR__ . '/includes/Admin/extension/common.php';
+                require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
                 require_once __DIR__ . '/includes/Admin/extension/Features_Box.php';
             }
 
@@ -321,9 +321,18 @@ if (!class_exists('SPEL')) {
 			}
 
             $theme = wp_get_theme();
-            
-            if ( spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']) ) {
-                new SPEL\includes\Admin\extension\Common();
+            $features_opt = get_option('spel_features_settings');
+
+            $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
+
+            if ( $is_premium_or_theme ) {
+
+                // Get the feature badge status
+                $feature_heading_highlighted = $features_opt['spel_heading_highlighted'] ?? '';
+                if ($feature_heading_highlighted) {
+                    new SPEL\includes\Admin\extension\Heading_Highlighted();
+                }
+
                 new SPEL\includes\Admin\extension\Features_Box();
             }
 

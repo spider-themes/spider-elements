@@ -9,15 +9,17 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class Common {
+class Heading_Highlighted {
 
 	public function __construct() {
 
-		// Elementor Heading Widget Support
-		add_action( 'elementor/element/heading/section_title_style/after_section_end', [ $this, 'register_heading_widget_controls' ] );
+
+        // Elementor Heading Widget Support
+        add_action( 'elementor/element/heading/section_title_style/after_section_end', [ $this, 'register_heading_widget_controls' ] );
 
         add_action( 'elementor/editor/before_render', [ $this, 'render_display_content' ], 99 );
         add_action( 'elementor/frontend/before_render', [ $this, 'render_display_content' ], 99 );
+
 	}
 
     /*

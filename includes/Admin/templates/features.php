@@ -17,14 +17,6 @@ $checked = !isset ($opt['spel_features_global_switcher']) ? ' checked' : $is_che
 $theme = wp_get_theme();
 $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
 
-// Ensure specific features are enabled for premium users or Jobi theme
-if ($is_premium_or_theme) {
-    $opt['spel_badge'] = 'on';
-    $opt['spel_heading_highlighted'] = 'on';
-    update_option('spel_features_settings', $opt);
-}
-
-
 ?>
 <div id="features" class="spe-tab-box">
     <div class="spe_elements_tab_menu">

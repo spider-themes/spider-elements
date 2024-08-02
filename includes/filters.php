@@ -112,20 +112,21 @@ add_action( 'admin_init', function () {
         ];
 
 
-        $data = [];
+        $data = get_option('spel_features_settings', []);
 
         // Collect Pro Features Values
         foreach ($pro_features as $feature) {
             $data[$feature] = isset($_POST[$feature]) ? sanitize_text_field($_POST[$feature]) : '';
         }
 
+
         // Global Switcher
         $data['spel_features_global_switcher'] = isset($_POST['spel_features_global_switcher']) ? sanitize_text_field($_POST['spel_features_global_switcher']) : '';
 
         // Save the data in the options table using update_option
-        update_option( 'spel_features_settings', $data );
+        update_option('spel_features_settings', $data);
 
-        // If the user is not on a pro plan or using Jobi theme, reset pro widgets
+        // If the user is not on a pro plan or Jobi theme, reset pro widgets
         $theme = wp_get_theme();
         $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
         if (!$is_premium_or_theme) {

@@ -4495,7 +4495,7 @@ body.remove .tab_fixed.header_tab_items {
 .doc_feedback_slider .item h5 {
   font-size: 20px;
   font-weight: 500;
-  color: #0000;
+  color: rgba(0, 0, 0, 0);
 }
 .doc_feedback_slider .item h6 {
   font-size: 16px;
