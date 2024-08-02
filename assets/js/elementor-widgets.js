@@ -9,7 +9,7 @@
             const widgetHandlersMap = {
                 "landpagy_pricing_table_tabs.default":          spiderElements.pricing_table_tabs,
                 "docy_tabs.default":                            spiderElements.tabs,
-                //"docy_testimonial.default":                     spiderElements.testimonial,
+                "docy_testimonial.default":                     spiderElements.testimonial,
                 "docly_alerts_box.default":                     spiderElements.alertBox,
                 "docy_videos_playlist.default":                 spiderElements.videoPlaylist,
                 "docy_team_carousel.default":                   spiderElements.teamslider,
@@ -393,11 +393,12 @@
                 });
             }
 
+            //==== testimonial Style 2
             let feedbackSlider = $scope.find(".doc_feedback_slider");
-            let dataRtfdb = feedbackSlider.data("rtl");
+            let dataRtlfdb = feedbackSlider.data("rtl");
             if (feedbackSlider.length > 0) {
                 feedbackSlider.slick({
-                    rtl: dataRtfdb,
+                    rtl: dataRtlfdb,
                     autoplay: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="feedback-section-three ezd-position-relative">
     <div id="feedBack_carousel" class="carousel slide" data-bs-ride="carousel">
 
-        <div class="feedback_slider">
+        <div class="feedback_slider" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
             <div class="carousel-inner ezd-text-center">
 				<?php
 				if ( ! empty( $testimonials8 ) ) {

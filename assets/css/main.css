@@ -5149,7 +5149,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 .doc_feedback_slider .item p {
   font-size: 18px;
-  color: #fff;
+  color: #000;
   line-height: 30px;
   margin-bottom: 38px;
   font-weight: 300;
@@ -5157,7 +5157,7 @@ body.remove .tab_fixed.header_tab_items {
 .doc_feedback_slider .item h5 {
   font-size: 20px;
   font-weight: 500;
-  color: #fff;
+  color: #0000;
 }
 .doc_feedback_slider .item h6 {
   font-size: 16px;
@@ -5955,26 +5955,26 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 /*==== testimonial 8 css ====*/
-#feedBack_carousel {
+.feedBack_carousel {
   position: relative;
 }
-#feedBack_carousel .feedback_slider {
+.feedBack_carousel .feedback_slider {
   max-width: 950px;
   margin: 0 auto;
   overflow: hidden;
 }
-#feedBack_carousel .carousel-inner p {
+.feedBack_carousel .carousel-inner p {
   font-size: 36px;
   line-height: 1.888em;
   color: #000;
   margin-bottom: 55px;
 }
-#feedBack_carousel .name {
+.feedBack_carousel .name {
   font-size: 22px;
   color: #000;
   font-weight: 500;
 }
-#feedBack_carousel .name:before {
+.feedBack_carousel .name:before {
   content: "";
   position: absolute;
   width: 30px;
@@ -5983,17 +5983,17 @@ body.remove .tab_fixed.header_tab_items {
   left: -45px;
   top: 16px;
 }
-#feedBack_carousel .name span {
+.feedBack_carousel .name span {
   font-weight: 400;
 }
-#feedBack_carousel .carousel-indicators {
+.feedBack_carousel .carousel-indicators {
   position: static;
   width: 100%;
   margin: 60px 0 0;
   display: flex;
   justify-content: center;
 }
-#feedBack_carousel .carousel-indicators button {
+.feedBack_carousel .carousel-indicators button {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -6003,15 +6003,15 @@ body.remove .tab_fixed.header_tab_items {
   transition: all 0.2s linear;
   text-indent: 0;
 }
-#feedBack_carousel .carousel-indicators button:focus, #feedBack_carousel .carousel-indicators button:hover {
+.feedBack_carousel .carousel-indicators button:focus, .feedBack_carousel .carousel-indicators button:hover {
   outline: none;
   border-color: #29503d;
   background: transparent;
 }
-#feedBack_carousel .carousel-indicators button.active {
+.feedBack_carousel .carousel-indicators button.active {
   border-color: #29503d;
 }
-#feedBack_carousel .carousel-btn {
+.feedBack_carousel .carousel-btn {
   top: 65px;
   width: 50px;
   height: 50px;
@@ -6026,12 +6026,12 @@ body.remove .tab_fixed.header_tab_items {
   transition: all 0.3s linear;
   position: absolute;
 }
-#feedBack_carousel .carousel-btn:hover, #feedBack_carousel .carousel-btn:focus {
+.feedBack_carousel .carousel-btn:hover, .feedBack_carousel .carousel-btn:focus {
   border-color: #29503d;
   background: #29503d;
   color: #fff;
 }
-#feedBack_carousel .carousel-btn.carousel-control-next {
+.feedBack_carousel .carousel-btn.carousel-control-next {
   right: 0;
   left: auto;
 }
@@ -6389,7 +6389,6 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 .testimonial-item {
-  transition: 0.3s;
   background: var(--white);
   box-shadow: 0 5px 15px -3px rgba(131, 146, 167, 0.25);
   border-radius: 8px;

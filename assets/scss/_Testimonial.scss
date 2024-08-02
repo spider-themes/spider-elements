@@ -109,7 +109,7 @@
 
     p {
       font-size: 18px;
-      color: #fff;
+      color: #000;
       line-height: 30px;
       margin-bottom: 38px;
       font-weight: 300;
@@ -118,7 +118,7 @@
     h5 {
       font-size: 20px;
       font-weight: 500;
-      color: #fff;
+      color: #0000;
     }
 
     h6 {
@@ -1064,7 +1064,7 @@
 }
 
 /*==== testimonial 8 css ====*/
-#feedBack_carousel {
+.feedBack_carousel {
   position: relative;
 
   .feedback_slider {
@@ -1525,9 +1525,6 @@
 
 .carousel-item {
   flex: 0 0 100%;
-  // max-width: 950px;
-  // margin: 0 auto;
-  // overflow: hidden;
 }
 
 .carousel img {
@@ -1536,7 +1533,6 @@
 }
 
 .testimonial-item {
-  transition: 0.3s;
   background: var(--white);
   box-shadow: 0 5px 15px -3px rgba(131, 146, 167, 0.25);
   border-radius: 8px;
