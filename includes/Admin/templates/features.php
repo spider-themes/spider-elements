@@ -8,21 +8,22 @@ $features = Module_Settings::get_widget_settings();
 
 
 // Global switcher
-$feature_opt = get_option('spel_features_settings');
-$global_switcher = $feature_opt['spel_features_global_switcher'] ?? '';
+$opt = get_option('spel_features_settings');
+$global_switcher = $opt['spel_features_global_switcher'] ?? '';
 $is_checked = !empty ($global_switcher == 'on') ? ' checked' : '';
-$checked = !isset ($feature_opt['spel_features_global_switcher']) ? ' checked' : $is_checked;
+$checked = !isset ($opt['spel_features_global_switcher']) ? ' checked' : $is_checked;
 
 // Get the current theme
 $theme = wp_get_theme();
-// Check if the current theme is Jobi or the plugin is on a premium plan
 $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
 
-// Ensure spel_badge is on if the theme is Jobi or the plugin is on a premium plan
+// Ensure specific features are enabled for premium users or Jobi theme
 if ($is_premium_or_theme) {
-    $feature_opt['spel_badge'] = $feature_opt['spel_badge'] ?? 'on';
-    update_option('spel_features_settings', $feature_opt);
+    $opt['spel_badge'] = 'on';
+    $opt['spel_heading_highlighted'] = 'on';
+    update_option('spel_features_settings', $opt);
 }
+
 
 ?>
 <div id="features" class="spe-tab-box">
@@ -80,13 +81,11 @@ if ($is_premium_or_theme) {
                 $is_pro_feature = $feature_type === 'pro' ? ' pro_popup' : '';
                 $is_pro_feature_enabled = $feature_type === 'pro' ? ' disabled' : '';
 
-                // If premium, enable pro widgets
-                if ($feature_name == 'spel_badge' && $is_premium_or_theme) {
+                // Unlock specific features for Jobi theme users
+                if (in_array($item['name'], ['spel_badge', 'spel_heading_highlighted']) && $is_premium_or_theme) {
                     $is_pro_feature = ''; // Remove pro_popup class
-                    $is_pro_feature_enabled = ''; // Enable feature
+                    $is_pro_feature_enabled = ''; // Enable widget
                 }
-
-                $opt = get_option('spel_features_settings');
 
                 // By default, all the switcher is checked
                 $opt_input      = $opt[ $feature_name ] ?? '';

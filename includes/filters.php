@@ -107,6 +107,7 @@ add_action( 'admin_init', function () {
         $pro_features = [
             'spel_badge',
             'spel_reveal_animation',
+            'spel_heading_highlighted',
             'spel_smooth_animation',
         ];
 
@@ -124,9 +125,10 @@ add_action( 'admin_init', function () {
         // Save the data in the options table using update_option
         update_option( 'spel_features_settings', $data );
 
-
         // If the user is not on a pro plan or using Jobi theme, reset pro widgets
-        if (!spel_is_premium() && !in_array(wp_get_theme()->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child'])) {
+        $theme = wp_get_theme();
+        $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
+        if (!$is_premium_or_theme) {
             foreach ($pro_features as $feature) {
                 $data[$feature] = 'off';
             }

@@ -414,16 +414,6 @@ class Module_Settings {
                     'video_url'    => '',
                     'icon'         => 'icon-effect',
                 ],*/
-                [
-                    'name'         => 'spel_reveal_animation', // widget name
-                    'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'icon'         => 'icon-revel-animation',
-                ],
                 /*[
                     'name'         => '', // feature name
                     'label'        => esc_html__('Tooltip / Element', 'spider-elements'), // feature label
@@ -434,36 +424,6 @@ class Module_Settings {
                     'video_url'    => '',
                     'icon'         => 'icon-tooltip',
                 ],*/
-                [
-                    'name'         => 'spel_badge', // feature name
-                    'label'        => esc_html__('Badge', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'icon'         => 'icon-badge',
-                ],
-                [
-                    'name'         => 'spel_heading_highlighted', // feature name
-                    'label'        => esc_html__('Heading Highlighted', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'icon'         => 'eicon-t-letter',
-                ],
-                [
-                    'name'         => 'spel_smooth_animation', // feature name
-                    'label'        => esc_html__('Smooth Animation', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'icon'         => 'icon-smooth-animation',
-                ],
                 /*[
                     'name'         => '', // widget name
                     'label'        => esc_html__('Gradient Color from Image', 'spider-elements'), // feature label
@@ -474,6 +434,46 @@ class Module_Settings {
                     'video_url'    => '',
                     'icon'         => 'icon-gallery',
                 ],*/
+                [
+                    'name'         => 'spel_reveal_animation', // widget name
+                    'label'        => esc_html__('Reveal Animation', 'spider-elements'), // widget label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-revel-animation',
+                ],
+                [
+                    'name'         => 'spel_badge', // feature name
+                    'label'        => esc_html__('Badge', 'spider-elements'), // feature label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-badge',
+                ],
+                [
+                    'name'         => 'spel_heading_highlighted', // feature name
+                    'label'        => esc_html__('Heading Highlighted', 'spider-elements'), // feature label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'eicon-t-letter',
+                ],
+                [
+                    'name'         => 'spel_smooth_animation', // feature name
+                    'label'        => esc_html__('Smooth Animation', 'spider-elements'), // feature label
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'feature_type' => 'pro',
+                    'demo_url'     => '',
+                    'video_url'    => '',
+                    'icon'         => 'icon-smooth-animation',
+                ]
             ]
         ];
 
