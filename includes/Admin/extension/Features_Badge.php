@@ -58,7 +58,7 @@ class Features_Badge {
 
         //=============== Start Features Box ===============//
         $element->start_controls_section(
-            'spe_features_box_sec', [
+            'spel_features_badge_sec', [
                 'label' => esc_html__('Feature Badge', 'spider-elements'),
                 'tab' => Controls_Manager::TAB_LAYOUT,
             ]

@@ -15,7 +15,7 @@ $checked = !isset ($opt['spel_features_global_switcher']) ? ' checked' : $is_che
 
 // Get the current theme
 $theme = wp_get_theme();
-$is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
+$theme = in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
 
 ?>
 <div id="features" class="spe-tab-box">
@@ -74,7 +74,7 @@ $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi
                 $is_pro_feature_enabled = $feature_type === 'pro' ? ' disabled' : '';
 
                 // Unlock specific features for Jobi theme users
-                if (in_array($item['name'], ['spel_badge', 'spel_heading_highlighted']) && $is_premium_or_theme) {
+                if (in_array($item['name'], ['spel_badge', 'spel_heading_highlighted']) && $theme || spel_is_premium() ) {
                     $is_pro_feature = ''; // Remove pro_popup class
                     $is_pro_feature_enabled = ''; // Enable widget
                 }
