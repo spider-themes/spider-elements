@@ -83,7 +83,7 @@
         border-radius: 45px;
         position: relative;
         display: block;
-        margin: 0px 20px;
+        margin: 0 20px;
 
         &::before {
           width: 12px;
@@ -101,7 +101,7 @@
   }
 
   .spe_dashboard_btn {
-    border: 0px;
+    border: 0;
     padding: 8px 21px;
     font-size: 16px;
     margin-left: 40px;
@@ -156,7 +156,7 @@
   transition: all 0.2s linear;
 
   &:hover {
-    box-shadow: 0px 5px 15px 0px rgba(51, 77, 114, 0.1);
+    box-shadow: 0 5px 15px 0 rgba(51, 77, 114, 0.1);
 
     .spe_link {
       opacity: 1;
@@ -335,7 +335,7 @@
         color: #242729;
         font-family: $rob;
         line-height: 30px;
-        margin: 0px;
+        margin: 0;
         outline: none;
         box-shadow: none;
         @include placeholder {
@@ -471,7 +471,7 @@
       position: absolute;
       width: 40px;
       background: #fff;
-      filter: drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.12));
+      filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
       text-align: center;
       line-height: 38px;
       color: #0c0d0e;
@@ -481,7 +481,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      border: 0px;
+      border: 0;
       transition: all 0.3s;
       display: flex;
       align-items: center;
@@ -506,7 +506,7 @@
 
       &:after {
         border-radius: 50%;
-        box-shadow: 0px 1px 15px 1px rgba(255, 255, 255, 0.3);
+        box-shadow: 0 1px 15px 1px rgba(255, 255, 255, 0.3);
         transform: scale(8);
         animation: spe_pulse 2s infinite;
       }

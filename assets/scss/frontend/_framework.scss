@@ -226,7 +226,7 @@
 
 .ezd-list-unstyled {
   list-style: none !important;
-  padding: 0px;
+  padding: 0;
 }
 
 .ezd-tab-content {
@@ -402,7 +402,7 @@
 [type="button"]:focus,
 [type="submit"]:focus,
 button:focus {
-  outline: 0px auto -webkit-focus-ring-color;
+  outline: 0 auto -webkit-focus-ring-color;
 }
 
 .ezd-d-md-block {

@@ -1,6 +1,4 @@
 // font css
-// google font
-//@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;600&display=swap");
 $inter: "Inter", sans-serif;
 $rob: "Roboto", sans-serif;
 @mixin placeholder {
@@ -184,7 +182,7 @@ $rob: "Roboto", sans-serif;
 
 .ezd-list-unstyled {
   list-style: none;
-  margin: 0px;
+  margin: 0;
   padding-left: 0;
 }
 

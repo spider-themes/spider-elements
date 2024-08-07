@@ -508,7 +508,7 @@
     .quote-img-bottom {
       position: absolute;
       right: 50px;
-      bottom: 0px;
+      bottom: 0;
     }
   }
 
@@ -523,7 +523,7 @@
       font-weight: 600;
       letter-spacing: 0.01em;
       font-family: var(--ibm);
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     .author-position {
@@ -870,7 +870,7 @@
     li {
       height: auto;
       width: auto;
-      margin: 0px;
+      margin: 0;
 
       button {
         text-indent: -50000px;
@@ -880,7 +880,7 @@
         margin: 0 5px;
         background: #e4e4e4;
         transition: all 0.3s ease-in-out;
-        padding: 0px;
+        padding: 0;
       }
 
       &.slick-active button {
@@ -897,11 +897,11 @@
 }
 
 .feedback-block-two {
-  box-shadow: 0px 20px 35px rgba(0, 16, 34, 0.03);
+  box-shadow: 0 20px 35px rgba(0, 16, 34, 0.03);
   background: #ffffff;
   border-radius: 10px;
   padding: 38px 45px 40px;
-  border: 0px;
+  border: 0;
 
   &:hover {
     background: #fff;
@@ -917,7 +917,7 @@
   }
 
   .review {
-    border: 0px;
+    border: 0;
     padding-top: 0;
 
     .text-md {
@@ -1143,7 +1143,7 @@
     text-align: center;
     font-size: 30px;
     color: #000;
-    padding: 0px;
+    padding: 0;
     transition: all 0.3s linear;
     position: absolute;
 
@@ -1308,7 +1308,7 @@
           margin: 0 5px;
           background: #e4e4e4;
           transition: all 0.3s ease-in-out;
-          padding: 0px;
+          padding: 0;
         }
 
         &.slick-active {
