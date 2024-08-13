@@ -13,7 +13,13 @@ Elementor tested up to: 3.20.3
 == Description ==
 Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 9+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.
 
-= Widget List: available in the free version =
+## 🔗 USEFUL LINKS ##
+- [Get the Pro Version](https://spider-themes.net/spider-elements/pricing)
+- [Demo (built with Spider Elements)](https://spider-themes.net/spider-elements/#widgets)
+- [Documentation](https://helpdesk.spider-themes.net/docs/spider-elements)
+- [Explore More](https://spider-themes.net/spider-elements)
+
+### Widget List: available in the free version
 
 #[**Accordion**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion/) - Effortlessly showcase text with the Accordion Widget.
 #[**Alerts Box**](https://wordpress-plugins.spider-themes.net/spider-elements/notice-message-widget/) - Create eye-catching alerts: customizable styles, colors, icons.
@@ -35,7 +41,7 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 #[**Video Playlist**](https://wordpress-plugins.spider-themes.net/spider-elements/video-playlist/) - Engaging, curated video collections.
 
 
-= Widget List: available in the Pro version =
+### Widget List: available in the Pro version 
 
 #[**Accordion Articles**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion-articles/) - Organize content with collapsible sections.
 #[**Box Hover**](https://wordpress-plugins.spider-themes.net/spider-elements/box-hover/) - Add interactive hover effects to boxes.
