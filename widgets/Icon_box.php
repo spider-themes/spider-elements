@@ -314,10 +314,6 @@ class Icon_box extends Widget_Base {
 					'{{WRAPPER}} .icon_box_content' => 'text-align: {{VALUE}};',
 					'{{WRAPPER}} .icon_box_two'     => 'text-align: {{VALUE}};',
 				],
-//				'condition' => [
-//					'style'  => [ '1' ],
-//					'style!' => [ '2' ]
-//				],
 			]
 		);
 

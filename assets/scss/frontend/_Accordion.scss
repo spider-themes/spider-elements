@@ -20,7 +20,7 @@
   }
   &:before {
     content: "";
-    background-image: url("../images/svgviewer-output.svg");
+    background-image: url("../images/icons/arrow-icon.svg");
     background-repeat: no-repeat;
     height: 12px;
     width: 20px;
@@ -28,7 +28,7 @@
     font-size: 18px;
     font-family: eleganticons;
     right: 30px;
-    top: 16px;
+    top: 20px;
     transform: rotate(180deg);
     transition: all 0.2s linear;
     color: #4c4cf1;
@@ -136,7 +136,7 @@
 
               svg {
                 display: block;
-                color: var(--spe_p_color);
+                color: var(--spel_p_color);
 
                 & + svg {
                   display: none;
@@ -291,7 +291,7 @@
         text-align: left;
         width: 100%;
         font-size: unset;
-        color: var(--spe_brand_color);
+        color: var(--spel_brand_color);
         font-weight: 500;
         background: var(--black_50);
         text-decoration: none;
@@ -344,7 +344,7 @@
       //border-radius: 0 !important;
       svg {
         display: block;
-        color: var(--spe_p_color);
+        color: var(--spel_p_color);
       }
 
       .card-header button {

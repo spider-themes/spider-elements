@@ -2959,9 +2959,9 @@ Table of Content:
 }
 /* Variable CSS */
 :root {
-  --spe_brand_color: #A77DEF;
-  --spe_heading_color: #031933;
-  --spe_p_color: #6A737C;
+  --spel_brand_color: #A77DEF;
+  --spel_heading_color: #031933;
+  --spel_p_color: #6A737C;
   --gradient_bg_color1: #fffbf2;
   --gradient_bg_color2: #edfffd;
   --border_on_white: #e6edf0;
@@ -3454,7 +3454,7 @@ a:hover, a:focus {
 }
 .toggle_btn:before {
   content: "";
-  background-image: url("../images/svgviewer-output.svg");
+  background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
   height: 12px;
   width: 20px;
@@ -3462,7 +3462,7 @@ a:hover, a:focus {
   font-size: 18px;
   font-family: eleganticons;
   right: 30px;
-  top: 16px;
+  top: 20px;
   transform: rotate(180deg);
   transition: all 0.2s linear;
   color: #4c4cf1;
@@ -3565,7 +3565,7 @@ a:hover, a:focus {
 }
 .toggle_btn.active .doc_accordion .card-header .doc_accordion button.collapsed svg {
   display: block;
-  color: var(--spe_p_color);
+  color: var(--spel_p_color);
 }
 .toggle_btn.active .doc_accordion .card-header .doc_accordion button.collapsed svg + svg {
   display: none;
@@ -3694,7 +3694,7 @@ a:hover, a:focus {
   text-align: left;
   width: 100%;
   font-size: unset;
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
   font-weight: 500;
   background: var(--black_50);
   text-decoration: none;
@@ -3746,7 +3746,7 @@ a:hover, a:focus {
 }
 .accordion .doc_accordion.spe-collapsed svg {
   display: block;
-  color: var(--spe_p_color);
+  color: var(--spel_p_color);
 }
 .accordion .doc_accordion.spe-collapsed .card-header button .expanded-icon {
   display: none;
@@ -3822,7 +3822,7 @@ button.btn.btn-link:focus {
 }
 .tab_shortcode .tab-content {
   display: block;
-  color: var(--spe_p_color);
+  color: var(--spel_p_color);
   padding: 25px 30px;
   border: 1px solid var(--black_50);
   border-radius: 0 5px 5px 5px;
@@ -3857,7 +3857,7 @@ button.btn.btn-link:focus {
 }
 .tab_shortcode .tab-content .previous:hover,
 .tab_shortcode .tab-content .nexts:hover {
-  background: var(--spe_brand_color);
+  background: var(--spel_brand_color);
   color: #fff;
 }
 .tab_shortcode .tab-content .previous {
@@ -3876,7 +3876,7 @@ button.btn.btn-link:focus {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--spe_brand_color);
+  background: var(--spel_brand_color);
   display: inline-block;
   text-align: center;
   line-height: 20px;
@@ -3904,14 +3904,10 @@ button.btn.btn-link:focus {
 }
 .header_tab_items .nav-tabs .nav-item .nav-link.active {
   background: #ffffff;
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
 }
 
 /* Sticky Tab Styles */
-.process_tab_shortcode {
-  position: relative;
-  overflow: hidden;
-}
 .process_tab_shortcode .previous,
 .process_tab_shortcode .next {
   position: absolute;
@@ -3921,7 +3917,7 @@ button.btn.btn-link:focus {
   border-radius: 0;
   background: #e1ebf0;
   border: 0;
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
   outline: none;
   box-shadow: none;
   transition: all 0.4s linear;
@@ -3936,7 +3932,7 @@ button.btn.btn-link:focus {
 }
 .process_tab_shortcode .previous:hover,
 .process_tab_shortcode .next:hover {
-  background: var(--spe_brand_color);
+  background: var(--spel_brand_color);
   color: #fff;
   border-color: transparent #ebebeb;
 }
@@ -3967,7 +3963,7 @@ button.btn.btn-link:focus {
 }
 .v_menu .nav-item .nav-link {
   font-size: 16px;
-  color: var(--spe_p_color);
+  color: var(--spel_p_color);
   transition: all 0.2s linear;
   padding: 0;
   border: 0;
@@ -3988,12 +3984,12 @@ button.btn.btn-link:focus {
   top: -2px;
 }
 .v_menu .nav-item .nav-link.active, .v_menu .nav-item .nav-link:hover {
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
   border: 0;
   background: transparent;
 }
 .v_menu .nav-item .nav-link.active span, .v_menu .nav-item .nav-link:hover span {
-  background: var(--spe_brand_color);
+  background: var(--spel_brand_color);
   color: #fff;
 }
 .v_menu .nav-item + li {
@@ -4012,7 +4008,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   top: -70px;
   left: 0;
   right: 0;
-  background: var(--spe_heading_color);
+  background: var(--spel_heading_color);
   transform: translateY(70px);
   transition: transform 500ms ease, background 500ms ease;
   z-index: 30;
@@ -4021,11 +4017,12 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 /* Tabs Slider Styles */
 .tabs_sliders {
   position: relative;
+  overflow: hidden;
 }
 .tabs_sliders .scroller-btn {
   position: absolute;
   top: 50%;
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
   font-size: 20px;
   cursor: pointer;
   transform: translateY(-50%);
@@ -4036,14 +4033,14 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   line-height: 44px;
   z-index: 1;
   text-align: center;
-}
-.tabs_sliders .scroller-btn:before {
-  content: "";
-  width: 20px;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(249, 249, 249, 0.8) 30%, rgb(249, 249, 249) 100%, rgb(249, 249, 249) 16%, rgb(249, 249, 249) 100%);
-  position: absolute;
-  right: -20px;
+  /*&:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(249, 249, 249, 0.8) 30%, rgb(249, 249, 249) 100%, rgb(249, 249, 249) 16%, rgb(249, 249, 249) 100%);
+    position: absolute;
+    right: -20px;
+  }*/
 }
 .tabs_sliders .scroller-btn.right {
   right: 0;
@@ -4072,7 +4069,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 }
 .tabs_sliders ul.nav-tabs .nav-item .nav-link {
   font-size: 16px;
-  color: var(--spe_p_color);
+  color: var(--spel_p_color);
   border-radius: 0;
   padding: 9px 20px;
   background: var(--black_25);
@@ -4089,7 +4086,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   content: "";
   width: 0;
   height: 2.1px;
-  background: var(--spe_brand_color);
+  background: var(--spel_brand_color);
   position: absolute;
   top: 0;
   left: 0;
@@ -4156,7 +4153,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   border-radius: 0;
   background: #e1ebf0;
   border: 0;
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
   outline: none;
   box-shadow: none;
   transition: all 0.4s linear;
@@ -4173,7 +4170,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 .process_tab_shortcode .next:hover {
   outline: none;
   box-shadow: none;
-  background: var(--spe_brand_color);
+  background: var(--spel_brand_color);
   color: #fff;
 }
 .process_tab_shortcode .next {
@@ -4196,32 +4193,23 @@ body.remove .tab_fixed.header_tab_items {
   transform: translateY(144px);
 }
 
-/* Header Tabs Area */
-.header_tabs_area .tab_fixed.header_tab_items .nav.nav-tabs li a svg,
-.header_tabs_area .tab_fixed.header_tab_items .nav.nav-tabs li a i,
-.header_tabs_area .tab_fixed.header_tab_items .nav.nav-tabs li a img {
+/* Header Tab Items */
+.header_tab_items {
+  background: var(--spel_heading_color);
+}
+.header_tab_items.tab_fixed .nav.nav-tabs li a svg,
+.header_tab_items.tab_fixed .nav.nav-tabs li a i,
+.header_tab_items.tab_fixed .nav.nav-tabs li a img {
   display: inline-block;
   margin-bottom: 0;
   position: relative;
   margin-right: 4px;
 }
-.header_tabs_area .tab_fixed .header_tab_content {
+.header_tab_items.tab_fixed .header_tab_content {
   margin-top: 61px;
 }
-.header_tabs_area .tab_fixed .header_tab_content .tab-pane {
+.header_tab_items.tab_fixed .header_tab_content .tab-pane {
   padding: 0;
-}
-.header_tabs_area .header_tab_items span.scroller-btn {
-  left: -24px;
-}
-.header_tabs_area .header_tab_items span.right {
-  right: -24px;
-  left: auto;
-}
-
-/* Header Tab Items */
-.header_tab_items {
-  background: var(--spe_heading_color);
 }
 .header_tab_items .nav.nav-tabs {
   justify-content: center;
@@ -4250,17 +4238,17 @@ body.remove .tab_fixed.header_tab_items {
 }
 .header_tab_items .nav.nav-tabs li a:hover {
   background: var(--black_50);
-  color: var(--spe_p_color);
+  color: var(--spel_p_color);
 }
 .header_tab_items .nav.nav-tabs li a:hover svg path {
-  fill: var(--spe_p_color);
+  fill: var(--spel_p_color);
 }
 .header_tab_items .nav.nav-tabs li a.active {
   background-color: #fff;
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
 }
 .header_tab_items .nav.nav-tabs li a.active svg path {
-  fill: var(--spe_brand_color);
+  fill: var(--spel_brand_color);
 }
 
 /* Auto Tabs Styles */
@@ -4418,7 +4406,7 @@ body.remove .tab_fixed.header_tab_items {
   background-image: linear-gradient(180deg, rgba(4, 133, 161, 0.6) 0%, rgba(29, 39, 70, 0.6) 100%);
 }
 .doc_action_area .action_btn {
-  border: 1px solid var(--spe_brand_color);
+  border: 1px solid var(--spel_brand_color);
 }
 .doc_action_area .action_btn:hover {
   background: transparent;
@@ -7004,7 +6992,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 .video_slider_area #video_loader #loader {
   border: 6px solid rgba(152, 149, 149, 0.614);
-  border-top: 6px solid var(--spe_brand_color);
+  border-top: 6px solid var(--spel_brand_color);
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -7706,7 +7694,7 @@ button.swiper-pagination-bullet {
 }
 .message_alert h5 {
   font-size: 16px;
-  color: var(--spe_heading_color);
+  color: var(--spel_heading_color);
   font-weight: 500;
   margin-bottom: 0;
   margin-top: 0;
@@ -7761,7 +7749,7 @@ button.swiper-pagination-bullet {
 }
 .alert-info i,
 .alert-info h5 {
-  color: var(--spe_brand_color);
+  color: var(--spel_brand_color);
 }
 
 .notice-box {

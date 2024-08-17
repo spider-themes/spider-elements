@@ -174,7 +174,7 @@ if (!class_exists('SPEL')) {
             add_action('elementor/elements/categories_registered', [ $this, 'elements_register_category' ]);
 
             // Register widgets
-            add_action('elementor/widgets/register', [ $this, 'on_widgets_registered' ], 99 );
+            add_action('elementor/widgets/register', [ $this, 'widgets_register' ], 99 );
 
             // Register Icon
             add_filter('elementor/icons_manager/additional_tabs', [ $this, 'elegant_icons' ]);
@@ -221,7 +221,7 @@ if (!class_exists('SPEL')) {
 		 */
 		public function elegant_icons( $custom_fonts ) {
 			$css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
-			$json_data = plugins_url( 'assets/vendors/elegant-icon/eleganticons.json', __FILE__ );
+			$json_data = plugins_url( 'assets/vendors/elegant-icon/elegant-icons.json', __FILE__ );
 
 			$custom_fonts[ 'elegant-icon' ] = [
 				'name'          => 'elegant-icon',
@@ -243,7 +243,8 @@ if (!class_exists('SPEL')) {
          *
          * Load plugin localization files.
          */
-        public function i18n() {
+        public function i18n(): void
+        {
             load_plugin_textdomain( 'spider-elements', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
         }
 
@@ -299,7 +300,8 @@ if (!class_exists('SPEL')) {
          *
          * @access public
          */
-		public function init_plugin() {
+		public function init_plugin(): void
+        {
 
 			// Check if Elementor installed and activated
 			if ( ! did_action( 'elementor/loaded' ) ) {
@@ -360,7 +362,8 @@ if (!class_exists('SPEL')) {
 		 *
 		 * @access public
 		 */
-		public function admin_notice_missing_main_plugin() {
+		public function admin_notice_missing_main_plugin(): void
+        {
 
             $screen = get_current_screen();
             if (isset($screen->parent_file) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id) {
@@ -415,7 +418,8 @@ if (!class_exists('SPEL')) {
          *
          * @access public
          */
-		public function admin_notice_minimum_elementor_version() {
+		public function admin_notice_minimum_elementor_version(): void
+        {
 
             if (isset($_GET['activate']) && isset($_GET['_wpnonce'])) {
 
@@ -447,7 +451,8 @@ if (!class_exists('SPEL')) {
          *
          * Warning when the site doesn't have a minimum required PHP version.
          */
-		public function admin_notice_minimum_php_version() {
+		public function admin_notice_minimum_php_version(): void
+        {
 
             // Verify nonce
             if (isset($_GET['activate']) && isset($_GET['nonce']) && wp_verify_nonce($_GET['nonce'], 'spider-elements-activation')) {
@@ -472,7 +477,7 @@ if (!class_exists('SPEL')) {
 
             // Message about minimum PHP version
             $message = sprintf(
-            /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
+                /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
                 esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements'),
                 '<strong>' . esc_html__('Spider Elements', 'spider-elements') . '</strong>',
                 '<strong>' . esc_html__('PHP', 'spider-elements') . '</strong>',
@@ -493,7 +498,7 @@ if (!class_exists('SPEL')) {
          *
          * Register new widget categories for Spider Elements widgets.
          */
-        public function elements_register_category ()
+        public function elements_register_category (): void
         {
 
             \Elementor\Plugin::instance()->elements_manager->add_category('spider-elements', [
@@ -511,119 +516,96 @@ if (!class_exists('SPEL')) {
 		 *
 		 * @access public
 		 */
-		public function on_widgets_registered() {
-			$this->include_widgets();
-			$this->register_widgets();
-		}
+		public function widgets_register(): void
+        {
 
-
-		/**
-		 * Include Widgets files
-		 *
-		 * Load widgets files
-		 *
-		 * @since 1.2.0
-		 * @access private
-		 */
-		private function include_widgets() {
-
-			require_once( __DIR__ . '/widgets/Tabs.php' );
-			require_once( __DIR__ . '/widgets/Video_Playlist.php' );
-			require_once( __DIR__ . '/widgets/Alerts_Box.php' );
-			require_once( __DIR__ . '/widgets/Accordion.php' );
-			require_once( __DIR__ . '/widgets/Testimonial.php' );
-			//require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
-			//require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
-			require_once( __DIR__ . '/widgets/List_Item.php' );
-			require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
-			require_once( __DIR__ . '/widgets/Team_Carousel.php' );
-			require_once( __DIR__ . '/widgets/Integrations.php' );
-			require_once( __DIR__ . '/widgets/Before_after.php' );
-			require_once( __DIR__ . '/widgets/Video_Popup.php' );
-			require_once( __DIR__ . '/widgets/Blog_Grid.php' );
-			require_once( __DIR__ . '/widgets/Timeline.php' );
-			//require_once( __DIR__ . '/widgets/Buttons.php' );
-			//require_once( __DIR__ . '/widgets/Animated_Heading.php' );
-            require_once( __DIR__ . '/widgets/Counter.php' );
-            //require_once( __DIR__ . '/widgets/Instagram.php' );
-            require_once( __DIR__ . '/widgets/Icon_box.php' );
-
-		}
-
-		/**
-		 * Register Widgets
-		 *
-		 * Register new Elementor widgets.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @access private
-		 */
-		private function register_widgets() {
-			
-			// Register each widget class
-			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
-			$elements_opt = get_option( 'spe_widget_settings' );
+            // Register each widget class
+            $widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
+            $elements_opt = get_option( 'spe_widget_settings' );
 
 
             if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Tabs.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Tabs() );
             }
             if ( isset( $elements_opt[ 'docy_videos_playlist' ] ) && $elements_opt[ 'docy_videos_playlist' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Video_Playlist.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Video_Playlist() );
             }
             if ( isset( $elements_opt[ 'docly_alerts_box' ] ) && $elements_opt[ 'docly_alerts_box' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Alerts_Box.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Alerts_Box() );
             }
-			if ( isset( $elements_opt[ 'spel_accordion' ] ) && $elements_opt[ 'spel_accordion' ] == 'on' ) {
-				$widgets_manager->register( new \SPEL\Widgets\Accordion() );
-			}
+            if ( isset( $elements_opt[ 'spel_accordion' ] ) && $elements_opt[ 'spel_accordion' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Accordion.php' );
+                $widgets_manager->register( new \SPEL\Widgets\Accordion() );
+            }
             if ( isset( $elements_opt[ 'docy_testimonial' ] ) && $elements_opt[ 'docy_testimonial' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Testimonial.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Testimonial() );
             }
             // if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
+            //     require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
             // }
             // if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
+            ////require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
             // }
+
             if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/List_Item.php' );
                 $widgets_manager->register( new \SPEL\Widgets\List_Item() );
             }
             if ( isset( $elements_opt[ 'docly_cheatsheet' ] ) && $elements_opt[ 'docly_cheatsheet' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Cheat_sheet() );
             }
             if ( isset( $elements_opt[ 'docy_team_carousel' ] ) && $elements_opt[ 'docy_team_carousel' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Team_Carousel.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Team_Carousel() );
             }
             if ( isset( $elements_opt[ 'docy_integrations' ] ) && $elements_opt[ 'docy_integrations' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Integrations.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Integrations() );
             }
             if ( isset( $elements_opt[ 'spe_after_before_widget' ] ) && $elements_opt[ 'spe_after_before_widget' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Before_after.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Before_After() );
             }
             if ( isset( $elements_opt[ 'docy_video_popup' ] ) && $elements_opt[ 'docy_video_popup' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Video_Popup.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Video_Popup() );
             }
             if ( isset( $elements_opt[ 'docy_blog_grid' ] ) && $elements_opt[ 'docy_blog_grid' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Blog_Grid.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Blog_Grid() );
             }
             if ( isset( $elements_opt[ 'spe_timeline_widget' ] ) && $elements_opt[ 'spe_timeline_widget' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Timeline.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Timeline() );
             }
             // if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
+            //require_once( __DIR__ . '/widgets/Buttons.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Buttons() );
             // }
             // if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
+            //require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
             // }
+
+
             if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Counter.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Counter() );
             }
             // if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
+            //require_once( __DIR__ . '/widgets/Instagram.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Instagram() );
             // }
+
             if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
+                require_once( __DIR__ . '/widgets/Icon_box.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Icon_box() );
             }
 
@@ -636,7 +618,8 @@ if (!class_exists('SPEL')) {
 		 * @access public
 		 * @static
 		 */
-		public function define_constants() {
+		public function define_constants(): void
+        {
 
             //SPEL(Short form - Spider Elements)
             define('SPEL_VERSION', self::VERSION);

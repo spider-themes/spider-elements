@@ -189,6 +189,7 @@
 
         //============================== Team Slider =============================//
         teamslider: function ($scope) {
+
             let teamSlider = $scope.find(".expert-slider-one");
             let dataRtlTeam1 = teamSlider.data("rtl");
             if (teamSlider.length) {
@@ -214,6 +215,12 @@
                             breakpoint: 768,
                             settings: {
                                 slidesToShow: 2,
+                            },
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
                             },
                         },
                     ],
