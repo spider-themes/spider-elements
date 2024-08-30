@@ -21,37 +21,36 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 
 ### Widget List: available in the free version
 
-#[**Accordion**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion/) - Effortlessly showcase text with the Accordion Widget.
-#[**Alerts Box**](https://wordpress-plugins.spider-themes.net/spider-elements/notice-message-widget/) - Create eye-catching alerts: customizable styles, colors, icons.
-#[**Before After**](https://wordpress-plugins.spider-themes.net/spider-elements/before-after/) - Compare images with interactive slider.
-#[**Blog**](https://wordpress-plugins.spider-themes.net/spider-elements/blog-grid/) - Display posts with customizable layout.
-#[**Sticky Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/sticky-tabs/) - Persistent navigation for easy access.
-#[**Cheat Sheet**](https://wordpress-plugins.spider-themes.net/spider-elements/cheatsheet/) - Quick reference guide for efficiency.
-#[**Counter**](https://wordpress-plugins.spider-themes.net/spider-elements/counter/) - Track and display statistics dynamically.
-#[**Video Popup**](https://wordpress-plugins.spider-themes.net/spider-elements/video-popup/) - Display videos in a pop-up window.
-#[**Integrations**](https://wordpress-plugins.spider-themes.net/spider-elements/integration/) - Showcase compatible platforms seamlessly.
-#[**List Items**](https://wordpress-plugins.spider-themes.net/spider-elements/list-item/) - Create stylish, organized items list.
-#[**Pricing Table Switcher**](https://wordpress-plugins.spider-themes.net/spider-elements/pricing-table-switcher/) - Create interactive, engaging pricing tables.
-#[**Pricing Table Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/pricing-table-tabs/) - Interactive, comparative pricing tables.
-#[**Skill Showcase**](https://wordpress-plugins.spider-themes.net/spider-elements/skill-showcase/) - Highlight skills effectively.
-#[**Tabs**](https://wordpress-plugins.spider-themes.net/spider-elements/tabs/) - Organize content, enhance user experience.
-#[**Team Carousel**](https://wordpress-plugins.spider-themes.net/spider-elements/team-carousel/) - Showcase team members dynamically.
-#[**Testimonials**](https://wordpress-plugins.spider-themes.net/spider-elements/testimonials/) - Showcase client feedback, build trust.
-#[**Timeline**](https://wordpress-plugins.spider-themes.net/spider-elements/timeline/) - Display events in chronological order.
-#[**Video Playlist**](https://wordpress-plugins.spider-themes.net/spider-elements/video-playlist/) - Engaging, curated video collections.
+#[**Accordion**](https://spider-themes.net/spider-elements/accordion) - Effortlessly showcase text with the Accordion Widget.
+#[**Alerts Box**](https://spider-themes.net/spider-elements/notice-message) - Create eye-catching alerts: customizable styles, colors, icons.
+#[**Before After**](https://spider-themes.net/spider-elements/before-after) - Compare images with interactive slider.
+#[**Blog**](https://spider-themes.net/spider-elements/blog-grid) - Display posts with customizable layout.
+#[**Sticky Tabs**](https://spider-themes.net/spider-elements/sticky-tabs) - Persistent navigation for easy access.
+#[**Cheat Sheet**](https://spider-themes.net/spider-elements/cheatsheet) - Quick reference guide for efficiency.
+#[**Counter**](https://spider-themes.net/spider-elements/counter) - Track and display statistics dynamically.
+#[**Video Popup**](https://spider-themes.net/spider-elements/video-popup) - Display videos in a pop-up window.
+#[**Integrations**](https://spider-themes.net/spider-elements/integration) - Showcase compatible platforms seamlessly.
+#[**List Items**](https://spider-themes.net/spider-elements/list-item) - Create stylish, organized items list.
+#[**Tabs**](https://spider-themes.net/spider-elements/tabs) - Organize content, enhance user experience.
+#[**Team Carousel**](https://spider-themes.net/spider-elements/team-carousel) - Showcase team members dynamically.
+#[**Testimonials**](https://spider-themes.net/spider-elements/testimonials) - Showcase client feedback, build trust.
+#[**Timeline**](https://spider-themes.net/spider-elements/timeline) - Display events in chronological order.
+#[**Video Playlist**](https://spider-themes.net/spider-elements/video-playlist) - Engaging, curated video collections.
+#[**Icon Box**](https://spider-themes.net/spider-elements/icon-box) - Showcase content with icon highlights.
 
 
-### Widget List: available in the Pro version 
+### Widget List: available in the Pro version
 
-#[**Accordion Articles**](https://wordpress-plugins.spider-themes.net/spider-elements/accordion-articles/) - Organize content with collapsible sections.
-#[**Box Hover**](https://wordpress-plugins.spider-themes.net/spider-elements/box-hover/) - Add interactive hover effects to boxes.
-#[**Flip Box**](https://wordpress-plugins.spider-themes.net/spider-elements/flipbox/) - Create interactive flip effects for content.
-#[**Feature Box**](https://wordpress-plugins.spider-themes.net/spider-elements/feature-box/) - Highlight features with style.
-#[**Hotspot**](https://wordpress-plugins.spider-themes.net/spider-elements/hotspot/) - Add interactive points of interest.
-#[**Image Hover**](https://wordpress-plugins.spider-themes.net/spider-elements/image-hover/) - Create dynamic hover effects for images.
-#[**Image Slider**](https://wordpress-plugins.spider-themes.net/spider-elements/image-slider/) - Display images in a dynamic slideshow.
-#[**Marquee Slider**](https://wordpress-plugins.spider-themes.net/spider-elements/marquee-slider/) - Display scrolling content dynamically.
-#[**Stack Image**](https://wordpress-plugins.spider-themes.net/spider-elements/stack-image/) - Display images in a stacked layout.
+#[**Accordion Articles**](https://spider-themes.net/spider-elements/accordion-articles) - Organize content with collapsible sections.
+#[**Box Hover**](https://spider-themes.net/spider-elements/box-hover) - Add interactive hover effects to boxes.
+#[**Flip Box**](https://spider-themes.net/spider-elements/flipbox) - Create interactive flip effects for content.
+#[**Feature Box**](https://spider-themes.net/spider-elements/feature-box) - Highlight features with style.
+#[**Hotspot**](https://spider-themes.net/spider-elements/hotspot) - Add interactive points of interest.
+#[**Image Hover**](https://spider-themes.net/spider-elements/image-hover) - Create dynamic hover effects for images.
+#[**Image Slider**](https://spider-themes.net/spider-elements/image-slider) - Display images in a dynamic slideshow.
+#[**Marquee Slider**](https://spider-themes.net/spider-elements/marquee-slider) - Display scrolling content dynamically.
+#[**Stack Image**](https://spider-themes.net/spider-elements/stack-image) - Display images in a stacked layout.
+#[**Skill Showcase**](https://spider-themes.net/spider-elements/skill-showcase) - Highlight skills effectively.
 
 
 
