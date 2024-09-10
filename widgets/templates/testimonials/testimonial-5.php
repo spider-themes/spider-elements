@@ -31,8 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="navigation">
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-f95f3e58688f37f3"></div>
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-f95f3e58688f37f3"></div>
     </div>
 </section>
 

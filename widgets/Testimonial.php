@@ -1091,7 +1091,7 @@ class Testimonial extends Widget_Base {
         //========================= Arrow Icons =======================//
         $this->start_controls_section(
             'arrow_icons_sec', [
-                'label' => esc_html__( 'Arrow Icon', 'textdomain' ),
+                'label' => esc_html__( 'Arrow Icon', 'spider-elements' ),
                 'condition' => [
                     'style' => ['8', '10']
                 ]
@@ -1100,7 +1100,7 @@ class Testimonial extends Widget_Base {
 
         $this->add_control(
             'prev_arrow_icon', [
-                'label' => esc_html__( 'Prev Icon', 'textdomain' ),
+                'label' => esc_html__( 'Prev Icon', 'spider-elements' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'arrow_carrot-left',
@@ -1111,7 +1111,7 @@ class Testimonial extends Widget_Base {
 
         $this->add_control(
             'next_arrow_icon', [
-                'label' => esc_html__( 'Next Icon', 'textdomain' ),
+                'label' => esc_html__( 'Next Icon', 'spider-elements' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'arrow_carrot-right',

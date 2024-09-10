@@ -363,7 +363,7 @@ input + .elementor-control.elementor-control-style .elementor-choices .elementor
   width: 100%;
   height: 100%;
   opacity: 1;
-  background: rgba(57, 181, 74, 0.3803921569);
+  background: #39b54a61;
   pointer-events: none;
   color: white;
   z-index: 999999;
