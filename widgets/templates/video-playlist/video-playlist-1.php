@@ -3,6 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
+
 <section class="video_list_area">
     <div class="ezd-grid ezd-grid-cols-12 ezd-justify-content-sm-between">
         <div class="ezd-lg-col-7">
@@ -31,16 +32,16 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
         <div class="ezd-lg-col-5 spel_video_list">
             <div class="video_list">
-                    <?php
-                    if ( ! empty( $settings['playlist_title'] ) ) { ?>
+				<?php
+				if ( ! empty( $settings['playlist_title'] ) ) : ?>
                     <<?php echo esc_attr( $title_tag ); ?> class="play_list_title" data-animation="wow fadeInUp" data-wow-delay="0.2s">
                     <?php echo esc_html( $settings['playlist_title'] ); ?>
                 </<?php echo esc_attr( $title_tag ) ?>>
                 <?php
-                }
+                endif;
                 ?>
-                <div class="video_list_inner scroll">
-                    <div class="accordion">
+            <div class="video_list_inner scroll">
+                <div class="accordion">
 					<?php
 					$all_videos = $settings['tabs'] ?? '';
 					$i          = '0';
@@ -72,14 +73,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                                                  data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
                                                  class="icon line-color">
                                                 <path id="primary" d="M5,12H19M12,5V19"
-                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                      style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
                                                 </path>
                                             </svg>
                                             <svg fill="#000000" width="15px" height="15px" viewBox="0 0 24 24"
                                                  id="minus" data-name="Line Color" xmlns="http://www.w3.org/2000/svg"
                                                  class="icon line-color">
                                                 <line id="primary" x1="19" y1="12" x2="5" y2="12"
-                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                      style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
                                                 </line>
                                             </svg>
                                         </span>
@@ -129,7 +130,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 																			<?php
 																			$video_date = $child_video['current_date'] ?? '';
 																			echo human_time_diff( strtotime( $video_date ),
-																					current_time( 'timestamp' ) ) . __( ' ago',
+																					current_time( 'timestamp' ) ) . esc_html__( ' ago',
 																					'spider-elements' );
 																			?>
                                                                         </div>
@@ -152,91 +153,88 @@ if ( ! defined( 'ABSPATH' ) ) {
 					?>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
     </div>
 </section>
 
 <script>
-    ;(function ($) {
-        "use strict";
-        $(document).ready(function () {
-            $(document).on("click", function (e) {
-                var el = e.target.nodeName,
-                    parent = e.target.parentNode;
-                if (
-                    (el === "path" && videoControlClassCheck(parent.parentNode)) ||
-                    (el === "svg" && videoControlClassCheck(parent))
-                ) {
-                    $(".video_list_area").toggleClass("theatermode");
-                }
-            });
+  ;(function($) {
+    'use strict';
+    $(document).ready(function() {
+      $(document).on('click', function(e) {
+        var el = e.target.nodeName,
+            parent = e.target.parentNode;
+        if (
+            (el === 'path' && videoControlClassCheck(parent.parentNode)) ||
+            (el === 'svg' && videoControlClassCheck(parent))
+        ) {
+          $('.video_list_area').toggleClass('theatermode');
+        }
+      });
 
-            function videoControlClassCheck(parent) {
-                return parent.className.indexOf("art-icon-fullscreenWeb") !== -1;
-            }
-        })
+      function videoControlClassCheck(parent) {
+        return parent.className.indexOf('art-icon-fullscreenWeb') !== -1;
+      }
+    });
 
-        let videoAccordion = $(".spe_accordion_inner > .spe-accordion");
-        videoAccordion.on("click", function () {
-            var $this = $(this);
-            var $parent = $this.parent();
-            var $collapse = $parent.find("> .collapse").first();
+    let videoAccordion = $('.spe_accordion_inner > .spe-accordion');
+    videoAccordion.on('click', function() {
+      var $this = $(this);
+      var $parent = $this.parent();
+      var $collapse = $parent.find('> .collapse').first();
 
-            $collapse.slideToggle(300);
-            $parent.siblings().find("> .collapse").hide(300);
+      $collapse.slideToggle(300);
+      $parent.siblings().find('> .collapse').hide(300);
 
-            if ($parent.hasClass("spe-collapsed")) {
-                $parent.removeClass("spe-collapsed");
-            } else {
-                videoAccordion.parent().removeClass("spe-collapsed");
-                $parent.addClass("spe-collapsed");
-            }
-            return false;
-        });
-        // custom tab js
-        $(".ezd-tab-menu li a").on("click", function (e) {
-            e.preventDefault();
+      if ($parent.hasClass('spe-collapsed')) {
+        $parent.removeClass('spe-collapsed');
+      } else {
+        videoAccordion.parent().removeClass('spe-collapsed');
+        $parent.addClass('spe-collapsed');
+      }
+      return false;
+    });
+    // custom tab js
+    $('.ezd-tab-menu li a').on('click', function(e) {
+      e.preventDefault();
 
-            // Remove active class from all tabs within the same menu
-            $(this).closest(".ezd-tab-menu").find("li a").removeClass("active");
+      // Remove active class from all tabs within the same menu
+      $(this).closest('.ezd-tab-menu').find('li a').removeClass('active');
 
-            // Add active class to the clicked tab
-            $(this).addClass("active");
+      // Add active class to the clicked tab
+      $(this).addClass('active');
 
-            var target = $(this).attr("href");
+      var target = $(this).attr('href');
 
-            $("" + target)
-                .addClass("active")
-                .siblings(".ezd-tab-box")
-                .removeClass("active");
+      $('' + target).addClass('active').siblings('.ezd-tab-box').removeClass('active');
 
-            return false;
-        });
+      return false;
+    });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            let video = $("#video_0");
-            setTimeout(function () {
-                $(".video_slider_area").addClass("loaded").css("height", "auto");
-            }, 3000);
+    document.addEventListener('DOMContentLoaded', function() {
+      let video = $('#video_0');
+      setTimeout(function() {
+        $('.video_slider_area').addClass('loaded').css('height', 'auto');
+      }, 3000);
 
-            video.addClass("show").addClass("active");
-            let containers = document.getElementsByClassName("artplayer-app");
-            if (containers.length > 0) {
-                for (var i = 0; i < containers.length; i++) {
-                    new Artplayer({
-                        container: containers[i],
-                        url: containers[i].getAttribute("data-src"),
-                        title: "Your Name",
-                        pip: true,
-                        screenshot: true,
-                        flip: true,
-                        fullscreen: true,
-                        fullscreenWeb: true,
-                        height: "500px",
-                    });
-                }
-            }
-        });
-    })(jQuery);
+      video.addClass('show').addClass('active');
+      let containers = document.getElementsByClassName('artplayer-app');
+      if (containers.length > 0) {
+        for (var i = 0; i < containers.length; i++) {
+          new Artplayer({
+            container: containers[i],
+            url: containers[i].getAttribute('data-src'),
+            title: 'Your Name',
+            pip: true,
+            screenshot: true,
+            flip: true,
+            fullscreen: true,
+            fullscreenWeb: true,
+            height: '500px',
+          });
+        }
+      }
+    });
+  })(jQuery);
 </script>

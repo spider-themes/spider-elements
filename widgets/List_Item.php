@@ -29,7 +29,7 @@ class List_Item extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'List Items', 'spider-elements' );
+		return esc_html__( 'List Items', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -81,17 +81,17 @@ class List_Item extends Widget_Base {
 		//============================ Icon List ============================//
 		$this->start_controls_section(
 			'section_icon', [
-				'label' => __( 'Icon List', 'spider-elements' ),
+				'label' => esc_html__( 'Icon List', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
 			'style', [
-				'label'   => __( 'Order Type', 'spider-elements' ),
+				'label'   => esc_html__( 'Order Type', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'unordered_list' => __( 'Unordered List', 'spider-elements' ),
-					'order_list'     => __( 'Ordered List', 'spider-elements' ),
+					'unordered_list' => esc_html__( 'Unordered List', 'spider-elements' ),
+					'order_list'     => esc_html__( 'Ordered List', 'spider-elements' ),
 				],
 				'default' => 'unordered_list',
 			]
@@ -100,11 +100,11 @@ class List_Item extends Widget_Base {
 		$repeater = new Repeater();
 		$repeater->add_control(
 			'text', [
-				'label'       => __( 'Title', 'spider-elements' ),
+				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'label_block' => true,
-				'placeholder' => __( 'List Item', 'spider-elements' ),
-				'default'     => __( 'List Item', 'spider-elements' ),
+				'placeholder' => esc_html__( 'List Item', 'spider-elements' ),
+				'default'     => esc_html__( 'List Item', 'spider-elements' ),
 				'dynamic'     => [
 					'active' => true,
 				],
@@ -141,14 +141,14 @@ class List_Item extends Widget_Base {
 		//============================ List Item ============================//
 		$this->start_controls_section(
 			'section_icon_list', [
-				'label' => __( 'List', 'spider-elements' ),
+				'label' => esc_html__( 'List', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_responsive_control(
 			'space_between', [
-				'label'     => __( 'Space Between', 'spider-elements' ),
+				'label'     => esc_html__( 'Space Between', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -163,7 +163,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_control(
 			'text_indent', [
-				'label'     => __( 'Text Indent', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Indent', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -178,20 +178,20 @@ class List_Item extends Widget_Base {
 
 		$this->add_responsive_control(
 			'icon_align', [
-				'label'        => __( 'Alignment', 'spider-elements' ),
+				'label'        => esc_html__( 'Alignment', 'spider-elements' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'separator' => 'after',
 				'options'      => [
 					'left'   => [
-						'title' => __( 'Left', 'spider-elements' ),
+						'title' => esc_html__( 'Left', 'spider-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'spider-elements' ),
+						'title' => esc_html__( 'Center', 'spider-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'spider-elements' ),
+						'title' => esc_html__( 'Right', 'spider-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -208,7 +208,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_control(
 			'text_color', [
-				'label'     => __( 'Normal Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Normal Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -219,7 +219,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_control(
 			'text_color_hover', [
-				'label'     => __( 'Hover Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -234,14 +234,14 @@ class List_Item extends Widget_Base {
 		//============================ Style Icon ============================//
 		$this->start_controls_section(
 			'style_icon', [
-				'label' => __( 'Icon', 'spider-elements' ),
+				'label' => esc_html__( 'Icon', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'icon_color', [
-				'label'     => __( 'Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -252,7 +252,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_control(
 			'icon_bg_color', [
-				'label'     => __( 'Background', 'spider-elements' ),
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -263,7 +263,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_responsive_control(
 			'icon_size', [
-				'label'     => __( 'Size', 'spider-elements' ),
+				'label'     => esc_html__( 'Size', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -278,7 +278,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_responsive_control(
 			'icon_bg_size', [
-				'label'     => __( 'Background Size', 'spider-elements' ),
+				'label'     => esc_html__( 'Background Size', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -293,7 +293,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_responsive_control(
 			'icon_line_height', [
-				'label'     => __( 'Line Height', 'spider-elements' ),
+				'label'     => esc_html__( 'Line Height', 'spider-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -312,7 +312,7 @@ class List_Item extends Widget_Base {
 		//============================ Style Background ============================//
 		$this->start_controls_section(
 			'sec_bg_style', [
-				'label' => __( 'Background', 'spider-elements' ),
+				'label' => esc_html__( 'Background', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -335,7 +335,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_responsive_control(
 			'sec_margin', [
-				'label'      => __( 'Padding', 'spider-elements' ),
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -350,7 +350,7 @@ class List_Item extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(), [
 				'name'      => 'border',
-				'label'     => __( 'Border', 'spider-elements' ),
+				'label'     => esc_html__( 'Border', 'spider-elements' ),
 				'selector'  => '{{WRAPPER}} .steps-panel',
 				'separator' => 'before',
 			]
@@ -358,7 +358,7 @@ class List_Item extends Widget_Base {
 
 		$this->add_control(
 			'border_radius', [
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [

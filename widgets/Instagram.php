@@ -87,7 +87,7 @@ class Instagram extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'instagram_preset', [
-				'label' => __( 'Preset Skin', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -120,7 +120,7 @@ class Instagram extends Widget_Base {
 				'label'       => esc_html__('Instagram App ID', 'spider-elements'),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => __('---------------', 'spider-elements')
+				'placeholder' => esc_html__('---------------', 'spider-elements')
 			]
 		);*/
 
@@ -129,7 +129,7 @@ class Instagram extends Widget_Base {
 				'label'       => esc_html__('Instagram App Secret', 'spider-elements'),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => __('---------------', 'spider-elements')
+				'placeholder' => esc_html__('---------------', 'spider-elements')
 			]
 		);*/
 
@@ -139,7 +139,7 @@ class Instagram extends Widget_Base {
 				'description' => esc_html__( 'Enter instagram User Token if you want to show separated user\'s photos', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => __( '---------------', 'spider-elements' )
+				'placeholder' => esc_html__( '---------------', 'spider-elements' )
 			]
 		);
 

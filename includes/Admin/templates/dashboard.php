@@ -121,7 +121,7 @@ $environment = spel_get_environment_info();
             <div class="spe_support_item">
                 <span class="spe_icon icon-love"></span>
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Show Your Love', 'spider-elements'); ?></h2>
-                <p><?php echo wp_kses_post(__('Leave your feedback to help us out if you liked<br> our product and customer service.', 'spider-elements')); ?></p>
+                <p><?php echo wp_kses_post(esc_html__('Leave your feedback to help us out if you liked<br> our product and customer service.', 'spider-elements')); ?></p>
                 <a href="https://wordpress.org/support/plugin/spider-elements/reviews/#new-post" class="spe_dashboard_btn" target="_blank">
                     <?php esc_html_e('Leave a Review', 'spider-elements'); ?>
                 </a>
@@ -131,7 +131,7 @@ $environment = spel_get_environment_info();
             <div class="spe_support_item">
                 <span class="spe_icon icon-debug"></span>
                 <h2 class="spe_dashboard_title"><?php esc_html_e('Facing an issues?', 'spider-elements'); ?></h2>
-                <p><?php echo wp_kses_post(__('You think there is a bug in the product? Inform<br> us please!', 'spider-elements')); ?></p>
+                <p><?php echo wp_kses_post(esc_html__('You think there is a bug in the product? Inform<br> us please!', 'spider-elements')); ?></p>
                 <a href="#" class="spe_dashboard_btn" target="_blank">
                     <?php esc_html_e('Get Help Now', 'spider-elements'); ?>
                 </a>

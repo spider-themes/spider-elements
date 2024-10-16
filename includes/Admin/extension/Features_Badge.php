@@ -81,7 +81,7 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_text',
             [
-                'label' => __('Badge Label', 'spider-elements-pro'),
+                'label' => esc_html__('Badge Label', 'spider-elements-pro'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
@@ -96,7 +96,7 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_color',
             [
-                'label' => __('Text Color', 'spider-elements-pro'),
+                'label' => esc_html__('Text Color', 'spider-elements-pro'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => [
                     'spe_fb_badge_enable' => 'yes',
@@ -109,7 +109,7 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_bg_color',
             [
-                'label' => __('Background Color', 'spider-elements-pro'),
+                'label' => esc_html__('Background Color', 'spider-elements-pro'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => [
                     'spe_fb_badge_enable' => 'yes',

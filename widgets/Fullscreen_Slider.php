@@ -86,7 +86,7 @@ class Fullscreen_Slider extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'counter_preset', [
-				'label' => __( 'Preset Skin', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -136,7 +136,7 @@ class Fullscreen_Slider extends Widget_Base {
 			'btn_label', [
 				'label'   => esc_html__( 'Button Label', 'textdomain' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
-				'default' => __( 'View More', 'spider-elements' ),
+				'default' => esc_html__( 'View More', 'spider-elements' ),
 			]
 		);
 

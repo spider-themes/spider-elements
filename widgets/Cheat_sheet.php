@@ -105,7 +105,7 @@ class Cheat_sheet extends Widget_Base {
 		$repeater = new Repeater();
 		$repeater->add_control(
 			'cs_number', [
-				'label'   => __( 'Serial Number', 'spider-elements' ),
+				'label'   => esc_html__( 'Serial Number', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '#1',
 			]
@@ -113,7 +113,7 @@ class Cheat_sheet extends Widget_Base {
 
 		$repeater->add_control(
 			'cs_title', [
-				'label'   => __( 'Top Text', 'spider-elements' ),
+				'label'   => esc_html__( 'Top Text', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => esc_html__( 'be', 'spider-elements' ),
 			]
@@ -121,7 +121,7 @@ class Cheat_sheet extends Widget_Base {
 
 		$repeater->add_control(
 			'cs_content', [
-				'label'   => __( 'Content', 'spider-elements' ),
+				'label'   => esc_html__( 'Content', 'spider-elements' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => esc_html__( 'Sein', 'spider-elements' ),
 			]
@@ -129,7 +129,7 @@ class Cheat_sheet extends Widget_Base {
 
 		$this->add_control(
 			'cheat_sheet_contents', [
-				'label'         => __( 'Cheat Sheet List', 'spider-elements' ),
+				'label'         => esc_html__( 'Cheat Sheet List', 'spider-elements' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => '{{{ cs_title }}}',

@@ -118,7 +118,7 @@ class Counter extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'counter_preset', [
-				'label' => __( 'Preset Skin', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 
@@ -232,7 +232,7 @@ class Counter extends Widget_Base {
 		$this->add_control(
 			'style_radius',
 			[
-				'label'      => __( 'Border Radius', 'spider-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -247,7 +247,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_circle_size',
 			[
-				'label'      => __( 'Size', 'spider-elements' ),
+				'label'      => esc_html__( 'Size', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -293,7 +293,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_circle_stroke_width',
 			[
-				'label'      => __( 'Stroke Width', 'spider-elements' ),
+				'label'      => esc_html__( 'Stroke Width', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -349,7 +349,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'prefix_suffix_size',
 			[
-				'label'      => __( 'Number Gap', 'spider-elements' ),
+				'label'      => esc_html__( 'Number Gap', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', '%' ],
 				'range'      => [
@@ -415,7 +415,7 @@ class Counter extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_text_margin',
 			[
-				'label'      => __( 'Margin Top', 'spider-elements' ),
+				'label'      => esc_html__( 'Margin Top', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [

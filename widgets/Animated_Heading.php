@@ -28,7 +28,7 @@ class Animated_Heading extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Animated Heading', 'spider-elements' );
+		return esc_html__( 'Animated Heading', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -80,7 +80,7 @@ class Animated_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'se_animated_headline_sec',
 			[
-				'label' => __( 'Title', 'spider-elements' ),
+				'label' => esc_html__( 'Title', 'spider-elements' ),
 			]
 		);
 
@@ -164,7 +164,7 @@ class Animated_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'style_animated_headline',
 			[
-				'label' => __( 'Animated Headline Style', 'spider-elements' ),
+				'label' => esc_html__( 'Animated Headline Style', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -173,7 +173,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_before_title',
 			[
-				'label'     => __( 'Before Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Before Title', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -182,7 +182,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_b_t_color',
 			[
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} h1.cd-headline' => 'color: {{VALUE}};',
@@ -202,7 +202,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_f_t_title',
 			[
-				'label'     => __( 'First Text', 'spider-elements' ),
+				'label'     => esc_html__( 'First Text', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -211,7 +211,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_f_t_title_color',
 			[
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .single-headline span b' => 'color: {{VALUE}};',
@@ -231,7 +231,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_s_t_title',
 			[
-				'label'     => __( 'Second Text', 'spider-elements' ),
+				'label'     => esc_html__( 'Second Text', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -240,7 +240,7 @@ class Animated_Heading extends Widget_Base {
 		$this->add_control(
 			'se_s_t_title_color',
 			[
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} span.is-visible' => 'color: {{VALUE}};',

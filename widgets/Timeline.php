@@ -28,7 +28,7 @@ class Timeline extends Widget_Base {
 
 	public function get_title(): string
     {
-		return __( 'Timeline', 'spider-elements' );
+		return esc_html__( 'Timeline', 'spider-elements' );
 	}
 
 	public function get_icon(): string
@@ -80,7 +80,7 @@ class Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_timeline',
 			[
-				'label' => __( 'Timeline', 'spider-elements' ),
+				'label' => esc_html__( 'Timeline', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -90,9 +90,9 @@ class Timeline extends Widget_Base {
 		$repeater->add_control(
 			'timestamp',
 			[
-				'label'       => __( 'Timestamp', 'spider-elements' ),
+				'label'       => esc_html__( 'Timestamp', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( '11.05.2013', 'spider-elements' ),
+				'default'     => esc_html__( '11.05.2013', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -100,9 +100,9 @@ class Timeline extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => __( 'Title', 'spider-elements' ),
+				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Davidson College', 'spider-elements' ),
+				'default'     => esc_html__( 'Davidson College', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -110,9 +110,9 @@ class Timeline extends Widget_Base {
 		$repeater->add_control(
 			'location',
 			[
-				'label'       => __( 'Location', 'spider-elements' ),
+				'label'       => esc_html__( 'Location', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'North Carolina', 'spider-elements' ),
+				'default'     => esc_html__( 'North Carolina', 'spider-elements' ),
 				'label_block' => true,
 			]
 		);
@@ -120,9 +120,9 @@ class Timeline extends Widget_Base {
 		$repeater->add_control(
 			'content',
 			[
-				'label'      => __( 'Content', 'spider-elements' ),
+				'label'      => esc_html__( 'Content', 'spider-elements' ),
 				'type'       => Controls_Manager::WYSIWYG,
-				'default'    => __( 'Vitae adipiscing turpis...', 'spider-elements' ),
+				'default'    => esc_html__( 'Vitae adipiscing turpis...', 'spider-elements' ),
 				'show_label' => false,
 			]
 		);
@@ -131,15 +131,15 @@ class Timeline extends Widget_Base {
 		$this->add_control(
 			'timeline_items',
 			[
-				'label'       => __( 'Timeline Items', 'spider-elements' ),
+				'label'       => esc_html__( 'Timeline Items', 'spider-elements' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'timestamp' => __( '11.05.2013', 'spider-elements' ),
-						'title'     => __( 'Davidson College', 'spider-elements' ),
-						'location'  => __( 'North Carolina', 'spider-elements' ),
-						'content'   => __( 'Vitae adipiscing turpis...', 'spider-elements' ),
+						'timestamp' => esc_html__( '11.05.2013', 'spider-elements' ),
+						'title'     => esc_html__( 'Davidson College', 'spider-elements' ),
+						'location'  => esc_html__( 'North Carolina', 'spider-elements' ),
+						'content'   => esc_html__( 'Vitae adipiscing turpis...', 'spider-elements' ),
 					],
 					// Add more default timeline items here...
 				],
@@ -183,7 +183,7 @@ class Timeline extends Widget_Base {
 		//=== Timeline Title
 		$this->add_control(
 			'timeline_title', [
-				'label'     => __( 'Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Title', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -191,7 +191,7 @@ class Timeline extends Widget_Base {
 
 		$this->add_control(
 			'timeline', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .timeline-wrapper .timeline-panel h3' => 'color: {{VALUE}};',
@@ -210,7 +210,7 @@ class Timeline extends Widget_Base {
 		//=== Timeline Location
 		$this->add_control(
 			'timeline_location', [
-				'label'     => __( 'Location', 'spider-elements' ),
+				'label'     => esc_html__( 'Location', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -218,7 +218,7 @@ class Timeline extends Widget_Base {
 
 		$this->add_control(
 			'timeline_location_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .timeline-wrapper .timeline-panel span' => 'color: {{VALUE}};',
@@ -237,7 +237,7 @@ class Timeline extends Widget_Base {
 		//=== Timeline Content
 		$this->add_control(
 			'timeline_content', [
-				'label'     => __( 'Timeline Content', 'spider-elements' ),
+				'label'     => esc_html__( 'Timeline Content', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -245,7 +245,7 @@ class Timeline extends Widget_Base {
 
 		$this->add_control(
 			'timeline_content_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .timeline-wrapper .timeline-panel p' => 'color: {{VALUE}};',
@@ -264,7 +264,7 @@ class Timeline extends Widget_Base {
 		//=== Timeline Date Option
 		$this->add_control(
 			'timeline_date', [
-				'label'     => __( 'Date', 'spider-elements' ),
+				'label'     => esc_html__( 'Date', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -282,7 +282,7 @@ class Timeline extends Widget_Base {
 
 		$this->add_control(
 			'timeline_date_color', [
-				'label'     => __( 'Text Color', 'spider-elements' ),
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .timeline-wrapper .timestamp' => 'color: {{VALUE}};',

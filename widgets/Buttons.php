@@ -27,7 +27,7 @@ class Buttons extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Button', 'spider-elements' );
+		return esc_html__( 'Button', 'spider-elements' );
 	}
 
 	public function get_icon() {
@@ -86,7 +86,7 @@ class Buttons extends Widget_Base {
 		//============================= Filter Options =================================== //
 		$this->start_controls_section(
 			'buttons_layout', [
-				'label' => __( 'Layout', 'spider-elements' ),
+				'label' => esc_html__( 'Layout', 'spider-elements' ),
 			]
 		);
 

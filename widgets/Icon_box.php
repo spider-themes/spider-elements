@@ -103,7 +103,7 @@ class Icon_box extends Widget_Base {
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'counter_preset', [
-				'label' => __( 'Preset Skin', 'spider-elements' ),
+				'label' => esc_html__( 'Preset Skin', 'spider-elements' ),
 			]
 		);
 

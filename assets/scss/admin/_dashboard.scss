@@ -1,29 +1,33 @@
 .spel_dashboard {
   display: flex;
   flex-wrap: wrap;
-  padding: 60px 0;
+  padding: 60px 20px;
   margin-right: 20px;
   @media (max-width: 1400px) {
     padding: 40px 0;
   }
+
   .sidebar_navigation {
     width: 18%;
     margin-right: 30px;
+
     .sticky_sidebar {
       background: #fff;
       align-items: flex-start;
       border-radius: 8px;
-      position: -webkit-sticky;
       position: sticky;
       top: 70px;
     }
+
     .tab_left_content {
       padding: 0;
       margin: 0;
       border-radius: 8px;
       overflow: hidden;
+
       li {
         margin: 0;
+
         .icon {
           background: #f0e9fc;
           border-radius: 50%;
@@ -37,34 +41,40 @@
           @media (max-width: 1400px) {
             margin-right: 5px;
           }
+
           i {
             font-size: 18px;
           }
         }
+
         &:nth-child(2) {
           .icon {
             color: #ff70ee;
             background: #fff0fe;
           }
         }
+
         &:nth-child(3) {
           .icon {
             color: #1fb75c;
             background: #e4fbd2;
           }
         }
+
         &:nth-child(4) {
           .icon {
             color: #ff70ee;
             background: #fff0fe;
           }
         }
+
         &:nth-child(5) {
           .icon {
             color: #ffa30d;
             background: #fbebd2;
           }
         }
+
         &:nth-child(6) {
           .icon {
             color: #fb7f49;
@@ -72,8 +82,10 @@
           }
         }
       }
+
       .tab-menu-link {
         text-decoration: none;
+
         .spe_tab_content {
           display: flex;
           align-items: center;
@@ -82,6 +94,7 @@
           @media (max-width: 1400px) {
             padding: 16px 10px;
           }
+
           .content {
             h3 {
               margin-top: 0;
@@ -92,6 +105,7 @@
               font-family: $rob;
               margin-bottom: 2px;
             }
+
             p {
               margin-bottom: 0;
               font-family: $inter;
@@ -106,13 +120,16 @@
             }
           }
         }
+
         &.active {
           .spe_tab_content {
             background: linear-gradient(90deg, #7460ff 0%, #9d70ff 100%);
+
             .icon {
               background: #fff;
               color: #571fb7;
             }
+
             .content {
               h3,
               p {
@@ -128,8 +145,11 @@
   .tab_contents {
     width: 80%;
     flex: 1;
+    max-width: 1200px;
+
     .spe-tab-box {
       display: none;
+
       &.active {
         display: block;
         opacity: 1;
@@ -140,11 +160,11 @@
 
 .spe_dashboard_banner {
   text-align: center;
-  background: url(../images/dashboard-img/spe_dashboard_banner.png) no-repeat
-    scroll center 0 / cover;
+  background: url(../images/dashboard-img/spe_dashboard_banner.png) no-repeat scroll center 0 / cover;
   padding: 98px 50px;
   border-radius: 12px;
   overflow: hidden;
+
   h2 {
     color: #fff;
     font-size: 36px;
@@ -154,6 +174,7 @@
     margin-top: 0;
     margin-bottom: 12px;
   }
+
   p {
     font-family: $inter;
     color: #fff;
@@ -169,6 +190,7 @@
   padding: 30px 40px;
   background: #fff;
   margin-top: 25px;
+
   h3 {
     margin: 0 0 10px;
     font-size: 20px;
@@ -177,21 +199,25 @@
     font-family: $rob;
     color: #0c0d0e;
   }
+
   .progress_info_list {
     display: flex;
     justify-content: center;
     margin-top: 6px;
+
     li {
       font-size: 10px;
       color: #6a737c;
       font-family: $rob;
       font-weight: 400;
       margin-bottom: 0;
+
       & + li {
         margin-left: 20px;
       }
     }
   }
+
   svg.radial-progress {
     height: auto;
     max-width: 130px;
@@ -216,6 +242,7 @@
 
   .circle_progress {
     position: relative;
+
     text {
       color: #02a4ff;
       font-size: 30px;
@@ -249,11 +276,13 @@
   margin-top: 0;
   margin-bottom: 20px;
 }
+
 .spe_support_item {
   background: #fff;
   border-radius: 8px;
   padding: 40px;
   margin-top: 25px;
+
   .spe_icon {
     width: 56px;
     height: 56px;
@@ -266,27 +295,31 @@
     justify-content: center;
     margin-bottom: 20px;
   }
+
   .spe_dashboard_title {
     margin-bottom: 15px;
   }
+
   p {
-    font-size: 18px;
+    font-size: 16px;
     font-family: $inter;
     color: #535a60;
     line-height: 32px;
     margin-top: 0;
     margin-bottom: 25px;
   }
+
   &.dashboard_img {
     background: transparent;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 }
+
 .spe_dashboard_btn {
   text-decoration: none;
-  padding: 21px 27px;
-  font-size: 18px;
+  padding: 16px 26px;
+  font-size: 16px;
   font-weight: 500;
   background: #524cff;
   font-family: $rob;
@@ -296,6 +329,7 @@
   transition: all 0.3s;
   cursor: pointer;
   border: 0;
+
   &:hover {
     color: #fff;
     box-shadow: 0 10px 20px 0 rgb(27 4 116 / 30%)
@@ -312,20 +346,24 @@
     margin-bottom: 0;
     padding: 16px 24px;
     background: #f5f5f5;
+
     strong {
       font-size: 16px;
       font-weight: 500;
       color: #2f3337;
       flex: 40%;
     }
+
     span {
       flex: 60%;
+
       &.invalid {
         i {
           background: #e9336b;
         }
       }
     }
+
     i {
       font-size: 8px;
       width: 24px;
@@ -338,15 +376,18 @@
       color: #fff;
       margin-right: 12px;
     }
+
     &:nth-child(even) {
       background: #fafafa;
     }
   }
 }
+
 .note {
   background: #f0e9fc;
   padding: 12px 30px;
   margin-top: 10px;
+
   p {
     margin-bottom: 0;
     font-size: 12px;
@@ -370,6 +411,7 @@
   opacity: 1;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+
   .message_content {
     position: fixed;
     top: 50%;
@@ -383,12 +425,14 @@
     -webkit-animation: hide-popup 0.3s forwards;
     animation: hide-popup 0.3s forwards;
     text-align: center;
+
     .pro-close {
       position: absolute;
       right: 20px;
       top: 20px;
       cursor: pointer;
     }
+
     h3 {
       font-size: 28px;
       font-family: $rob;
@@ -396,20 +440,24 @@
       font-weight: 700;
       margin-bottom: 12px;
     }
+
     p {
       font-size: 16px;
       font-weight: 500;
       font-family: $inter;
       margin-top: 0;
     }
+
     .spe_dashboard_btn {
       padding: 15px 27px;
       margin-top: 8px;
     }
   }
+
   &.popup-visible {
     opacity: 1;
     display: block;
+
     .message_content {
       animation: show-popup 0.3s forwards;
     }
@@ -436,6 +484,7 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
 @keyframes show-popup {
   0% {
     -webkit-transform: translate(-50%, -50%) scale(0.7);
@@ -456,6 +505,7 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
 @-webkit-keyframes hide-popup {
   0% {
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -468,6 +518,7 @@
     opacity: 0;
   }
 }
+
 @keyframes hide-popup {
   0% {
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -483,15 +534,16 @@
 
 // premium_banner css
 .premium_banner {
-  background: url(../images/dashboard-img/premium_banner.jpg) no-repeat scroll
-    center 0 / cover;
+  background: url(../images/dashboard-img/premium_banner.jpg) no-repeat scroll center 0 / cover;
   position: relative;
   padding: 66px;
+
   h2 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 12px;
   }
+
   p {
     font-size: 14px;
     font-weight: 500;
@@ -501,6 +553,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .spe_banner_btn {
     color: #fff;
     font-size: 14px;
@@ -510,6 +563,7 @@
     display: inline-block;
     margin-top: 15px;
   }
+
   .rocket_img {
     position: absolute;
     top: 50%;

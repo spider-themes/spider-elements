@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							?>
                             <a href="<?php echo get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ); ?>"
                                class="meta-item">
-								<?php echo get_the_date( __( 'd M Y' ) ) ?>
+								<?php echo get_the_date( 'd M Y' ) ?>
                             </a>
                         </div>
                         <a class="blog-tow-title" href="<?php the_permalink(); ?>">
