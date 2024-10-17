@@ -1,7 +1,7 @@
 /*=========== message_alert Shortcode css ========*/
 .message_alert {
   display: flex;
-  border: 1px solid var(--black_50);
+  border: 1px solid #ebebeb;
   border-radius: 4px;
   background: rgb(243 243 243 / 24%);
   padding: 32px 40px 30px;
@@ -15,7 +15,7 @@
 
   h5 {
     font-size: 16px;
-    color: var(--spel_heading_color);
+    color: #031933;
     font-weight: 500;
     margin-bottom: 0;
     margin-top: 0;
@@ -77,7 +77,7 @@
 
   i,
   h5 {
-    color: var(--spel_brand_color);
+    color: #A77DEF;
   }
 }
 
@@ -144,8 +144,8 @@
 
 .explanation {
   position: relative;
-  background: linear-gradient(90deg, var(--bs-white), #75e3fb9e);
-  border: 10px solid var(--bs-white);
+  background: linear-gradient(90deg, #fff, #75e3fb9e);
+  border: 10px solid #fff;
   padding: 1rem 2rem;
   border-radius: 16px;
 
@@ -173,7 +173,7 @@
     position: absolute;
     z-index: 1;
     color: #000;
-    background: var(--bs-white);
+    background: #fff;
   }
 }
 
@@ -383,7 +383,7 @@
     }
 
     p {
-      color: var(--black_600);
+      color: #535a60;
     }
   }
 }
@@ -438,7 +438,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--bs-white);
+  background: #fff;
   position: absolute;
   left: -28px;
   top: 15px;

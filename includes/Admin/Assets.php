@@ -54,7 +54,8 @@ class Assets {
 	/**
 	 * Register scripts and styles
 	 **/
-	public function register_scripts() {
+	public function register_scripts(): void
+    {
 
 		// Register Elementor Preview Editor Style's
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'elementor_editor_scripts' ] );
@@ -71,7 +72,8 @@ class Assets {
 	 *
 	 * @access public
 	 */
-	public function elementor_editor_scripts() {
+	public function elementor_editor_scripts(): void
+    {
 
         wp_enqueue_style( 'spel-elementor-editor', SPEL_CSS . '/spel-elementor-editor.css', [],  SPEL_VERSION );
 
@@ -89,7 +91,8 @@ class Assets {
 	 *
 	 * @access public
 	 */
-	public function admin_scripts() {
+	public function admin_scripts(): void
+    {
 
 		// Register Admin Panel Styles
 		wp_enqueue_style( 'spel-fonts', self::fonts_url(), [], SPEL_VERSION );

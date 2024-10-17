@@ -21,12 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 if ( function_exists( 'spel_fs' ) ) {
     spel_fs()->set_basename( false, __FILE__ );
 } else {
 
-    // DO NOT REMOVE THIS IF, IT IS ESSENTIAL FOR THE `function_exists` CALL ABOVE TO PROPERLY WORK.
+    // DO NOT REMOVE THIS IF; IT IS ESSENTIAL FOR THE `function_exists` CALL ABOVE TO PROPERLY WORK.
     if ( ! function_exists( 'spel_fs' ) ) {
         // Create a helper function for easy SDK access.
         function spel_fs() {
@@ -99,22 +98,6 @@ if (!class_exists('SPEL')) {
          * @var string The plugin version.
          */
         const VERSION = '1.1.0';
-
-        /**
-         * Minimum Elementor Version
-         *
-         * @var string Minimum Elementor version required to run the plugin.
-         */
-        const MINIMUM_ELEMENTOR_VERSION = '3.0.0';
-
-        /**
-         * Minimum PHP Version
-         *
-         * Holds the minimum PHP version required to run the plugin.
-         *
-         * @var string Minimum PHP version required to run the plugin.
-         */
-        const MINIMUM_PHP_VERSION = '7.4';
 
 
         /**
@@ -294,7 +277,7 @@ if (!class_exists('SPEL')) {
          *
          * Validates that Elementor is already loaded.
          * Checks for basic plugin requirements, if one check fail don't continue,
-         * if all check have passed include the plugin class.
+         * if all checks have passed include the plugin class.
          *
          * Fired by `plugins_loaded` action hook.
          *
@@ -302,25 +285,6 @@ if (!class_exists('SPEL')) {
          */
 		public function init_plugin(): void
         {
-
-			// Check if Elementor installed and activated
-			if ( ! did_action( 'elementor/loaded' ) ) {
-				add_action( 'admin_notices', [ $this, 'admin_notice_missing_main_plugin' ] );
-
-				return;
-			}
-
-			// Check for required Elementor version
-			if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
-				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_elementor_version' ] );
-
-				return;
-			}
-
-			// Check for required PHP version
-			if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
-				add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
-			}
 
             $theme = wp_get_theme();
             $features_opt = get_option('spel_features_settings');
@@ -343,153 +307,12 @@ if (!class_exists('SPEL')) {
             }
 
             //new SPEL\includes\classes\Theme_Builder();
-
             new SPEL\includes\Admin\Plugin_Installer();
-
 
             if ( is_admin() ) {
                 new SPEL\includes\Admin\Admin_Settings();
             }
 
-		}
-
-		/**
-		 * Admin notice
-		 *
-		 * Warning when the site doesn't have Elementor installed or activated.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @access public
-		 */
-		public function admin_notice_missing_main_plugin(): void
-        {
-
-            $screen = get_current_screen();
-            if (isset($screen->parent_file) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id) {
-                return;
-            }
-
-            $plugin = 'elementor/elementor.php';
-            $plugin_name = esc_html__('Spider Elements', 'spider-elements');
-            $elementor_name = esc_html__('Elementor', 'spider-elements');
-            $installed_plugins = get_plugins();
-            $is_elementor_installed = isset($installed_plugins[ $plugin ]);
-
-            if ($is_elementor_installed) {
-                if (!current_user_can('activate_plugins')) {
-                    return;
-                }
-                $button_text = esc_html__('Activate Elementor', 'spider-elements');
-                $button_link = wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s',
-                    'activate-plugin_' . $plugin);
-                $message = sprintf(
-                /* translators: 1: Plugin name, 2: Elementor plugin name */
-                    esc_html__('%1$s requires %2$s plugin to be active. Please activate the %2$s to continue.', 'spider-elements'),
-                    '<strong>' . $plugin_name . '</strong>',
-                    '<strong>' . $elementor_name . '</strong>'
-                );
-            } else {
-                if (!current_user_can('install_plugins')) {
-                    return;
-                }
-                $button_text = esc_html__('Install Elementor', 'spider-elements');
-                $button_link = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=elementor'),
-                    'install-plugin_elementor');
-                $message = sprintf(
-                /* translators: 1: Plugin name, 2: Elementor plugin name */
-                    esc_html__('%1$s requires %2$s plugin to be installed and activated. Please install the %2$s to continue.', 'spider-elements'),
-                    '<strong>' . $plugin_name . '</strong>',
-                    '<strong>' . $elementor_name . '</strong>'
-                );
-            }
-
-            //Admin Notice
-            if (is_readable(__DIR__ . '/includes/Admin/notices.php')) {
-                require_once __DIR__ . '/includes/Admin/notices.php';
-            }
-
-		}
-
-        /**
-         * Admin notice
-         *
-         * Warning when the site doesn't have a minimum required Elementor version.
-         *
-         * @access public
-         */
-		public function admin_notice_minimum_elementor_version(): void
-        {
-
-            if (isset($_GET['activate']) && isset($_GET['_wpnonce'])) {
-
-                // Ensure it's a valid action (optional, depending on your needs)
-                if ($_GET['activate'] === 'spider-elements-activation' && wp_verify_nonce($_GET['_wpnonce'], 'spider-elements-activation')) {
-
-                    // After activation is complete, remove the 'activate' parameter
-                    unset($_GET[ 'activate' ]);
-
-                    // Redirect to a specific page after activation (optional)
-                    wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
-                    exit;
-                }
-            }
-
-            $message = sprintf(
-                /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-                esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements'),
-                '<strong>' . esc_html__('Spider Elements', 'spider-elements') . '</strong>',
-                '<strong>' . esc_html__('Elementor', 'spider-elements') . '</strong>',
-                self::MINIMUM_ELEMENTOR_VERSION
-            );
-
-            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, ['strong' => [] ] ) );
-		}
-
-        /**
-         * Admin notice
-         *
-         * Warning when the site doesn't have a minimum required PHP version.
-         */
-		public function admin_notice_minimum_php_version(): void
-        {
-
-            // Verify nonce
-            if (isset($_GET['activate']) && isset($_GET['nonce']) && wp_verify_nonce($_GET['nonce'], 'spider-elements-activation')) {
-
-                // After activation is complete, remove the 'activate' parameter
-                unset($_GET['activate']);
-
-                // Redirect to a specific page after activation (optional)
-                wp_redirect(admin_url('admin.php?page=spider-elements-settings'));
-                exit;
-            }
-
-            // Create nonce
-            $nonce = wp_create_nonce('spider-elements-activation');
-
-            // Activation URL with nonce
-            $activation_url = add_query_arg(array(
-                'page' => 'spider-elements-settings',
-                'activate' => 'spider-elements-activation',
-                'nonce' => $nonce
-            ), admin_url('admin.php'));
-
-            // Message about minimum PHP version
-            $message = sprintf(
-                /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-                esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'spider-elements'),
-                '<strong>' . esc_html__('Spider Elements', 'spider-elements') . '</strong>',
-                '<strong>' . esc_html__('PHP', 'spider-elements') . '</strong>',
-                self::MINIMUM_PHP_VERSION
-            );
-
-            // Display admin notice with activation link
-            printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p><p><a href="%2$s">%3$s</a></p></div>',
-                wp_kses($message, ['strong' => []]),
-                esc_url($activation_url),
-                esc_html__('Activate Now', 'spider-elements')
-            );
 		}
 
 

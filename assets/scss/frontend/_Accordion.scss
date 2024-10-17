@@ -5,8 +5,8 @@
   display: block;
   font-size: 16px;
   font-weight: 500;
-  color: var(--black_800);
-  background: var(--black_25);
+  color: #242729;
+  background: #f9f9f9;
   text-align: left;
   border-radius: 2px;
   padding: 12px 30px;
@@ -113,7 +113,7 @@
             font-size: 16px;
             color: #4c4cf1;
             font-weight: 500;
-            background: var(--black_25);
+            background: #f9f9f9;
             text-decoration: none;
             position: relative;
 
@@ -131,12 +131,12 @@
             }
 
             &.collapsed {
-              color: var(--black_800);
+              color: #242729;
               border-radius: 4px;
 
               svg {
                 display: block;
-                color: var(--spel_p_color);
+                color: #6A737C;
 
                 & + svg {
                   display: none;
@@ -183,7 +183,7 @@
           }
 
           .accordion-article-item {
-            border: 1px solid var(--border_on_white);
+            border: 1px solid #e6edf0;
             padding: 20px;
             margin: 12px 0;
             min-height: 230px;
@@ -291,9 +291,9 @@
         text-align: left;
         width: 100%;
         font-size: unset;
-        color: var(--spel_brand_color);
+        color: #A77DEF;
         font-weight: 500;
-        background: var(--black_50);
+        background: #ebebeb;
         text-decoration: none;
         position: relative;
         box-shadow: none;
@@ -340,11 +340,11 @@
       border: unset;
     }
     &.spe-collapsed {
-      color: var(--black_800);
+      color: #242729;
       //border-radius: 0 !important;
       svg {
         display: block;
-        color: var(--spel_p_color);
+        color: #6A737C;
       }
 
       .card-header button {

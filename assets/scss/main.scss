@@ -11,36 +11,44 @@ template.
 
 @Default Styles
 Table of Content:
-01/ Variables
+01/ Mixins
+02/ prefix
 02/ Common
-03/ Accordion
-04/ Tabs
-05/ Testimonial
-06/ Video
-07/ Alerts_box
-08/ Pricing_Table
-09/ Pricing_Table_Switcher
+04/ framework
+05/ Accordion
+06/ Tabs
+07/ Testimonial
+08/ Video
+09/ Alerts_box
 10/ Animation
 11/ List_Item
 12/ Cheat_sheet
 13/ Team
-14/Integration
-15/ After_before
+14/ Integration
+15/ Blog_grid
+16/ Before_after
+17/ Timeline
+18/ Buttons
+19/ Animated_Headline
+20/ video_popup
+21/ Counter
+22/ Instagram
+23/ Fullscreen_Slider
+24/ Icon_box
+25/ Pricing_Table
+26/ Pricing_Table_Switcher
 
 
 =====================================================================*/
 @import "frontend/Mixins";
 @import "frontend/prefix";
-@import "frontend/Variables";
-@import "frontend/framework";
 @import "frontend/Common";
+@import "frontend/framework";
 @import "frontend/Accordion";
 @import "frontend/Tabs";
 @import "frontend/Testimonial";
 @import "frontend/Video";
 @import "frontend/Alerts_box";
-@import "frontend/Pricing_Table";
-@import "frontend/Pricing_Table_Switcher";
 @import "frontend/Animation";
 @import "frontend/List_Item";
 @import "frontend/Cheat_sheet";
@@ -56,3 +64,5 @@ Table of Content:
 @import "frontend/Instagram";
 @import "frontend/Fullscreen_Slider";
 @import "frontend/Icon_box";
+@import "frontend/Pricing_Table";
+@import "frontend/Pricing_Table_Switcher";

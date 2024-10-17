@@ -176,7 +176,7 @@
   color: #fff;
   font-family: IBM Plex Sans;
   border-radius: 5px;
-  background: var(--brand_color);
+  background: #4c4cf1;
   display: inline-block;
   padding: 10px 25px;
   text-transform: uppercase;
@@ -217,17 +217,17 @@
   }
 
   &.theme-btn-outline {
-    border-color: var(--black_50);
+    border-color: #ebebeb;
     border-radius: 5px;
     background-color: transparent;
     color: #17161a;
 
     &.btn-outline-black {
-      border-color: var(--black_200);
+      border-color: #bbc0c4;
     }
 
     &:hover {
-      background-color: var(--black_800);
+      background-color: #242729;
       color: #fff;
     }
   }

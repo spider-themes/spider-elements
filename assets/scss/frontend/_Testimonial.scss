@@ -147,7 +147,7 @@
   }
 
   .action_btn {
-    border: 1px solid var(--spel_brand_color);
+    border: 1px solid #A77DEF;
 
     &:hover {
       background: transparent;
@@ -209,7 +209,7 @@
     .name {
       font-size: 14px;
       font-weight: 700;
-      color: var(--black_500);
+      color: #6a737c;
       margin-bottom: 20px;
     }
   }
@@ -249,7 +249,7 @@
     .name {
       font-size: 14px;
       font-weight: 700;
-      color: var(--black_500);
+      color: #6a737c;
       margin-bottom: 20px;
 
       h5 {
@@ -522,7 +522,6 @@
       color: #e8e6e6;
       font-weight: 600;
       letter-spacing: 0.01em;
-      font-family: var(--ibm);
       margin-bottom: 0;
     }
 
@@ -1539,7 +1538,7 @@
 }
 
 .testimonial-item {
-  background: var(--white);
+  background: #ffffff;
   box-shadow: 0 5px 15px -3px rgba(131, 146, 167, 0.25);
   border-radius: 8px;
   padding: 40px;
@@ -1607,7 +1606,7 @@
       position: absolute;
       width: 20px;
       height: 1px;
-      background: var(--black_900);
+      background: #0c0d0e;
       transform: translateY(-50%);
       -webkit-transition: 0.3s ease-out;
       transition: 0.3s ease-out;
@@ -1624,7 +1623,7 @@
       position: absolute;
       width: 20px;
       height: 1px;
-      background: var(--black_900);
+      background: #0c0d0e;
       transform: translateY(-50%);
       -webkit-transition: 0.3s ease-out;
       transition: 0.3s ease-out;

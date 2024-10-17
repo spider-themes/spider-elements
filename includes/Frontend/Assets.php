@@ -16,8 +16,8 @@ class Assets
 		add_action('plugins_loaded', [$this, 'register_scripts']);
 	}
 
-	public function register_scripts()
-	{
+	public function register_scripts(): void
+    {
 
 		// Register Widget Style's
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'register_widget_styles']);
@@ -40,13 +40,33 @@ class Assets
 	 *
 	 * @access public
 	 */
-	function register_widget_styles()
-	{
+	function register_widget_styles(): void
+    {
         $elements_opt   = get_option( 'spel_features_settings' );
 
         if ( isset($elements_opt['spel_smooth_animation']) && $elements_opt[ 'spel_smooth_animation' ] == 'on' ) {
-            wp_deregister_style('e-animations');
-            wp_enqueue_style('e-animations', SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+
+            // Define all the handlers in one string, separated by commas
+            $handlers = [
+                'e-animations',
+                'e-animation-fadeIn',
+                'e-animation-fadeInUp',
+                'e-animation-fadeInRight',
+                'e-animation-fadeInDown',
+                'e-animation-fadeInLeft',
+                'e-animation-zoomIn',
+            ];
+
+            // Deregister all styles for the handlers
+            foreach ($handlers as $handler) {
+                wp_deregister_style($handler);
+            }
+
+            // Enqueue all handlers pointing to the same file
+            foreach ($handlers as $handler) {
+                wp_enqueue_style($handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+            }
+
         }
 
         wp_register_style('ionicons', SPEL_VEND . '/ionicons/ionicons.min.css', [], '2.0.1');
@@ -64,7 +84,6 @@ class Assets
 		}
 
         wp_enqueue_style('spel-extension', SPEL_CSS . '/extension.css');
-
 
 	}
 

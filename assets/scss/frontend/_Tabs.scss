@@ -4,9 +4,9 @@
 
   .tab-content {
     display: block;
-    color: var(--spel_p_color);
+    color: #6A737C;
     padding: 25px 30px;
-    border: 1px solid var(--black_50);
+    border: 1px solid #ebebeb;
     border-radius: 0 5px 5px 5px;
     background-color: #fff;
     position: relative;
@@ -29,7 +29,7 @@
       border-radius: 0;
       background: #e1ebf0;
       border: 0;
-      color: var(--brand_color);
+      color: #4c4cf1;
       outline: none;
       box-shadow: none;
       transition: all 0.4s linear;
@@ -39,7 +39,7 @@
       opacity: 0;
 
       &:hover {
-        background: var(--spel_brand_color);
+        background: #A77DEF;
         color: #fff;
       }
     }
@@ -68,7 +68,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: var(--spel_brand_color);
+      background: #A77DEF;
       display: inline-block;
       text-align: center;
       line-height: 20px;
@@ -101,7 +101,7 @@
 
         &.active {
           background: #ffffff;
-          color: var(--spel_brand_color);
+          color: #A77DEF;
         }
       }
     }
@@ -119,7 +119,7 @@
     border-radius: 0;
     background: #e1ebf0;
     border: 0;
-    color: var(--spel_brand_color);
+    color: #A77DEF;
     outline: none;
     box-shadow: none;
     transition: all 0.4s linear;
@@ -133,7 +133,7 @@
     }
 
     &:hover {
-      background: var(--spel_brand_color);
+      background: #A77DEF;
       color: #fff;
       border-color: transparent #ebebeb;
     }
@@ -172,7 +172,7 @@
 
     .nav-link {
       font-size: 16px;
-      color: var(--spel_p_color);
+      color: #6A737C;
       transition: all 0.2s linear;
       padding: 0;
       border: 0;
@@ -195,12 +195,12 @@
 
       &.active,
       &:hover {
-        color: var(--spel_brand_color);
+        color: #A77DEF;
         border: 0;
         background: transparent;
 
         span {
-          background: var(--spel_brand_color);
+          background: #A77DEF;
           color: #fff;
         }
       }
@@ -226,7 +226,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       top: -70px;
       left: 0;
       right: 0;
-      background: var(--spel_heading_color);
+      background: #031933;
       transform: translateY(70px);
       transition: transform 500ms ease, background 500ms ease;
       z-index: 30;
@@ -242,7 +242,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   .scroller-btn {
     position: absolute;
     top: 50%;
-    color: var(--spel_brand_color);
+    color: #A77DEF;
     font-size: 20px;
     cursor: pointer;
     transform: translateY(-50%);
@@ -295,11 +295,11 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
         min-width: fit-content;
         .nav-link {
           font-size: 16px;
-          color: var(--spel_p_color);
+          color: #6A737C;
           border-radius: 0;
           padding: 9px 20px;
-          background: var(--black_25);
-          border: 1px solid var(--black_50);
+          background: #f9f9f9;
+          border: 1px solid #ebebeb;
           position: relative;
           text-decoration: none;
           margin-bottom: 0 !important;
@@ -312,7 +312,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
             content: "";
             width: 0;
             height: 2.1px;
-            background: var(--spel_brand_color);
+            background: #A77DEF;
             position: absolute;
             top: 0;
             left: 0;
@@ -322,7 +322,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 
           &.active {
             background: #fff;
-            color: var(--black_800);
+            color: #242729;
             border-color: #ebebeb;
             border-bottom-color: transparent;
             z-index: 1;
@@ -336,7 +336,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 
         &:last-child {
           .nav-link {
-            border-right: 1px solid var(--black_50);
+            border-right: 1px solid #ebebeb;
           }
         }
       }
@@ -349,7 +349,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 /* Process Tab Shortcode */
 .process_tab_shortcode {
   .version {
-    background: var(--black_25);
+    background: #f9f9f9;
     padding: 30px;
     font-size: 15px;
     margin-bottom: 28px;
@@ -404,7 +404,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     border-radius: 0;
     background: #e1ebf0;
     border: 0;
-    color: var(--spel_brand_color);
+    color: #A77DEF;
     outline: none;
     box-shadow: none;
     transition: all 0.4s linear;
@@ -420,7 +420,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     &:hover {
       outline: none;
       box-shadow: none;
-      background: var(--spel_brand_color);
+      background: #A77DEF;
       color: #fff;
     }
   }
@@ -457,7 +457,7 @@ body.remove {
 
 /* Header Tab Items */
 .header_tab_items {
-  background: var(--spel_heading_color);
+  background: #031933;
 
   &.tab_fixed {
     .nav.nav-tabs {
@@ -510,23 +510,23 @@ body.remove {
         }
 
         &:hover {
-          background: var(--black_50);
-          color: var(--spel_p_color);
+          background: #ebebeb;
+          color: #6A737C;
 
           svg {
             path {
-              fill: var(--spel_p_color);
+              fill: #6A737C;
             }
           }
         }
 
         &.active {
           background-color: #fff;
-          color: var(--spel_brand_color);
+          color: #A77DEF;
 
           svg {
             path {
-              fill: var(--spel_brand_color);
+              fill: #A77DEF;
             }
           }
         }
