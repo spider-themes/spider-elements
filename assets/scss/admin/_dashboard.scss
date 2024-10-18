@@ -86,7 +86,7 @@
       .tab-menu-link {
         text-decoration: none;
 
-        .spe_tab_content {
+        .tab_contents {
           display: flex;
           align-items: center;
           padding: 18px 25px;
@@ -122,7 +122,7 @@
         }
 
         &.active {
-          .spe_tab_content {
+          .tab_contents {
             background: linear-gradient(90deg, #7460ff 0%, #9d70ff 100%);
 
             .icon {
@@ -147,7 +147,7 @@
     flex: 1;
     max-width: 1200px;
 
-    .spe-tab-box {
+    .spel-tab-box {
       display: none;
 
       &.active {
@@ -316,7 +316,7 @@
   }
 }
 
-.spe_dashboard_btn {
+.dashboard_btn {
   text-decoration: none;
   padding: 16px 26px;
   font-size: 16px;
@@ -448,7 +448,7 @@
       margin-top: 0;
     }
 
-    .spe_dashboard_btn {
+    .dashboard_btn {
       padding: 15px 27px;
       margin-top: 8px;
     }

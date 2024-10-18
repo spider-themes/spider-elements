@@ -122,7 +122,7 @@ add_action( 'admin_init', function () {
 
 
         // Global Switcher
-        $data['spel_features_global_switcher'] = isset($_POST['spel_features_global_switcher']) ? sanitize_text_field($_POST['spel_features_global_switcher']) : '';
+        $data['features_global_switcher'] = isset($_POST['features_global_switcher']) ? sanitize_text_field($_POST['features_global_switcher']) : '';
 
         // Save the data in the options table using update_option
         update_option('spel_features_settings', $data);

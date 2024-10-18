@@ -1,6 +1,6 @@
-<div id="api_settings" class="spe-tab-box">
-    <div class="spe_elements_tab_menu">
-        <div class="spe_tab_content api_title_color">
+<div id="api_settings" class="spel-tab-box">
+    <div class="elements_tab_menu">
+        <div class="tab_contents api_title_color">
             <div class="icon">
                 <i class="icon-api"></i>
             </div>
@@ -17,27 +17,27 @@
                 </div>
                 <label class="toggler" id="enabled"><?php esc_html_e('Enabled All', 'spider-elements'); ?></label>
             </div>
-            <button type="submit" class="spe_dashboard_btn">
+            <button type="submit" class="dashboard_btn">
 	            <?php esc_html_e('Save Changes', 'spider-elements'); ?>
             </button>
         </div>
     </div>
 
-    <div class="spe_elements_tab" id="api_filter">
-        <div class="spel_filter_data active" data-filter="*">
+    <div class="elements_tab" id="api_filter">
+        <div class="filter_data  active" data-filter="*">
             <i class="icon-star"></i><?php esc_html_e('All', 'spider-elements'); ?>
         </div>
-        <div class="spel_filter_data" data-filter=".api_free">
+        <div class="filter_data " data-filter=".api_free">
             <i class="icon-gift"></i><?php esc_html_e('Free', 'spider-elements'); ?>
         </div>
-        <div class="spel_filter_data" data-filter=".api_pro">
+        <div class="filter_data " data-filter=".api_pro">
             <i class="icon-pro-badge"></i><?php esc_html_e('Pro', 'spider-elements'); ?>
         </div>
     </div>
 
-    <div class="spe_filter_content ezd-d-flex" id="api_setting">
+    <div class="filter_content ezd-d-flex" id="api_setting">
         <div class="ezd-colum-space-4 api_free">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Twitter Access</h3>
                 <p>Go to https://developer.twitter.com/en for create your Consumer key and Access Token.</p>
                 <div class="spe_api_panel">
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_free">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <div class="spe_api_panel">
                     <div class="spe_api_inner">
                         <h5>Discus User Name</h5>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_free">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Social Login Access</h3>
                 <p>Please fill up below fields for enbled your social login feature in user login widget.</p>
                 <div class="spe_api_panel">
@@ -116,7 +116,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_free">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Instagram Access</h3>
                 <p>Go to https://developers.facebook.com/docs/instagram-basic-display-api/getting- started for create
                     your Consumer key and Access Token.</p>
@@ -142,7 +142,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Mailchimp Access</h3>
                 <p>Go to your Mailchimp > Website > Domains > Extras > API Keys</p>
                 <div class="spe_api_panel">
@@ -161,7 +161,7 @@
         </div>
 
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Facebook Social Access</h3>
                 <p>Go to your Facebook Developer Account to get access Page ID and Access Token. This credential need
                     for Social Feeds widget.</p>
@@ -180,7 +180,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <div class="spe_api_panel">
                     <div class="spe_api_inner">
                         <h5>MapBox Access Token</h5>
@@ -192,7 +192,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_free">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>reCAPTCHA Access</h3>
                 <p>Go to your Google reCAPTCHA > Account > Generate Keys (reCAPTCHA V2 > Invisible) and Copy and Paste
                     here.</p>
@@ -211,7 +211,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Simple Contact Form</h3>
                 <p>Set your simple contact form settings from here.</p>
                 <div class="spe_api_panel">
@@ -232,7 +232,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Weather API Access</h3>
                 <p>Please choose your Weather provider, both provider has the free and paid package.</p>
                 <div class="spe_api_panel">
@@ -253,7 +253,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <h3>Yelp Access</h3>
                 <p>Go to your Yelp Developer Account to get access client ID and Key. This credential need for Social
                     Proof widget.</p>
@@ -273,7 +273,7 @@
             </div>
         </div>
         <div class="ezd-colum-space-4 api_pro">
-            <div class="spe_element_box spe_api_box">
+            <div class="element_box spe_api_box">
                 <div class="spe_api_panel">
                     <div class="spe_api_inner">
                         <h5>Google Map API Key</h5>

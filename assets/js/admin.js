@@ -1,4 +1,4 @@
-(function ($) {
+;(function ($) {
     "use strict";
 
     // Remove svg.radial-progress .complete inline styling
@@ -41,28 +41,59 @@
     // switcher js
 
     document.addEventListener("DOMContentLoaded", function () {
-        let eventDisable = document.getElementById("disable"),
-            eventEnable = document.getElementById("enabled"),
-            eventSwitcher = document.getElementById("switcher");
 
-        if (eventDisable && eventEnable && eventSwitcher) {
-            eventDisable.addEventListener("click", function () {
-                eventSwitcher.checked = false;
-                eventDisable.classList.add("toggler--is-active");
-                eventEnable.classList.remove("toggler--is-active");
+        // Handling for element_switcher
+        let elementDisable = document.getElementById("element_disabled"),
+            elementEnable = document.getElementById("element_enabled"),
+            elementSwitcher = document.getElementById("element_switcher");
+
+        if (elementDisable && elementEnable && elementSwitcher) {
+            elementDisable.addEventListener("click", function () {
+                elementSwitcher.checked = false;
+                elementDisable.classList.add("toggler--is-active");
+                elementEnable.classList.remove("toggler--is-active");
             });
 
-            eventEnable.addEventListener("click", function () {
-                eventSwitcher.checked = true;
-                eventEnable.classList.add("toggler--is-active");
-                eventDisable.classList.remove("toggler--is-active");
+            elementEnable.addEventListener("click", function () {
+                elementSwitcher.checked = true;
+                elementEnable.classList.add("toggler--is-active");
+                elementDisable.classList.remove("toggler--is-active");
             });
 
-            eventSwitcher.addEventListener("click", function () {
-                eventEnable.classList.toggle("toggler--is-active");
-                eventDisable.classList.toggle("toggler--is-active");
+            elementSwitcher.addEventListener("click", function () {
+                elementEnable.classList.toggle("toggler--is-active");
+                elementDisable.classList.toggle("toggler--is-active");
             });
         }
+
+        // Handling for feature_switcher
+        let featureDisable = document.getElementById("features_disabled"),
+            featureEnable = document.getElementById("features_enabled"),
+            featureSwitcher = document.getElementById("features_switcher");
+
+        if (featureDisable && featureEnable && featureSwitcher) {
+            console.log('Feature switcher found.');
+            featureDisable.addEventListener("click", function () {
+                featureSwitcher.checked = false;
+                featureDisable.classList.add("toggler--is-active");
+                featureEnable.classList.remove("toggler--is-active");
+            });
+
+            featureEnable.addEventListener("click", function () {
+                featureSwitcher.checked = true;
+                featureEnable.classList.add("toggler--is-active");
+                featureDisable.classList.remove("toggler--is-active");
+            });
+
+            featureSwitcher.addEventListener("click", function () {
+                featureEnable.classList.toggle("toggler--is-active");
+                featureDisable.classList.toggle("toggler--is-active");
+            });
+        } else {
+            console.log('Feature switcher not found.');
+        }
+
+
     }); // end switcher js
 
     $(".spe-tab-menu li a").on("click", function () {
@@ -73,7 +104,7 @@
 
         let target = $(this).attr("href");
 
-        $(".spe-tab-box")
+        $(".spel-tab-box")
             .removeClass("active")
             .fadeOut(0, function () {
                 $(target).addClass("active").fadeIn(0);
@@ -120,8 +151,8 @@
             $('.spe_dashboard .spe-tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
 
             // Tab content active
-            $('.spe_dashboard .tab_contents .spe-tab-box#' + activeButton).addClass('active');
-            $('.spe_dashboard .tab_contents .spe-tab-box:not(#' + activeButton + ')').removeClass('active');
+            $('.spe_dashboard .tab_contents .spel-tab-box#' + activeButton).addClass('active');
+            $('.spe_dashboard .tab_contents .spel-tab-box:not(#' + activeButton + ')').removeClass('active');
         }
 
         // Handle button clicks
@@ -262,13 +293,13 @@
 
     // Elements list Save Now Button
     function elementsSaveNowButton() {
-        let elementsList = $(".spe_element_right .spe-widget-list");
+        let elementsList = $(".element_right .widget-list");
         elementsList.on("click", function () {
             // Check if the checkbox is checked
             if ($(this).is(":checked")) {
-                $(".spe_dashboard_btn").addClass("save-now");
+                $(".dashboard_btn").addClass("save-now");
             } else {
-                $(".spe_dashboard_btn")
+                $(".dashboard_btn")
                     .removeClass("save-now")
                     .removeAttr("disabled")
                     .css("cursor", "pointer"
@@ -277,33 +308,33 @@
         });
 
         // Global Switcher for all widgets
-        let globalSwitcher = $('.menu_right_content .spel_element_global_switcher, .menu_right_content .spel_element_global_switcher');
+        let globalSwitcher = $('.menu_right_content .element_global_switcher, .menu_right_content .features_global_switcher');
         globalSwitcher.on("click", function () {
             let status = $(this).prop("checked");
             let dataId = $(this).data("id");
-            let alignClass = ".spe_widget_checkbox." + dataId + ":enabled";
+            let alignClass = ".widget_checkbox." + dataId + ":enabled";
 
             $(alignClass).each(function () {
                 $(this).prop("checked", status).change();
             });
 
-            $(".spe_dashboard_btn")
+            $(".dashboard_btn")
                 .addClass("save-now")
                 .removeAttr("disabled")
                 .css("cursor", "pointer");
         });
 
         // Individual Switcher for each widget
-        let widgetSwitcher = $(".spe_element_right .spe-widget-list:checked");
+        let widgetSwitcher = $(".element_right .widget-list:checked");
         widgetSwitcher.on("click", function () {
-            $(".spe_dashboard_btn")
+            $(".dashboard_btn")
                 .addClass("save-now")
                 .removeAttr("disabled")
                 .css("cursor", "pointer");
         });
 
         // Button Setting Switcher Enable/Disable
-        let elementsSettingBtn = $(".spe_elements_tab_menu .menu_right_content .save_btn");
+        let elementsSettingBtn = $(".elements_tab_menu .menu_right_content .save_btn");
         elementsSettingBtn.on("click", function (event) {
             //event.preventDefault();
             //alert('Saved Successfully');
@@ -311,4 +342,5 @@
     }
 
     elementsSaveNowButton();
+
 })(jQuery);

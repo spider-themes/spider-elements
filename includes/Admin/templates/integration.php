@@ -36,7 +36,7 @@ $integrations = [
 ];
 ?>
 
-<div id="integration" class="spe-tab-box">
+<div id="integration" class="spel-tab-box">
     <div class="spe_dashboard_banner integration_banner">
         <h2><?php esc_html_e( 'Integration Our other plugins', 'spider-elements' ); ?></h2>
         <p><?php _e( 'We are excited to announce that we have added new Widgets, Template Kits, and other Elementor<br> features to enhance your website building experience. Stay tuned for the weekly updates!',
@@ -56,14 +56,14 @@ $integrations = [
 				$plugin_status_title     = $plugin_data['title'] ?? esc_html__( 'Activate', 'spider-elements' );
 				?>
                 <div class="ezd-lg-col-4">
-                    <div class="spe_element_box spe_integration_item ezd-text-center">
+                    <div class="element_box spe_integration_item ezd-text-center">
                         <img src="<?php echo esc_url( $plugin['logo'] ); ?>" alt="<?php echo esc_attr( $plugin['title'] ); ?>">
                         <h3><?php echo esc_html( $plugin['title'] ); ?></h3>
                         <p><?php echo esc_html( $plugin['desc'] ); ?></p>
 
 						<?php
 						echo sprintf(
-							'<a data-plugin_status="%1$s" data-activation_url="%2$s" href="%3$s" class="spe_dashboard_btn %4$s">%5$s</a>',
+							'<a data-plugin_status="%1$s" data-activation_url="%2$s" href="%3$s" class="dashboard_btn %4$s">%5$s</a>',
 							esc_attr( $plugin_status ),
 							esc_url( $plugin_activation_url ),
 							esc_url( $plugin_status === 'not_installed' ? $plugin_installation_url : $plugin_activation_url ),
