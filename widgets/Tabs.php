@@ -328,6 +328,35 @@ class Tabs extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'flex_column_gap',
+			[
+				'label' => esc_html__( 'Gap', 'spider-elements' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['px', '%', 'em'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 10,
+						'step' => 0.1,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tab_shortcode .nav-tabs' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .header_tabs_area .nav-tabs' => 'gap: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_responsive_control(
 			'icon_size',
 			[
@@ -371,18 +400,6 @@ class Tabs extends Widget_Base {
 				'selectors'  => [
 					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link'    => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'tab_margin', [
-				'label'      => esc_html__( 'margin', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item'    => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
