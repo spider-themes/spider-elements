@@ -78,7 +78,7 @@
         cheatsheet: function ($scope) {
             let cheatsht = $scope.find(".card-header button");
             cheatsht.on("click", function (event) {
-                event.preventDefault(); // This line should prevent the default behavior
+                event.preventDefault(); // Prevent default behavior
                 var $this = $(this);
                 var $parent = $this.parents();
                 var $collapses = $parent.find("> .collapse").first();
@@ -86,6 +86,42 @@
                 $collapses.slideToggle(300);
                 return false;
             });
+
+            // Check if elementor is in edit mode
+            if (window.elementor && window.elementor.hasOwnProperty('frontend') && window.elementorFrontend.isEditMode()) {
+                // Check if serial number toggle is enabled
+                let enableSerial = $scope.find('[data-setting="enable_serial_numbers"]').val() === 'yes';
+                let enableNumberCircle = $scope.find('[data-setting="enable_number_circle"]').val() === 'yes';
+
+                if (enableSerial || enableNumberCircle) {
+                    // Update serial numbers dynamically based on index
+                    setTimeout(function() {
+                        $scope.find('.elementor-repeater-fields').each(function(index) {
+                            // Dynamically apply serial numbers using the index value
+                            if (enableSerial) {
+                                $(this).find('.cheatsheet_num').text('#' + (index + 1));
+                            }
+                            if (enableNumberCircle) {
+                                $(this).find('.number-circle').text('#' + (index + 1));
+                            }
+                        });
+                    }, 100);
+
+                    // Update serial numbers when new items are added
+                    window.elementor.on('click', '.elementor-repeater-add', function() {
+                        setTimeout(function() {
+                            $scope.find('.elementor-repeater-fields').each(function(index) {
+                                if (enableSerial) {
+                                    $(this).find('.cheatsheet_num').text('#' + (index + 1));
+                                }
+                                if (enableNumberCircle) {
+                                    $(this).find('.number-circle').text('#' + (index + 1));
+                                }
+                            });
+                        }, 100);
+                    });
+                }
+            }
         },
 
         //=============== accordion js ===============//

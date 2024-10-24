@@ -84,64 +84,69 @@ if (!defined('ABSPATH')) {
     ;(function ($) {
         'use strict';
 
-        <?php if ($is_auto_play == 'yes'): ?>
-            $(document).ready(function () {
-                // Function to handle tab change
-                function changeTab(tabJs, index) {
-                    // Remove active class from all tabs within the same menu
-                    tabJs.closest(".ezd-tab-menu").find("li button").removeClass("active");
+        $(document).ready(function () {
+            var isAutoPlay = '<?php echo esc_js($is_auto_play); ?>'; // Get auto-play status from PHP
 
-                    tabJs.addClass("active");
+            // Function to handle tab change (Existing functionality)
+            function changeTab(tabJs) {
+                // Remove active class from all tabs within the same menu
+                tabJs.closest(".ezd-tab-menu").find("li button").removeClass("active");
 
-                    var target = tabJs.attr("data-rel");
+                tabJs.addClass("active");
 
-                    $("#" + target)
-                        .addClass("active")
-                        .siblings(".ezd-tab-box")
-                        .removeClass("active");
+                var target = tabJs.attr("data-rel");
 
-                    // Reset progress bar for all tabs except the clicked one
-                    $(".progress-bar").not(tabJs.find(".progress-bar")).stop().width(0);
+                $("#" + target)
+                    .addClass("active")
+                    .siblings(".ezd-tab-box")
+                    .removeClass("active");
 
-                    // Update progress bar for the clicked tab
-                    updateProgressBar(tabJs.find(".progress-bar"), 5000);
-                }
+                // Reset progress bar for all tabs except the clicked one
+                $(".progress-bar").not(tabJs.find(".progress-bar")).stop().width(0);
 
-                // Function to update progress bar
-                function updateProgressBar(progressBar, duration) {
-                    progressBar.stop().width(0).animate({
-                            width: "100%",
-                        },
-                        duration,
-                        "linear"
-                    );
-                }
+                // Update progress bar for the clicked tab
+                updateProgressBar(tabJs.find(".progress-bar"), 5000);
+            }
 
-                // Tab click event handler
-                var tabJs = $(".ezd-tab-menu li button");
-                var firstTab = tabJs.first();
-                changeTab(firstTab, tabJs.index(firstTab));
-                updateProgressBar(firstTab.find(".progress-bar"), 5000);
-                tabJs.on("click", function (e) {
-                    e.preventDefault();
-                    changeTab($(this), tabJs.index($(this)));
-                    return false;
-                });
+            // Function to update progress bar
+            function updateProgressBar(progressBar, duration) {
+                progressBar.stop().width(0).animate({
+                        width: "100%",
+                    },
+                    duration,
+                    "linear"
+                );
+            }
 
-                // Auto-cycle tabs with progress bar
-                var currentIndex = 0;
-                var intervalDuration = 5000; // Set the interval duration in milliseconds
+            // Tab click event handler and auto-cycle tabs
+            var tabJs = $(".ezd-tab-menu li button");
+            var firstTab = tabJs.first();
+            changeTab(firstTab);
+            updateProgressBar(firstTab.find(".progress-bar"), 5000);
 
-                function autoCycleTabs() {
-                    var nextIndex = (currentIndex + 1) % tabJs.length;
-                    var activeTab = tabJs.eq(nextIndex);
-                    changeTab(activeTab, nextIndex);
-                    currentIndex = nextIndex;
-                }
+            tabJs.on("click", function (e) {
+                e.preventDefault();
+                changeTab($(this));
+                return false;
+            });
 
-                var tabCycle = setInterval(autoCycleTabs, intervalDuration);
+            // Auto-cycle tabs with progress bar (if isAutoPlay is enabled)
+            var currentIndex = 0;
+            var intervalDuration = 5000; // Set the interval duration in milliseconds
 
-                // Handle hover to stop and resume tab cycling and progress bar for all tabs
+            function autoCycleTabs() {
+                var nextIndex = (currentIndex + 1) % tabJs.length;
+                var activeTab = tabJs.eq(nextIndex);
+                changeTab(activeTab);
+                currentIndex = nextIndex;
+            }
+
+            // Start auto-play if isAutoPlay is 'yes'
+            var tabCycle;
+            if (isAutoPlay === 'yes') {
+                tabCycle = setInterval(autoCycleTabs, intervalDuration);
+
+                // Pause auto-cycle on hover
                 $(".ezd-tab-menu li button").hover(
                     function () {
                         clearInterval(tabCycle);
@@ -152,32 +157,42 @@ if (!defined('ABSPATH')) {
                         updateProgressBar($("button.active .progress-bar"), intervalDuration);
                     }
                 );
+            }
 
-                // Function to reset progress bar
-                function resetProgressBar(progressBar) {
-                    progressBar.stop().width(0);
+            // New functionality: check for content overflow and show/hide scroller buttons
+            function checkOverflow() {
+                var tabContainer = $('.slide_nav_tabs');
+                var leftBtn = $('.scroller-btn.left');
+                var rightBtn = $('.scroller-btn.right');
+                var containerWidth = tabContainer.outerWidth();
+                var contentWidth = tabContainer[0].scrollWidth;
+
+                if (contentWidth > containerWidth) {
+                    leftBtn.show();
+                    rightBtn.show();
+                } else {
+                    leftBtn.hide();
+                    rightBtn.hide();
                 }
+            }
+
+            // Call checkOverflow initially to check on page load
+            checkOverflow();
+
+            // Recheck overflow when the window is resized
+            $(window).on('resize', function () {
+                checkOverflow();
             });
-        <?php else : ?>
-        let tabJs = $(".ezd-tab-menu li button");
-        tabJs.on("click", function (e) {
-            e.preventDefault();
 
-            // Remove active class from all tabs within the same menu
-            $(this).closest(".ezd-tab-menu").find("li button").removeClass("active");
+            // Scroll left button functionality
+            $('.scroller-btn.left').on('click', function () {
+                $('.slide_nav_tabs').animate({ scrollLeft: '-=100px' }, 'fast');
+            });
 
-            // Add active class to the clicked tab
-            $(this).addClass("active");
-
-            var target = $(this).attr("data-rel");
-
-            $("#" + target)
-                .addClass("active")
-                .siblings(".ezd-tab-box")
-                .removeClass("active");
-
-            return false;
+            // Scroll right button functionality
+            $('.scroller-btn.right').on('click', function () {
+                $('.slide_nav_tabs').animate({ scrollLeft: '+=100px' }, 'fast');
+            });
         });
-        <?php endif; ?>
     })(jQuery);
 </script>

@@ -183,11 +183,6 @@ input + .elementor-control.elementor-control-style .elementor-choices .elementor
 
 .blog_5::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/blog5.png") no-repeat center;
-}
-
-.blog_6::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/blog6.png") no-repeat center;
 }
 
@@ -348,6 +343,22 @@ input + .elementor-control.elementor-control-style .elementor-choices .elementor
 .video-popup-3::before {
   background-size: cover;
   background: url("../images/el-editor-preview/video_popup3.png") no-repeat center;
+}
+
+/*=======cheat sheet style=======*/
+.cheat-sheet-1::before {
+  background-size: cover;
+  background: url("../images/cheat-sheet-style-1.jpg") no-repeat center;
+}
+
+.cheat-sheet-2::before {
+  background-size: cover;
+  background: url("../images/cheat-sheet-style-2.jpg") no-repeat center;
+}
+
+.cheat-sheet-3::before {
+  background-size: cover;
+  background: url("../images/cheat-sheet-style-3.jpg") no-repeat center;
 }
 
 /*============== Pro Label Badge ====================*/

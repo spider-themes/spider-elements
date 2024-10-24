@@ -693,7 +693,7 @@ class Tabs extends Widget_Base {
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'is_navigation_arrow' => 'yes',
-				]
+				],
 			]
 		);
 

@@ -312,7 +312,6 @@ class Accordion extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'accordion_border',
-				'label'    => esc_html__( 'Border', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .accordion .doc_accordion',
 			]
 		);
@@ -336,6 +335,15 @@ class Accordion extends Widget_Base {
 				'label_off'    => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
+				'separator'    => 'before',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'accordion_box_shadow',
+				'selector' => '{{WRAPPER}} .accordion .doc_accordion',
 			]
 		);
 

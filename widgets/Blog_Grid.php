@@ -134,12 +134,8 @@ class Blog_Grid extends Widget_Base {
 						'icon'  => 'blog_4',
 					],
 					'5' => [
-						'title' => esc_html__( 'Style 05', 'spider-elements' ),
-						'icon'  => 'blog_5',
-					],
-					'6' => [
 						'title' => esc_html__( 'Blog Carousel', 'spider-elements' ),
-						'icon'  => 'blog_6',
+						'icon'  => 'blog_5',
 					],
 				],
 				'toggle'  => false,
@@ -159,8 +155,8 @@ class Blog_Grid extends Widget_Base {
 				],
 				'default'   => '4 ',
 				'condition' => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 		);
@@ -171,13 +167,13 @@ class Blog_Grid extends Widget_Base {
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
 				'default'     => [
-					'value'   => 'bi-chevron-left',
+					'value'   => 'arrow_carrot-left',
 					'library' => 'bi',
 				],
 				'separator'   => 'before',
 				'condition'   => [
-					'style'  => [ '6' ],
-					'style!' => [ '1', '2', '3', '4', '5' ]
+					'style'  => [ '5' ],
+					'style!' => [ '1', '2', '3', '4', ]
 				]
 			]
 		);
@@ -187,12 +183,12 @@ class Blog_Grid extends Widget_Base {
 				'label'     => esc_html__( 'Right Icon', 'spider-elements' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => [
-					'value'   => 'bi-chevron-right',
+					'value'   => 'arrow_carrot-right',
 					'library' => 'bi',
 				],
 				'condition' => [
-					'style'  => [ '6' ],
-					'style!' => [ '1', '2', '3', '4', '5' ]
+					'style'  => [ '5' ],
+					'style!' => [ '1', '2', '3', '4', ]
 				]
 			]
 		);
@@ -403,14 +399,6 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		/*$this->add_control(
-			'excerpt_length', [
-				'label' => esc_html__('Excerpt Word Length', 'banca-core'),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 8
-			]
-		);*/
-
 		$this->end_controls_section();
 	}
 
@@ -525,8 +513,8 @@ class Blog_Grid extends Widget_Base {
 				'selector'  => '{{WRAPPER}} .blog-meta-two, 
 								{{WRAPPER}} .blog-meta-one',
 				'condition' => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 		);
@@ -552,8 +540,8 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-grid' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 		);
@@ -594,8 +582,8 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-meta-one' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 		);
@@ -606,8 +594,8 @@ class Blog_Grid extends Widget_Base {
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 
@@ -622,8 +610,8 @@ class Blog_Grid extends Widget_Base {
 				'selector'  => '{{WRAPPER}} .blog-meta-two:hover, 
 							   {{WRAPPER}} .blog-meta-one:hover',
 				'condition' => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 		);
@@ -763,8 +751,8 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-meta-one .blog-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style'  => [ '1', '2', '3', '4', '5' ],
-					'style!' => [ '6' ]
+					'style'  => [ '1', '2', '3', '4', ],
+					'style!' => [ '5' ]
 				]
 			]
 		);
@@ -860,7 +848,7 @@ class Blog_Grid extends Widget_Base {
 				'label'     => esc_html__( 'Button', 'spider-elements' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '1', '2', '4', '5' ]
+					'style' => [ '1', '2', '4', ]
 				]
 			]
 		);
@@ -1031,7 +1019,7 @@ class Blog_Grid extends Widget_Base {
 				'label'     => esc_html__( 'Meta', 'spider-elements' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '1', '2', '3', '4', '5' ]
+					'style' => [ '1', '2', '3', '4', ]
 				]
 			]
 		);
@@ -1277,8 +1265,8 @@ class Blog_Grid extends Widget_Base {
 				'label'     => esc_html__( 'Icon', 'spider-elements' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style'  => [ '6' ],
-					'style!' => [ '1', '2', '3', '4', '5' ]
+					'style'  => [ '5' ],
+					'style!' => [ '1', '2', '3', '4', ]
 				]
 			]
 		);

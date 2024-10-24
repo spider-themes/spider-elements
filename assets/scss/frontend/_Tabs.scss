@@ -10,6 +10,8 @@
     border-radius: 0 5px 5px 5px;
     background-color: #fff;
     position: relative;
+    margin-top: -1px; 
+
     p {
       margin: 0;
     }
@@ -325,7 +327,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
             color: #242729;
             border-color: #ebebeb;
             border-bottom-color: transparent;
-            z-index: 1;
+            z-index: 2;
 
             &:before {
               opacity: 1;
@@ -342,8 +344,6 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
       }
     }
   }
-
-
 }
 
 /* Process Tab Shortcode */
@@ -534,6 +534,7 @@ body.remove {
     }
   }
 }
+
 
 /* Auto Tabs Styles */
 .tab_shortcode,
