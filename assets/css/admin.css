@@ -436,7 +436,7 @@ Table of Content:
 }
 
 .spe_dashboard_title {
-  font-size: 28px;
+  font-size: 22px;
   color: #031933;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -1227,20 +1227,18 @@ Table of Content:
 }
 .filter_content .pro .badge::before {
   content: "Pro";
-  width: 64px;
-  height: 64px;
+  width: 62px;
+  height: 62px;
   text-align: center;
   border-radius: 5px;
   color: #fff;
   position: absolute;
   left: -36px;
   top: -36px;
-  font-size: 12px;
+  font-size: 10px;
   font-family: "Roboto", sans-serif;
-  text-transform: capitalize;
   cursor: pointer;
   background: #e9336b;
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   text-transform: uppercase;
   padding: 3px;
