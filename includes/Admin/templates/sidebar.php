@@ -6,11 +6,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="sticky_sidebar">
 
-    <ul class="tab-menu tab_left_content tab-menu">
+    <ul class="tab-menu tab_left_content">
 
         <li>
             <a href="#dashboard" class="tab-menu-link" data-content="dashboard">
-                <div class="tab_contents">
+                <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-dashboard"></i>
                     </div>
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <li>
             <a href="#elements" class="tab-menu-link" data-content="elements">
-                <div class="tab_contents">
+                <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-element"></i>
                     </div>
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <li>
             <a href="#features" class="tab-menu-link" data-content="features">
-                <div class="tab_contents">
+                <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-feature_two"></i>
                     </div>
@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <!--<li>
             <a href="#api_settings" class="tab-menu-link" data-content="api_settings">
-                <div class="tab_contents">
+                <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-api"></i>
                     </div>
@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <li>
             <a href="#integration" class="tab-menu-link" data-content="integration">
-                <div class="tab_contents">
+                <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-setting"></i>
                     </div>
@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <!--<li>
             <a href="#go_premium" class="tab-menu-link" data-content="go_premium">
-                <div class="tab_contents">
+                <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-premium"></i>
                     </div>

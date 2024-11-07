@@ -6,11 +6,11 @@ if (!defined('ABSPATH')) {
 <div id="elements_popup1" class="elements_pro_popup">
     <div class="message_content ezd-text-center">
         <div class="close-pro">
-            <img class="pro-close" src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/modal-close.png') ?>"
+            <img class="pro-close" src="<?php echo esc_url(SPEL_IMG . '/dashboard/modal-close.png') ?>"
                  alt="<?php esc_attr_e('Popup Close', 'spider-elements'); ?>">
         </div>
         <div class="pro-icon">
-            <img class="pro-image" src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/dimond.png') ?>"
+            <img class="pro-image" src="<?php echo esc_url(SPEL_IMG . '/dashboard/dimond.png') ?>"
                  alt="<?php esc_attr_e('Popup Pro Diamond', 'spider-elements'); ?>">
         </div>
         <div class="pro-content">

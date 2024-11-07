@@ -97,14 +97,21 @@ $checked = !isset ($element_opt['element_global_switcher']) ? ' checked' : $is_c
                                     if ( !empty($item['demo_url']) ) {
                                         ?>
                                         <a href="<?php echo esc_url($item['demo_url']) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Widget Demo', 'spider-elements'), $item[ 'label' ]) ?>" target="_blank">
-                                            <img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
+                                            <img src="<?php echo esc_url(SPEL_IMG . '/dashboard/icon-demo.svg') ?>" alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
                                         </a>
                                         <?php
                                     }
                                     if ( !empty($item['video_url']) ) {
                                         ?>
                                         <a href="<?php echo esc_url($item['video_url']) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Video Tutorial', 'spider-elements'), $item['label']) ?>" target="_blank">
-                                            <img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
+                                            <img src="<?php echo esc_url(SPEL_IMG . '/dashboard/icon-video.svg') ?>" alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
+                                        </a>
+                                        <?php
+                                    }
+                                    if ( !empty($item['docs_url']) ) {
+                                        ?>
+                                        <a href="<?php echo esc_url($item['docs_url']) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Documentation', 'spider-elements'), $item['label']) ?>" target="_blank">
+                                            <img src="<?php echo esc_url(SPEL_IMG . '/dashboard/icon-document.svg') ?>" alt="<?php esc_attr_e('Documentation', 'spider-elements'); ?>">
                                         </a>
                                         <?php
                                     }

@@ -86,7 +86,7 @@
       .tab-menu-link {
         text-decoration: none;
 
-        .tab_contents {
+        .tab_menu_contents {
           display: flex;
           align-items: center;
           padding: 18px 25px;
@@ -122,17 +122,15 @@
         }
 
         &.active {
-          .tab_contents {
+          .tab_menu_contents {
             background: linear-gradient(90deg, #7460ff 0%, #9d70ff 100%);
-
             .icon {
               background: #fff;
               color: #571fb7;
             }
 
             .content {
-              h3,
-              p {
+              h3, p {
                 color: #fff;
               }
             }
@@ -145,7 +143,6 @@
   .tab_contents {
     flex: 1;
     max-width: 1200px;
-
     .spel-tab-box {
       display: none;
 
@@ -153,13 +150,28 @@
         display: block;
         opacity: 1;
       }
+      .filter_content {
+        .element_right {
+          .link {
+            a {
+              img {
+                width: 12px;
+                height: 12px;
+              }
+            }
+          }
+        }
+      }
     }
+
   }
+
+
 }
 
 .dashboard_banner {
   text-align: center;
-  background: url(../images/dashboard-img/dashboard_banner.png) no-repeat scroll center 0 / cover;
+  background: url(../images/dashboard/dashboard_banner.png) no-repeat scroll center 0 / cover;
   padding: 98px 50px;
   border-radius: 12px;
   overflow: hidden;
@@ -535,7 +547,7 @@
 
 // premium_banner css
 .premium_banner {
-  background: url(../images/dashboard-img/premium_banner.jpg) no-repeat scroll center 0 / cover;
+  background: url(../images/dashboard/premium_banner.jpg) no-repeat scroll center 0 / cover;
   position: relative;
   padding: 66px;
 

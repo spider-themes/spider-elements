@@ -106,14 +106,14 @@ $theme = in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Chil
                                     if ( !empty($item['demo_url']) ) {
                                         ?>
                                         <a href="<?php echo esc_url($item[ 'demo_url' ]) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Feature Demo', 'spider-elements'), $item[ 'label' ]) ?>" target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/icon1.svg') ?>" alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg') ?>" alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
                                         </a>
                                         <?php
                                     }
                                     if ( !empty($item['demo_url']) ) {
                                         ?>
                                         <a href="<?php echo esc_url($item[ 'video_url' ]) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Video Tutorial', 'spider-elements'), $item[ 'label' ]) ?>" target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/icon2.svg') ?>" alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-video.svg') ?>" alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
                                         </a>
                                         <?php
                                     }

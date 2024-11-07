@@ -16,7 +16,7 @@ $environment        = spel_get_environment_info();
 <div id="dashboard" class="spel-tab-box active">
 
     <div class="dashboard_banner">
-        <img src="<?php echo esc_url( SPEL_IMG . '/dashboard-img/logo.png' ) ?>"
+        <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/logo.png' ) ?>"
              alt="<?php esc_attr_e( 'Dashboard Banner', 'spider-elements' ); ?>">
     </div>
 
