@@ -41,7 +41,7 @@ class Plugin_Installer
     /**
      * Initializes the class
      */
-    public function init()
+    public function init(): void
     {
         $this->collect_installed_plugins();
         $this->collect_activated_plugins();
@@ -54,7 +54,7 @@ class Plugin_Installer
     /**
      * Collects the list of installed plugins
      */
-    private function collect_installed_plugins()
+    private function collect_installed_plugins(): void
     {
         if (!function_exists('get_plugins')) {
             require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -69,7 +69,7 @@ class Plugin_Installer
     /**
      * Collects the list of activated plugins
      */
-    private function collect_activated_plugins()
+    private function collect_activated_plugins(): void
     {
         $this->activated_plugins = get_option('active_plugins', []);
 

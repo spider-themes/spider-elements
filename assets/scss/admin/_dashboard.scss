@@ -143,7 +143,6 @@
   }
 
   .tab_contents {
-    width: 80%;
     flex: 1;
     max-width: 1200px;
 
@@ -158,9 +157,9 @@
   }
 }
 
-.spe_dashboard_banner {
+.dashboard_banner {
   text-align: center;
-  background: url(../images/dashboard-img/spe_dashboard_banner.png) no-repeat scroll center 0 / cover;
+  background: url(../images/dashboard-img/dashboard_banner.png) no-repeat scroll center 0 / cover;
   padding: 98px 50px;
   border-radius: 12px;
   overflow: hidden;
@@ -184,8 +183,8 @@
   }
 }
 
-// spe_widget_progress_item  css
-.spe_widget_progress_item {
+// widget_progress_item  css
+.widget_progress_item {
   border-radius: 8px;
   padding: 30px 40px;
   background: #fff;
@@ -266,8 +265,7 @@
   }
 }
 
-// spe_support_item css
-.spe_dashboard_title {
+.dashboard_title {
   font-size: 22px;
   color: #031933;
   font-weight: 700;
@@ -277,44 +275,47 @@
   margin-bottom: 20px;
 }
 
-.spe_support_item {
-  background: #fff;
-  border-radius: 8px;
-  padding: 40px;
-  margin-top: 25px;
+.spel-tab-box {
+  .support_item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 25px;
 
-  .spe_icon {
-    width: 56px;
-    height: 56px;
-    background: #e2d4fa;
-    border-radius: 50%;
-    font-size: 28px;
-    color: #411789;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+    .icon {
+      width: 56px;
+      height: 56px;
+      background: #e2d4fa;
+      border-radius: 50%;
+      font-size: 28px;
+      color: #411789;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-  .spe_dashboard_title {
-    margin-bottom: 15px;
-  }
+    .dashboard_title {
+      margin-bottom: 15px;
+    }
 
-  p {
-    font-size: 16px;
-    font-family: $inter;
-    color: #535a60;
-    line-height: 32px;
-    margin-top: 0;
-    margin-bottom: 25px;
-  }
+    p {
+      font-size: 16px;
+      font-family: $inter;
+      color: #535a60;
+      line-height: 32px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
 
-  &.dashboard_img {
-    background: transparent;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    &.dashboard_img {
+      background: transparent;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
   }
 }
+
 
 .dashboard_btn {
   text-decoration: none;
@@ -336,7 +337,7 @@
   }
 }
 
-.spe_requirment_list {
+.requirement_list {
   li {
     font-size: 14px;
     font-family: $rob;
@@ -554,7 +555,7 @@
     margin-right: auto;
   }
 
-  .spe_banner_btn {
+  .banner_btn {
     color: #fff;
     font-size: 14px;
     font-weight: 500;

@@ -6,7 +6,6 @@ if (!defined('ABSPATH')) {
 use SPEL\includes\Admin\Module_Settings;
 $features = Module_Settings::get_widget_settings();
 
-
 // Global switcher
 $opt = get_option('spel_features_settings');
 $global_switcher = $opt['features_global_switcher'] ?? '';
@@ -102,26 +101,30 @@ $theme = in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Chil
                             if (!empty($item[ 'label' ])) {
                                 ?>
                                 <div class="link">
-                                    <a href="<?php echo esc_url($item[ 'demo_url' ]) ?>" class="tooltip-top"
-                                       data-tooltip="<?php printf(esc_attr__('View %s Feature Demo', 'spider-elements'), $item[ 'label' ]) ?>"
-                                       target="_blank">
-                                        <img src="<?php echo esc_url( SPEL_IMG . '/icon1.svg') ?>"
-                                             alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
-                                    </a>
-                                    <a href="<?php echo esc_url($item[ 'video_url' ]) ?>" class="tooltip-top"
-                                       data-tooltip="<?php printf(esc_attr__('View %s Video Tutorial', 'spider-elements'), $item[ 'label' ]) ?>"
-                                       target="_blank">
-                                        <img src="<?php echo esc_url( SPEL_IMG . '/icon2.svg') ?>"
-                                             alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
-                                    </a>
+
+                                    <?php
+                                    if ( !empty($item['demo_url']) ) {
+                                        ?>
+                                        <a href="<?php echo esc_url($item[ 'demo_url' ]) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Feature Demo', 'spider-elements'), $item[ 'label' ]) ?>" target="_blank">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/icon1.svg') ?>" alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
+                                        </a>
+                                        <?php
+                                    }
+                                    if ( !empty($item['demo_url']) ) {
+                                        ?>
+                                        <a href="<?php echo esc_url($item[ 'video_url' ]) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Video Tutorial', 'spider-elements'), $item[ 'label' ]) ?>" target="_blank">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/icon2.svg') ?>" alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
+                                        </a>
+                                        <?php
+                                    }
+
+                                    ?>
                                 </div>
                                 <?php
                             }
                             ?>
                             <label for="<?php echo esc_attr($item['name']) ?>" class="switch_label<?php echo esc_attr($is_pro_feature) ?>">
-                                <input type="checkbox" class="widget_checkbox widget-list"
-                                       name="<?php echo esc_attr($item[ 'name' ]) ?>"
-                                       id="<?php echo esc_attr($item[ 'name' ]) ?>" <?php echo esc_attr($checked . $is_pro_feature_enabled); ?>>
+                                <input type="checkbox" class="widget_checkbox widget-list" name="<?php echo esc_attr($item[ 'name' ]) ?>" id="<?php echo esc_attr($item[ 'name' ]) ?>" <?php echo esc_attr($checked . $is_pro_feature_enabled); ?>>
                                 <span class="widget_switcher"></span>
                             </label>
                         </div>

@@ -5,11 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div id="go_premium" class="spel-tab-box">
-    <div class="spe_dashboard_banner premium_banner">
+    <div class="dashboard_banner premium_banner">
         <h2><?php esc_html_e('Get Spider Elements Addons Pro', 'spider-elements'); ?></h2>
         <p><?php esc_html_e('Purchase the premium version of spider Elements Addons to get additional and exclusive features.', 'spider-elements'); ?>
         </p>
-        <a href="#" class="spe_banner_btn">
+        <a href="#" class="banner_btn">
             <?php esc_html_e('CLICK here to get Spider Elementor Addons PRO!', 'spider-elements'); ?>
         </a>
         <img class="rocket_img" src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/rocket.png') ?>"
@@ -18,29 +18,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <div class="ezd-grid ezd-grid-cols-12">
         <div class="ezd-lg-col-6">
-            <div class="spe_pr_promo_box ezd-text-center">
-                <div class="spe_promo_video">
+            <div class="pr_promo_box ezd-text-center">
+                <div class="promo_video">
                     <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/video1.jpg') ?>" alt="">
-                    <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="spe_popup_youtube"><i
+                    <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="popup_youtube"><i
                             class="icon-video-play"></i></a>
                 </div>
                 <h2>Protected Content</h2>
                 <p>Restrict important data by setting up user permission or giving password to certain area.</p>
-                <a href="#" class="spe_demo_btn">View Demo
+                <a href="#" class="demo_btn">View Demo
                     <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/arrow.svg') ?>" alt=""></a>
             </div>
         </div>
         <div class="ezd-lg-col-6">
-            <div class="spe_pr_promo_box ezd-text-center">
-                <div class="spe_promo_video">
+            <div class="pr_promo_box ezd-text-center">
+                <div class="promo_video">
                     <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/video2.jpg') ?>" alt="">
-                    <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="spe_popup_youtube"><i
+                    <a href="https://www.youtube.com/embed/njSyHmcEdkw" class="popup_youtube"><i
                             class="icon-video-play"></i></a>
                 </div>
                 <h2>Protected Content</h2>
                 <p>Restrict important data by setting up user permission or giving password to certain area.</p>
-                <a href="#" class="spe_demo_btn">View Demo <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/arrow.svg') ?>"
-                        alt=""></a>
+                <a href="#" class="demo_btn">View Demo <img src="<?php echo esc_url(SPEL_IMG . '/dashboard-img/arrow.svg') ?>" alt=""></a>
             </div>
         </div>
     </div>
@@ -108,7 +107,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span class="badge">Pro</span>
                 <div class="element_content">
                     <i class="icon-hotspot"></i>
-                    <label for="spe-elementor-hotspot">Image Hotspot</label>
+                    <label for="elementor-hotspot">Image Hotspot</label>
                 </div>
                 <div class="element_right">
                     <div class="link">
@@ -116,7 +115,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
-                        <input type="checkbox" class="widget_checkbox" id="spe-elementor-hotspot">
+                        <input type="checkbox" class="widget_checkbox" id="elementor-hotspot">
                         <span class="widget_switcher"></span>
                     </label>
                 </div>
@@ -127,7 +126,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span class="badge">Pro</span>
                 <div class="element_content">
                     <i class="icon-accordion"></i>
-                    <label for="spe-elementor-accordion">Accordion</label>
+                    <label for="elementor-accordion">Accordion</label>
                 </div>
                 <div class="element_right">
                     <div class="link">
@@ -135,7 +134,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
-                        <input type="checkbox" class="widget_checkbox" id="spe-elementor-accordion">
+                        <input type="checkbox" class="widget_checkbox" id="elementor-accordion">
                         <span class="widget_switcher"></span>
                     </label>
                 </div>
@@ -146,7 +145,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span class="badge">Pro</span>
                 <div class="element_content">
                     <i class="icon-accordion-article"></i>
-                    <label for="spe-elementor-accordion-article">Accordion Article</label>
+                    <label for="elementor-accordion-article">Accordion Article</label>
                 </div>
                 <div class="element_right">
                     <div class="link">
@@ -154,7 +153,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <a href="#"><img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt=""></a>
                     </div>
                     <label>
-                        <input type="checkbox" class="widget_checkbox" id="spe-elementor-accordion-article">
+                        <input type="checkbox" class="widget_checkbox" id="elementor-accordion-article">
                         <span class="widget_switcher"></span>
                     </label>
                 </div>

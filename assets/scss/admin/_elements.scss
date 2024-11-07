@@ -298,8 +298,8 @@
   }
 }
 
-/*===== start spe_api_box ==========*/
-.spe_api_box {
+/*===== start api_box ==========*/
+.api_box {
   padding: 24px;
 
   h3 {
@@ -321,8 +321,8 @@
     margin-top: 0;
   }
 
-  .spe_api_panel {
-    .spe_api_inner {
+  .api_panel {
+    .api_inner {
       h5 {
         font-size: 14px;
         font-weight: 500;
@@ -362,7 +362,7 @@
       margin-top: 10px;
     }
 
-    & + .spe_api_panel {
+    & + .api_panel {
       margin-top: 10px;
     }
   }
@@ -375,7 +375,7 @@
   padding: 44px 40px;
 }
 
-.spe_integration_item {
+.integration_item {
   margin-top: 25px;
   padding: 40px;
 
@@ -421,8 +421,8 @@
   margin-top: 25px;
 }
 
-// spe_pr_promo_box css
-.spe_pr_promo_box {
+// pr_promo_box css
+.pr_promo_box {
   background: #fff;
   border-radius: 8px;
   padding: 16px 16px 30px;
@@ -444,7 +444,7 @@
     margin-top: 0;
   }
 
-  .spe_demo_btn {
+  .demo_btn {
     font-size: 14px;
     font-weight: 500;
     color: #e9336b;
@@ -463,7 +463,7 @@
     }
   }
 
-  .spe_promo_video {
+  .promo_video {
     background: #6d27e5;
     border-radius: 4px;
     padding: 12px;
@@ -474,7 +474,7 @@
       border-radius: 4px;
     }
 
-    .spe_popup_youtube {
+    .popup_youtube {
       position: absolute;
       width: 40px;
       background: #fff;

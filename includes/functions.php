@@ -635,7 +635,7 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
  * @return int The equivalent size in bytes.
  */
 if ( ! function_exists( 'spel_readable_number' ) ) {
-    function spel_readable_number($size)
+    function spel_readable_number($size): int
     {
 
         // Get the last character of the size string

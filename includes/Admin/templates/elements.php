@@ -91,22 +91,24 @@ $checked = !isset ($element_opt['element_global_switcher']) ? ' checked' : $is_c
                         <div class="element_right">
                             <?php
                             if (!empty($item['label'])) {
-                                // Translators: %s is a placeholder for the item label.
-                                $item_label = esc_attr__('View %s Widget Demo', 'spider-elements');
-                                $item_label = sprintf($item_label, $item['label']);
                                 ?>
                                 <div class="link">
-                                    <a href="<?php echo esc_url($item['demo_url']) ?>" class="tooltip-top"
-                                       data-tooltip="<?php echo esc_attr($item_label); ?>" target="_blank">
-                                        <img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>"
-                                             alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
-                                    </a>
-                                    <a href="<?php echo esc_url($item['video_url']) ?>" class="tooltip-top"
-                                       data-tooltip="<?php printf(esc_attr__('View %s Video Tutorial',
-                                           'spider-elements'), $item['label']) ?>" target="_blank">
-                                        <img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>"
-                                             alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
-                                    </a>
+                                    <?php
+                                    if ( !empty($item['demo_url']) ) {
+                                        ?>
+                                        <a href="<?php echo esc_url($item['demo_url']) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Widget Demo', 'spider-elements'), $item[ 'label' ]) ?>" target="_blank">
+                                            <img src="<?php echo esc_url(SPEL_IMG . '/icon1.svg') ?>" alt="<?php esc_attr_e('Widget Demo', 'spider-elements'); ?>">
+                                        </a>
+                                        <?php
+                                    }
+                                    if ( !empty($item['video_url']) ) {
+                                        ?>
+                                        <a href="<?php echo esc_url($item['video_url']) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf(esc_attr__('View %s Video Tutorial', 'spider-elements'), $item['label']) ?>" target="_blank">
+                                            <img src="<?php echo esc_url(SPEL_IMG . '/icon2.svg') ?>" alt="<?php esc_attr_e('Video Tutorial', 'spider-elements'); ?>">
+                                        </a>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                                 <?php
                             }

@@ -77,10 +77,6 @@ class Assets {
 
         wp_enqueue_style( 'spel-elementor-editor', SPEL_CSS . '/spel-elementor-editor.css', [],  SPEL_VERSION );
 
-        if ( spel_is_premium() ) {
-            wp_enqueue_style( 'spel-pro-elementor-editor', SPEL_CSS . '/spel-pro-elementor-editor.css', [],  SPEL_VERSION );
-        }
-
 	}
 
 
@@ -111,7 +107,6 @@ class Assets {
 		wp_enqueue_script( 'spel-circle', SPEL_VEND . '/circle-progressbar/circle-progress.js', ['jquery'], SPEL_VERSION, true );
 		wp_enqueue_script( 'spel-admin', SPEL_JS . '/admin.js', ['jquery'], SPEL_VERSION, true );
 	}
-
 
 }
 

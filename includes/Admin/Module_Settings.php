@@ -8,7 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Module_Settings {
 
-    public static function get_widget_settings() {
+    public static function get_widget_settings(): array
+    {
 
         $settings_fields = [
 
@@ -22,7 +23,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/tabs/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-tabs',
                 ],
                 [
@@ -33,7 +34,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/video-playlist/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-video-playlist',
                 ],
                 [
@@ -44,7 +45,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/notice-message/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-alert',
                 ],
                 [
@@ -55,7 +56,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/accordion/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-accordion',
                 ],
                 [
@@ -66,7 +67,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/testimonials/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-testimonial-carousel',
                 ],
                 // [
@@ -99,7 +100,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/list-item/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-bullet-list',
                 ],
                 [
@@ -110,7 +111,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/cheatsheet/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-apps',
                 ],
                 [
@@ -121,7 +122,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/team-carousel/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-nested-carousel',
                 ],
                 [
@@ -132,10 +133,10 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/integration/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-integration',
                 ],
-                [
+                /*[
                     'name'         => 'spe_after_before_widget',
                     'className'    => 'Before_After', // widget class name
                     'label'        => esc_html__('Before After', 'spider-elements'),
@@ -143,9 +144,9 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/before-after/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-thumbnails-half',
-                ],
+                ],*/
                 [
                     'name'         => 'docy_video_popup',
                     'className'    => 'Video_Popup', // widget class name
@@ -154,7 +155,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/video-popup/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-play',
                 ],
                 [
@@ -165,7 +166,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/blog-grid/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-post',
                 ],
                 [
@@ -176,7 +177,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/timeline/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-time-line',
                 ],
                 // [
@@ -209,7 +210,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/counter/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-counter',
                 ],
                 // [
@@ -231,7 +232,7 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/icon-box/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-icon-box',
                 ],
 
@@ -245,7 +246,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/accordion-articles/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-accordion',
                 ],
                 [
@@ -256,7 +257,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/box-hover/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-image-box',
                 ],
                 // [
@@ -278,7 +279,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/feature-box/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-info-box',
                 ],
                 [
@@ -289,7 +290,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/flipbox/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-flip-box',
                 ],
                 [
@@ -300,7 +301,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/hotspot/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-image-hotspot',
                 ],
                 [
@@ -311,7 +312,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/image-hover/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-image-rollover',
                 ],
                 [
@@ -322,7 +323,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/image-slider/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-slides',
                 ],
                 [
@@ -333,7 +334,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/marquee-slider/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-slider-push',
                 ],
                 [
@@ -344,7 +345,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/skill-showcase/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-slideshow',
                 ],
                 [
@@ -355,7 +356,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/stack-image/',
-                    'video_url'    => '#',
+                    //'video_url'    => '#',
                     'icon'         => 'eicon-featured-image',
                 ],
 
@@ -441,7 +442,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    'video_url'    => '',
+                    //'video_url'    => '',
                     'icon'         => 'eicon-info-box',
                 ],
                 [
@@ -451,7 +452,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    'video_url'    => '',
+                    //'video_url'    => '',
                     'icon'         => 'icon-revel-animation',
                 ],
                 [
@@ -461,7 +462,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    'video_url'    => '',
+                    //'video_url'    => '',
                     'icon'         => 'icon-badge',
                 ],
                 [
@@ -471,7 +472,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    'video_url'    => '',
+                    //'video_url'    => '',
                     'icon'         => 'eicon-t-letter',
                 ],
                 [
@@ -481,7 +482,7 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    'video_url'    => '',
+                    //'video_url'    => '',
                     'icon'         => 'icon-smooth-animation',
                 ]
             ]

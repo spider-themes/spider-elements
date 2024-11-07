@@ -1,4 +1,5 @@
 ;(function ($) {
+
     "use strict";
 
     // Remove svg.radial-progress .complete inline styling
@@ -6,40 +7,36 @@
         $(this).find($("circle.complete")).removeAttr("style");
     });
 
-    $(window)
-        .scroll(function () {
-            $("svg.radial-progress").each(function (index, value) {
-                // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
-                if (
-                    $(window).scrollTop() >
-                    $(this).offset().top - $(window).height() * 0.75 &&
-                    $(window).scrollTop() <
-                    $(this).offset().top + $(this).height() - $(window).height() * 0.25
-                ) {
-                    // Get percentage of progress
-                    var percent = $(value).data("percentage");
+    $(window).scroll(function () {
+        $("svg.radial-progress").each(function (index, value) {
+            // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+            if (
+                $(window).scrollTop() >
+                $(this).offset().top - $(window).height() * 0.75 &&
+                $(window).scrollTop() <
+                $(this).offset().top + $(this).height() - $(window).height() * 0.25
+            ) {
+                // Get percentage of progress
+                let percent = $(value).data("percentage");
 
-                    // Get radius of the svg's circle.complete
-                    var radius = $(this).find($("circle.complete")).attr("r");
+                // Get radius of the svg's circle.complete
+                let radius = $(this).find($("circle.complete")).attr("r");
 
-                    // Get circumference (2πr)
-                    var circumference = 2 * Math.PI * radius;
+                // Get circumference (2πr)
+                let circumference = 2 * Math.PI * radius;
 
-                    // Get stroke-dashoffset value based on the percentage of the circumference
-                    var strokeDashOffset =
-                        circumference - (percent * circumference) / 100;
+                // Get stroke-dashoffset value based on the percentage of the circumference
+                let strokeDashOffset =
+                    circumference - (percent * circumference) / 100;
 
-                    // Transition progress for 1.25 seconds
-                    $(this)
-                        .find($("circle.complete"))
-                        .animate({"stroke-dashoffset": strokeDashOffset}, 1250);
-                }
-            });
-        })
-        .trigger("scroll");
+                // Transition progress for 1.25 seconds
+                $(this).find($("circle.complete")).animate({"stroke-dashoffset": strokeDashOffset}, 1250);
+            }
+        });
+    })
+    .trigger("scroll");
 
     // switcher js
-
     document.addEventListener("DOMContentLoaded", function () {
 
         // Handling for element_switcher
@@ -96,76 +93,76 @@
 
     }); // end switcher js
 
-    $(".spe-tab-menu li a").on("click", function () {
-        $(this).closest(".spe-tab-menu").find("li a").removeClass("active");
 
-        // Add active class to the clicked tab
-        $(this).addClass("active");
+    $(document).ready(function () {
 
-        let target = $(this).attr("href");
+        // Set up event listener for tab click
+        $(".tab-menu li a").on("click", function () {
+            $(this).closest(".tab-menu").find("li a").removeClass("active");
 
-        $(".spel-tab-box")
-            .removeClass("active")
-            .fadeOut(0, function () {
-                $(target).addClass("active").fadeIn(0);
-            });
+            // Add active class to the clicked tab
+            $(this).addClass("active");
 
-        // Trigger Isotope filtering after the tab is clicked
-        filterMasonry();
-        filterMasonryTwo();
-        filterMasonryThree();
-        return false;
-    });
+            let target = $(this).attr("href");
 
+            $(".spel-tab-box")
+                .removeClass("active")
+                .fadeOut(0, function () {
+                    $(target).addClass("active").fadeIn(0);
+                });
 
-    // Function to set a cookie
-    function setCookie(name, value, days) {
-        let expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + value + expires + "; path=/";
-    }
-
-    // Function to get a cookie
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-
-    // Remain the last active settings tab
-    function spel_keep_settings_current_tab() {
-
-        var activeButton = getCookie('spe_settings_current_tab');
-        if (activeButton) {
-            // Tab active
-            $('.spe_dashboard .spe-tab-menu .tab-menu-link[data-content="' + activeButton + '"]').addClass('active');
-            $('.spe_dashboard .spe-tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
-
-            // Tab content active
-            $('.spe_dashboard .tab_contents .spel-tab-box#' + activeButton).addClass('active');
-            $('.spe_dashboard .tab_contents .spel-tab-box:not(#' + activeButton + ')').removeClass('active');
-        }
-
-        // Handle button clicks
-        $('.spe-tab-menu .tab-menu-link').on('click', function () {
-            $('.spe-tab-menu .tab-menu-link').removeClass('active');
-            $(this).addClass('active');
+            // Trigger Isotope filtering after the tab is clicked
+            filterMasonry();
+            filterMasonryTwo();
+            filterMasonryThree();
 
             // Set a cookie to remember the active button
             setCookie('spe_settings_current_tab', $(this).data('content'), 1);
-        });
-    }
 
-    spel_keep_settings_current_tab();
+            return false;
+        });
+
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        // Function to get a cookie
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Remain the last active settings tab
+        function spel_keep_settings_current_tab() {
+
+            let activeButton = getCookie('spe_settings_current_tab');
+            if (activeButton) {
+                // Tab active
+                $('.tab-menu .tab-menu-link[data-content="' + activeButton + '"]').addClass('active');
+                $('.tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
+
+                // Tab content active
+                $('.tab_contents .spel-tab-box#' + activeButton).addClass('active');
+                $('.tab_contents .spel-tab-box:not(#' + activeButton + ')').removeClass('active');
+            }
+        }
+
+        spel_keep_settings_current_tab();
+
+    });
 
     // filter js
     /*===========elements isotope js===========*/
@@ -276,8 +273,8 @@
         $("#elements_popup1").removeClass("popup-visible");
     });
 
-    if ($(".spe_popup_youtube").length) {
-        $(".spe_popup_youtube").fancybox({
+    if ($(".popup_youtube").length) {
+        $(".popup_youtube").fancybox({
             type: "iframe", //<--added
             maxWidth: 800,
             maxHeight: 600,

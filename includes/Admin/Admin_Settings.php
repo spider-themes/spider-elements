@@ -25,7 +25,8 @@ class Admin_Settings {
 	 * @return void
 	 * Add menu page to the WordPress admin dashboard.
 	 */
-	public function add_menu_page() {
+	public function add_menu_page(): void
+    {
 
 		add_menu_page(
 			esc_html__( 'Spider Elements', 'spider-elements' ),

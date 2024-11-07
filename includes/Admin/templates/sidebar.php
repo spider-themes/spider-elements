@@ -6,10 +6,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="sticky_sidebar">
 
-    <ul class="tab-menu tab_left_content spe-tab-menu">
+    <ul class="tab-menu tab_left_content tab-menu">
 
         <li>
-            <a href="#dashboard" class="tab-menu-link active" data-content="dashboard">
+            <a href="#dashboard" class="tab-menu-link" data-content="dashboard">
                 <div class="tab_contents">
                     <div class="icon">
                         <i class="icon-dashboard"></i>
