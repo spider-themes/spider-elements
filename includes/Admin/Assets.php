@@ -17,10 +17,10 @@ class Assets {
 	 */
 	public function __construct() {
 
-		add_action( 'plugins_loaded', [$this, 'register_scripts'] );
+        // Register Admin Panel Scripts
+        add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
 
-        add_action('fonts_url', [$this, 'fonts_url']);
-
+        //add_action('fonts_url', [$this, 'fonts_url']);
 	}
 
     public function fonts_url(): string
@@ -51,34 +51,6 @@ class Assets {
 
     }
 
-	/**
-	 * Register scripts and styles
-	 **/
-	public function register_scripts(): void
-    {
-
-		// Register Elementor Preview Editor Style's
-		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'elementor_editor_scripts' ] );
-
-		// Register Admin Panel Scripts
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
-
-	}
-
-	/**
-	 * Register Widget Styles
-	 *
-	 * Register custom styles required to run Spider Elements.
-	 *
-	 * @access public
-	 */
-	public function elementor_editor_scripts(): void
-    {
-
-        wp_enqueue_style( 'spel-elementor-editor', SPEL_CSS . '/spel-elementor-editor.css', [],  SPEL_VERSION );
-
-	}
-
 
 	/**
 	 * Register Admin Panel Scripts
@@ -91,7 +63,7 @@ class Assets {
     {
 
 		// Register Admin Panel Styles
-		wp_enqueue_style( 'spel-fonts', self::fonts_url(), [], SPEL_VERSION );
+		//wp_enqueue_style( 'spel-fonts', self::fonts_url(), [], SPEL_VERSION );
 		wp_enqueue_style( 'icomoon', SPEL_VEND . '/icomoon/style.css', [], SPEL_VERSION );
 		wp_enqueue_style( 'spel-circle', SPEL_VEND . '/circle-progressbar/circularprogress.css', [], SPEL_VERSION );
 		wp_enqueue_style( 'spel-fancy', SPEL_VEND . '/fancybox/css/jquery.fancybox.min.css', [], SPEL_VERSION );
@@ -109,5 +81,3 @@ class Assets {
 	}
 
 }
-
-new Assets();

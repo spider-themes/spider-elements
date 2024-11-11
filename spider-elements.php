@@ -263,12 +263,14 @@ if (!class_exists('SPEL')) {
                 require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
             }
 
+            // Admin UI
             if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
-			} else {
-				require_once __DIR__ . '/includes/Frontend/Assets.php';
 			}
+
+            // Frontend UI
+            require_once __DIR__ . '/includes/Frontend/Assets.php';
 
 		}
 
@@ -306,12 +308,17 @@ if (!class_exists('SPEL')) {
 
             }
 
-            //new SPEL\includes\classes\Theme_Builder();
-            new SPEL\includes\Admin\Plugin_Installer();
-
+            // Admin UI
             if ( is_admin() ) {
                 new SPEL\includes\Admin\Admin_Settings();
+                new SPEL\includes\Admin\Assets();
             }
+
+            // Frontend UI
+            new SPEL\includes\Admin\Plugin_Installer();
+            new SPEL\includes\Frontend\Assets();
+
+            //new SPEL\includes\classes\Theme_Builder();
 
 		}
 

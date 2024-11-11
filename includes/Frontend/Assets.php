@@ -13,23 +13,20 @@ class Assets
 {
 	public function __construct()
 	{
-		add_action('plugins_loaded', [$this, 'register_scripts']);
-	}
+        // Register Widget Style's
+        add_action('elementor/frontend/after_enqueue_styles', [$this, 'register_widget_styles']);
 
-	public function register_scripts(): void
-    {
+        // Register Widget Script's
+        add_action('elementor/editor/after_enqueue_scripts', [$this, 'register_widget_scripts']);
+        add_action('elementor/frontend/after_register_scripts', [$this, 'register_widget_scripts']);
 
-		// Register Widget Style's
-		add_action('elementor/frontend/after_enqueue_styles', [$this, 'register_widget_styles']);
+        // Register Elementor Preview Editor Script's
+        add_action('elementor/editor/after_enqueue_scripts', [$this, 'register_editor_scripts']);
+        add_action('elementor/frontend/after_enqueue_scripts', [$this, 'register_editor_scripts']);
 
-		// Register Widget Script's
-		add_action('elementor/editor/after_enqueue_scripts', [$this, 'register_widget_scripts']);
-		add_action('elementor/frontend/after_register_scripts', [$this, 'register_widget_scripts']);
 
-		// Register Elementor Preview Editor Script's
-		add_action('elementor/editor/after_enqueue_scripts', [$this, 'register_editor_scripts']);
-		add_action('elementor/frontend/after_enqueue_scripts', [$this, 'register_editor_scripts']);
-
+        // Register Elementor Preview Editor Style's
+        add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'elementor_editor_scripts' ] );
 	}
 
 
@@ -124,13 +121,26 @@ class Assets
 	 *
 	 * @access public
 	 */
-	function register_editor_scripts()
-	{
+	function register_editor_scripts(): void
+    {
 		wp_register_script('spel-el-widgets', SPEL_JS . '/elementor-widgets.js', [
 			'jquery',
 			'elementor-frontend'
 		], SPEL_VERSION, true);
 	}
-}
 
-new Assets();
+
+    /**
+     * Register Widget Styles
+     *
+     * Register custom styles required to run Spider Elements.
+     *
+     * @access public
+     */
+    public function elementor_editor_scripts(): void
+    {
+        wp_enqueue_style( 'spel-elementor-editor', SPEL_CSS . '/elementor-editor.css', [],  SPEL_VERSION );
+    }
+
+
+}

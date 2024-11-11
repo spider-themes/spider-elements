@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
  * Register Advance Features Control Tab
  * Container & Section Features
  */
-class Features_Badge {
+class Features_Badge_BKP {
 
     /**
      * Class Constructor Functions.

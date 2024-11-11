@@ -3,11 +3,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-add_image_size( 'spe_270x152', 270, 152, true ); // Video Playlist Thumb
-add_image_size( 'spe_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
+add_image_size( 'spel_270x152', 270, 152, true ); // Video Playlist Thumb
+add_image_size( 'spel_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
 
 /**
- * Constants for widgets badge
+ * Constants for widget badge
  */
 if ( ! defined( 'SPEL_TEXT_BADGE' ) ) {
     define('SPEL_TEXT_BADGE',
@@ -82,10 +82,10 @@ add_action( 'admin_init', function () {
         // Global Switcher
         $data['spe_global_switcher'] = isset($_POST['spe_global_switcher']) ? sanitize_text_field($_POST['spe_global_switcher']) : '';
 
-        // Save the data in the options table using update_option
+        // Save the data in the option table using update_option
         update_option('spe_widget_settings', $data);
 
-        // If the user is not on a pro plan, reset pro widgets
+        // If the user is not on a pro plan, reset pro-widgets
         if (!spel_is_premium()) {
             foreach ($pro_widgets as $widget) {
                 $data[$widget] = 'off';
@@ -124,10 +124,10 @@ add_action( 'admin_init', function () {
         // Global Switcher
         $data['features_global_switcher'] = isset($_POST['features_global_switcher']) ? sanitize_text_field($_POST['features_global_switcher']) : '';
 
-        // Save the data in the options table using update_option
+        // Save the data in the option table using update_option
         update_option('spel_features_settings', $data);
 
-        // If the user is not on a pro plan or Jobi theme, reset pro widgets
+        // If the user is not on a pro-plan or Jobi theme, reset pro-widgets
         $theme = wp_get_theme();
         $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
         if (!$is_premium_or_theme) {

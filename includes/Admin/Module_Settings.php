@@ -11,7 +11,7 @@ class Module_Settings {
     public static function get_widget_settings(): array
     {
 
-        $settings_fields = [
+        return [
 
             // All Widget List
             'spider_elements_widgets' => [
@@ -529,9 +529,8 @@ class Module_Settings {
                     'icon'         => 'icon-smooth-animation',
                 ]
             ]
-        ];
 
-        return $settings_fields;
+        ];
 
     }
 

@@ -53,7 +53,7 @@ class Features_Badge {
     /**
      * Section Controls
      */
-    public function register_section_controls (Element_Base $element)
+    public function register_section_controls (Element_Base $element): void
     {
 
         //=============== Start Features Box ===============//
@@ -156,7 +156,7 @@ class Features_Badge {
      *
      * @return void
      */
-    public function callback_render_display_content (Element_Base $element)
+    public function callback_render_display_content (Element_Base $element): void
     {
 
         $feature_icon = $element->get_settings_for_display('spe_fb_icon');
@@ -182,7 +182,7 @@ class Features_Badge {
      *
      * @param Element_Base $section The section, column, or container element.
      */
-    public function frontend_render_before (Element_Base $section)
+    public function frontend_render_before (Element_Base $section): void
     {
 
         if ($section->get_name() === 'container' || $section->get_name() === 'column' || $section->get_name() === 'section') {
@@ -209,7 +209,7 @@ class Features_Badge {
      *
      * @param Element_Base $section The section, column, or container element.
      */
-    public function frontend_render_after (Element_Base $section)
+    public function frontend_render_after (Element_Base $section): void
     {
 
         if ($section->get_name() === 'container' || $section->get_name() === 'column' || $section->get_name() === 'section') {
@@ -265,7 +265,7 @@ class Features_Badge {
      *
      * @return void
      */
-    public function add_custom_rules_to_css_file (Post $post_css_file, Element_Base $element)
+    public function add_custom_rules_to_css_file (Post $post_css_file, Element_Base $element): void
     {
 
         // Get the display settings for the element.
