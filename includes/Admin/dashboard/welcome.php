@@ -15,130 +15,8 @@ $environment        = spel_get_environment_info();
 ?>
 <div id="dashboard" class="tab-box active">
 
-    <div class="dashboard_banner">
-        <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/logo.png' ) ?>"
-             alt="<?php esc_attr_e( 'Dashboard Banner', 'spider-elements' ); ?>">
-    </div>
-
-    <!--<div class="ezd-grid ezd-grid-cols-12">
-        <div class="ezd-lg-col-3">
-            <div class="widget_progress_item ezd-text-center">
-                <h3><?php /*esc_html_e('All Widgets', 'spider-elements'); */ ?></h3>
-                <div class="circle_progress">
-                    <svg class="radial-progress" data-percentage="85" viewBox="0 0 80 80">
-                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    </svg>
-                    <text class="percentage">85%</text>
-                </div>
-                <ul class="ezd-list-unstyled progress_info_list">
-                    <li>Total : 250</li>
-                    <li>Used : 155</li>
-                    <li>Unused : 95</li>
-                </ul>
-            </div>
-        </div>
-        <div class="ezd-lg-col-3">
-            <div class="widget_progress_item ezd-text-center">
-                <h3><?php /*esc_html_e('Core', 'spider-elements'); */ ?></h3>
-                <div class="circle_progress">
-                    <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
-                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    </svg>
-                    <text class="percentage">65%</text>
-                </div>
-                <ul class="ezd-list-unstyled progress_info_list">
-                    <li>Total : 250</li>
-                    <li>Used : 155</li>
-                    <li>Unused : 95</li>
-                </ul>
-            </div>
-        </div>
-        <div class="ezd-lg-col-3">
-            <div class="widget_progress_item ezd-text-center">
-                <h3>3rd Party</h3>
-                <div class="circle_progress">
-                    <svg class="radial-progress" data-percentage="62" viewBox="0 0 80 80">
-                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35"></circle>
-
-                    </svg>
-                    <text class="percentage">62%</text>
-                </div>
-                <ul class="ezd-list-unstyled progress_info_list">
-                    <li>Total : 250</li>
-                    <li>Used : 155</li>
-                    <li>Unused : 95</li>
-                </ul>
-            </div>
-        </div>
-        <div class="ezd-lg-col-3">
-            <div class="widget_progress_item ezd-text-center">
-                <h3><?php /*esc_html_e('Active', 'spider-elements'); */ ?></h3>
-                <div class="circle_progress">
-                    <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
-                        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35"></circle>
-                    </svg>
-                    <text class="percentage">65%</text>
-                </div>
-                <ul class="ezd-list-unstyled progress_info_list">
-                    <li>Total : 250</li>
-                    <li>Used : 155</li>
-                    <li>Unused : 95</li>
-                </ul>
-            </div>
-        </div>
-    </div>-->
-
-    <div class="ezd-grid ezd-grid-cols-12">
-        <div class="ezd-lg-col-6">
-            <div class="support_item">
-                <span class="icon icon-documentation"></span>
-                <h2 class="dashboard_title"><?php esc_html_e( 'Documentation', 'spider-elements' ); ?></h2>
-                <p><?php esc_html_e( 'Get detailed and guided instruction to level up your website with the necessary set up.', 'spider-elements' ); ?></p>
-                <a href="https://helpdesk.spider-themes.net/docs/spider-elements" class="dashboard_btn" target="_blank">
-					<?php esc_html_e( 'Check Documentation', 'spider-elements' ); ?>
-                </a>
-            </div>
-        </div>
-        <div class="ezd-lg-col-6">
-            <div class="support_item">
-                <span class="icon icon-help"></span>
-                <h2 class="dashboard_title"><?php esc_html_e( 'Need Help', 'spider-elements' ); ?></h2>
-                <p><?php esc_html_e( 'If you are stuck at anything while using our product, reach out to us immediately', 'spider-elements' ); ?>
-                </p>
-                <a href="https://wordpress.org/support/plugin/spider-elements/" class="dashboard_btn" target="_blank">
-					<?php esc_html_e( 'Support Ticket', 'spider-elements' ); ?>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="ezd-grid ezd-grid-cols-12">
-
-        <div class="ezd-lg-col-6">
-            <div class="support_item">
-                <span class="icon icon-love"></span>
-                <h2 class="dashboard_title"><?php esc_html_e( 'Show Your Love', 'spider-elements' ); ?></h2>
-                <p><?php echo wp_kses_post( esc_html__( 'Leave your feedback to help us out if you liked our product and customer service.', 'spider-elements' ) ); ?></p>
-                <a href="https://wordpress.org/support/plugin/spider-elements/reviews/#new-post" class="dashboard_btn" target="_blank">
-					<?php esc_html_e( 'Leave a Review', 'spider-elements' ); ?>
-                </a>
-            </div>
-        </div>
-        <div class="ezd-lg-col-6">
-            <div class="support_item">
-                <span class="icon icon-debug"></span>
-                <h2 class="dashboard_title"><?php esc_html_e( 'Facing an issues?', 'spider-elements' ); ?></h2>
-                <p><?php echo wp_kses_post( esc_html__( 'You think there is a bug in the product? Inform us please!', 'spider-elements' ) ); ?></p>
-                <a href="https://github.com/spider-themes/spider-elements/issues/new" class="dashboard_btn" target="_blank">
-					<?php esc_html_e( 'Get Help Now', 'spider-elements' ); ?>
-                </a>
-            </div>
-        </div>
+    <div class="dashboard_banner text-center">
+        <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/logo.png' ) ?>" alt="<?php esc_attr_e( 'Dashboard Banner', 'spider-elements' ); ?>">
     </div>
 
     <div class="ezd-grid ezd-grid-cols-12">
@@ -244,8 +122,7 @@ $environment        = spel_get_environment_info();
 						<?php
 						printf(
 							esc_html__(
-								'Note: If you have multiple addons like %1$s Spider Elements %2$s, you may need more resources. Ensure you allocate more memory for other addons as well.',
-								'spider-elements'
+								'Note: If you have multiple addons like %1$s Spider Elements %2$s, you may need more resources. Ensure you allocate more memory for other addons as well.', 'spider-elements'
 							),
 							'<strong>',
 							'</strong>'
@@ -253,7 +130,55 @@ $environment        = spel_get_environment_info();
 						?>
                     </p>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="ezd-grid ezd-grid-cols-12">
+        <div class="ezd-lg-col-6">
+            <div class="support_item">
+                <span class="icon icon-documentation"></span>
+                <h2 class="dashboard_title"><?php esc_html_e( 'Documentation', 'spider-elements' ); ?></h2>
+                <p><?php esc_html_e( 'Get detailed and guided instruction to level up your website with the necessary set up.', 'spider-elements' ); ?></p>
+                <a href="https://helpdesk.spider-themes.net/docs/spider-elements" class="dashboard_btn" target="_blank">
+					<?php esc_html_e( 'Read Documentation', 'spider-elements' ); ?>
+                </a>
+            </div>
+        </div>
+        <div class="ezd-lg-col-6">
+            <div class="support_item">
+                <span class="icon icon-help"></span>
+                <h2 class="dashboard_title"><?php esc_html_e( 'Need Help', 'spider-elements' ); ?></h2>
+                <p><?php esc_html_e( 'If you are stuck at anything while using our product, reach out to us immediately', 'spider-elements' ); ?>
+                </p>
+                <a href="https://wordpress.org/support/plugin/spider-elements/" class="dashboard_btn" target="_blank">
+					<?php esc_html_e( 'Support Ticket', 'spider-elements' ); ?>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ezd-grid ezd-grid-cols-12">
+
+        <div class="ezd-lg-col-6">
+            <div class="support_item">
+                <span class="icon icon-love"></span>
+                <h2 class="dashboard_title"><?php esc_html_e( 'Show Your Love', 'spider-elements' ); ?></h2>
+                <p><?php echo esc_html__( 'Leave your feedback to help us out if you liked our product and customer service.', 'spider-elements' ); ?></p>
+                <a href="https://wordpress.org/support/plugin/spider-elements/reviews/#new-post" class="dashboard_btn" target="_blank">
+					<?php esc_html_e( 'Leave a Review', 'spider-elements' ); ?>
+                </a>
+            </div>
+        </div>
+        <div class="ezd-lg-col-6">
+            <div class="support_item">
+                <span class="icon icon-debug"></span>
+                <h2 class="dashboard_title"> <?php esc_html_e( 'Facing an issues?', 'spider-elements' ); ?> </h2>
+                <p> <?php echo esc_html__( "Think you've spotted a bug? Please let us know! Your feedback helps us make improvements.", "spider-elements" ); ?> </p>
+                <a href="https://github.com/spider-themes/spider-elements/issues/new" class="dashboard_btn" target="_blank">
+					<?php esc_html_e( 'Get Help Now', 'spider-elements' ); ?>
+                </a>
             </div>
         </div>
     </div>

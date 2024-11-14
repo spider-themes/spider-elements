@@ -350,7 +350,7 @@ Table of Content:
   height: 56px;
   background: #e2d4fa;
   border-radius: 50%;
-  font-size: 28px;
+  font-size: 24px;
   color: #411789;
   display: flex;
   align-items: center;
@@ -391,28 +391,29 @@ Table of Content:
 }
 .spel_dashboard .tab_contents .dashboard_btn {
   text-decoration: none;
-  padding: 16px 26px;
+  padding: 15px 26px;
   font-size: 16px;
   font-weight: 500;
-  background: #524cff;
+  color: #524cff;
   font-family: "Roboto", sans-serif;
   border-radius: 4px;
-  color: #fff;
+  border: 1px solid #524cff;
   display: inline-block;
   transition: all 0.3s;
   cursor: pointer;
-  border: 0;
 }
 .spel_dashboard .tab_contents .dashboard_btn:hover {
+  background: #524cff;
   color: #fff;
-  box-shadow: 0 10px 20px 0 rgba(27, 4, 116, 0.3);
 }
 .spel_dashboard .tab_contents .dashboard_banner {
-  text-align: center;
   background: url(../images/dashboard/dashboard_banner.png) no-repeat scroll center 0/cover;
-  padding: 98px 50px;
+  padding: 60px 50px;
   border-radius: 12px;
   overflow: hidden;
+}
+.spel_dashboard .tab_contents .dashboard_banner.text-center {
+  text-align: center;
 }
 .spel_dashboard .tab_contents .dashboard_banner h2 {
   color: #fff;
@@ -421,13 +422,13 @@ Table of Content:
   line-height: 1.1;
   font-family: "Roboto", sans-serif;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .spel_dashboard .tab_contents .dashboard_banner p {
   font-family: "Inter", sans-serif;
   color: #fff;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 1.8;
   margin-bottom: 0;
 }
 .spel_dashboard .tab_contents .widget_progress_item {
