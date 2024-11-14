@@ -13,7 +13,7 @@ $global_switcher = $element_opt['element_global_switcher'] ?? '';
 $is_checked = !empty ($global_switcher == 'on') ? ' checked' : '';
 $checked = !isset ($element_opt['element_global_switcher']) ? ' checked' : $is_checked;
 ?>
-<div id="elements" class="spel-tab-box">
+<div id="elements" class="tab-box">
     <div class="elements_tab_menu">
         <div class="tab_contents">
             <div class="icon">

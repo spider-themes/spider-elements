@@ -16,7 +16,7 @@ $checked = !isset ($opt['features_global_switcher']) ? ' checked' : $is_checked;
 $theme = wp_get_theme();
 $theme = in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
 ?>
-<div id="features" class="spel-tab-box">
+<div id="features" class="tab-box">
     
     <div class="elements_tab_menu">
         <div class="tab_contents">

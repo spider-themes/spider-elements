@@ -24,23 +24,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Tabs extends Widget_Base {
 
-	public function get_name() {
+	public function get_name(): string
+    {
 		return 'docy_tabs'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return esc_html__( 'Tabs', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-tabs spel-icon';
 	}
 
-	public function get_keywords() {
+	public function get_keywords(): array
+    {
 		return [ 'spider', 'spider elements', 'tab', 'tabs', 'tab widget' ];
 	}
 
-	public function get_categories() {
+	public function get_categories(): array
+    {
 		return [ 'spider-elements' ];
 	}
 
@@ -48,7 +53,8 @@ class Tabs extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends() {
+	public function get_style_depends(): array
+    {
 		return [ 'elegant-icon', 'spel-main' ];
 	}
 
@@ -56,7 +62,8 @@ class Tabs extends Widget_Base {
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends() {
+	public function get_script_depends(): array
+    {
 		return [ 'spel-el-widgets' ];
 	}
 
@@ -70,7 +77,8 @@ class Tabs extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls() {
+	protected function register_controls(): void
+    {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
@@ -85,7 +93,8 @@ class Tabs extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_content_control() {
+	public function elementor_content_control(): void
+    {
 
 		// ============================ Select Style  ===========================//
 		$this->start_controls_section(
@@ -308,7 +317,8 @@ class Tabs extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_style_control() {
+	public function elementor_style_control(): void
+    {
 
 		//============================ Tab Title Style ============================//
 		$this->start_controls_section(
@@ -443,7 +453,7 @@ class Tabs extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spel_tab_title , {{WRAPPER}} .header_tab_items .spel_tab_title ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tab_shortcode .tab_title , {{WRAPPER}} .header_tab_items .tab_title ' => 'color: {{VALUE}}',
 				)
 			]
 		);
@@ -456,7 +466,7 @@ class Tabs extends Widget_Base {
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title, 
-					{{WRAPPER}} .header_tab_items .spel_tab_title ',
+					{{WRAPPER}} .header_tab_items .tab_title ',
 
 			]
 		);
@@ -490,8 +500,8 @@ class Tabs extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .spel_tab_title:hover, 
-					 {{WRAPPER}} .header_tab_items .spel_tab_title:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tab_shortcode .tab_title:hover, 
+					 {{WRAPPER}} .header_tab_items .tab_title:hover' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -504,12 +514,11 @@ class Tabs extends Widget_Base {
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title:hover,
-					 {{WRAPPER}} .header_tab_items .spel_tab_title:hover',
+					 {{WRAPPER}} .header_tab_items .tab_title:hover',
 			]
 		);
 
 		$this->end_controls_tab(); //End Hover Tab Title
-
 
 		//=== Active Tab Title
 		$this->start_controls_tab(
@@ -524,30 +533,26 @@ class Tabs extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					 {{WRAPPER}} .header_tab_items .spel_tab_title.active' => 'color: {{VALUE}};',
+					 {{WRAPPER}} .header_tab_items .tab_title.active' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link.active' => 'color: {{VALUE}};',
 				)
 			]
 		);
 
-
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
+			\Elementor\Group_Control_Background::get_type(), [
 				'name'     => 'active_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
 				'selector' =>
 					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					{{WRAPPER}} .header_tab_items .spel_tab_title .active',
+					{{WRAPPER}} .header_tab_items .tab_title .active',
 
 			]
 		);
 
-
 		$this->add_control(
-			'active_tab_title_border_color',
-			[
+			'active_tab_title_border_color', [
 				'label'     => esc_html__( 'Top Border', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
@@ -739,6 +744,7 @@ class Tabs extends Widget_Base {
 		$navigation_arrow_class = ! empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
 		$sticky_tab_class       = ! empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
 		$tab_auto_class = !empty( $is_auto_play == 'yes' ) ? 'spe_auto_tabs' : '';
+
 
 		//================= Template Parts =================//
 		include "templates/tabs/tab-{$settings['style']}.php";

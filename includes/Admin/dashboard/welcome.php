@@ -13,7 +13,7 @@ $check_icon         = '<span class="valid"><i class="icon-check"></i></span>';
 $close_icon         = '<span class="invalid"><i class="icon-close"></i></span>';
 $environment        = spel_get_environment_info();
 ?>
-<div id="dashboard" class="spel-tab-box active">
+<div id="dashboard" class="tab-box active">
 
     <div class="dashboard_banner">
         <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/logo.png' ) ?>"

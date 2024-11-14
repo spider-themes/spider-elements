@@ -1,4 +1,4 @@
-<div id="api_settings" class="spel-tab-box">
+<div id="api_settings" class="tab-box">
     <div class="elements_tab_menu">
         <div class="tab_contents api_title_color">
             <div class="icon">

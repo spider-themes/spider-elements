@@ -105,7 +105,7 @@
 
             let target = $(this).attr("href");
 
-            $(".spel-tab-box")
+            $(".tab-box")
                 .removeClass("active")
                 .fadeOut(0, function () {
                     $(target).addClass("active").fadeIn(0);
@@ -155,8 +155,8 @@
                 $('.tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
 
                 // Tab content active
-                $('.tab_contents .spel-tab-box#' + activeButton).addClass('active');
-                $('.tab_contents .spel-tab-box:not(#' + activeButton + ')').removeClass('active');
+                $('.tab_contents .tab-box#' + activeButton).addClass('active');
+                $('.tab_contents .tab-box:not(#' + activeButton + ')').removeClass('active');
             }
         }
 

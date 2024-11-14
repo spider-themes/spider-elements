@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="go_premium" class="spel-tab-box">
+<div id="go_premium" class="tab-box">
     <div class="dashboard_banner premium_banner">
         <h2><?php esc_html_e('Get Spider Elements Addons Pro', 'spider-elements'); ?></h2>
         <p><?php esc_html_e('Purchase the premium version of spider Elements Addons to get additional and exclusive features.', 'spider-elements'); ?>

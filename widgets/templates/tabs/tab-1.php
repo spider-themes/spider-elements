@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
                 $active = $tab_count == 1 ? ' active' : '';
                 $selected = $tab_count == 1 ? 'true' : 'false';
                 $this->add_render_attribute($tab_title_setting_key, [
-                    'class' => [ 'nav-link tab-item-title spel_tab_title', $active ],
+                    'class' => [ 'nav-link tab-item-title tab_title', $active ],
                     'data-rel' => 'tab-content-' . $id_int . $tab_count,
                 ]);
                 ?>
@@ -40,38 +40,44 @@ if (!defined('ABSPATH')) {
         </ul>
         <span class="scroller-btn right" id="scroll_right_btn"><i class="arrow_carrot-right"></i></span>
     </div>
-    <div class="tab-content">
-        <?php
-        foreach ( $tabs as $index => $item ) {
-            $tab_count = $index + 1;
-            $active = $tab_count == 1 ? 'show active' : '';
-            $tab_content_setting_key = $this->get_repeater_setting_key('tab_content', 'tabs', $index);
-            $this->add_render_attribute($tab_content_setting_key, [
-                'class' => [ 'tab-pane p-0 tab_style ezd-tab-box', 'fade', $active ],
-                'id' => 'tab-content-' . $id_int . $tab_count,
-            ]);
-            ?>
-            <div <?php echo $this->get_render_attribute_string($tab_content_setting_key); ?>>
-                <?php
-                if ('content' == $item[ 'tabs_content_type' ]) {
-                    echo do_shortcode($item[ 'tab_content' ]);
-                } elseif ('template' == $item[ 'tabs_content_type' ]) {
-                    if (!empty($item[ 'primary_templates' ])) {
-                        echo \Elementor\Plugin::$instance->frontend->get_builder_content($item[ 'primary_templates' ], true);
-                    }
-                }
-                ?>
-            </div>
-            <?php
-        }
 
-        if ($is_navigation_arrow == 'yes') { ?>
-            <button class="btn btn-info ezd_tab_arrow_btn previous"><i class="arrow_carrot-left"></i></button>
-            <button class="btn btn-info ezd_tab_arrow_btn nexts"><i class="arrow_carrot-right"></i></button>
+    <?php
+    if ( !empty($tabs) ) { ?>
+        <div class="tab-content">
             <?php
-        }
-        ?>
-    </div>
+            foreach ( $tabs as $index => $item ) {
+                $tab_count = $index + 1;
+                $active = $tab_count == 1 ? 'show active' : '';
+                $tab_content_setting_key = $this->get_repeater_setting_key('tab_content', 'tabs', $index);
+                $this->add_render_attribute($tab_content_setting_key, [
+                    'class' => [ 'tab-pane p-0 tab_style ezd-tab-box', 'fade', $active ],
+                    'id' => 'tab-content-' . $id_int . $tab_count,
+                ]);
+                ?>
+                <div <?php echo $this->get_render_attribute_string($tab_content_setting_key); ?>>
+                    <?php
+                    if ('content' == $item[ 'tabs_content_type' ]) {
+                        echo do_shortcode($item[ 'tab_content' ]);
+                    } elseif ('template' == $item[ 'tabs_content_type' ]) {
+                        if (!empty($item[ 'primary_templates' ])) {
+                            echo \Elementor\Plugin::$instance->frontend->get_builder_content($item[ 'primary_templates' ], true);
+                        }
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+
+            if ($is_navigation_arrow == 'yes') { ?>
+                <button class="btn btn-info ezd_tab_arrow_btn previous"><i class="arrow_carrot-left"></i></button>
+                <button class="btn btn-info ezd_tab_arrow_btn nexts"><i class="arrow_carrot-right"></i></button>
+                <?php
+            }
+            ?>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 <script>
     ;(function ($) {

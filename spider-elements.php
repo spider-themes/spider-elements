@@ -266,11 +266,13 @@ if (!class_exists('SPEL')) {
             // Admin UI
             if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Assets.php';
-				require_once __DIR__ . '/includes/Admin/Admin_Settings.php';
+				require_once __DIR__ . '/includes/Admin/Dashboard.php';
 			}
 
             // Frontend UI
             require_once __DIR__ . '/includes/Frontend/Assets.php';
+
+            require_once __DIR__ . '/includes/template_library/Template_Library.php';
 
 		}
 
@@ -310,13 +312,17 @@ if (!class_exists('SPEL')) {
 
             // Admin UI
             if ( is_admin() ) {
-                new SPEL\includes\Admin\Admin_Settings();
+                new SPEL\includes\Admin\Dashboard();
                 new SPEL\includes\Admin\Assets();
             }
 
             // Frontend UI
             new SPEL\includes\Admin\Plugin_Installer();
             new SPEL\includes\Frontend\Assets();
+
+
+            // Template Library
+            new SPEL\includes\template_library\Template_Library();
 
             //new SPEL\includes\classes\Theme_Builder();
 
@@ -429,6 +435,7 @@ if (!class_exists('SPEL')) {
                 require_once( __DIR__ . '/widgets/Counter.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Counter() );
             }
+
             // if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
             //require_once( __DIR__ . '/widgets/Instagram.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Instagram() );
@@ -461,6 +468,7 @@ if (!class_exists('SPEL')) {
             define('SPEL_JS', SPEL_URL . '/assets/js');
             define('SPEL_IMG', SPEL_URL . '/assets/images');
             define('SPEL_VEND', SPEL_URL . '/assets/vendors');
+
 		}
 
 
