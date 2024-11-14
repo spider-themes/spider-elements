@@ -38,9 +38,8 @@ $integrations = [
 
 <div id="integration" class="tab-box">
     <div class="dashboard_banner integration_banner">
-        <h2><?php esc_html_e( 'Integration Our other plugins', 'spider-elements' ); ?></h2>
-        <p><?php _e( 'We are excited to announce that we have added new Widgets, Template Kits, and other Elementor<br> features to enhance your website building experience. Stay tuned for the weekly updates!',
-				'spider-elements' ); ?></p>
+        <h2><?php esc_html_e( 'Elevate Your WordPress Website to the Next Level!', 'spider-elements' ); ?></h2>
+        <p><?php esc_html_e( 'Explore our versatile range of plugins tailored to meet every need for WordPress, Gutenberg, Elementor, and WooCommerce. Discover solutions that empower your site with enhanced functionality and seamless performance.', 'spider-elements' ); ?></p>
     </div>
     <div class="ezd-grid ezd-grid-cols-12">
 		<?php
