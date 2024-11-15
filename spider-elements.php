@@ -272,7 +272,7 @@ if (!class_exists('SPEL')) {
             // Frontend UI
             require_once __DIR__ . '/includes/Frontend/Assets.php';
 
-            require_once __DIR__ . '/includes/template_library/Template_Library.php';
+            //require_once __DIR__ . '/includes/template_library/Template_Library.php';
 
 		}
 
@@ -322,7 +322,7 @@ if (!class_exists('SPEL')) {
 
 
             // Template Library
-            new SPEL\includes\template_library\Template_Library();
+            //new SPEL\includes\template_library\Template_Library();
 
             //new SPEL\includes\classes\Theme_Builder();
 

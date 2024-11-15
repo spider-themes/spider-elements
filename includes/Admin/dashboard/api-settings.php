@@ -24,14 +24,14 @@
     </div>
 
     <div class="elements_tab" id="api_filter">
-        <div class="filter_data  active" data-filter="*">
+        <div class="filter_data active" data-filter="*">
             <i class="icon-star"></i><?php esc_html_e('All', 'spider-elements'); ?>
         </div>
-        <div class="filter_data " data-filter=".api_free">
+        <div class="filter_data" data-filter=".api_free">
             <i class="icon-gift"></i><?php esc_html_e('Free', 'spider-elements'); ?>
         </div>
-        <div class="filter_data " data-filter=".api_pro">
-            <i class="icon-pro-badge"></i><?php esc_html_e('Pro', 'spider-elements'); ?>
+        <div class="filter_data" data-filter=".api_pro">
+            <i class="icon-premium"></i><?php esc_html_e('Pro', 'spider-elements'); ?>
         </div>
     </div>
 

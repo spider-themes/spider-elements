@@ -596,29 +596,59 @@
         //======================== Tabs =========================== //
         tabs: function ($scope) {
 
-            let nextBtn = $scope.find("button.ezd_tab_arrow_btn.nexts");
-            let prevBtn = $scope.find("button.ezd_tab_arrow_btn.previous");
+            // Tab Body Content Arrow next/Pres
+            let tabContainer = $scope.find(".spel-tab-menu");
+            let tabBtn = tabContainer.find("li button");
+            let tabContent = $scope.find(".tab-content .tab-box");
+            let nextBtn = $scope.find(".tab_arrow_btn.next");
+            let prevBtn = $scope.find(".tab_arrow_btn.previous");
 
-            if (nextBtn.length > 0) {
-                nextBtn.on("click", function () {
-                    let activeTab = $scope.find("ul.nav-tabs .nav-item > .active");
-                    let nextTab = activeTab.parent().next("li").find(".tab-item-title");
-                    nextTab.trigger("click");
-                });
+            function changeActiveTab(newIndex) {
+                tabBtn.removeClass("active");
+                tabContent.removeClass("show active");
+
+                let newTab = tabBtn.eq(newIndex);
+                let $newContent = tabContent.eq(newIndex);
+
+                newTab.addClass("active");
+                $newContent.addClass("show active");
+
+                scrollToTab(newTab);
             }
 
-            if (prevBtn.length > 0) {
-                prevBtn.on("click", function () {
-                    let activeTab = $scope.find("ul.nav-tabs .nav-item > .active");
-                    let prevTab = activeTab.parent().prev("li").find(".tab-item-title");
-                    prevTab.trigger("click");
-                });
+            function scrollToTab($activeTab) {
+                let containerWidth = tabContainer.width();
+                let scrollLeft = tabContainer.scrollLeft();
+                let tabLeft = $activeTab.position().left + scrollLeft;
+                let tabRight = tabLeft + $activeTab.outerWidth();
+
+                if (tabLeft < scrollLeft) {
+                    tabContainer.animate({ scrollLeft: tabLeft }, 300);
+                } else if (tabRight > scrollLeft + containerWidth) {
+                    tabContainer.animate({ scrollLeft: tabRight - containerWidth }, 300);
+                }
             }
 
+            nextBtn.on("click", function () {
+                let activeIndex = tabBtn.index(tabBtn.filter(".active"));
+                let newIndex = (activeIndex + 1) % tabBtn.length;
+                changeActiveTab(newIndex);
+            });
 
-            // Tabs Arrow Icons show/hide automatic when item is more than container
+            prevBtn.on("click", function () {
+                let activeIndex = tabBtn.index(tabBtn.filter(".active"));
+                let newIndex = (activeIndex - 1 + tabBtn.length) % tabBtn.length;
+                changeActiveTab(newIndex);
+            });
+
+            let initialActiveTab = tabBtn.filter(".active");
+            if (initialActiveTab.length) {
+                scrollToTab(initialActiveTab);
+            } // End Tab Body Content Arrow next/Pres
+
+
+            // Tab Arrow Icons show/hide automatic when item is more than container
             let tabSliderContainers = $scope.find(".tabs_sliders");
-
             tabSliderContainers.each(function () {
                 let tabWrapWidth = $(this).outerWidth();
                 let totalWidth = 0;
@@ -676,7 +706,7 @@
                 navWrap.on('scroll', updateScrollerButtons);
                 updateScrollerButtons();
 
-                // Center the active tab on load
+                // Center the active tab on a load
                 let activeTab = navWrap.find(".nav-item .nav-link.active");
                 if (activeTab.length) {
                     let activeTabPosition = activeTab.position().left;
@@ -712,6 +742,7 @@
 
         //======================== Pricing Table Tabs =========================== //
         pricing_table_tabs: function ($scope) {
+
             //============= Currency Changes
             let pricingCurrency = $scope.find(".pricing-currency");
             if (pricingCurrency.length > 0) {
@@ -733,20 +764,17 @@
             }
 
             // custom tab js
-            let pricingTabjs = $scope.find(".ezd-tab-menu li button");
-            pricingTabjs.on("click", function (e) {
+            let pricingTab = $scope.find(".ezd-tab-menu li button");
+            pricingTab.on("click", function (e) {
                 e.preventDefault();
 
                 // Remove active class from all tabs within the same menu
-                $(this)
-                    .closest(".ezd-tab-menu")
-                    .find("li button")
-                    .removeClass("active");
+                $(this).closest(".ezd-tab-menu").find("li button").removeClass("active");
 
                 // Add active class to the clicked tab
                 $(this).addClass("active");
 
-                var target = $(this).attr("data-rel");
+                let target = $(this).attr("data-rel");
 
                 $("#" + target)
                     .addClass("active")

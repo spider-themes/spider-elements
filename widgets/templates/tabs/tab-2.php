@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 <section class="header_tabs_area">
     <div class="header_tab_items sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
         <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>
-        <ul class="nav nav-tabs slide_nav_tabs ezd-tab-menu <?php echo esc_attr($tab_auto_class); ?>">
+        <ul class="nav nav-tabs slide_nav_tabs spel-tab-menu <?php echo esc_attr($tab_auto_class); ?>">
             <?php
             $i = 0.2;
             if (is_array($tabs) && !empty($tabs)) {
@@ -16,22 +16,30 @@ if (!defined('ABSPATH')) {
                     $active = $tab_count == 1 ? 'active' : '';
                     $selected = $tab_count == 1 ? 'true' : 'false';
                     $this->add_render_attribute($tab_title_setting_key, [
-                        'class' => [ 'nav-link tab-item-title spe_tab_title', $active ],
+                        'class' => [ 'nav-link tab-item-title', $active ],
                         'data-rel' => 'tab-content-' . $id_int . $tab_count,
                     ]);
                     ?>
                     <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
                         <button <?php echo $this->get_render_attribute_string($tab_title_setting_key); ?>>
-                            <?php if ($is_auto_play == 'yes') : ?>
+                            <?php
+                            if ( $is_auto_play == 'yes' ) { ?>
                                 <div class="tab_progress">
                                     <div class="progress-bar"></div>
                                 </div>
-                            <?php endif; ?>
-                            <?php if ($is_auto_numb == 'yes') : ?>
+                                <?php
+                            }
+                            if ( $is_auto_numb == 'yes' ) { ?>
                                 <span class="numb"><?php echo esc_html($tab_count) ?></span>
-                            <?php endif; ?>
-                            <?php \Elementor\Icons_Manager::render_icon($item[ 'icon' ], [ 'aria-hidden' => 'true' ]); ?>
-                            <?php echo esc_html($item[ 'tab_title' ]); ?>
+                                <?php
+                            }
+                            if ( !empty($item['icon']['value']) ) {
+                                \Elementor\Icons_Manager::render_icon($item['icon']);
+                            }
+                            if ( !empty($item['tab_title']) ) {
+                                echo esc_html($item[ 'tab_title' ]);
+                            }
+                            ?>
                         </button>
                     </li>
                     <?php
@@ -51,7 +59,7 @@ if (!defined('ABSPATH')) {
                     $active = $tab_count == 1 ? 'show active' : '';
                     $tab_content_setting_key = $this->get_repeater_setting_key('tab_content', 'tabs', $index);
                     $this->add_render_attribute($tab_content_setting_key, [
-                        'class' => [ 'tab-pane p-0 tab_style ezd-tab-box', 'fade', $active ],
+                        'class' => [ 'tab-pane p-0 tab_style tab-box', 'fade', $active ],
                         'id' => 'tab-content-' . $id_int . $tab_count,
                     ]);
                     ?>
@@ -90,7 +98,7 @@ if (!defined('ABSPATH')) {
             // Function to handle tab change (Existing functionality)
             function changeTab(tabJs) {
                 // Remove active class from all tabs within the same menu
-                tabJs.closest(".ezd-tab-menu").find("li button").removeClass("active");
+                tabJs.closest(".spel-tab-menu").find("li button").removeClass("active");
 
                 tabJs.addClass("active");
 
@@ -98,7 +106,7 @@ if (!defined('ABSPATH')) {
 
                 $("#" + target)
                     .addClass("active")
-                    .siblings(".ezd-tab-box")
+                    .siblings(".tab-box")
                     .removeClass("active");
 
                 // Reset progress bar for all tabs except the clicked one
@@ -119,7 +127,7 @@ if (!defined('ABSPATH')) {
             }
 
             // Tab click event handler and auto-cycle tabs
-            var tabJs = $(".ezd-tab-menu li button");
+            var tabJs = $(".spel-tab-menu li button");
             var firstTab = tabJs.first();
             changeTab(firstTab);
             updateProgressBar(firstTab.find(".progress-bar"), 5000);
@@ -147,7 +155,7 @@ if (!defined('ABSPATH')) {
                 tabCycle = setInterval(autoCycleTabs, intervalDuration);
 
                 // Pause auto-cycle on hover
-                $(".ezd-tab-menu li button").hover(
+                $(".spel-tab-menu li button").hover(
                     function () {
                         clearInterval(tabCycle);
                         $(".progress-bar").stop();

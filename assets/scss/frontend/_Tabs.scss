@@ -16,47 +16,43 @@
       margin: 0;
     }
 
-    .ezd_tab_arrow_btn {
+    .tab_arrow_btn {
       background: #0dcaf0;
       border-color: #0dcaf0;
       color: #fff;
-    }
+      &.previous, &.next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        border-radius: 0;
+        background: #e1ebf0;
+        border: 0;
+        color: #4c4cf1;
+        outline: none;
+        box-shadow: none;
+        transition: all 0.4s linear;
+        height: 32px;
+        width: 19px;
+        text-align: center;
+        opacity: 0;
 
-    .previous,
-    .nexts {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 0;
-      border-radius: 0;
-      background: #e1ebf0;
-      border: 0;
-      color: #4c4cf1;
-      outline: none;
-      box-shadow: none;
-      transition: all 0.4s linear;
-      height: 32px;
-      width: 19px;
-      text-align: center;
-      opacity: 0;
+        &:hover {
+          background: #A77DEF;
+          color: #fff;
+        }
+      }
+      &.previous {
+        left: 0;
+      }
 
-      &:hover {
-        background: #A77DEF;
-        color: #fff;
+      &.next {
+        right: 0;
       }
     }
-
-    .previous {
-      left: 0;
-    }
-
-    .nexts {
-      right: 0;
-    }
-
     &:hover {
       .previous,
-      .nexts {
+      .next {
         opacity: 1;
       }
     }

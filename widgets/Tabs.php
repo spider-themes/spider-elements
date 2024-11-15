@@ -233,8 +233,7 @@ class Tabs extends Widget_Base {
 		);
 
 		$this->add_control(
-			'is_auto_numb',
-			[
+			'is_auto_numb', [
 				'label'        => esc_html__( 'Auto Numbering', 'spider-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'description'  => esc_html__( 'Show/Hide auto numbering for tab title', 'spider-elements' ),
@@ -322,54 +321,21 @@ class Tabs extends Widget_Base {
 
 		//============================ Tab Title Style ============================//
 		$this->start_controls_section(
-			'style_tabs_sec',
-			[
+			'style_tabs_sec', [
 				'label' => esc_html__( 'Tab Title', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
+			Group_Control_Typography::get_type(), [
 				'name'      => 'tab_item_typo',
-				'selector'  => '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link, {{WRAPPER}} .header_tab_items .nav-tabs .nav-item .nav-link',
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_control(
-			'flex_column_gap',
-			[
-				'label' => esc_html__( 'Gap', 'spider-elements' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em'],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-					'em' => [
-						'min' => 0,
-						'max' => 10,
-						'step' => 0.1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs' => 'gap: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .header_tabs_area .nav-tabs' => 'gap: {{SIZE}}{{UNIT}};',
-				],
+				'selector'  => '{{WRAPPER}} .nav-tabs .nav-item .nav-link',
 			]
 		);
 
 		$this->add_responsive_control(
-			'icon_size',
-			[
+			'icon_size', [
 				'label'      => esc_html__( 'Icon Size', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
@@ -388,16 +354,42 @@ class Tabs extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link i, {{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link i ' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
+        $this->add_control(
+            'flex_column_gap', [
+                'label' => esc_html__( 'Gap Between Tab', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px', '%', 'em'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 0.1,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .sticky_tab_item .nav-tabs' => 'gap: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(),
-			[
+			\Elementor\Group_Control_Border::get_type(), [
 				'name' => 'title_border',
-				'selector' => '{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link',
+				'selector' => '{{WRAPPER}} .nav-tabs .nav-item .nav-link',
 			]
 		);
 
@@ -408,28 +400,24 @@ class Tabs extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link'    => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'tab_pad',
-			[
+			'tab_pad', [
 				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link'    => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .header_tabs_area .nav-tabs .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'tab_title_hr',
-			[
+			'tab_title_hr', [
 				'type' => Controls_Manager::DIVIDER,
 			]
 		);
@@ -453,7 +441,7 @@ class Tabs extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .tab_title , {{WRAPPER}} .header_tab_items .tab_title ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link' => 'color: {{VALUE}}',
 				)
 			]
 		);
@@ -464,25 +452,7 @@ class Tabs extends Widget_Base {
 				'name'     => 'normal_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
-				'selector' =>
-					'{{WRAPPER}} .tab_shortcode .tab-item-title, 
-					{{WRAPPER}} .header_tab_items .tab_title ',
-
-			]
-		);
-
-
-		$this->add_control(
-			'normal_tab_icon_bg_color',
-			[
-				'label'     => esc_html__( 'Icon Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title > .numb' => 'background: {{VALUE}};',
-				),
-				'condition' => [
-					'is_auto_numb' => 'yes',
-				]
+				'selector' => '{{WRAPPER}} .nav-tabs .nav-item .nav-link',
 			]
 		);
 
@@ -500,8 +470,7 @@ class Tabs extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .tab_title:hover, 
-					 {{WRAPPER}} .header_tab_items .tab_title:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link:hover' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -512,9 +481,7 @@ class Tabs extends Widget_Base {
 				'name'     => 'hover_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
-				'selector' =>
-					'{{WRAPPER}} .tab_shortcode .tab-item-title:hover,
-					 {{WRAPPER}} .header_tab_items .tab_title:hover',
+				'selector' => '{{WRAPPER}} .nav-tabs .nav-item .nav-link:hover',
 			]
 		);
 
@@ -532,9 +499,7 @@ class Tabs extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					 {{WRAPPER}} .header_tab_items .tab_title.active' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tab_shortcode .nav-tabs .nav-item .nav-link.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link.active' => 'color: {{VALUE}};',
 				)
 			]
 		);
@@ -544,10 +509,7 @@ class Tabs extends Widget_Base {
 				'name'     => 'active_tab_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
-				'selector' =>
-					'{{WRAPPER}} .tab_shortcode .tab-item-title.active, 
-					{{WRAPPER}} .header_tab_items .tab_title .active',
-
+				'selector' => '{{WRAPPER}} .nav-tabs .nav-item .nav-link.active'
 			]
 		);
 
@@ -556,7 +518,7 @@ class Tabs extends Widget_Base {
 				'label'     => esc_html__( 'Top Border', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tabs_sliders ul.nav-tabs .nav-item .nav-link:before' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .nav-tabs .nav-item .nav-link:before' => 'background: {{VALUE}};',
 				),
 				'condition' => [
 					'style' => [ '1' ]
@@ -564,24 +526,90 @@ class Tabs extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'active_tab_icon_bg_color',
-			[
-				'label'     => esc_html__( 'Icon Background Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .tab-item-title.active > .numb,
-                     {{WRAPPER}} .tab-item-title:hover > .numb' => 'background: {{VALUE}};',
-				),
-				'condition' => [
-					'is_auto_numb' => 'yes',
-				]
-			]
-		);
-
 		$this->end_controls_tab(); // End Active Tab Title
+        $this->end_controls_tabs();
 
 		$this->end_controls_section(); // End Tab Title Style
+
+
+		//============================ Style Auto Numbering ============================//
+        $this->start_controls_section(
+            'style_auto_num', [
+                'label' => esc_html__( 'Tab Auto Number', 'spider-elements' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'is_auto_numb' => 'yes'
+                ]
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'auto_num_style_tabs'
+        );
+
+        //===== Normal Tab
+        $this->start_controls_tab(
+            'style_tab_normal_auto_num', [
+                'label' => esc_html__( 'Normal', 'spider-elements' ),
+            ]
+        );
+
+        $this->add_control(
+            'normal_tab_title_auto_num_color', [
+                'label' => esc_html__( 'Text Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .nav-tabs .nav-item .nav-link .numb' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'normal_tab_title_auto_num_bg_color', [
+                'label' => esc_html__( 'Background Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .nav-tabs .nav-item .nav-link .numb' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab(); //End Normal Tab
+
+        //===== Hover Tab
+        $this->start_controls_tab(
+            'style_tab_active_auto_num',
+            [
+                'label' => esc_html__( 'Active', 'spider-elements' ),
+            ]
+        );
+
+        $this->add_control(
+            'active_tab_title_auto_num_color', [
+                'label' => esc_html__( 'Text Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .nav-tabs .nav-item .nav-link.active .numb' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'active_tab_title_auto_num_bg_color', [
+                'label' => esc_html__( 'Background Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .nav-tabs .nav-item .nav-link.active .numb' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab(); // End Hover Tab
+
+        $this->end_controls_tabs(); // End Style Tabs
+
+        $this->end_controls_section(); //End Auto Numbering
+
 
 		//============================ Tab ProgressBar Style ============================//
 		$this->start_controls_section(
@@ -636,9 +664,8 @@ class Tabs extends Widget_Base {
 
 		//=============================== Content Section ===============================//
 		$this->start_controls_section(
-			'style_content',
-			[
-				'label' => esc_html__( 'Content', 'spider-elements' ),
+			'style_content', [
+				'label' => esc_html__( 'Contents', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -653,12 +680,11 @@ class Tabs extends Widget_Base {
 		);
 
 		$this->add_control(
-			'tabs_content_text_color',
-			[
+			'tabs_content_text_color', [
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .tab-content .tab_style, {{WRAPPER}} .tab-content .tab-pane' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tab-content .tab_style' => 'color: {{VALUE}}',
 				)
 			]
 		);
@@ -676,7 +702,7 @@ class Tabs extends Widget_Base {
 			[
 				'name'     => 'tabs_border',
 				'label'    => esc_html__( 'Border', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content',
+				'selector' => '{{WRAPPER}} .tab-content',
 			]
 		);
 
@@ -687,19 +713,18 @@ class Tabs extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tab_shortcode .tab-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tab-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'content-pad',
-			[
+			'content_padding', [
 				'label'      => esc_html__( 'Padding', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tab_shortcode .tab-content, {{WRAPPER}} .header_tab_content .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -707,10 +732,9 @@ class Tabs extends Widget_Base {
 		$this->end_controls_section(); // End Content Section
 
 
-		//=============================== Navigation Arrow ===============================//
+		//=============================== Style Navigation Arrow ===============================//
 		$this->start_controls_section(
-			'style_nav_arrow',
-			[
+			'style_nav_arrow', [
 				'label'     => esc_html__( 'Navigation Arrow', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
@@ -718,6 +742,71 @@ class Tabs extends Widget_Base {
 				],
 			]
 		);
+
+        $this->start_controls_tabs(
+            'nav_arrow_style_tabs'
+        );
+
+        //===== Normal Tab
+        $this->start_controls_tab(
+            'style_tab_normal_nav_arrow', [
+                'label' => esc_html__( 'Normal', 'spider-elements' ),
+            ]
+        );
+
+        $this->add_control(
+            'normal_nav_arrow_color', [
+                'label' => esc_html__( 'Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tab-content .tab_arrow_btn i' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'normal_nav_arrow_bg_color', [
+                'label' => esc_html__( 'Background Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tab-content .tab_arrow_btn' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab(); //End Normal Tab
+
+        //===== Hover Tab
+        $this->start_controls_tab(
+            'style_tab_hover_nav_arrow',
+            [
+                'label' => esc_html__( 'Hover', 'spider-elements' ),
+            ]
+        );
+
+        $this->add_control(
+            'hover_nav_arrow_color', [
+                'label' => esc_html__( 'Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tab-content .tab_arrow_btn:hover i' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'hover_nav_arrow_bg_color', [
+                'label' => esc_html__( 'Background Color', 'spider-elements' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tab-content .tab_arrow_btn:hover' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab(); // End Hover Tab
+
+        $this->end_controls_tabs(); // End Style Tabs
 
 		$this->end_controls_section(); // End Navigation Arrow
 
@@ -733,7 +822,8 @@ class Tabs extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render() {
+	protected function render(): void
+    {
 
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key

@@ -3814,13 +3814,12 @@ button.btn.btn-link:focus {
 .tab_shortcode .tab-content p {
   margin: 0;
 }
-.tab_shortcode .tab-content .ezd_tab_arrow_btn {
+.tab_shortcode .tab-content .tab_arrow_btn {
   background: #0dcaf0;
   border-color: #0dcaf0;
   color: #fff;
 }
-.tab_shortcode .tab-content .previous,
-.tab_shortcode .tab-content .nexts {
+.tab_shortcode .tab-content .tab_arrow_btn.previous, .tab_shortcode .tab-content .tab_arrow_btn.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -3837,19 +3836,18 @@ button.btn.btn-link:focus {
   text-align: center;
   opacity: 0;
 }
-.tab_shortcode .tab-content .previous:hover,
-.tab_shortcode .tab-content .nexts:hover {
+.tab_shortcode .tab-content .tab_arrow_btn.previous:hover, .tab_shortcode .tab-content .tab_arrow_btn.next:hover {
   background: #A77DEF;
   color: #fff;
 }
-.tab_shortcode .tab-content .previous {
+.tab_shortcode .tab-content .tab_arrow_btn.previous {
   left: 0;
 }
-.tab_shortcode .tab-content .nexts {
+.tab_shortcode .tab-content .tab_arrow_btn.next {
   right: 0;
 }
 .tab_shortcode .tab-content:hover .previous,
-.tab_shortcode .tab-content:hover .nexts {
+.tab_shortcode .tab-content:hover .next {
   opacity: 1;
 }
 
