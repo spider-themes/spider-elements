@@ -3,10 +3,10 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
-<section class="header_tabs_area">
+<section class="header_tabs_area spel-tabs">
     <div class="header_tab_items sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
-        <span class="scroller-btn left"><i class="arrow_carrot-left"></i></span>
-        <ul class="nav nav-tabs slide_nav_tabs spel-tab-menu <?php echo esc_attr($tab_auto_class); ?>">
+        <span class="scroller-btn left" id="scroll_left_btn"><i class="arrow_carrot-left"></i></span>
+        <ul class="nav nav-tabs slide_nav_tabs spel-tab-menu <?php echo esc_attr($tab_auto_class); ?>" data-autoplay="<?php echo esc_attr($is_auto_play ? 'yes' : 'none'); ?>">
             <?php
             $i = 0.2;
             if (is_array($tabs) && !empty($tabs)) {
@@ -48,7 +48,7 @@ if (!defined('ABSPATH')) {
             }
             ?>
         </ul>
-        <span class="scroller-btn right" id="right"><i class="arrow_carrot-right"></i></span>
+        <span class="scroller-btn right" id="scroll_right_btn"><i class="arrow_carrot-right"></i></span>
     </div>
     <div class="header_tab_content">
         <div class="tab-content">
@@ -77,10 +77,9 @@ if (!defined('ABSPATH')) {
                     <?php
                 }
             }
-
             if ($is_navigation_arrow == 'yes') { ?>
-                <button class="btn btn-info btn-lg previous"><i class="arrow_carrot-left"></i></button>
-                <button class="btn btn-info btn-lg next"><i class="arrow_carrot-right"></i></button>
+                <button class="btn btn-info tab_arrow_btn previous"><i class="arrow_carrot-left"></i></button>
+                <button class="btn btn-info tab_arrow_btn next"><i class="arrow_carrot-right"></i></button>
                 <?php
             }
             ?>
@@ -89,117 +88,70 @@ if (!defined('ABSPATH')) {
 </section>
 
 <script>
-    ;(function ($) {
+    (function ($) {
         'use strict';
 
         $(document).ready(function () {
-            var isAutoPlay = '<?php echo esc_js($is_auto_play); ?>'; // Get auto-play status from PHP
+            const intervalDuration = 5000; // Set the interval duration in milliseconds
+            let currentIndex = 0; // Start with the first tab
+            const tabBtns = $(".spel-tab-menu li button");
+            const progressBars = $(".spel-tab-menu .progress-bar");
+            let autoplayInterval;
 
-            // Function to handle tab change (Existing functionality)
-            function changeTab(tabJs) {
-                // Remove active class from all tabs within the same menu
-                tabJs.closest(".spel-tab-menu").find("li button").removeClass("active");
+            // Function to reset and start the progress bar animation
+            function startProgressBar(index) {
+                progressBars.width(0); // Reset all progress bars
+                progressBars.eq(index).css("transition-duration", `${intervalDuration}ms`).width("100%"); // Animate the current progress bar
+            }
 
-                tabJs.addClass("active");
+            // Function to switch tabs
+            function changeTab(index) {
+                tabBtns.removeClass("active"); // Remove active class from all tabs
+                progressBars.width(0); // Reset all progress bars
+                tabBtns.eq(index).addClass("active"); // Activate the current tab
 
-                var target = tabJs.attr("data-rel");
-
+                const target = tabBtns.eq(index).attr("data-rel");
                 $("#" + target)
-                    .addClass("active")
+                    .addClass("active show")
                     .siblings(".tab-box")
-                    .removeClass("active");
+                    .removeClass("active show");
 
-                // Reset progress bar for all tabs except the clicked one
-                $(".progress-bar").not(tabJs.find(".progress-bar")).stop().width(0);
-
-                // Update progress bar for the clicked tab
-                updateProgressBar(tabJs.find(".progress-bar"), 5000);
+                startProgressBar(index); // Start progress bar for the current tab
             }
 
-            // Function to update progress bar
-            function updateProgressBar(progressBar, duration) {
-                progressBar.stop().width(0).animate({
-                        width: "100%",
-                    },
-                    duration,
-                    "linear"
-                );
-            }
-
-            // Tab click event handler and auto-cycle tabs
-            var tabJs = $(".spel-tab-menu li button");
-            var firstTab = tabJs.first();
-            changeTab(firstTab);
-            updateProgressBar(firstTab.find(".progress-bar"), 5000);
-
-            tabJs.on("click", function (e) {
-                e.preventDefault();
-                changeTab($(this));
-                return false;
-            });
-
-            // Auto-cycle tabs with progress bar (if isAutoPlay is enabled)
-            var currentIndex = 0;
-            var intervalDuration = 5000; // Set the interval duration in milliseconds
-
+            // Auto-cycle tabs with progress bar
             function autoCycleTabs() {
-                var nextIndex = (currentIndex + 1) % tabJs.length;
-                var activeTab = tabJs.eq(nextIndex);
-                changeTab(activeTab);
-                currentIndex = nextIndex;
+                currentIndex = (currentIndex + 1) % tabBtns.length;
+                changeTab(currentIndex);
             }
 
-            // Start auto-play if isAutoPlay is 'yes'
-            var tabCycle;
-            if (isAutoPlay === 'yes') {
-                tabCycle = setInterval(autoCycleTabs, intervalDuration);
-
-                // Pause auto-cycle on hover
-                $(".spel-tab-menu li button").hover(
-                    function () {
-                        clearInterval(tabCycle);
-                        $(".progress-bar").stop();
-                    },
-                    function () {
-                        tabCycle = setInterval(autoCycleTabs, intervalDuration);
-                        updateProgressBar($("button.active .progress-bar"), intervalDuration);
-                    }
-                );
-            }
-
-            // New functionality: check for content overflow and show/hide scroller buttons
-            function checkOverflow() {
-                var tabContainer = $('.slide_nav_tabs');
-                var leftBtn = $('.scroller-btn.left');
-                var rightBtn = $('.scroller-btn.right');
-                var containerWidth = tabContainer.outerWidth();
-                var contentWidth = tabContainer[0].scrollWidth;
-
-                if (contentWidth > containerWidth) {
-                    leftBtn.show();
-                    rightBtn.show();
-                } else {
-                    leftBtn.hide();
-                    rightBtn.hide();
-                }
-            }
-
-            // Call checkOverflow initially to check on page load
-            checkOverflow();
-
-            // Recheck overflow when the window is resized
-            $(window).on('resize', function () {
-                checkOverflow();
+            // Pause autoplay on hover
+            tabBtns.on("mouseenter", function () {
+                clearInterval(autoplayInterval);
+                progressBars.stop(); // Stop the progress bar animation
             });
 
-            // Scroll left button functionality
-            $('.scroller-btn.left').on('click', function () {
-                $('.slide_nav_tabs').animate({ scrollLeft: '-=100px' }, 'fast');
+            // Resume autoplay on mouse leave
+            tabBtns.on("mouseleave", function () {
+                autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
+                const activeIndex = tabBtns.index(tabBtns.filter(".active"));
+                startProgressBar(activeIndex); // Restart progress bar animation for the active tab
             });
 
-            // Scroll right button functionality
-            $('.scroller-btn.right').on('click', function () {
-                $('.slide_nav_tabs').animate({ scrollLeft: '+=100px' }, 'fast');
+            // Initialize autoplay
+            if (tabBtns.length > 0) {
+                changeTab(currentIndex); // Start with the first tab
+                autoplayInterval = setInterval(autoCycleTabs, intervalDuration); // Start autoplay
+            }
+
+            // Optional: Pause autoplay when user interacts with the tab content (e.g., scroll)
+            $(".tab-content").on("mouseenter", function () {
+                clearInterval(autoplayInterval);
+                progressBars.stop();
+            }).on("mouseleave", function () {
+                autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
+                const activeIndex = tabBtns.index(tabBtns.filter(".active"));
+                startProgressBar(activeIndex);
             });
         });
     })(jQuery);

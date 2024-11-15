@@ -630,7 +630,7 @@ class Tabs extends Widget_Base {
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
 				'selector' =>
-					'{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .progress-bar,{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link.active .tab_progress:before', 
+					'{{WRAPPER}} .tab_auto_play .nav-item .nav-link .progress-bar,{{WRAPPER}} .tab_auto_play .nav-item .nav-link.active .tab_progress:before',
 
 			]
 		);
@@ -654,7 +654,7 @@ class Tabs extends Widget_Base {
 					'size' => '2',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .progress-bar,{{WRAPPER}} .spe_auto_tabs .nav-item .nav-link .tab_progress' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tab_auto_play .nav-item .nav-link .progress-bar,{{WRAPPER}} .tab_auto_play .nav-item .nav-link .tab_progress' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -833,7 +833,7 @@ class Tabs extends Widget_Base {
 
 		$navigation_arrow_class = ! empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
 		$sticky_tab_class       = ! empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
-		$tab_auto_class = !empty( $is_auto_play == 'yes' ) ? 'spe_auto_tabs' : '';
+		$tab_auto_class = !empty( $is_auto_play == 'yes' ) ? 'tab_auto_play' : '';
 
 
 		//================= Template Parts =================//

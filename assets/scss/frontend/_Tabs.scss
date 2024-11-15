@@ -1,7 +1,5 @@
 /*============== Tab Styles ==========*/
-.tab_shortcode {
-  margin-bottom: 0 !important;
-
+.spel-tabs {
   .tab-content {
     display: block;
     color: #6A737C;
@@ -10,7 +8,7 @@
     border-radius: 0 5px 5px 5px;
     background-color: #fff;
     position: relative;
-    margin-top: -1px; 
+    margin-top: -1px;
 
     p {
       margin: 0;
@@ -57,6 +55,10 @@
       }
     }
   }
+}
+
+.tab_shortcode {
+  margin-bottom: 0 !important;
 }
 
 .header_tab_items,
@@ -249,23 +251,13 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     background: #f9f9f9;
     box-shadow: 4px 0 9px 1px rgba(0, 0, 0, 0.03);
     line-height: 44px;
-    z-index: 1;
+    z-index: 9;
     text-align: center;
-
-    /*&:before {
-      content: "";
-      width: 20px;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(249, 249, 249, 0.8) 30%, rgb(249, 249, 249) 100%, rgb(249, 249, 249) 16%, rgb(249, 249, 249) 100%);
-      position: absolute;
-      right: -20px;
-    }*/
-
     &.right {
       right: 0;
       left: auto;
 
-      &:before {
+      &::before {
         left: -20px;
         right: auto;
       }
@@ -306,7 +298,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
           align-items: center;
           transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
-          &:before {
+          &::before {
             content: "";
             width: 0;
             height: 2.1px;
@@ -323,13 +315,26 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
             color: #242729;
             border-color: #ebebeb;
             border-bottom-color: transparent;
-            z-index: 2;
-
-            &:before {
+            z-index: 1;
+            &::before {
               opacity: 1;
               width: 100%;
             }
+            .tab_progress {
+              .progress-bar {
+                background: #a77def;
+                height: 2px;
+              }
+            }
           }
+
+          .tab_progress {
+            .progress-bar {
+              background: transparent;
+              height: 2px;
+            }
+          }
+
         }
 
         &:last-child {
@@ -535,13 +540,13 @@ body.remove {
 /* Auto Tabs Styles */
 .tab_shortcode,
 .header_tab_items {
-  .spe_auto_tabs {
+  .tab_auto_play {
     .nav-item {
       .nav-link {
         position: relative;
         overflow: hidden;
 
-        &:before {
+        &::before {
           display: none;
         }
 
@@ -561,11 +566,6 @@ body.remove {
             top: 0;
             opacity: 0.4;
           }
-        }
-
-        .progress-bar {
-          background: #a77def;
-          height: 2px;
         }
       }
     }

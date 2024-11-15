@@ -596,23 +596,32 @@
         //======================== Tabs =========================== //
         tabs: function ($scope) {
 
-            // Tab Body Content Arrow next/Pres
+            // Tab Elements
             let tabContainer = $scope.find(".spel-tab-menu");
             let tabBtn = tabContainer.find("li button");
             let tabContent = $scope.find(".tab-content .tab-box");
             let nextBtn = $scope.find(".tab_arrow_btn.next");
             let prevBtn = $scope.find(".tab_arrow_btn.previous");
 
+            let isAutoPlay = tabContainer.data("autoplay") === "yes"; // Assuming autoplay status is set in the container
+            let autoPlayInterval; // Declare autoplay interval
+            let currentIndex = tabBtn.index(tabBtn.filter(".active")); // Track current active tab
+
             function changeActiveTab(newIndex) {
+                // Update active classes
                 tabBtn.removeClass("active");
                 tabContent.removeClass("show active");
 
                 let newTab = tabBtn.eq(newIndex);
-                let $newContent = tabContent.eq(newIndex);
+                let newContent = tabContent.eq(newIndex);
 
                 newTab.addClass("active");
-                $newContent.addClass("show active");
+                newContent.addClass("show active");
 
+                // Update the current index for autoplay
+                currentIndex = newIndex;
+
+                // Scroll to the new active tab
                 scrollToTab(newTab);
             }
 
@@ -629,22 +638,85 @@
                 }
             }
 
+            function startAutoplay() {
+                stopAutoplay(); // Ensure no duplicate intervals
+                autoPlayInterval = setInterval(() => {
+                    let nextIndex = (currentIndex + 1) % tabBtn.length;
+                    changeActiveTab(nextIndex);
+                }, 10000); // Set autoplay interval to 10 seconds
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            // Handle manual tab switching
+            tabBtn.on("click", function (e) {
+                e.preventDefault();
+                let clickedIndex = tabBtn.index($(this));
+                changeActiveTab(clickedIndex);
+
+                if (isAutoPlay) {
+                    stopAutoplay(); // Stop current autoplay
+                    startAutoplay(); // Restart autoplay from the new tab
+                }
+            });
+
+            // Handle Next Button
             nextBtn.on("click", function () {
-                let activeIndex = tabBtn.index(tabBtn.filter(".active"));
-                let newIndex = (activeIndex + 1) % tabBtn.length;
+                let newIndex = (currentIndex + 1) % tabBtn.length;
                 changeActiveTab(newIndex);
+
+                if (isAutoPlay) {
+                    stopAutoplay();
+                    startAutoplay();
+                }
             });
 
+            // Handle Previous Button
             prevBtn.on("click", function () {
-                let activeIndex = tabBtn.index(tabBtn.filter(".active"));
-                let newIndex = (activeIndex - 1 + tabBtn.length) % tabBtn.length;
+                let newIndex = (currentIndex - 1 + tabBtn.length) % tabBtn.length;
                 changeActiveTab(newIndex);
+
+                if (isAutoPlay) {
+                    stopAutoplay();
+                    startAutoplay();
+                }
             });
 
+            // Pause autoplay on hover over tab titles
+            tabBtn.on("mouseenter", function () {
+                if (isAutoPlay) {
+                    stopAutoplay();
+                }
+            });
+
+            tabBtn.on("mouseleave", function () {
+                if (isAutoPlay) {
+                    startAutoplay();
+                }
+            });
+
+            // Autoplay logic
+            if (isAutoPlay) {
+                startAutoplay();
+
+                // Pause autoplay on hover over tab titles
+                tabBtn.hover(
+                    function () {
+                        stopAutoplay();
+                    },
+                    function () {
+                        startAutoplay();
+                    }
+                );
+            }
+
+            // Center the active tab on load
             let initialActiveTab = tabBtn.filter(".active");
             if (initialActiveTab.length) {
                 scrollToTab(initialActiveTab);
-            } // End Tab Body Content Arrow next/Pres
+            }
 
 
             // Tab Arrow Icons show/hide automatic when item is more than container
@@ -703,12 +775,10 @@
                     });
                 });
 
-                navWrap.on('scroll', updateScrollerButtons);
-                updateScrollerButtons();
 
                 // Center the active tab on a load
                 let activeTab = navWrap.find(".nav-item .nav-link.active");
-                if (activeTab.length) {
+                if (activeTab.length > 0 ) {
                     let activeTabPosition = activeTab.position().left;
                     let activeTabWidth = activeTab.outerWidth();
                     let navWrapCenter = navWrap.outerWidth() / 2;
@@ -716,8 +786,8 @@
                     navWrap.scrollLeft(activeTabPosition - navWrapCenter + (activeTabWidth / 2));
                     updateScrollerButtons();
                 }
-            });
 
+            });
 
             //=== Sticky Tab
             let stickyTab = $scope.find(".sticky_tab");

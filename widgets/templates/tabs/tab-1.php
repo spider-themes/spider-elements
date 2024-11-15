@@ -3,17 +3,16 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
-<div class="wrapper tab_shortcode">
+<div class="wrapper tab_shortcode spel-tabs">
     <div class="sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
         <span class="scroller-btn left" id="scroll_left_btn"><i class="arrow_carrot-left"></i></span>
-        <ul class="nav nav-tabs ezd-d-flex slide_nav_tabs spel-tab-menu <?php echo esc_attr($tab_auto_class); ?>">
+        <ul class="nav nav-tabs ezd-d-flex slide_nav_tabs spel-tab-menu <?php echo esc_attr($tab_auto_class); ?>" data-autoplay="<?php echo esc_attr($is_auto_play ? 'yes' : 'none'); ?>">
             <?php
             $i = 0.2;
             foreach ( $tabs as $index => $item ) :
                 $tab_count = $index + 1;
                 $tab_title_setting_key = $this->get_repeater_setting_key('tab_title', 'tabs', $index);
-                $active = $tab_count == 1 ? ' active' : '';
-                $selected = $tab_count == 1 ? 'true' : 'false';
+                $active = $tab_count == 1 ? 'active' : '';
                 $this->add_render_attribute($tab_title_setting_key, [
                     'class' => [ 'nav-link tab-item-title', $active ],
                     'data-rel' => 'tab-content-' . $id_int . $tab_count,
@@ -87,88 +86,73 @@ if (!defined('ABSPATH')) {
     }
     ?>
 </div>
+
 <script>
-    ;(function ($) {
+    (function ($) {
         'use strict';
 
-        <?php if ( $is_auto_play == 'yes') : ?>
+        $(document).ready(function () {
+            const intervalDuration = 5000; // Set the interval duration in milliseconds
+            let currentIndex = 0; // Start with the first tab
+            const tabBtns = $(".spel-tab-menu li button");
+            const progressBars = $(".spel-tab-menu .progress-bar");
+            let autoplayInterval;
 
-            $(document).ready(function () {
+            // Function to reset and start the progress bar animation
+            function startProgressBar(index) {
+                progressBars.width(0); // Reset all progress bars
+                progressBars.eq(index).css("transition-duration", `${intervalDuration}ms`).width("100%"); // Animate the current progress bar
+            }
 
-                // Function to handle tab change
-                function changeTab(tabJs, index) {
+            // Function to switch tabs
+            function changeTab(index) {
+                tabBtns.removeClass("active"); // Remove active class from all tabs
+                progressBars.width(0); // Reset all progress bars
+                tabBtns.eq(index).addClass("active"); // Activate the current tab
 
-                    // Remove active class from all tabs within the same menu
-                    tabJs.closest(".spel-tab-menu").find("li button").removeClass("active");
+                const target = tabBtns.eq(index).attr("data-rel");
+                $("#" + target)
+                    .addClass("active show")
+                    .siblings(".tab-box")
+                    .removeClass("active show");
 
-                    tabJs.addClass("active");
+                startProgressBar(index); // Start progress bar for the current tab
+            }
 
-                    let target = tabJs.attr("data-rel");
+            // Auto-cycle tabs with progress bar
+            function autoCycleTabs() {
+                currentIndex = (currentIndex + 1) % tabBtns.length;
+                changeTab(currentIndex);
+            }
 
-                    $("#" + target)
-                        .addClass("active")
-                        .siblings(".tab-box")
-                        .removeClass("active");
-
-                    // Reset progress bar for all tabs except the clicked one
-                    $(".progress-bar").not(tabJs.find(".progress-bar")).stop().width(0);
-
-                    // Update progress bar for the clicked tab
-                    updateProgressBar(tabJs.find(".progress-bar"), 5000);
-                }
-
-                // Function to update progress bar
-                function updateProgressBar(progressBar, duration) {
-                    progressBar.stop().width(0).animate({
-                            width: "100%",
-                        },
-                        duration,
-                        "linear"
-                    );
-                }
-
-                // Tab click event handler
-                let tabJs = $(".spel-tab-menu li button");
-                let firstTab = tabJs.first();
-                changeTab(firstTab, tabJs.index(firstTab));
-                updateProgressBar(firstTab.find(".progress-bar"), 5000);
-                tabJs.on("click", function (e) {
-                    e.preventDefault();
-                    changeTab($(this), tabJs.index($(this)));
-                    return false;
-                });
-
-                // Auto-cycle tabs with progress bar
-                let currentIndex = 0;
-                let intervalDuration = 5000; // Set the interval duration in milliseconds
-
-                function autoCycleTabs() {
-                    let nextIndex = (currentIndex + 1) % tabJs.length;
-                    let activeTab = tabJs.eq(nextIndex);
-                    changeTab(activeTab, nextIndex);
-                    currentIndex = nextIndex;
-                }
-
-                let tabCycle = setInterval(autoCycleTabs, intervalDuration);
-
-                // Handle hover to stop and resume tab cycling and progress bar for all tabs
-                $(".spel-tab-menu li button").hover(
-                    function () {
-                        clearInterval(tabCycle);
-                        $(".progress-bar").stop();
-                    },
-                    function () {
-                        tabCycle = setInterval(autoCycleTabs, intervalDuration);
-                        updateProgressBar($("button.active .progress-bar"), intervalDuration);
-                    }
-                );
-
-                // Function to reset progress bar
-                function resetProgressBar(progressBar) {
-                    progressBar.stop().width(0);
-                }
+            // Pause autoplay on hover
+            tabBtns.on("mouseenter", function () {
+                clearInterval(autoplayInterval);
+                progressBars.stop(); // Stop the progress bar animation
             });
-        <?php endif; ?>
 
+            // Resume autoplay on mouse leave
+            tabBtns.on("mouseleave", function () {
+                autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
+                const activeIndex = tabBtns.index(tabBtns.filter(".active"));
+                startProgressBar(activeIndex); // Restart progress bar animation for the active tab
+            });
+
+            // Initialize autoplay
+            if (tabBtns.length > 0) {
+                changeTab(currentIndex); // Start with the first tab
+                autoplayInterval = setInterval(autoCycleTabs, intervalDuration); // Start autoplay
+            }
+
+            // Optional: Pause autoplay when user interacts with the tab content (e.g., scroll)
+            $(".tab-content").on("mouseenter", function () {
+                clearInterval(autoplayInterval);
+                progressBars.stop();
+            }).on("mouseleave", function () {
+                autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
+                const activeIndex = tabBtns.index(tabBtns.filter(".active"));
+                startProgressBar(activeIndex);
+            });
+        });
     })(jQuery);
 </script>
