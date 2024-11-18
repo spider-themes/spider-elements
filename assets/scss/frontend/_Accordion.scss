@@ -1,279 +1,17 @@
-.toggle_shortcode {
-  padding-bottom: 60px;
-}
-.toggle_btn {
-  display: block;
-  font-size: 16px;
-  font-weight: 500;
-  color: #242729;
-  background: #f9f9f9;
-  text-align: left;
-  border-radius: 2px;
-  padding: 12px 30px;
-  position: relative;
-  text-decoration: none;
-
-  &:not(.collapsed) {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    color: #4c4cf1;
-  }
-  &:before {
-    content: "";
-    background-image: url("../images/icons/arrow-icon.svg");
-    background-repeat: no-repeat;
-    height: 12px;
-    width: 20px;
-    position: absolute;
-    font-size: 18px;
-    font-family: eleganticons;
-    right: 30px;
-    top: 20px;
-    transform: rotate(180deg);
-    transition: all 0.2s linear;
-    color: #4c4cf1;
-  }
-
-  &.active {
-    &:before {
-      transform: rotate(360deg);
-      color: rgb(36 39 41);
-      .toggle_btn {
-        display: block;
-        font-size: 16px;
-        font-weight: 500;
-        color: rgb(36 39 41);
-        background: rgb(249 249 249);
-        text-align: left;
-        border-radius: 4px;
-        padding: 12px 30px;
-        position: relative;
-        text-decoration: none;
-        &:not(.collapsed) {
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-          color: #4c4cf1;
-        }
-        &.active {
-          content: "\43";
-          position: absolute;
-          font-size: 18px;
-          font-family: eleganticons;
-          right: 30px;
-          transform: rotate(180deg);
-          transition: all 0.2s linear;
-          color: rgb(76 76 241);
-        }
-        &.active {
-          &:before {
-            transform: rotate(0deg);
-            color: rgb(36 39 41);
-          }
-        }
-      }
-    }
-
-    .doc_accordion {
-      border: 0;
-      margin-bottom: 1rem;
-      .toggle_body {
-        border: 1px solid rgb(235 235 235);
-        padding: 18px 30px 24px;
-        border-radius: 0 0 4px 4px;
-        line-height: 26px;
-        background: #ffffff;
-        @media only screen and (min-width: 320px) and (max-width: 425px) {
-          padding: 18px 15px 24px;
-        }
-
-        p {
-          font-size: 16px;
-          font-weight: 400;
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-      .card-header {
-        border-radius: 0;
-        .doc_accordion {
-          border: 0;
-          background: transparent;
-          padding: 0;
-
-          .title {
-            padding: 0;
-          }
-
-          button {
-            padding: 12px 30px;
-            border-radius: 4px 4px 0 0;
-            text-align: left;
-            width: 100%;
-            font-size: 16px;
-            color: #4c4cf1;
-            font-weight: 500;
-            background: #f9f9f9;
-            text-decoration: none;
-            position: relative;
-
-            svg {
-              position: absolute;
-              right: 30px;
-              top: 50%;
-              transform: translateY(-50%);
-              display: none;
-              transition: all 0.2s linear;
-
-              & + svg {
-                display: block;
-              }
-            }
-
-            &.collapsed {
-              color: #242729;
-              border-radius: 4px;
-
-              svg {
-                display: block;
-                color: #6A737C;
-
-                & + svg {
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-      }
-      .accordion-article-wrap {
-        .toggle_btn {
-          font-weight: 400;
-
-          .accordion-article-wrap {
-            .toggle_btn {
-              font-weight: 400;
-            }
-
-            .accordion-article-item {
-              border: 1px solid rgb(230 237 240);
-              padding: 20px;
-              margin: 12px 0;
-              h4 {
-                font-size: 16px;
-                font-weight: 600;
-                line-height: 22px;
-                &:hover {
-                  color: #4c4cf1;
-                }
-              }
-
-              .post-meta {
-                margin-bottom: 0;
-
-                li {
-                  display: inline-block;
-                  margin-right: 5px;
-                  font-size: 14px;
-                  color: rgb(132 141 149);
-                  font-weight: 400;
-                }
-              }
-            }
-          }
-
-          .accordion-article-item {
-            border: 1px solid #e6edf0;
-            padding: 20px;
-            margin: 12px 0;
-            min-height: 230px;
-
-            h4 {
-              font-size: 16px;
-              font-weight: 600;
-              line-height: 22px;
-
-              &:hover {
-                color: #4c4cf1;
-              }
-            }
-
-            .post-meta {
-              margin-bottom: 0;
-
-              li {
-                display: inline-block;
-                margin-right: 5px;
-                font-size: 14px;
-                color: rgb(132 141 149);
-                font-weight: 400;
-              }
-            }
-          }
-        }
-
-        .accordion-article-item {
-          h4 {
-            margin-bottom: 15px;
-          }
-
-          p {
-            font-size: 16px;
-            font-weight: 400;
-          }
-
-          ul {
-            margin-left: auto;
-          }
-        }
-      }
-    }
-  }
-}
-.collapse {
-  display: none;
-  width: 100% !important;
-}
-
-.multi-collapse {
-  .toggle_body {
-    //border: 1px solid rgb(235 235 235);
-    padding: 18px 30px 24px;
-    border-radius: 0 0 4px 4px;
-    line-height: 26px;
-    background: #ffffff;
-    box-shadow: none !important;
-    @media only screen and (min-width: 320px) and (max-width: 425px) {
-      padding: 18px 15px 24px;
-    }
-
-    P {
-      font-size: 16px;
-      font-weight: 400;
-    }
-  }
-}
-
-.icon_btn2 svg {
-  width: 20px;
-  height: 20px;
-  margin-left: 7px;
-  &:hover {
-    margin-left: 5px;
-    border-bottom: 1px solid;
-  }
-}
-
-.accordion {
-  .doc_accordion {
-    overflow: hidden;
+.spel-accordion {
+  .card {
     border: 0;
+    overflow: hidden;
     border-radius: unset;
     margin-bottom: 1rem;
     background: unset;
     &:last-child {
       margin-bottom: 0;
     }
+    &.border-bottom-none {
+      border: unset !important;
+    }
+
     .card-header {
       border-radius: 0;
       border: 0;
@@ -284,7 +22,7 @@
         margin: 0;
         background: unset;
       }
-      button {
+      .btn-link {
         padding: 12px 30px;
         border: unset;
         border-radius: unset;
@@ -301,131 +39,78 @@
         align-items: center;
         &:focus {
           box-shadow: none;
+          outline: none;
+        }
+        .collapsed {
+          .collapsed-icon {
+            display: none;
+          }
         }
         .icon-wrapper {
           position: absolute;
           right: 0;
-        }
-        svg {
-          position: absolute;
-          right: 0;
-          top: 0;
-          transform: unset;
-          transition: all 0.2s linear;
-          width: 16px;
-          height: 16px;
-          & + svg {
-            display: block;
+          svg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: unset;
+            transition: all 0.2s linear;
+            width: 16px;
+            height: 16px;
+            & + svg {
+              display: block;
+            }
           }
-        }
-        .collapsed-icon {
-          display: none;
-          line-height: 0;
-        }
-        .expanded-icon {
-          display: block;
-          line-height: 0;
+          .expanded-icon {
+            display: block;
+            line-height: 0;
+          }
+          .collapsed-icon {
+            display: none;
+            line-height: 0;
+          }
         }
         &.icon-align-left {
           padding-left: 60px;
           .icon-wrapper {
-            left: 30px;
-            right: unset;
+            left: 0;
+            right: auto;
           }
         }
       }
     }
-    .accordion_title_aria {
-      border: unset;
-    }
-    &.spe-collapsed {
-      color: #242729;
-      //border-radius: 0 !important;
-      svg {
-        display: block;
-        color: #6A737C;
+
+    .card-body {
+      border-style: none;
+      border-radius: 0;
+      padding: 18px 30px 24px;
+      line-height: 26px;
+      background: #ffffff;
+      @media only screen and (min-width: 320px) and (max-width: 425px) {
+        padding: 18px 15px 24px;
       }
 
-      .card-header button {
-        .expanded-icon {
-          display: none;
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        &:last-child {
+          margin-bottom: 0;
         }
-        .collapsed-icon {
-          display: block;
+      }
+    }
+    &.collapsed {
+      .card-header {
+        .btn-link {
+          .icon-wrapper {
+            .expanded-icon {
+              display: none;
+            }
+            .collapsed-icon {
+              display: block;
+            }
+          }
         }
       }
-      .collapse {
-        display: block;
-      }
-    }
-    &.border-bottom-none {
-      border: unset !important;
     }
   }
 }
-
-.accordion-article-wrap {
-  .accordion-article-inner {
-    border: 1px solid rgb(235 235 235);
-    border-radius: 3px;
-  }
-  .toggle_btn {
-    font-weight: 400;
-  }
-  .accordion-article-item {
-    border: 1px solid rgb(230 237 240);
-    padding: 20px;
-    margin: 12px 0;
-    min-height: 230px;
-
-    a {
-      &:hover{
-        text-decoration: none;
-      }
-    }
-
-    .post_title {
-      color: rgb(36 39 41);
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 22px;
-      transition: color 0.2s linear;
-
-      &:hover {
-        color: #00bf58;
-      }
-    }
-    .post-meta {
-      margin-bottom: 0;
-
-      li {
-        display: inline-block;
-        margin-right: 5px;
-        font-size: 14px;
-        color: rgb(132 141 149);
-      }
-    }
-  }
-  .collapse {
-    &.show {
-      display: block;
-    }
-  }
-}
-button.btn.btn-link.collapsed {
-  .collapsed-icon {
-    display: none;
-  }
-}
-button.btn.btn-link:focus {
-  box-shadow: none;
-  outline: none;
-}
-
-.toggle_body {
-  border-style: none;
-  border-radius: 0;
-  padding: 18px 30px 24px 30px;
-}
-
-/*===== accordion style two =====*/

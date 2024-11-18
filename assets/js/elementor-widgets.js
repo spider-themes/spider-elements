@@ -124,23 +124,23 @@
             }
         },
 
-        //=============== accordion js ===============//
-
+        //=============== Accordion ===============//
         accordions: function ($scope) {
-            let speAccordion = $scope.find(".spe_accordion_inner > .spe-accordion");
-            speAccordion.on("click", function () {
-                var $this = $(this);
-                var $parent = $this.parent();
-                var $collapse = $parent.find("> .collapse").first();
+            let cardHeader = $scope.find(".accordion_inner > .card-header");
+
+            cardHeader.on("click", function () {
+                let $this = $(this);
+                let $parent = $this.parent();
+                let $collapse = $parent.find("> .collapse").first();
 
                 $collapse.slideToggle(300);
                 $parent.siblings().find("> .collapse").hide(300);
 
-                if ($parent.hasClass("spe-collapsed")) {
-                    $parent.removeClass("spe-collapsed");
+                if ($parent.hasClass("collapsed")) {
+                    $parent.removeClass("collapsed");
                 } else {
-                    speAccordion.parent().removeClass("spe-collapsed");
-                    $parent.addClass("spe-collapsed");
+                    cardHeader.parent().removeClass("collapsed");
+                    $parent.addClass("collapsed");
                 }
 
                 return false;
