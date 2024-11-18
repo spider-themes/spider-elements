@@ -1,7 +1,7 @@
 === Spider Elements - Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01, codersajjad
-Tags:  elementor addons, elementor widget, elementor, addons for elementor, block, elementor blocks, spider element, spider
-Stable tag: 1.1.0
+Tags:  elementor addons, elementor widget, elementor, addons for elementor, spider element
+Stable tag: 1.5.0
 Requires at least: 5.0
 Tested up to: 6.5.4
 Requires PHP: 7.4
@@ -11,7 +11,7 @@ Elementor requires at least: 3.0.0
 Elementor tested up to: 3.20.3
 
 == Description ==
-Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 9+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.
+Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 14+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.
 
 ## 🔗 USEFUL LINKS ##
 - [Get the Pro Version](https://spider-themes.net/spider-elements/pricing)
@@ -23,9 +23,7 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 
 #[**Accordion**](https://spider-themes.net/spider-elements/accordion) - Effortlessly showcase text with the Accordion Widget.
 #[**Alerts Box**](https://spider-themes.net/spider-elements/notice-message) - Create eye-catching alerts: customizable styles, colors, icons.
-#[**Before After**](https://spider-themes.net/spider-elements/before-after) - Compare images with interactive slider.
 #[**Blog**](https://spider-themes.net/spider-elements/blog-grid) - Display posts with customizable layout.
-#[**Sticky Tabs**](https://spider-themes.net/spider-elements/sticky-tabs) - Persistent navigation for easy access.
 #[**Cheat Sheet**](https://spider-themes.net/spider-elements/cheatsheet) - Quick reference guide for efficiency.
 #[**Counter**](https://spider-themes.net/spider-elements/counter) - Track and display statistics dynamically.
 #[**Video Popup**](https://spider-themes.net/spider-elements/video-popup) - Display videos in a pop-up window.
@@ -88,6 +86,16 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.5.0 (19 November 2024) =
+New: RTL (Right to Left language) compatibility added
+New: Added documentation and demo links to the Dashboard widget list
+Fixed: Resolved some content and style control issues in the following widgets: Accordion, Cheat Sheet, Tabs, Testimonial, Blog, Counter, Icon Box, List Item, Team Carousel, and Video Playlist
+Fixed: Dashboard sidebar tab on active
+Tweaked: Remove some unused file and codes
+Tweaked: Dashboard design Improve
+Tweaked: Replace some preset image & widget icon
+Updated: Freemius SDK Updated
 
 = v1.1.0 (15 June 2024) =
 New: Added 'Icon Box' Widget 

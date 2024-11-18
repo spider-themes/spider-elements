@@ -800,7 +800,7 @@ class Video_Playlist extends Widget_Base {
 		);
 
 		$this->add_control(
-			'slider_heading',
+			'slider2_heading',
 			[
 				'label' => esc_html__( 'Thumbnail Title', 'spider-elements' ),
 				'type'  => Controls_Manager::HEADING,
