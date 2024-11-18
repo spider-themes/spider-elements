@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Testimonial
+ *
  * @package spider\Widgets
  */
 class Testimonial extends Widget_Base {
@@ -139,10 +140,6 @@ class Testimonial extends Widget_Base {
 						'icon'  => 'testimonial10',
 						'title' => esc_html__( '10 : Carousel Testimonials', 'spider-elements' ),
 					],
-					'11' => [
-						'icon'  => 'testimonial11',
-						'title' => esc_html__( '11 : Carousel Testimonials', 'spider-elements' ),
-					],
 				],
 				'default' => '1',
 			]
@@ -214,17 +211,20 @@ class Testimonial extends Widget_Base {
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 				],
 				'condition'     => [
@@ -280,17 +280,20 @@ class Testimonial extends Widget_Base {
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 				],
 				'condition'     => [
@@ -345,17 +348,20 @@ class Testimonial extends Widget_Base {
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 				],
 				'condition'     => [
@@ -422,17 +428,20 @@ class Testimonial extends Widget_Base {
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+							'spider-elements' ),
 					],
 				],
 				'condition'     => [
@@ -493,10 +502,28 @@ class Testimonial extends Widget_Base {
 				'prevent_empty' => false,
 				'default'       => [
 					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'name'           => esc_html__( 'Zain Torff', 'spider-elements' ),
+						'company_name'   => esc_html__( 'Olga', 'spider-elements' ),
+						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
+						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
+					],
+					[
+						'name'           => esc_html__( 'Madelyn Press', 'spider-elements' ),
+						'company_name'   => esc_html__( 'Family S', 'spider-elements' ),
+						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
+						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
+					],
+					[
+						'name'           => esc_html__( 'Lincoln Levin', 'spider-elements' ),
 						'company_name'   => esc_html__( 'Karina', 'spider-elements' ),
 						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”', 'spider-elements' ),
+						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
+					],
+					[
+						'name'           => esc_html__( 'Charlie Rhiel', 'spider-elements' ),
+						'company_name'   => esc_html__( 'Meta', 'spider-elements' ),
+						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
+						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
 					],
 				],
 				'condition'     => [
@@ -521,6 +548,7 @@ class Testimonial extends Widget_Base {
 				],
 			]
 		);
+
 		$testimonial6->add_control(
 			'author_rating_title',
 			[
@@ -530,6 +558,7 @@ class Testimonial extends Widget_Base {
 				'default'   => esc_html__( '4.8 Awesome', 'spider-elements' ),
 			]
 		);
+
 		$testimonial6->add_control(
 			'company_image', [
 				'label'   => esc_html__( 'Company Image', 'spider-elements' ),
@@ -539,6 +568,7 @@ class Testimonial extends Widget_Base {
 				],
 			]
 		);
+
 		$testimonial6->add_control(
 			'review_content', [
 				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
@@ -552,6 +582,7 @@ class Testimonial extends Widget_Base {
 				'default' => esc_html__( 'Karina', 'spider-elements' ),
 			]
 		);
+
 		$testimonial6->add_control(
 			'author_position', [
 				'label'   => esc_html__( 'Author Position', 'spider-elements' ),
@@ -559,15 +590,18 @@ class Testimonial extends Widget_Base {
 				'default' => esc_html__( 'Lead Designer', 'spider-elements' ),
 			]
 		);
+
 		$testimonial6->add_control(
 			'author_image', [
 				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
+				'description'=> esc_html__('This will only work for Style 7', 'spider-elements'),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 			]
 		);
+
 
 		$this->add_control(
 			'testimonials6', [
@@ -643,17 +677,20 @@ class Testimonial extends Widget_Base {
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
-						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”',
+							'spider-elements' ),
 					],
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
-						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”',
+							'spider-elements' ),
 					],
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Lead Designer', 'spider-elements' ),
-						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”',
+							'spider-elements' ),
 					],
 				],
 				'condition'     => [
@@ -705,7 +742,8 @@ class Testimonial extends Widget_Base {
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
-						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”',
+							'spider-elements' ),
 					],
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
@@ -767,7 +805,8 @@ class Testimonial extends Widget_Base {
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
 						'author_position' => esc_html__( 'Italy', 'spider-elements' ),
-						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”', 'spider-elements' ),
+						'review_content'  => esc_html__( '“Very easy to set-up. I had no experience with hosting before signing up with Jobi but they have made everything seem simple.”',
+							'spider-elements' ),
 					],
 					[
 						'author_name'     => esc_html__( 'Karina', 'spider-elements' ),
@@ -817,7 +856,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Quote Icon', 'spider-elements' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => [
-					'value'   => 'fas fa-circle',
+					'value'   => 'fas fa-quote-left',
 					'library' => 'fa-solid',
 				],
 				'condition' => [
@@ -846,7 +885,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'testimonial_ratting_icon',
 			[
-				'label'        => esc_html__( 'Show Title', 'spider-elements' ),
+				'label'        => esc_html__( 'Show Rating', 'spider-elements' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'label_on'     => esc_html__( 'Show', 'spider-elements' ),
 				'label_off'    => esc_html__( 'Hide', 'spider-elements' ),
@@ -1017,9 +1056,9 @@ class Testimonial extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .feedback-block-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .testimonial-item'   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .feedback-section-four .bg-wrapper'   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .feedback-block-one'                => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .testimonial-item'                  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .feedback-section-four .bg-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1077,7 +1116,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .feedback-block-one:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .feedback-block-one:hover'                => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .feedback-section-four .bg-wrapper:hover' => 'border-color: {{VALUE}};',
 				],
 			]
@@ -1088,39 +1127,39 @@ class Testimonial extends Widget_Base {
 		$this->end_controls_section(); // End Contents Style
 
 
-        //========================= Arrow Icons =======================//
-        $this->start_controls_section(
-            'arrow_icons_sec', [
-                'label' => esc_html__( 'Arrow Icon', 'spider-elements' ),
-                'condition' => [
-                    'style' => ['8', '10']
-                ]
-            ]
-        );
+		//========================= Arrow Icons =======================//
+		$this->start_controls_section(
+			'arrow_icons_sec', [
+				'label'     => esc_html__( 'Arrow Icon', 'spider-elements' ),
+				'condition' => [
+					'style' => [ '6', '7', '8', '10' ]
+				]
+			]
+		);
 
-        $this->add_control(
-            'prev_arrow_icon', [
-                'label' => esc_html__( 'Prev Icon', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'default' => [
-                    'value' => 'arrow_carrot-left',
-                    'library' => 'ElegantIcons'
-                ],
-            ]
-        );
+		$this->add_control(
+			'prev_arrow_icon', [
+				'label'   => esc_html__( 'Prev Icon', 'spider-elements' ),
+				'type'    => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value'   => 'arrow_carrot-left',
+					'library' => 'ElegantIcons'
+				],
+			]
+		);
 
-        $this->add_control(
-            'next_arrow_icon', [
-                'label' => esc_html__( 'Next Icon', 'spider-elements' ),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'default' => [
-                    'value' => 'arrow_carrot-right',
-                    'library' => 'ElegantIcons'
-                ],
-            ]
-        );
+		$this->add_control(
+			'next_arrow_icon', [
+				'label'   => esc_html__( 'Next Icon', 'spider-elements' ),
+				'type'    => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value'   => 'arrow_carrot-right',
+					'library' => 'ElegantIcons'
+				],
+			]
+		);
 
-        $this->end_controls_section(); //End Arrow Icons
+		$this->end_controls_section(); //End Arrow Icons
 
 	}
 
@@ -1176,13 +1215,13 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'box-padding',
 			[
-				'label' => esc_html__( 'Box Padding', 'spider-elements' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => esc_html__( 'Box Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .testimonial-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'condition' => [
+				'condition'  => [
 					'style'  => [ '3' ],
 					'style!' => [ '1', '2', '4', '5', '6', '7', '8', '9', '10', '11' ]
 				]
@@ -1251,7 +1290,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-block-one h3'               => 'color: {{VALUE}};',
 					'{{WRAPPER}} #feedBack_carousel .carousel-inner p' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .feedback-section-four .bg-wrapper p' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .spel_review_content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .spel_review_content'                 => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1333,7 +1372,7 @@ class Testimonial extends Widget_Base {
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
-					'style' => [ '1', '2', '3', '4', '9', '11' ]
+					'style' => [ '1', '2', '3', '4', '9', ]
 				]
 			]
 		);
@@ -1342,8 +1381,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(), [
 				'name'      => 'designation_typo',
 				'selector'  => '{{WRAPPER}} .se_designation,
-								{{WRAPPER}} .feedback-block-two .block-footer span,
-								{{WRAPPER}} .testimonial-area .author-info p',
+								{{WRAPPER}} .feedback-block-two .block-footer span',
 				'condition' => [
 					'style' => [ '1', '2', '3', '4', '9', '11' ]
 				]
@@ -1357,51 +1395,13 @@ class Testimonial extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .se_designation'                        => 'color: {{VALUE}};',
 					'{{WRAPPER}} .feedback-block-two .block-footer span' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .testimonial-area .author-info p'       => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style' => [ '1', '2', '3', '4', '9', '11' ]
+					'style' => [ '1', '2', '3', '4', '9', ]
 				]
 			]
 		);
 		//End Designation
-
-		$this->add_control(
-			'top_text_options', [
-				'label'     => esc_html__( 'Top Text', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					'style' => [ '11' ],
-					'style!' => [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ]
-				]
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'      => 'top_text_typo',
-				'selector'  => '.testimonial-area .spel_top_text',
-				'condition' => [
-					'style' => [ '11' ],
-					'style!' => [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ]
-				]
-			]
-		);
-
-		$this->add_control(
-			'top_text_color', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .testimonial-area .spel_top_text' => 'color: {{VALUE}};',
-				],
-				'condition' => [
-					'style'  => [ '11' ],
-					'style!' => [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ]
-				]
-			]
-		);
 
 		$this->end_controls_section();
 
@@ -1567,7 +1567,7 @@ class Testimonial extends Widget_Base {
 		//========================= Contents =========================//
 		$this->start_controls_section(
 			'style_icon', [
-				'label'     => esc_html__( 'Icon', 'spider-elements' ),
+				'label'     => esc_html__( 'Arrow Icon', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'style' => [ '3' ]
@@ -1676,7 +1676,7 @@ class Testimonial extends Widget_Base {
 	 * Floored-rating type is int, to represent the rounded-down stars count.
 	 * In the `for` loop, the index type is float to allow comparing with the rating value.
 	 *
-	 * @since 2.3.0
+	 * @since  2.3.0
 	 * @access protected
 	 */
 	protected function render_stars( $icon, $dat = 0 ) {
@@ -1699,7 +1699,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	/**
-	 * @since 2.3.0
+	 * @since  2.3.0
 	 * @access protected
 	 */
 	protected function get_rating( $ratting ) {

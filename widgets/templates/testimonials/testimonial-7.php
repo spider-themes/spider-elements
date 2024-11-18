@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
-<div class="feedback-section-five">
+<div class="feedback-section-seven">
     <div class="feedback-slider-one testimonial-slider-<?php echo esc_attr( $testimonial_id ); ?>" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 		<?php if ( ! empty( $testimonials6 ) ) {
 			foreach ( $testimonials6 as $item ) {
@@ -70,8 +70,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		}
 		?>
     </div>
-    <ul class="slider-arrows slick-arrow-one d-flex justify-content-center">
-        <li class="prev_f"><i class="arrow_left"></i></li>
-        <li class="next_f"><i class="arrow_right"></i></li>
+    <ul class="slider-arrows slick-arrow-one ezd-d-flex justify-content-center">
+        <li class="prev_f">
+		    <?php \Elementor\Icons_Manager::render_icon( $settings['prev_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+        </li>
+        <li class="next_f">
+		    <?php \Elementor\Icons_Manager::render_icon( $settings['next_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+        </li>
     </ul>
 </div>
