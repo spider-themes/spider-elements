@@ -220,16 +220,14 @@
 }
 
 /*** === Video Playlist === ***/
-.video-playlist::before {
+.video_playlist_1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video-playlist.jpg") no-repeat
-    top;
+  background: url("../images/el-editor-preview/video_playlist_1.jpg") no-repeat top;
 }
 
-.video-playlist2::before {
+.video_playlist_2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video-playlist2.jpg") no-repeat
-    top;
+  background: url("../images/el-editor-preview/video_playlist_2.jpg") no-repeat top;
 }
 
 /*** === image hover style === ***/

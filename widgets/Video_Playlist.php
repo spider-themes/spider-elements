@@ -99,11 +99,11 @@ class Video_Playlist extends Widget_Base {
 				'options' => [
 					'1' => [
 						'title' => esc_html__( 'Tab', 'spider-elements' ),
-						'icon'  => 'video-playlist',
+						'icon'  => 'video_playlist_1',
 					],
 					'2' => [
 						'title' => esc_html__( 'Slide', 'spider-elements' ),
-						'icon'  => 'video-playlist2',
+						'icon'  => 'video_playlist_2',
 					],
 				],
 				'toggle'  => false,
@@ -134,17 +134,17 @@ class Video_Playlist extends Widget_Base {
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
-				'name'     => 'typography_title',
-				'selector' => '{{WRAPPER}} .title'
+				'name'     => 'playlist_title_typo',
+				'selector' => '{{WRAPPER}} .play_list_title'
 			]
 		);
 
 		$this->add_control(
-			'color_title', [
+			'playlist_title_color', [
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .play_list_title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -177,7 +177,6 @@ class Video_Playlist extends Widget_Base {
 				'dynamic'     => [
 					'active' => true,
 				],
-				'default'     => esc_html__( 'Title', 'spider-elements' ),
 				'placeholder' => esc_html__( 'Tab title text here', 'spider-elements' ),
 				'label_block' => true,
 			]
@@ -204,9 +203,6 @@ class Video_Playlist extends Widget_Base {
 			'thumbnail', [
 				'label'   => esc_html__( 'Thumbnail', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
-				'dynamic' => [
-					'active' => true,
-				],
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
 				]
@@ -217,9 +213,8 @@ class Video_Playlist extends Widget_Base {
 			'video_caption', [
 				'label'       => esc_html__( 'Description', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'Default title', 'spider-elements' ),
 				'placeholder' => esc_html__( 'Type your caption here', 'spider-elements' ),
-				'description' => esc_html__( 'This field is applicable for Preset Two', 'spider-elements' ),
+				'description' => __( '<strong>Note: </strong>This field is applicable for Preset Two', 'spider-elements' ),
 			]
 		);
 
@@ -231,6 +226,7 @@ class Video_Playlist extends Widget_Base {
 				'default' => get_current_user_id() ? get_userdata( get_current_user_id() )->display_name : ''
 			]
 		);
+
 		// CURRENT DATE control
 		$repeater2->add_control(
 			'current_date', [

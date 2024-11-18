@@ -87,72 +87,78 @@ if (!defined('ABSPATH')) {
     </div>
 </section>
 
-<script>
-    (function ($) {
-        'use strict';
+<?php
+if ( $is_auto_play == 'yes' ) {
+    ?>
+    <script>
+        (function ($) {
+            'use strict';
 
-        $(document).ready(function () {
-            const intervalDuration = 5000; // Set the interval duration in milliseconds
-            let currentIndex = 0; // Start with the first tab
-            const tabBtns = $(".spel-tab-menu li button");
-            const progressBars = $(".spel-tab-menu .progress-bar");
-            let autoplayInterval;
+            $(document).ready(function () {
+                const intervalDuration = 5000; // Set the interval duration in milliseconds
+                let currentIndex = 0; // Start with the first tab
+                const tabBtns = $(".spel-tab-menu li button");
+                const progressBars = $(".spel-tab-menu .progress-bar");
+                let autoplayInterval;
 
-            // Function to reset and start the progress bar animation
-            function startProgressBar(index) {
-                progressBars.width(0); // Reset all progress bars
-                progressBars.eq(index).css("transition-duration", `${intervalDuration}ms`).width("100%"); // Animate the current progress bar
-            }
+                // Function to reset and start the progress bar animation
+                function startProgressBar(index) {
+                    progressBars.width(0); // Reset all progress bars
+                    progressBars.eq(index).css("transition-duration", `${intervalDuration}ms`).width("100%"); // Animate the current progress bar
+                }
 
-            // Function to switch tabs
-            function changeTab(index) {
-                tabBtns.removeClass("active"); // Remove active class from all tabs
-                progressBars.width(0); // Reset all progress bars
-                tabBtns.eq(index).addClass("active"); // Activate the current tab
+                // Function to switch tabs
+                function changeTab(index) {
+                    tabBtns.removeClass("active"); // Remove active class from all tabs
+                    progressBars.width(0); // Reset all progress bars
+                    tabBtns.eq(index).addClass("active"); // Activate the current tab
 
-                const target = tabBtns.eq(index).attr("data-rel");
-                $("#" + target)
-                    .addClass("active show")
-                    .siblings(".tab-box")
-                    .removeClass("active show");
+                    const target = tabBtns.eq(index).attr("data-rel");
+                    $("#" + target)
+                        .addClass("active show")
+                        .siblings(".tab-box")
+                        .removeClass("active show");
 
-                startProgressBar(index); // Start progress bar for the current tab
-            }
+                    startProgressBar(index); // Start progress bar for the current tab
+                }
 
-            // Auto-cycle tabs with progress bar
-            function autoCycleTabs() {
-                currentIndex = (currentIndex + 1) % tabBtns.length;
-                changeTab(currentIndex);
-            }
+                // Auto-cycle tabs with progress bar
+                function autoCycleTabs() {
+                    currentIndex = (currentIndex + 1) % tabBtns.length;
+                    changeTab(currentIndex);
+                }
 
-            // Pause autoplay on hover
-            tabBtns.on("mouseenter", function () {
-                clearInterval(autoplayInterval);
-                progressBars.stop(); // Stop the progress bar animation
+                // Pause autoplay on hover
+                tabBtns.on("mouseenter", function () {
+                    clearInterval(autoplayInterval);
+                    progressBars.stop(); // Stop the progress bar animation
+                });
+
+                // Resume autoplay on mouse leave
+                tabBtns.on("mouseleave", function () {
+                    autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
+                    const activeIndex = tabBtns.index(tabBtns.filter(".active"));
+                    startProgressBar(activeIndex); // Restart progress bar animation for the active tab
+                });
+
+                // Initialize autoplay
+                if (tabBtns.length > 0) {
+                    changeTab(currentIndex); // Start with the first tab
+                    autoplayInterval = setInterval(autoCycleTabs, intervalDuration); // Start autoplay
+                }
+
+                // Optional: Pause autoplay when user interacts with the tab content (e.g., scroll)
+                $(".tab-content").on("mouseenter", function () {
+                    clearInterval(autoplayInterval);
+                    progressBars.stop();
+                }).on("mouseleave", function () {
+                    autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
+                    const activeIndex = tabBtns.index(tabBtns.filter(".active"));
+                    startProgressBar(activeIndex);
+                });
             });
-
-            // Resume autoplay on mouse leave
-            tabBtns.on("mouseleave", function () {
-                autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
-                const activeIndex = tabBtns.index(tabBtns.filter(".active"));
-                startProgressBar(activeIndex); // Restart progress bar animation for the active tab
-            });
-
-            // Initialize autoplay
-            if (tabBtns.length > 0) {
-                changeTab(currentIndex); // Start with the first tab
-                autoplayInterval = setInterval(autoCycleTabs, intervalDuration); // Start autoplay
-            }
-
-            // Optional: Pause autoplay when user interacts with the tab content (e.g., scroll)
-            $(".tab-content").on("mouseenter", function () {
-                clearInterval(autoplayInterval);
-                progressBars.stop();
-            }).on("mouseleave", function () {
-                autoplayInterval = setInterval(autoCycleTabs, intervalDuration);
-                const activeIndex = tabBtns.index(tabBtns.filter(".active"));
-                startProgressBar(activeIndex);
-            });
-        });
-    })(jQuery);
-</script>
+        })(jQuery);
+    </script>
+    <?php
+}
+?>
