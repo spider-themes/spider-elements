@@ -234,6 +234,15 @@
       transition: all 0.3s;
       cursor: pointer;
 
+      &.save_btn {
+        color: #fff;
+        background: #6d27e5;
+        padding: 12px 24px;
+        &:hover {
+          background: #524cff;
+        }
+      }
+
       &:hover {
         background: #524cff;
         color: #fff;
@@ -263,7 +272,7 @@
       p {
         font-family: $inter;
         color: #fff;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.8;
         margin-bottom: 0;
       }

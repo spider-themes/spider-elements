@@ -402,6 +402,14 @@ Table of Content:
   transition: all 0.3s;
   cursor: pointer;
 }
+.spel_dashboard .tab_contents .dashboard_btn.save_btn {
+  color: #fff;
+  background: #6d27e5;
+  padding: 12px 24px;
+}
+.spel_dashboard .tab_contents .dashboard_btn.save_btn:hover {
+  background: #524cff;
+}
 .spel_dashboard .tab_contents .dashboard_btn:hover {
   background: #524cff;
   color: #fff;
@@ -427,7 +435,7 @@ Table of Content:
 .spel_dashboard .tab_contents .dashboard_banner p {
   font-family: "Inter", sans-serif;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
   margin-bottom: 0;
 }
@@ -789,9 +797,6 @@ Table of Content:
   font-size: 16px;
   margin-left: 40px;
   cursor: pointer;
-}
-.elements_tab_menu .dashboard_btn.save-now {
-  background: #6d27e5;
 }
 
 .elements_tab {
