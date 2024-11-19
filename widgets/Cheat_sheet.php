@@ -172,7 +172,7 @@ class Cheat_sheet extends Widget_Base {
 				'label' => esc_html__( 'Image', 'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'media_types' => ['image', 'svg'],
-				'description' => 'Applicable only for Style 2.',
+				'description' => 'Applicable only for Style 3.',
 			]
 		);
 
@@ -190,7 +190,7 @@ class Cheat_sheet extends Widget_Base {
 		);
 
 		$repeater->add_control(
-			'number_color', [
+			'number_color1', [
 				'label'     => esc_html__( 'Number Color', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'description' => 'This will only work for Style 2 and 3',
@@ -432,6 +432,17 @@ class Cheat_sheet extends Widget_Base {
 		);
 
 		$this->add_control(
+			'outline_hover_color',
+			[
+				'label'     => esc_html__( 'Outline Color', 'spider-elements' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .cs-items3:hover .cs-outline3:before' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
 			'border-color',
 			[
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
@@ -481,20 +492,6 @@ class Cheat_sheet extends Widget_Base {
 				'separator'  => 'before',
 			]
 		);
-
-//		$this->add_responsive_control(
-//			'item_box_margin', [
-//				'label'      => esc_html__( 'Margin', 'spider-elements' ),
-//				'type'       => Controls_Manager::DIMENSIONS,
-//				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-//				'selectors'  => [
-//					'{{WRAPPER}} .cheatsheet_item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-//				],
-//				'condition'  => [
-//					'style' => '1'
-//				],
-//			]
-//		);
 
 		$this->add_responsive_control(
 			'grid_item_gap',
@@ -721,7 +718,7 @@ class Cheat_sheet extends Widget_Base {
 		);
 
 		$this->add_control(
-			'number_color',
+			'number_color3',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
@@ -879,7 +876,7 @@ class Cheat_sheet extends Widget_Base {
 		);
 
 		$this->add_control(
-			'number_color',
+			'number_color2',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
@@ -914,7 +911,7 @@ class Cheat_sheet extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(), [
 				'name'     => 'number_shadow',
-				'label'    => esc_html__( 'Shadow', 'spider-elements' ),
+				'label'    => esc_html__( 'Circle Shadow', 'spider-elements' ),
 				'selector' => '{{WRAPPER}} .number-circle',
 			]
 		);
@@ -960,17 +957,6 @@ class Cheat_sheet extends Widget_Base {
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .cs-items3 .cs-outline3:before' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'outline_hover_color',
-			[
-				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} cs-items3:hover .cs-outline3:before' => 'background-color: {{VALUE}}',
 				],
 			]
 		);

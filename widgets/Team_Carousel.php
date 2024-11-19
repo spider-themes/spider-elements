@@ -19,8 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
+ *
  * @package spider\Widgets
- * @since 1.0.0
+ * @since   1.0.0
  */
 class Team_Carousel extends Widget_Base {
 
@@ -128,7 +129,7 @@ class Team_Carousel extends Widget_Base {
 				'label' => esc_html__( 'Content', 'spider-elements' ),
 			]
 		);
-		
+
 		//================= Team Slider Item =================//
 		$repeater = new \Elementor\Repeater();
 		$repeater->add_control(
@@ -140,7 +141,7 @@ class Team_Carousel extends Widget_Base {
 				],
 			]
 		);
-		
+
 		$repeater->add_control(
 			'team_name', [
 				'label'       => esc_html__( 'Name', 'spider-elements' ),
@@ -150,7 +151,7 @@ class Team_Carousel extends Widget_Base {
 				'label_block' => true,
 			]
 		);
-		
+
 		$repeater->add_control(
 			'team_link',
 			[
@@ -177,7 +178,7 @@ class Team_Carousel extends Widget_Base {
 				'label_block' => true,
 			]
 		);
-		
+
 		$this->add_control(
 			'team_slider_item',
 			[
@@ -223,10 +224,14 @@ class Team_Carousel extends Widget_Base {
 
 		$this->start_controls_section(
 			'team_img_style', [
-				'label' => esc_html__( 'Team Image', 'spider-elements' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
+				'label'     => esc_html__( 'Team Image', 'spider-elements' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'style' => [ '1' ]
+				]
 			]
 		);
+
 		$this->add_responsive_control(
 			'team_img_border_radius',
 			[
@@ -238,7 +243,10 @@ class Team_Carousel extends Widget_Base {
 				],
 			]
 		);
+
 		$this->end_controls_section();
+
+
 		//========================= Contents =========================//
 		$this->start_controls_section(
 			'team_style_content', [
@@ -249,8 +257,8 @@ class Team_Carousel extends Widget_Base {
 
 		$this->add_control(
 			'name_heading', [
-				'label'     => esc_html__( 'Name', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
+				'label' => esc_html__( 'Name', 'spider-elements' ),
+				'type'  => Controls_Manager::HEADING,
 			]
 		);
 

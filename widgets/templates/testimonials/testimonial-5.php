@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php
 			if ( ! empty( $testimonials5 ) ) :
 				foreach ( $testimonials5 as $item ) : ?>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide slider-items">
                         <div class="testimonial testimonial-item">
 							<?php
 							echo ! empty( $item['company_name'] ) ? '<span class="category se_category">' . esc_html( $item['company_name'] ) . '</span>' : '';
