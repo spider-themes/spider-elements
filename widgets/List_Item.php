@@ -20,8 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Alerts_box
+ *
  * @package spider\Widgets
- * @since 1.0.0
+ * @since   1.0.0
  */
 class List_Item extends Widget_Base {
 	public function get_name() {
@@ -180,7 +181,7 @@ class List_Item extends Widget_Base {
 			'icon_align', [
 				'label'        => esc_html__( 'Alignment', 'spider-elements' ),
 				'type'         => Controls_Manager::CHOOSE,
-				'separator' => 'after',
+				'separator'    => 'after',
 				'options'      => [
 					'left'   => [
 						'title' => esc_html__( 'Left', 'spider-elements' ),
@@ -206,6 +207,18 @@ class List_Item extends Widget_Base {
 			]
 		);
 
+
+		$this->start_controls_tabs(
+			'list_style_tabs'
+		);
+
+		$this->start_controls_tab(
+			'style_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
 		$this->add_control(
 			'text_color', [
 				'label'     => esc_html__( 'Normal Color', 'spider-elements' ),
@@ -214,6 +227,15 @@ class List_Item extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .steps-panel .ordered-list li' => 'color: {{VALUE}};',
 				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'style_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
 			]
 		);
 
@@ -227,6 +249,10 @@ class List_Item extends Widget_Base {
 				],
 			]
 		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 
@@ -320,8 +346,8 @@ class List_Item extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'list_background',
-				'types' => [ 'classic', 'gradient' ],
+				'name'     => 'list_background',
+				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .steps-panel',
 			]
 		);

@@ -314,7 +314,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label'      => esc_html__( 'Size', 'spider-elements' ),
+				'label'      => esc_html__( 'Icon Size', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -356,7 +356,7 @@ class Video_Popup extends Widget_Base {
 
 		$this->add_responsive_control(
 			'icon_bg_width', [
-				'label'      => esc_html__( 'Video Popup Width', 'spider-elements' ),
+				'label'      => esc_html__( 'Popup Width', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [

@@ -47,6 +47,7 @@ ul.ordered-list {
     position: relative;
     padding-left: 35px;
     counter-increment: a;
+    transition: 0.3s;
     z-index: 1;
 
     &::before {

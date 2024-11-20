@@ -184,8 +184,7 @@
 
 .integration2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/integration2.jpg") no-repeat
-    center;
+  background: url("../images/el-editor-preview/integration2.jpg") no-repeat center;
 }
 
 /***==== blog grid ==== ***/
