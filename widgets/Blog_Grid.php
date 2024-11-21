@@ -134,7 +134,7 @@ class Blog_Grid extends Widget_Base {
 						'icon'  => 'blog_4',
 					],
 					'5' => [
-						'title' => esc_html__( 'Blog Carousel', 'spider-elements' ),
+						'title' => esc_html__( 'Blog Carousel 05', 'spider-elements' ),
 						'icon'  => 'blog_5',
 					],
 				],
@@ -161,31 +161,12 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'left_arrow_icon', [
-				'label'       => esc_html__( 'Left Icon', 'spider-elements' ),
-				'type'        => Controls_Manager::ICONS,
-				'label_block' => true,
-				'default'     => [
-					'value'   => 'arrow_carrot-left',
-					'library' => 'bi',
-				],
-				'separator'   => 'before',
-				'condition'   => [
-					'style'  => [ '5' ],
-					'style!' => [ '1', '2', '3', '4', ]
-				]
-			]
-		);
+		$this->end_controls_section(); //End Filter
 
-		$this->add_control(
-			'right_arrow_icon', [
-				'label'     => esc_html__( 'Right Icon', 'spider-elements' ),
-				'type'      => Controls_Manager::ICONS,
-				'default'   => [
-					'value'   => 'arrow_carrot-right',
-					'library' => 'bi',
-				],
+		// arrow icon control section
+		$this->start_controls_section(
+			'arrow_icon_section', [
+				'label'     => esc_html__( 'Arrow Icon', 'spider-elements' ),
 				'condition' => [
 					'style'  => [ '5' ],
 					'style!' => [ '1', '2', '3', '4', ]
@@ -193,8 +174,31 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'left_arrow_icon', [
+				'label'       => esc_html__( 'Left Icon', 'spider-elements' ),
+				'type'        => Controls_Manager::ICONS,
+				'label_block' => true,
+				'default'     => [
+					'value'   => 'arrow_carrot-left',
+					'library' => 'ElegantIcons',
+				],
+			]
+		);
 
-		$this->end_controls_section(); //End Filter
+		$this->add_control(
+			'right_arrow_icon', [
+				'label'   => esc_html__( 'Right Icon', 'spider-elements' ),
+				'type'    => Controls_Manager::ICONS,
+				'default' => [
+					'value'   => 'arrow_carrot-right',
+					'library' => 'ElegantIcons',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
 	}
 
 	/**
@@ -504,14 +508,10 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
+
+		$this->start_controls_tabs(
+			'blog_style_tabs',
 			[
-				'name'      => 'background',
-				'types'     => [ 'classic', 'gradient' ],
-				'exclude'   => [ 'image' ],
-				'selector'  => '{{WRAPPER}} .blog-meta-two, 
-								{{WRAPPER}} .blog-meta-one',
 				'condition' => [
 					'style'  => [ '1', '2', '3', '4', ],
 					'style!' => [ '5' ]
@@ -519,12 +519,55 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
+		$this->start_controls_tab(
+			'blog_style_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'background',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .blog-meta-two, 
+								{{WRAPPER}} .blog-meta-one',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'blog_style_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name'     => 'hover_background',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .blog-meta-two:hover, 
+							   {{WRAPPER}} .blog-meta-one:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->add_responsive_control(
 			'blog_margin',
 			[
 				'label'      => esc_html__( 'Margin', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
+				'separator'  => 'before',
 				'range'      => [
 					'px' => [
 						'min'  => - 100,
@@ -582,34 +625,6 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-meta-one' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style'  => [ '1', '2', '3', '4', ],
-					'style!' => [ '5' ]
-				]
-			]
-		);
-
-		$this->add_control(
-			'hove_blog', [
-				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					'style'  => [ '1', '2', '3', '4', ],
-					'style!' => [ '5' ]
-				]
-			]
-
-		);
-
-		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(),
-			[
-				'name'      => 'hover_background',
-				'types'     => [ 'classic', 'gradient' ],
-				'exclude'   => [ 'image' ],
-				'selector'  => '{{WRAPPER}} .blog-meta-two:hover, 
-							   {{WRAPPER}} .blog-meta-one:hover',
-				'condition' => [
 					'style'  => [ '1', '2', '3', '4', ],
 					'style!' => [ '5' ]
 				]
@@ -1030,7 +1045,7 @@ class Blog_Grid extends Widget_Base {
 				'label'     => esc_html__( 'Date', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'condition' => [
-					'style' => [ '1', '2', '4', '5' ],
+					'style'  => [ '1', '2', '4', '5' ],
 					'style!' => [ '3' ]
 				],
 			]
@@ -1056,10 +1071,10 @@ class Blog_Grid extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .blog-meta-two .date a'                                                            => 'color: {{VALUE}};',
-					'{{WRAPPER}} .blog-meta-one .date a'                                                            => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-two .date a'                                                         => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-meta-one .date a'                                                         => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-item .blog-meta .author-info h5, .blog-item .blog-meta .author-info span, 
-					.blog-item .blog-meta :is(.blog-category, .blog-category a, .blog-read)'                        => 'color: {{VALUE}} !important;',
+					.blog-item .blog-meta :is(.blog-category, .blog-category a, .blog-read)' => 'color: {{VALUE}} !important;',
 				],
 				'condition' => [
 					'style'  => [ '1', '2', '4', '5' ],
@@ -1082,6 +1097,16 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'     => 'blog_category_typography',
+				'selector' => '{{WRAPPER}} .blog-meta-one .tags,
+								{{WRAPPER}} .blog-meta-two .post-img .tags,
+								{{WRAPPER}} .blog-item .blog-meta .tags',
+			]
+		);
+
 		$this->start_controls_tabs(
 			'cat_tabs', [
 				'condition' => [
@@ -1098,20 +1123,6 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name'      => 'blog_category_typography',
-				'selector'  => '{{WRAPPER}} .blog-meta-one .tags,
-								{{WRAPPER}} .blog-meta-two .post-img .tags,
-								{{WRAPPER}} .blog-item .blog-meta .tags',
-				'condition' => [
-					'style'  => [ '1', '3', '5' ],
-					'style!' => [ '2', '4' ]
-				]
-			]
-		);
-
 		$this->add_control(
 			'blog_category_color',
 			[
@@ -1123,10 +1134,6 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-meta-one .tags'                            => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-item .blog-meta .tags, .blog-read::before' => 'color: {{VALUE}};',
 				],
-				'condition' => [
-					'style'  => [ '1', '3', '5' ],
-					'style!' => [ '2', '4' ]
-				]
 			]
 		);
 
@@ -1165,10 +1172,6 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .blog-item .blog-meta .tags:hover'    => 'color: {{VALUE}};',
 					'{{WRAPPER}} .blog-meta-two .post-img .tags:hover' => 'color: {{VALUE}};',
 				],
-				'condition' => [
-					'style'  => [ '3', '5', '1' ],
-					'style!' => [ '2', '4' ]
-				]
 			]
 		);
 
@@ -1219,15 +1222,9 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'author_color',
-			[
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .blog-meta-one .author a' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a' => 'color: {{VALUE}}',
-				],
+
+		$this->start_controls_tabs(
+			'meta_style_tabs', [
 				'condition' => [
 					'style'  => [ '3', '5' ],
 					'style!' => [ '1', '2', '4' ]
@@ -1235,22 +1232,51 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'blog_author_hover_color',
+		$this->start_controls_tab(
+			'meta_style_normal_tab',
 			[
-				'label'     => esc_html__( 'Hover Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'author_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .blog-meta-one .author a:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a:hover' => 'color: {{VALUE}};',
-				],
-				'condition' => [
-					'style'  => [ '3', '5' ],
-					'style!' => [ '1', '2', '4' ]
+					'{{WRAPPER}} .blog-meta-one .post-data, .blog-meta-one .author a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a'             => 'color: {{VALUE}}',
 				],
 			]
 		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'meta_style_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'blog_author_hover_color',
+			[
+				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .blog-meta-one .author a:hover'                => 'color: {{VALUE}};',
+					'{{WRAPPER}} .blog-item .blog-meta .author-info h5 a:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		//============ End meta Author Style Controls =================//
 
 		$this->end_controls_section();
@@ -1374,6 +1400,25 @@ class Blog_Grid extends Widget_Base {
 					'{{WRAPPER}} .slick-arrow ' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'separator'  => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'icon-gap',
+			[
+				'label'       => esc_html__( 'gap', 'spider-elements' ),
+				'type'        => \Elementor\Controls_Manager::SLIDER,
+				'description' => esc_html__( 'Set the gap between icon.', 'spider-elements' ),
+				'range'       => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					],
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .blog-slider-arrows' => 'column-gap: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
