@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 	<?php
 	if ( ! empty( $settings['left_arrow_icon']['value'] ) || ! empty( $settings['right_arrow_icon']['value'] ) ) { ?>
-        <span class="blog-slider-arrows d-flex justify-content-center">
+        <span class="blog-slider-arrows ezd-d-flex justify-content-center">
             <span class="prev_d blog-slick-arrow">
                 <?php \Elementor\Icons_Manager::render_icon( $settings['left_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
             </span>

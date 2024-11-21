@@ -10036,6 +10036,7 @@ ul.ordered-list li::before {
 .blog-meta-two {
   transition: 0.3s;
   margin-bottom: 0;
+  overflow: hidden;
 }
 .blog-meta-two .post-img {
   display: inline-block;
@@ -10247,9 +10248,12 @@ ul.ordered-list li::before {
 }
 
 .card-style-six {
+  display: flex;
+  align-items: flex-end;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   z-index: 1;
   height: 350px;
 }

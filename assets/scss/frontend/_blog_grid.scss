@@ -6,6 +6,7 @@
 .blog-meta-two {
   transition: 0.3s;
   margin-bottom: 0;
+  overflow: hidden;
   .post-img {
     display: inline-block;
     position: relative;
@@ -268,9 +269,12 @@
   margin: 0 12px;
 }
 .card-style-six {
+  display: flex;
+  align-items: flex-end;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   z-index: 1;
   height: 350px;
   &:before {
