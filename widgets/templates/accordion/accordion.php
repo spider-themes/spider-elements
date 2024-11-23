@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 <div class="card-header" id="heading-<?php echo esc_attr( $item['_id'] ); ?>">
                     <<?php echo esc_attr( $title_tag ); ?> class="title">
-                    <button class="btn btn-link<?php echo esc_attr( $icon_align_class ); ?>">
+                    <button class="accordion_btn_link<?php echo esc_attr( $icon_align_class ); ?>">
                         <?php
 
                         echo esc_html( $item['title'] );

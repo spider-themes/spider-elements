@@ -20,16 +20,12 @@
       .title {
         padding: 0;
         margin: 0;
-        background: unset;
       }
-      .btn-link {
+      .accordion_btn_link {
         padding: 12px 30px;
-        border: unset;
-        border-radius: unset;
         text-align: left;
         width: 100%;
-        font-size: unset;
-        font-weight: 500;
+        font-weight: 400;
         background: #ebebeb;
         text-decoration: none;
         position: relative;
@@ -100,7 +96,7 @@
     }
     &.collapsed {
       .card-header {
-        .btn-link {
+        .accordion_btn_link {
           .icon-wrapper {
             .expanded-icon {
               display: none;

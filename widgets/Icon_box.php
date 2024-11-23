@@ -199,13 +199,17 @@ class Icon_box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'box_link', [
+			'box2_link', [
 				'label'       => esc_html__( 'Link', 'spider-elements' ),
 				'type'        => Controls_Manager::URL,
 				'options'     => [ 'url', 'is_external', 'spider-elements' ],
 				'label_block' => true,
 				'dynamic'     => [
 					'active' => true,
+				],
+				'condition'   => [
+					'style'  => [ '2' ],
+					'style!' => [ '1' ]
 				],
 			]
 		);
@@ -241,6 +245,18 @@ class Icon_box extends Widget_Base {
 				'placeholder' => esc_html__( 'Enter button text', 'spider-elements' ),
 				'description' => esc_html__( '"Write your icon box button text"', 'spider-elements' ),
 				'separator'   => 'before',
+				'dynamic'     => [
+					'active' => true,
+				],
+			]
+		);
+
+		$this->add_control(
+			'box_link', [
+				'label'       => esc_html__( 'Link', 'spider-elements' ),
+				'type'        => Controls_Manager::URL,
+				'options'     => [ 'url', 'is_external', 'spider-elements' ],
+				'label_block' => true,
 				'dynamic'     => [
 					'active' => true,
 				],

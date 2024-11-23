@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<?php if ( ! empty( $settings['title'] ) ) { ?>
-        <a <?php spel_button_link($settings[ 'box_link' ]) ?> class="box2_url">
+        <a <?php spel_button_link($settings[ 'box2_link' ]) ?> class="box2_url">
             <<?php echo esc_attr( $box_title_tag ); ?> class="box_two_title">
 			<?php echo esc_html( $settings['title'] ); ?>
             </<?php echo esc_attr( $box_title_tag ) ?>>

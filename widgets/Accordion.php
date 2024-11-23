@@ -399,10 +399,10 @@ class Accordion extends Widget_Base {
 
 		$this->add_control(
 			'tab_active_color', [
-				'label'     => esc_html__( 'Active Text', 'spider-elements' ),
+				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .spel-accordion .collapsed button.btn' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .spel-accordion .collapsed .accordion_btn_link' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -533,6 +533,89 @@ class Accordion extends Widget_Base {
 			]
 		);
 
+	    // Accordion icon Normal/Active/ State
+	    $this->start_controls_tabs(
+		    'style_accordion_icon_tabs'
+	    );
+
+	    //=== Normal icon
+	    $this->start_controls_tab(
+		    'style_accordion_icon_normal', [
+			    'label' => esc_html__( 'Normal', 'spider-elements' ),
+		    ]
+	    );
+
+	    $this->add_control(
+		    'acc_icon_color',
+		    [
+			    'label'     => esc_html__( 'Color', 'spider-elements' ),
+			    'type'      => Controls_Manager::COLOR,
+			    'selectors' => [
+				    '{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
+
+			    ],
+		    ]
+	    );
+
+	    $this->add_control(
+		    'acc_icon_bg_color',
+		    [
+			    'label'     => esc_html__( 'Background', 'spider-elements' ),
+			    'type'      => Controls_Manager::COLOR,
+			    'selectors' => [
+				    '{{WRAPPER}} .card .card-header button .expanded-icon' => 'background: {{VALUE}};',
+
+			    ],
+		    ]
+	    );
+
+	    $this->end_controls_tab(); //End Normal icon
+
+
+	    //=== Active icon====
+	    $this->start_controls_tab(
+		    'acc_icon_active', [
+			    'label' => esc_html__( 'Active', 'spider-elements' ),
+		    ]
+	    );
+
+	    $this->add_control(
+		    'icon_active_color', [
+			    'label'     => esc_html__( 'Color', 'spider-elements' ),
+			    'type'      => Controls_Manager::COLOR,
+			    'selectors' => [
+				    '{{WRAPPER}} .card-header button .collapsed-icon' => 'color: {{VALUE}};',
+			    ],
+		    ]
+	    );
+
+	    $this->add_control(
+		    'icon_active_bg_color', [
+			    'label'     => esc_html__( 'Background', 'spider-elements' ),
+			    'type'      => Controls_Manager::COLOR,
+			    'selectors' => [
+				    '{{WRAPPER}} .card .card-header button .collapsed-icon' => 'background: {{VALUE}};',
+			    ],
+		    ]
+	    );
+
+
+	    $this->end_controls_tab(); // End Active Tab Title
+	    $this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+
+	    $this->add_responsive_control(
+		    'acc_padding', [
+			    'label'      => esc_html__( 'Padding', 'spider-elements' ),
+			    'type'       => Controls_Manager::DIMENSIONS,
+			    'size_units' => [ 'px', '%', 'em' ],
+				'separator'  => 'before',
+			    'selectors'  => [
+				    '{{WRAPPER}} .expanded-icon'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				    '{{WRAPPER}} .collapsed-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+			    ],
+		    ]
+	    );
+
 		$this->add_responsive_control(
 			'acc_border_radius', [
 				'label'      => esc_html__( 'Radius', 'spider-elements' ),
@@ -544,88 +627,6 @@ class Accordion extends Widget_Base {
                 ],
 			]
 		);
-
-		$this->add_responsive_control(
-			'acc_padding', [
-				'label'      => esc_html__( 'Padding', 'spider-elements' ),
-                'type'       => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .expanded-icon'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .collapsed-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		// Accordion icon Normal/Active/ State
-		$this->start_controls_tabs(
-			'style_accordion_icon_tabs'
-		);
-
-		//=== Normal icon
-		$this->start_controls_tab(
-			'style_accordion_icon_normal', [
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'acc_icon_color',
-			[
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
-
-				],
-			]
-		);
-
-		$this->add_control(
-			'acc_icon_bg_color',
-			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card .card-header button .expanded-icon' => 'background: {{VALUE}};',
-
-				],
-			]
-		);
-
-		$this->end_controls_tab(); //End Normal icon
-
-
-		//=== Active icon====
-		$this->start_controls_tab(
-			'acc_icon_active', [
-				'label' => esc_html__( 'Active', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'icon_active_color', [
-				'label'     => esc_html__( 'Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card-header button .collapsed-icon' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_active_bg_color', [
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .card .card-header button .collapsed-icon' => 'background: {{VALUE}};',
-				],
-			]
-		);
-
-
-		$this->end_controls_tab(); // End Active Tab Title
-		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
 
 		$this->end_controls_section();
 		//end accordion icon style section//
