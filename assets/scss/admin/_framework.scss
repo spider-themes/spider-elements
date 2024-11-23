@@ -19,7 +19,7 @@ $rob: "Roboto", sans-serif;
 // columns css
 .ezd-grid {
   display: grid;
-  grid-column-gap: 25px;
+  grid-column-gap: 20px;
 }
 
 .ezd-grid-cols-12 {
@@ -193,11 +193,11 @@ $rob: "Roboto", sans-serif;
 .ezd-d-flex {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -12px;
-  margin-right: -12px;
+  margin-left: -10px;
+  margin-right: -10px;
   [class*="ezd-colum-space-"] {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .ezd-colum-space-6 {

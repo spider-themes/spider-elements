@@ -24,7 +24,7 @@ Table of Content:
 
 .ezd-grid {
   display: grid;
-  grid-column-gap: 25px;
+  grid-column-gap: 20px;
 }
 
 .ezd-grid-cols-12 {
@@ -193,12 +193,12 @@ Table of Content:
 .ezd-d-flex {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -12px;
-  margin-right: -12px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .ezd-d-flex [class*=ezd-colum-space-] {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .ezd-colum-space-6 {
@@ -343,7 +343,7 @@ Table of Content:
   background: #fff;
   border-radius: 8px;
   padding: 40px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .spel_dashboard .tab_contents .tab-box .support_item .icon {
   width: 56px;
@@ -833,7 +833,7 @@ Table of Content:
 }
 
 .ezd-colum-space-4 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .element_box {
@@ -1035,7 +1035,7 @@ Table of Content:
 }
 
 .integration_item {
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 40px;
 }
 .integration_item img {
