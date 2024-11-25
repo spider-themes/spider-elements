@@ -1217,12 +1217,15 @@
     }
 
     .slider-arrows {
-      display:flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
+      list-style: none;
       left: 0;
       bottom: 0;
       margin-bottom: 0;
-      list-style: none;
+      padding: 0;
       @media (max-width: 991px) {
         right: 0;
         padding: 0;

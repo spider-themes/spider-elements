@@ -38,7 +38,7 @@ if (!defined('ABSPATH')) {
                     }
                     ?>
                 </div>
-                <ul class="slider-arrows d-flex justify-content-between justify-content-lg-center style-none">
+                <ul class="slider-arrows">
                     <li class="prev_d slick-arrow">
 	                    <?php \Elementor\Icons_Manager::render_icon( $settings['prev_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                     </li>

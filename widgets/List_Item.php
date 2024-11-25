@@ -276,6 +276,9 @@ class List_Item extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .item-list li .icon i' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .item-list li .icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .spel-steps-panel .ordered li::before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .spel-steps-panel .ordered.alpha li::before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .spel-steps-panel .ordered.roman li::before' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -287,6 +290,7 @@ class List_Item extends Widget_Base {
 				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .item-list li .icon' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .spel-steps-panel .ordered li::before' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -329,7 +333,7 @@ class List_Item extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .item-list li .icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .ordered-list li::before' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .ordered li::before' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -345,7 +349,7 @@ class List_Item extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .item-list li .icon' => 'width:{{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .ordered-list li::before' => 'width:{{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .ordered li::before' => 'width:{{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -460,7 +464,7 @@ class List_Item extends Widget_Base {
 		if ( $settings['style'] == 'unordered_list' ) {
 			?>
             <div class="spel-steps-panel">
-                <ul class="item-list unordered-list">
+                <ul class="item-list unordered">
                     <?php
                     if ( ! empty( $icon_list ) ) {
                         foreach ( $icon_list as $item ) {
@@ -488,7 +492,7 @@ class List_Item extends Widget_Base {
 		} elseif ( $settings['style'] == 'order_list' ) {
 			?>
             <div class="spel-steps-panel">
-                <ol class="item-list ordered-list<?php echo esc_attr($list_class); ?> ?>">
+                <ol class="item-list ordered<?php echo esc_attr($list_class); ?> ?>">
 					<?php
 					if ( ! empty( $icon_list ) ) {
 						foreach ( $icon_list as $item ) {

@@ -5678,11 +5678,14 @@ body.remove .tab_fixed.header_tab_items {
 }
 .feedback-section-four .bg-wrapper .slider-arrows {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
+  list-style: none;
   left: 0;
   bottom: 0;
   margin-bottom: 0;
-  list-style: none;
+  padding: 0;
 }
 @media (max-width: 991px) {
   .feedback-section-four .bg-wrapper .slider-arrows {
@@ -9342,15 +9345,15 @@ button.swiper-pagination-bullet {
   height: 10px;
   width: 10px;
 }
-.spel-steps-panel .ordered-list {
+.spel-steps-panel .ordered {
   counter-reset: list-counter;
 }
-.spel-steps-panel .ordered-list li {
+.spel-steps-panel .ordered li {
   counter-increment: list-counter;
   position: relative;
   padding-left: 50px;
 }
-.spel-steps-panel .ordered-list li::before {
+.spel-steps-panel .ordered li::before {
   content: counter(list-counter);
   position: absolute;
   display: flex;
@@ -9367,10 +9370,10 @@ button.swiper-pagination-bullet {
   font-size: 12px;
   transition: all 0.3s ease;
 }
-.spel-steps-panel .ordered-list.alpha li::before {
+.spel-steps-panel .ordered.alpha li::before {
   content: counter(list-counter, lower-alpha);
 }
-.spel-steps-panel .ordered-list.roman li::before {
+.spel-steps-panel .ordered.roman li::before {
   content: counter(list-counter, upper-roman);
 }
 

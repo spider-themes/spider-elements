@@ -58,7 +58,7 @@
     }
   }
 
-  .ordered-list {
+  .ordered {
     counter-reset: list-counter; // Reset the counter for ordered lists
     li {
       counter-increment: list-counter; // Increment the counter for each list item
