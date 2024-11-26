@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <ul class="tab-menu tab_left_content">
 
         <li>
-            <a href="#dashboard" class="tab-menu-link" data-content="dashboard">
+            <a href="#welcome" class="tab-menu-link" data-content="welcome">
                 <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-dashboard"></i>
