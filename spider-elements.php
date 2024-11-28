@@ -54,7 +54,7 @@ if ( function_exists( 'spel_fs' ) ) {
                         'menu'                  => [
                             'slug'              => 'spider_elements_settings',
                             'contact'           => true,
-                            'support'           => true,
+                            'support'           => false,
                             'first-path'        => 'admin.php?page=spider_elements_settings'
                         ],
                     ]
@@ -272,7 +272,7 @@ if (!class_exists('SPEL')) {
             // Frontend UI
             require_once __DIR__ . '/includes/Frontend/Assets.php';
 
-            //require_once __DIR__ . '/includes/template_library/Template_Library.php';
+            //require_once __DIR__. '/includes/template_library/Template_Library.php';
 
 		}
 
@@ -470,7 +470,6 @@ if (!class_exists('SPEL')) {
             define('SPEL_VEND', SPEL_URL . '/assets/vendors');
 
 		}
-
 
 	}
 }

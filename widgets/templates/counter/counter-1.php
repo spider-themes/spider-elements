@@ -3,20 +3,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
-<div class="counters-container">
+<div class="spel-counter counters-container">
 	<?php
 	if ( ! empty( $settings['counter_value'] ) ) {
 		?>
         <div class="skill_item ezd-text-center">
-            <svg class="radial-progress" data-percentage="<?php echo $settings['counter_value']; ?>"
-                 viewBox="0 0 80 80">
+            <svg class="radial-progress" data-percentage="<?php echo $settings['counter_value']; ?>" viewBox="0 0 80 80">
                 <circle class="incomplete" cx="40" cy="40" r="35"></circle>
                 <circle class="complete" cx="40" cy="40" r="35"></circle>
 
                 <div class="counter-wrap">
 					<?php
-					if ( ! empty( $settings['counter_prefix'] ) ) {
-						?>
+					if ( ! empty( $settings['counter_prefix'] ) ) { ?>
                         <span class="counter-prefix">
                             <?php echo $settings['counter_prefix']; ?>
                         </span>
@@ -27,8 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php echo $settings['counter_value']; ?>
                     </text>
 					<?php
-					if ( ! empty( $settings['counter_suffix'] ) ) {
-						?>
+					if ( ! empty( $settings['counter_suffix'] ) ) { ?>
                         <span class="counter-suffix">
                             <?php echo $settings['counter_suffix']; ?>
                         </span>
@@ -36,6 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					}
 					?>
                 </div>
+
             </svg>
         </div>
 		<?php

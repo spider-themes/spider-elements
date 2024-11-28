@@ -50,7 +50,7 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
         </div>
     </div>
 
-    <div class="filter_content ezd-d-flex" id="elements_gallery">
+    <div class="filter_content ezd-d-flex" id="elements_list">
 		<?php
 		if ( is_array( $elements['spider_elements_widgets'] ) ) {
 			foreach ( $elements['spider_elements_widgets'] as $item ) {

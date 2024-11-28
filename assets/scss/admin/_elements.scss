@@ -156,9 +156,11 @@
       &:hover {
         box-shadow: 0 5px 15px 0 rgba(51, 77, 114, 0.1);
 
-        .link {
-          opacity: 1;
-          visibility: visible;
+        .element_right {
+          .link {
+            opacity: 1;
+            visibility: visible;
+          }
         }
       }
 
@@ -292,11 +294,40 @@
           }
         }
       }
+
+      .pro {
+        .badge {
+          position: relative;
+
+          &::before {
+            content: "Pro";
+            width: 62px;
+            height: 62px;
+            text-align: center;
+            border-radius: 5px;
+            color: #fff;
+            position: absolute;
+            left: -36px;
+            top: -36px;
+            font-size: 10px;
+            font-family: "Roboto", sans-serif;
+            cursor: pointer;
+            background: #e9336b;
+            transform: rotate(-45deg);
+            text-transform: uppercase;
+            padding: 3px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-weight: 700;
+          }
+        }
+      }
+
     }
 
   }
 
-  /*===== start api_box ==========*/
   .api_box {
     padding: 24px;
 
@@ -365,8 +396,6 @@
       }
     }
   }
-
-  // start integration_banner css
 
   .integration_banner {
     text-align: left;
@@ -514,7 +543,7 @@
           border-radius: 50%;
           box-shadow: 0 1px 15px 1px rgba(255, 255, 255, 0.3);
           transform: scale(8);
-          animation: spe_pulse 2s infinite;
+          animation: spel_pulse 2s infinite;
         }
 
         &:hover {
@@ -523,6 +552,7 @@
       }
     }
   }
+
 
   /*============ qa_inner css ===============*/
   .qa_inner {
@@ -560,37 +590,6 @@
     height: 50%;
   }
 
-  .filter_content {
-    .pro {
-      .badge {
-        position: relative;
-
-        &::before {
-          content: "Pro";
-          width: 62px;
-          height: 62px;
-          text-align: center;
-          border-radius: 5px;
-          color: #fff;
-          position: absolute;
-          left: -36px;
-          top: -36px;
-          font-size: 10px;
-          font-family: "Roboto", sans-serif;
-          cursor: pointer;
-          background: #e9336b;
-          transform: rotate(-45deg);
-          text-transform: uppercase;
-          padding: 3px;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          font-weight: 700;
-        }
-      }
-    }
-  }
-
 }
 
 .ezd-colum-space-4 {
@@ -598,7 +597,7 @@
 }
 
 /*============ keyframes animation  =============*/
-@-webkit-keyframes spe_pulse {
+@-webkit-keyframes spel_pulse {
   0% {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -611,7 +610,7 @@
   }
 }
 
-@keyframes spe_pulse {
+@keyframes spel_pulse {
   0% {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);

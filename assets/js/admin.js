@@ -167,7 +167,7 @@
     // filter js
     /*===========elements isotope js===========*/
     function filterMasonry() {
-        var filter = $("#elements_gallery");
+        var filter = $("#elements_list");
         if (filter.length) {
             filter.imagesLoaded(function () {
                 // images have loaded
@@ -183,7 +183,7 @@
     $(document).ready(function () {
         // Initialize Isotope on page load
         filterMasonry();
-        let filter = $("#elements_gallery, #features_gallery");
+        let filter = $("#elements_list, #features_gallery");
 
         // Add isotope click function
         $("#elements_filter div").on("click", function () {

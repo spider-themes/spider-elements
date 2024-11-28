@@ -711,7 +711,6 @@ Table of Content:
   }
 }
 .spel_dashboard {
-  /*===== start api_box ==========*/
   /*============ qa_inner css ===============*/
 }
 .spel_dashboard .tab_contents .elements_tab_menu {
@@ -841,7 +840,7 @@ Table of Content:
 .spel_dashboard .tab_contents .element_box:hover {
   box-shadow: 0 5px 15px 0 rgba(51, 77, 114, 0.1);
 }
-.spel_dashboard .tab_contents .element_box:hover .link {
+.spel_dashboard .tab_contents .element_box:hover .element_right .link {
   opacity: 1;
   visibility: visible;
 }
@@ -957,6 +956,31 @@ Table of Content:
   position: absolute;
   background: #fff;
   transition: all 0.2s linear;
+}
+.spel_dashboard .tab_contents .filter_content .pro .badge {
+  position: relative;
+}
+.spel_dashboard .tab_contents .filter_content .pro .badge::before {
+  content: "Pro";
+  width: 62px;
+  height: 62px;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  position: absolute;
+  left: -36px;
+  top: -36px;
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  background: #e9336b;
+  transform: rotate(-45deg);
+  text-transform: uppercase;
+  padding: 3px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: 700;
 }
 .spel_dashboard .api_box {
   padding: 24px;
@@ -1149,7 +1173,7 @@ Table of Content:
   border-radius: 50%;
   box-shadow: 0 1px 15px 1px rgba(255, 255, 255, 0.3);
   transform: scale(8);
-  animation: spe_pulse 2s infinite;
+  animation: spel_pulse 2s infinite;
 }
 .spel_dashboard .pr_promo_box .promo_video .popup_youtube:hover {
   transform: translate(-50%, -50%) scale(1.02);
@@ -1184,38 +1208,13 @@ Table of Content:
   width: 55%;
   height: 50%;
 }
-.spel_dashboard .filter_content .pro .badge {
-  position: relative;
-}
-.spel_dashboard .filter_content .pro .badge::before {
-  content: "Pro";
-  width: 62px;
-  height: 62px;
-  text-align: center;
-  border-radius: 5px;
-  color: #fff;
-  position: absolute;
-  left: -36px;
-  top: -36px;
-  font-size: 10px;
-  font-family: "Roboto", sans-serif;
-  cursor: pointer;
-  background: #e9336b;
-  transform: rotate(-45deg);
-  text-transform: uppercase;
-  padding: 3px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  font-weight: 700;
-}
 
 .ezd-colum-space-4 {
   margin-bottom: 20px;
 }
 
 /*============ keyframes animation  =============*/
-@-webkit-keyframes spe_pulse {
+@-webkit-keyframes spel_pulse {
   0% {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -1227,7 +1226,7 @@ Table of Content:
     transform: translate(-50%, -50%) scale(2);
   }
 }
-@keyframes spe_pulse {
+@keyframes spel_pulse {
   0% {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);

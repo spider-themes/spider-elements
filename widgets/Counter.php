@@ -22,23 +22,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Counter extends Widget_Base {
 
-	public function get_name() {
+	public function get_name(): string
+    {
 		return 'spe_counter'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return esc_html__( 'Counter', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-counter spel-icon';
 	}
 
-	public function get_keywords() {
+	public function get_keywords(): array
+    {
 		return [ 'spider', 'Counter', 'Progress bar', ];
 	}
 
-	public function get_categories() {
+	public function get_categories(): array
+    {
 		return [ 'spider-elements' ];
 	}
 
@@ -46,7 +51,8 @@ class Counter extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends() {
+	public function get_style_depends(): array
+    {
 		return [ 'spel-main' ];
 	}
 
@@ -54,7 +60,8 @@ class Counter extends Widget_Base {
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends() {
+	public function get_script_depends(): array
+    {
 		return [ 'spel-el-widgets', 'counterup', 'waypoint' ];
 	}
 
@@ -67,7 +74,8 @@ class Counter extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls() {
+	protected function register_controls(): void
+    {
 		$this->elementor_content_control();
 		$this->counter_style_control();
 	}
@@ -114,7 +122,10 @@ class Counter extends Widget_Base {
     }
 
 
-	public function elementor_content_control() {
+	public function elementor_content_control(): void
+    {
+
+
 		//==================== Select Preset Skin ====================//
 		$this->start_controls_section(
 			'counter_preset', [
@@ -135,7 +146,8 @@ class Counter extends Widget_Base {
 
 		$this->end_controls_section(); // End Preset Skin
 
-		//=================== SecCountertion  ===================//
+
+		//=================== Counter ===================//
 		$this->start_controls_section(
 			'sec_counter', [
 				'label' => esc_html__( 'Counter', 'spider-elements' ),
@@ -154,24 +166,20 @@ class Counter extends Widget_Base {
 
 		// Control for Number Prefix & Suffix
 		$this->add_control(
-			'counter_prefix',
-			[
+			'counter_prefix', [
 				'label'   => esc_html__( 'Number Prefix', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
-				'default' => '',
 			]
 		);
 
 		$this->add_control(
-			'counter_suffix',
-			[
+			'counter_suffix', [
 				'label'   => esc_html__( 'Number Suffix', 'spider-elements' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
 				'default' => '%',
 			]
 		);
 
-		// Control for Counter Text
 		$this->add_control(
 			'counter_text', [
 				'label'   => esc_html__( 'Title', 'spider-elements' ),
@@ -180,19 +188,7 @@ class Counter extends Widget_Base {
 			]
 		);
 
-		// $this->add_control(
-		// 	'text_switcher', [
-		// 		'label'        => esc_html__( 'Counter Text Show/Hide', 'spider-elements' ),
-		// 		'type'         => Controls_Manager::SWITCHER,
-		// 		'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
-		// 		'label_off'    => esc_html__( 'No', 'spider-elements' ),
-		// 		'return_value' => 'yes',
-		// 		'default'      => 'yes',
-		// 		'separator'    => 'before'
-		// 	]
-		// );
-
-		$this->end_controls_section();
+		$this->end_controls_section(); //End Counter
 
 	}
 
@@ -206,9 +202,10 @@ class Counter extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function counter_style_control() {
+	public function counter_style_control(): void
+    {
 
-		//===================== Counter Content Style ============================//
+		//===================== Counter Style ============================//
 		$this->start_controls_section(
 			'style_counter', [
 				'label' => esc_html__( 'Counter', 'spider-elements' ),
@@ -291,8 +288,7 @@ class Counter extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'counter_circle_stroke_width',
-			[
+			'counter_circle_stroke_width', [
 				'label'      => esc_html__( 'Stroke Width', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
@@ -448,7 +444,8 @@ class Counter extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render() {
+	protected function render(): void
+    {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
 
