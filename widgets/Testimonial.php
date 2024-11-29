@@ -1562,32 +1562,21 @@ class Testimonial extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-//	start testimonial style 3 icon section======//
+//	start testimonial style 3, 6, 7 icon section======//
 	public function elementor_style_icon() {
 		//========================= Contents =========================//
 		$this->start_controls_section(
-			'style_icon', [
+			'testimonial_arrow_style_section', [
 				'label'     => esc_html__( 'Arrow Icon', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '3' ]
+					'style' => [ '3', '6', '7' ]
 				]
 			]
 		);
 
-		$this->start_controls_tabs(
-			'style_tabs'
-		);
-
-		$this->start_controls_tab(
-			'style_icon_normal_tab',
-			[
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
-			]
-		);
-
 		$this->add_responsive_control(
-			'icon_size',
+			'arrow_icon_size',
 			[
 				'label'      => esc_html__( 'Size', 'spider-elements' ),
 				'type'       => Controls_Manager::SLIDER,
@@ -1601,17 +1590,55 @@ class Testimonial extends Widget_Base {
 				'selectors'  => [
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-prev:after' => 'font-size: {{SIZE}}{{UNIT}}',
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-next:after' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .feedback_section_one .slick-arrow-one li i' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one li i' => 'font-size: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
 
+		$this->add_responsive_control(
+			'arrow_icon_gaps',
+			[
+				'label'       => esc_html__( 'Gap', 'spider-elements' ),
+				'type'        => \Elementor\Controls_Manager::SLIDER,
+				'description' => esc_html__( 'Set the gap between icon.', 'spider-elements' ),
+				'range'       => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					],
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one' => 'column-gap: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'style' => [ '6', '7' ]
+				]
+			]
+		);
+
+		//testimonial arrow icon normal/hover style tabs
+		$this->start_controls_tabs(
+			'testimonial_arrow_icon_style_tabs'
+		);
+
+		$this->start_controls_tab(
+			'arrow_icon_normal_style',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
 		$this->add_control(
-			'icon_hover_color',
+			'icon_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-prev:after, .testimonial_area_nine .navigation .swiper-button-next:after' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .feedback_section_one .slick-arrow-one li i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one li i' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -1624,26 +1651,31 @@ class Testimonial extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-prev' => 'background: {{VALUE}}',
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-next' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .feedback_section_one .slick-arrow-one li' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one li' => 'background: {{VALUE}}',
 				],
 			]
 		);
 
-		$this->end_controls_tab();
+		$this->end_controls_tab(); //end normal tab
 
+		//testimonial arrow icon hover style
 		$this->start_controls_tab(
-			'style_hover_tab',
+			'arrow_icon_hover_style',
 			[
 				'label' => esc_html__( 'Hover', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
-			'icon_color',
+			'icon_hover_color',
 			[
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-prev:hover:after, .testimonial_area_nine .navigation .swiper-button-next:hover:after' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .feedback_section_one .slick-arrow-one li:hover i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one li:hover i' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -1655,18 +1687,16 @@ class Testimonial extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-prev:hover' => 'background: {{VALUE}}',
-					'{{WRAPPER}} .testimonial_area_nine .navigation .swiper-button-next:hover' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one li:hover ' => 'background: {{VALUE}}',
 				],
 			]
 		);
 
-		$this->end_controls_tab();
-//	end icon hover
-		$this->end_controls_tabs();
-//  end icon normal and hover tabs style
-		$this->end_controls_section();
+		$this->end_controls_tab(); // end arrow icon hover style
+		$this->end_controls_tabs(); //  end icon normal and hover tabs style
+		$this->end_controls_section(); //end rrow icon section
 	}
-//  end testimonial style 3 icon style section============//
+//  end testimonial style 3, 6, 7 icon style tab============//
 
 
 	/**

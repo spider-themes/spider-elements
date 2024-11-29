@@ -458,7 +458,9 @@ class Icon_box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon_box:hover .box_main_icon'     => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box:hover .box_main_icon svg path'     => 'fill: {{VALUE}}; stroke: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box_main_icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box_main_icon svg path' => 'fill: {{VALUE}}; stroke: {{VALUE}}',
 				],
 			]
 		);
@@ -722,6 +724,7 @@ class Icon_box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .box_main_icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}; stroke: {{VALUE}}',
 				],
 			]
 		);
@@ -830,97 +833,13 @@ class Icon_box extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'svg_heading',
-			[
-				'label'     => esc_html__( 'Svg Color', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->start_controls_tabs(
-			'svg_style_tabs'
-		);
-
-		//start svg normal----
-		$this->start_controls_tab(
-			'svg_normal_tab',
-			[
-				'label' => esc_html__( 'Normal', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'svg_color',
-			[
-				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'svg_fill_color',
-			[
-				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-		//end svg normal-----//
-
-		//start svg Hover ------
-		$this->start_controls_tab(
-			'svg_hover_tab',
-			[
-				'label' => esc_html__( 'Hover', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'svg_hover_color',
-			[
-				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
-					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'stroke: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'svg_fill_hover_color',
-			[
-				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
-					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'fill: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-		//end svg hover//------
-
-		$this->end_controls_tabs();
-		//end normal/hover tabs/////-----
-
 		$this->end_controls_section();
 		//end icon box Icon and svg style section------------------------//
 
 
 		//start icon box background style section------------//
 		$this->start_controls_section(
-			'bg_section',
+			'icon_box_bg_section',
 			[
 				'label' => esc_html__( 'Background Shape', 'spider-elements' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
@@ -928,10 +847,10 @@ class Icon_box extends Widget_Base {
 		);
 
 		$this->start_controls_tabs(
-			'bg_style_tabs'
+			'iconbox_bg_style_tabs'
 		);
 
-		//start BG normal----
+		//===start BG normal===//
 		$this->start_controls_tab(
 			'style_normal_tab',
 			[
@@ -949,10 +868,9 @@ class Icon_box extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_tab();
-		//end BG normal-----//
+		$this->end_controls_tab(); //end BG normal-----//
 
-		//start BG Hover ------
+		//====start BG Hover =====//
 		$this->start_controls_tab(
 			'style_hover_tab',
 			[
@@ -970,16 +888,13 @@ class Icon_box extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_tab();
-		//end BG hover//------
+		$this->end_controls_tab(); //end BG hover//------
 
-		$this->end_controls_tabs();
-		//end normal/hover tabs/////-----
+		$this->end_controls_tabs(); //end normal/hover tabs/////-----
 
-		$this->end_controls_section();
-		//end background control style section---------////
+		$this->end_controls_section(); //end background control style section---------////
 
-	}//	==================End icon box all section snd style controls===============//
+	} //	==================End icon box all section snd style controls===============//
 
 
 	protected function render() {

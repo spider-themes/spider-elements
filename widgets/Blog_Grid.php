@@ -1406,7 +1406,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'icon-gap',
 			[
-				'label'       => esc_html__( 'gap', 'spider-elements' ),
+				'label'       => esc_html__( 'Gap', 'spider-elements' ),
 				'type'        => \Elementor\Controls_Manager::SLIDER,
 				'description' => esc_html__( 'Set the gap between icon.', 'spider-elements' ),
 				'range'       => [

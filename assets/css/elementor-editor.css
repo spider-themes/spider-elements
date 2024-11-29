@@ -270,8 +270,8 @@
 
 .marquee_slides_3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/marquee_slides_img_3.png")
-    no-repeat top;
+  background: url("../images/el-editor-preview/marquee_slides_img_3.jpg")
+    no-repeat center;
 }
 
 /*** ====== Counter ====== ***/
