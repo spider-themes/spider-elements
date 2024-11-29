@@ -40,7 +40,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'video-js', 'video-js-theaterMode', 'spel-main' ];
+		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'video-js', 'video-theaterMode', 'spel-main' ];
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'video-js', 'artplayer', 'video-js-nuevo', 'ionicons', 'spel-el-widgets', 'spel-script' ];
+		return [ 'slick', 'video-js', 'artplayer', 'video-nuevo', 'ionicons', 'spel-el-widgets', 'spel-script' ];
 	}
 
 	public function get_keywords() {

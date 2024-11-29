@@ -5,11 +5,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Check if the pro plugin and plan is active
+ * Check if the pro-plugin and plan is active
  *
- * @return bool|void
+ * @return bool
  */
-function spel_is_premium() {
+function spel_is_premium(): bool
+{
     return spel_fs()->is_plan('pro') && spel_fs()->can_use_premium_code();
 }
 
@@ -79,7 +80,8 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
  * @param bool  $is_echo
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
-    function spel_button_link( $settings_key, $is_echo = true ) {
+    function spel_button_link( $settings_key, $is_echo = true ): void
+    {
         if ( $is_echo ) {
             echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
             echo $settings_key['is_external'] ? ' target="_blank"' : '';
@@ -147,12 +149,12 @@ if ( ! function_exists( 'spel_day_link' ) ) {
  * @return string|void
  */
 if ( ! function_exists( 'spel_get_title_length' ) ) {
-    function spel_get_title_length( $settings, $settings_key, $default = 10 ) {
+    function spel_get_title_length( $settings, $settings_key, $default = 10 ): string
+    {
 
         $title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-        $title        = get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : the_title();
+        return get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : the_title();
 
-        return $title;
     }
 }
 
@@ -168,16 +170,15 @@ if ( ! function_exists( 'spel_get_title_length' ) ) {
  * @return string
  **/
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
-    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ) {
+    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string
+    {
 
         $excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-        $excerpt        = get_the_excerpt() ? wp_trim_words(
+        return get_the_excerpt() ? wp_trim_words(
             get_the_excerpt(),
             $excerpt_length,
             '...'
         ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
-
-        return $excerpt;
     }
 }
 
@@ -190,7 +191,8 @@ if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
  * @return string
  */
 if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
-    function spel_get_first_taxonomy( $term = 'category' ) {
+    function spel_get_first_taxonomy( $term = 'category' ): string
+    {
         $cats = get_the_terms( get_the_ID(), $term );
         $cat  = is_array( $cats ) ? $cats[0]->name : '';
 
@@ -207,7 +209,8 @@ if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
  * @return string
  */
 if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
-    function spel_get_first_taxonomy_link( $term = 'category' ) {
+    function spel_get_first_taxonomy_link( $term = 'category' ): string
+    {
 
         $cats = get_the_terms( get_the_ID(), $term );
         $cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
@@ -247,7 +250,7 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
 
 
 /**
- * Get categories list
+ * Get category list
  *
  * @param string $term
  *
@@ -287,7 +290,8 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
  * @return array
  */
 if ( ! function_exists( 'spel_get_post_author_name' ) ) {
-    function spel_get_post_author_name() {
+    function spel_get_post_author_name(): void
+    {
         global $post;
         $byline = sprintf(
         /* translators: %s: post author. */
@@ -335,7 +339,8 @@ if ( ! function_exists( 'spel_el_image' ) ) {
  * @param string $alt
  */
 if ( ! function_exists( 'spel_el_image_caption' ) ) {
-    function spel_el_image_caption( $image_id = '' ) {
+    function spel_el_image_caption( $image_id = '' ): array
+    {
         $img_attachment = get_post( $image_id );
 
         return array(
@@ -355,7 +360,8 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
  * @return string Filtered content containing only the allowed HTML.
  */
 if ( ! function_exists( 'spel_kses_post' ) ) {
-    function spel_kses_post( $content ) {
+    function spel_kses_post( $content ): string
+    {
         $allowed_tag = array(
             'strong' => [],
             'br'     => [],
@@ -438,7 +444,8 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
  * @return array
  */
 if ( ! function_exists( 'spel_get_tab_data' ) ) {
-    function spel_get_tab_data( $getCats, $schedule_cats ) {
+    function spel_get_tab_data( $getCats, $schedule_cats ): array
+    {
         $tab_data = [];
 
         foreach ( $getCats as $val ) {
@@ -466,7 +473,8 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
  * @return string
  */
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
-    function spel_get_reading_time( $words_per_minute = 200 ) {
+    function spel_get_reading_time( $words_per_minute = 200 ): string
+    {
         $content      = get_post_field( 'post_content', get_the_ID() );
         $word_count   = str_word_count( wp_strip_all_tags( $content ) );
         $reading_time = ceil( $word_count / $words_per_minute );
@@ -483,7 +491,8 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
  * @return void
  */
 if ( ! function_exists( 'spel_dynamic_image' ) ) {
-    function spel_dynamic_image( $key, $size = 'full', $atts = [] ) {
+    function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void
+    {
         $image = wp_get_attachment_image( $key['id'], $size, '', $atts );
         echo wp_kses( $image, [
             'img'    => [
@@ -511,7 +520,8 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
  * @return array An associative array with post-IDs as keys and post-titles as values.
  */
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
-    function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ) {
+    function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array
+    {
         $args = [
             'post_type' => $post_type,
             'post_status' => 'publish',
@@ -544,14 +554,17 @@ if ( ! function_exists( 'spel_get_query_post_list' ) ) {
  * @return array
  */
 if ( ! function_exists( 'spel_get_el_templates' ) ) {
-    function spel_get_el_templates( $type = null ) {
+    function spel_get_el_templates( $type = null ): array
+    {
         $options = [];
 
         if ( $type ) {
+
             $args              = [
                 'post_type'      => 'elementor_library',
                 'posts_per_page' => -1,
             ];
+
             $args['tax_query'] = [
                 [
                     'taxonomy' => 'elementor_library_type',
@@ -582,7 +595,8 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
  * @return array Server environment information.
  */
 if ( ! function_exists( 'spel_get_environment_info' ) ) {
-    function spel_get_environment_info() {
+    function spel_get_environment_info(): array
+    {
 
         // Figure out cURL version, if installed.
         $curl_version = '';
@@ -631,7 +645,7 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
 /**
  * Convert a human-readable file size into bytes.
  *
- * @param string $size The size string (e.g., "1M", "2G", "500K").
+ * @param string $size The size string (e.g., "1M", "2G", "500 K").
  * @return int The equivalent size in bytes.
  */
 if ( ! function_exists( 'spel_readable_number' ) ) {
@@ -667,8 +681,9 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 }
 
 
-if (!function_exists('spel_pagination')) {
-    function spel_pagination($query, $class = 'spel-pagination', $prev = '', $next = '') {
+if ( !function_exists('spel_pagination') ) {
+    function spel_pagination($query, $class = 'spel-pagination', $prev = '', $next = ''): void
+    {
         $default_prev = '<img src="' . esc_url(SPEL_IMG . '/icons/prev.svg') . '" alt="' . esc_attr__('arrow-left', 'jobly') . '" class="me-2" />' . esc_html__('Prev', 'jobly');
         $default_next = esc_html__('Next', 'jobly') . '<img src="' . esc_url(SPEL_IMG . '/icons/next.svg') . '" alt="' . esc_attr__('arrow-right', 'jobly') . '" class="ms-2" />';
 

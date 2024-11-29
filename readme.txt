@@ -1,5 +1,5 @@
 === Spider Elements - Addons for Elementor ===
-Contributors: mdjwel, spiderdevs, arifrahman1, delweratjk, rony015, alimran01, codersajjad
+Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, rony015, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, spider element
 Stable tag: 1.5.0
 Requires at least: 5.0
