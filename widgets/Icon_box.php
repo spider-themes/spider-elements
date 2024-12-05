@@ -458,9 +458,7 @@ class Icon_box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon_box:hover .box_main_icon'     => 'color: {{VALUE}}',
-					'{{WRAPPER}} .icon_box:hover .box_main_icon svg path'     => 'fill: {{VALUE}}; stroke: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box_main_icon' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .icon_box_two:hover .box_main_icon svg path' => 'fill: {{VALUE}}; stroke: {{VALUE}}',
 				],
 			]
 		);
@@ -724,7 +722,6 @@ class Icon_box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .box_main_icon' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}; stroke: {{VALUE}}',
 				],
 			]
 		);
@@ -743,6 +740,7 @@ class Icon_box extends Widget_Base {
 				],
 			]
 		);
+
 
 		$this->add_responsive_control(
 			'icon_size',
@@ -832,6 +830,87 @@ class Icon_box extends Widget_Base {
 				],
 			]
 		);
+
+		$this->add_control(
+			'icon_box_svg_color_option',
+			[
+				'label'     => esc_html__( 'svg Color', 'spider-elements' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->start_controls_tabs(
+			'icon_box_svg_style_tabs'
+		);
+
+		//start svg normal----
+		$this->start_controls_tab(
+			'svg_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'svg_color',
+			[
+				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg path' => 'stroke: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'svg_fill_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .box_main_icon svg path' => 'fill: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab(); //end svg normal-----//
+
+		//start svg Hover ------
+		$this->start_controls_tab(
+			'svg_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'spider-elements' ),
+			]
+		);
+
+		$this->add_control(
+			'svg_hover_color',
+			[
+				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'stroke: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'svg_fill_hover_color',
+			[
+				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'fill: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab(); //end svg hover//------
+
+		$this->end_controls_tabs(); //end normal/hover tabs/////-----
 
 		$this->end_controls_section();
 		//end icon box Icon and svg style section------------------------//

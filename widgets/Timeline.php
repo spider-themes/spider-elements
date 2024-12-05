@@ -153,6 +153,7 @@ class Timeline extends Widget_Base {
 			[
 				'name'     => 'background',
 				'types'    => [ 'classic', 'gradient', ],
+				'separator'=> 'before',
 				'selector' => '{{WRAPPER}} .timeline-wrapper .timeline-panel p::after',
 			]
 		);

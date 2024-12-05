@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <<?php echo esc_attr( $box_title_tag ); ?> class="box_two_title">
 			<?php echo esc_html( $settings['title'] ); ?>
             </<?php echo esc_attr( $box_title_tag ) ?>>
-            </a>
+        </a>
 			<?php
 		}
 		?>
