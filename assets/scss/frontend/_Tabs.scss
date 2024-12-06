@@ -304,7 +304,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
             height: 2.1px;
             background: #A77DEF;
             position: absolute;
-            top: 0;
+            top: -1px;
             left: 0;
             opacity: 0;
             transition: width 0.2s linear;

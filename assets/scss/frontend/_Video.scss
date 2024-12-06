@@ -682,55 +682,6 @@
       right: -20px;
     }
 
-    &:hover {
-      color: #3c4146;
-    }
-  }
-
-  .gallery-thumbs {
-    & .slick-track {
-      margin: 0 -15px;
-    }
-  }
-}
-
-.gallery_main_area {
-  position: relative;
-
-  .prev,
-  .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: 36px;
-    width: 36px;
-    border-radius: 50%;
-    border: 1px solid #dfe1e5;
-    z-index: 0;
-    color: #848d95;
-    background-color: #fff;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-
-    &:hover svg path {
-      fill: #4c4cf1;
-    }
-
-    &.slick-disabled {
-      display: none !important;
-    }
-
-    &.prev {
-      left: -20px;
-    }
-
-    &.next {
-      right: -20px;
-    }
-
     &:hover,
     &.slick-current {
       color: #3c4146;

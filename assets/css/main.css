@@ -4439,7 +4439,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   height: 2.1px;
   background: #A77DEF;
   position: absolute;
-  top: 0;
+  top: -1px;
   left: 0;
   opacity: 0;
   transition: width 0.2s linear;
@@ -6554,51 +6554,6 @@ body.remove .tab_fixed.header_tab_items {
 .slide_text .video_user ion-icon {
   position: relative;
   top: 2px;
-}
-
-.gallery_main_area {
-  position: relative;
-}
-.gallery_main_area .prev,
-.gallery_main_area .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  border: 1px solid #dfe1e5;
-  z-index: 0;
-  color: #848d95;
-  background-color: #fff;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-.gallery_main_area .prev:hover svg path,
-.gallery_main_area .next:hover svg path {
-  fill: #4c4cf1;
-}
-.gallery_main_area .prev.slick-disabled,
-.gallery_main_area .next.slick-disabled {
-  display: none !important;
-}
-.gallery_main_area .prev.prev,
-.gallery_main_area .next.prev {
-  left: -20px;
-}
-.gallery_main_area .prev.next,
-.gallery_main_area .next.next {
-  right: -20px;
-}
-.gallery_main_area .prev:hover,
-.gallery_main_area .next:hover {
-  color: #3c4146;
-}
-.gallery_main_area .gallery-thumbs .slick-track {
-  margin: 0 -15px;
 }
 
 .gallery_main_area {

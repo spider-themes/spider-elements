@@ -99,7 +99,8 @@ class Assets
 	function register_widget_scripts(): void
     {
 
-		wp_register_script('ionicons', 'https://unpkg.com/ionicons@latest/dist/ionicons.js', '', SPEL_VERSION, ['strategy' => 'defer'] );
+	    wp_register_script('ionicons', 'https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js', '', SPEL_VERSION, ['strategy' => 'defer'] );
+	    wp_register_script('ionicons', 'https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js', '', SPEL_VERSION, ['strategy' => 'defer'] );
 		wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
 		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper-bundle.min.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
 		wp_register_script('text-type', SPEL_VEND . '/text-type/text-type.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
