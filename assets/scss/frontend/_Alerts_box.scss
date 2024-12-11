@@ -13,7 +13,7 @@
     margin-right: 25px;
   }
 
-  h5 {
+  .title {
     font-size: 16px;
     color: #031933;
     font-weight: 500;
@@ -46,7 +46,7 @@
   border-color: #fbadb3;
 
   i,
-  h5 {
+  .title {
     color: #fa303e;
   }
 }
@@ -56,7 +56,7 @@
   border-color: #94e3a1;
 
   i,
-  h5 {
+  .title {
     color: #10d631;
   }
 }
@@ -66,7 +66,7 @@
   border-color: #f2dca0;
 
   i,
-  h5 {
+  .title {
     color: #f6ba18;
   }
 }
@@ -76,8 +76,8 @@
   border-color: #a0e3f2;
 
   i,
-  h5 {
-    color: #A77DEF;
+  .title {
+    color: #055160;
   }
 }
 
@@ -162,7 +162,6 @@
   }
 
   &::after {
-    font-family: "Roboto", sans-serif;
     content: "Hey!";
     text-transform: uppercase;
     font-weight: 700;
