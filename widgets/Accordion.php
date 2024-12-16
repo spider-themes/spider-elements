@@ -24,23 +24,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Accordion extends Widget_Base {
 
-	public function get_name() {
+	public function get_name(): string
+    {
 		return 'spel_accordion'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return esc_html__( 'Accordion', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-accordion spel-icon';
 	}
 
-	public function get_keywords() {
+	public function get_keywords(): array
+    {
 		return [ 'spider', 'spider elements', 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab', ];
 	}
 
-	public function get_categories() {
+	public function get_categories(): array
+    {
 		return [ 'spider-elements' ];
 	}
 
@@ -48,7 +53,8 @@ class Accordion extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends() {
+	public function get_style_depends(): array
+    {
 		return [ 'spel-main', 'elegant-icon' ];
 	}
 
@@ -56,7 +62,8 @@ class Accordion extends Widget_Base {
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends() {
+	public function get_script_depends(): array
+    {
 		return [ 'spel-el-widgets', 'spel-script' ];
 	}
 
@@ -70,7 +77,8 @@ class Accordion extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls() {
+	protected function register_controls(): void
+    {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
@@ -298,7 +306,6 @@ class Accordion extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-    //	==================Start accordion all style controls===============
 	public function elementor_style_control(): void
     {
 
@@ -643,8 +650,10 @@ class Accordion extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render() {
-		$settings = $this->get_settings_for_display();
+	protected function render(): void
+    {
+
+        $settings = $this->get_settings_for_display();
 		extract( $settings );
 
 		$title_tag        = ! empty ( $settings['title_tag'] ) ? $settings['title_tag'] : 'h6';

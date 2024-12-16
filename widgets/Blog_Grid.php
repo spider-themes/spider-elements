@@ -617,7 +617,7 @@ class Blog_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'blog_item_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'spider -elements' ),
+				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [

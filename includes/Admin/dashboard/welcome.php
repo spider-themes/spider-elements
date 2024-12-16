@@ -121,6 +121,7 @@ $environment        = spel_get_environment_info();
                     <p>
 						<?php
 						printf(
+                            /* translators: %1$s and %2$s are opening and closing strong HTML tags. */
 							esc_html__(
 								'Note: If you have multiple addons like %1$s Spider Elements %2$s, you may need more resources. Ensure you allocate more memory for other addons as well.', 'spider-elements'
 							),

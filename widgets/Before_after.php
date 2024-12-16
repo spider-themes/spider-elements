@@ -53,7 +53,7 @@ class Before_After extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'beforeafter', 'spel-el-widgets' ];
+		return [ 'before-after', 'spel-el-widgets' ];
 	}
 
 

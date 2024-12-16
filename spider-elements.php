@@ -359,7 +359,6 @@ if (!class_exists('SPEL')) {
             $widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
             $elements_opt = get_option( 'spe_widget_settings' );
 
-
             if ( isset( $elements_opt[ 'docy_tabs' ] ) && $elements_opt[ 'docy_tabs' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/Tabs.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Tabs() );
@@ -425,7 +424,7 @@ if (!class_exists('SPEL')) {
             //require_once( __DIR__ . '/widgets/Buttons.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Buttons() );
             // }
-            // if ( isset( $elements_opt[ 'spe_animated_heading' ] ) && $elements_opt[ 'spe_animated_heading' ] == 'on' ) {
+            // if ( isset( $elements_opt[ 'spel_animated_heading' ] ) && $elements_opt[ 'spel_animated_heading' ] == 'on' ) {
             //require_once( __DIR__ . '/widgets/Animated_Heading.php' );
             //     $widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
             // }

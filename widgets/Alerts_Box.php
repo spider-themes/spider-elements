@@ -472,8 +472,8 @@ class Alerts_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'closeicon_heading', [
-				'label'     => esc_html__( 'Close Icon' ),
+			'close_icon_heading', [
+				'label'     => esc_html__( 'Close Icon', 'spider-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [

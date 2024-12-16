@@ -208,7 +208,7 @@ class Module_Settings {
                 //     'icon'         => 'eicon-button',
                 // ],
                 // [
-                //     'name'         => 'spe_animated_heading',
+                //     'name'         => 'spel_animated_heading',
                 //     'className'    => 'Animated_Heading', // widget class name
                 //     'label'        => esc_html__('Animated Heading', 'spider-elements'),
                 //     'type'         => 'checkbox',

@@ -68,10 +68,10 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_enable', [
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label' => esc_html__('Enable Badge', 'spider-elements-pro'),
+                'label' => esc_html__('Enable Badge',  'spider-elements'),
                 'frontend_available' => true,
-                'label_on' => esc_html__('Yes', 'spider-elements-pro'),
-                'label_off' => esc_html__('No', 'spider-elements-pro'),
+                'label_on' => esc_html__('Yes',  'spider-elements'),
+                'label_off' => esc_html__('No',  'spider-elements'),
                 'return_value' => 'yes',
                 'default' => 'no',
                 'separator' => 'before',
@@ -81,7 +81,7 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_text',
             [
-                'label' => esc_html__('Badge Label', 'spider-elements-pro'),
+                'label' => esc_html__('Badge Label',  'spider-elements'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
@@ -96,7 +96,7 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_color',
             [
-                'label' => esc_html__('Text Color', 'spider-elements-pro'),
+                'label' => esc_html__('Text Color',  'spider-elements'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => [
                     'spe_fb_badge_enable' => 'yes',
@@ -109,7 +109,7 @@ class Features_Badge {
         $element->add_control(
             'spe_fb_badge_bg_color',
             [
-                'label' => esc_html__('Background Color', 'spider-elements-pro'),
+                'label' => esc_html__('Background Color',  'spider-elements'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => [
                     'spe_fb_badge_enable' => 'yes',
@@ -120,7 +120,7 @@ class Features_Badge {
         // Badge Text Typography Settings
         $element->add_responsive_control(
             'spe_fb_badge_position_top', [
-                'label' => esc_html__('Position Top', 'spider-elements-pro'),
+                'label' => esc_html__('Position Top',  'spider-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'range' => [

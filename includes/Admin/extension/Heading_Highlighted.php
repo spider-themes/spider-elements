@@ -32,7 +32,7 @@ class Heading_Highlighted {
 		//=============== Start Highlighted Text ===============//
 		$element->start_controls_section(
 			'spel_highlighted_text_style', [
-				'label' => esc_html__( 'Highlighted Text', 'spider-elements-pro' ) . SPEL_TEXT_BADGE,
+				'label' => esc_html__( 'Highlighted Text',  'spider-elements' ) . SPEL_TEXT_BADGE,
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -40,11 +40,11 @@ class Heading_Highlighted {
 		$element->add_control(
 			'spe_highlighted_text_enable', [
 				'type'               => \Elementor\Controls_Manager::SWITCHER,
-				'label'              => esc_html__( 'Enable Highlighted', 'spider-elements-pro' ),
+				'label'              => esc_html__( 'Enable Highlighted',  'spider-elements' ),
 				'frontend_available' => true,
-				'label_on'           => esc_html__( 'Enable', 'spider-elements-pro' ),
-				'label_off'          => esc_html__( 'Disable', 'spider-elements-pro' ),
-				'description'        => __( 'Highlighted text must be written in <span></span> tag. Example: Welcome to <span>Highlighted</span>', 'spider-elements-pro' ),
+				'label_on'           => esc_html__( 'Enable',  'spider-elements' ),
+				'label_off'          => esc_html__( 'Disable',  'spider-elements' ),
+				'description'        => __( 'Highlighted text must be written in <span></span> tag. Example: Welcome to <span>Highlighted</span>',  'spider-elements' ),
 				'return_value'       => 'yes',
 				'default'            => 'no',
 			]
@@ -62,7 +62,7 @@ class Heading_Highlighted {
 
 		$element->add_control(
 			'spe_highlighted_text_color', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements-pro' ),
+				'label'     => esc_html__( 'Text Color',  'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-heading-title span' => 'color: {{VALUE}}',
@@ -76,11 +76,11 @@ class Heading_Highlighted {
 		//Background
         $element->add_control(
             'spe_highlighted_text_bg_select', [
-                'label' => esc_html__( 'Background Style', 'spider-elements-pro' ),
+                'label' => esc_html__( 'Background Style',  'spider-elements' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    'none' => esc_html__( 'None', 'spider-elements-pro' ),
-                    'bg'  => esc_html__( 'Background', 'spider-elements-pro' ),
+                    'none' => esc_html__( 'None',  'spider-elements' ),
+                    'bg'  => esc_html__( 'Background',  'spider-elements' ),
                 ],
                 'default' => 'none',
                 'separator' => 'before',
@@ -102,7 +102,7 @@ class Heading_Highlighted {
 
 		$element->add_responsive_control(
 			'spe_highlighted_text_bg_width', [
-				'label' => esc_html__( 'Width', 'spider-elements-pro' ),
+				'label' => esc_html__( 'Width',  'spider-elements' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -132,7 +132,7 @@ class Heading_Highlighted {
 
         $element->add_responsive_control(
             'spe_highlighted_text_bg_height', [
-                'label' => esc_html__( 'Height', 'spider-elements-pro' ),
+                'label' => esc_html__( 'Height',  'spider-elements' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'range' => [
@@ -161,7 +161,7 @@ class Heading_Highlighted {
 
         $element->add_responsive_control(
             'spe_highlighted_text_bg_bottom', [
-                'label' => esc_html__( 'Bottom', 'spider-elements-pro' ),
+                'label' => esc_html__( 'Bottom',  'spider-elements' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'range' => [

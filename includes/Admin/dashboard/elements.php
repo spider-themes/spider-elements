@@ -99,8 +99,7 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
                                         <a href="<?php echo esc_url( $item['demo_url'] ) ?>" class="tooltip-top"
                                            data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Widget Demo', 'spider-elements' ), $item['label'] ) ?>"
                                            target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg' ) ?>"
-                                                 alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg' ) ?>" alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
                                         </a>
 										<?php
 									}

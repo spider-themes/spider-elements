@@ -45,7 +45,7 @@ add_action( 'admin_init', function () {
             'docy_blog_grid',
             'spe_timeline_widget',
             'spe_buttons',
-            'spe_animated_heading',
+            'spel_animated_heading',
             'spe_counter',
             'spe_instagram',
             'spel_icon_box'

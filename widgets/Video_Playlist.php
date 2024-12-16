@@ -41,7 +41,7 @@ class Video_Playlist extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'video-js', 'video-theaterMode', 'spel-main' ];
+		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'videojs', 'video-theaterMode', 'spel-main' ];
 	}
 
 	/**

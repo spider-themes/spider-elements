@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Use namespace to avoid conflict
  */
@@ -23,23 +22,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Animated_Heading extends Widget_Base {
 
-	public function get_name() {
-		return 'spe_animated_heading'; // ID of the widget (Don't change this name)
+	public function get_name(): string
+    {
+		return 'spel_animated_heading'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return esc_html__( 'Animated Heading', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-heading spel-icon';
 	}
 
-	public function get_keywords() {
+	public function get_keywords(): array
+    {
 		return [ 'Heading', 'Animated', 'Animated Heading' ];
 	}
 
-	public function get_categories() {
+	public function get_categories(): array
+    {
 		return [ 'spider-elements' ];
 	}
 
@@ -47,7 +51,8 @@ class Animated_Heading extends Widget_Base {
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends() {
+	public function get_script_depends(): array
+    {
 		return [ 'text-type' ];
 	}
 
@@ -60,7 +65,8 @@ class Animated_Heading extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls() {
+	protected function register_controls(): void
+    {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
@@ -75,17 +81,18 @@ class Animated_Heading extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_content_control() {
+	public function elementor_content_control(): void
+    {
 		//============================= Filter Options =================================== //
 		$this->start_controls_section(
-			'se_animated_headline_sec',
+			'animated_heading_sec',
 			[
 				'label' => esc_html__( 'Title', 'spider-elements' ),
 			]
 		);
 
 		$this->add_control(
-			'headline_before_text', [
+			'before_title', [
 				'label'       => esc_html__( 'Before Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => esc_html__( "I’m a", 'spider-elements' ),
@@ -96,7 +103,7 @@ class Animated_Heading extends Widget_Base {
 		$this->end_controls_section(); //End Filter
 
 		$this->start_controls_section(
-			'se_clip_list', [
+			'clip_list', [
 				'label' => esc_html__( 'Clip List', 'spider-elements' )
 
 			]
@@ -104,8 +111,7 @@ class Animated_Heading extends Widget_Base {
 
 		$repeater = new Repeater();
 		$repeater->add_control(
-			'title1',
-			[
+			'title1', [
 				'label' => esc_html__( 'First Text', 'spider-elements' ),
 				'type'  => Controls_Manager::TEXT,
 			]
@@ -119,9 +125,8 @@ class Animated_Heading extends Widget_Base {
 			]
 		);
 
-
 		$this->add_control(
-			'cd_option_list',
+			'option_list',
 			[
 				'label'       => esc_html__( 'Slide List', 'spider-elements' ),
 				'type'        => Controls_Manager::REPEATER,
@@ -159,7 +164,8 @@ class Animated_Heading extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_style_control() {
+	public function elementor_style_control(): void
+    {
 
 		$this->start_controls_section(
 			'style_animated_headline',
@@ -268,17 +274,18 @@ class Animated_Heading extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render() {
+	protected function render(): void
+    {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // extract all settings array to variables converted to name of key
 		?>
         <h1 class="cd-headline clip home-headline">
-			<?php echo esc_html( $settings['headline_before_text'] ) ?>
+			<?php echo esc_html( $settings['before_title'] ) ?>
             <small class="cd-words-wrapper single-headline">
 				<?php
 				$i = "";
-				if ( ! empty( $cd_option_list ) ) {
-					foreach ( $cd_option_list as $item ) {
+				if ( ! empty( $option_list ) ) {
+					foreach ( $option_list as $item ) {
 						$vihi = $i == 1 ? 'visible' : 'hidden';
 						$i ++;
 						$slide_title1 = ! empty( $item['title1'] ) ? $item['title1'] : '';

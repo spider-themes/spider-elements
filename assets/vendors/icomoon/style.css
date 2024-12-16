@@ -3,8 +3,7 @@
   src: url("fonts/icomoon.eot?g0vcd6");
   src: url("fonts/icomoon.eot?g0vcd6#iefix") format("embedded-opentype"),
     url("fonts/icomoon.ttf?g0vcd6") format("truetype"),
-    url("fonts/icomoon.woff?g0vcd6") format("woff"),
-    url("fonts/icomoon.svg?g0vcd6#icomoon") format("svg");
+    url("fonts/icomoon.woff?g0vcd6") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: block;

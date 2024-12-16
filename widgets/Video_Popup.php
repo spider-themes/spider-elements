@@ -24,15 +24,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Video_Popup extends Widget_Base {
 
-	public function get_name() {
+	public function get_name(): string
+    {
 		return 'docy_video_popup'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return esc_html__( 'Video Popup', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-play spel-icon';
 	}
 

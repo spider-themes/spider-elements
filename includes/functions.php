@@ -684,8 +684,8 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 if ( !function_exists('spel_pagination') ) {
     function spel_pagination($query, $class = 'spel-pagination', $prev = '', $next = ''): void
     {
-        $default_prev = '<img src="' . esc_url(SPEL_IMG . '/icons/prev.svg') . '" alt="' . esc_attr__('arrow-left', 'jobly') . '" class="me-2" />' . esc_html__('Prev', 'jobly');
-        $default_next = esc_html__('Next', 'jobly') . '<img src="' . esc_url(SPEL_IMG . '/icons/next.svg') . '" alt="' . esc_attr__('arrow-right', 'jobly') . '" class="ms-2" />';
+        $default_prev = '<img src="' . esc_url(SPEL_IMG . '/icons/prev.svg') . '" alt="' . esc_attr__('arrow-left',  'spider-elements') . '" class="me-2" />' . esc_html__('Prev',  'spider-elements');
+        $default_next = esc_html__('Next',  'spider-elements') . '<img src="' . esc_url(SPEL_IMG . '/icons/next.svg') . '" alt="' . esc_attr__('arrow-right',  'spider-elements') . '" class="ms-2" />';
 
         $prev_text = !empty($prev) ? $prev : $default_prev;
         $next_text = !empty($next) ? $next : $default_next;
