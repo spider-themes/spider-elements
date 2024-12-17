@@ -75,17 +75,9 @@ class Dashboard {
 					require_once __DIR__ . '/dashboard/features.php';
 				}
 
-				/*if ( file_exists(require_once __DIR__ . '/dashboard/api-settings.php') ) {
-					require_once __DIR__ . '/dashboard/api-settings.php';
-				}*/
-
 				if ( file_exists(require_once __DIR__ . '/dashboard/integration.php') ) {
 					require_once __DIR__ . '/dashboard/integration.php';
 				}
-
-				/*if ( file_exists(require_once __DIR__ . '/dashboard/go-premium.php') ) {
-					require_once __DIR__ . '/dashboard/go-premium.php';
-				}*/
 
                 if ( file_exists(require_once __DIR__ . '/dashboard/popup-pro.php') ) {
                     require_once __DIR__ . '/dashboard/popup-pro.php';

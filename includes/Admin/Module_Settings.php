@@ -23,7 +23,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/tabs/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/tabs/',
                     'icon'         => 'eicon-tabs',
                 ],
@@ -35,7 +34,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/video-playlist/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/video-playlist/',
                     'icon'         => 'eicon-video-playlist',
                 ],
@@ -47,7 +45,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/notice-message/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/notice-message/',
                     'icon'         => 'eicon-alert',
                 ],
@@ -59,7 +56,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/accordion/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/accordion/',
                     'icon'         => 'eicon-accordion',
                 ],
@@ -71,34 +67,8 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/testimonials/',
-                    //'video_url'    => '#',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-testimonial-carousel',
                 ],
-                // [
-                //     'name'         => 'landpagy_pricing_table_tabs',
-                //     'className'    => 'Pricing_Table_Tabs', // widget class name
-                //     'label'        => esc_html__('Pricing Table Tabs', 'spider-elements'),
-                //     'type'         => 'checkbox',
-                //     'default'      => 'on',
-                //     'widget_type'  => 'free',
-                //     'demo_url'     => '#',
-                //     'video_url'    => '#',
-                //     'docs_url'     => '#',
-                //     'icon'         => 'eicon-price-table',
-                // ],
-                // [
-                //     'name'         => 'landpagy_pricing_table_switcher',
-                //     'className'    => 'Pricing_Table_Switcher', // widget class name
-                //     'label'        => esc_html__('Pricing Table Switcher', 'spider-elements'),
-                //     'type'         => 'checkbox',
-                //     'default'      => 'on',
-                //     'widget_type'  => 'free',
-                //     'demo_url'     => '#',
-                //     'video_url'    => '#',
-                //     'docs_url'     => '#',
-                //     'icon'         => 'eicon-price-table',
-                // ],
                 [
                     'name'         => 'docly_list_item',
                     'className'    => 'List_Item', // widget class name
@@ -107,7 +77,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/list-item/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/list-item/',
                     'icon'         => 'eicon-bullet-list',
                 ],
@@ -119,7 +88,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/cheatsheet/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/cheatsheet/',
                     'icon'         => 'eicon-apps',
                 ],
@@ -131,8 +99,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/team-carousel/',
-                    //'video_url'    => '#',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-nested-carousel',
                 ],
                 [
@@ -143,22 +109,9 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/integration/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/integration/',
                     'icon'         => 'eicon-integration',
                 ],
-                /*[
-                    'name'         => 'spe_after_before_widget',
-                    'className'    => 'Before_After', // widget class name
-                    'label'        => esc_html__('Before After', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => 'https://spider-themes.net/spider-elements/before-after/',
-                    //'video_url'    => '#',
-                    //'docs_url'    => '#',
-                    'icon'         => 'eicon-thumbnails-half',
-                ],*/
                 [
                     'name'         => 'docy_video_popup',
                     'className'    => 'Video_Popup', // widget class name
@@ -167,8 +120,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/video-popup/',
-                    //'video_url'    => '#',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-play',
                 ],
                 [
@@ -179,7 +130,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/blog-grid/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/blog-grid/',
                     'icon'         => 'eicon-post',
                 ],
@@ -191,34 +141,8 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/timeline/',
-                    //'video_url'    => '#',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-time-line',
                 ],
-                // [
-                //     'name'         => 'spe_buttons',
-                //     'className'    => 'Buttons', // widget class name
-                //     'label'        => esc_html__('Buttons', 'spider-elements'),
-                //     'type'         => 'checkbox',
-                //     'default'      => 'on',
-                //     'widget_type'  => 'free',
-                //     'demo_url'     => '#',
-                //     'video_url'    => '#',
-                //     'docs_url'     => '#',
-                //     'icon'         => 'eicon-button',
-                // ],
-                // [
-                //     'name'         => 'spel_animated_heading',
-                //     'className'    => 'Animated_Heading', // widget class name
-                //     'label'        => esc_html__('Animated Heading', 'spider-elements'),
-                //     'type'         => 'checkbox',
-                //     'default'      => 'on',
-                //     'widget_type'  => 'free',
-                //     'demo_url'     => '#',
-                //     'video_url'    => '#',
-                //     'docs_url'     => '#',
-                //     'icon'         => 'eicon-heading',
-                // ],
                 [
                     'name'         => 'spe_counter',
                     'className'    => 'Counter', // widget class name
@@ -227,22 +151,9 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/counter/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/counter/',
                     'icon'         => 'eicon-counter',
                 ],
-                // [
-                //     'name'         => 'spe_instagram',
-                //     'className'    => 'Instagram', // widget class name
-                //     'label'        => esc_html__('Instagram', 'spider-elements'),
-                //     'type'         => 'checkbox',
-                //     'default'      => 'on',
-                //     'widget_type'  => 'free',
-                //     'demo_url'     => '#',
-                //     'video_url'    => '#',
-                //     'docs_url'     => '#',
-                //     'icon'         => 'eicon-instagram-post',
-                // ],
                 [
                     'name'         => 'spel_icon_box',
                     'className'    => 'Icon_box', // widget class name
@@ -251,8 +162,6 @@ class Module_Settings {
                     'default'      => 'on',
                     'widget_type'  => 'free',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/icon-box/',
-                    //'video_url'    => '#',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-icon-box',
                 ],
 
@@ -266,7 +175,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/accordion-articles/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/accordion-articles/',
                     'icon'         => 'eicon-accordion',
                 ],
@@ -278,22 +186,9 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/box-hover/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/box-hover/',
                     'icon'         => 'eicon-image-box',
                 ],
-                // [
-                //     'name'         => 'spel_business_hours',
-                //     'className'    => 'Business_Hours', // widget class name
-                //     'label'        => esc_html__('Business Hours', 'spider-elements'),
-                //     'type'         => 'checkbox',
-                //     'default'      => 'off',
-                //     'widget_type'  => 'pro',
-                //     'demo_url'     => '#',
-                //     'video_url'    => '#',
-                //     'docs_url'     => '#',
-                //     'icon'         => 'eicon-clock-o',
-                // ],
                 [
                     'name'         => 'spe_feature_box',
                     'className'    => 'Feature_Box', // widget class name
@@ -302,7 +197,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/feature-box/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/feature-box/',
                     'icon'         => 'eicon-info-box',
                 ],
@@ -314,7 +208,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/flipbox/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/flip-box/',
                     'icon'         => 'eicon-flip-box',
                 ],
@@ -326,7 +219,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/hotspot/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/hotspot/',
                     'icon'         => 'eicon-image-hotspot',
                 ],
@@ -338,7 +230,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/image-hover/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/image-hover/',
                     'icon'         => 'eicon-image-rollover',
                 ],
@@ -350,7 +241,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/image-slider/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/image-slides/',
                     'icon'         => 'eicon-slides',
                 ],
@@ -362,7 +252,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/marquee-slider/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/marquee-slides/',
                     'icon'         => 'eicon-slider-push',
                 ],
@@ -374,7 +263,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/skill-showcase/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/skill-showcase/',
                     'icon'         => 'eicon-slideshow',
                 ],
@@ -386,7 +274,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'widget_type'  => 'pro',
                     'demo_url'     => 'https://spider-themes.net/spider-elements/stack-image/',
-                    //'video_url'    => '#',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/stack-image/',
                     'icon'         => 'eicon-featured-image',
                 ],
@@ -396,83 +283,6 @@ class Module_Settings {
 
             // All Feature List
             'spider_elements_features' => [
-                /*[
-                    'name'         => '', // feature name
-                    'label'        => esc_html__('Template cloud', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-cloud',
-                ],*/
-                /*[
-                    'name'         => '', // feature name
-                    'label'        => esc_html__('Mega Menu', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-mega-menu',
-                ],*/
-                /*[
-                    'name'         => '', // feature name
-                    'label'        => esc_html__('Image Shadow', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-image-shadow',
-                ],*/
-                /*[
-                    'name'         => '', // feature name
-                    'label'        => esc_html__('Scroll Trigger', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-hotspot',
-                ],*/
-                /*[
-                    'name'         => '', // feature name
-                    'label'        => esc_html__('Tilt Effect on Hover', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-effect',
-                ],*/
-                /*[
-                    'name'         => '', // feature name
-                    'label'        => esc_html__('Tooltip / Element', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-tooltip',
-                ],*/
-                /*[
-                    'name'         => '', // widget name
-                    'label'        => esc_html__('Gradient Color from Image', 'spider-elements'), // feature label
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'feature_type' => 'pro',
-                    'demo_url'     => '',
-                    'video_url'    => '',
-                    'docs_url'     => '',
-                    'icon'         => 'icon-gallery',
-                ],*/
                 [
                     'name'         => 'spel_feature_box', // widget name
                     'label'        => esc_html__('Feature Box', 'spider-elements'), // widget label
@@ -480,8 +290,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    //'video_url'    => '',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-info-box',
                 ],
                 [
@@ -491,8 +299,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    //'video_url'    => '',
-                    //'docs_url'     => '',
                     'icon'         => 'icon-revel-animation',
                 ],
                 [
@@ -502,8 +308,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    //'video_url'    => '',
-                    //'docs_url'     => '',
                     'icon'         => 'icon-badge',
                 ],
                 [
@@ -513,8 +317,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    //'video_url'    => '',
-                    //'docs_url'     => '',
                     'icon'         => 'eicon-t-letter',
                 ],
                 [
@@ -524,8 +326,6 @@ class Module_Settings {
                     'default'      => 'off',
                     'feature_type' => 'pro',
                     'demo_url'     => '',
-                    //'video_url'    => '',
-                    //'docs_url'     => '',
                     'icon'         => 'icon-smooth-animation',
                 ]
             ]
