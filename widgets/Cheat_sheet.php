@@ -59,7 +59,7 @@ class Cheat_sheet extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spel-el-widgets', 'spel-script' ];
+		return [ 'spel-el-widgets' ];
 	}
 
 	/**
@@ -101,15 +101,15 @@ class Cheat_sheet extends Widget_Base {
 				'options' => [
 					'1' => [
 						'title' => esc_html__( 'Style 01', 'spider-elements' ),
-						'icon'  => 'cheat-sheet-1',
+						'icon'  => 'cheat_sheet_1',
 					],
 					'2' => [
 						'title' => esc_html__( 'Style 02', 'spider-elements' ),
-						'icon'  => 'cheat-sheet-2',
+						'icon'  => 'cheat_sheet_2',
 					],
 					'3' => [
 						'title' => esc_html__( 'Style 03', 'spider-elements' ),
-						'icon'  => 'cheat-sheet-3',
+						'icon'  => 'cheat_sheet_3',
 					],
 				],
 				'toggle'  => false,

@@ -7,15 +7,13 @@
         onInit: function () {
             const E_FRONT = elementorFrontend;
             const widgetHandlersMap = {
-                "landpagy_pricing_table_tabs.default":          spiderElements.pricing_table_tabs,
                 "docy_tabs.default":                            spiderElements.tabs,
                 "docy_testimonial.default":                     spiderElements.testimonial,
                 "docly_alerts_box.default":                     spiderElements.alertBox,
                 "docy_videos_playlist.default":                 spiderElements.videoPlaylist,
                 "docy_team_carousel.default":                   spiderElements.teamslider,
-                "spe_after_before_widget.default":              spiderElements.beforeAfter,
+                "spel_before_after.default":              spiderElements.beforeAfter,
                 "docy_video_popup.default":                     spiderElements.videoPopup,
-                "spe_instagram.default":                        spiderElements.instagramFeed,
                 "spel_accordion.default":                       spiderElements.accordions,
                 "docly_cheatsheet.default":                     spiderElements.cheatsheet,
                 "docy_blog_grid.default":                       spiderElements.blogGrid,
@@ -145,37 +143,6 @@
 
                 return false;
             });
-        },
-
-        //======================== Instagram Feed =========================== //
-        instagramFeed: function ($scope) {
-            let instagramFeed = $scope.find(".instagram-feed-active");
-
-            if (instagramFeed.length > 0) {
-                var portfolio = new Swiper(".instagram-feed-active", {
-                    slidesPerView: 1,
-                    spaceBetween: 24,
-                    loop: true,
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    breakpoints: {
-                        480: {
-                            slidesPerView: 2,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                        },
-                        992: {
-                            slidesPerView: 4,
-                        },
-                        1200: {
-                            slidesPerView: 5,
-                        },
-                    },
-                });
-            }
         },
 
         //============================== Start Before After =============================//
@@ -768,52 +735,7 @@
                     });
                 }
             }
-        },
-
-        //======================== Pricing Table Tabs =========================== //
-        pricing_table_tabs: function ($scope) {
-
-            //============= Currency Changes
-            let pricingCurrency = $scope.find(".pricing-currency");
-            if (pricingCurrency.length > 0) {
-                pricingCurrency.on("change", function () {
-                    let dollar_id = $(this).attr("data-id");
-                    let dollar = $(".price[data-id=" + dollar_id + "] .dollar");
-                    let euro = $(".price[data-id=" + dollar_id + "] .euro");
-
-                    if (
-                        $(".pricing-currency[data-id=" + dollar_id + "]").val() === "EURO"
-                    ) {
-                        dollar.css("display", "none");
-                        euro.css("display", "inline-block");
-                    } else {
-                        euro.css("display", "none");
-                        dollar.css("display", "inline-block");
-                    }
-                });
-            }
-
-            // custom tab js
-            let pricingTab = $scope.find(".ezd-tab-menu li button");
-            pricingTab.on("click", function (e) {
-                e.preventDefault();
-
-                // Remove active class from all tabs within the same menu
-                $(this).closest(".ezd-tab-menu").find("li button").removeClass("active");
-
-                // Add active class to the clicked tab
-                $(this).addClass("active");
-
-                let target = $(this).attr("data-rel");
-
-                $("#" + target)
-                    .addClass("active")
-                    .siblings(".ezd-tab-box")
-                    .removeClass("active");
-
-                return false;
-            });
-        },
+        }
 
 
     };

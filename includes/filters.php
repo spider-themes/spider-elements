@@ -34,20 +34,15 @@ add_action( 'admin_init', function () {
             'docly_alerts_box',
             'spel_accordion',
             'docy_testimonial',
-            'landpagy_pricing_table_tabs',
-            'landpagy_pricing_table_switcher',
             'docly_list_item',
             'docly_cheatsheet',
             'docy_team_carousel',
             'docy_integrations',
-            'spe_after_before_widget',
+            'spel_before_after',
             'docy_video_popup',
             'docy_blog_grid',
             'spe_timeline_widget',
-            'spe_buttons',
-            'spel_animated_heading',
             'spe_counter',
-            'spe_instagram',
             'spel_icon_box'
         ];
 
@@ -119,7 +114,6 @@ add_action( 'admin_init', function () {
         foreach ($pro_features as $feature) {
             $data[$feature] = isset($_POST[$feature]) ? sanitize_text_field($_POST[$feature]) : '';
         }
-
 
         // Global Switcher
         $data['features_global_switcher'] = isset($_POST['features_global_switcher']) ? sanitize_text_field($_POST['features_global_switcher']) : '';

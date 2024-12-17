@@ -203,7 +203,8 @@ if (!class_exists('SPEL')) {
 		 * Added Custom Font Icon Integrated Elementor Icon Library
 		 */
 		public function elegant_icons( $custom_fonts ) {
-			$css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
+
+            $css_data  = plugins_url( 'assets/vendors/elegant-icon/style.css', __FILE__ );
 			$json_data = plugins_url( 'assets/vendors/elegant-icon/elegant-icons.json', __FILE__ );
 
 			$custom_fonts[ 'elegant-icon' ] = [
@@ -370,15 +371,6 @@ if (!class_exists('SPEL')) {
                 require_once( __DIR__ . '/widgets/Testimonial.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Testimonial() );
             }
-            // if ( isset( $elements_opt[ 'landpagy_pricing_table_tabs' ] ) && $elements_opt[ 'landpagy_pricing_table_tabs' ] == 'on' ) {
-            //     require_once( __DIR__ . '/widgets/Pricing_Table_Tabs.php' );
-            //     $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Tabs() );
-            // }
-            // if ( isset( $elements_opt[ 'landpagy_pricing_table_switcher' ] ) && $elements_opt[ 'landpagy_pricing_table_switcher' ] == 'on' ) {
-            ////require_once( __DIR__ . '/widgets/Pricing_Table_Switcher.php' );
-            //     $widgets_manager->register( new \SPEL\Widgets\Pricing_Table_Switcher() );
-            // }
-
             if ( isset( $elements_opt[ 'docly_list_item' ] ) && $elements_opt[ 'docly_list_item' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/List_Item.php' );
                 $widgets_manager->register( new \SPEL\Widgets\List_Item() );
@@ -395,7 +387,7 @@ if (!class_exists('SPEL')) {
                 require_once( __DIR__ . '/widgets/Integrations.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Integrations() );
             }
-            if ( isset( $elements_opt[ 'spe_after_before_widget' ] ) && $elements_opt[ 'spe_after_before_widget' ] == 'on' ) {
+            if ( isset( $elements_opt[ 'spel_before_after' ] ) && $elements_opt[ 'spel_before_after' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/Before_after.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Before_After() );
             }
@@ -411,26 +403,10 @@ if (!class_exists('SPEL')) {
                 require_once( __DIR__ . '/widgets/Timeline.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Timeline() );
             }
-            // if ( isset( $elements_opt[ 'spe_buttons' ] ) && $elements_opt[ 'spe_buttons' ] == 'on' ) {
-            //require_once( __DIR__ . '/widgets/Buttons.php' );
-            //     $widgets_manager->register( new \SPEL\Widgets\Buttons() );
-            // }
-            // if ( isset( $elements_opt[ 'spel_animated_heading' ] ) && $elements_opt[ 'spel_animated_heading' ] == 'on' ) {
-            //require_once( __DIR__ . '/widgets/Animated_Heading.php' );
-            //     $widgets_manager->register( new \SPEL\Widgets\Animated_Heading() );
-            // }
-
-
             if ( isset( $elements_opt[ 'spe_counter' ] ) && $elements_opt[ 'spe_counter' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/Counter.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Counter() );
             }
-
-            // if ( isset( $elements_opt[ 'spe_instagram' ] ) && $elements_opt[ 'spe_instagram' ] == 'on' ) {
-            //require_once( __DIR__ . '/widgets/Instagram.php' );
-            //     $widgets_manager->register( new \SPEL\Widgets\Instagram() );
-            // }
-
             if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/Icon_box.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Icon_box() );

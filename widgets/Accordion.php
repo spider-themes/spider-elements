@@ -64,7 +64,7 @@ class Accordion extends Widget_Base {
 	 */
 	public function get_script_depends(): array
     {
-		return [ 'spel-el-widgets', 'spel-script' ];
+		return [ 'spel-el-widgets' ];
 	}
 
 

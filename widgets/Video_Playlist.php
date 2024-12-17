@@ -48,15 +48,18 @@ class Video_Playlist extends Widget_Base {
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends() {
-		return [ 'slick', 'video-js', 'artplayer', 'video-nuevo', 'ionicons', 'spel-el-widgets', 'spel-script' ];
+	public function get_script_depends(): array
+    {
+		return [ 'slick', 'video-js', 'artplayer', 'video-nuevo', 'ionicons', 'spel-el-widgets' ];
 	}
 
-	public function get_keywords() {
+	public function get_keywords(): array
+    {
 		return [ 'spider', 'spider elements', 'video', 'playlist', 'video playlist', 'video list' ];
 	}
 
-	public function get_categories() {
+	public function get_categories(): array
+    {
 		return [ 'spider-elements' ];
 	}
 

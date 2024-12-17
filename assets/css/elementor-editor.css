@@ -13,18 +13,15 @@
 }
 
 /** === Style Variations === **/
-.elementor-control.elementor-control-style.elementor-control-type-choose.elementor-label-inline
-  .elementor-control-input-wrapper,
+.elementor-control.elementor-control-style.elementor-control-type-choose.elementor-label-inline .elementor-control-input-wrapper,
 .elementor-control.elementor-control-style .elementor-control-content,
 .elementor-control.elementor-control-style .elementor-control-field {
   display: block;
 }
-.elementor-control.elementor-control-style.elementor-control-type-choose.elementor-label-inline
-  .elementor-control-input-wrapper {
+.elementor-control.elementor-control-style.elementor-control-type-choose.elementor-label-inline .elementor-control-input-wrapper {
   margin-left: 0;
 }
-.elementor-control.elementor-control-style.elementor-control-type-choose
-  label.elementor-control-title {
+.elementor-control.elementor-control-style.elementor-control-type-choose label.elementor-control-title {
   padding-bottom: 10px;
   display: block;
 }
@@ -33,43 +30,29 @@
   height: auto;
   width: 266px;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  .elementor-choices-label {
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label {
   display: block;
   width: 266px;
   height: 110px;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  input:checked
-  + .elementor-choices-label {
+.elementor-control.elementor-control-style .elementor-choices input:checked + .elementor-choices-label {
   border-width: 2px;
   padding-right: 2px;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  label:not(:first-of-type) {
+.elementor-control.elementor-control-style .elementor-choices label:not(:first-of-type) {
   margin-top: 10px;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  .elementor-choices-label:hover {
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label:hover {
   border: 1px solid #6d7882;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  .elementor-choices-label
-  i {
+
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label i {
   position: relative;
   width: 100%;
   height: 100%;
   display: block;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  .elementor-choices-label
-  i::before {
+.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label i::before {
   content: "";
   position: absolute;
   left: 0;
@@ -78,16 +61,8 @@
   height: 100%;
   opacity: 0.5;
 }
-.elementor-control.elementor-control-style
-  .elementor-choices
-  input
-  + .elementor-choices-label:hover
-  i::before,
-.elementor-control.elementor-control-style
-  .elementor-choices
-  input:checked
-  + .elementor-choices-label
-  i::before {
+.elementor-control.elementor-control-style .elementor-choices input + .elementor-choices-label:hover i::before,
+.elementor-control.elementor-control-style .elementor-choices input:checked + .elementor-choices-label i::before {
   opacity: 1;
 }
 
@@ -116,70 +91,69 @@
 /** === Testimonials === **/
 .testimonial1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial1.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial1.jpg") no-repeat center;
 }
 
 .testimonial2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial2.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial2.jpg") no-repeat center;
 }
 
 .testimonial3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial3.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial3.jpg") no-repeat center;
 }
 
 .testimonial4::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial4.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial4.jpg") no-repeat center;
 }
 
 .testimonial5::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial5.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial5.jpg") no-repeat center;
 }
 
 .testimonial6::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial6.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial6.jpg") no-repeat center;
 }
 
 .testimonial7::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial7.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial7.jpg") no-repeat center;
 }
 
 .testimonial8::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial8.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial8.jpg") no-repeat center;
 }
 
 .testimonial9::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial9.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial9.jpg") no-repeat center;
 }
 
 .testimonial10::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial10.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/testimonial10.jpg") no-repeat center;
 }
 
 /*** === team Carousel === ***/
 .team1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/team1.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/team1.jpg") no-repeat center;
 }
 
 .team2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/team2.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/team2.jpg") no-repeat center;
 }
 
-/*** === integration  ===***/
+/***=== Integration  ===***/
 .integration1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/integration1.jpg") no-repeat
-    center;
+  background: url("../images/el-editor-preview/integration1.jpg") no-repeat center;
 }
 
 .integration2::before {
@@ -187,7 +161,7 @@
   background: url("../images/el-editor-preview/integration2.jpg") no-repeat center;
 }
 
-/***==== blog grid ==== ***/
+/***==== Blog Grid ==== ***/
 .blog_1::before {
   background-size: cover;
   background: url("../images/el-editor-preview/blog1.png") no-repeat center;
@@ -216,36 +190,36 @@
 /*** === Video Playlist === ***/
 .video_playlist_1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video_playlist_1.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/video_playlist_1.jpg") no-repeat center;
 }
 
 .video_playlist_2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video_playlist_2.jpg") no-repeat top;
+  background: url("../images/el-editor-preview/video_playlist_2.jpg") no-repeat center;
 }
 
-/*** === image hover style === ***/
+/*** === Image Hover === ***/
 .img_hover1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/image_hover2.png") no-repeat top;
+  background: url("../images/el-editor-preview/image_hover2.png") no-repeat center;
 }
 
 .img_hover2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/image_hover1.png") no-repeat top;
+  background: url("../images/el-editor-preview/image_hover1.png") no-repeat center;
 }
 
 .img_hover3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/image_hover3.png") no-repeat top;
+  background: url("../images/el-editor-preview/image_hover3.png") no-repeat center;
 }
 
 .img_hover4::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/image_hover4.png") no-repeat top;
+  background: url("../images/el-editor-preview/image_hover4.png") no-repeat center;
 }
 
-/*** === Box hover style === ***/
+/*** === Box Hover === ***/
 .box_hover_1::before {
   background: url("../images/el-editor-preview/box_hover1.png") no-repeat center;
   background-size: cover;
@@ -258,211 +232,142 @@
 /*** ====== Marquee Slides ====== ***/
 .marquee_slides_1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/marquee_slides_img_1.png")
-    no-repeat top;
+  background: url("../images/el-editor-preview/marquee_slides_img_1.png") no-repeat center;
 }
 
 .marquee_slides_2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/marquee_slides_img_2.png")
-    no-repeat top;
+  background: url("../images/el-editor-preview/marquee_slides_img_2.png") no-repeat center;
 }
 
 .marquee_slides_3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/marquee_slides_img_3.jpg")
-    no-repeat center;
+  background: url("../images/el-editor-preview/marquee_slides_img_3.jpg") no-repeat center;
 }
 
 /*** ====== Counter ====== ***/
 .counter1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/counter1.jpg") no-repeat center
-    center;
+  background: url("../images/el-editor-preview/counter1.jpg") no-repeat center;
 }
 
 .counter2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/counter2.jpg") no-repeat center
-    center;
+  background: url("../images/el-editor-preview/counter2.jpg") no-repeat center;
 }
 
 .instagram1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/instagram1.png") no-repeat top;
+  background: url("../images/el-editor-preview/instagram1.png") no-repeat center;
 }
 
-/*====Pricing Table Switcher Style====*/
+/*==== Pricing Table Switcher ====*/
 .pricing_table_switcher_1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_1.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_1.jpg") no-repeat center;
 }
 
 .pricing_table_switcher_2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_2.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_2.jpg") no-repeat center;
 }
 
 .pricing_table_switcher_3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_3.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_3.jpg") no-repeat center;
 }
 
 .pricing_table_switcher_4::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_4.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_4.jpg") no-repeat center;
 }
 
 .pricing_table_switcher_5::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_5.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_5.jpg") no-repeat center;
 }
 
 .pricing_table_switcher_6::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_6.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_6.jpg") no-repeat center;
 }
 
 .pricing_table_switcher_7::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/pricing_table_switcher_img_7.jpg")
-    no-repeat top;
+  background: url("../images/el-editor-preview/pricing_table_switcher_img_7.jpg") no-repeat center;
 }
 
-/*======== Stacke image style==========*/
+/*======== Stack image ==========*/
 .stack_img_1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/stack_img_1.png") no-repeat top;
+  background: url("../images/el-editor-preview/stack_img_1.png") no-repeat center;
 }
 
 .stack_img_2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/stack_img_2.png") no-repeat top;
+  background: url("../images/el-editor-preview/stack_img_2.png") no-repeat center;
 }
 
 .stack_img_3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/stacky_img3.png") no-repeat top;
+  background: url("../images/el-editor-preview/stacky_img3.png") no-repeat center;
 }
 
 .stack_img_4::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/stacky_img4.png") no-repeat top;
+  background: url("../images/el-editor-preview/stacky_img4.png") no-repeat center;
 }
 
-/*=======Image Slider Image style=======*/
+/*======= Image Slider Image =======*/
 .img_slider1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/img_slider1.png") no-repeat top;
+  background: url("../images/el-editor-preview/img_slider1.png") no-repeat center;
 }
 
 .img_slider2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/img_silder2.png") no-repeat top;
+  background: url("../images/el-editor-preview/img_silder2.png") no-repeat center;
 }
 
-/*=======Icon box style=======*/
-.icon-box1::before {
+/*======= Icon Box =======*/
+.icon_box_1::before {
   background-size: cover;
   background: url("../images/el-editor-preview/icon_box1.png") no-repeat center;
 }
 
-.icon-box2::before {
+.icon_box_2::before {
   background-size: cover;
   background: url("../images/el-editor-preview/icon_box2.png") no-repeat center;
 }
 
-/*=======Video popup style=======*/
-.video-popup-1::before {
+/*======= Video Popup =======*/
+.video_popup_1::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video_popup1.png") no-repeat
-    center;
+  background: url("../images/el-editor-preview/video_popup1.png") no-repeat center;
 }
 
-.video-popup-2::before {
+.video_popup_2::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video_popup2.png") no-repeat
-    center;
+  background: url("../images/el-editor-preview/video_popup2.png") no-repeat center;
 }
 
-.video-popup-3::before {
+.video_popup_3::before {
   background-size: cover;
-  background: url("../images/el-editor-preview/video_popup3.png") no-repeat
-    center;
+  background: url("../images/el-editor-preview/video_popup3.png") no-repeat center;
 }
 
-/*=======cheat sheet style=======*/
-.cheat-sheet-1::before {
+/*======= Cheat Sheet =======*/
+.cheat_sheet_1::before {
   background-size: cover;
-  background: url("../images/cheat-sheet-style-1.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/cheat_sheet_1.jpg") no-repeat center;
 }
 
-.cheat-sheet-2::before {
+.cheat_sheet_2::before {
   background-size: cover;
-  background: url("../images/cheat-sheet-style-2.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/cheat_sheet_2.jpg") no-repeat center;
 }
 
-.cheat-sheet-3::before {
+.cheat_sheet_3::before {
   background-size: cover;
-  background: url("../images/cheat-sheet-style-3.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/cheat_sheet_3.jpg") no-repeat center;
 }
-
-/*============== Pro Label Badge ====================*/
-/*.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label[data-tooltip=spel-pro-label],
-.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label i.spel-pro-label {
-  pointer-events: none;
-}
-.elementor-control.elementor-control-style .elementor-choices .elementor-choices-label i.spel-pro-label::after {
-  content: "PRO";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  background: #39b54a61;
-  pointer-events: none;
-  color: white;
-  z-index: 999999;
-  font-weight: 700;
-  cursor: pointer;
-  font-style: normal;
-  padding-top: 45px;
-}*/
-
-/*
-.elementor-control-spel_highlighted_text_style {
-  pointer-events: none;
-
-  &::after {
-    content: "PRO";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    background: #39b54a61;
-    pointer-events: none;
-    color: white;
-    z-index: 999999;
-    font-weight: 700;
-    cursor: pointer;
-    font-style: normal;
-    text-align: right;
-    padding-right: 20px;
-    padding-top: 18px;
-  }
-
-  .elementor-control-content {
-    pointer-events: none;
-  }
-
-}
-*/

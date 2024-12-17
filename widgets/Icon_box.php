@@ -69,7 +69,7 @@ class Icon_box extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'spel-el-widgets', 'spel-script' ];
+		return [ 'spel-el-widgets' ];
 	}
 
 
@@ -114,11 +114,11 @@ class Icon_box extends Widget_Base {
 				'options' => [
 					'1' => [
 						'title' => esc_html__( 'Style 01', 'spider-elements' ),
-						'icon'  => 'icon-box1',
+						'icon'  => 'icon_box_1',
 					],
 					'2' => [
 						'title' => esc_html__( 'Style 02', 'spider-elements' ),
-						'icon'  => 'icon-box2',
+						'icon'  => 'icon_box_2',
 					],
 				],
 				'toggle'  => false,
