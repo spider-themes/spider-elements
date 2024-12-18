@@ -18,7 +18,7 @@ Table of Content:
 05/ Accordion
 06/ Tabs
 07/ Testimonial
-08/ Video
+08/ Video_Playlist
 09/ Alerts_box
 10/ Animation
 11/ List_Item
@@ -5415,7 +5415,9 @@ body.remove .tab_fixed.header_tab_items {
   font-family: "Playfair Display", serif;
 }
 
-/*----------------- Video Playlist Widget CSS ------------------*/
+.spel-video-playlist.video-playlist-1 .video_list .video_list_inner .list .videos_meta i {
+  padding-right: 4px;
+}
 .ycp .belah .luhur {
   height: 74px;
 }
@@ -5446,7 +5448,7 @@ body.remove .tab_fixed.header_tab_items {
   width: 80px;
   height: 80px;
 }
-.video_list_area .art-video-player .art-state ion-icon {
+.video_list_area .art-video-player .art-state i {
   font-size: 28px;
 }
 .video_list_area .art-video-player .art-mask-show.add_icon .art-danmuku:before {
@@ -5656,7 +5658,6 @@ body.remove .tab_fixed.header_tab_items {
 }
 .video_list .video_list_inner .card .card-body .nav li a .media .ezd-d-flex .video_tab_img:after {
   content: "\f215";
-  font: normal normal normal 20px/1 ionicons;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -5889,10 +5890,6 @@ body.remove .tab_fixed.header_tab_items {
   position: relative;
   top: -1px;
 }
-.slide_text .video_user ion-icon {
-  position: relative;
-  top: 2px;
-}
 
 .gallery_main_area {
   position: relative;
@@ -5959,7 +5956,7 @@ body.remove .tab_fixed.header_tab_items {
   left: 50%;
   display: none;
 }
-.gallery_main_area .gallery-thumbs .item .caption_text .play-icon ion-icon {
+.gallery_main_area .gallery-thumbs .item .caption_text .play-icon i {
   font-size: 18px;
 }
 .gallery_main_area .gallery-thumbs .item .caption_text img {
@@ -6025,7 +6022,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 .social_option .count_div a,
-.social_option .count_div ion-icon {
+.social_option .count_div i {
   color: #425466;
   margin-right: 2px;
 }
@@ -6068,7 +6065,7 @@ body.remove .tab_fixed.header_tab_items {
   margin-right: 10px;
 }
 
-.social_option .nav li ion-icon {
+.social_option .nav li i {
   color: #3c4146;
 }
 
@@ -6087,7 +6084,7 @@ body.remove .tab_fixed.header_tab_items {
   line-height: 42px;
 }
 
-.social_option .nav li a ion-icon {
+.social_option .nav li a i {
   position: relative;
   top: 2px;
 }
@@ -6144,8 +6141,8 @@ body.remove .tab_fixed.header_tab_items {
   align-items: center;
 }
 
-.art-state ion-icon,
-.play-icon ion-icon {
+.art-state i,
+.play-icon i {
   text-shadow: 0 6px 12px rgba(76, 76, 241, 0.5);
   color: #4c4cf1;
 }
@@ -6171,8 +6168,8 @@ body.remove .tab_fixed.header_tab_items {
   cursor: pointer;
   text-align: center;
 }
-.video_popup_slider .prev1 ion-icon,
-.video_popup_slider .next1 ion-icon {
+.video_popup_slider .prev1 i,
+.video_popup_slider .next1 i {
   color: #fff;
   font-size: 30px;
   position: relative;
@@ -6309,7 +6306,7 @@ body.remove .tab_fixed.header_tab_items {
   display: inline-block;
   transition: all 300ms linear 0s;
 }
-.modal_slider_css .modal-dialog .modal-content .modal-header .close ion-icon {
+.modal_slider_css .modal-dialog .modal-content .modal-header .close i {
   position: relative;
   left: -1px;
   top: -1px;
@@ -6333,7 +6330,7 @@ body.remove .tab_fixed.header_tab_items {
   cursor: pointer;
   transition: all 300ms linear 0s;
 }
-.modal_slider_css .modal-dialog .modal-content .modal-header .share_icon ion-icon {
+.modal_slider_css .modal-dialog .modal-content .modal-header .share_icon i {
   position: relative;
   left: -1px;
   top: -1px;
@@ -6568,7 +6565,7 @@ body.remove .tab_fixed.header_tab_items {
 .modal_slider_css .modal-dialog .modal-content .modal-body .prev_modal:hover {
   background: #4c4cf1;
 }
-.modal_slider_css .modal-dialog .modal-content .modal-body .prev_modal ion-icon {
+.modal_slider_css .modal-dialog .modal-content .modal-body .prev_modal i {
   font-size: 20px;
 }
 .modal_slider_css .modal-dialog .modal-content .modal-body .next_modal {
@@ -6590,7 +6587,7 @@ body.remove .tab_fixed.header_tab_items {
 .modal_slider_css .modal-dialog .modal-content .modal-body .next_modal:hover {
   background: #4c4cf1;
 }
-.modal_slider_css .modal-dialog .modal-content .modal-body .next_modal ion-icon {
+.modal_slider_css .modal-dialog .modal-content .modal-body .next_modal i {
   font-size: 20px;
 }
 .modal_slider_css .modal-dialog .modal-content .modal-body .prev_modal.slick-disabled {
@@ -6628,7 +6625,7 @@ body.remove .tab_fixed.header_tab_items {
   opacity: 0;
   left: 60px;
 }
-.modal_slider_css .modal-dialog .modal-content .modal-body .main_div_carousel .prev_car ion-icon {
+.modal_slider_css .modal-dialog .modal-content .modal-body .main_div_carousel .prev_car i {
   font-size: 20px;
 }
 .modal_slider_css .modal-dialog .modal-content .modal-body .main_div_carousel .prev_car:hover {
@@ -6650,7 +6647,7 @@ body.remove .tab_fixed.header_tab_items {
   opacity: 0;
   right: 60px;
 }
-.modal_slider_css .modal-dialog .modal-content .modal-body .main_div_carousel .next_car ion-icon {
+.modal_slider_css .modal-dialog .modal-content .modal-body .main_div_carousel .next_car i {
   font-size: 20px;
 }
 .modal_slider_css .modal-dialog .modal-content .modal-body .main_div_carousel .next_car:hover {

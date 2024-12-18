@@ -376,8 +376,8 @@ if (!class_exists('SPEL')) {
                 $widgets_manager->register( new \SPEL\Widgets\List_Item() );
             }
             if ( isset( $elements_opt[ 'docly_cheatsheet' ] ) && $elements_opt[ 'docly_cheatsheet' ] == 'on' ) {
-                require_once( __DIR__ . '/widgets/Cheat_sheet.php' );
-                $widgets_manager->register( new \SPEL\Widgets\Cheat_sheet() );
+                require_once( __DIR__ . '/widgets/Cheat_Sheet.php' );
+                $widgets_manager->register( new \SPEL\Widgets\Cheat_Sheet() );
             }
             if ( isset( $elements_opt[ 'docy_team_carousel' ] ) && $elements_opt[ 'docy_team_carousel' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/Team_Carousel.php' );
@@ -408,8 +408,8 @@ if (!class_exists('SPEL')) {
                 $widgets_manager->register( new \SPEL\Widgets\Counter() );
             }
             if ( isset( $elements_opt[ 'spel_icon_box' ] ) && $elements_opt[ 'spel_icon_box' ] == 'on' ) {
-                require_once( __DIR__ . '/widgets/Icon_box.php' );
-                $widgets_manager->register( new \SPEL\Widgets\Icon_box() );
+                require_once( __DIR__ . '/widgets/Icon_Box.php' );
+                $widgets_manager->register( new \SPEL\Widgets\Icon_Box() );
             }
 
 		}

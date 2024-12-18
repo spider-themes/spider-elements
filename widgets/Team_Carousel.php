@@ -5,12 +5,9 @@
 
 namespace SPEL\Widgets;
 
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Repeater;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {

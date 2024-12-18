@@ -19,7 +19,7 @@ if ( $is_preloader == '1' ) {
 }
 
 ?>
-<div class="video_slider_area video-playlist">
+<div class="spel-video-playlist video-playlist-2 video_slider_area video-playlist">
     <div class="gallery-top">
         <?php
 		$i          = 0;
@@ -50,10 +50,11 @@ if ( $is_preloader == '1' ) {
                                 <?php echo wpautop( $child_video['video_caption'] ); ?>
                                 <div class="video_user">
                                     <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ) ?>">
-                                        <ion-icon name="person-outline"></ion-icon> <?php the_author_meta( 'display_name' ); ?>
+                                        <i class="far fa-user"></i>
+                                        <?php the_author_meta( 'display_name' ); ?>
                                     </a>
                                     <a href="<?php spel_day_link(); ?>">
-                                        <ion-icon name="calendar-clear-outline"></ion-icon>
+                                        <i class="far fa-calendar"></i>
                                         <?php the_time( get_option( 'date_format' ) ); ?>
                                     </a>
                                 </div>
@@ -89,7 +90,7 @@ if ( $is_preloader == '1' ) {
                                 <?php endif; ?>
                                 <div class="caption_text">
                                     <div class="play-icon">
-                                        <ion-icon name="play"></ion-icon>
+                                        <i class="fas fa-play"></i>
                                     </div>
                                     <h4 class="thumbnail_title"> <?php echo esc_html( $child_video['title2'] ); ?></h4>
                                 </div>
@@ -102,10 +103,10 @@ if ( $is_preloader == '1' ) {
 			?>
         </div>
         <div class="prev">
-            <ion-icon name="chevron-back-outline"></ion-icon>
+            <i class="fas fa-chevron-left"></i>
         </div>
         <div class="next">
-            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <i class="fas fa-chevron-right"></i>
         </div>
     </div>
 </div>

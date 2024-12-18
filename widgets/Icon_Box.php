@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class Dual-button
  * @package spider\Widgets
  */
-class Icon_box extends Widget_Base {
+class Icon_Box extends Widget_Base {
 
 	public function get_name() {
 		return 'spel_icon_box'; // ID of the widget (Don't change this name)

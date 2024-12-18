@@ -4,8 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="video_list_area">
+<section class="spel-video-playlist video-playlist-1 video_list_area">
     <div class="ezd-grid ezd-grid-cols-12 ezd-justify-content-sm-between">
+
         <div class="ezd-lg-col-7">
             <div class="video_player">
                 <div class="tab-content video_tabs" id="<?php esc_attr( get_the_ID() ); ?>">
@@ -30,7 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
             </div>
         </div>
-        <div class="ezd-lg-col-5 spel_video_list">
+
+        <div class="ezd-lg-col-5">
             <div class="video_list">
 				<?php
 				if ( ! empty( $settings['playlist_title'] ) ) :
@@ -110,11 +112,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                                                                     <div class="list">
                                                                         <div>
                                                                             <div class="videos_meta">
-                                                                                <ion-icon name="person-outline" role="img" class="md hydrated" aria-label="person outline"></ion-icon>
+                                                                                <i class="far fa-user"></i>
                                                                                 <?php echo ucwords( $child_video['current_author'] ); ?>
                                                                             </div>
                                                                             <div class="videos_meta">
-                                                                                <ion-icon name="calendar-clear-outline" role="img" class="md hydrated" aria-label="calendar clear outline"></ion-icon>
+                                                                                <i class="far fa-calendar"></i>
                                                                                 <?php echo human_time_diff( strtotime( $child_video['current_date'] ), current_time( 'timestamp' ) ) . esc_html__( ' ago', 'spider-elements' ); ?>
                                                                             </div>
                                                                         </div>
@@ -138,6 +140,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
         </div>
     </div>
+
     </div>
 </section>
 

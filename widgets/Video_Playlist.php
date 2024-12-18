@@ -2,14 +2,12 @@
 /**
  * Use namespace to avoid conflict
  */
-
 namespace SPEL\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
-use Elementor\Group_Control_Text_Shadow;
 use Elementor\Utils;
 
 // Exit if accessed directly
@@ -24,15 +22,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since   1.0.0
  */
 class Video_Playlist extends Widget_Base {
-	public function get_name() {
+
+	public function get_name(): string
+    {
 		return 'docy_videos_playlist'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title() {
+	public function get_title(): string
+    {
 		return esc_html__( 'Video Playlist', 'spider-elements' );
 	}
 
-	public function get_icon() {
+	public function get_icon(): string
+    {
 		return 'eicon-video-playlist spel-icon';
 	}
 
@@ -40,8 +42,9 @@ class Video_Playlist extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends() {
-		return [ 'ionicons', 'slick', 'slick-theme', 'elegant-icon', 'videojs', 'video-theaterMode', 'spel-main' ];
+	public function get_style_depends(): array
+    {
+		return [ 'font-awesome', 'slick', 'slick-theme', 'elegant-icon', 'videojs', 'video-theaterMode', 'spel-main' ];
 	}
 
 	/**
@@ -50,12 +53,12 @@ class Video_Playlist extends Widget_Base {
 	 */
 	public function get_script_depends(): array
     {
-		return [ 'slick', 'video-js', 'artplayer', 'video-nuevo', 'ionicons', 'spel-el-widgets' ];
+		return [ 'slick', 'video-js', 'artplayer', 'video-nuevo', 'spel-el-widgets' ];
 	}
 
 	public function get_keywords(): array
     {
-		return [ 'spider', 'spider elements', 'video', 'playlist', 'video playlist', 'video list' ];
+		return [ 'spider', 'spider elements', 'video', 'playlist', 'Video playlist', 'Video list' ];
 	}
 
 	public function get_categories(): array
@@ -72,7 +75,8 @@ class Video_Playlist extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls() {
+	protected function register_controls(): void
+    {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
@@ -86,7 +90,8 @@ class Video_Playlist extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function elementor_content_control() {
+	public function elementor_content_control(): void
+    {
 
 
 		//==================== Select Preset Skin ====================//
@@ -842,9 +847,11 @@ class Video_Playlist extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render() {
-		$settings = $this->get_settings();
-		extract( $settings ); //extract all settings array to variables converted to name of key
+	protected function render(): void
+    {
+
+        $settings = $this->get_settings();
+		extract( $settings ); //extract all settings array to variables converted to name of a key
 
 		// Render the widget output on the frontend.
 		include "templates/video-playlist/video-playlist-{$settings['style']}.php";

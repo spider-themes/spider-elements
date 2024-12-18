@@ -5,15 +5,9 @@
 
 namespace SPEL\Widgets;
 
-use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use \Elementor\Group_Control_Background;
-use \Elementor\Group_Control_Border;
-use \Elementor\Group_Control_Box_shadow;
-use WP_Query;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -65,7 +59,7 @@ class Blog_Grid extends Widget_Base {
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
 	public function get_style_depends() {
-		return [ 'slick', 'slick-theme', 'ionicons', 'spel-main' ];
+		return [ 'slick', 'slick-theme', 'spel-main' ];
 	}
 
 	/**
@@ -73,7 +67,7 @@ class Blog_Grid extends Widget_Base {
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
 	public function get_script_depends() {
-		return [ 'slick', 'ionicons', 'spel-el-widgets' ];
+		return [ 'slick', 'spel-el-widgets' ];
 	}
 
 	/**

@@ -130,7 +130,8 @@ if ( ! function_exists( 'spel_cat_ids') ) {
  * Day link to archive page
  **/
 if ( ! function_exists( 'spel_day_link' ) ) {
-    function spel_day_link() {
+    function spel_day_link(): void
+    {
         $archive_year  = get_the_time( 'Y' );
         $archive_month = get_the_time( 'm' );
         $archive_day   = get_the_time( 'd' );
@@ -250,14 +251,15 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
 
 
 /**
- * Get category list
+ * Get a category list
  *
  * @param string $term
  *
  * @return string
  */
 if ( ! function_exists( 'spel_get_post_category_list' ) ) {
-    function spel_get_post_category_list() {
+    function spel_get_post_category_list(): void
+    {
         $categories = get_categories();
 
         if ( ! empty( $categories ) ) {
@@ -283,7 +285,7 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 
 
 /**
- * Get author name array
+ * Get an author name array
  *
  * @param string $term
  *
@@ -314,7 +316,8 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
  * @param string $alt
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
-    function spel_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ) {
+    function spel_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ): void
+    {
         if ( ! empty( $settings_key['id'] ) ) {
             echo wp_get_attachment_image( $settings_key['id'], 'full', '', array( 'class' => $class ) );
         } elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {

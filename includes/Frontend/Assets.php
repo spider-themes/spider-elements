@@ -83,7 +83,7 @@ class Assets
         }
 
         wp_register_style('spel-extension', SPEL_CSS . '/extension.css', [], SPEL_VERSION);
-        wp_register_style('ionicons', SPEL_VEND . '/ionicons/ionicons.min.css', [], '2.0.1');
+        wp_register_style('font-awesome', SPEL_VEND . '/font-awesome/css/all.css', [], '6.4.0');
 		wp_register_style('slick-theme', SPEL_VEND . '/slick/slick-theme.css', [], SPEL_VERSION);
         wp_register_style('slick', SPEL_VEND . '/slick/slick.css', [], SPEL_VERSION);
         wp_register_style('swiper', SPEL_VEND . '/swiper/swiper.min.css', [], '7.2.0');
@@ -109,9 +109,6 @@ class Assets
 	 */
 	function register_widget_scripts(): void
     {
-
-	    wp_register_script('ionicons', 'https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js', '', SPEL_VERSION, ['strategy' => 'defer'] );
-	    wp_register_script('ionicons', 'https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js', '', SPEL_VERSION, ['strategy' => 'defer'] );
 
         wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
 		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper.min.js', array('jquery'), '7.2.0', ['strategy' => 'defer'] );

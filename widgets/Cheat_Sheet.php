@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package spider\Widgets
  * @since   1.0.0
  */
-class Cheat_sheet extends Widget_Base {
+class Cheat_Sheet extends Widget_Base {
 
 	public function get_name() {
 		return 'docly_cheatsheet'; // ID of the widget (Don't change this name)

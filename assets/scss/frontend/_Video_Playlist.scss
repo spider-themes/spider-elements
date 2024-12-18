@@ -1,4 +1,26 @@
-/*----------------- Video Playlist Widget CSS ------------------*/
+.spel-video-playlist {
+
+  &.video-playlist-1 {
+
+      .video_list {
+        .video_list_inner {
+          .list {
+            .videos_meta {
+              i {
+                padding-right: 4px;
+              }
+            }
+          }
+        }
+      }
+  }
+
+  &.video-playlist-2 {
+
+  }
+
+}
+
 
 .ycp {
   .belah {
@@ -53,7 +75,7 @@
       width: 80px;
       height: 80px;
 
-      ion-icon {
+      i {
         font-size: 28px;
       }
     }
@@ -310,7 +332,6 @@
 
                     &:after {
                       content: "\f215";
-                      font: normal normal normal 20px/1 ionicons;
                       left: 0;
                       top: 50%;
                       transform: translateY(-50%);
@@ -637,11 +658,6 @@
       position: relative;
       top: -1px;
     }
-
-    ion-icon {
-      position: relative;
-      top: 2px;
-    }
   }
 }
 
@@ -714,7 +730,7 @@
           left: 50%;
           display: none;
 
-          ion-icon {
+          i {
             font-size: 18px;
           }
         }
@@ -794,7 +810,7 @@
 }
 
 .social_option .count_div a,
-.social_option .count_div ion-icon {
+.social_option .count_div i {
   color: #425466;
   margin-right: 2px;
 }
@@ -838,7 +854,7 @@
   margin-right: 10px;
 }
 
-.social_option .nav li ion-icon {
+.social_option .nav li i {
   color: #3c4146;
 }
 
@@ -857,7 +873,7 @@
   line-height: 42px;
 }
 
-.social_option .nav li a ion-icon {
+.social_option .nav li a i {
   position: relative;
   top: 2px;
 }
@@ -923,8 +939,8 @@
   align-items: center;
 }
 
-.art-state ion-icon,
-.play-icon ion-icon {
+.art-state i,
+.play-icon i {
   text-shadow: 0 6px 12px rgba(76, 76, 241, 0.5);
   color: #4c4cf1;
 }
@@ -951,7 +967,7 @@
     cursor: pointer;
     text-align: center;
 
-    ion-icon {
+    i {
       color: #fff;
       font-size: 30px;
       position: relative;
@@ -1115,7 +1131,7 @@
           display: inline-block;
           transition: all 300ms linear 0s;
 
-          ion-icon {
+          i {
             position: relative;
             left: -1px;
             top: -1px;
@@ -1142,7 +1158,7 @@
           cursor: pointer;
           transition: all 300ms linear 0s;
 
-          ion-icon {
+          i {
             position: relative;
             left: -1px;
             top: -1px;
@@ -1451,7 +1467,7 @@
             background: #4c4cf1;
           }
 
-          ion-icon {
+          i {
             font-size: 20px;
           }
         }
@@ -1476,7 +1492,7 @@
             background: #4c4cf1;
           }
 
-          ion-icon {
+          i {
             font-size: 20px;
           }
         }
@@ -1519,7 +1535,7 @@
             opacity: 0;
             left: 60px;
 
-            ion-icon {
+            i {
               font-size: 20px;
             }
 
@@ -1544,7 +1560,7 @@
             opacity: 0;
             right: 60px;
 
-            ion-icon {
+            i {
               font-size: 20px;
             }
 
