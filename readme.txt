@@ -1,7 +1,7 @@
 === Spider Elements - Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, rony015, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, spider element
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 Requires at least: 5.0
 Tested up to: 6.5.4
 Requires PHP: 7.4
@@ -88,6 +88,13 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.6.0 (23 December 2024) =
+Tweaked: Improved Cheat Sheet, Integration, List Item, Blog Grid, Accordion, Icon Box, Testimonial, Video Playlist, Alert, and Team Carousel widgets
+Tweaked: Updated script loading dependencies and removed unused files and code
+Tweaked: Improved Dashboard design
+Tweaked: Improved script performance
+Tweaked: Removed deprecated ionicons cnd and internal script
 
 = v1.5.0 (19 November 2024) =
 New: RTL (Right to Left language) compatibility added
