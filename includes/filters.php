@@ -30,7 +30,7 @@ add_action( 'admin_init', function () {
         // Free Widgets
         $free_widgets = [
             'docy_tabs',
-            'docy_videos_playlist',
+            'spel_videos_playlist',
             'docly_alerts_box',
             'spel_accordion',
             'docy_testimonial',

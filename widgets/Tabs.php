@@ -833,7 +833,8 @@ class Tabs extends Widget_Base {
 
 		$navigation_arrow_class = ! empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
 		$sticky_tab_class       = ! empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
-		$tab_auto_class = !empty( $is_auto_play == 'yes' ) ? 'tab_auto_play' : '';
+        $tab_auto_class         = !empty( $is_auto_play == 'yes' ) ? ' tab_auto_play' : '';
+        $data_auto_play         = ! empty( $is_auto_play == 'yes' ) ? ' data-autoplay="yes"' : '';
 
 
 		//================= Template Parts =================//

@@ -184,9 +184,9 @@ class Testimonial extends Widget_Base {
 		);
 
 		$testimonial->add_control(
-			'review_content', [
+			'content', [
 				'label' => esc_html__( 'Review Content', 'spider-elements' ),
-				'type'  => Controls_Manager::TEXTAREA,
+				'type'  => Controls_Manager::WYSIWYG,
 			]
 		);
 
@@ -194,9 +194,7 @@ class Testimonial extends Widget_Base {
 			'signature', [
 				'label'   => esc_html__( 'Signature', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
+                'description' => __( '<strong>Note: </strong>This field is applicable for Preset 01', 'spider-elements' ),
 			]
 		);
 
@@ -211,19 +209,19 @@ class Testimonial extends Widget_Base {
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+						'content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
 							'spider-elements' ),
 					],
 					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
+						'name'           => esc_html__( 'St-rued David', 'spider-elements' ),
 						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+						'content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
 							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+						'content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
 							'spider-elements' ),
 					],
 				],
@@ -263,9 +261,9 @@ class Testimonial extends Widget_Base {
 		);
 
 		$testimonial2->add_control(
-			'review_content', [
-				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
-				'type'  => Controls_Manager::TEXTAREA,
+			'content', [
+				'label' => esc_html__( 'Review Content', 'spider-elements' ),
+				'type'  => Controls_Manager::WYSIWYG,
 			]
 		);
 
@@ -280,19 +278,19 @@ class Testimonial extends Widget_Base {
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+						'content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
 							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+						'content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
 							'spider-elements' ),
 					],
 					[
 						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
 						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
+						'content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
 							'spider-elements' ),
 					],
 				],

@@ -10,9 +10,9 @@
                 "docy_tabs.default":                            spiderElements.tabs,
                 "docy_testimonial.default":                     spiderElements.testimonial,
                 "docly_alerts_box.default":                     spiderElements.alertBox,
-                "docy_videos_playlist.default":                 spiderElements.videoPlaylist,
+                "spel_videos_playlist.default":                 spiderElements.videoPlaylist,
                 "docy_team_carousel.default":                   spiderElements.teamslider,
-                "spel_before_after.default":              spiderElements.beforeAfter,
+                "spel_before_after.default":                    spiderElements.beforeAfter,
                 "docy_video_popup.default":                     spiderElements.videoPopup,
                 "spel_accordion.default":                       spiderElements.accordions,
                 "docly_cheatsheet.default":                     spiderElements.cheatsheet,
@@ -530,9 +530,11 @@
             let nextBtn = $scope.find(".tab_arrow_btn.next");
             let prevBtn = $scope.find(".tab_arrow_btn.previous");
 
-            let isAutoPlay = tabContainer.data("autoplay") === "yes"; // Assuming autoplay status is set in the container
-            let autoPlayInterval; // Declare autoplay interval
+            let isAutoPlay = tabContainer.data("autoplay") === "yes";
+            let autoPlayInterval; // Declare an autoplay interval
             let currentIndex = tabBtn.index(tabBtn.filter(".active")); // Track current active tab
+
+            console.log(isAutoPlay)
 
             function changeActiveTab(newIndex) {
                 // Update active classes

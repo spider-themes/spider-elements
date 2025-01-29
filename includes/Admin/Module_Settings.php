@@ -27,7 +27,7 @@ class Module_Settings {
                     'icon'         => 'eicon-tabs',
                 ],
                 [
-                    'name'         => 'docy_videos_playlist',
+                    'name'         => 'spel_videos_playlist',
                     'className'    => 'Video_Playlist', // widget class name
                     'label'        => esc_html__('Video Playlist', 'spider-elements'),
                     'type'         => 'checkbox',

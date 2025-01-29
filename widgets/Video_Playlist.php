@@ -25,7 +25,7 @@ class Video_Playlist extends Widget_Base {
 
 	public function get_name(): string
     {
-		return 'docy_videos_playlist'; // ID of the widget (Don't change this name)
+		return 'spel_videos_playlist'; // ID of the widget (Don't change this name)
 	}
 
 	public function get_title(): string

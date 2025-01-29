@@ -11,7 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				foreach ( $testimonials as $item ) {
 					?>
                     <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
-						<?php echo ! empty( $item[ 'review_content' ] ) ? '<h3 class="se_review_content">' . esc_html( $item[ 'review_content' ] ) . '</h3>' : ''; ?>
+                        <?php
+                        if ( ! empty( $item['content'] ) ) { ?>
+                            <div class="se_review_content">
+                                <?php echo spel_kses_post( $item['content'] ) ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <div class="name">
 							<?php
 							echo ! empty( $item[ 'name' ] ) ? '<h5 class="se_name">' . esc_html( $item[ 'name' ] ) . '</h5>' : '';

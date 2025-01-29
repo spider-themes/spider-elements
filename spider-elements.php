@@ -355,7 +355,7 @@ if (!class_exists('SPEL')) {
                 require_once( __DIR__ . '/widgets/Tabs.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Tabs() );
             }
-            if ( isset( $elements_opt[ 'docy_videos_playlist' ] ) && $elements_opt[ 'docy_videos_playlist' ] == 'on' ) {
+            if ( isset( $elements_opt[ 'spel_videos_playlist' ] ) && $elements_opt[ 'spel_videos_playlist' ] == 'on' ) {
                 require_once( __DIR__ . '/widgets/Video_Playlist.php' );
                 $widgets_manager->register( new \SPEL\Widgets\Video_Playlist() );
             }
