@@ -6,8 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="doc_feedback_info">
     <div class="doc_feedback_slider" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 		<?php
-		if ( ! empty( $testimonials ) ) {
-			foreach ( $testimonials as $item ) {
+		if ( ! empty( $testimonials2 ) ) {
+			foreach ( $testimonials2 as $item ) {
 				?>
                 <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
 					<?php

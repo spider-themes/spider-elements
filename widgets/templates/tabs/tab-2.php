@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <section class="header_tabs_area spel-tabs">
-    <div class="header_tab_items sticky_tab_item tabs_sliders <?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
+    <div class="header_tab_items sticky_tab_item tabs_sliders<?php echo esc_attr($navigation_arrow_class . $sticky_tab_class); ?>">
         <span class="scroller-btn left" id="scroll_left_btn"><i class="arrow_carrot-left"></i></span>
-        <ul class="nav nav-tabs slide_nav_tabs spel-tab-menu<?php echo esc_attr($tab_auto_class); ?>" <?php echo esc_attr($is_auto_play); ?>>
+        <ul class="nav nav-tabs slide_nav_tabs spel-tab-menu<?php echo esc_attr($tab_auto_class); ?>" <?php echo esc_attr($data_auto_play); ?>>
             <?php
             $i = 0.2;
             if (is_array($tabs) && !empty($tabs)) {

@@ -194,7 +194,7 @@ class Testimonial extends Widget_Base {
 			'signature', [
 				'label'   => esc_html__( 'Signature', 'spider-elements' ),
 				'type'    => Controls_Manager::MEDIA,
-                'description' => __( '<strong>Note: </strong>This field is applicable for Preset 01', 'spider-elements' ),
+                //'description' => __( '<strong>Note: </strong>This field is applicable for Preset 01', 'spider-elements' ),
 			]
 		);
 
