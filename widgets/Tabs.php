@@ -520,9 +520,6 @@ class Tabs extends Widget_Base {
 				'selectors' => array(
 					'{{WRAPPER}} .nav-tabs .nav-item .nav-link:before' => 'background: {{VALUE}};',
 				),
-				'condition' => [
-					'style' => [ '1' ]
-				]
 			]
 		);
 

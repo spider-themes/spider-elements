@@ -465,7 +465,7 @@ class Accordion extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name'     => 'content_typography',
-				'selector' => '{{WRAPPER}} .elementor-widget-container .card-body',
+				'selector' => '{{WRAPPER}} .spel-accordion .card .card-body p',
 			]
 		);
 
