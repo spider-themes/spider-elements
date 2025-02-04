@@ -4074,7 +4074,7 @@ body.remove .tab_fixed.header_tab_items {
 .doc_feedback_slider .item h5 {
   font-size: 20px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0);
+  color: #000;
 }
 .doc_feedback_slider .item h6 {
   font-size: 16px;
@@ -7628,7 +7628,7 @@ button.swiper-pagination-bullet {
 /* ALERT [MESSAGE && INFO] */
 .nic-alert.nic-alert-info .nic-content-wrap .note-box,
 .nic-alert.nic-alert-message .nic-content-wrap .note-box {
-  background: rgba(76, 76, 241, 0.05);
+  background: rgb(243, 243, 255);
 }
 
 .nic-alert.nic-alert-info .nic-content-wrap .note-icon,
@@ -7692,7 +7692,7 @@ button.swiper-pagination-bullet {
   right: -8px;
 }
 
-.dual-box-wrapper .dual-box-content {
+.dual-box-content {
   bottom: 10px;
   left: 10px;
   border-width: 2.5px;
@@ -7703,40 +7703,40 @@ button.swiper-pagination-bullet {
   padding: 20px;
   box-sizing: border-box;
 }
-.dual-box-wrapper .dual-box-content.top-left {
+.dual-box-content.top-left {
   top: 10px;
   left: 10px;
 }
-.dual-box-wrapper .dual-box-content.top-right {
+.dual-box-content.top-right {
   top: 10px;
   right: 10px;
   left: unset;
 }
-.dual-box-wrapper .dual-box-content.bottom-right {
+.dual-box-content.bottom-right {
   bottom: 10px;
   right: 10px;
   left: unset;
 }
-.dual-box-wrapper .dual-box-content .notice-box {
+.dual-box-content .notice-box {
   display: flex;
   border: none;
   border-radius: 6px;
   margin: 0;
   padding: 20px;
 }
-.dual-box-wrapper .dual-box-content.notice-warning .dual-box-content {
+.dual-box-content.notice-warning .dual-box-content {
   border-color: #f6ba18;
 }
-.dual-box-wrapper .dual-box-content.notice-success .dual-box-content {
+.dual-box-content.notice-success .dual-box-content {
   border-color: #30845e;
 }
-.dual-box-wrapper .dual-box-content.notice-danger .dual-box-content {
+.dual-box-content.notice-danger .dual-box-content {
   border-color: #fa303e;
 }
-.dual-box-wrapper .dual-box-content.notice-success .dual-box-content i {
+.dual-box-content.notice-success .dual-box-content i {
   color: #459e6d;
 }
-.dual-box-wrapper .dual-box-content p {
+.dual-box-content p {
   color: #535a60;
 }
 

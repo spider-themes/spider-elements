@@ -264,7 +264,7 @@
 /* ALERT [MESSAGE && INFO] */
 .nic-alert.nic-alert-info .nic-content-wrap .note-box,
 .nic-alert.nic-alert-message .nic-content-wrap .note-box {
-  background: rgba(76, 76, 241, 0.05);
+  background: rgb(243, 243, 255);
 }
 
 .nic-alert.nic-alert-info .nic-content-wrap .note-icon,
@@ -328,62 +328,61 @@
   right: -8px;
 }
 
-.dual-box-wrapper {
-  .dual-box-content {
-    bottom: 10px;
+
+.dual-box-content {
+  bottom: 10px;
+  left: 10px;
+  border-width: 2.5px;
+  border-radius: 8px;
+  border-style: solid;
+  background: #fff;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+
+  &.top-left {
+    top: 10px;
     left: 10px;
-    border-width: 2.5px;
-    border-radius: 8px;
-    border-style: solid;
-    background: #fff;
-    position: relative;
+  }
+
+  &.top-right {
+    top: 10px;
+    right: 10px;
+    left: unset;
+  }
+
+  &.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    left: unset;
+  }
+
+  .notice-box {
+    display: flex;
+    border: none;
+    border-radius: 6px;
+    margin: 0;
     padding: 20px;
-    box-sizing: border-box;
+  }
 
-    &.top-left {
-      top: 10px;
-      left: 10px;
-    }
+  &.notice-warning .dual-box-content {
+    border-color: #f6ba18;
+  }
 
-    &.top-right {
-      top: 10px;
-      right: 10px;
-      left: unset;
-    }
+  &.notice-success .dual-box-content {
+    border-color: #30845e;
+  }
 
-    &.bottom-right {
-      bottom: 10px;
-      right: 10px;
-      left: unset;
-    }
+  &.notice-danger .dual-box-content {
+    border-color: #fa303e;
+  }
 
-    .notice-box {
-      display: flex;
-      border: none;
-      border-radius: 6px;
-      margin: 0;
-      padding: 20px;
-    }
+  &.notice-success .dual-box-content i {
+    color: #459e6d;
+  }
 
-    &.notice-warning .dual-box-content {
-      border-color: #f6ba18;
-    }
-
-    &.notice-success .dual-box-content {
-      border-color: #30845e;
-    }
-
-    &.notice-danger .dual-box-content {
-      border-color: #fa303e;
-    }
-
-    &.notice-success .dual-box-content i {
-      color: #459e6d;
-    }
-
-    p {
-      color: #535a60;
-    }
+  p {
+    color: #535a60;
   }
 }
 

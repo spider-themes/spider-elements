@@ -1271,7 +1271,8 @@ class Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), [
 				'name'     => 'review_text_typo',
-				'selector' => '{{WRAPPER}} .se_review_content,
+				'selector' => '{{WRAPPER}} .se_review_content p,
+                                {{WRAPPER}} .se_review_content,
 								{{WRAPPER}} .feedback-block-one h3,
 								{{WRAPPER}} #feedBack_carousel .carousel-inner p,
 								{{WRAPPER}} .spel_review_content,
@@ -1284,6 +1285,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
+					'{{WRAPPER}} .se_review_content p'                   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .se_review_content'                   => 'color: {{VALUE}};',
 					'{{WRAPPER}} .feedback-block-one h3'               => 'color: {{VALUE}};',
 					'{{WRAPPER}} #feedBack_carousel .carousel-inner p' => 'color: {{VALUE}};',
