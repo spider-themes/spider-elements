@@ -92,6 +92,7 @@ WordPress Memory limit of 128 MB or higher is preferred
 = v1.6.1 (05 February 2025) =
 Fixed: Resolved some control issue of Accordion, Tabs, Alert Box & Testimonial widget
 Tweaked: Rename the video playlist widget name
+Updated: Freemius SDK updated to 2.11.0
 
 = v1.6.0 (23 December 2024) =
 Tweaked: Improved Cheat Sheet, Integration, List Item, Blog Grid, Accordion, Icon Box, Testimonial, Video Playlist, Alert, and Team Carousel widgets
