@@ -1,9 +1,9 @@
 === Spider Elements - Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, rony015, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, spider element
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 Requires at least: 5.0
-Tested up to: 6.5.4
+Tested up to: 6.7.1
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,10 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.6.1 (05 February 2025) =
+Fixed: Resolved some control issue of Accordion, Tabs, Alert Box & Testimonial widget
+Tweaked: Rename the video playlist widget name
 
 = v1.6.0 (23 December 2024) =
 Tweaked: Improved Cheat Sheet, Integration, List Item, Blog Grid, Accordion, Icon Box, Testimonial, Video Playlist, Alert, and Team Carousel widgets
