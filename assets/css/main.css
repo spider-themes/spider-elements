@@ -10658,49 +10658,47 @@ svg .incomplete {
   -webkit-text-fill-color: transparent;
 }
 
-.icon_box {
+.spel_icon_box {
   transition: 0.3s;
   background-color: #fff;
   border: 1px solid #F0E9FC;
   border-radius: 6px;
   overflow: hidden;
 }
-.icon_box:hover {
+.spel_icon_box:hover {
   background-color: #7460FF;
   border-color: transparent;
 }
-.icon_box:hover .box_icon .box_main_icon {
+.spel_icon_box:hover .box_icon .box_main_icon {
   color: #fff;
 }
-.icon_box:hover .box_title {
+.spel_icon_box:hover .box_title {
   color: #fff;
 }
-.icon_box:hover .icon_box_description {
+.spel_icon_box:hover .icon_box_description {
   color: #fff;
 }
-.icon_box:hover .icon_box_button .button_items {
+.spel_icon_box:hover .icon_box_button .button_items {
   color: #fff;
 }
-.icon_box .box_bg_shape {
+.spel_icon_box:hover .icon_box_button {
+  color: #fff;
+}
+.spel_icon_box .box_bg_shape {
   display: flex;
   transition: 0.3s;
   background-repeat: no-repeat;
   padding: 20px 20px 20px 55px;
+  text-decoration: none !important;
 }
-.icon_box .full_box_link {
-  text-decoration: none;
-}
-.icon_box .full_box_link:hover {
-  text-decoration: none;
-}
-.icon_box .box_title {
+.spel_icon_box .box_title {
   font-weight: 500;
   line-height: 28px;
   color: #00000E;
   transition: 0.3s;
   margin: 0;
 }
-.icon_box .icon_box_description {
+.spel_icon_box .icon_box_description {
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
@@ -10709,23 +10707,23 @@ svg .incomplete {
   margin: 0;
   padding: 0;
 }
-.icon_box .box_icon {
+.spel_icon_box .box_icon {
   line-height: normal;
   height: 100%;
 }
-.icon_box .box_icon .box_main_icon {
+.spel_icon_box .box_icon .box_main_icon {
   font-size: 50px;
   transition: 0.3s;
   color: #69727d;
 }
-.icon_box .box_icon .box_main_icon svg path {
+.spel_icon_box .box_icon .box_main_icon svg path {
   transition: 0.3s;
 }
-.icon_box .box_button {
+.spel_icon_box .box_button {
   transition: 0.3s;
   line-height: 18px;
 }
-.icon_box .icon_box_button .button_items {
+.spel_icon_box .icon_box_button {
   display: flex;
   align-items: center;
   gap: 3px;
@@ -10735,13 +10733,13 @@ svg .incomplete {
   line-height: 28px;
   text-decoration: none;
 }
-.icon_box .icon_box_button .button_items:hover {
+.spel_icon_box .icon_box_button:hover {
   text-decoration: none;
 }
-.icon_box .icon_box_button .button_items .box_button {
+.spel_icon_box .icon_box_button .box_button {
   transition: 0.3s;
 }
-.icon_box .icon_box_button .button_items i {
+.spel_icon_box .icon_box_button i {
   transition: 0.3s;
 }
 
@@ -10792,6 +10790,9 @@ svg .incomplete {
 .icon_box_two .box_two_title {
   transition: 0.3s;
   margin: 0;
+}
+.icon_box_two a {
+  text-decoration: none !important;
 }
 
 .pricing-area.section-padding {

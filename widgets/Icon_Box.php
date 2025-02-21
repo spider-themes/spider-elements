@@ -337,7 +337,7 @@ class Icon_Box extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'box-border',
-				'selector' => '{{WRAPPER}} .icon_box,
+				'selector' => '{{WRAPPER}} .spel_icon_box,
 							   {{WRAPPER}} .icon_box_two',
 			]
 		);
@@ -349,7 +349,7 @@ class Icon_Box extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .icon_box'     => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .spel_icon_box'     => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .icon_box_two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -388,7 +388,7 @@ class Icon_Box extends Widget_Base {
 				'name'     => 'background',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .icon_box,
+				'selector' => '{{WRAPPER}} .spel_icon_box,
 							   {{WRAPPER}} .icon_box_two',
 			]
 		);
@@ -396,7 +396,7 @@ class Icon_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(), [
 				'name'     => 'icon_box_shadow',
-				'selector' => '{{WRAPPER}} .icon_box,
+				'selector' => '{{WRAPPER}} .spel_icon_box,
 							   {{WRAPPER}} .icon_box_two',
 			]
 		);
@@ -419,7 +419,7 @@ class Icon_Box extends Widget_Base {
 				'name'     => 'box_hover_background',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
-				'selector' => '{{WRAPPER}} .icon_box:hover,
+				'selector' => '{{WRAPPER}} .spel_icon_box:hover,
 							   {{WRAPPER}} .icon_box_two:hover',
 			]
 		);
@@ -430,7 +430,7 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Title Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_title'         => 'color: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .box_title'         => 'color: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box_two_title' => 'color: {{VALUE}}',
 				],
 			]
@@ -442,7 +442,7 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Description Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .icon_box_description' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .icon_box_description' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'style'  => [ '1' ],
@@ -457,7 +457,7 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_main_icon'     => 'color: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .box_main_icon'     => 'color: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box_main_icon' => 'color: {{VALUE}}',
 				],
 			]
@@ -484,8 +484,8 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Button hover', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_button'     => 'color: {{VALUE}}',
-					'{{WRAPPER}} .icon_box:hover .button_items i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .box_button'     => 'color: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .icon_box_button i' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'style'  => [ '1' ],
@@ -500,7 +500,7 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover'     => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover'     => 'border-color: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover' => 'border-color: {{VALUE}}',
 				],
 			]
@@ -509,7 +509,7 @@ class Icon_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(), [
 				'name'     => 'icon_box_hover_shadow',
-				'selector' => '{{WRAPPER}} .icon_box:hover,
+				'selector' => '{{WRAPPER}} .spel_icon_box:hover,
 		                       {{WRAPPER}} .icon_box_two:hover',
 			]
 		);
@@ -648,7 +648,7 @@ class Icon_Box extends Widget_Base {
 			[
 				'name'      => 'box_btn_typo',
 				'selector'  => '{{WRAPPER}} .box_button,
-							   {{WRAPPER}} .button_items i',
+							   {{WRAPPER}} .icon_box_button i',
 				'condition' => [
 					'style'  => [ '1' ],
 					'style!' => [ '2' ]
@@ -663,7 +663,7 @@ class Icon_Box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .box_button'     => 'color: {{VALUE}}',
-					'{{WRAPPER}} .button_items i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .icon_box_button i' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'style'  => [ '1' ],
@@ -890,7 +890,7 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Stroke Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'stroke: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'stroke: {{VALUE}}',
 				],
 			]
@@ -902,7 +902,7 @@ class Icon_Box extends Widget_Base {
 				'label'     => esc_html__( 'Fill Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .spel_icon_box:hover .box_bg_shape .box_icon .box_main_icon svg path' => 'fill: {{VALUE}}',
 					'{{WRAPPER}} .icon_box_two:hover .box2_bg_shape .box_main_icon svg path'      => 'fill: {{VALUE}}',
 				],
 			]

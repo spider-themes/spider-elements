@@ -1,4 +1,4 @@
-.icon_box {
+.spel_icon_box {
   transition: 0.3s;
   background-color: #fff;
   border: 1px solid #F0E9FC;
@@ -20,17 +20,16 @@
   &:hover .icon_box_button .button_items {
     color: #fff;
   }
+  &:hover .icon_box_button {
+    color: #fff;
+  }
+
   .box_bg_shape {
     display: flex;
     transition: 0.3s;
     background-repeat: no-repeat;
     padding: 20px 20px 20px 55px;
-  }
-  .full_box_link{
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
+    text-decoration: none !important;
   }
   .box_title {
     font-weight: 500;
@@ -67,28 +66,25 @@
     line-height: 18px
   }
   .icon_box_button {
-    .button_items {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      color: #E9336B;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 28px;
-      text-decoration: none;
-      &:hover{
-        text-decoration:none;
-      }
-      .box_button {
-        transition: 0.3s;
-      }
-      i {
-        transition: 0.3s;
-      }
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #E9336B;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 28px;
+    text-decoration: none;
+    &:hover{
+      text-decoration:none;
+    }
+    .box_button {
+      transition: 0.3s;
+    }
+    i {
+      transition: 0.3s;
     }
   }
 }
-
 
 
 
@@ -140,5 +136,8 @@
   .box_two_title {
     transition: 0.3s;
     margin: 0;
+  }
+  a {
+    text-decoration: none !important;
   }
 }
