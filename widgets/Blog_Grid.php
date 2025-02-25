@@ -684,7 +684,7 @@ class Blog_Grid extends Widget_Base {
 	}
 
 
-//============ Start Content Section Control============
+    //============ Start Content Section Control============
 	public function blog_content_style() {
 
 		$this->start_controls_section(
@@ -849,7 +849,7 @@ class Blog_Grid extends Widget_Base {
 	}
 
 
-//===================Start Blog Grid Button Style Controls===============//
+    //===================Start Blog Grid Button Style Controls===============//
 	public function button_style() {
 		$this->start_controls_section(
 			'blog_button_tab',
@@ -1020,7 +1020,7 @@ class Blog_Grid extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-//====================	Start Meta Style Section ==================//
+    //====================	Start Meta Style Section ==================//
 	public function meta_style() {
 		$this->start_controls_section(
 			'blog_meta_tab',
@@ -1276,7 +1276,7 @@ class Blog_Grid extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-//====================	End Meta Style Section ==================//
+    //====================	End Meta Style Section ==================//
 
 	public function icon_style() {
 		$this->start_controls_section(
@@ -1452,19 +1452,20 @@ class Blog_Grid extends Widget_Base {
 	}
 
 
-	protected function render() {
+	protected function render(): void
+    {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); // Array to variable conversation
 
-		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : ( get_query_var('page') ? get_query_var('page') : 1 );
 
-		// query part
+        // query part
 		$query['post_status']         = 'publish';
 		$query['ignore_sticky_posts'] = true;
 		$query['suppress_filters']    = false;
 		$query['paged']               = $paged;
 		if ( $blog_queryby == 'postype' ) {
-			$query['post_type'] = isset( $blog_posttype ) ? $blog_posttype : [ 'post' ];
+			$query['post_type'] = $blog_posttype ?? ['post'];
 		} else {
 			$query['post_type'] = [ 'post' ];
 		}

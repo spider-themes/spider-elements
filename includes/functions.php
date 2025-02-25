@@ -687,6 +687,11 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 if ( !function_exists('spel_pagination') ) {
     function spel_pagination($query, $class = 'spel-pagination', $prev = '', $next = ''): void
     {
+
+        if ( $query->max_num_pages <= 1 ) {
+            return; // No pagination needed if only one page
+        }
+
         $default_prev = '<img src="' . esc_url(SPEL_IMG . '/icons/prev.svg') . '" alt="' . esc_attr__('arrow-left',  'spider-elements') . '" class="me-2" />' . esc_html__('Prev',  'spider-elements');
         $default_next = esc_html__('Next',  'spider-elements') . '<img src="' . esc_url(SPEL_IMG . '/icons/next.svg') . '" alt="' . esc_attr__('arrow-right',  'spider-elements') . '" class="ms-2" />';
 
@@ -695,16 +700,34 @@ if ( !function_exists('spel_pagination') ) {
 
         echo '<ul class="' . esc_attr($class) . '">';
 
-        $big = 999999999; // need an unlikely integer
-        echo paginate_links(array(
-            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-            'format' => '?paged=%#%',
-            'current' => max(1, get_query_var('paged')),
-            'total' => $query->max_num_pages,
-            'prev_text' => $prev_text,
-            'next_text' => $next_text,
-        ));
+            $big = 999999999; // need an unlikely integer
+            $current = max(1, get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1));
+
+            echo paginate_links(array(
+                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format' => '?paged=%#%',
+                'current' => $current,
+                'total' => $query->max_num_pages,
+                'prev_text' => $prev_text,
+                'next_text' => $next_text,
+            ));
 
         echo '</ul>';
     }
+}
+
+/**
+ * Jobus pagination
+ */
+if ( !function_exists('spel_archive_query') ) {
+    function spel_archive_query($query): void
+    {
+
+        if ($query->is_main_query() && !is_admin() ) {
+            $query->set('posts_per_page', -1);
+        }
+
+    }
+
+    add_action('pre_get_posts', 'spel_archive_query');
 }
