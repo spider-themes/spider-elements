@@ -86,6 +86,12 @@
       .tab-menu-link {
         text-decoration: none;
 
+        &:hover {
+            .tab_menu_contents {
+                background: #faf6ff;
+            }
+        }
+
         .tab_menu_contents {
           display: flex;
           align-items: center;

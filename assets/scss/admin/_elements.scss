@@ -116,7 +116,7 @@
     }
 
     .elements_tab {
-      background: #f0e9fc;
+      background: #faf6ff;
       padding: 15px 24px;
       display: flex;
       margin: 32px 0;
@@ -133,7 +133,7 @@
         cursor: pointer;
 
         &:hover {
-          background: rgba(109, 39, 229, 0.3);
+          background: #e9dffa;
         }
 
         i {
@@ -406,8 +406,8 @@
     padding: 40px;
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: auto;
     }
 
     h3 {

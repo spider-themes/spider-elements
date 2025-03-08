@@ -284,6 +284,9 @@ Table of Content:
 .spel_dashboard .sidebar_navigation .tab_left_content .tab-menu-link {
   text-decoration: none;
 }
+.spel_dashboard .sidebar_navigation .tab_left_content .tab-menu-link:hover .tab_menu_contents {
+  background: #faf6ff;
+}
 .spel_dashboard .sidebar_navigation .tab_left_content .tab-menu-link .tab_menu_contents {
   display: flex;
   align-items: center;
@@ -805,7 +808,7 @@ Table of Content:
   cursor: pointer;
 }
 .spel_dashboard .tab_contents .elements_tab {
-  background: #f0e9fc;
+  background: #faf6ff;
   padding: 15px 24px;
   display: flex;
   margin: 32px 0;
@@ -822,7 +825,7 @@ Table of Content:
   cursor: pointer;
 }
 .spel_dashboard .tab_contents .elements_tab .filter_data:hover {
-  background: rgba(109, 39, 229, 0.3);
+  background: #e9dffa;
 }
 .spel_dashboard .tab_contents .elements_tab .filter_data i {
   margin-right: 5px;
@@ -1056,8 +1059,8 @@ Table of Content:
   padding: 40px;
 }
 .spel_dashboard .integration_item img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: auto;
 }
 .spel_dashboard .integration_item h3 {
   font-size: 18px;

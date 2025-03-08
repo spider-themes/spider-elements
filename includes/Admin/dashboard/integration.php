@@ -7,7 +7,7 @@ $integrations = [
 	[
 		'slug'     => 'bbp-core',
 		'basename' => 'bbp-core/bbp-core.php',
-		'logo'     => SPEL_IMG . '/dashboard/bbp-core.png',
+		'logo'     => SPEL_IMG . '/dashboard/bbp-core-logo.svg',
 		'title'    => esc_html__( 'BBP Core', 'spider-elements' ),
 		'desc'     => esc_html__( 'Expand bbPress powered forums with useful features like - private reply, solved topics ...', 'spider-elements' ),
 	],
@@ -21,14 +21,14 @@ $integrations = [
 	[
 		'slug'     => 'changeloger',
 		'basename' => 'changeloger/changeloger.php',
-		'logo'     => SPEL_IMG . '/dashboard/changeloger.png',
+		'logo'     => SPEL_IMG . '/dashboard/changeloger-logo-black.svg',
 		'title'    => esc_html__( 'Changeloger', 'spider-elements' ),
 		'desc'     => esc_html__( 'Auto-convert plain text changelogs into engaging visuals for WordPress.', 'spider-elements' ),
 	],
     [
         'slug'     => 'advanced-accordion-block',
         'basename' => 'advanced-accordion-block/advanced-accordion-block.php',
-        'logo'     => SPEL_IMG . '/dashboard/accordion.png',
+        'logo'     => SPEL_IMG . '/dashboard/AAGB-logo.svg',
         'title'    => esc_html__( 'Advanced Accordion Block', 'spider-elements' ),
         'desc'     => esc_html__( 'A custom Gutenberg Block that allows to showcase the content in accordion mode. It also helps to build FAQ sections easily.',
             'spider-elements' ),
