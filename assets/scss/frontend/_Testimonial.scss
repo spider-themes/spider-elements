@@ -986,10 +986,20 @@
     margin-right: -35px;
     .item {
       margin: 0 35px;
-      //@media  screen and (max-width: 1399px) {
-      //  margin: 0 15px;
-      //}
+      @media (max-width: 1025px) {
+        margin: 0 17.5px;
+      }
+      @media (max-width: 767px) {
+        margin: 0 35px;
+      }
       .feedback-block-one {
+        position: relative;
+        .quote-icon {
+          position: absolute;
+          top: 58px;
+          right: 55px;
+        }
+
         .review {
           @media (max-width: 1024px) {
             margin-top: 0 !important;
@@ -1007,6 +1017,9 @@
   background: #FAFAFA;
   border-radius: 10px;
   border: 0;
+  @media (max-width: 1025px) {
+    padding: 35px 40px 35px;
+  }
 
   .quote-icon {
     position: absolute;
@@ -1229,6 +1242,7 @@
       @media (max-width: 991px) {
         right: 0;
         padding: 0;
+        justify-content: space-between;
       }
 
       li {

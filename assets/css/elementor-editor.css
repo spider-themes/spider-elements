@@ -90,133 +90,133 @@
 
 /** === Testimonials === **/
 .testimonial1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/testimonial1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .testimonial2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/testimonial2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .testimonial3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/testimonial3.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .testimonial4::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/testimonial4.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .testimonial5::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/testimonial5.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .testimonial6::before {
+  background: url("../images/el-editor-preview/testimonial6.png") no-repeat center;
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial6.jpg") no-repeat center;
 }
 
 .testimonial7::before {
+  background: url("../images/el-editor-preview/testimonial7.png") no-repeat center;
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial7.jpg") no-repeat center;
 }
 
 .testimonial8::before {
+  background: url("../images/el-editor-preview/testimonial8.png") no-repeat center;
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial8.jpg") no-repeat center;
 }
 
 .testimonial9::before {
+  background: url("../images/el-editor-preview/testimonial9.png") no-repeat center;
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial9.jpg") no-repeat center;
 }
 
 .testimonial10::before {
+  background: url("../images/el-editor-preview/testimonial10.png") no-repeat center;
   background-size: cover;
-  background: url("../images/el-editor-preview/testimonial10.jpg") no-repeat center;
 }
 
 /*** === team Carousel === ***/
 .team1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/team1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .team2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/team2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 /***=== Integration  ===***/
 .integration1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/integration1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .integration2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/integration2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 /***==== Blog Grid ==== ***/
 .blog_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/blog1.png") no-repeat center;
+  background-size: cover;
 }
 
 .blog_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/blog2.png") no-repeat center;
+  background-size: cover;
 }
 
 .blog_3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/blog3.png") no-repeat center;
+  background-size: cover;
 }
 
 .blog_4::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/blog4.png") no-repeat center;
+  background-size: cover;
 }
 
 .blog_5::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/blog6.png") no-repeat center;
+  background-size: cover;
 }
 
 /*** === Video Playlist === ***/
 .video_playlist_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/video_playlist_1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .video_playlist_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/video_playlist_2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 /*** === Image Hover === ***/
 .img_hover1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/image_hover2.png") no-repeat center;
+  background-size: cover;
 }
 
 .img_hover2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/image_hover1.png") no-repeat center;
+  background-size: cover;
 }
 
 .img_hover3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/image_hover3.png") no-repeat center;
+  background-size: cover;
 }
 
 .img_hover4::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/image_hover4.png") no-repeat center;
+  background-size: cover;
 }
 
 /*** === Box Hover === ***/
@@ -231,143 +231,143 @@
 
 /*** ====== Marquee Slides ====== ***/
 .marquee_slides_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/marquee_slides_img_1.png") no-repeat center;
+  background-size: cover;
 }
 
 .marquee_slides_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/marquee_slides_img_2.png") no-repeat center;
+  background-size: cover;
 }
 
 .marquee_slides_3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/marquee_slides_img_3.jpg") no-repeat center;
+  background-size: cover;
 }
 
 /*** ====== Counter ====== ***/
 .counter1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/counter1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .counter2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/counter2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .instagram1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/instagram1.png") no-repeat center;
+  background-size: cover;
 }
 
 /*==== Pricing Table Switcher ====*/
 .pricing_table_switcher_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .pricing_table_switcher_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .pricing_table_switcher_3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_3.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .pricing_table_switcher_4::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_4.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .pricing_table_switcher_5::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_5.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .pricing_table_switcher_6::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_6.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .pricing_table_switcher_7::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/pricing_table_switcher_img_7.jpg") no-repeat center;
+  background-size: cover;
 }
 
 /*======== Stack image ==========*/
 .stack_img_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/stack_img_1.png") no-repeat center;
+  background-size: cover;
 }
 
 .stack_img_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/stack_img_2.png") no-repeat center;
+  background-size: cover;
 }
 
 .stack_img_3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/stacky_img3.png") no-repeat center;
+  background-size: cover;
 }
 
 .stack_img_4::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/stacky_img4.png") no-repeat center;
+  background-size: cover;
 }
 
 /*======= Image Slider Image =======*/
 .img_slider1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/img_slider1.png") no-repeat center;
+  background-size: cover;
 }
 
 .img_slider2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/img_silder2.png") no-repeat center;
+  background-size: cover;
 }
 
 /*======= Icon Box =======*/
 .icon_box_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/icon_box1.png") no-repeat center;
+  background-size: cover;
 }
 
 .icon_box_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/icon_box2.png") no-repeat center;
+  background-size: cover;
 }
 
 /*======= Video Popup =======*/
 .video_popup_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/video_popup1.png") no-repeat center;
+  background-size: cover;
 }
 
 .video_popup_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/video_popup2.png") no-repeat center;
+  background-size: cover;
 }
 
 .video_popup_3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/video_popup3.png") no-repeat center;
+  background-size: cover;
 }
 
 /*======= Cheat Sheet =======*/
 .cheat_sheet_1::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/cheat_sheet_1.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .cheat_sheet_2::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/cheat_sheet_2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .cheat_sheet_3::before {
-  background-size: cover;
   background: url("../images/el-editor-preview/cheat_sheet_3.jpg") no-repeat center;
+  background-size: cover;
 }

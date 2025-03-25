@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
                 <div class="item elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
                     <div class="feedback-block-one feedback-block-three">
-                        <img src="<?php echo SPEL_IMG ?>/quote-icon.svg" alt="<?php esc_attr_e( 'quote icon', 'spider-elements') ?>">
+                        <img class="quote-icon" src="<?php echo SPEL_IMG ?>/quote-icon.svg" alt="<?php esc_attr_e( 'quote icon', 'spider-elements') ?>">
 						<?php
 						if ( 'star_fontawesome' === $settings[ 'star_style' ] ) {
 							if ( 'outline' === $settings[ 'unmarked_star_style' ] ) {
