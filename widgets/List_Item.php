@@ -156,7 +156,13 @@ class List_Item extends Widget_Base {
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => '{{{ text }}}',
 				'prevent_empty' => false,
-			]
+                'default' => [
+                    [ 'text' => esc_html__( 'List Item 1', 'spider-elements' ) ],
+                    [ 'text' => esc_html__( 'List Item 2', 'spider-elements' ) ],
+                    [ 'text' => esc_html__( 'List Item 3', 'spider-elements' ) ],
+                ],
+
+            ]
 		);
 
 		$this->end_controls_section(); // End Icon List

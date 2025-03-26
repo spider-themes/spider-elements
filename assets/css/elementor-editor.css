@@ -189,12 +189,12 @@
 
 /*** === Video Playlist === ***/
 .video_playlist_1::before {
-  background: url("../images/el-editor-preview/video_playlist_1.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/video_playlist_1.png") no-repeat center;
   background-size: cover;
 }
 
 .video_playlist_2::before {
-  background: url("../images/el-editor-preview/video_playlist_2.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/video_playlist_2.png") no-repeat center;
   background-size: cover;
 }
 
@@ -363,11 +363,11 @@
 }
 
 .cheat_sheet_2::before {
-  background: url("../images/el-editor-preview/cheat_sheet_2.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/cheat_sheet_2.png") no-repeat center;
   background-size: cover;
 }
 
 .cheat_sheet_3::before {
-  background: url("../images/el-editor-preview/cheat_sheet_3.jpg") no-repeat center;
+  background: url("../images/el-editor-preview/cheat_sheet_3.jpg") no-repeat top;
   background-size: cover;
 }
