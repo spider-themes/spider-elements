@@ -3792,6 +3792,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   width: 24px;
   max-width: 26px;
   max-height: 26px;
+  padding-top: 5px;
 }
 .tabs_sliders ul.nav-tabs .nav-item .nav-link .tab_progress .progress-bar {
   background: transparent;

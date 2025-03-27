@@ -16,23 +16,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Class Team
+ *
  * @package spider\Widgets
- * @since 1.0.0
+ * @since   1.0.0
  */
 class Video_Popup extends Widget_Base {
 
-	public function get_name(): string
-    {
+	public function get_name(): string {
 		return 'docy_video_popup'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title(): string
-    {
+	public function get_title(): string {
 		return esc_html__( 'Video Popup', 'spider-elements' );
 	}
 
-	public function get_icon(): string
-    {
+	public function get_icon(): string {
 		return 'eicon-play spel-icon';
 	}
 
@@ -196,7 +194,7 @@ class Video_Popup extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .video-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .video-icon'  => 'color: {{VALUE}}',
 					'{{WRAPPER}} .video2-icon' => 'color: {{VALUE}}',
 				],
 				'condition' => [
@@ -211,7 +209,7 @@ class Video_Popup extends Widget_Base {
 				'label'     => esc_html__( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .video-icon' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .video-icon'  => 'background-color: {{VALUE}}',
 					'{{WRAPPER}} .video2-icon' => 'background-color: {{VALUE}}',
 				],
 				'condition' => [
@@ -238,7 +236,7 @@ class Video_Popup extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .video-icon:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .video-icon:hover'  => 'color: {{VALUE}}',
 					'{{WRAPPER}} .video2-icon:hover' => 'color: {{VALUE}}',
 				],
 				'condition' => [
@@ -253,7 +251,7 @@ class Video_Popup extends Widget_Base {
 				'label'     => esc_html__( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .video-icon:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .video-icon:hover'  => 'background-color: {{VALUE}}',
 					'{{WRAPPER}} .video2-icon:hover' => 'background-color: {{VALUE}}',
 				],
 				'condition' => [
@@ -271,7 +269,7 @@ class Video_Popup extends Widget_Base {
 					'{{WRAPPER}} .video-icon:hover' => 'border-color: {{VALUE}}',
 				],
 				'condition' => [
-					'style' => [ '1' ],
+					'style'  => [ '1' ],
 					'style!' => [ '2' ]
 				]
 			]
@@ -289,12 +287,12 @@ class Video_Popup extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'icon_border',
-				'label'    => esc_html__( 'Border', 'spider-elements' ),
-				'selector' => '{{WRAPPER}} .video-icon',
+				'name'      => 'icon_border',
+				'label'     => esc_html__( 'Border', 'spider-elements' ),
+				'selector'  => '{{WRAPPER}} .video-icon',
 				'condition' => [
-					'style' => [ '1' ],
-					'style!' => [ '2']
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
 				]
 			]
 		);
@@ -308,9 +306,9 @@ class Video_Popup extends Widget_Base {
 				'selectors'  => [
 					'{{WRAPPER}} .video-icon, .play-button a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'condition' => [
-					'style' => [ '1' ],
-					'style!' => [ '2']
+				'condition'  => [
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
 				]
 			]
 		);
@@ -335,7 +333,7 @@ class Video_Popup extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .video-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video-icon'   => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .video2-icon ' => 'font-size: {{SIZE}}{{UNIT}};',
 
 				],
@@ -352,18 +350,19 @@ class Video_Popup extends Widget_Base {
 				],
 				'separator' => 'after',
 				'condition' => [
-					'style' => [ '2' ],
-					'style!' => [ '1']
+					'style'  => [ '2' ],
+					'style!' => [ '1' ]
 				]
 			]
 		);
 
 		$this->add_responsive_control(
 			'icon_bg_width', [
-				'label'      => esc_html__( 'Popup Width', 'spider-elements' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range'      => [
+				'label'       => esc_html__( 'Wave Size', 'spider-elements' ),
+				'description' => esc_html__( 'Set the width and height of the wave effect.', 'spider-elements' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px', '%' ],
+				'range'       => [
 					'px' => [
 						'min' => 0,
 						'max' => 1000,
@@ -373,17 +372,17 @@ class Video_Popup extends Widget_Base {
 						'max' => 100,
 					],
 				],
-				'default'    => [
+				'default'     => [
 					'unit' => 'px',
 					'size' => '90',
 				],
-                'selectors'  => [
-                    '{{WRAPPER}} .video-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .video2-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .video2-icon::before' => 'width: calc({{SIZE}}{{UNIT}} + 30px); height: calc({{SIZE}}{{UNIT}} + 30px); top: -15px; left: -15px;',
-                    '{{WRAPPER}} .video2-icon::after' => 'width: calc({{SIZE}}{{UNIT}} + 60px); height: calc({{SIZE}}{{UNIT}} + 60px); top: -30px; left: -30px;',
-                ],
-				'condition' => [
+				'selectors'   => [
+					'{{WRAPPER}} .video-icon'          => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video2-icon'         => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .video2-icon::before' => 'width: calc({{SIZE}}{{UNIT}} + 30px); height: calc({{SIZE}}{{UNIT}} + 30px); top: -15px; left: -15px;',
+					'{{WRAPPER}} .video2-icon::after'  => 'width: calc({{SIZE}}{{UNIT}} + 60px); height: calc({{SIZE}}{{UNIT}} + 60px); top: -30px; left: -30px;',
+				],
+				'condition'   => [
 					'style' => [ '1', '2' ]
 				],
 			]
@@ -392,12 +391,12 @@ class Video_Popup extends Widget_Base {
 		// Wave switcher
 		$this->add_control(
 			'enable_wave_regular', [
-				'label'   => esc_html__( 'Enable Wave on Regular', 'spider-elements' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => 'no',
+				'label'     => esc_html__( 'Enable Wave on Regular', 'spider-elements' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'no',
 				'condition' => [
-					'style' => [ '1' ],
-					'style!' => [ '2']
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
 				]
 			]
 		);
@@ -405,12 +404,12 @@ class Video_Popup extends Widget_Base {
 		// Wave effect Hover switcher
 		$this->add_control(
 			'enable_wave_hover', [
-				'label'   => esc_html__( 'Enable Wave on Hover', 'spider-elements' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => 'no',
+				'label'     => esc_html__( 'Enable Wave on Hover', 'spider-elements' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'no',
 				'condition' => [
-					'style' => [ '1' ],
-					'style!' => [ '2']
+					'style'  => [ '1' ],
+					'style!' => [ '2' ]
 				]
 			]
 		);
