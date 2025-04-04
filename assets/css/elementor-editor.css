@@ -99,21 +99,6 @@
   background-size: cover;
 }
 
-.testimonial3::before {
-  background: url("../images/el-editor-preview/testimonial3.jpg") no-repeat center;
-  background-size: cover;
-}
-
-.testimonial4::before {
-  background: url("../images/el-editor-preview/testimonial4.jpg") no-repeat center;
-  background-size: cover;
-}
-
-.testimonial5::before {
-  background: url("../images/el-editor-preview/testimonial5.jpg") no-repeat center;
-  background-size: cover;
-}
-
 .testimonial6::before {
   background: url("../images/el-editor-preview/testimonial6.png") no-repeat center;
   background-size: cover;

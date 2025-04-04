@@ -106,10 +106,6 @@ class Video_Popup extends Widget_Base {
 						'title' => esc_html__( 'Style 02', 'spider-elements' ),
 						'icon'  => 'video_popup_2',
 					],
-					'3' => [
-						'title' => esc_html__( 'Style 02', 'spider-elements' ),
-						'icon'  => 'video_popup_3',
-					],
 				],
 				'toggle'  => false,
 				'default' => '1',

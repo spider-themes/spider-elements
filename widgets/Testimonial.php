@@ -73,7 +73,6 @@ class Testimonial extends Widget_Base {
 		$this->elementor_rating_controls();
 		$this->elementor_general_style();
 		$this->elementor_style_control();
-		$this->elementor_style_image();
 		$this->elementor_style_icon();
 	}
 
@@ -109,36 +108,24 @@ class Testimonial extends Widget_Base {
 						'title' => esc_html__( '02 : Carousel Testimonials', 'spider-elements' ),
 					],
 					'3'  => [
-						'icon'  => 'testimonial3',
+						'icon'  => 'testimonial6',
 						'title' => esc_html__( '03 : Carousel Testimonials', 'spider-elements' ),
 					],
 					'4'  => [
-						'icon'  => 'testimonial4',
+						'icon'  => 'testimonial7',
 						'title' => esc_html__( '04 : Carousel Testimonials', 'spider-elements' ),
 					],
 					'5'  => [
-						'icon'  => 'testimonial5',
+						'icon'  => 'testimonial8',
 						'title' => esc_html__( '05 : Carousel Testimonials', 'spider-elements' ),
 					],
 					'6'  => [
-						'icon'  => 'testimonial6',
+						'icon'  => 'testimonial9',
 						'title' => esc_html__( '06 : Carousel Testimonials', 'spider-elements' ),
 					],
-					'7'  => [
-						'icon'  => 'testimonial7',
-						'title' => esc_html__( '07 : Carousel Testimonials', 'spider-elements' ),
-					],
-					'8'  => [
-						'icon'  => 'testimonial8',
-						'title' => esc_html__( '08 : Carousel Testimonials', 'spider-elements' ),
-					],
-					'9'  => [
-						'icon'  => 'testimonial9',
-						'title' => esc_html__( '09 : Carousel Testimonials', 'spider-elements' ),
-					],
-					'10' => [
+					'7' => [
 						'icon'  => 'testimonial10',
-						'title' => esc_html__( '10 : Carousel Testimonials', 'spider-elements' ),
+						'title' => esc_html__( '07 : Carousel Testimonials', 'spider-elements' ),
 					],
 				],
 				'default' => '1',
@@ -300,236 +287,6 @@ class Testimonial extends Widget_Base {
 			]
 		); //End Testimonials 02
 
-		//=== Testimonials 03
-		$testimonial3 = new Repeater();
-		$testimonial3->add_control(
-			'author_image', [
-				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
-				'type'    => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-
-		$testimonial3->add_control(
-			'name', [
-				'label'   => esc_html__( 'Name', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
-			]
-		);
-
-		$testimonial3->add_control(
-			'designation', [
-				'label'   => esc_html__( 'Designation', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Software Developer', 'spider-elements' ),
-			]
-		);
-
-		$testimonial3->add_control(
-			'review_content', [
-				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
-				'type'  => Controls_Manager::TEXTAREA,
-			]
-		);
-
-		$this->add_control(
-			'testimonials3', [
-				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
-				'type'          => Controls_Manager::REPEATER,
-				'fields'        => $testimonial3->get_controls(),
-				'title_field'   => '{{{ name }}}',
-				'prevent_empty' => false,
-				'default'       => [
-					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
-							'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
-							'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
-							'spider-elements' ),
-					],
-				],
-				'condition'     => [
-					'style' => '3'
-				]
-			]
-		);
-
-		//End Testimonials 03
-
-		//=== Testimonials 04
-		$testimonial4 = new Repeater();
-		$testimonial4->add_control(
-			'author_image', [
-				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
-				'type'    => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-
-		$testimonial4->add_control(
-			'name', [
-				'label'   => esc_html__( 'Name', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
-			]
-		);
-
-		$testimonial4->add_control(
-			'designation', [
-				'label'   => esc_html__( 'Designation', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Software Developer', 'spider-elements' ),
-			]
-		);
-
-		$testimonial4->add_control(
-			'review_content', [
-				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
-				'type'  => Controls_Manager::TEXTAREA,
-			]
-		);
-
-		$testimonial4->add_control(
-			'c_logo', [
-				'label'   => esc_html__( 'Company Logo', 'spider-elements' ),
-				'type'    => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-
-		$this->add_control(
-			'testimonials4', [
-				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
-				'type'          => Controls_Manager::REPEATER,
-				'fields'        => $testimonial4->get_controls(),
-				'title_field'   => '{{{ name }}}',
-				'prevent_empty' => false,
-				'default'       => [
-					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation'    => esc_html__( 'Software Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
-							'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation'    => esc_html__( 'App Developer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
-							'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Mark Tony', 'spider-elements' ),
-						'designation'    => esc_html__( 'UI/UX Designer', 'spider-elements' ),
-						'review_content' => esc_html__( 'Hendrerit laoreet incidunt molestie eum placeat, neque ridiculus? Maecenas incididunt aperiam tempora cumque quos?”',
-							'spider-elements' ),
-					],
-				],
-				'condition'     => [
-					'style' => '4'
-				]
-			]
-		); //End Testimonials 04
-
-		//=== Testimonials 05
-		$testimonial5 = new Repeater();
-		$testimonial5->add_control(
-			'author_image', [
-				'label'   => esc_html__( 'Author Image', 'spider-elements' ),
-				'type'    => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-
-		$testimonial5->add_control(
-			'company_name', [
-				'label'   => esc_html__( 'Company Name', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Karina', 'spider-elements' ),
-			]
-		);
-
-		$testimonial5->add_control(
-			'review_content', [
-				'label' => esc_html__( 'Testimonial Text', 'spider-elements' ),
-				'type'  => Controls_Manager::TEXTAREA,
-			]
-		);
-
-		$testimonial5->add_control(
-			'title', [
-				'label'   => esc_html__( 'Title', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Madelyn Press', 'spider-elements' ),
-			]
-		);
-
-		$testimonial5->add_control(
-			'name', [
-				'label'   => esc_html__( 'Name', 'spider-elements' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Mark Tony', 'spider-elements' ),
-			]
-		);
-
-		$this->add_control(
-			'testimonials5', [
-				'label'         => esc_html__( 'Testimonials', 'spider-elements' ),
-				'type'          => Controls_Manager::REPEATER,
-				'fields'        => $testimonial5->get_controls(),
-				'title_field'   => '{{{ name }}}',
-				'prevent_empty' => false,
-				'default'       => [
-					[
-						'name'           => esc_html__( 'Zain Torff', 'spider-elements' ),
-						'company_name'   => esc_html__( 'Olga', 'spider-elements' ),
-						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
-						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Madelyn Press', 'spider-elements' ),
-						'company_name'   => esc_html__( 'Family S', 'spider-elements' ),
-						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
-						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Lincoln Levin', 'spider-elements' ),
-						'company_name'   => esc_html__( 'Karina', 'spider-elements' ),
-						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
-						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
-					],
-					[
-						'name'           => esc_html__( 'Charlie Rhiel', 'spider-elements' ),
-						'company_name'   => esc_html__( 'Meta', 'spider-elements' ),
-						'title'          => esc_html__( 'Madelyn Press', 'spider-elements' ),
-						'review_content' => esc_html__( 'Thank you and your entire team for your kind and attentive attitude.', 'spider-elements' ),
-					],
-				],
-				'condition'     => [
-					'style' => '5'
-				]
-			]
-		); //End Testimonials 05
-
 		//=== Testimonials 06
 		$testimonial6 = new Repeater();
 		$testimonial6->add_control(
@@ -626,7 +383,7 @@ class Testimonial extends Widget_Base {
 					],
 				],
 				'condition'     => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				]
 			]
 		); //End Testimonials 06
@@ -692,7 +449,7 @@ class Testimonial extends Widget_Base {
 					],
 				],
 				'condition'     => [
-					'style' => [ '8' ]
+					'style' => [ '5' ]
 				]
 			]
 		); //End Testimonials 08
@@ -755,7 +512,7 @@ class Testimonial extends Widget_Base {
 					],
 				],
 				'condition'     => [
-					'style' => '10'
+					'style' => '7'
 				]
 			]
 		); //End Testimonials 10
@@ -843,22 +600,7 @@ class Testimonial extends Widget_Base {
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
 				'condition' => [
-					'style' => '10'
-				],
-			]
-		);
-
-		$this->add_control(
-			'quote_icon',
-			[
-				'label'     => esc_html__( 'Quote Icon', 'spider-elements' ),
-				'type'      => Controls_Manager::ICONS,
-				'default'   => [
-					'value'   => 'fas fa-quote-left',
-					'library' => 'fa-solid',
-				],
-				'condition' => [
-					'style' => '4'
+					'style' => '7'
 				],
 			]
 		);
@@ -874,7 +616,7 @@ class Testimonial extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Rating', 'spider-elements' ),
 				'condition' => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				],
 			],
 
@@ -964,7 +706,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Testimonial Item', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '6', '7', '9', '10' ]
+					'style' => [ '3', '4', '6', '7' ]
 				]
 			]
 		);
@@ -991,20 +733,6 @@ class Testimonial extends Widget_Base {
 							   {{WRAPPER}} .feedback-section-four .bg-wrapper ',
 			]
 		);
-
-//		$this->add_group_control(
-//			Group_Control_Background::get_type(),
-//			[
-//				'name'      => 'background',
-//				'types'     => [ 'classic', 'gradient', 'video' ],
-//				'selector'  => '{{WRAPPER}} .testimonial-item,
-//								{{WRAPPER}} .feedback-section-four .bg-wrapper',
-//				'condition' => [
-//					'style'  => [ '5', '10' ],
-//					'style!' => [ '9' ]
-//				]
-//			]
-//		);
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
@@ -1042,7 +770,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-slider-two .item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style' => '9'
+					'style' => '6'
 				]
 			]
 		);
@@ -1090,7 +818,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-section-four:hover .bg-wrapper p' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style' => '10'
+					'style' => '7'
 				]
 			]
 		);
@@ -1104,7 +832,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-section-four:hover .bg-wrapper .name' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style' => '10'
+					'style' => '7'
 				]
 			]
 		);
@@ -1130,7 +858,7 @@ class Testimonial extends Widget_Base {
 			'arrow_icons_sec', [
 				'label'     => esc_html__( 'Arrow Icon', 'spider-elements' ),
 				'condition' => [
-					'style' => [ '6', '7', '8', '10' ]
+					'style' => [ '3', '4', '5', '7' ]
 				]
 			]
 		);
@@ -1168,61 +896,6 @@ class Testimonial extends Widget_Base {
 			'style_content_sec', [
 				'label' => esc_html__( 'Contents', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		//=== Title Style
-		$this->add_control(
-			'title_style', [
-				'label'     => esc_html__( 'Title', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					'style'  => [ '5' ],
-					'style!' => [ '1', '2', '3', ]
-				]
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'      => 'title_typo',
-				'selector'  => '{{WRAPPER}} .se_title',
-				'condition' => [
-					'style'  => [ '5' ],
-					'style!' => [ '1', '2', '3', ]
-				]
-			]
-		);
-
-		$this->add_control(
-			'title_color', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .se_title' => 'color: {{VALUE}};',
-				],
-				'condition' => [
-					'style'  => [ '5' ],
-					'style!' => [ '1', '2', '3', '4' ]
-				]
-			]
-		);
-		//End Title Style
-
-		$this->add_control(
-			'box-padding',
-			[
-				'label'      => esc_html__( 'Box Padding', 'spider-elements' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .testimonial-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition'  => [
-					'style'  => [ '3' ],
-					'style!' => [ '1', '2', '4', '5', '6', '7', '8', '9', '10', '11' ]
-				]
 			]
 		);
 
@@ -1295,20 +968,6 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'border_color', [
-				'label'     => esc_html__( 'Border Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .testimonial-slider-inner .testimonial-item' => 'border-color: {{VALUE}};',
-				],
-				'condition' => [
-					'style'  => [ '3' ],
-					'style!' => [ '1', '2', '4', '5', '6', '7', '8', '9' ]
-				]
-			]
-		);
-
 		$this->add_responsive_control(
 			'Content_margin',
 			[
@@ -1322,48 +981,10 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .testimonial-slider-inner .testimonial-item p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style' => [ '3', '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				]
 			]
-		);
-
-		//End Review Content
-
-		//=== Category Style
-		$this->add_control(
-			'category_options', [
-				'label'     => esc_html__( 'Category', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					'style' => '5'
-				]
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
-				'name'      => 'category_typo',
-				'selector'  => '{{WRAPPER}} .se_category',
-				'condition' => [
-					'style' => '5'
-				]
-			]
-		);
-
-		$this->add_control(
-			'category_color', [
-				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .se_category' => 'color: {{VALUE}};',
-				],
-				'condition' => [
-					'style' => '5'
-				]
-			]
-
-		);//End Category Style
+		);//End Review Content
 
 		//=== Designation
 		$this->add_control(
@@ -1372,7 +993,7 @@ class Testimonial extends Widget_Base {
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
-					'style' => [ '1', '2', '3', '4', '9', ]
+					'style' => [ '1', '2', '6', ]
 				]
 			]
 		);
@@ -1383,7 +1004,7 @@ class Testimonial extends Widget_Base {
 				'selector'  => '{{WRAPPER}} .se_designation,
 								{{WRAPPER}} .feedback-block-two .block-footer span',
 				'condition' => [
-					'style' => [ '1', '2', '3', '4', '9', '11' ]
+					'style' => [ '1', '2','6', '11' ]
 				]
 			]
 		);
@@ -1397,7 +1018,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-block-two .block-footer span' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style' => [ '1', '2', '3', '4', '9', ]
+					'style' => [ '1', '2', '6', ]
 				]
 			]
 		);
@@ -1411,7 +1032,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Rating', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				]
 			]
 		);
@@ -1423,7 +1044,7 @@ class Testimonial extends Widget_Base {
 							   {{WRAPPER}} .feedback-block-two .review .text-md,
 							   {{WRAPPER}} .feedback-block-three .review .text-md',
 				'condition' => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				]
 			]
 		);
@@ -1438,7 +1059,7 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-block-three .review .text-md' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				]
 			]
 		);
@@ -1453,8 +1074,8 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-block-one .review' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'  => [
-					'style'  => [ '6' ],
-					'style!' => [ '7', '9' ]
+					'style'  => [ '3' ],
+					'style!' => [ '4', '6' ]
 				]
 			]
 		);
@@ -1463,11 +1084,11 @@ class Testimonial extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'      => 'review_border',
-				'label'     => esc_html__( 'Border', 'spider-elements' ),
+				'label'     => esc_html__( 'Top Border', 'spider-elements' ),
 				'selector'  => '{{WRAPPER}} .feedback-block-one .review',
 				'condition' => [
-					'style'  => [ '6' ],
-					'style!' => [ '7', '9' ]
+					'style'  => [ '3' ],
+					'style!' => [ '4', '6' ]
 				]
 			]
 		);
@@ -1481,85 +1102,13 @@ class Testimonial extends Widget_Base {
 					'{{WRAPPER}} .feedback-block-three .star-rating i:before' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'style' => [ '6', '7', '9' ]
+					'style' => [ '3', '4', '6' ]
 				]
 			]
 		);
 
 		$this->end_controls_section();
 
-	}
-
-
-	public function elementor_style_image() {
-		//========================= Contents =========================//
-		$this->start_controls_section(
-			'style_image', [
-				'label'     => esc_html__( 'Image', 'spider-elements' ),
-				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'style' => [ '3' ]
-				]
-			]
-		);
-
-		$this->add_responsive_control(
-			'image_size',
-			[
-				'label'      => esc_html__( 'Size', 'spider-elements' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'range'      => [
-					'px' => [
-						'min' => 6,
-						'max' => 1000,
-					],
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .testimonial-slider-inner .author-image img' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'img_bg_color',
-			[
-				'label'     => esc_html__( 'Background', 'spider-elements' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .testimonial-slider-inner .author-image' => 'background: {{VALUE}}',
-				],
-			]
-		);
-
-		//=== shape Style
-		$this->add_control(
-			'shape_style', [
-				'label'     => esc_html__( 'Shape', 'spider-elements' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_responsive_control(
-			'shape_size',
-			[
-				'label'      => esc_html__( 'Size', 'spider-elements' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'range'      => [
-					'px' => [
-						'min' => 6,
-						'max' => 500,
-					],
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .quote-img-top img, .quote-img-bottom img' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
 
 //	start testimonial style 3, 6, 7 icon section======//
@@ -1570,7 +1119,7 @@ class Testimonial extends Widget_Base {
 				'label'     => esc_html__( 'Arrow Icon', 'spider-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'style' => [ '3', '6', '7' ]
+					'style' => [ '3', '4' ]
 				]
 			]
 		);
@@ -1611,9 +1160,10 @@ class Testimonial extends Widget_Base {
 				],
 				'selectors'   => [
 					'{{WRAPPER}} .feedback-section-seven .slick-arrow-one' => 'column-gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .feedback_section_one .slick-arrow-one' => 'column-gap: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'style' => [ '6', '7' ]
+					'style' => [ '3', '4' ]
 				]
 			]
 		);

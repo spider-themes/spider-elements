@@ -161,7 +161,6 @@ class List_Item extends Widget_Base {
                     [ 'text' => esc_html__( 'List Item 2', 'spider-elements' ) ],
                     [ 'text' => esc_html__( 'List Item 3', 'spider-elements' ) ],
                 ],
-
             ]
 		);
 

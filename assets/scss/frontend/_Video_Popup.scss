@@ -157,67 +157,6 @@
 }
 
 
-
-/*======== video popup 3========*/
-.btn-circle {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  cursor: pointer;
-
-  .text {
-    position: absolute;
-    height: 100%;
-    margin-top: 0;
-    animation: rotate 8s linear infinite;
-    color: #B9B9BA;
-    p {
-      font-size: 30px;
-      text-transform: uppercase;
-      margin-top: -20px;
-      margin-left: 0;
-
-      span {
-        position: absolute;
-        left: 50%;
-        font-size: 0.8em;
-        transform-origin: 0 12vmin;
-      }
-    }
-  }
-
-    .youtube_logo {
-      color: #B9B9BA;
-      &:focus{
-        color: #fff;
-      }
-    }
- 
-}
-
-.youtube_logo {
-  position: absolute;
-  width: 230px;
-  height: 230px;
-  background: linear-gradient(143deg, rgba(86, 86, 86, 0.25) 0%, rgba(212, 212, 212, 0.00) 100%);
-  border: 1px solid rgba(232, 230, 230, 0.11);
-  color: #B9B9BA;
-  border-radius: 50%;
-  filter: contrast(1.5);
-  transition: all 0.3s;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-  animation: none;
-}
-
-
 @keyframes rotate {
   from {
     transform: rotate(360deg);

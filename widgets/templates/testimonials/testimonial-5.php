@@ -3,36 +3,64 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
-<section class="testimonial-area testimonial-area-8">
-    <div class="testimonial-slider-active swiper">
-        <div class="swiper-wrapper">
-			<?php
-			if ( ! empty( $testimonials5 ) ) :
-				foreach ( $testimonials5 as $item ) : ?>
-                    <div class="swiper-slide slider-items">
-                        <div class="testimonial testimonial-item">
-							<?php
-							echo ! empty( $item['company_name'] ) ? '<span class="category se_category">' . esc_html( $item['company_name'] ) . '</span>' : '';
+<section class="feedback-section-three ezd-position-relative">
+    <div id="feedBack_carousel" class="carousel slide" data-bs-ride="carousel">
 
-							echo ! empty( $item['review_content'] ) ? '<h3 class="testimonial-title spel_review_content">' . esc_html( $item['review_content'] ) . '</h3>' : '';
-
-							echo ! empty( $item['title'] ) ? '<span class="testimonial-subtitle se_title">' . esc_html( $item['title'] ) . '</span>' : '';
-							?>
-                            <div class="author-name">
-								<?php spel_dynamic_image( $item['author_image'], 'full', [ 'class' => 'author-img', ] ) ?>
-								<?php echo ! empty( $item['name'] ) ? '<span class="author-title se_name">' . esc_html( $item['name'] ) . '</span>' : ''; ?>
-                            </div>
-                        </div>
-                    </div>
+        <div class="feedback_slider" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
+            <div class="carousel-inner ezd-text-center">
 				<?php
-				endforeach;
-			endif;
+				if ( ! empty( $testimonials8 ) ) {
+					foreach ( $testimonials8 as $index => $item ) {
+						$active = $index == 1 ? ' active' : '';
+						?>
+                        <div class="carousel-item<?php echo esc_attr( $active ) ?>">
+							<?php ?>
+							<?php
+							if ( ! empty( $item['review_content'] ) ) {
+								echo spel_kses_post( wpautop( $item['review_content'] ) );
+							}
+							if ( ! empty( $item['author_name'] ) ) {
+								?>
+                                <div class="ezd-d-inline-block ezd-position-relative name fw-500 text-lg">
+									<?php echo esc_html( $item['author_name'] ); ?>
+                                    <span class="fw-normal opacity-50"><?php echo esc_html( $item['author_position'] ); ?></span>
+                                </div>
+								<?php
+							}
+							?>
+                        </div>
+						<?php
+					}
+				}
+				?>
+            </div>
+        </div>
+
+
+        <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#feedBack_carousel" data-bs-slide="prev">
+			<?php \Elementor\Icons_Manager::render_icon( $settings['prev_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+        </button>
+        <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#feedBack_carousel" data-bs-slide="next">
+			<?php \Elementor\Icons_Manager::render_icon( $settings['next_arrow_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+        </button>
+
+        <div class="carousel-indicators">
+
+			<?php
+			if ( ! empty( $testimonials8 ) ) {
+				foreach ( $testimonials8 as $index => $item ) {
+					$active       = $index == 0 ? 'active' : '';
+					$current_area = $index == 1 ? 'aria-current="true"' : '';
+					?>
+                    <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="<?php echo esc_attr( $index ) ?>"
+                            class="<?php echo esc_attr( $active ) ?>" <?php echo $current_area ?> aria-label="Slide <?php echo esc_attr( $index ) ?>">
+						<?php spel_dynamic_image( $item['author_image'], 'full', [ 'class' => 'lazy-img ezd-rounded-circle' ] ) ?>
+                    </button>
+					<?php
+				}
+			}
 			?>
         </div>
-    </div>
-    <div class="navigation">
-        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-f95f3e58688f37f3"></div>
-        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-f95f3e58688f37f3"></div>
+
     </div>
 </section>
-
