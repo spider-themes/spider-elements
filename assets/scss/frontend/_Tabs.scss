@@ -26,7 +26,7 @@
         border-radius: 0;
         background: #e1ebf0;
         border: 0;
-        color: #4c4cf1;
+        color: var( --e-global-color-accent );
         outline: none;
         box-shadow: none;
         transition: all 0.4s linear;
@@ -36,7 +36,7 @@
         opacity: 0;
 
         &:hover {
-          background: #A77DEF;
+          background: var( --e-global-color-accent );
           color: #fff;
         }
       }
@@ -68,7 +68,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #A77DEF;
+      background: var( --e-global-color-accent );
       display: inline-block;
       text-align: center;
       line-height: 20px;
@@ -89,7 +89,7 @@
         text-align: center;
         &.active {
           background: #ffffff;
-          color: #A77DEF;
+          color: var( --e-global-color-accent );
         }
       }
     }
@@ -107,7 +107,7 @@
     border-radius: 0;
     background: #e1ebf0;
     border: 0;
-    color: #A77DEF;
+    color: var( --e-global-color-accent );
     outline: none;
     box-shadow: none;
     transition: all 0.4s linear;
@@ -121,7 +121,7 @@
     }
 
     &:hover {
-      background: #A77DEF;
+      background: var( --e-global-color-accent );
       color: #fff;
       border-color: transparent #ebebeb;
     }
@@ -183,12 +183,12 @@
 
       &.active,
       &:hover {
-        color: #A77DEF;
+        color: var( --e-global-color-accent );
         border: 0;
         background: transparent;
 
         span {
-          background: #A77DEF;
+          background: var( --e-global-color-accent );
           color: #fff;
         }
       }
@@ -230,7 +230,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   .scroller-btn {
     position: absolute;
     top: 50%;
-    color: #A77DEF;
+    color: var( --e-global-color-accent );
     font-size: 20px;
     cursor: pointer;
     transform: translateY(-50%);
@@ -290,7 +290,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
             content: "";
             width: 0;
             height: 2.1px;
-            background: #A77DEF;
+            background: var( --e-global-color-accent );
             position: absolute;
             top: -1px;
             left: 0;
@@ -310,7 +310,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
             }
             .tab_progress {
               .progress-bar {
-                background: #a77def;
+                background: var( --e-global-color-accent );
                 height: 2px;
               }
             }
@@ -402,7 +402,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     border-radius: 0;
     background: #e1ebf0;
     border: 0;
-    color: #A77DEF;
+    color: var( --e-global-color-accent );
     outline: none;
     box-shadow: none;
     transition: all 0.4s linear;
@@ -418,7 +418,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
     &:hover {
       outline: none;
       box-shadow: none;
-      background: #A77DEF;
+      background: var( --e-global-color-accent );
       color: #fff;
     }
   }
@@ -520,11 +520,11 @@ body.remove {
 
         &.active {
           background-color: #fff;
-          color: #A77DEF;
+          color: var( --e-global-color-accent );
 
           svg {
             path {
-              fill: #A77DEF;
+              fill: var( --e-global-color-accent );
             }
           }
         }

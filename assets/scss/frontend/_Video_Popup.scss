@@ -5,7 +5,7 @@
   line-height: 120px;
   color: #fff;
   font-size: 35px;
-  background: #00bf58;
+  background: var( --e-global-color-accent );
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@
     height: 90px;
     line-height: 90px;
     border-radius: 50%;
-    color: #d92c0a;
+    color: var( --e-global-color-accent );
     background: #fff;
     display: block;
     text-align: center;
@@ -107,7 +107,7 @@
     justify-content: center;
     align-items: center;
     background: #fff;
-    color: #d92c0a;
+    color: var( --e-global-color-accent );
     width: 50px;
     height: 50px;
     font-size: 25px;

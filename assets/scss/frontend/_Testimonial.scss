@@ -38,11 +38,11 @@
 
       .arrow {
         width: 40px;
-        background: #d92c0a;
+        background: var( --e-global-color-accent );
 
         &:before,
         &:after {
-          background: #d92c0a;
+          background: var( --e-global-color-accent );
         }
       }
     }
@@ -147,7 +147,7 @@
   }
 
   .action_btn {
-    border: 1px solid #A77DEF;
+    border: 1px solid var( --e-global-color-accent );
 
     &:hover {
       background: transparent;
@@ -187,7 +187,7 @@
       content: "“";
       font-weight: 400;
       font-size: 150px;
-      color: #4c4cf1;
+      color: var( --e-global-color-accent );
       opacity: 0.1;
       position: absolute;
       left: -5px;
@@ -227,7 +227,7 @@
       content: "“";
       font-weight: 400;
       font-size: 150px;
-      color: #4c4cf1;
+      color: var( --e-global-color-accent );
       opacity: 0.1;
       position: absolute;
       left: -5px;
@@ -300,7 +300,7 @@
 
       &.slick-active {
         button {
-          background: #4c4cf1;
+          background: var( --e-global-color-accent );
         }
       }
     }
@@ -417,7 +417,7 @@
   transition: all 0.25s linear;
 
   &:hover {
-    background: #d2f34c;
+    background: rgba(var( --e-global-color-accent ), .4);
   }
 
   .logo {
@@ -567,7 +567,7 @@
       }
 
       &.slick-active button {
-        background: #00bf58;
+        background: var( --e-global-color-accent );
       }
     }
   }
@@ -605,7 +605,7 @@
 
     .text-md {
       font-size: 28px;
-      color: #00bf58;
+      color: var( --e-global-color-accent );
       line-height: 1;
     }
 
@@ -658,7 +658,7 @@
       color: #000;
 
       &:hover {
-        background: #00bf58;
+        background: var( --e-global-color-accent );
         color: #fff;
       }
     }
@@ -717,7 +717,7 @@
 
     .text-md {
       font-size: 28px;
-      color: #00bf58;
+      color: var( --e-global-color-accent );
     }
   }
 
@@ -1015,7 +1015,7 @@
 
         &.slick-active {
           button {
-            background: #00bf58;
+            background: var( --e-global-color-accent );
           }
         }
       }

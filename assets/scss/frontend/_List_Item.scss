@@ -41,7 +41,7 @@
         height: 32px;
         width: 32px;
         border-radius: 50%;
-        background-color: #4c4cf1;
+        background-color: var( --e-global-color-accent );
         left: -4px;
         border: 5px solid #ffffff;
         i {
@@ -74,7 +74,7 @@
         height: 32px;
         width: 32px;
         border-radius: 50%;
-        background-color: #4c4cf1;
+        background-color: var( --e-global-color-accent );
         left: 0;
         border: 5px solid #ffffff;
         color: #fff;

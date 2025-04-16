@@ -247,7 +247,7 @@
     color: #17161a;
     border-radius: 3px;
     &:hover {
-      background-color: #d92c0a;
+      background-color: var( --e-global-color-accent );
       color: #fff;
       box-shadow: none;
     }

@@ -23,7 +23,7 @@ svg.radial-progress text {
 
 svg {
   .complete {
-    stroke: #D31E1E;
+    stroke: var( --e-global-color-accent );
     stroke-linecap: round;
   }
 }

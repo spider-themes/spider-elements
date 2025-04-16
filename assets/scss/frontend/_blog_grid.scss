@@ -27,7 +27,7 @@
       padding: 5px 18px;
       color: #fff;
       text-transform: uppercase;
-      background: #00bf58;
+      background: var( --e-global-color-accent );
       position: absolute;
       left: 30px;
       bottom: 30px;
@@ -73,7 +73,7 @@
     transition: all .3s ease-in-out;
 
     &:hover {
-      color: #00bf58;
+      color: var( --e-global-color-accent );
     }
 
     &.two {
@@ -97,7 +97,7 @@
     }
 
     &:hover {
-      color: #00bf58;
+      color: var( --e-global-color-accent );
       text-decoration: none;
     }
 
@@ -106,8 +106,8 @@
       padding: 13px 36px;
       text-align: center;
       border-radius: 50px;
-      color: #00bf58;
-      border: 1px solid #00bf58;
+      color: var( --e-global-color-accent );
+      border: 1px solid var( --e-global-color-accent );
       transition: all 0.3s ease-in-out 0s;
       display: inline-block;
       text-align: center;
@@ -204,7 +204,7 @@
     transition: all .3s ease-in-out;
 
     &:hover {
-      color: #00bf58;
+      color: var( --e-global-color-accent );
     }
   }
 
@@ -349,7 +349,7 @@
     font-size: 17px;
     font-weight: 500;
     color: #fff;
-    background: #31795a;
+    background: var( --e-global-color-accent );
   }
   a {
     width: 35px;
@@ -359,7 +359,7 @@
     border-radius: 50%;
     font-size: 17px;
     font-weight: 500;
-    color: #31795a;
+    color: var( --e-global-color-accent );
     &:hover {
       text-decoration: none;
     }
