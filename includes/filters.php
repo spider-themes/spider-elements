@@ -9,18 +9,21 @@ add_image_size( 'spel_120x70', 120, 70, true ); // Fullscreen slider Thumb 01
 /**
  * Constants for widget badge
  */
-if ( ! defined( 'SPEL_TEXT_BADGE' ) ) {
-    define('SPEL_TEXT_BADGE',
-        '<span class="spe-text-badge-control">' . esc_html__( 'SPIDER', 'spider-elements' ) . '</span>'
-    );
-}
+add_action('after_setup_theme', function(){
+    
+    if ( ! defined( 'SPEL_TEXT_BADGE' ) ) {
+        define('SPEL_TEXT_BADGE',
+            '<span class="spe-text-badge-control">' . esc_html__( 'SPIDER', 'spider-elements' ) . '</span>'
+        );
+    }
 
-if ( ! defined( 'SPEL_PRO_BADGE' ) ) {
-    define('SPEL_PRO_BADGE',
-        '<span class="spel-pro-badge-control">' . esc_html__( 'PRO', 'spider-elements' ) . '</span>'
-    );
-}
-
+    if ( ! defined( 'SPEL_PRO_BADGE' ) ) {
+        define('SPEL_PRO_BADGE',
+            '<span class="spel-pro-badge-control">' . esc_html__( 'PRO', 'spider-elements' ) . '</span>'
+        );
+    }
+    
+}, 20);
 
 add_action( 'admin_init', function () {
 
