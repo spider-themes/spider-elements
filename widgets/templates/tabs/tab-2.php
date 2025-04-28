@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
         <ul class="nav nav-tabs slide_nav_tabs spel-tab-menu<?php echo esc_attr($tab_auto_class); ?>" <?php echo esc_attr($data_auto_play); ?>>
             <?php
             $i = 0.2;
-            if (is_array($tabs) && !empty($tabs)) {
+            if ( is_array($tabs) && !empty($tabs) ) {
                 foreach ( $tabs as $index => $item ) {
                     $tab_count = $index + 1;
                     $tab_title_setting_key = $this->get_repeater_setting_key('tab_title', 'tabs', $index);

@@ -351,7 +351,7 @@ Table of Content:
 .spel_dashboard .tab_contents .tab-box .support_item .icon {
   width: 56px;
   height: 56px;
-  background: #e2d4fa;
+  background: rgba(240, 233, 252, 0.7411764706);
   border-radius: 50%;
   font-size: 24px;
   color: #411789;
@@ -377,7 +377,7 @@ Table of Content:
   padding-bottom: 10px;
 }
 .spel_dashboard .tab_contents .tab-box .support_item .note {
-  background: #f0e9fc;
+  background: rgba(240, 233, 252, 0.5098039216);
   padding: 12px 30px;
   margin-top: 10px;
 }

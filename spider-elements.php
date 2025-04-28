@@ -44,7 +44,7 @@ if ( function_exists( 'spel_fs' ) ) {
 						'type'                => 'plugin',
 						'public_key'          => 'pk_711f20dd503c8eb713171079ffeb5',
 						'is_premium'          => false,
-						'premium_suffix'      => 'Pro',
+						'premium_suffix'      => 'pro',
 						'has_premium_version' => true,
 						'has_paid_plans'      => true,
 						'trial'               => [
@@ -53,7 +53,7 @@ if ( function_exists( 'spel_fs' ) ) {
 						],
 						'menu'                => [
 							'slug'       => 'spider_elements_settings',
-							'contact'    => true,
+							'contact'    => false,
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],

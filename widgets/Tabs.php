@@ -111,7 +111,7 @@ class Tabs extends Widget_Base {
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
 					'1' => esc_html__( 'Inline Tab', 'spider-elements' ),
-					'2' => esc_html__( 'Full Width Tab', 'spider-elements' ),
+					'2' => esc_html__( 'Full-width Tab', 'spider-elements' ),
 				],
 				'default' => '1',
 			]
@@ -134,11 +134,6 @@ class Tabs extends Widget_Base {
 			[
 				'label'   => esc_html__( 'Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
-				'default' => [
-					'value'   => 'far fa-lightbulb',
-					'library' => 'fa-regular',
-				],
-
 			]
 		);
 
