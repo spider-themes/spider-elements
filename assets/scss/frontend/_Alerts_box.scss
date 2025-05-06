@@ -121,24 +121,28 @@
 .notice-success {
   background: #459e6d;
   border-color: #30845e;
+
+  p {
+    color: #ebebeb;
+  }
 }
 
 .notice-warning {
   background: #fefaed;
-  border-color: #f6ba18;
+  border-color: #ffce49;
 
   i {
-    color: #f6ba18;
+    color: #ffce49;
     padding-top: 4px;
   }
 }
 
 .notice-danger {
   background: #ffeff0;
-  border-color: #fa303e;
+  border-color: #ff5e69;
 
   i {
-    color: #fa303e;
+    color: #ff5e69;
   }
 }
 

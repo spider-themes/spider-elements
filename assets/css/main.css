@@ -7055,22 +7055,25 @@ button.swiper-pagination-bullet {
   background: #459e6d;
   border-color: #30845e;
 }
+.notice-success p {
+  color: #ebebeb;
+}
 
 .notice-warning {
   background: #fefaed;
-  border-color: #f6ba18;
+  border-color: #ffce49;
 }
 .notice-warning i {
-  color: #f6ba18;
+  color: #ffce49;
   padding-top: 4px;
 }
 
 .notice-danger {
   background: #ffeff0;
-  border-color: #fa303e;
+  border-color: #ff5e69;
 }
 .notice-danger i {
-  color: #fa303e;
+  color: #ff5e69;
 }
 
 .explanation {
