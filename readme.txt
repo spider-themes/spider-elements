@@ -1,9 +1,9 @@
 === Spider Elements - Crafted UX First Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, addons for elementor, spider element
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 Requires at least: 5.0
-Tested up to: 6.7.2
+Tested up to: 6.8
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,14 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.6.3 (07 May 2025) =
+Fixed: Testimonial widget preset 07
+Fixed: Deprecation warning by wrapping constant in hook
+Tweaked: Changed the preset image of "Cheat Sheet & video playlist" widget
+Tweaked: Dynamic Accent color gets from Elementor Global Accent Colors settings
+Tweaked: Default icon removed from Tab item
+Tweaked: Alert widget design improved
 
 = v1.6.2 (19 March 2025) =
 New: Quote icon added in the testimonial widget
