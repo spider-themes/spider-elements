@@ -3520,7 +3520,7 @@ button:focus {
   padding: 25px 30px;
   border: 1px solid #ebebeb;
   border-radius: 0 5px 5px 5px;
-  background-color: #fff;
+  background-color: var(--bs-white);
   position: relative;
   margin-top: -1px;
 }
@@ -3772,7 +3772,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
   transition: width 0.2s linear;
 }
 .tabs_sliders ul.nav-tabs .nav-item .nav-link.active {
-  background: #fff;
+  background: var(--bs-white);
   color: #242729;
   border-color: #ebebeb;
   border-bottom-color: transparent;

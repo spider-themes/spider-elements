@@ -110,18 +110,18 @@ class Assets
 	function register_widget_scripts(): void
     {
 
-        wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
-		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper.min.js', array('jquery'), '7.2.0', ['strategy' => 'defer'] );
-		wp_register_script('text-type', SPEL_VEND . '/text-type/text-type.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
-		wp_register_script('counterup', SPEL_VEND . '/counterup/counterup.min.js', array('jquery'), '1.0', ['strategy' => 'defer'] );
-		wp_register_script('waypoint', SPEL_VEND . '/counterup/waypoints.min.js', array('jquery'), '4.0.1', ['strategy' => 'defer'] );
-		wp_register_script('wow', SPEL_VEND . '/wow/wow.min.js', array('jquery'), '1.1.3', ['strategy' => 'defer'] );
-		wp_register_script('artplayer', SPEL_VEND . '/video/artplayer.js', array('jquery'), '3.5.26', ['strategy' => 'defer'] );
-		wp_register_script('video-nuevo', SPEL_VEND . '/video/nuevo.min.js', array('jquery'), '7.6.0', ['strategy' => 'defer'] );
-		wp_register_script('video', SPEL_VEND . '/video/video.min.js', array('jquery'), '7.6.0', ['strategy' => 'defer'] );
-		wp_register_script('scroll-parallax', SPEL_VEND . '/scroll-parallax/parallax-scroll.js', array('jquery'), SPEL_VERSION, ['strategy' => 'defer'] );
-		wp_register_script('fancybox', SPEL_VEND . '/fancybox/fancybox.min.js', array('jquery'), '3.5.7', ['strategy' => 'defer'] );
-        wp_register_script('before-after', SPEL_VEND  . '/before-after/before-after.min.js', array('jquery'), '1.0.0', ['strategy' => 'defer'] );
+        wp_register_script('slick', SPEL_VEND . '/slick/slick.min.js', ['jquery'], SPEL_VERSION, ['strategy' => 'defer'] );
+		wp_register_script('swiper', SPEL_VEND . '/swiper/swiper.min.js', ['jquery'], '7.2.0', ['strategy' => 'defer'] );
+		wp_register_script('text-type', SPEL_VEND . '/text-type/text-type.js', ['jquery'], SPEL_VERSION, ['strategy' => 'defer'] );
+		wp_register_script('counterup', SPEL_VEND . '/counterup/counterup.min.js', ['jquery'], '1.0', ['strategy' => 'defer'] );
+		wp_register_script('waypoint', SPEL_VEND . '/counterup/waypoints.min.js', ['jquery'], '4.0.1', ['strategy' => 'defer'] );
+		wp_register_script('wow', SPEL_VEND . '/wow/wow.min.js', ['jquery'], '1.1.3', ['strategy' => 'defer'] );
+		wp_register_script('artplayer', SPEL_VEND . '/video/artplayer.js', ['jquery'], '3.5.26', ['strategy' => 'defer'] );
+		wp_register_script('video-nuevo', SPEL_VEND . '/video/nuevo.min.js', ['jquery'], '7.6.0', ['strategy' => 'defer'] );
+		wp_register_script('video', SPEL_VEND . '/video/video.min.js', ['jquery'], '7.6.0', ['strategy' => 'defer'] );
+		wp_register_script('scroll-parallax', SPEL_VEND . '/scroll-parallax/parallax-scroll.js', ['jquery'], SPEL_VERSION, ['strategy' => 'defer'] );
+		wp_register_script('fancybox', SPEL_VEND . '/fancybox/fancybox.min.js', ['jquery'], '3.5.7', ['strategy' => 'defer'] );
+        wp_register_script('before-after', SPEL_VEND  . '/before-after/before-after.min.js', ['jquery'], '1.0.0', ['strategy' => 'defer'] );
 
     }
 
