@@ -1459,50 +1459,60 @@ class Blog_Grid extends Widget_Base {
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : ( get_query_var('page') ? get_query_var('page') : 1 );
 
-        // query part
-		$query['post_status']         = 'publish';
-		$query['ignore_sticky_posts'] = true;
-		$query['suppress_filters']    = false;
-		$query['paged']               = $paged;
-		if ( $blog_queryby == 'postype' ) {
-			$query['post_type'] = $blog_posttype ?? ['post'];
-		} else {
-			$query['post_type'] = [ 'post' ];
-		}
+	    // query part
+	    $query = [
+		    'post_status'         => 'publish',
+		    'ignore_sticky_posts' => true,
+		    'suppress_filters'    => false,
+		    'paged'               => $paged,
+	    ];
 
-		$query['orderby'] = $blog_order_by;
-		if ( ! empty( $blog_order ) ) {
-			$query['order'] = $blog_order;
-		}
-		if ( ! empty( $blog_limit ) ) {
-			$query['posts_per_page'] = (int) $blog_limit;
-		}
-		if ( ! empty( $blog_offset ) ) {
-			$query['offset'] = (int) $blog_offset;
-		}
+	    // Post type
+	    if ( isset($settings['blog_queryby']) && $settings['blog_queryby'] === 'postype' ) {
+		    $query['post_type'] = $settings['blog_posttype'] ?? ['post'];
+	    } else {
+		    $query['post_type'] = ['post'];
+	    }
 
-		if ( $blog_queryby == 'categories' ) {
-			if ( is_array( $blog_categories ) && sizeof( $blog_categories ) > 0 ) {
-				$cate_query         = [
-					[
-						'taxonomy' => 'category',
-						'field'    => 'term_id',
-						'terms'    => $blog_categories,
-					],
-					'relation' => 'AND',
-				];
-				$query['tax_query'] = $cate_query;
-			}
-		}
+	    // Order
+	    if ( !empty($settings['blog_order_by']) ) {
+		    $query['orderby'] = $settings['blog_order_by'];
+	    }
+	    if ( !empty($settings['blog_order']) ) {
+		    $query['order'] = $settings['blog_order'];
+	    }
+	    if ( !empty($settings['blog_limit']) ) {
+		    $query['posts_per_page'] = (int) $settings['blog_limit'];
+	    }
 
-		if ( $blog_queryby == 'posts' ) {
-			if ( is_array( $blog_post ) && sizeof( $blog_post ) > 0 ) {
-				$query['post__in'] = $blog_post;
-			}
-		}
+	    // Offset
+	    if ( !empty($settings['blog_offset']) ) {
+		    $query['offset'] = (int) $settings['blog_offset'];
+	    }
+
+	    // Categories filter
+	    if ( isset($settings['blog_queryby']) && $settings['blog_queryby'] === 'categories' ) {
+		    if ( !empty($settings['blog_categories']) && is_array($settings['blog_categories']) ) {
+			    $query['tax_query'] = [
+				    [
+					    'taxonomy' => 'category',
+					    'field'    => 'term_id',
+					    'terms'    => $settings['blog_categories'],
+				    ]
+			    ];
+		    }
+	    }
+
+	    // Specific post IDs
+	    if ( isset($settings['blog_queryby']) && $settings['blog_queryby'] === 'posts' ) {
+		    if ( !empty($settings['blog_post']) && is_array($settings['blog_post']) ) {
+			    $query['post__in'] = $settings['blog_post'];
+		    }
+	    }
 
 		$post_query = new \WP_Query( $query );
 
+		//============ Template Part =============//
 		include "templates/blog-grid/blog-{$settings['style']}.php";
 	}
 
