@@ -14,16 +14,12 @@ function spel_is_premium(): bool
     return spel_fs()->is_plan('pro') && spel_fs()->can_use_premium_code();
 }
 
-/**
- * Unlock the plugin with themes
- *
- * @return bool|void
- */
-function spel_unlock_themes() {
-    $current_theme = get_template();
-    if ( $current_theme == 'docy' || $current_theme == 'jobi' || spel_is_premium() ) {
-        return true;
-    }
+function spel_unlock_docy_theme(): bool {
+    $theme = wp_get_theme();
+    $theme_name = $theme->get('Name');
+    $docy_themes = [ 'Docy', 'docy', 'Docy Child', 'docy-child' ];
+
+    return in_array($theme_name, $docy_themes, true) || spel_is_premium();
 }
 
 if ( ! function_exists( 'spel_rtl') ) {

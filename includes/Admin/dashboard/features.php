@@ -67,7 +67,7 @@ $theme = in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Chil
                 $feature_type = $item[ 'feature_type' ] ?? '';
                 $feature_name = $item['name'] ?? '';
 
-                // Default class and attributes for widgets
+	            // Default class and attributes for widgets
                 $is_pro_feature = $feature_type === 'pro' ? ' pro_popup' : '';
                 $is_pro_feature_enabled = $feature_type === 'pro' ? ' disabled' : '';
 

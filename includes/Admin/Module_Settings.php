@@ -16,39 +16,6 @@ class Module_Settings {
             // All Widget List
             'spider_elements_widgets' => [
                 [
-                    'name'         => 'docy_tabs',
-                    'className'    => 'Tabs',
-                    'label'        => esc_html__('Tabs', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => 'https://spider-themes.net/spider-elements/tabs/',
-                    'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/tabs/',
-                    'icon'         => 'eicon-tabs',
-                ],
-                [
-                    'name'         => 'spel_videos_playlist',
-                    'className'    => 'Video_Playlist', // widget class name
-                    'label'        => esc_html__('Video Playlist', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => 'https://spider-themes.net/spider-elements/video-playlist/',
-                    'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/video-playlist/',
-                    'icon'         => 'eicon-video-playlist',
-                ],
-                [
-                    'name'         => 'docly_alerts_box',
-                    'className'    => 'Alerts_Box', // widget class name
-                    'label'        => esc_html__('Alerts Box', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => 'https://spider-themes.net/spider-elements/notice-message/',
-                    'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/notice-message/',
-                    'icon'         => 'eicon-alert',
-                ],
-                [
                     'name'         => 'spel_accordion', // widget name
                     'className'    => 'Accordion', // widget class name
                     'label'        => esc_html__('Accordion', 'spider-elements'), // widget label
@@ -79,17 +46,6 @@ class Module_Settings {
                     'demo_url'     => 'https://spider-themes.net/spider-elements/list-item/',
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/list-item/',
                     'icon'         => 'eicon-bullet-list',
-                ],
-                [
-                    'name'         => 'docly_cheatsheet',
-                    'className'    => 'Cheat_sheet', // widget class name
-                    'label'        => esc_html__('Cheat Sheet', 'spider-elements'),
-                    'type'         => 'checkbox',
-                    'default'      => 'on',
-                    'widget_type'  => 'free',
-                    'demo_url'     => 'https://spider-themes.net/spider-elements/cheatsheet/',
-                    'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/cheatsheet/',
-                    'icon'         => 'eicon-apps',
                 ],
                 [
                     'name'         => 'docy_team_carousel',
@@ -165,8 +121,51 @@ class Module_Settings {
                     'icon'         => 'eicon-icon-box',
                 ],
 
-
                 //All Pro Widget Listed
+	            [
+		            'name'         => 'docly_cheatsheet',
+		            'className'    => 'Cheat_sheet', // widget class name
+		            'label'        => esc_html__('Cheat Sheet', 'spider-elements'),
+		            'type'         => 'checkbox',
+		            'default'      => 'off',
+		            'widget_type'  => 'pro',
+		            'demo_url'     => 'https://spider-themes.net/spider-elements/cheatsheet/',
+		            'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/cheatsheet/',
+		            'icon'         => 'eicon-apps',
+	            ],
+	            [
+		            'name'         => 'spel_videos_playlist',
+		            'className'    => 'Video_Playlist', // widget class name
+		            'label'        => esc_html__('Video Playlist', 'spider-elements'),
+		            'type'         => 'checkbox',
+		            'default'      => 'off',
+		            'widget_type'  => 'pro',
+		            'demo_url'     => 'https://spider-themes.net/spider-elements/video-playlist/',
+		            'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/video-playlist/',
+		            'icon'         => 'eicon-video-playlist',
+	            ],
+	            [
+		            'name'         => 'docy_tabs',
+		            'className'    => 'Tabs',
+		            'label'        => esc_html__('Tabs', 'spider-elements'),
+		            'type'         => 'checkbox',
+		            'default'      => 'off',
+		            'widget_type'  => 'pro',
+		            'demo_url'     => 'https://spider-themes.net/spider-elements/tabs/',
+		            'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/tabs/',
+		            'icon'         => 'eicon-tabs',
+	            ],
+	            [
+		            'name'         => 'docly_alerts_box',
+		            'className'    => 'Alerts_Box', // widget class name
+		            'label'        => esc_html__('Alerts Box', 'spider-elements'),
+		            'type'         => 'checkbox',
+		            'default'      => 'off',
+		            'widget_type'  => 'pro',
+		            'demo_url'     => 'https://spider-themes.net/spider-elements/notice-message/',
+		            'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/content-elements/notice-message/',
+		            'icon'         => 'eicon-alert',
+	            ],
                 [
                     'name'         => 'spel_accordion_article',
                     'className'    => 'Accordion_Article', // widget class name
@@ -277,8 +276,6 @@ class Module_Settings {
                     'docs_url'     => 'https://helpdesk.spider-themes.net/docs/spider-elements/pro-elements/stack-image/',
                     'icon'         => 'eicon-featured-image',
                 ],
-
-
             ],
 
             // All Feature List
@@ -329,9 +326,6 @@ class Module_Settings {
                     'icon'         => 'icon-smooth-animation',
                 ]
             ]
-
         ];
-
     }
-
 }

@@ -282,9 +282,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 */
 		public function init_plugin(): void {
 
-			$theme        = wp_get_theme();
-			$features_opt = get_option( 'spel_features_settings' );
-
+			$theme               = wp_get_theme();
+			$features_opt        = get_option( 'spel_features_settings' );
 			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
 
 			if ( $is_premium_or_theme ) {
@@ -315,9 +314,10 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 
 		/**
-		 * Add new Elementor Categories
+		 * Registers a custom category for Elementor elements.
 		 *
-		 * Register new widget categories for Spider Elements widgets.
+		 * @return void
+		 * @access public
 		 */
 		public function elements_register_category(): void {
 
@@ -328,39 +328,44 @@ if ( ! class_exists( 'SPEL' ) ) {
 		}
 
 		/**
-		 * Register New Widgets
+		 * Registers custom widgets with the Elementor Widgets Manager based on the widget settings.
 		 *
-		 * Include Spider Elements widgets files and register them in Elementor.
-		 *
-		 * @since  1.0.0
-		 *
+		 * @return void
 		 * @access public
 		 */
 		public function widgets_register(): void {
 			$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
 			$elements_opt    = get_option( 'spe_widget_settings' );
 
+			// Base widget list
 			$widgets = [
-				'docy_tabs' => 'Tabs',
-				'spel_videos_playlist' => 'Video_Playlist',
-				'docly_alerts_box' => 'Alerts_Box',
-				'spel_accordion' => 'Accordion',
-				'docy_testimonial' => 'Testimonial',
-				'docly_list_item' => 'List_Item',
-				'docly_cheatsheet' => 'Cheat_Sheet',
-				'docy_team_carousel' => 'Team_Carousel',
-				'docy_integrations' => 'Integrations',
-				'spel_before_after' => 'Before_after',
-				'docy_video_popup' => 'Video_Popup',
-				'docy_blog_grid' => 'Blog_Grid',
+				'spel_accordion'      => 'Accordion',
+				'docy_testimonial'    => 'Testimonial',
+				'docly_list_item'     => 'List_Item',
+				'docy_team_carousel'  => 'Team_Carousel',
+				'docy_integrations'   => 'Integrations',
+				'spel_before_after'   => 'Before_after',
+				'docy_video_popup'    => 'Video_Popup',
+				'docy_blog_grid'      => 'Blog_Grid',
 				'spe_timeline_widget' => 'Timeline',
-				'spe_counter' => 'Counter',
-				'spel_icon_box' => 'Icon_Box',
+				'spe_counter'         => 'Counter',
+				'spel_icon_box'       => 'Icon_Box',
 			];
 
+			// Conditionally load Docy theme widgets
+			if ( spel_unlock_docy_theme() ) {
+				$widgets += [
+					'docly_cheatsheet'     => 'Cheat_Sheet',
+					'spel_videos_playlist' => 'Video_Playlist',
+					'docy_tabs'            => 'Tabs',
+					'docly_alerts_box'     => 'Alerts_Box',
+				];
+			}
+
+			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
 				if ( isset( $elements_opt[ $key ] ) && $elements_opt[ $key ] === 'on' ) {
-					require_once( __DIR__ . "/widgets/{$widget}.php" );
+					require_once( __DIR__ . "/widgets/$widget.php" );
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
 				}

@@ -8,10 +8,9 @@ use SPEL\includes\Admin\Module_Settings;
 $elements = Module_Settings::get_widget_settings();
 
 // Global switcher
-$element_opt     = get_option( 'spe_widget_settings' );
-$global_switcher = $element_opt['element_global_switcher'] ?? '';
-$is_checked      = ! empty ( $global_switcher == 'on' ) ? ' checked' : '';
-$checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' checked' : $is_checked;
+$element_opt       = get_option( 'spe_widget_settings' );
+$checked_global    = ( ! isset( $element_opt['element_global_switcher'] ) || $element_opt['element_global_switcher'] === 'on' ) ? ' checked' : '';
+$docy_widget_list  = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 'docly_alerts_box' ];
 ?>
 <div id="elements" class="tab-box">
     <div class="elements_tab_menu">
@@ -27,7 +26,8 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
             <div class="plugin_active_switcher">
                 <label class="toggler" id="element_disabled"><?php esc_html_e( 'Disable All', 'spider-elements' ); ?></label>
                 <div class="toggle">
-                    <input type="checkbox" data-id="widget-list" id="element_switcher" name="element_global_switcher" class="check element_global_switcher">
+                    <input type="checkbox" data-id="widget-list" id="element_switcher" name="element_global_switcher"
+                           class="check element_global_switcher" <?php echo esc_attr( $checked_global ) ?>>
                     <label class="b switch" for="element_switcher"></label>
                 </div>
                 <label class="toggler" id="element_enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>
@@ -54,25 +54,17 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
 		<?php
 		if ( is_array( $elements['spider_elements_widgets'] ) ) {
 			foreach ( $elements['spider_elements_widgets'] as $item ) {
+
 				$widget_type = $item['widget_type'] ?? '';
+				$widget_name = $item['name'] ?? '';
 
-				// Default class and attributes for widgets
-				$is_pro_widget         = $widget_type === 'pro' ? ' pro_popup' : '';
-				$is_pro_widget_enabled = $widget_type === 'pro' ? ' disabled' : '';
-
-				// If premium, enable pro widgets
-				if ( spel_is_premium() ) {
-					$is_pro_widget         = ''; // Remove pro_popup class
-					$is_pro_widget_enabled = ''; // Enable widget
-				}
-
-				$opt      = get_option( 'spe_widget_settings' );
-				$opt_name = $item['name'] ?? '';
+				$is_pro              = $widget_type === 'pro';
+				$is_locked           = $is_pro && !spel_is_premium() && ! ( spel_unlock_docy_theme() && in_array( $widget_name, $docy_widget_list, true ) );
+				$is_pro_widget_class = $is_locked ? ' pro_popup' : '';
+				$is_pro_widget_attr  = $is_locked ? ' disabled' : '';
 
 				// By default, all the switcher is checked
-				$opt_input  = $opt[ $opt_name ] ?? '';
-				$is_checked = ! empty ( $opt_input == 'on' ) ? ' checked' : '';
-				$checked    = ! isset ( $opt[ $opt_name ] ) ? ' checked' : $is_checked;
+				$widget_checked    = (! isset( $element_opt[ $widget_name ] ) || $element_opt[ $widget_name ] === 'on' ) ? ' checked' : '';
 				?>
                 <div class="ezd-colum-space-4 <?php echo esc_attr( $item['widget_type'] ) ?>">
                     <div class="element_box element_switch badge">
@@ -99,21 +91,28 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
                                         <a href="<?php echo esc_url( $item['demo_url'] ) ?>" class="tooltip-top"
                                            data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Widget Demo', 'spider-elements' ), $item['label'] ) ?>"
                                            target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg' ) ?>" alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg' ) ?>"
+                                                 alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
                                         </a>
 										<?php
 									}
 									if ( ! empty( $item['video_url'] ) ) {
 										?>
-                                        <a href="<?php echo esc_url( $item['video_url'] ) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Video Tutorial', 'spider-elements' ), $item['label'] ) ?>" target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-video.svg' ) ?>" alt="<?php esc_attr_e( 'Video Tutorial', 'spider-elements' ); ?>">
+                                        <a href="<?php echo esc_url( $item['video_url'] ) ?>" class="tooltip-top"
+                                           data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Video Tutorial', 'spider-elements' ), $item['label'] ) ?>"
+                                           target="_blank">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-video.svg' ) ?>"
+                                                 alt="<?php esc_attr_e( 'Video Tutorial', 'spider-elements' ); ?>">
                                         </a>
 										<?php
 									}
 									if ( ! empty( $item['docs_url'] ) ) {
 										?>
-                                        <a href="<?php echo esc_url( $item['docs_url'] ) ?>" class="tooltip-top" data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Documentation', 'spider-elements' ), $item['label'] ) ?>" target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-document.svg' ) ?>" alt="<?php esc_attr_e( 'Documentation', 'spider-elements' ); ?>">
+                                        <a href="<?php echo esc_url( $item['docs_url'] ) ?>" class="tooltip-top"
+                                           data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Documentation', 'spider-elements' ), $item['label'] ) ?>"
+                                           target="_blank">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-document.svg' ) ?>"
+                                                 alt="<?php esc_attr_e( 'Documentation', 'spider-elements' ); ?>">
                                         </a>
 										<?php
 									}
@@ -122,8 +121,9 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
 								<?php
 							}
 							?>
-                            <label for="<?php echo esc_attr( $item['name'] ) ?>" class="switch_label<?php echo esc_attr( $is_pro_widget ) ?>">
-                                <input type="checkbox" class="widget_checkbox widget-list" name="<?php echo esc_attr( $item['name'] ) ?>" id="<?php echo esc_attr( $item['name'] ) ?>" <?php echo esc_attr( $checked . $is_pro_widget_enabled ); ?>>
+                            <label for="<?php echo esc_attr( $item['name'] ) ?>" class="switch_label<?php echo esc_attr( $is_pro_widget_class ) ?>">
+                                <input type="checkbox" class="widget_checkbox widget-list" name="<?php echo esc_attr( $item['name'] ) ?>"
+                                       id="<?php echo esc_attr( $item['name'] ) ?>" <?php echo esc_attr( $widget_checked . $is_pro_widget_attr ); ?>>
                                 <span class="widget_switcher"></span>
                             </label>
                         </div>
@@ -133,6 +133,5 @@ $checked         = ! isset ( $element_opt['element_global_switcher'] ) ? ' check
 			}
 		}
 		?>
-
     </div>
 </div>
