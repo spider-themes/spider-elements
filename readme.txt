@@ -1,7 +1,7 @@
 === Spider Elements - Crafted UX First Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, widgets for elementor, spider element
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor requires at least: 3.0.0
 Elementor tested up to: 3.20.3
 
-Spider Elements is a versatile WordPress plugin for Elementor, offering 14+ popular widgets to enhance your website's design and functionality.
+Spider Elements is a versatile WordPress plugin for Elementor, offering 10+ popular widgets to enhance your website's design and functionality.
 
 == Description ==
 Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 14+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.
@@ -27,18 +27,14 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 ### Widget List: available in the free version
 
 #[**Accordion**](https://spider-themes.net/spider-elements/accordion) - Easily organize your content with collapsible sections, perfect for FAQs, guides, or detailed information.
-#[**Alerts Box**](https://spider-themes.net/spider-elements/notice-message) - Make important announcements stand out with customizable alerts featuring unique styles, colors, and icons.
 #[**Blog**](https://spider-themes.net/spider-elements/blog-grid) - Display your blog posts beautifully with customizable layouts that make it easy for readers to explore your content.
-#[**Cheat Sheet**](https://spider-themes.net/spider-elements/cheatsheet) - Create a handy reference guide to help users quickly find key information or navigate your features.
 #[**Counter**](https://spider-themes.net/spider-elements/counter) - Show off milestones or achievements with animated counters that grab attention and keep visitors engaged.
 #[**Video Popup**](https://spider-themes.net/spider-elements/video-popup) - Let visitors watch videos in a sleek pop-up window without leaving the page for a smooth viewing experience.
 #[**Integrations**](https://spider-themes.net/spider-elements/integration) - Highlight compatible tools or platforms seamlessly to show how your site works with other services.
 #[**List Items**](https://spider-themes.net/spider-elements/list-item) - Build organized and stylish lists that make information easy to read and visually appealing.
-#[**Tabs**](https://spider-themes.net/spider-elements/tabs) - Keep your content neat and organized by using tabs to improve navigation and user experience.
 #[**Team Carousel**](https://spider-themes.net/spider-elements/team-carousel) - Showcase your team members in a dynamic carousel, complete with photos, names, and bios.
 #[**Testimonials**](https://spider-themes.net/spider-elements/testimonials) - Boost trust by displaying customer reviews and feedback in elegant, attention-grabbing designs.
 #[**Timeline**](https://spider-themes.net/spider-elements/timeline) - Tell your story or show events in order with a visually appealing timeline layout.
-#[**Video Playlist**](https://spider-themes.net/spider-elements/video-playlist) - Share multiple videos in one place with an easy-to-navigate playlist that keeps visitors engaged.
 #[**Icon Box**](https://spider-themes.net/spider-elements/icon-box) - Highlight your content with eye-catching icons and descriptions that are perfect for drawing attention.
 
 
@@ -54,21 +50,23 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 #[**Marquee Slider**](https://spider-themes.net/spider-elements/marquee-slider) - Showcase scrolling content in a dynamic, visually appealing way.
 #[**Stack Image**](https://spider-themes.net/spider-elements/stack-image) - Display your images in a creative stacked layout for a unique visual impact.
 #[**Skill Showcase**](https://spider-themes.net/spider-elements/skill-showcase) - Highlight your skills or services with sleek, attention-grabbing designs.
+#[**Video Playlist**](https://spider-themes.net/spider-elements/video-playlist) - Share multiple videos in one place with an easy-to-navigate playlist that keeps visitors engaged.
+#[**Tabs**](https://spider-themes.net/spider-elements/tabs) - Keep your content neat and organized by using tabs to improve navigation and user experience.
+#[**Alerts Box**](https://spider-themes.net/spider-elements/notice-message) - Make important announcements stand out with customizable alerts featuring unique styles, colors, and icons.
+#[**Cheat Sheet**](https://spider-themes.net/spider-elements/cheatsheet) - Create a handy reference guide to help users quickly find key information or navigate your features.
 
 == Screenshots ==
 1. Dashboard
-2. Cheat Sheet Widget
-3. Blog Grid Widget
-4. Team Carousel Widget
-5. Alert Box Widget
-6. Counter Widget
-7. Accordion Widget
-8. Icon Box Widget
-9. Integration Widget
-10. List Items Widget
-11. Timeline Widget
-12. Testimonials Widget
-13. Video popup Widget
+2. Blog Grid Widget
+3. Team Carousel Widget
+4. Counter Widget
+5. Accordion Widget
+6. Icon Box Widget
+7. Integration Widget
+8. List Items Widget
+9. Timeline Widget
+10. Testimonials Widget
+11. Video popup Widget
 
 == Frequently Asked Questions ==
 = Can I use the plugin without Elementor Page Builder? =
@@ -104,6 +102,11 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.6.4 (15 May 2025) =
+Fixed: Resolved Pagination issue of Blog grid widget
+Tweaked: Compatibility with docy dark mode
+Updated: Freemius SDK updated to 2.12.0
 
 = v1.6.3 (07 May 2025) =
 Fixed: Testimonial widget preset 07
