@@ -1,6 +1,6 @@
 === Spider Elements - Crafted UX First Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
-Tags:  elementor addons, elementor widget, elementor, addons for elementor, spider element
+Tags:  elementor addons, elementor widget, elementor, widgets for elementor, spider element
 Stable tag: 1.6.3
 Requires at least: 5.0
 Tested up to: 6.8
@@ -14,6 +14,9 @@ Spider Elements is a versatile WordPress plugin for Elementor, offering 14+ popu
 
 == Description ==
 Spider Elements is the most versatile and intuitive WordPress plugin designed specifically for the Elementor page builder. It offers a comprehensive library of over 14+ highly popular elements that can greatly enhance and enrich the design and functionality of your website.
+
+### Video Overview
+[youtube https://www.youtube.com/watch?v=m51PQ2FhXvA]
 
 ## 🔗 USEFUL LINKS ##
 - [Get the Pro Version](https://spider-themes.net/spider-elements/pricing)
@@ -52,7 +55,20 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 #[**Stack Image**](https://spider-themes.net/spider-elements/stack-image) - Display your images in a creative stacked layout for a unique visual impact.
 #[**Skill Showcase**](https://spider-themes.net/spider-elements/skill-showcase) - Highlight your skills or services with sleek, attention-grabbing designs.
 
-
+== Screenshots ==
+1. Dashboard
+2. Cheat Sheet Widget
+3. Blog Grid Widget
+4. Team Carousel Widget
+5. Alert Box Widget
+6. Counter Widget
+7. Accordion Widget
+8. Icon Box Widget
+9. Integration Widget
+10. List Items Widget
+11. Timeline Widget
+12. Testimonials Widget
+13. Video popup Widget
 
 == Frequently Asked Questions ==
 = Can I use the plugin without Elementor Page Builder? =
