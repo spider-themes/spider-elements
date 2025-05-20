@@ -5,12 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use SPEL\includes\Admin\Module_Settings;
 
-$elements = Module_Settings::get_widget_settings();
-
 // Global switcher
-$element_opt       = get_option( 'spe_widget_settings' );
-$checked_global    = ( ! isset( $element_opt['element_global_switcher'] ) || $element_opt['element_global_switcher'] === 'on' ) ? ' checked' : '';
-$docy_widget_list  = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 'docly_alerts_box' ];
+$elements         = Module_Settings::get_widget_settings();
+$element_opt      = get_option( 'spe_widget_settings' );
+$checked_global   = ( ! isset( $element_opt['element_global_switcher'] ) || $element_opt['element_global_switcher'] === 'on' ) ? ' checked' : '';
+$docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 'docly_alerts_box' ];
 ?>
 <div id="elements" class="tab-box">
     <div class="elements_tab_menu">
@@ -57,14 +56,20 @@ $docy_widget_list  = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 
 
 				$widget_type = $item['widget_type'] ?? '';
 				$widget_name = $item['name'] ?? '';
+				$is_pro      = $widget_type === 'pro';
 
-				$is_pro              = $widget_type === 'pro';
-				$is_locked           = $is_pro && !spel_is_premium() && ! ( spel_unlock_docy_theme() && in_array( $widget_name, $docy_widget_list, true ) );
+				$is_locked           = $is_pro && ! spel_is_premium() && ! ( spel_unlock_docy_theme() && in_array( $widget_name, $docy_widget_list, true ) );
 				$is_pro_widget_class = $is_locked ? ' pro_popup' : '';
 				$is_pro_widget_attr  = $is_locked ? ' disabled' : '';
 
-				// By default, all the switcher is checked
-				$widget_checked    = (! isset( $element_opt[ $widget_name ] ) || $element_opt[ $widget_name ] === 'on' ) ? ' checked' : '';
+				// By default, only free widgets are checked
+				if ( $is_locked ) {
+					// Pro widget: unchecked by default
+					$widget_checked = ! isset( $element_opt[ $widget_name ] ) ? '' : ( $element_opt[ $widget_name ] === 'on' ? ' checked' : '' );
+				} else {
+					// Free widget or unlocked pro: checked by default
+					$widget_checked = ! isset( $element_opt[ $widget_name ] ) || $element_opt[ $widget_name ] === 'on' ? ' checked' : '';
+				}
 				?>
                 <div class="ezd-colum-space-4 <?php echo esc_attr( $item['widget_type'] ) ?>">
                     <div class="element_box element_switch badge">
