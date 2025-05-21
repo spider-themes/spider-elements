@@ -155,6 +155,21 @@ class Blog_Grid extends Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'pagination_switcher', [
+                'label'     => esc_html__( 'Pagination', 'spider-elements' ),
+                'type'      => Controls_Manager::SWITCHER,
+                'label_on'  => esc_html__( 'Show', 'spider-elements' ),
+                'label_off' => esc_html__( 'Hide', 'spider-elements' ),
+                'return_value' => 'yes',
+                'default'   => 'yes',
+                'condition' => [
+                    'style'  => ['1', '2', '3', '4', ],
+                    'style!' => [ '5' ]
+                ]
+            ]
+        );
+
 		$this->end_controls_section(); //End Filter
 
 		// arrow icon control section
