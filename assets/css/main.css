@@ -9123,7 +9123,7 @@ button.swiper-pagination-bullet {
 
 .blog-slider-arrows {
   position: absolute;
-  top: -110px;
+  top: -60px;
   right: -2px;
 }
 @media (min-width: 992px) and (max-width: 1201px) {
