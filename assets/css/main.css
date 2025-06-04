@@ -4907,7 +4907,6 @@ body.remove .tab_fixed.header_tab_items {
   display: inline-block;
   letter-spacing: 5px;
   line-height: 1;
-  margin-top: 8px;
 }
 .jobus-review-rating i {
   font-style: normal;
@@ -4915,7 +4914,6 @@ body.remove .tab_fixed.header_tab_items {
   display: inline-block;
   vertical-align: middle;
   transition: color 0.2s;
-  margin-right: 4px;
 }
 .jobus-review-rating i.fa {
   font-family: "FontAwesome";
@@ -4926,41 +4924,56 @@ body.remove .tab_fixed.header_tab_items {
 .jobus-review-rating i.elementor-star-empty {
   color: rgba(0, 0, 0, 0.4);
 }
-.jobus-review-rating i.elementor-star-1 {
+.jobus-review-rating i.elementor-star-1, .jobus-review-rating i.elementor-star-2, .jobus-review-rating i.elementor-star-3, .jobus-review-rating i.elementor-star-4, .jobus-review-rating i.elementor-star-5, .jobus-review-rating i.elementor-star-6, .jobus-review-rating i.elementor-star-7, .jobus-review-rating i.elementor-star-8, .jobus-review-rating i.elementor-star-9 {
+  color: rgba(0, 0, 0, 0.4);
+}
+.jobus-review-rating i.elementor-star-1::after, .jobus-review-rating i.elementor-star-2::after, .jobus-review-rating i.elementor-star-3::after, .jobus-review-rating i.elementor-star-4::after, .jobus-review-rating i.elementor-star-5::after, .jobus-review-rating i.elementor-star-6::after, .jobus-review-rating i.elementor-star-7::after, .jobus-review-rating i.elementor-star-8::after, .jobus-review-rating i.elementor-star-9::after {
+  content: "\f005";
+  font-family: "FontAwesome";
+  color: #ffcc4a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+}
+.jobus-review-rating i.elementor-star-1::after {
   width: 10%;
-  color: #ffcc4a;
+  clip-path: inset(0 90% 0 0);
 }
-.jobus-review-rating i.elementor-star-2 {
+.jobus-review-rating i.elementor-star-2::after {
   width: 20%;
-  color: #ffcc4a;
+  clip-path: inset(0 80% 0 0);
 }
-.jobus-review-rating i.elementor-star-3 {
+.jobus-review-rating i.elementor-star-3::after {
   width: 30%;
-  color: #ffcc4a;
+  clip-path: inset(0 70% 0 0);
 }
-.jobus-review-rating i.elementor-star-4 {
+.jobus-review-rating i.elementor-star-4::after {
   width: 40%;
-  color: #ffcc4a;
+  clip-path: inset(0 60% 0 0);
 }
-.jobus-review-rating i.elementor-star-5 {
+.jobus-review-rating i.elementor-star-5::after {
   width: 50%;
-  color: #ffcc4a;
+  clip-path: inset(0 50% 0 0);
 }
-.jobus-review-rating i.elementor-star-6 {
+.jobus-review-rating i.elementor-star-6::after {
   width: 60%;
-  color: #ffcc4a;
+  clip-path: inset(0 40% 0 0);
 }
-.jobus-review-rating i.elementor-star-7 {
+.jobus-review-rating i.elementor-star-7::after {
   width: 70%;
-  color: #ffcc4a;
+  clip-path: inset(0 30% 0 0);
 }
-.jobus-review-rating i.elementor-star-8 {
+.jobus-review-rating i.elementor-star-8::after {
   width: 80%;
-  color: #ffcc4a;
+  clip-path: inset(0 20% 0 0);
 }
-.jobus-review-rating i.elementor-star-9 {
+.jobus-review-rating i.elementor-star-9::after {
   width: 90%;
-  color: #ffcc4a;
+  clip-path: inset(0 10% 0 0);
 }
 .jobus-review-rating .elementor-screen-only {
   position: absolute;

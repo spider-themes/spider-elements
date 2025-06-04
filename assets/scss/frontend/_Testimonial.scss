@@ -1070,16 +1070,12 @@
   display: inline-block;
   letter-spacing: 5px;
   line-height: 1;
-  margin-top: 8px;
-
   i {
     font-style: normal;
     position: relative;
     display: inline-block;
     vertical-align: middle;
     transition: color 0.2s;
-    margin-right: 4px;
-
     &.fa {
       font-family: 'FontAwesome';
     }
@@ -1092,50 +1088,68 @@
       color: rgba(0, 0, 0, 0.4);
     }
 
-    &.elementor-star-1 {
-      width: 10%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-2 {
-      width: 20%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-3 {
-      width: 30%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-4 {
-      width: 40%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-5 {
-      width: 50%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-6 {
-      width: 60%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-7 {
-      width: 70%;
-      color: #ffcc4a;
-    }
-
-    &.elementor-star-8 {
-      width: 80%;
-      color: #ffcc4a;
-    }
-
+    // NEW: Partial star overlay logic
+    &.elementor-star-1,
+    &.elementor-star-2,
+    &.elementor-star-3,
+    &.elementor-star-4,
+    &.elementor-star-5,
+    &.elementor-star-6,
+    &.elementor-star-7,
+    &.elementor-star-8,
     &.elementor-star-9 {
-      width: 90%;
-      color: #ffcc4a;
+      color: rgba(0, 0, 0, 0.4); // base gray
+
+      &::after {
+        content: '\f005';
+        font-family: "FontAwesome";
+        color: #ffcc4a;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        z-index: 2;
+        clip-path: inset(0 100% 0 0); // will be overridden below
+      }
     }
+    &.elementor-star-1::after {
+      width: 10%;
+      clip-path: inset(0 90% 0 0);
+    }
+    &.elementor-star-2::after {
+      width: 20%;
+      clip-path: inset(0 80% 0 0);
+    }
+    &.elementor-star-3::after {
+      width: 30%;
+      clip-path: inset(0 70% 0 0);
+    }
+    &.elementor-star-4::after {
+      width: 40%;
+      clip-path: inset(0 60% 0 0);
+    }
+    &.elementor-star-5::after {
+      width: 50%;
+      clip-path: inset(0 50% 0 0);
+    }
+    &.elementor-star-6::after {
+      width: 60%;
+      clip-path: inset(0 40% 0 0);
+    }
+    &.elementor-star-7::after {
+      width: 70%;
+      clip-path: inset(0 30% 0 0);
+    }
+    &.elementor-star-8::after {
+      width: 80%;
+      clip-path: inset(0 20% 0 0);
+    }
+    &.elementor-star-9::after {
+      width: 90%;
+      clip-path: inset(0 10% 0 0);
+    }
+
   }
 
   .elementor-screen-only {

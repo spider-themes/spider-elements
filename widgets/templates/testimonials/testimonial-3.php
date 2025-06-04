@@ -31,10 +31,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 						}
 
 						if ( $settings['star_style'] === 'star_fontawesome' ) {
+							$icon = 'fa fa-star'; // default
 							if ( $settings['unmarked_star_style'] === 'outline' ) {
-								$icon = 'fa fa-star-o'; // Font Awesome outline star (class only)
-							} else {
-								$icon = 'fa fa-star'; // Font Awesome solid star (class only)
+								$icon = 'fa fa-star-o'; // FA outline
 							}
 						} elseif ( $settings['star_style'] === 'star_unicode' ) {
 							if ( $settings['unmarked_star_style'] === 'outline' ) {
