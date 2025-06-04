@@ -30,20 +30,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php
 						}
 
-						if ( 'star_fontawesome' === $settings[ 'star_style' ] ) {
-							if ( 'outline' === $settings[ 'unmarked_star_style' ] ) {
-								$icon = '&#xE933;';
+						if ( $settings['star_style'] === 'star_fontawesome' ) {
+							if ( $settings['unmarked_star_style'] === 'outline' ) {
+								$icon = 'fa fa-star-o'; // Font Awesome outline star (class only)
+							} else {
+								$icon = 'fa fa-star'; // Font Awesome solid star (class only)
 							}
-						} elseif ( 'star_unicode' === $settings[ 'star_style' ] ) {
-							$icon = '&#9733;';
-
-							if ( 'outline' === $settings[ 'unmarked_star_style' ] ) {
-								$icon = '&#9734;';
+						} elseif ( $settings['star_style'] === 'star_unicode' ) {
+							if ( $settings['unmarked_star_style'] === 'outline' ) {
+								$icon = '&#9734;'; // Unicode outline star
+							} else {
+								$icon = '&#9733;'; // Unicode solid star
 							}
 						}
 
 						$this->add_render_attribute( 'icon_wrapper', [
-							'class'     => 'star-rating',
+							'class'     => 'jobus-review-rating',
 							'title'     => $textual_rating,
 							'itemscope' => '',
 							'itemprop'  => 'reviewRating',

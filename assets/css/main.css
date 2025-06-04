@@ -4340,65 +4340,13 @@ body.remove .tab_fixed.header_tab_items {
 }
 @media (max-width: 1024px) {
   .feedback-block-one .review {
-    margin-top: 30px !important;
-    padding-top: 20px !important;
+    margin-top: 30px;
+    padding-top: 20px;
   }
 }
 .feedback-block-one .review .text-md {
   font-size: 20px;
   font-weight: 500;
-}
-.feedback-block-one .star-rating {
-  font-size: 15px;
-  font-family: eicons;
-  display: inline-block;
-}
-.feedback-block-one .star-rating i {
-  font-style: normal;
-  position: relative;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.4784313725);
-}
-.feedback-block-one .star-rating i::before {
-  content: "\e934";
-  display: block;
-  font-size: inherit;
-  font-family: inherit;
-  position: absolute;
-  overflow: hidden;
-  color: #000;
-  top: 0;
-  left: 0;
-}
-.feedback-block-one .star-rating .elementor-star-empty:before {
-  content: none;
-}
-.feedback-block-one .star-rating .elementor-star-1:before {
-  width: 10%;
-}
-.feedback-block-one .star-rating .elementor-star-2:before {
-  width: 20%;
-}
-.feedback-block-one .star-rating .elementor-star-3:before {
-  width: 30%;
-}
-.feedback-block-one .star-rating .elementor-star-4:before {
-  width: 40%;
-}
-.feedback-block-one .star-rating .elementor-star-5:before {
-  width: 50%;
-}
-.feedback-block-one .star-rating .elementor-star-6:before {
-  width: 60%;
-}
-.feedback-block-one .star-rating .elementor-star-7:before {
-  width: 70%;
-}
-.feedback-block-one .star-rating .elementor-star-8:before {
-  width: 80%;
-}
-.feedback-block-one .star-rating .elementor-star-9:before {
-  width: 90%;
 }
 .feedback-block-one.color-two {
   background: #755146;
@@ -4471,12 +4419,6 @@ body.remove .tab_fixed.header_tab_items {
   color: var(--e-global-color-accent);
   line-height: 1;
 }
-.feedback-block-two .review .star-rating {
-  letter-spacing: 7px;
-}
-.feedback-block-two .review .star-rating i:before {
-  color: #ffcc4a;
-}
 .feedback-block-two .block-footer {
   padding-top: 35px;
   border-top: 1px solid #000;
@@ -4538,8 +4480,8 @@ body.remove .tab_fixed.header_tab_items {
 }
 @media (max-width: 1024px) {
   .feedback-section-seven .feedback-slider-one .item .feedback-block-one .review {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 
@@ -4568,12 +4510,6 @@ body.remove .tab_fixed.header_tab_items {
 .feedback-block-three .review .text-md {
   font-size: 28px;
   color: var(--e-global-color-accent);
-}
-.feedback-block-three .star-rating i {
-  letter-spacing: 7px;
-}
-.feedback-block-three .star-rating i:before {
-  color: #ffcc4a;
 }
 .feedback-block-three h3 {
   font-size: 24px;
@@ -4858,7 +4794,7 @@ body.remove .tab_fixed.header_tab_items {
 @media (min-width: 1400px) {
   .feedback-section-four .col-lg-6 {
     flex: 0 0 auto;
-    width: 58.33333333% !important;
+    width: 58.33333333%;
   }
 }
 @media (max-width: 1024px) {
@@ -4925,7 +4861,7 @@ body.remove .tab_fixed.header_tab_items {
 }
 
 .testimonial-area .testimonial-slider .slick-prev.slick-arrow {
-  display: none !important;
+  display: none;
 }
 
 .carousel {
@@ -4962,7 +4898,76 @@ body.remove .tab_fixed.header_tab_items {
   }
 }
 .testimonial-item:hover {
-  box-shadow: 0 30px 60px -15px rgba(131, 146, 167, 0.3) !important;
+  box-shadow: 0 30px 60px -15px rgba(131, 146, 167, 0.3);
+}
+
+/*=== Ratting ===*/
+.jobus-review-rating {
+  font-size: 15px;
+  display: inline-block;
+  letter-spacing: 5px;
+  line-height: 1;
+  margin-top: 8px;
+}
+.jobus-review-rating i {
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  transition: color 0.2s;
+  margin-right: 4px;
+}
+.jobus-review-rating i.fa {
+  font-family: "FontAwesome";
+}
+.jobus-review-rating i.elementor-star-full {
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-empty {
+  color: rgba(0, 0, 0, 0.4);
+}
+.jobus-review-rating i.elementor-star-1 {
+  width: 10%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-2 {
+  width: 20%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-3 {
+  width: 30%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-4 {
+  width: 40%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-5 {
+  width: 50%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-6 {
+  width: 60%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-7 {
+  width: 70%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-8 {
+  width: 80%;
+  color: #ffcc4a;
+}
+.jobus-review-rating i.elementor-star-9 {
+  width: 90%;
+  color: #ffcc4a;
+}
+.jobus-review-rating .elementor-screen-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .spel-video-playlist.video-playlist-1 .video_list .video_list_inner .list .videos_meta i {

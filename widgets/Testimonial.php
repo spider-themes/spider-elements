@@ -1265,13 +1265,30 @@ class Testimonial extends Widget_Base {
 		$floored_rating = floor( $rating );
 		$stars_html     = '';
 
+		// Detect if icon is an HTML tag or just a class name
+		$is_html_icon = strpos( $icon, '<' ) !== false;
+
 		for ( $stars = 1.0; $stars <= $rating_data[1]; $stars ++ ) {
+			$star_class = '';
 			if ( $stars <= $floored_rating ) {
-				$stars_html .= '<i class="elementor-star-full">' . $icon . '</i>';
+				$star_class = 'elementor-star-full';
 			} elseif ( $floored_rating + 1 === $stars && $rating !== $floored_rating ) {
-				$stars_html .= '<i class="elementor-star-' . ( $rating - $floored_rating ) * 10 . '">' . $icon . '</i>';
+				$star_class = 'elementor-star-' . ( $rating - $floored_rating ) * 10;
 			} else {
-				$stars_html .= '<i class="elementor-star-empty">' . $icon . '</i>';
+				$star_class = 'elementor-star-empty';
+			}
+
+			// If the icon is HTML, output it directly
+			if ( $is_html_icon ) {
+				$stars_html .= '<i class="' . $star_class . '">' . $icon . '</i>';
+			} else {
+				// If icon is a class name, use it as a class
+				if ( strpos( $icon, '&#' ) === 0 ) {
+					// Unicode icon, output as content
+					$stars_html .= '<i class="' . $star_class . '">' . html_entity_decode( $icon ) . '</i>';
+				} else {
+					$stars_html .= '<i class="' . $star_class . ' ' . esc_attr( $icon ) . '"></i>';
+				}
 			}
 		}
 
@@ -1311,3 +1328,4 @@ class Testimonial extends Widget_Base {
 
 	}
 }
+
