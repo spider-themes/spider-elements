@@ -18,6 +18,7 @@ if (!defined('ABSPATH')) {
                     $this->add_render_attribute($tab_title_setting_key, [
                         'class' => [ 'nav-link tab-item-title', $active ],
                         'data-rel' => 'tab-content-' . $id_int . $tab_count,
+                        'id' => 'docy'.'-tab-'.$id_int . $tab_count,
                     ]);
                     ?>
                     <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
