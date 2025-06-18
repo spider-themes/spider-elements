@@ -27,7 +27,7 @@ class Team_Carousel extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Team Carousel', 'spider-elements' );
+		return esc_html__( 'SE Team Carousel', 'spider-elements' );
 	}
 
 	public function get_icon() {

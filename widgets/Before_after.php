@@ -25,7 +25,7 @@ class Before_After extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Before After', 'spider-elements' );
+		return esc_html__( 'SE Before After', 'spider-elements' );
 	}
 
 	public function get_icon() {

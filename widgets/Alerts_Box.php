@@ -26,7 +26,7 @@ class Alerts_Box extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Alerts Box', 'spider-elements' );
+		return esc_html__( 'SE Alerts Box', 'spider-elements' );
 	}
 
 	public function get_icon() {

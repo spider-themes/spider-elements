@@ -31,7 +31,7 @@ class Tabs extends Widget_Base {
 
 	public function get_title(): string
     {
-		return esc_html__( 'Tabs', 'spider-elements' );
+		return esc_html__( 'SE Tabs', 'spider-elements' );
 	}
 
 	public function get_icon(): string

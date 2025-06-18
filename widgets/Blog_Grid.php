@@ -43,7 +43,7 @@ class Blog_Grid extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Blog Grid', 'spider-elements' );
+		return esc_html__( 'SE Blog Grid', 'spider-elements' );
 	}
 
 	public function get_icon() {

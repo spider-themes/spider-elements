@@ -22,28 +22,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Counter extends Widget_Base {
 
-	public function get_name(): string
-    {
+	public function get_name(): string {
 		return 'spe_counter'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title(): string
-    {
-		return esc_html__( 'Counter', 'spider-elements' );
+	public function get_title(): string {
+		return esc_html__( 'SE Counter', 'spider-elements' );
 	}
 
-	public function get_icon(): string
-    {
+	public function get_icon(): string {
 		return 'eicon-counter spel-icon';
 	}
 
-	public function get_keywords(): array
-    {
+	public function get_keywords(): array {
 		return [ 'spider', 'Counter', 'Progress bar', ];
 	}
 
-	public function get_categories(): array
-    {
+	public function get_categories(): array {
 		return [ 'spider-elements' ];
 	}
 
@@ -51,8 +46,7 @@ class Counter extends Widget_Base {
 	 * Name: get_style_depends()
 	 * Desc: Register the required CSS dependencies for the frontend.
 	 */
-	public function get_style_depends(): array
-    {
+	public function get_style_depends(): array {
 		return [ 'spel-main' ];
 	}
 
@@ -60,8 +54,7 @@ class Counter extends Widget_Base {
 	 * Name: get_script_depends()
 	 * Desc: Register the required JS dependencies for the frontend.
 	 */
-	public function get_script_depends(): array
-    {
+	public function get_script_depends(): array {
 		return [ 'spel-el-widgets', 'counterup', 'waypoint' ];
 	}
 
@@ -74,8 +67,7 @@ class Counter extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function register_controls(): void
-    {
+	protected function register_controls(): void {
 		$this->elementor_content_control();
 		$this->counter_style_control();
 	}
@@ -91,39 +83,37 @@ class Counter extends Widget_Base {
 	 * Author: spider-themes
 	 */
 
-    private function counter_layout_option(): array
-    {
+	private function counter_layout_option(): array {
 
-        if ( spel_is_premium() ) {
-            $options = [
-                '1' => [
-                    'icon'  => 'counter1',
-                    'title' => esc_html__( '01 : Counter', 'spider-elements' )
-                ],
-                '2' => [
-                    'icon'  => 'counter2',
-                    'title' => esc_html__( '02 : Counter', 'spider-elements' )
-                ],
-            ];
-        } else {
-            $options = [
-                '1' => [
-                    'icon'  => 'counter1',
-                    'title' => esc_html__( '01 : Counter', 'spider-elements' )
-                ],
-                '2' => [
-                    'icon'  => 'counter2 spel-pro-label',
-                    'title' => esc_html__( 'spel-pro-label', 'spider-elements' )
-                ],
-            ];
-        }
+		if ( spel_is_premium() ) {
+			$options = [
+				'1' => [
+					'icon'  => 'counter1',
+					'title' => esc_html__( '01 : Counter', 'spider-elements' )
+				],
+				'2' => [
+					'icon'  => 'counter2',
+					'title' => esc_html__( '02 : Counter', 'spider-elements' )
+				],
+			];
+		} else {
+			$options = [
+				'1' => [
+					'icon'  => 'counter1',
+					'title' => esc_html__( '01 : Counter', 'spider-elements' )
+				],
+				'2' => [
+					'icon'  => 'counter2 spel-pro-label',
+					'title' => esc_html__( 'spel-pro-label', 'spider-elements' )
+				],
+			];
+		}
 
-        return $options;
-    }
+		return $options;
+	}
 
 
-	public function elementor_content_control(): void
-    {
+	public function elementor_content_control(): void {
 
 
 		//==================== Select Preset Skin ====================//
@@ -139,7 +129,7 @@ class Counter extends Widget_Base {
 			[
 				'label'   => esc_html__( 'Counter Style', 'spider-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
-                'options' => $this->counter_layout_option(),
+				'options' => $this->counter_layout_option(),
 				'default' => '1',
 			]
 		);
@@ -167,8 +157,8 @@ class Counter extends Widget_Base {
 		// Control for Number Prefix & Suffix
 		$this->add_control(
 			'counter_prefix', [
-				'label'   => esc_html__( 'Number Prefix', 'spider-elements' ),
-				'type'    => \Elementor\Controls_Manager::TEXT,
+				'label' => esc_html__( 'Number Prefix', 'spider-elements' ),
+				'type'  => \Elementor\Controls_Manager::TEXT,
 			]
 		);
 
@@ -202,8 +192,7 @@ class Counter extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	public function counter_style_control(): void
-    {
+	public function counter_style_control(): void {
 
 		//===================== Counter Style ============================//
 		$this->start_controls_section(
@@ -444,17 +433,16 @@ class Counter extends Widget_Base {
 	 * Package: @spider-elements
 	 * Author: spider-themes
 	 */
-	protected function render(): void
-    {
+	protected function render(): void {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
 
 		//================= Template Parts =================//
-        if (spel_is_premium()) {
-            include "templates/counter/counter-{$settings['style']}.php";
-        } else {
-            include "templates/counter/counter-1.php";
-        }
+		if ( spel_is_premium() ) {
+			include "templates/counter/counter-{$settings['style']}.php";
+		} else {
+			include "templates/counter/counter-1.php";
+		}
 
 	}
 }

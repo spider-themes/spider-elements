@@ -2,9 +2,8 @@
 .spel-tabs {
   .tab-content {
     display: block;
-    color: #6A737C;
     padding: 25px 30px;
-    border: 1px solid #ebebeb;
+    border: 1px solid var(--black_50);
     border-radius: 0 5px 5px 5px;
     background-color: var(--bs-white);
     position: relative;
@@ -150,7 +149,7 @@
 
 /* Vertical Menu Styles */
 .v_menu {
-  border-bottom: 1px solid #e8ecee;
+  border-bottom: 1px solid var(--black_50);
   padding-bottom: 20px;
   padding-top: 5px;
   margin-bottom: 20px;
@@ -300,7 +299,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 
           &.active {
             background: var(--bs-white);
-            color: #242729;
+            color: var(--black_800);
             border-color: #ebebeb;
             border-bottom-color: transparent;
             z-index: 1;

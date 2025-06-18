@@ -27,7 +27,7 @@ class Video_Popup extends Widget_Base {
 	}
 
 	public function get_title(): string {
-		return esc_html__( 'Video Popup', 'spider-elements' );
+		return esc_html__( 'SE Video Popup', 'spider-elements' );
 	}
 
 	public function get_icon(): string {

@@ -28,7 +28,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Testimonials', 'spider-elements' );
+		return esc_html__( 'SE Testimonials', 'spider-elements' );
 	}
 
 	public function get_icon() {
