@@ -272,11 +272,11 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
         min-width: fit-content;
         .nav-link {
           font-size: 16px;
-          color: #6A737C;
+          color: var(--black_700);
           border-radius: 0;
           padding: 9px 20px;
-          background: #f9f9f9;
-          border: 1px solid #ebebeb;
+          background: var(--black_25);
+          border: 1px solid var(--black_50);
           position: relative;
           text-decoration: none;
           margin-bottom: 0;
@@ -300,7 +300,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
           &.active {
             background: var(--bs-white);
             color: var(--black_800);
-            border-color: #ebebeb;
+            border-color: var(--black_75);
             border-bottom-color: transparent;
             z-index: 1;
             &::before {
@@ -335,7 +335,7 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 
         &:last-child {
           .nav-link {
-            border-right: 1px solid #ebebeb;
+            border-right: 1px solid var(--black_50);
           }
         }
       }
@@ -345,47 +345,40 @@ body.admin-bar .sticky_tab.tab_fixed.sticky_tab_item {
 
 /* Process Tab Shortcode */
 .process_tab_shortcode {
-  .version {
-    background: #f9f9f9;
-    padding: 30px;
+  p {
+    margin-bottom: 20px;
     font-size: 15px;
-    margin-bottom: 28px;
+    color: #6b707f;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .v_head {
+    padding-bottom: 24px;
+  }
+
+  .v_middle {
+    p {
+      margin-bottom: 0;
+      font-size: 15px;
+
+      .red {
+        color: #f12249;
+      }
+
+      .green {
+        color: #11c52f;
+      }
+    }
+  }
+
+  .v_footer {
+    padding-top: 25px;
 
     p {
-      margin-bottom: 20px;
-      font-size: 15px;
-      color: #6b707f;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .v_head {
-      padding-bottom: 24px;
-    }
-
-    .v_middle {
-      p {
-        margin-bottom: 0;
-        font-size: 15px;
-
-        .red {
-          color: #f12249;
-        }
-
-        .green {
-          color: #11c52f;
-        }
-      }
-    }
-
-    .v_footer {
-      padding-top: 25px;
-
-      p {
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
     }
   }
 }
