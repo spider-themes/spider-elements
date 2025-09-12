@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
                 ]);
                 ?>
                 <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
-                    <button <?php echo $this->get_render_attribute_string($tab_title_setting_key); ?>>
+                    <button <?php echo wp_kses_post( $this->get_render_attribute_string($tab_title_setting_key) ); ?>>
                         <?php
                         if ( $is_auto_play == 'yes' ) { ?>
                             <div class="tab_progress">
@@ -61,7 +61,7 @@ if (!defined('ABSPATH')) {
                     'id' => 'tab-content-' . $id_int . $tab_count,
                 ]);
                 ?>
-                <div <?php echo $this->get_render_attribute_string($tab_content_setting_key); ?>>
+                <div <?php echo wp_kses_post( $this->get_render_attribute_string($tab_content_setting_key) ); ?>>
                     <?php
                     if ('content' == $item[ 'tabs_content_type' ]) {
                         echo do_shortcode($item[ 'tab_content' ]);

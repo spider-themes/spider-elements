@@ -47,9 +47,9 @@ if ( $is_preloader == '1' ) {
                                 <a href="#">
                                     <h4 class="video_title"> <?php echo esc_html( $child_video['title2'] ); ?> </h4>
                                 </a>
-                                <?php echo wpautop( $child_video['video_caption'] ); ?>
+                                <?php echo esc_html( wpautop( $child_video['video_caption'] ) ); ?>
                                 <div class="video_user">
-                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ) ?>">
+                                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
                                         <i class="far fa-user"></i>
                                         <?php the_author_meta( 'display_name' ); ?>
                                     </a>

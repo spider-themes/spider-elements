@@ -10,7 +10,9 @@ if ( $settings['display_type'] == 'alert' ) : ?>
 			<?php if ( ! empty( $settings['alert_title'] ) ) : ?>
                 <h5 class="title"> <?php echo esc_html( $settings['alert_title'] ) ?></h5>
 			<?php endif; ?>
-			<?php echo ! empty( $settings['alert_description'] ) ? $this->parse_text_editor( $settings['alert_description'] ) : ''; ?>
+
+            <?php echo ! empty( $settings['alert_description'] ) ? wp_kses_post( $this->parse_text_editor( $settings['alert_description'] ) ) : ''; ?>
+
 			<?php if ( 'show' === $settings['show_dismiss'] ) : ?>
                 <button type="button" class="close" data-dismiss="alert"
                         data-id="<?php echo esc_attr( $this->get_id() ) ?>">
@@ -28,7 +30,7 @@ if ( $settings['display_type'] == 'alert' ) : ?>
 			<?php if ( ! empty( $settings['alert_title'] ) ) : ?>
                 <h5 class="title"><?php echo esc_html( $settings['alert_title'] ) ?></h5>
 			<?php endif; ?>
-			<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?>
+			<?php echo wp_kses_post( $this->parse_text_editor( $settings['alert_description'] ) ); ?>
         </div>
     </blockquote>
 <?php endif; ?>
@@ -43,7 +45,7 @@ if ( $settings['display_type'] == 'alert' ) : ?>
                         <h5 class="title __title"><?php echo esc_html( $settings['alert_title'] ) ?></h5>
 					<?php endif; ?>
                     <div class="__content">
-						<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?>
+						<?php echo wp_kses_post( $this->parse_text_editor( $settings['alert_description'] ) ) ?>
                     </div>
                 </div>
             </div>
@@ -60,7 +62,7 @@ if ( $settings['display_type'] == 'alert' ) : ?>
 			<?php if ( ! empty( $settings['alert_title'] ) ) : ?>
                 <h5 class="title"><?php echo esc_html( $settings['alert_title'] ) ?></h5>
 			<?php endif; ?>
-			<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?>
+			<?php echo wp_kses_post( $this->parse_text_editor( $settings['alert_description'] ) ) ?>
         </div>
     </div>
 <?php endif; ?>
@@ -80,7 +82,7 @@ if ( $settings['display_type'] == 'alert' ) : ?>
 				<?php if ( ! empty( $settings['alert_title'] ) ) : ?>
                     <h5 class="title"> <?php echo esc_html( $settings['alert_title'] ) ?></h5>
 				<?php endif; ?>
-				<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?>
+				<?php echo wp_kses_post( $this->parse_text_editor( $settings['alert_description'] ) ) ?>
             </div>
         </div>
     </div>
@@ -88,7 +90,7 @@ if ( $settings['display_type'] == 'alert' ) : ?>
 
 <?php if ( $settings['display_type'] == 'explanation' ) : ?>
     <div class="spel_alert_box explanation expn-left">
-		<?php echo $this->parse_text_editor( wpautop( $settings['alert_description'] ) ) ?>
+		<?php echo wp_kses_post( $this->parse_text_editor( $settings['alert_description'] ) ) ?>
     </div>
 	<?php if ( ! empty( $settings['alert_title'] ) ) : ?>
         <style>

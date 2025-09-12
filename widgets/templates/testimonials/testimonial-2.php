@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					}
 					if ( ! empty( $item['content'] ) ) { ?>
                         <div class="se_review_content">
-                            <p><?php echo spel_kses_post( $item['content'] ) ?></p>
+                            <p><?php echo wp_kses_post( spel_kses_post( $item['content'] ) ) ?></p>
                         </div>
 						<?php
 					}

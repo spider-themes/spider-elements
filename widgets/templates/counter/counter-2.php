@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! empty( $settings['counter_value'] ) ) {
 		?>
         <div class="skill_pr">
-            <svg class="radial-progress" data-percentage="<?php echo $settings['counter_value']; ?>"
+            <svg class="radial-progress" data-percentage="<?php echo esc_attr( $settings['counter_value'] ); ?>"
                  viewBox="0 0 80 80">
                 <circle class="incomplete" cx="40" cy="40" r="35"></circle>
                 <circle class="complete" cx="40" cy="40" r="35"></circle>
@@ -19,19 +19,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				if ( ! empty( $settings['counter_prefix'] ) ) {
 					?>
                     <span class="counter-prefix">
-                            <?php echo $settings['counter_prefix']; ?>
+                            <?php echo esc_html( $settings['counter_prefix'] ); ?>
                         </span>
 					<?php
 				}
 				?>
                 <span class="percentage counter">
-                    <?php echo $settings['counter_value']; ?>
+                    <?php echo esc_html( $settings['counter_value'] ); ?>
                 </span>
 				<?php
 				if ( ! empty( $settings['counter_suffix'] ) ) {
 					?>
                     <span class="counter-suffix">
-                            <?php echo $settings['counter_suffix']; ?>
+                            <?php echo esc_html( $settings['counter_suffix'] ); ?>
                         </span>
 					<?php
 				}
@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! empty( $settings['counter_text'] ) ) {
 		?>
         <h6 class="spel_counter_title">
-			<?php echo $settings['counter_text']; ?>
+			<?php  echo esc_html( $settings['counter_text'] ); ?>
         </h6>
 		<?php
 	}
@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 var initialValue = 0;
 
                 function updateCounter(timestamp) {
-                    if (!startTime) startTime = timestamp;
+                    if ( ! startTime ) startTime = timestamp;
                     var progress = timestamp - startTime;
                     var percentage = Math.min(progress / duration, 1);
                     var currentValue = Math.floor(initialValue + percentage * (targetValue - initialValue));

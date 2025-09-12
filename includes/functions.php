@@ -312,22 +312,31 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
  * @param string $alt
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
-    function spel_el_image( $settings_key = '', $alt = '', $class = '', $atts = [] ): void
-    {
+    function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
         if ( ! empty( $settings_key['id'] ) ) {
-            echo wp_get_attachment_image( $settings_key['id'], 'full', '', array( 'class' => $class ) );
+            // WordPress handles escaping internally here
+            echo wp_get_attachment_image( $settings_key['id'], 'full', false, [ 'class' => esc_attr( $class ) ] );
         } elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
-            $class = ! empty( $class ) ? "class='$class'" : '';
-            $attss = '';
+            $class_attr = ! empty( $class ) ? ' class="' . esc_attr( $class ) . '"' : '';
+            $atts_str   = '';
+
             if ( ! empty( $atts ) ) {
                 foreach ( $atts as $k => $att ) {
-                    $attss .= "$k=" . "'$att'";
+                    $atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
                 }
             }
-            echo "<img src='{$settings_key['url']}' $class alt='$alt' $attss>";
+
+            printf(
+                '<img src="%1$s"%2$s alt="%3$s"%4$s />',
+                esc_url( $settings_key['url'] ),
+                wp_kses_post( $class_attr ), // Escape class attribute
+                esc_attr( $alt ),
+                wp_kses_post( $atts_str ) // Escape attributes string
+            );
         }
     }
 }
+
 
 
 /**
@@ -699,14 +708,17 @@ if ( !function_exists('spel_pagination') ) {
             $big = 999999999; // need an unlikely integer
             $current = max(1, get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1));
 
-            echo paginate_links(array(
-                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format' => '?paged=%#%',
-                'current' => $current,
-                'total' => $query->max_num_pages,
-                'prev_text' => $prev_text,
-                'next_text' => $next_text,
-            ));
+            echo wp_kses_post(
+                paginate_links( array(
+                    'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                    'format'    => '?paged=%#%',
+                    'current'   => $current,
+                    'total'     => $query->max_num_pages,
+                    'prev_text' => $prev_text,
+                    'next_text' => $next_text
+                ) )
+            );
+
 
         echo '</ul>';
     }

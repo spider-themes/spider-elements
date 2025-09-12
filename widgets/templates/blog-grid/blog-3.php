@@ -15,9 +15,9 @@ if (!defined('ABSPATH')) {
                             <a href="<?php the_permalink(); ?>" class="img"><?php the_post_thumbnail(); ?></a>
                         </figure>
                         <div class="post-data">
-                            <?php echo '<a href="' . esc_url(spel_get_first_taxonomy_link()) . '" class="tags">' . spel_get_first_taxonomy() . '</a>'; ?>
+                            <a href="<?php echo esc_url(spel_get_first_taxonomy_link()); ?>" class="tags"><?php echo esc_html( spel_get_first_taxonomy() ); ?></a>
                             <a class="blog-tow-title" href="<?php the_permalink(); ?>">
-                                <h2 class="tran3s blog-title"><?php echo spel_get_title_length($settings, 'title_length') ?></h2>
+                                <h2 class="tran3s blog-title"><?php echo esc_html( spel_get_title_length($settings, 'title_length') ) ?></h2>
                             </a>
                             <?php spel_get_post_author_name(); ?>
                         </div>

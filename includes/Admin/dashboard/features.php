@@ -112,21 +112,16 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
 									<?php
 									if ( ! empty( $item['demo_url'] ) ) {
 										?>
-                                        <a href="<?php echo esc_url( $item['demo_url'] ) ?>" class="tooltip-top"
-                                           data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Feature Demo', 'spider-elements' ), $item['label'] ) ?>"
-                                           target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg' ) ?>"
-                                                 alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
+                                        <a href="<?php echo esc_url( $item['demo_url'] ) ?>" class="tooltip-top" data-tooltip="<?php echo esc_attr( sprintf( __( 'View %s Feature Demo', 'spider-elements' ), $item['label'] ) ); ?>" target="_blank">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-demo.svg' ) ?>" alt="<?php esc_attr_e( 'Widget Demo', 'spider-elements' ); ?>">
                                         </a>
 										<?php
 									}
 									if ( ! empty( $item['demo_url'] ) ) {
 										?>
-                                        <a href="<?php echo esc_url( $item['video_url'] ) ?>" class="tooltip-top"
-                                           data-tooltip="<?php echo sprintf( esc_attr__( 'View %s Video Tutorial', 'spider-elements' ), $item['label'] ) ?>"
+                                        <a href="<?php echo esc_url( $item['video_url'] ) ?>" class="tooltip-top" data-tooltip="<?php echo esc_attr( sprintf( __( 'View %s Video Tutorial', 'spider-elements' ), $item['label'] ) ); ?>"
                                            target="_blank">
-                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-video.svg' ) ?>"
-                                                 alt="<?php esc_attr_e( 'Video Tutorial', 'spider-elements' ); ?>">
+                                            <img src="<?php echo esc_url( SPEL_IMG . '/dashboard/icon-video.svg' ) ?>" alt="<?php esc_attr_e( 'Video Tutorial', 'spider-elements' ); ?>">
                                         </a>
 										<?php
 									}
@@ -137,8 +132,7 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
 							}
 							?>
                             <label for="<?php echo esc_attr( $item['name'] ) ?>" class="switch_label<?php echo esc_attr( $is_pro_feature ) ?>">
-                                <input type="checkbox" class="widget_checkbox widget-list" name="<?php echo esc_attr( $item['name'] ) ?>"
-                                       id="<?php echo esc_attr( $item['name'] ) ?>" <?php echo esc_attr( $checked . $is_pro_feature_enabled ); ?>>
+                                <input type="checkbox" class="widget_checkbox widget-list" name="<?php echo esc_attr( $item['name'] ) ?>" id="<?php echo esc_attr( $item['name'] ) ?>" <?php echo esc_attr( $checked . $is_pro_feature_enabled ); ?>>
                                 <span class="widget_switcher"></span>
                             </label>
                         </div>

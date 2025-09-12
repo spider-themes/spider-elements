@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! empty( $accordions ) ) {
         foreach ( $accordions as $index => $item ) {
             $is_collapsed_class  = $item['collapse_state'] ?? '';
-            $is_btn_collapse     = $is_collapsed_class == 'yes' ? 'collapsed' : '';
+            $is_btn_collapse     = $is_collapsed_class == 'yes' ? 'collapsed ' : '';
             $is_collapsed        = $is_collapsed_class == 'yes' ? 'true' : 'false';
             $id                  = 'toggle-' . $item['_id'] ?? '';
             $is_show             = $is_collapsed_class == 'yes' ? ' show' : '';
@@ -18,26 +18,26 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="card<?php echo esc_attr($is_border_bottom) ?> accordion_inner <?php echo esc_attr( $is_btn_collapse ).esc_attr( 'accord-item-'.$item['_id'] ); ?>">
 
                 <div class="card-header" id="heading-<?php echo esc_attr( $item['_id'] ); ?>">
-                    <<?php echo esc_attr( $title_tag ); ?> class="title">
-                    <button class="accordion_btn_link<?php echo esc_attr( $icon_align_class ); ?>">
-                        <?php
-
-                        echo esc_html( $item['title'] );
-
-                        if ( ! empty( $settings['plus-icon']['value'] ) || ! empty( $settings['minus-icon']['value'] ) ) { ?>
-                            <span class="icon-wrapper">
-                                <span class="expanded-icon">
-                                    <?php \Elementor\Icons_Manager::render_icon( $settings['plus-icon'] ); ?>
-                                </span>
-                                <span class="collapsed-icon">
-                                    <?php \Elementor\Icons_Manager::render_icon( $settings['minus-icon'] ); ?>
-                                </span>
-                            </span>
+                    <<?php echo esc_html( $title_tag ); ?> class="title">
+                        <button class="accordion_btn_link<?php echo esc_attr( $icon_align_class ); ?>">
                             <?php
-                        }
-                        ?>
-                    </button>
-                    </<?php echo esc_attr( $title_tag ) ?>>
+                            echo esc_html( $item['title'] );
+
+                            if ( ! empty( $settings['plus-icon']['value'] ) || ! empty( $settings['minus-icon']['value'] ) ) :
+                                ?>
+                                <span class="icon-wrapper">
+                                    <span class="expanded-icon">
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['plus-icon'] ); ?>
+                                    </span>
+                                    <span class="collapsed-icon">
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['minus-icon'] ); ?>
+                                    </span>
+                                </span>
+                                <?php
+                            endif;
+                            ?>
+                        </button>
+                    </<?php echo esc_html( $title_tag ) ?>>
                 </div>
 
                 <div id="<?php echo esc_attr( $id ) ?>" class="collapse<?php echo esc_attr( $is_show ) ?>" <?php echo esc_attr( $toggle_bs_parent_id ); ?>>
@@ -48,7 +48,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                             echo wp_kses_post( $item['normal_content'] );
                         } elseif ( $content_type == 'el_template' ) {
                             if ( ! empty( $item['el_content'] ) ) {
-                                echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $item['el_content'] );
+                                echo wp_kses_post(
+                                    \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $item['el_content'] )
+                                );
                             }
                         }
                         ?>

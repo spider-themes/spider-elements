@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$thumbnail_url = $thumbnail_url ? 'style="background-image: url(' . esc_url( $thumbnail_url ) . ');"' : '';
 			?>
             <div class="item item-margin">
-                <div class="card-style-six position-relative" <?php echo $thumbnail_url ?>>
+                <div class="card-style-six position-relative" <?php echo wp_kses_post( $thumbnail_url ); ?>>
                     <a href="<?php the_permalink(); ?>" class="blog-item-six w-100 h-100 d-flex align-items-end">
-                        <h2 class="blog-six-title text-lg"><?php echo spel_get_title_length( $settings, 'title_length' ) ?></h2>
+                        <h2 class="blog-six-title text-lg"><?php echo esc_html( spel_get_title_length( $settings, 'title_length' ) ) ?></h2>
                     </a>
                 </div>
             </div>

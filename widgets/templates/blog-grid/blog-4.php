@@ -23,13 +23,13 @@ if (!defined('ABSPATH')) {
                                     echo '<span class="sticky-label fw-500 text-dark">' . esc_html__('Featured -', 'spider-elements') . '</span>';
                                 }
                                 ?>
-                                <a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')); ?>"
+                                <a href="<?php echo esc_url( get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')) ); ?>"
                                    class="meta-item">
-                                    <?php echo get_the_date('d M Y') ?>
+                                    <?php echo esc_html( get_the_date('d M Y') ) ?>
                                 </a>
                             </div>
                             <a class="blog-one-title" href="<?php the_permalink(); ?>">
-                                <h2 class="tran3s blog-title"><?php echo spel_get_title_length($settings, 'title_length') ?></h2>
+                                <h2 class="tran3s blog-title"><?php echo esc_html( spel_get_title_length($settings, 'title_length') ) ?></h2>
                             </a>
                             <a href="<?php the_permalink(); ?>" class="continue-btn tran3s btn-seven">
                                 <?php esc_html_e('Read More', 'spider-elements') ?>

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php ?>
 							<?php
 							if ( ! empty( $item['review_content'] ) ) {
-								echo spel_kses_post( wpautop( $item['review_content'] ) );
+								echo wp_kses_post( spel_kses_post( wpautop( $item['review_content'] ) ) );
 							}
 							if ( ! empty( $item['author_name'] ) ) {
 								?>
@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					$current_area = $index == 1 ? 'aria-current="true"' : '';
 					?>
                     <button type="button" data-bs-target="#feedBack_carousel" data-bs-slide-to="<?php echo esc_attr( $index ) ?>"
-                            class="<?php echo esc_attr( $active ) ?>" <?php echo $current_area ?> aria-label="Slide <?php echo esc_attr( $index ) ?>">
+                            class="<?php echo esc_attr( $active ) ?>" <?php echo esc_html( $current_area ) ?> aria-label="Slide <?php echo esc_attr( $index ) ?>">
 						<?php spel_dynamic_image( $item['author_image'], 'full', [ 'class' => 'lazy-img ezd-rounded-circle' ] ) ?>
                     </button>
 					<?php

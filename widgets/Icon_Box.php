@@ -12,7 +12,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
-
+use Elementor\Utils;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -979,10 +979,9 @@ class Icon_Box extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
-		$box_title_tag = ! empty ( $settings['box_title_tag'] ) ? $settings['box_title_tag'] : 'h5';
+		$box_title_tag = Utils::validate_html_tag( $settings['box_title_tag'] ?? 'h6' );
 
 		//================= Template Parts =================//
 		include "templates/Icon-box/icon-box{$settings['style']}.php";
-
 	}
 }

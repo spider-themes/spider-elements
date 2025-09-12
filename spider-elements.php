@@ -179,7 +179,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden
-			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), self::VERSION );
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'spider-elements' ), esc_html( self::VERSION ) );
 		}
 
 

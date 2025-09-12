@@ -11,7 +11,7 @@ use Elementor\Group_Control_Text_Stroke;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
-
+use Elementor\Utils;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -656,7 +656,7 @@ class Accordion extends Widget_Base {
         $settings = $this->get_settings_for_display();
 		extract( $settings );
 
-		$title_tag        = ! empty ( $settings['title_tag'] ) ? $settings['title_tag'] : 'h6';
+		$title_tag 		  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
 		$accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
 		$icon_align       = ! empty ( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
 		$icon_align_class = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
@@ -667,7 +667,5 @@ class Accordion extends Widget_Base {
 
 		//======================== Template Parts ========================//
 		include "templates/accordion/accordion.php";
-
 	}
 }
-

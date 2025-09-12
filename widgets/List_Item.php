@@ -442,18 +442,19 @@ class List_Item extends Widget_Base {
 	 */
 	protected function render(): void {
 
-		$settings = $this->get_settings_for_display();
-		extract( $settings ); // extract all settings array to variables converted to name of a key
+		$settings   = $this->get_settings_for_display();
+		$icon_list  = $settings['ul_icon_list'] ?? '';
+		$order_type = $settings['order_type'] ?? '';
+		$style      = $settings['style'] ?? 'order_list';
 
-		$icon_list = ! empty( $settings['ul_icon_list'] ) ? $settings['ul_icon_list'] : '';
-
-		// Append additional classes for ordered list variations
-		if ( $settings['style'] == 'order_list' ) {
-			if ( $settings['order_type'] == 'alpha' ) {
-				$list_class = ' alpha';
-			} elseif ( $settings['order_type'] == 'roman' ) {
-				$list_class = ' roman';
-			}
+		// Determine list class
+		$list_class = '';
+		if ( $style === 'order_list' ) {
+			$list_class = match ( $order_type ) {
+				'alpha' => ' alpha',
+				'roman' => ' roman',
+				default => '',
+			};
 		}
 
 		if ( $settings['style'] == 'unordered_list' ) {

@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <?php if ( ! empty( $settings['title'] ) ) { ?>
             <div class="box2_url">
-                <<?php echo esc_attr( $box_title_tag ); ?> class="box_two_title">
+                <<?php echo esc_html( $box_title_tag ); ?> class="box_two_title">
                 <?php echo esc_html( $settings['title'] ); ?>
-                </<?php echo esc_attr( $box_title_tag ) ?>>
+                </<?php echo esc_html( $box_title_tag ) ?>>
             </div>
             <?php } ?>
 

@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php
 				if ( ! empty( $settings['playlist_title'] ) ) :
                     echo sprintf(
-                        '<%1$s class="play_list_title" data-animation="wow fadeInUp" data-wow-delay="0.2s"> %2$s </%1$s>', esc_attr($title_tag), esc_html($settings['playlist_title'])
+                        '<%1$s class="play_list_title" data-animation="wow fadeInUp" data-wow-delay="0.2s"> %2$s </%1$s>', esc_html(Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' )), esc_html($settings['playlist_title'])
                     );
                 endif;
                 ?>
@@ -113,11 +113,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                                                                         <div>
                                                                             <div class="videos_meta">
                                                                                 <i class="far fa-user"></i>
-                                                                                <?php echo ucwords( $child_video['current_author'] ); ?>
+                                                                                <?php echo esc_html( ucwords( $child_video['current_author'] ) ); ?>
                                                                             </div>
                                                                             <div class="videos_meta">
                                                                                 <i class="far fa-calendar"></i>
-                                                                                <?php echo human_time_diff( strtotime( $child_video['current_date'] ), current_time( 'timestamp' ) ) . esc_html__( ' ago', 'spider-elements' ); ?>
+                                                                                <?php echo esc_html( human_time_diff( strtotime( $child_video['current_date'] ), current_time( 'timestamp' ) ) ) . ' ' . esc_html__( 'ago', 'spider-elements' ); ?>
                                                                             </div>
                                                                         </div>
                                                                     </div>

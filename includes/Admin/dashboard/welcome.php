@@ -28,92 +28,93 @@ $environment        = spel_get_environment_info();
                     <ul class="list-unstyled requirement_list ezd-lg-col-6">
                         <li>
                             <strong><?php esc_html_e( 'PHP Version:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( version_compare( $php_version, '7.4', '<' ) ) {
-								echo '<span title="' . esc_attr__( 'Minimum: 7.4 Recommended', 'spider-elements' ) . '">'
-								     . $close_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $php_version ) . '</span>';
-							} else {
-								echo '<span>' . $check_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $php_version ) . '</span>';
-							}
-							?>
+                            <?php
+                            if ( version_compare( $php_version, '7.4', '<' ) ) {
+                                echo '<span title="' . esc_attr__( 'Minimum: 7.4 Recommended', 'spider-elements' ) . '">'
+                                    . wp_kses_post( $close_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $php_version ) . '</span>';
+                            } else {
+                                echo '<span>' . wp_kses_post( $check_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $php_version ) . '</span>';
+                            }
+                            ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e( 'Memory Limit:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( intval( $memory_limit ) < 512 ) {
-								echo '<span title="' . esc_attr__( 'Minimum 512M Recommended', 'spider-elements' ) . '">'
-								     . $close_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $memory_limit ) . '</span>';
-							} else {
-								echo '<span>' . $check_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $memory_limit ) . '</span>';
-							}
-							?>
+                            <?php
+                            if ( intval( $memory_limit ) < 512 ) {
+                                echo '<span title="' . esc_attr__( 'Minimum 512M Recommended', 'spider-elements' ) . '">'
+                                    . wp_kses_post( $close_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $memory_limit ) . '</span>';
+                            } else {
+                                echo '<span>' . wp_kses_post( $check_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $memory_limit ) . '</span>';
+                            }
+                            ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e( 'Uploads Folder Writable:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( ! is_writable( $upload_path ) ) {
-								echo $close_icon;
-							} else {
-								echo $check_icon;
-							}
-							?>
+                            <?php
+                            if ( ! is_writable( $upload_path ) ) {
+                                echo wp_kses_post( $close_icon );
+                            } else {
+                                echo wp_kses_post( $check_icon );
+                            }
+                            ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e( 'GZip Enabled:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( $environment['gzip_enabled'] ) {
-								echo $check_icon;
-							} else {
-								echo $close_icon;
-							}
-							?>
+                            <?php
+                            if ( $environment['gzip_enabled'] ) {
+                                echo wp_kses_post( $check_icon );
+                            } else {
+                                echo wp_kses_post( $close_icon );
+                            }
+                            ?>
                         </li>
                     </ul>
 
                     <ul class="list-unstyled requirement_list ezd-lg-col-6">
                         <li>
                             <strong><?php esc_html_e( 'Max Execution Time:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( intval( $max_execution_time ) < 90 ) {
-								echo '<span title="' . esc_attr__( 'Minimum 90 Recommended', 'spider-elements' ) . '">'
-								     . $close_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $max_execution_time ) . '</span>';
-							} else {
-								echo '<span>' . $check_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $max_execution_time ) . '</span>';
-							}
-							?>
+                            <?php
+                            if ( intval( $max_execution_time ) < 90 ) {
+                                echo '<span title="' . esc_attr__( 'Minimum 90 Recommended', 'spider-elements' ) . '">'
+                                    . wp_kses_post( $close_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $max_execution_time ) . '</span>';
+                            } else {
+                                echo '<span>' . wp_kses_post( $check_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $max_execution_time ) . '</span>';
+                            }
+                            ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e( 'Max Post Limit:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( intval( $post_limit ) < 32 ) {
-								echo '<span title="' . esc_attr__( 'Minimum 32M Recommended', 'spider-elements' ) . '">'
-								     . $close_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $post_limit ) . '</span>';
-							} else {
-								echo '<span>' . $check_icon . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $post_limit ) . '</span>';
-							}
-							?>
+                            <?php
+                            if ( intval( $post_limit ) < 32 ) {
+                                echo '<span title="' . esc_attr__( 'Minimum 32M Recommended', 'spider-elements' ) . '">'
+                                    . wp_kses_post( $close_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $post_limit ) . '</span>';
+                            } else {
+                                echo '<span>' . wp_kses_post( $check_icon ) . esc_html__( 'Currently:', 'spider-elements' ) . ' ' . esc_html( $post_limit ) . '</span>';
+                            }
+                            ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e( 'Multisite:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( $environment['wp_multisite'] ) {
-								echo '<span>' . $check_icon . esc_html__( 'Multisite', 'spider-elements' ) . '</span>';
-							} else {
-								echo '<span>' . $close_icon . esc_html__( 'No Multisite', 'spider-elements' ) . '</span>';
-							}
-							?>
+                            <?php
+                            if ( $environment['wp_multisite'] ) {
+                                echo '<span>' . wp_kses_post( $check_icon ) . esc_html__( 'Multisite', 'spider-elements' ) . '</span>';
+                            } else {
+                                echo '<span>' . wp_kses_post( $close_icon ) . esc_html__( 'No Multisite', 'spider-elements' ) . '</span>';
+                            }
+                            ?>
                         </li>
                         <li>
                             <strong><?php esc_html_e( 'Debug Mode:', 'spider-elements' ); ?></strong>
-							<?php
-							if ( $environment['wp_debug_mode'] ) {
-								echo '<span>' . $check_icon . esc_html__( 'Currently Turned On', 'spider-elements' ) . '</span>';
-							} else {
-								echo '<span>' . $close_icon . esc_html__( 'Currently Turned Off', 'spider-elements' ) . '</span>';
-							}
-							?>
+                            <?php
+                            if ( $environment['wp_debug_mode'] ) {
+                                echo '<span>' . wp_kses_post( $check_icon ) . esc_html__( 'Currently Turned On', 'spider-elements' ) . '</span>';
+                            } else {
+                                echo '<span>' . wp_kses_post( $close_icon ) . esc_html__( 'Currently Turned Off', 'spider-elements' ) . '</span>';
+                            }
+                            ?>
                         </li>
                     </ul>
+
 
                 </div>
 
