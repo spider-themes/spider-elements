@@ -31,7 +31,7 @@ class Cheat_Sheet extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'SE Cheat Sheet', 'spider-elements' );
+		return esc_html__( 'Cheat Sheet', 'spider-elements' );
 	}
 
 	public function get_icon() {

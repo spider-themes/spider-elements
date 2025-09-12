@@ -27,7 +27,7 @@ class Counter extends Widget_Base {
 	}
 
 	public function get_title(): string {
-		return esc_html__( 'SE Counter', 'spider-elements' );
+		return esc_html__( 'Counter', 'spider-elements' );
 	}
 
 	public function get_icon(): string {

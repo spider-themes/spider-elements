@@ -28,7 +28,7 @@ class Timeline extends Widget_Base {
 
 	public function get_title(): string
     {
-		return esc_html__( 'SE Timeline', 'spider-elements' );
+		return esc_html__( 'Timeline', 'spider-elements' );
 	}
 
 	public function get_icon(): string

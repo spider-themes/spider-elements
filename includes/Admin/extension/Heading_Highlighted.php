@@ -24,6 +24,7 @@ class Heading_Highlighted {
 	 * Heading Widgets.
 	 */
 	public function register_heading_widget_controls( Element_Base $element ): void {
+
 		//=============== Start Highlighted Text ===============//
 		$element->start_controls_section(
 			'spel_highlighted_text_style', [
@@ -39,8 +40,7 @@ class Heading_Highlighted {
 				'frontend_available' => true,
 				'label_on'           => esc_html__( 'On', 'spider-elements' ),
 				'label_off'          => esc_html__( 'Off', 'spider-elements' ),
-				'description'        => esc_html__( 'Highlighted text must be written in <span></span> tag. Example: Welcome to <span>Highlighted</span>',
-					'spider-elements' ),
+				'description'        => esc_html__( 'Highlighted text must be written in <span></span> tag. Example: Welcome to <span>Highlighted</span>', 'spider-elements' ),
 				'return_value'       => 'yes',
 				'default'            => 'no',
 			]

@@ -30,7 +30,7 @@ class Video_Playlist extends Widget_Base {
 
 	public function get_title(): string
     {
-		return esc_html__( 'SE Video Playlist', 'spider-elements' );
+		return esc_html__( 'Video Playlist', 'spider-elements' );
 	}
 
 	public function get_icon(): string

@@ -30,7 +30,7 @@ class Icon_Box extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'SE Icon Box', 'spider-elements' );
+		return esc_html__( 'Icon Box', 'spider-elements' );
 	}
 
 	public function get_icon() {
