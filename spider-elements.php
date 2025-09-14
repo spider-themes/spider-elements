@@ -44,6 +44,7 @@ if ( function_exists( 'spel_fs' ) ) {
 						'premium_slug'        => 'spider-elements-pro',
 						'type'                => 'plugin',
 						'public_key'          => 'pk_711f20dd503c8eb713171079ffeb5',
+						'wp_org_gatekeeper'   => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
 						'is_premium'          => false,
 						'premium_suffix'      => 'pro',
 						'has_premium_version' => true,
@@ -58,6 +59,10 @@ if ( function_exists( 'spel_fs' ) ) {
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
+						'parallel_activation' => array(
+							'enabled'                  => true,
+							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
+						),
 					]
 				);
 			}
@@ -66,7 +71,6 @@ if ( function_exists( 'spel_fs' ) ) {
 		}
 
 		// Init Freemius.
-		spel_fs()->add_filter( 'deactivate_on_activation', '__return_false' );
 		spel_fs()->add_filter( 'hide_freemius_powered_by', '__return_true' );
 
 		// Init Freemius.
