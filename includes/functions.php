@@ -137,25 +137,33 @@ if ( ! function_exists( 'spel_day_link' ) ) {
 
 
 /**
- * Get title excerpt length
+ * Retrieves and trims the length of the post title based on specified settings.
  *
- * @param $settings
- * @param $settings_key
- * @param int $default
+ * @param array  $settings     Array of settings containing the title length configuration.
+ * @param string $settings_key Key to access the title length in the settings array.
+ * @param int    $default      Default title length if the key is not set in the settings. Default is 10.
  *
- * @return string|void
+ * @return string The post title trimmed to the specified length, or an empty string if no title exists.
  */
-if ( ! function_exists( 'spel_get_title_length' ) ) {
-    function spel_get_title_length( $settings, $settings_key, $default = 10 ): string
-    {
-
-        $title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-        return get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : the_title();
-
-    }
+function spel_get_title_length( $settings, $settings_key, $default = 10 ): string {
+    $title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
+    return get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : get_the_title();
 }
 
 
+/**
+ * Outputs a trimmed title of the specified length based on provided settings.
+ *
+ * @param array  $settings     An array of settings containing the potential title length value.
+ * @param string $settings_key The key used to retrieve the title length from the settings.
+ * @param int    $default      The default title length to use if the settings key is not set. Default is 10.
+ *
+ * @return string The trimmed title.
+ */
+function spel_title_length( $settings, $settings_key, $default = 10 ): string {
+	$title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
+	echo get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : get_the_title();
+}
 
 
 /**

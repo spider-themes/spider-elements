@@ -44,7 +44,6 @@ if ( function_exists( 'spel_fs' ) ) {
 						'premium_slug'        => 'spider-elements-pro',
 						'type'                => 'plugin',
 						'public_key'          => 'pk_711f20dd503c8eb713171079ffeb5',
-						'wp_org_gatekeeper'   => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
 						'is_premium'          => false,
 						'premium_suffix'      => 'pro',
 						'has_premium_version' => true,
