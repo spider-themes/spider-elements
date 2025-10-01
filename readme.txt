@@ -1,7 +1,7 @@
 === Spider Elements - Crafted UX First Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, widgets for elementor, spider element
-Stable tag: 1.6.5
+Stable tag: 1.6.6
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -102,6 +102,11 @@ WordPress Memory limit of 128 MB or higher is preferred
 4. Also, you can see them under the category "Spider Elements" on your element/widget list.
 
 == Changelog ==
+
+= v1.6.6 (1 October 2025) =
+Fixed: Vulnerability issues
+Tweaked: Spider Elements widget prefix (SE) has been removed
+Updated: Freemius SDK updated to 2.12.2
 
 = v1.6.5 (23 Jun 2025) =
 New: Added pagination and show/hide options to presets 1, 2, 3, and 4 of the Blog Grid widget
