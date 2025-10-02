@@ -28,7 +28,6 @@ if ( ! function_exists( 'spel_rtl') ) {
 	}
 }
 
-
 /**
  * @return bool
  * Elementor is edit mode
@@ -46,7 +45,6 @@ function spider_elements_is_preview(): bool
 {
 	return \Elementor\Plugin::$instance->preview->is_preview_mode();
 }
-
 
 /**
  * Elementor Title tags
@@ -67,7 +65,6 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
         ];
     }
 }
-
 
 /**
  * Echo button link attributes.
@@ -120,8 +117,6 @@ if ( ! function_exists( 'spel_cat_ids') ) {
     }
 }
 
-
-
 /**
  * Day link to archive page
  **/
@@ -135,34 +130,25 @@ if ( ! function_exists( 'spel_day_link' ) ) {
     }
 }
 
-
 /**
- * Retrieves and trims the length of the post title based on specified settings.
+ * Retrieve the trimmed post title based on settings.
  *
- * @param array  $settings     Array of settings containing the title length configuration.
- * @param string $settings_key Key to access the title length in the settings array.
- * @param int    $default      Default title length if the key is not set in the settings. Default is 10.
+ * This function fetches the current post title, applies a custom length
+ * from the provided settings (or falls back to a default length), and
+ * returns the trimmed version of the title. If no title exists, it will
+ * safely return an empty string.
  *
- * @return string The post title trimmed to the specified length, or an empty string if no title exists.
+ * @param array  $settings     Settings array that may contain the title length.
+ * @param string $settings_key Array key used to find the title length inside settings.
+ * @param int    $default      Default title length if no value is found in settings. Default 10.
+ *
+ * @return string The trimmed post title, or empty string if no title exists.
  */
-function spel_get_title_length( $settings, $settings_key, $default = 10 ): string {
-    $title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-    return get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : get_the_title();
-}
+function spel_get_title_length( array $settings, string $settings_key, int $default = 10 ): string {
+	$title        = get_the_title();
+	$title_length = ! empty( $settings[ $settings_key ] ) ? (int) $settings[ $settings_key ] : $default;
 
-
-/**
- * Outputs a trimmed title of the specified length based on provided settings.
- *
- * @param array  $settings     An array of settings containing the potential title length value.
- * @param string $settings_key The key used to retrieve the title length from the settings.
- * @param int    $default      The default title length to use if the settings key is not set. Default is 10.
- *
- * @return string The trimmed title.
- */
-function spel_title_length( $settings, $settings_key, $default = 10 ): string {
-	$title_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-	echo get_the_title() ? wp_trim_words( get_the_title(), $title_length, '' ) : get_the_title();
+	return $title ? wp_trim_words( $title, $title_length, '' ) : '';
 }
 
 
@@ -175,15 +161,9 @@ function spel_title_length( $settings, $settings_key, $default = 10 ): string {
  * @return string
  **/
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
-    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string
-    {
-
+    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
         $excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-        return get_the_excerpt() ? wp_trim_words(
-            get_the_excerpt(),
-            $excerpt_length,
-            '...'
-        ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
+        return get_the_excerpt() ? wp_trim_words( get_the_excerpt(), $excerpt_length, '...' ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
     }
 }
 
