@@ -30,6 +30,14 @@ add_action( 'admin_init', function () {
 	// Retrieve the field values from the form
 	if ( isset( $_POST['elements-submit'] ) ) {
 
+		if ( ! wp_verify_nonce( $_POST['spel_elements_nonce'], 'spel_elements_nonce' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		// Free Widgets
 		$free_widgets = [
 			'spel_accordion',
@@ -114,6 +122,14 @@ add_action( 'admin_init', function () {
 add_action( 'admin_init', function () {
 
 	if ( isset( $_POST['features-submit'] ) ) {
+
+		if ( ! wp_verify_nonce( $_POST['spel_features_nonce'], 'spel_features_nonce' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 
 		// Pro Widgets
 		$pro_features = [
