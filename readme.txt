@@ -19,41 +19,41 @@ Spider Elements is the most versatile and intuitive WordPress plugin designed sp
 [youtube https://www.youtube.com/watch?v=m51PQ2FhXvA]
 
 ## 🔗 USEFUL LINKS ##
-- [Get the Pro Version](https://spider-themes.net/spider-elements/pricing)
-- [Demo (built with Spider Elements)](https://spider-themes.net/spider-elements/#widgets)
+- [Get the Pro Version](https://spider-elements.spider-themes.net/pricing)
+- [Demo (built with Spider Elements)](https://spider-elements.spider-themes.net/#widgets)
 - [Documentation](https://helpdesk.spider-themes.net/docs/spider-elements)
-- [Explore More](https://spider-themes.net/spider-elements)
+- [Explore More](https://spider-elements.spider-themes.net)
 
 ### Widget List: available in the free version
 
-#[**Accordion**](https://spider-themes.net/spider-elements/accordion) - Easily organize your content with collapsible sections, perfect for FAQs, guides, or detailed information.
-#[**Blog**](https://spider-themes.net/spider-elements/blog-grid) - Display your blog posts beautifully with customizable layouts that make it easy for readers to explore your content.
-#[**Counter**](https://spider-themes.net/spider-elements/counter) - Show off milestones or achievements with animated counters that grab attention and keep visitors engaged.
-#[**Video Popup**](https://spider-themes.net/spider-elements/video-popup) - Let visitors watch videos in a sleek pop-up window without leaving the page for a smooth viewing experience.
-#[**Integrations**](https://spider-themes.net/spider-elements/integration) - Highlight compatible tools or platforms seamlessly to show how your site works with other services.
-#[**List Items**](https://spider-themes.net/spider-elements/list-item) - Build organized and stylish lists that make information easy to read and visually appealing.
-#[**Team Carousel**](https://spider-themes.net/spider-elements/team-carousel) - Showcase your team members in a dynamic carousel, complete with photos, names, and bios.
-#[**Testimonials**](https://spider-themes.net/spider-elements/testimonials) - Boost trust by displaying customer reviews and feedback in elegant, attention-grabbing designs.
-#[**Timeline**](https://spider-themes.net/spider-elements/timeline) - Tell your story or show events in order with a visually appealing timeline layout.
-#[**Icon Box**](https://spider-themes.net/spider-elements/icon-box) - Highlight your content with eye-catching icons and descriptions that are perfect for drawing attention.
+#[**Accordion**](https://spider-elements.spider-themes.net/accordion) - Easily organize your content with collapsible sections, perfect for FAQs, guides, or detailed information.
+#[**Blog**](https://spider-elements.spider-themes.net/blog-grid) - Display your blog posts beautifully with customizable layouts that make it easy for readers to explore your content.
+#[**Counter**](https://spider-elements.spider-themes.net/counter) - Show off milestones or achievements with animated counters that grab attention and keep visitors engaged.
+#[**Video Popup**](https://spider-elements.spider-themes.net/video-popup) - Let visitors watch videos in a sleek pop-up window without leaving the page for a smooth viewing experience.
+#[**Integrations**](https://spider-elements.spider-themes.net/integration) - Highlight compatible tools or platforms seamlessly to show how your site works with other services.
+#[**List Items**](https://spider-elements.spider-themes.net/list-item) - Build organized and stylish lists that make information easy to read and visually appealing.
+#[**Team Carousel**](https://spider-elements.spider-themes.net/team-carousel) - Showcase your team members in a dynamic carousel, complete with photos, names, and bios.
+#[**Testimonials**](https://spider-elements.spider-themes.net/testimonials) - Boost trust by displaying customer reviews and feedback in elegant, attention-grabbing designs.
+#[**Timeline**](https://spider-elements.spider-themes.net/timeline) - Tell your story or show events in order with a visually appealing timeline layout.
+#[**Icon Box**](https://spider-elements.spider-themes.net/icon-box) - Highlight your content with eye-catching icons and descriptions that are perfect for drawing attention.
 
 
 ### Widget List: available in the Pro version
 
-#[**Accordion Articles**](https://spider-themes.net/spider-elements/accordion-articles) - Simplify content organization with collapsible sections, perfect for FAQs, guides, or detailed information.
-#[**Box Hover**](https://spider-themes.net/spider-elements/box-hover) - Add stylish, interactive hover effects to your content boxes for a modern design touch.
-#[**Flip Box**](https://spider-themes.net/spider-elements/flipbox) - Create dynamic flip effects that reveal additional content with smooth animations.
-#[**Feature Box**](https://spider-themes.net/spider-elements/feature-box) - Showcase key features in an attractive layout that grabs attention.
-#[**Hotspot**](https://spider-themes.net/spider-elements/hotspot) - Add interactive points of interest to your images, ideal for highlighting key details.
-#[**Image Hover**](https://spider-themes.net/spider-elements/image-hover) - Bring images to life with eye-catching hover effects that engage visitors.
-#[**Image Slider**](https://spider-themes.net/spider-elements/image-slider) - Create beautiful, dynamic slideshows to display multiple images seamlessly.
-#[**Marquee Slider**](https://spider-themes.net/spider-elements/marquee-slider) - Showcase scrolling content in a dynamic, visually appealing way.
-#[**Stack Image**](https://spider-themes.net/spider-elements/stack-image) - Display your images in a creative stacked layout for a unique visual impact.
-#[**Skill Showcase**](https://spider-themes.net/spider-elements/skill-showcase) - Highlight your skills or services with sleek, attention-grabbing designs.
-#[**Video Playlist**](https://spider-themes.net/spider-elements/video-playlist) - Share multiple videos in one place with an easy-to-navigate playlist that keeps visitors engaged.
-#[**Tabs**](https://spider-themes.net/spider-elements/tabs) - Keep your content neat and organized by using tabs to improve navigation and user experience.
-#[**Alerts Box**](https://spider-themes.net/spider-elements/notice-message) - Make important announcements stand out with customizable alerts featuring unique styles, colors, and icons.
-#[**Cheat Sheet**](https://spider-themes.net/spider-elements/cheatsheet) - Create a handy reference guide to help users quickly find key information or navigate your features.
+#[**Accordion Articles**](https://spider-elements.spider-themes.net/accordion-articles) - Simplify content organization with collapsible sections, perfect for FAQs, guides, or detailed information.
+#[**Box Hover**](https://spider-elements.spider-themes.net/box-hover) - Add stylish, interactive hover effects to your content boxes for a modern design touch.
+#[**Flip Box**](https://spider-elements.spider-themes.net/flipbox) - Create dynamic flip effects that reveal additional content with smooth animations.
+#[**Feature Box**](https://spider-elements.spider-themes.net/feature-box) - Showcase key features in an attractive layout that grabs attention.
+#[**Hotspot**](https://spider-elements.spider-themes.net/hotspot) - Add interactive points of interest to your images, ideal for highlighting key details.
+#[**Image Hover**](https://spider-elements.spider-themes.net/image-hover) - Bring images to life with eye-catching hover effects that engage visitors.
+#[**Image Slider**](https://spider-elements.spider-themes.net/image-slider) - Create beautiful, dynamic slideshows to display multiple images seamlessly.
+#[**Marquee Slider**](https://spider-elements.spider-themes.net/marquee-slider) - Showcase scrolling content in a dynamic, visually appealing way.
+#[**Stack Image**](https://spider-elements.spider-themes.net/stack-image) - Display your images in a creative stacked layout for a unique visual impact.
+#[**Skill Showcase**](https://spider-elements.spider-themes.net/skill-showcase) - Highlight your skills or services with sleek, attention-grabbing designs.
+#[**Video Playlist**](https://spider-elements.spider-themes.net/video-playlist) - Share multiple videos in one place with an easy-to-navigate playlist that keeps visitors engaged.
+#[**Tabs**](https://spider-elements.spider-themes.net/tabs) - Keep your content neat and organized by using tabs to improve navigation and user experience.
+#[**Alerts Box**](https://spider-elements.spider-themes.net/notice-message) - Make important announcements stand out with customizable alerts featuring unique styles, colors, and icons.
+#[**Cheat Sheet**](https://spider-elements.spider-themes.net/cheatsheet) - Create a handy reference guide to help users quickly find key information or navigate your features.
 
 == Screenshots ==
 1. Dashboard
