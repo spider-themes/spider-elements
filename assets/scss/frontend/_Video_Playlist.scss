@@ -14,13 +14,7 @@
         }
       }
   }
-
-  &.video-playlist-2 {
-
-  }
-
 }
-
 
 .ycp {
   .belah {
@@ -2274,6 +2268,7 @@ button.swiper-pagination-bullet {
   display: block;
   margin: auto;
   max-width: 100%;
+  box-shadow: none !important;
 }
 
 .js-slider--main .swiper-slide {

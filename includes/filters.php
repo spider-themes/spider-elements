@@ -30,7 +30,8 @@ add_action( 'admin_init', function () {
 	// Retrieve the field values from the form
 	if ( isset( $_POST['elements-submit'] ) ) {
 
-		if ( ! wp_verify_nonce( $_POST['spel_elements_nonce'], 'spel_elements_nonce' ) ) {
+		// Verify nonce for security
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'spel_elements_nonce' ) ) {
 			return;
 		}
 
@@ -123,7 +124,8 @@ add_action( 'admin_init', function () {
 
 	if ( isset( $_POST['features-submit'] ) ) {
 
-		if ( ! wp_verify_nonce( $_POST['spel_features_nonce'], 'spel_features_nonce' ) ) {
+		// Verify nonce for security
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'spel_features_nonce' ) ) {
 			return;
 		}
 

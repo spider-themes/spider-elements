@@ -41,7 +41,7 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
             <button type="submit" name="features-submit" id="features-submit" class="dashboard_btn save_btn">
 				<?php esc_html_e( 'Save Changes', 'spider-elements' ); ?>
             </button>
-            <?php wp_nonce_field( 'spel_features_nonce' ); ?>
+            <?php wp_nonce_field( 'spel_features_nonce', '_wpnonce' ); ?>
         </div>
 
     </div>

@@ -4979,6 +4979,7 @@ body.remove .tab_fixed.header_tab_items {
 .spel-video-playlist.video-playlist-1 .video_list .video_list_inner .list .videos_meta i {
   padding-right: 4px;
 }
+
 .ycp .belah .luhur {
   height: 74px;
 }
@@ -6846,6 +6847,7 @@ button.swiper-pagination-bullet {
   display: block;
   margin: auto;
   max-width: 100%;
+  box-shadow: none !important;
 }
 
 .js-slider--main .swiper-slide {
