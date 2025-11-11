@@ -1,7 +1,7 @@
 === Spider Elements - Crafted UX First Addons for Elementor ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
 Tags:  elementor addons, elementor widget, elementor, widgets for elementor, spider element
-Stable tag: 1.6.6
+Stable tag: 1.6.7
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -103,12 +103,22 @@ WordPress Memory limit of 128 MB or higher is preferred
 
 == Changelog ==
 
-= v1.6.6 (1 October 2025) =
+= 1.6.7 (11 November 2025) =
+Fixed: Blog title function issue resolved to ensure proper display
+Fixed: Nonce field name mismatch corrected in filters.php for secure form handling
+Fixed: Missing Elementor Utils class import causing fatal error in Video Playlist widget rendering
+Fixed: Video Playlist widget showing raw paragraph tags in description by replacing esc_html with wp_kses_post
+Tweaked: Adjusted alert margins in CSS for improved visual spacing
+Secured: Added nonce verification for form submissions to strengthen security
+Secured: Added proper sanitization in nonce verification for safer data validation
+Updated: Dashboard templates modified to maintain consistent field naming conventions
+
+= 1.6.6 (1 October 2025) =
 Fixed: Vulnerability issues
 Tweaked: Spider Elements widget prefix (SE) has been removed
 Updated: Freemius SDK updated to 2.12.2
 
-= v1.6.5 (23 Jun 2025) =
+= 1.6.5 (23 Jun 2025) =
 New: Added pagination and show/hide options to presets 1, 2, 3, and 4 of the Blog Grid widget
 Fixed: Free and Pro Widget and features checked issue on Dashboard
 Fixed: Testimonials ratting issue layout 3,4 and 6
@@ -117,12 +127,12 @@ Tweaked: Blog carousel nav arrow
 Tweaked: ID added in the sticky tabs
 Tweaked: SE prefix added before Widgets name
 
-= v1.6.4 (15 May 2025) =
+= 1.6.4 (15 May 2025) =
 Fixed: Resolved Pagination issue of Blog grid widget
 Tweaked: Compatibility with docy dark mode
 Updated: Freemius SDK updated to 2.12.0
 
-= v1.6.3 (07 May 2025) =
+= 1.6.3 (07 May 2025) =
 Fixed: Testimonial widget preset 07
 Fixed: Deprecation warning by wrapping constant in hook
 Tweaked: Changed the preset image of "Cheat Sheet & video playlist" widget
@@ -130,25 +140,25 @@ Tweaked: Dynamic Accent color gets from Elementor Global Accent Colors settings
 Tweaked: Default icon removed from Tab item
 Tweaked: Alert widget design improved
 
-= v1.6.2 (19 March 2025) =
+= 1.6.2 (19 March 2025) =
 New: Quote icon added in the testimonial widget
 Fixed: Link issue fixed in the Icon box widget
 Fixed: Resolved pagination option in the Blog widget
 Tweaked: Dashboard design improved
 
-= v1.6.1 (05 February 2025) =
+= 1.6.1 (05 February 2025) =
 Fixed: Resolved some control issue of Accordion, Tabs, Alert Box & Testimonial widget
 Tweaked: Rename the video playlist widget name
 Updated: Freemius SDK updated to 2.11.0
 
-= v1.6.0 (23 December 2024) =
+= 1.6.0 (23 December 2024) =
 Tweaked: Improved Cheat Sheet, Integration, List Item, Blog Grid, Accordion, Icon Box, Testimonial, Video Playlist, Alert, and Team Carousel widgets
 Tweaked: Updated script loading dependencies and removed unused files and code
 Tweaked: Improved Dashboard design
 Tweaked: Improved script performance
 Tweaked: Removed deprecated ionicons cnd and internal script
 
-= v1.5.0 (19 November 2024) =
+= 1.5.0 (19 November 2024) =
 New: RTL (Right to Left language) compatibility added
 New: Added documentation and demo links to the Dashboard widget list
 Fixed: Resolved some content and style control issues in the following widgets: Accordion, Cheat Sheet, Tabs, Testimonial, Blog, Counter, Icon Box, List Item, Team Carousel, and Video Playlist
@@ -158,11 +168,11 @@ Tweaked: Dashboard design Improve
 Tweaked: Replace some preset image & widget icon
 Updated: Freemius SDK Updated
 
-= v1.1.0 (15 June 2024) =
+= 1.1.0 (15 June 2024) =
 New: Added 'Icon Box' Widget 
 New: Pagination added in the blog widget
 Fixed: Testimonial Widget
 Fixed: Left/right arrow in the tabs widget
 
-= v1.0.0 =
+= 1.0.0 =
 * Initial release

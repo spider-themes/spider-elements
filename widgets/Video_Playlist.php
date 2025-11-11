@@ -126,7 +126,7 @@ class Video_Playlist extends Widget_Base {
 		//======================= Title Section =======================//
 		$this->start_controls_section(
 			'title_opt_sec', [
-				'label'     => esc_html__( 'Title', 'spider-elements' ),
+				'label'     => esc_html__( 'Titles', 'spider-elements' ),
 				'condition' => [
 					'style' => [ '1' ]
 				]
@@ -220,7 +220,7 @@ class Video_Playlist extends Widget_Base {
 
 		$repeater2->add_control(
 			'video_caption', [
-				'label'       => esc_html__( 'Description', 'spider-elements' ),
+				'label'       => esc_html__( 'Descriptions', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'placeholder' => esc_html__( 'Type your caption here', 'spider-elements' ),
 				'description' => esc_html__( '<strong>Note: </strong>This field is applicable for Preset Two', 'spider-elements' ),

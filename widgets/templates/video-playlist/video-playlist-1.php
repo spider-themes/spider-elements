@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php
 				if ( ! empty( $settings['playlist_title'] ) ) :
                     echo sprintf(
-                        '<%1$s class="play_list_title" data-animation="wow fadeInUp" data-wow-delay="0.2s"> %2$s </%1$s>', esc_html(Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' )), esc_html($settings['playlist_title'])
+                        '<%1$s class="play_list_title" data-animation="wow fadeInUp" data-wow-delay="0.2s"> %2$s </%1$s>', esc_html( \Elementor\Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' ) ), esc_html($settings['playlist_title'])
                     );
                 endif;
                 ?>
