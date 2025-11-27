@@ -1,0 +1,22 @@
+body.body_dark {
+
+//testimonial css
+  .feedback-block-one {
+    .logo {
+      img {
+        filter: invert(1) !important;
+      }
+    }
+  }
+
+  .big-circle {
+    background: var(--bs-white) !important;
+    .brand-icon {
+      .lazy-img {
+        filter: invert(1) !important;
+      }
+    }
+  }
+
+
+}

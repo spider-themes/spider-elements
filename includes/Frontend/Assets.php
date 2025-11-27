@@ -82,6 +82,7 @@ class Assets
             }
         }
 
+        wp_register_style('spel-dark-mode', SPEL_CSS . '/dark-mode.css', [], SPEL_VERSION);
         wp_register_style('spel-extension', SPEL_CSS . '/extension.css', [], SPEL_VERSION);
         wp_register_style('font-awesome', SPEL_VEND . '/font-awesome/css/all.css', [], '6.4.0');
 		wp_register_style('slick-theme', SPEL_VEND . '/slick/slick-theme.css', [], SPEL_VERSION);
