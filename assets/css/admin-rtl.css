@@ -26,4 +26,8 @@ body {
   margin-left: 5px;
 }
 
+.dashboard_banner.integration_banner {
+  text-align: right !important;
+}
+
 /*# sourceMappingURL=admin-rtl.css.map */

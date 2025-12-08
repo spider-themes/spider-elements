@@ -2,6 +2,7 @@ body {
   direction: rtl;
   unicode-bidi: embed;
 }
+
 .sidebar_navigation {
   margin-left: 30px;
 
@@ -33,6 +34,7 @@ body {
           margin-left: 12px;
         }
       }
+
       .dashboard_btn {
         margin-right: 40px;
       }
@@ -56,5 +58,11 @@ body {
       }
     }
 
+  }
+}
+
+.dashboard_banner {
+  &.integration_banner {
+    text-align: right !important;
   }
 }
