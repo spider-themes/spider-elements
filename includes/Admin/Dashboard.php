@@ -15,8 +15,35 @@ class Dashboard {
 
 	const PAGE_ID = 'spider_elements_settings';
 
+	/**
+	 * List of Spider Elements admin page slugs
+	 */
+	private array $plugin_pages = [
+		'spider_elements_settings',
+		'spider_elements_elements',
+		'spider_elements_features',
+		'spider_elements_integration',
+	];
+
 	public function __construct() {
 		add_action( 'admin_menu', [ $this, 'add_menu_page' ] );
+		add_action( 'admin_init', [ $this, 'hide_admin_notices' ] );
+	}
+
+
+	/**
+	 * @return void
+	 * Hide all admin notices on Spider Elements pages.
+	 */
+	public function hide_admin_notices(): void {
+		// Check if we're on a Spider Elements page
+		if ( ! isset( $_GET['page'] ) || ! in_array( $_GET['page'], $this->plugin_pages, true ) ) {
+			return;
+		}
+
+		// Remove all admin notices
+		remove_all_actions( 'admin_notices' );
+		remove_all_actions( 'all_admin_notices' );
 	}
 
 
@@ -25,6 +52,7 @@ class Dashboard {
 	 * Add menu page to the WordPress admin dashboard.
 	 */
 	public function add_menu_page(): void {
+		// Add main menu page
 		add_menu_page(
 			esc_html__( 'Spider Elements', 'spider-elements' ),
 			esc_html__( 'Spider Elements', 'spider-elements' ),
@@ -34,6 +62,61 @@ class Dashboard {
 			$this->icon(),
 			30
 		);
+
+		// Add submenus (matching the tab-menu items in sidebar)
+		add_submenu_page(
+			'spider_elements_settings',
+			esc_html__( 'Dashboard', 'spider-elements' ),
+			esc_html__( 'Dashboard', 'spider-elements' ),
+			'manage_options',
+			'spider_elements_settings', // Same as parent to make it the default
+			[ $this, 'render_plugin_page' ]
+		);
+
+		add_submenu_page(
+			'spider_elements_settings',
+			esc_html__( 'Elements', 'spider-elements' ),
+			esc_html__( 'Elements', 'spider-elements' ),
+			'manage_options',
+			'spider_elements_elements',
+			[ $this, 'render_plugin_page' ]
+		);
+
+		add_submenu_page(
+			'spider_elements_settings',
+			esc_html__( 'Features', 'spider-elements' ),
+			esc_html__( 'Features', 'spider-elements' ),
+			'manage_options',
+			'spider_elements_features',
+			[ $this, 'render_plugin_page' ]
+		);
+
+		add_submenu_page(
+			'spider_elements_settings',
+			esc_html__( 'Integration', 'spider-elements' ),
+			esc_html__( 'Integration', 'spider-elements' ),
+			'manage_options',
+			'spider_elements_integration',
+			[ $this, 'render_plugin_page' ]
+		);
+	}
+
+
+	/**
+	 * @return string
+	 * Get the active tab based on the current page URL.
+	 */
+	public function get_active_tab(): string {
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : 'spider_elements_settings';
+		
+		$tab_map = [
+			'spider_elements_settings'    => 'welcome',
+			'spider_elements_elements'    => 'elements',
+			'spider_elements_features'    => 'features',
+			'spider_elements_integration' => 'integration',
+		];
+
+		return $tab_map[ $page ] ?? 'welcome';
 	}
 
 
@@ -43,8 +126,25 @@ class Dashboard {
 	 * This is where you would add your custom HTML
 	 */
 	public function render_plugin_page(): void {
+		// Get the active tab based on which submenu was clicked
+		$active_tab = $this->get_active_tab();
+		
+		// Map tab names to submenu page slugs
+		$tab_to_page = [
+			'welcome'     => 'spider_elements_settings',
+			'elements'    => 'spider_elements_elements',
+			'features'    => 'spider_elements_features',
+			'integration' => 'spider_elements_integration',
+		];
+		
+		// Get the page slug for the active tab
+		$current_page = $tab_to_page[ $active_tab ] ?? 'spider_elements_settings';
+		$form_action = admin_url( 'admin.php?page=' . $current_page );
 
-		echo '<form action="" method="post" id="spel_settings" name="spel_settings" class="wrapper spel_dashboard">';
+		echo '<form action="' . esc_url( $form_action ) . '" method="post" id="spel_settings" name="spel_settings" class="wrapper spel_dashboard" data-active-tab="' . esc_attr( $active_tab ) . '">';
+		
+		// Hidden field to track current active tab (updated by JavaScript)
+		echo '<input type="hidden" name="spel_active_tab" id="spel_active_tab" value="' . esc_attr( $active_tab ) . '">';
 
 		//Sidebar's menu
 		echo '<div class="sidebar_navigation">';

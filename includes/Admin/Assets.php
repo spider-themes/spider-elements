@@ -33,7 +33,15 @@ class Assets {
 	public function admin_scripts(): void
     {
 
-        if ( isset( $_GET['page'] ) && $_GET['page'] === 'spider_elements_settings' ) {
+        // List of all Spider Elements admin pages
+        $spider_elements_pages = [
+            'spider_elements_settings',
+            'spider_elements_elements',
+            'spider_elements_features',
+            'spider_elements_integration',
+        ];
+
+        if ( isset( $_GET['page'] ) && in_array( $_GET['page'], $spider_elements_pages, true ) ) {
 
             // Register Admin Panel Style's
             wp_enqueue_style( 'spel-icomoon', SPEL_VEND . '/icomoon/style.css', [], SPEL_VERSION );

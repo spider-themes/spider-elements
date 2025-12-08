@@ -34,7 +34,7 @@ $docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', '
             <button type="submit" name="elements-submit" id="elements-submit" class="dashboard_btn save_btn">
 				<?php esc_html_e( 'Save Changes', 'spider-elements' ); ?>
             </button>
-            <?php wp_nonce_field( 'spel_elements_nonce', '_wpnonce' ); ?>
+            <?php wp_nonce_field( 'spel_elements_nonce', 'spel_elements_nonce' ); ?>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-;(function ($) {
+; (function ($) {
 
     "use strict";
 
@@ -30,11 +30,11 @@
                     circumference - (percent * circumference) / 100;
 
                 // Transition progress for 1.25 seconds
-                $(this).find($("circle.complete")).animate({"stroke-dashoffset": strokeDashOffset}, 1250);
+                $(this).find($("circle.complete")).animate({ "stroke-dashoffset": strokeDashOffset }, 1250);
             }
         });
     })
-    .trigger("scroll");
+        .trigger("scroll");
 
     // switcher js
     document.addEventListener("DOMContentLoaded", function () {
@@ -96,6 +96,26 @@
 
     $(document).ready(function () {
 
+        // Map of tab content names to WordPress admin submenu page slugs
+        const tabToSubmenuMap = {
+            'welcome': 'spider_elements_settings',
+            'elements': 'spider_elements_elements',
+            'features': 'spider_elements_features',
+            'integration': 'spider_elements_integration'
+        };
+
+        // Function to update WordPress admin menu active state
+        function updateAdminMenuActiveState(tabName) {
+            let submenuSlug = tabToSubmenuMap[tabName];
+            if (submenuSlug) {
+                // Remove current class from all Spider Elements submenu items
+                $('#toplevel_page_spider_elements_settings ul.wp-submenu li').removeClass('current');
+
+                // Add current class to the matching submenu item
+                $('#toplevel_page_spider_elements_settings ul.wp-submenu li a[href*="' + submenuSlug + '"]').parent().addClass('current');
+            }
+        }
+
         // Set up event listener for tab click
         $(".tab-menu li a").on("click", function () {
             $(this).closest(".tab-menu").find("li a").removeClass("active");
@@ -104,6 +124,7 @@
             $(this).addClass("active");
 
             let target = $(this).attr("href");
+            let tabName = $(this).data('content');
 
             $(".tab-box")
                 .removeClass("active")
@@ -117,7 +138,20 @@
             filterMasonryThree();
 
             // Set a cookie to remember the active button
-            setCookie('spe_settings_current_tab', $(this).data('content'), 1);
+            setCookie('spe_settings_current_tab', tabName, 1);
+
+            // Update WordPress admin menu active state
+            updateAdminMenuActiveState(tabName);
+
+            // Update hidden input field for form submission
+            $('#spel_active_tab').val(tabName);
+
+            // Update form action URL to redirect to the correct submenu after save
+            let submenuSlug = tabToSubmenuMap[tabName];
+            if (submenuSlug) {
+                let newAction = 'admin.php?page=' + submenuSlug;
+                $('#spel_settings').attr('action', newAction);
+            }
 
             return false;
         });
@@ -147,16 +181,26 @@
 
         // Remain the last active settings tab
         function spel_keep_settings_current_tab() {
+            // First priority: Check for active tab from URL (via data attribute set by server)
+            let spelDashboard = $('#spel_settings');
+            let activeButton = spelDashboard.data('active-tab');
 
-            let activeButton = getCookie('spe_settings_current_tab');
+            // Fallback to cookie if no data attribute (for in-page sidebar tab clicks)
+            if (!activeButton) {
+                activeButton = getCookie('spe_settings_current_tab');
+            }
+
             if (activeButton) {
-                // Tab active
+                // Update sidebar tab-menu active state
                 $('.tab-menu .tab-menu-link[data-content="' + activeButton + '"]').addClass('active');
                 $('.tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
 
-                // Tab content active
+                // Update tab content active state
+                $('.tab_contents .tab-box').removeClass('active');
                 $('.tab_contents .tab-box#' + activeButton).addClass('active');
-                $('.tab_contents .tab-box:not(#' + activeButton + ')').removeClass('active');
+
+                // Also sync WordPress admin menu active state
+                updateAdminMenuActiveState(activeButton);
             }
         }
 
@@ -300,7 +344,7 @@
                     .removeClass("save-now")
                     .removeAttr("disabled")
                     .css("cursor", "pointer"
-                );
+                    );
             }
         });
 
