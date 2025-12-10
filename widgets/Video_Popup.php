@@ -428,6 +428,9 @@ class Video_Popup extends Widget_Base {
 		extract( $settings ); //extract all settings array to variables converted to name of a key
 
 		//================= Template Parts =================//
-		include "templates/video-popup/video-popup-{$settings['style']}.php";
+		// Whitelist valid style values to prevent Local File Inclusion
+		$allowed_styles = array( '1', '2' );
+		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
+		include __DIR__ . "/templates/video-popup/video-popup-{$style}.php";
 	}
 }

@@ -1528,7 +1528,10 @@ class Blog_Grid extends Widget_Base {
 		$post_query = new \WP_Query( $query );
 
 		//============ Template Part =============//
-		include "templates/blog-grid/blog-{$settings['style']}.php";
+		// Whitelist valid style values to prevent Local File Inclusion
+		$allowed_styles = array( '1', '2', '3', '4', '5' );
+		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
+		include __DIR__ . "/templates/blog-grid/blog-{$style}.php";
 	}
 
 }

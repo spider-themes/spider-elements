@@ -982,6 +982,9 @@ class Icon_Box extends Widget_Base {
 		$box_title_tag = Utils::validate_html_tag( $settings['box_title_tag'] ?? 'h6' );
 
 		//================= Template Parts =================//
-		include "templates/Icon-box/icon-box{$settings['style']}.php";
+		// Whitelist valid style values to prevent Local File Inclusion
+		$allowed_styles = array( '1', '2' );
+		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
+		include __DIR__ . "/templates/Icon-box/icon-box{$style}.php";
 	}
 }

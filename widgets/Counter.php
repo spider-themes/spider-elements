@@ -438,10 +438,13 @@ class Counter extends Widget_Base {
 		extract( $settings ); //extract all settings array to variables converted to name of key
 
 		//================= Template Parts =================//
+		// Whitelist valid style values to prevent Local File Inclusion
+		$allowed_styles = array( '1', '2' );
+		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		if ( spel_is_premium() ) {
-			include "templates/counter/counter-{$settings['style']}.php";
+			include __DIR__ . "/templates/counter/counter-{$style}.php";
 		} else {
-			include "templates/counter/counter-1.php";
+			include __DIR__ . "/templates/counter/counter-1.php";
 		}
 
 	}

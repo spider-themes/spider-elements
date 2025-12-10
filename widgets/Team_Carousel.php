@@ -351,7 +351,10 @@ class Team_Carousel extends Widget_Base {
 		extract( $settings ); //extract all settings array to variables converted to name of key
 		$team_id = $this->get_id();
 		//================= Template Parts =================//
-		include "templates/team/team-{$settings['style']}.php";
+		// Whitelist valid style values to prevent Local File Inclusion
+		$allowed_styles = array( '1', '2' );
+		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
+		include __DIR__ . "/templates/team/team-{$style}.php";
 	}
 
 

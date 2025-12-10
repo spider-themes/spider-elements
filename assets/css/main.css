@@ -4980,11 +4980,11 @@ body.remove .tab_fixed.header_tab_items {
   padding-right: 4px;
 }
 
-.ycp .belah .luhur {
-  height: 74px;
-}
 .ycp .belah .luhur span.about {
   display: none;
+}
+.ycp .belah .luhur {
+  height: 74px;
 }
 .ycp .belah .luhur span.tombol {
   font-size: 14px;
@@ -5992,12 +5992,12 @@ body.remove .tab_fixed.header_tab_items {
 .modal_slider_css .modal-dialog .modal-content .modal-body .posting .video_item .video-js .vjs-time-tooltip {
   display: none;
 }
+.modal_slider_css .modal-dialog .modal-content .modal-body .posting .video_item .video-js .vjs-progress-control .vjs-play-progress:before {
+  display: none;
+}
 .modal_slider_css .modal-dialog .modal-content .modal-body .posting .video_item .video-js .vjs-progress-control .vjs-play-progress {
   background-color: #fff;
   height: 5px;
-}
-.modal_slider_css .modal-dialog .modal-content .modal-body .posting .video_item .video-js .vjs-progress-control .vjs-play-progress:before {
-  display: none;
 }
 .modal_slider_css .modal-dialog .modal-content .modal-body .posting .video_item .video-js .vjs-progress-control .vjs-load-progress {
   background-color: #9da2a6;
