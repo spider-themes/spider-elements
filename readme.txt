@@ -1,7 +1,7 @@
 === Spider Elements - Premium Elementor Widgets & Addons Library ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
 Tags: elementor widgets, elementor addons, elementor, page builder, drag and drop
-Stable tag: 1.6.7
+Stable tag: 1.7.0
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -200,6 +200,14 @@ After installation, you'll see a "Spider Elements" category in your Elementor wi
 Spider Elements is developed by [Spider Themes](https://spider-themes.net), a dedicated team of WordPress developers passionate about creating high-quality Elementor addons and tools.
 
 == Changelog ==
+
+= 1.7.0 (11 December 2025) =
+New: Added submenu items for improved dashboard navigation
+Fixed: Tab switcher functionality issue in the Spider Elements dashboard
+Tweaked: Minor UI enhancements and general performance improvements across the dashboard
+Improved: Enhanced RTL dashboard layout for better usability
+Security: Implemented LFI (Local File Inclusion) protection to prevent unauthorized file access
+Updated: Freemius SDK updated to 2.13.0
 
 = 1.6.7 (11 November 2025) =
 Fixed: Blog title function issue resolved to ensure proper display
