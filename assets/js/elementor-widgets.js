@@ -12,7 +12,6 @@
                 "docly_alerts_box.default":                     spiderElements.alertBox,
                 "spel_videos_playlist.default":                 spiderElements.videoPlaylist,
                 "docy_team_carousel.default":                   spiderElements.teamslider,
-                "spel_before_after.default":                    spiderElements.beforeAfter,
                 "docy_video_popup.default":                     spiderElements.videoPopup,
                 "spel_accordion.default":                       spiderElements.accordions,
                 "docly_cheatsheet.default":                     spiderElements.cheatsheet,
@@ -144,21 +143,6 @@
                 return false;
             });
         },
-
-        //============================== Start Before After =============================//
-        beforeAfter: function ($scope) {
-            let beforeAfter = $scope.find(".beforeAfter");
-
-            if (beforeAfter.length > 0) {
-                beforeAfter.beforeAfter({
-                    movable: true,
-                    clickMove: true,
-                    position: 49.65,
-                    separatorColor: "#fafafa",
-                    bulletColor: "#fff",
-                });
-            }
-        }, //End Before After
 
         //============================== Video Popup =============================//
         videoPopup: function ($scope) {

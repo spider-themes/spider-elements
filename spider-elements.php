@@ -348,7 +348,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 				'docly_list_item'     => 'List_Item',
 				'docy_team_carousel'  => 'Team_Carousel',
 				'docy_integrations'   => 'Integrations',
-				'spel_before_after'   => 'Before_after',
 				'docy_video_popup'    => 'Video_Popup',
 				'docy_blog_grid'      => 'Blog_Grid',
 				'spe_timeline_widget' => 'Timeline',
