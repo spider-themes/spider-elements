@@ -3,45 +3,71 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$integrations = [
-	[
+$integrations = array(
+	array(
 		'slug'     => 'bbp-core',
 		'basename' => 'bbp-core/bbp-core.php',
 		'logo'     => SPEL_IMG . '/dashboard/bbp-core-logo.svg',
-		'title'    => esc_html__( 'BBP Core', 'spider-elements' ),
-		'desc'     => esc_html__( 'Expand bbPress powered forums with useful features like - private reply, solved topics ...', 'spider-elements' ),
-	],
-	[
+		'title'    => esc_html__( 'Forumax', 'spider-elements' ),
+		'desc'     => esc_html__( 'A complete, self-contained platform for building support forums, or discussion communities.', 'spider-elements' ),
+		'category' => 'community',
+	),
+	array(
 		'slug'     => 'eazydocs',
 		'basename' => 'eazydocs/eazydocs.php',
 		'logo'     => SPEL_IMG . '/dashboard/eazydocs-logo.png',
 		'title'    => esc_html__( 'EazyDocs', 'spider-elements' ),
 		'desc'     => esc_html__( 'A powerful & beautiful documentation, knowledge base builder plugin.', 'spider-elements' ),
-	],
-	[
+		'category' => 'documentation',
+	),
+	array(
 		'slug'     => 'changeloger',
 		'basename' => 'changeloger/changeloger.php',
 		'logo'     => SPEL_IMG . '/dashboard/changeloger-logo-black.svg',
 		'title'    => esc_html__( 'Changeloger', 'spider-elements' ),
 		'desc'     => esc_html__( 'Auto-convert plain text changelogs into engaging visuals for WordPress.', 'spider-elements' ),
-	],
-    [
-        'slug'     => 'advanced-accordion-block',
-        'basename' => 'advanced-accordion-block/advanced-accordion-block.php',
-        'logo'     => SPEL_IMG . '/dashboard/AAGB-logo.svg',
-        'title'    => esc_html__( 'Advanced Accordion Block', 'spider-elements' ),
-        'desc'     => esc_html__( 'A custom Gutenberg Block that allows to showcase the content in accordion mode. It also helps to build FAQ sections easily.',
-            'spider-elements' ),
-    ],
-];
+		'category' => 'utility',
+	),
+	array(
+		'slug'     => 'advanced-accordion-block',
+		'basename' => 'advanced-accordion-block/advanced-accordion-block.php',
+		'logo'     => SPEL_IMG . '/dashboard/AAGB-logo.svg',
+		'title'    => esc_html__( 'Advanced Accordion Block', 'spider-elements' ),
+		'desc'     => esc_html__( '#1 WordPress plugin for creating professional FAQ sections, expandable content accordions.', 'spider-elements' ),
+		'category' => 'gutenberg',
+	),
+	array(
+		'slug'     => 'antimanual',
+		'basename' => 'antimanual/antimanual.php',
+		'logo'     => SPEL_IMG . '/dashboard/antimanual-logo.png',
+		'title'    => esc_html__( 'Antimanual', 'spider-elements' ),
+		'desc'     => esc_html__( 'The ultimate AI powerhouse for your website. Do automatically with AI instead of manually.', 'spider-elements' ),
+		'category' => 'ai',
+	),
+	array(
+		'slug'     => 'jobus',
+		'basename' => 'jobus/jobus.php',
+		'logo'     => SPEL_IMG . '/dashboard/jobus-logo.png',
+		'title'    => esc_html__( 'Jobus', 'spider-elements' ),
+		'desc'     => esc_html__( 'A modern and powerful plugin designed to transform your website into a fully functional Job portal.', 'spider-elements' ),
+		'category' => 'community',
+	),
+);
 ?>
 
 <div id="integration" class="tab-box">
     <div class="dashboard_banner integration_banner">
-        <h2><?php esc_html_e( 'Elevate Your WordPress Website to the Next Level!', 'spider-elements' ); ?></h2>
-        <p><?php esc_html_e( 'Explore our versatile range of plugins tailored to meet every need for WordPress, Gutenberg, Elementor, and WooCommerce. Discover solutions that empower your site with enhanced functionality and seamless performance.', 'spider-elements' ); ?></p>
+        <div class="banner_content">
+            <span class="version_badge">
+                <i class="icon-star"></i>
+                <?php esc_html_e( 'Recommended Plugins', 'spider-elements' ); ?>
+            </span>
+            <h2><?php esc_html_e( 'Elevate Your WordPress Website to the Next Level!', 'spider-elements' ); ?></h2>
+            <p><?php esc_html_e( 'Explore our versatile range of plugins tailored to meet every need for WordPress, Gutenberg, Elementor, and WooCommerce. Discover solutions that empower your site with enhanced functionality and seamless performance.', 'spider-elements' ); ?></p>
+        </div>
     </div>
-    <div class="ezd-grid ezd-grid-cols-12">
+
+    <div class="ezd-grid ezd-grid-cols-12" style="margin-top: 24px;">
 		<?php
 		if ( isset( $integrations ) && is_array( $integrations ) ) {
 			foreach ( $integrations as $plugin ) {
@@ -53,6 +79,14 @@ $integrations = [
 				$plugin_installation_url = $plugin_data['installation_url'] ?? '';
 				$plugin_status_label     = isset( $plugin_data['status'] ) ? ( $plugin_data['status'] == 'activated' ? 'activated' : '' ) : '';
 				$plugin_status_title     = $plugin_data['title'] ?? esc_html__( 'Activate', 'spider-elements' );
+
+				// Determine button icon based on status
+				$button_icon = 'icon-download';
+				if ( $plugin_status === 'activated' ) {
+					$button_icon = 'icon-check';
+				} elseif ( $plugin_status === 'inactive' ) {
+					$button_icon = 'icon-power';
+				}
 				?>
                 <div class="ezd-lg-col-4">
                     <div class="element_box integration_item ezd-text-center">
@@ -61,12 +95,13 @@ $integrations = [
                         <p><?php echo esc_html( $plugin['desc'] ); ?></p>
 
 						<?php
-						echo sprintf(
-							'<a data-plugin_status="%1$s" data-activation_url="%2$s" href="%3$s" class="dashboard_btn %4$s">%5$s</a>',
+						printf(
+							'<a data-plugin_status="%1$s" data-activation_url="%2$s" href="%3$s" class="dashboard_btn %4$s"><i class="%5$s"></i>%6$s</a>',
 							esc_attr( $plugin_status ),
 							esc_url( $plugin_activation_url ),
 							esc_url( $plugin_status === 'not_installed' ? $plugin_installation_url : $plugin_activation_url ),
 							esc_attr( $plugin_status_label ),
+							esc_attr( $button_icon ),
 							esc_html( $plugin_status_title )
 						);
 						?>

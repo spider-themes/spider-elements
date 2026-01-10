@@ -10,6 +10,9 @@ $elements         = Module_Settings::get_widget_settings();
 $element_opt      = get_option( 'spe_widget_settings' );
 $checked_global   = ( ! isset( $element_opt['element_global_switcher'] ) || $element_opt['element_global_switcher'] === 'on' ) ? ' checked' : '';
 $docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 'docly_alerts_box' ];
+
+// Count widgets for search placeholder
+$total_widgets = isset( $elements['spider_elements_widgets'] ) ? count( $elements['spider_elements_widgets'] ) : 0;
 ?>
 <div id="elements" class="tab-box">
     <div class="elements_tab_menu">
@@ -29,13 +32,21 @@ $docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', '
                            class="check element_global_switcher" <?php echo esc_attr( $checked_global ) ?>>
                     <label class="b switch" for="element_switcher"></label>
                 </div>
-                <label class="toggler" id="element_enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>
+                <label class="toggler" id="element_enabled"><?php esc_html_e( 'Enable All', 'spider-elements' ); ?></label>
             </div>
             <button type="submit" name="elements-submit" id="elements-submit" class="dashboard_btn save_btn">
+                <i class="icon-check"></i>
 				<?php esc_html_e( 'Save Changes', 'spider-elements' ); ?>
             </button>
             <?php wp_nonce_field( 'spel_elements_nonce', 'spel_elements_nonce' ); ?>
         </div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="spel_search_box">
+        <span class="search_icon"><i class="icon-search"></i></span>
+        <input type="text" id="spel_widget_search" placeholder="<?php echo esc_attr( sprintf( __( 'Search %d widgets...', 'spider-elements' ), $total_widgets ) ); ?>">
+        <span class="search_count" id="spel_search_count"><?php echo esc_html( $total_widgets ); ?> <?php esc_html_e( 'widgets', 'spider-elements' ); ?></span>
     </div>
 
     <div class="elements_tab" id="elements_filter">
@@ -57,6 +68,7 @@ $docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', '
 
 				$widget_type = $item['widget_type'] ?? '';
 				$widget_name = $item['name'] ?? '';
+				$widget_label = $item['label'] ?? '';
 				$is_pro      = $widget_type === 'pro';
 
 				$is_locked           = $is_pro && ! spel_is_premium() && ! ( spel_unlock_docy_theme() && in_array( $widget_name, $docy_widget_list, true ) );
@@ -72,7 +84,7 @@ $docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', '
 					$widget_checked = ! isset( $element_opt[ $widget_name ] ) || $element_opt[ $widget_name ] === 'on' ? ' checked' : '';
 				}
 				?>
-                <div class="ezd-colum-space-4 <?php echo esc_attr( $item['widget_type'] ) ?>">
+                <div class="ezd-colum-space-4 <?php echo esc_attr( $item['widget_type'] ) ?>" data-widget-name="<?php echo esc_attr( strtolower( $widget_label ) ); ?>">
                     <div class="element_box element_switch badge">
                         <div class="element_content">
 							<?php

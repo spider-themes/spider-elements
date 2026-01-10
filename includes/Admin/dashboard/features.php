@@ -16,6 +16,9 @@ $checked         = ! isset ( $opt['features_global_switcher'] ) ? ' checked' : $
 // Get the current theme
 $theme = wp_get_theme();
 $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
+
+// Count features for search placeholder
+$total_features = isset( $features['spider_elements_features'] ) ? count( $features['spider_elements_features'] ) : 0;
 ?>
 <div id="features" class="tab-box">
 
@@ -36,9 +39,10 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
                     <input type="checkbox" data-id="widget-list" id="features_switcher" name="features_global_switcher" class="check features_global_switcher">
                     <label class="b switch" for="features_switcher"></label>
                 </div>
-                <label class="toggler" id="features_enabled"><?php esc_html_e( 'Enabled All', 'spider-elements' ); ?></label>
+                <label class="toggler" id="features_enabled"><?php esc_html_e( 'Enable All', 'spider-elements' ); ?></label>
             </div>
             <button type="submit" name="features-submit" id="features-submit" class="dashboard_btn save_btn">
+                <i class="icon-check"></i>
 				<?php esc_html_e( 'Save Changes', 'spider-elements' ); ?>
             </button>
             <?php wp_nonce_field( 'spel_features_nonce', 'spel_features_nonce' ); ?>
@@ -46,7 +50,14 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
 
     </div>
 
-    <div class="elements_tab" id="elements_filter">
+    <!-- Search Box -->
+    <div class="spel_search_box">
+        <span class="search_icon"><i class="icon-search"></i></span>
+        <input type="text" id="spel_feature_search" placeholder="<?php echo esc_attr( sprintf( __( 'Search %d features...', 'spider-elements' ), $total_features ) ); ?>">
+        <span class="search_count" id="spel_feature_search_count"><?php echo esc_html( $total_features ); ?> <?php esc_html_e( 'features', 'spider-elements' ); ?></span>
+    </div>
+
+    <div class="elements_tab" id="features_filter">
         <div class="filter_data active" data-filter="*">
             <i class="icon-star"></i>
 			<?php esc_html_e( 'All', 'spider-elements' ); ?>
@@ -68,6 +79,7 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
 
 				$feature_type = $item['feature_type'] ?? '';
 				$feature_name = $item['name'] ?? '';
+				$feature_label = $item['label'] ?? '';
 
 				// Default class and attributes for widgets
 				$is_pro_feature         = $feature_type === 'pro' ? ' pro_popup' : '';
@@ -90,7 +102,7 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
 					$checked    = ! isset( $opt[ $feature_name ] ) ? ' checked' : $is_checked;
 				}
 				?>
-                <div class="ezd-colum-space-4 <?php echo esc_attr( $item['feature_type'] ) ?>">
+                <div class="ezd-colum-space-4 <?php echo esc_attr( $item['feature_type'] ) ?>" data-feature-name="<?php echo esc_attr( strtolower( $feature_label ) ); ?>">
                     <div class="element_box element_switch badge">
                         <div class="element_content">
 							<?php
@@ -99,7 +111,7 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
 								<?php
 							}
 							if ( ! empty( $item['label'] ) ) { ?>
-                                <label for="elementor-video"><?php echo esc_html( $item['label'] ) ?></label>
+                                <label for="<?php echo esc_attr( $item['name'] ) ?>"><?php echo esc_html( $item['label'] ) ?></label>
 								<?php
 							}
 							?>
@@ -118,7 +130,7 @@ $theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi 
                                         </a>
 										<?php
 									}
-									if ( ! empty( $item['demo_url'] ) ) {
+									if ( ! empty( $item['video_url'] ) ) {
 										?>
                                         <a href="<?php echo esc_url( $item['video_url'] ) ?>" class="tooltip-top" data-tooltip="<?php echo esc_attr( sprintf( __( 'View %s Video Tutorial', 'spider-elements' ), $item['label'] ) ); ?>"
                                            target="_blank">

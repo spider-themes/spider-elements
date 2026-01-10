@@ -2,6 +2,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
+
+$current_page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : 'spider_elements_settings';
+$tab_map = array(
+    'spider_elements_settings'    => 'welcome',
+    'spider_elements_elements'    => 'elements',
+    'spider_elements_features'    => 'features',
+    'spider_elements_integration' => 'integration',
+);
+$active_tab = $tab_map[ $current_page ] ?? 'welcome';
 ?>
 
 <div class="sticky_sidebar">
@@ -9,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <ul class="tab-menu tab_left_content">
 
         <li>
-            <a href="#welcome" class="tab-menu-link active" data-content="welcome">
+            <a href="#welcome" class="tab-menu-link <?php echo $active_tab === 'welcome' ? 'active' : ''; ?>" data-content="welcome">
                 <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-dashboard"></i>
@@ -23,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </li>
 
         <li>
-            <a href="#elements" class="tab-menu-link" data-content="elements">
+            <a href="#elements" class="tab-menu-link <?php echo $active_tab === 'elements' ? 'active' : ''; ?>" data-content="elements">
                 <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-element"></i>
@@ -37,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </li>
 
         <li>
-            <a href="#features" class="tab-menu-link" data-content="features">
+            <a href="#features" class="tab-menu-link <?php echo $active_tab === 'features' ? 'active' : ''; ?>" data-content="features">
                 <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-feature_two"></i>
@@ -51,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </li>
 
         <li>
-            <a href="#integration" class="tab-menu-link" data-content="integration">
+            <a href="#integration" class="tab-menu-link <?php echo $active_tab === 'integration' ? 'active' : ''; ?>" data-content="integration">
                 <div class="tab_menu_contents">
                     <div class="icon">
                         <i class="icon-setting"></i>

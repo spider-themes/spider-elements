@@ -24,6 +24,7 @@ $rob: "Roboto", sans-serif;
 
 .ezd-grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%;
 }
 
 .ezd-grid-column-full {

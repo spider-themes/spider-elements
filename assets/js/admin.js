@@ -2,6 +2,104 @@
 
     "use strict";
 
+    // ===== Toast Notification System =====
+    window.SpelToast = {
+        show: function (title, message, type = 'success') {
+            // Remove existing toasts
+            $('.spel_toast').remove();
+
+            const iconClass = type === 'success' ? 'icon-check' : 'icon-close';
+            const toast = $(`
+                <div class="spel_toast ${type === 'error' ? 'toast_error' : ''}">
+                    <span class="toast_icon"><i class="${iconClass}"></i></span>
+                    <div class="toast_content">
+                        <h4>${title}</h4>
+                        <p>${message}</p>
+                    </div>
+                    <span class="toast_close"><i class="icon-close"></i></span>
+                </div>
+            `);
+
+            $('body').append(toast);
+
+            // Show toast
+            setTimeout(() => toast.addClass('show'), 100);
+
+            // Auto-hide after 4 seconds
+            setTimeout(() => {
+                toast.removeClass('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+
+            // Close button
+            toast.find('.toast_close').on('click', function () {
+                toast.removeClass('show');
+                setTimeout(() => toast.remove(), 300);
+            });
+        }
+    };
+
+    // ===== Search Functionality =====
+    function initSearchFunctionality() {
+        // Widget Search
+        $('#spel_widget_search').on('input', function () {
+            const searchTerm = $(this).val().toLowerCase().trim();
+            const $items = $('#elements_list .ezd-colum-space-4');
+            let visibleCount = 0;
+
+            $items.each(function () {
+                const widgetName = $(this).data('widget-name') || '';
+                const isMatch = widgetName.includes(searchTerm);
+
+                if (isMatch || searchTerm === '') {
+                    $(this).show().css('opacity', '1');
+                    visibleCount++;
+                } else {
+                    $(this).hide().css('opacity', '0');
+                }
+            });
+
+            // Update count
+            const totalWidgets = $items.length;
+            const countText = searchTerm
+                ? `${visibleCount} of ${totalWidgets} widgets`
+                : `${totalWidgets} widgets`;
+            $('#spel_search_count').text(countText);
+
+            // Re-apply isotope layout
+            $('#elements_list').isotope('layout');
+        });
+
+        // Feature Search
+        $('#spel_feature_search').on('input', function () {
+            const searchTerm = $(this).val().toLowerCase().trim();
+            const $items = $('#features_gallery .ezd-colum-space-4');
+            let visibleCount = 0;
+
+            $items.each(function () {
+                const featureName = $(this).data('feature-name') || '';
+                const isMatch = featureName.includes(searchTerm);
+
+                if (isMatch || searchTerm === '') {
+                    $(this).show().css('opacity', '1');
+                    visibleCount++;
+                } else {
+                    $(this).hide().css('opacity', '0');
+                }
+            });
+
+            // Update count
+            const totalFeatures = $items.length;
+            const countText = searchTerm
+                ? `${visibleCount} of ${totalFeatures} features`
+                : `${totalFeatures} features`;
+            $('#spel_feature_search_count').text(countText);
+
+            // Re-apply isotope layout
+            $('#features_gallery').isotope('layout');
+        });
+    }
+
     // Remove svg.radial-progress .complete inline styling
     $("svg.radial-progress").each(function (index, value) {
         $(this).find($("circle.complete")).removeAttr("style");
@@ -69,7 +167,6 @@
             featureSwitcher = document.getElementById("features_switcher");
 
         if (featureDisable && featureEnable && featureSwitcher) {
-            console.log('Feature switcher found.');
             featureDisable.addEventListener("click", function () {
                 featureSwitcher.checked = false;
                 featureDisable.classList.add("toggler--is-active");
@@ -86,8 +183,6 @@
                 featureEnable.classList.toggle("toggler--is-active");
                 featureDisable.classList.toggle("toggler--is-active");
             });
-        } else {
-            console.log('Feature switcher not found.');
         }
 
 
@@ -96,6 +191,9 @@
 
     $(document).ready(function () {
 
+        // Initialize search functionality
+        initSearchFunctionality();
+
         // Map of tab content names to WordPress admin submenu page slugs
         const tabToSubmenuMap = {
             'welcome': 'spider_elements_settings',
@@ -103,6 +201,9 @@
             'features': 'spider_elements_features',
             'integration': 'spider_elements_integration'
         };
+
+        // LocalStorage key for tab persistence
+        const STORAGE_KEY = 'spel_active_tab';
 
         // Function to update WordPress admin menu active state
         function updateAdminMenuActiveState(tabName) {
@@ -113,6 +214,25 @@
 
                 // Add current class to the matching submenu item
                 $('#toplevel_page_spider_elements_settings ul.wp-submenu li a[href*="' + submenuSlug + '"]').parent().addClass('current');
+            }
+        }
+
+        // Function to save active tab to localStorage
+        function saveActiveTab(tabName) {
+            try {
+                localStorage.setItem(STORAGE_KEY, tabName);
+            } catch (e) {
+                console.warn('Spider Elements: Could not save tab state to localStorage', e);
+            }
+        }
+
+        // Function to get active tab from localStorage
+        function getActiveTab() {
+            try {
+                return localStorage.getItem(STORAGE_KEY);
+            } catch (e) {
+                console.warn('Spider Elements: Could not read tab state from localStorage', e);
+                return null;
             }
         }
 
@@ -137,8 +257,8 @@
             filterMasonryTwo();
             filterMasonryThree();
 
-            // Set a cookie to remember the active button
-            setCookie('spe_settings_current_tab', tabName, 1);
+            // Save active tab to localStorage for persistence after page refresh
+            saveActiveTab(tabName);
 
             // Update WordPress admin menu active state
             updateAdminMenuActiveState(tabName);
@@ -156,52 +276,40 @@
             return false;
         });
 
-        // Function to set a cookie
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + expires + "; path=/";
-        }
-
-        // Function to get a cookie
-        function getCookie(name) {
-            let nameEQ = name + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        // Remain the last active settings tab
+        // Remain the last active settings tab after page refresh
         function spel_keep_settings_current_tab() {
-            // First priority: Check for active tab from URL (via data attribute set by server)
+            // Check if we're on the Spider Elements dashboard page
             let spelDashboard = $('#spel_settings');
-            let activeButton = spelDashboard.data('active-tab');
-
-            // Fallback to cookie if no data attribute (for in-page sidebar tab clicks)
-            if (!activeButton) {
-                activeButton = getCookie('spe_settings_current_tab');
+            if (!spelDashboard.length) {
+                return;
             }
 
-            if (activeButton) {
-                // Update sidebar tab-menu active state
-                $('.tab-menu .tab-menu-link[data-content="' + activeButton + '"]').addClass('active');
-                $('.tab-menu .tab-menu-link:not([data-content="' + activeButton + '"])').removeClass('active');
+            // Priority 1: Check for active tab from localStorage (user's last selection)
+            let activeTab = getActiveTab();
 
-                // Update tab content active state
-                $('.tab_contents .tab-box').removeClass('active');
-                $('.tab_contents .tab-box#' + activeButton).addClass('active');
-
-                // Also sync WordPress admin menu active state
-                updateAdminMenuActiveState(activeButton);
+            // Priority 2: Fallback to server-side data attribute
+            if (!activeTab) {
+                activeTab = spelDashboard.data('active-tab');
             }
+
+            // Priority 3: Default to 'welcome' tab
+            if (!activeTab) {
+                activeTab = 'welcome';
+            }
+
+            // Update sidebar tab-menu active state
+            $('.tab-menu .tab-menu-link').removeClass('active');
+            $('.tab-menu .tab-menu-link[data-content="' + activeTab + '"]').addClass('active');
+
+            // Update tab content active state
+            $('.tab_contents .tab-box').removeClass('active');
+            $('.tab_contents .tab-box#' + activeTab).addClass('active');
+
+            // Sync WordPress admin menu active state
+            updateAdminMenuActiveState(activeTab);
+
+            // Update hidden input field
+            $('#spel_active_tab').val(activeTab);
         }
 
         spel_keep_settings_current_tab();
@@ -219,6 +327,11 @@
                 filter.isotope({
                     itemSelector: ".ezd-colum-space-4",
                     filter: "*",
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false
+                    }
                 });
             });
         }
@@ -234,10 +347,22 @@
             $("#elements_filter div").removeClass("active");
             $(this).addClass("active");
 
+            // Clear search when filter is clicked
+            $('#spel_widget_search').val('');
+            $('#elements_list .ezd-colum-space-4').show().css('opacity', '1');
+
             let selector = $(this).attr("data-filter");
             filter.isotope({
                 filter: selector,
             });
+
+            // Update count
+            const visibleItems = selector === '*'
+                ? $('#elements_list .ezd-colum-space-4').length
+                : $('#elements_list .ezd-colum-space-4' + selector).length;
+            const totalItems = $('#elements_list .ezd-colum-space-4').length;
+            $('#spel_search_count').text(visibleItems + ' widgets');
+
             return false;
         });
     });
@@ -288,6 +413,11 @@
                 filter.isotope({
                     itemSelector: ".ezd-colum-space-4",
                     filter: "*",
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false
+                    }
                 });
             });
         }
@@ -297,15 +427,27 @@
         // Initialize Isotope on page load
         filterMasonryThree();
         var filter = $("#features_gallery");
-        // Add isotope click function
+
+        // Add isotope click function for features
         $("#features_filter div").on("click", function () {
             $("#features_filter div").removeClass("active");
             $(this).addClass("active");
+
+            // Clear search when filter is clicked
+            $('#spel_feature_search').val('');
+            $('#features_gallery .ezd-colum-space-4').show().css('opacity', '1');
 
             var selector = $(this).attr("data-filter");
             filter.isotope({
                 filter: selector,
             });
+
+            // Update count
+            const visibleItems = selector === '*'
+                ? $('#features_gallery .ezd-colum-space-4').length
+                : $('#features_gallery .ezd-colum-space-4' + selector).length;
+            $('#spel_feature_search_count').text(visibleItems + ' features');
+
             return false;
         });
     });
@@ -315,6 +457,20 @@
     });
     $(".pro-close").on("click", function (e) {
         $("#elements_popup1").removeClass("popup-visible");
+    });
+
+    // Close popup on background click
+    $(".elements_pro_popup").on("click", function (e) {
+        if ($(e.target).hasClass('elements_pro_popup')) {
+            $(this).removeClass("popup-visible");
+        }
+    });
+
+    // Close popup on Escape key
+    $(document).on("keyup", function (e) {
+        if (e.key === "Escape") {
+            $(".elements_pro_popup").removeClass("popup-visible");
+        }
     });
 
     if ($(".popup_youtube").length) {
@@ -338,9 +494,9 @@
         elementsList.on("click", function () {
             // Check if the checkbox is checked
             if ($(this).is(":checked")) {
-                $(".dashboard_btn").addClass("save-now");
+                $(".dashboard_btn.save_btn").addClass("save-now");
             } else {
-                $(".dashboard_btn")
+                $(".dashboard_btn.save_btn")
                     .removeClass("save-now")
                     .removeAttr("disabled")
                     .css("cursor", "pointer"
@@ -359,7 +515,7 @@
                 $(this).prop("checked", status).change();
             });
 
-            $(".dashboard_btn")
+            $(".dashboard_btn.save_btn")
                 .addClass("save-now")
                 .removeAttr("disabled")
                 .css("cursor", "pointer");
@@ -368,7 +524,7 @@
         // Individual Switcher for each widget
         let widgetSwitcher = $(".element_right .widget-list:checked");
         widgetSwitcher.on("click", function () {
-            $(".dashboard_btn")
+            $(".dashboard_btn.save_btn")
                 .addClass("save-now")
                 .removeAttr("disabled")
                 .css("cursor", "pointer");
@@ -377,11 +533,33 @@
         // Button Setting Switcher Enable/Disable
         let elementsSettingBtn = $(".elements_tab_menu .menu_right_content .save_btn");
         elementsSettingBtn.on("click", function (event) {
-            //event.preventDefault();
-            //alert('Saved Successfully');
+            // Show toast on save (optional - form will submit normally)
+            // SpelToast.show('Settings Saved', 'Your settings have been saved successfully.');
         });
     }
 
     elementsSaveNowButton();
+
+    // ===== Keyboard Shortcuts =====
+    $(document).on('keydown', function (e) {
+        // Only work on Spider Elements dashboard
+        if (!$('.spel_dashboard').length) return;
+
+        // Ctrl/Cmd + S to save
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+            e.preventDefault();
+            $('.save_btn:visible').first().trigger('click');
+        }
+
+        // Ctrl/Cmd + F to focus search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+            const $activeTab = $('.tab-box.active');
+            const $searchInput = $activeTab.find('input[type="text"]').first();
+            if ($searchInput.length) {
+                e.preventDefault();
+                $searchInput.focus().select();
+            }
+        }
+    });
 
 })(jQuery);

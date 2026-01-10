@@ -172,6 +172,7 @@
           margin-right: 8px;
           display: inline-block;
           line-height: 1;
+          position: relative; // Add for tooltip positioning
         }
 
         .link {
@@ -180,26 +181,31 @@
           visibility: hidden;
           transition: all 0.3s linear;
 
-          .tooltip-top {
-            position: relative;
+          a.tooltip-top {
             display: inline-block;
             text-decoration: none;
 
             &::before {
               content: attr(data-tooltip);
-              top: -40px;
-              left: -20px;
+              position: absolute;
+              bottom: 100%;
+              left: 50%;
               transform: translateX(-50%);
               background-color: #333;
               color: #fff;
               text-align: center;
               border-radius: 6px;
-              padding: 8px 8px;
+              padding: 6px 10px;
               opacity: 0;
               visibility: hidden;
               transition: opacity 0.2s;
-              position: absolute;
-              width: 190px;
+              width: max-content;
+              max-width: 200px;
+              font-size: 11px;
+              line-height: 1.4;
+              z-index: 100;
+              white-space: nowrap;
+              margin-bottom: 2px;
             }
 
             &:hover::before {
@@ -220,7 +226,6 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        overflow: hidden;
 
         .badge {
           width: 64px;
