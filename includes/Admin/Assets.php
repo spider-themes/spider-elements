@@ -45,6 +45,7 @@ class Assets {
 
             // Register Admin Panel Style's
             wp_enqueue_style( 'spel-icomoon', SPEL_VEND . '/icomoon/style.css', [], SPEL_VERSION );
+            wp_enqueue_style( 'spel-font-awesome', SPEL_VEND . '/font-awesome/css/all.css', [], SPEL_VERSION );
             wp_enqueue_style( 'spel-fancybox', SPEL_VEND . '/fancybox/fancybox.min.css', [], SPEL_VERSION );
             
             if ( is_rtl() ) {

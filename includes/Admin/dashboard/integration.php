@@ -94,17 +94,30 @@ $integrations = array(
                         <h3><?php echo esc_html( $plugin['title'] ); ?></h3>
                         <p><?php echo esc_html( $plugin['desc'] ); ?></p>
 
-						<?php
-						printf(
-							'<a data-plugin_status="%1$s" data-activation_url="%2$s" href="%3$s" class="dashboard_btn %4$s"><i class="%5$s"></i>%6$s</a>',
-							esc_attr( $plugin_status ),
-							esc_url( $plugin_activation_url ),
-							esc_url( $plugin_status === 'not_installed' ? $plugin_installation_url : $plugin_activation_url ),
-							esc_attr( $plugin_status_label ),
-							esc_attr( $button_icon ),
-							esc_html( $plugin_status_title )
-						);
-						?>
+						<?php 
+                        if ( $plugin['slug'] === 'bbp-core' ) {
+							$wp_org_link = 'https://wordpress.org/plugins/forumax/';
+						} elseif($plugin['slug'] === 'advanced-accordion-block') {
+							$wp_org_link = 'https://wordpress.org/plugins/advanced-accordion-block/';
+						} else {
+							$wp_org_link = 'https://wordpress.org/plugins/' . $plugin['slug'] . '/';
+						}
+
+                        printf(
+                            '<div class="action_buttons">
+                                <a data-plugin_status="%1$s" data-activation_url="%2$s" href="%3$s" class="dashboard_btn %4$s"><i class="%5$s"></i>%6$s</a>
+                                <a href="%7$s" class="dashboard_btn learn_more_btn" target="_blank"><i class="fab fa-wordpress-simple"></i> %8$s</a>
+                            </div>',
+                            esc_attr( $plugin_status ),
+                            esc_url( $plugin_activation_url ),
+                            esc_url( $plugin_status === 'not_installed' ? $plugin_installation_url : $plugin_activation_url ),
+                            esc_attr( $plugin_status_label ),
+                            esc_attr( $button_icon ),
+                            esc_html( $plugin_status_title ),
+                            esc_url( $wp_org_link ),
+                            esc_html__( 'Learn More', 'spider-elements' )
+                        );
+                        ?>
                     </div>
                 </div>
 				<?php

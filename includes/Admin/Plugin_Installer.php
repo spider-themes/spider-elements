@@ -14,6 +14,7 @@ class Plugin_Installer
     private static $instance;
     private $installed_plugins = [];
     private $activated_plugins = [];
+    private $initialized = false;
 
     /**
      * Get the single instance of the class
@@ -35,7 +36,14 @@ class Plugin_Installer
      */
     public function __construct()
     {
-        add_action('plugins_loaded', [$this, 'init']);
+        // If this class is instantiated after `plugins_loaded` has already fired,
+        // the hook would never run and status checks would always report
+        // "not_installed". So we initialize immediately when possible.
+        if ( \did_action( 'plugins_loaded' ) ) {
+            $this->init();
+        } else {
+            \add_action( 'plugins_loaded', [ $this, 'init' ] );
+        }
     }
 
     /**
@@ -46,9 +54,7 @@ class Plugin_Installer
         $this->collect_installed_plugins();
         $this->collect_activated_plugins();
 
-        // Debugging statements
-        error_log('Installed Plugins: ' . print_r($this->installed_plugins, true));
-        error_log('Activated Plugins: ' . print_r($this->activated_plugins, true));
+        $this->initialized = true;
     }
 
     /**
@@ -56,14 +62,11 @@ class Plugin_Installer
      */
     private function collect_installed_plugins(): void
     {
-        if (!function_exists('get_plugins')) {
-            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        if ( ! \function_exists( 'get_plugins' ) ) {
+            require_once \ABSPATH . 'wp-admin/includes/plugin.php';
         }
 
-        $this->installed_plugins = array_keys(get_plugins());
-
-        // Debugging statement
-        error_log('Collecting Installed Plugins: ' . print_r($this->installed_plugins, true));
+        $this->installed_plugins = array_keys( \get_plugins() );
     }
 
     /**
@@ -71,10 +74,7 @@ class Plugin_Installer
      */
     private function collect_activated_plugins(): void
     {
-        $this->activated_plugins = get_option('active_plugins', []);
-
-        // Debugging statement
-        error_log('Collecting Activated Plugins: ' . print_r($this->activated_plugins, true));
+        $this->activated_plugins = \get_option( 'active_plugins', [] );
     }
 
     /**
@@ -86,7 +86,7 @@ class Plugin_Installer
      */
     public function check_installed_plugin(string $name): bool
     {
-        return in_array($name, $this->installed_plugins);
+        return in_array( $name, $this->installed_plugins, true );
     }
 
     /**
@@ -98,7 +98,7 @@ class Plugin_Installer
      */
     public function check_activated_plugin(string $name): bool
     {
-        return in_array($name, $this->activated_plugins);
+        return in_array( $name, $this->activated_plugins, true );
     }
 
     /**
@@ -110,6 +110,10 @@ class Plugin_Installer
      */
     public function get_status(string $name): array
     {
+        if ( ! $this->initialized ) {
+            $this->init();
+        }
+
         $data = array(
             'url' => '',
             'activation_url' => '',
@@ -120,23 +124,19 @@ class Plugin_Installer
 
         if ($this->check_installed_plugin($name)) {
             if ($this->check_activated_plugin($name)) {
-                $data['title'] = esc_html__('Activated', 'spider-elements');
+                $data['title'] = \esc_html__( 'Activated', 'spider-elements' );
                 $data['status'] = 'activated';
             } else {
-                $data['title'] = esc_html__('Activate Now', 'spider-elements');
-                $data['status'] = 'installed';
+                $data['title'] = \esc_html__( 'Activate', 'spider-elements' );
+                $data['status'] = 'inactive';
                 $data['activation_url'] = $this->activation_url($name);
             }
         } else {
-            $data['title'] = esc_html__('Install Now', 'spider-elements');
+            $data['title'] = \esc_html__( 'Install Now', 'spider-elements' );
             $data['status'] = 'not_installed';
             $data['installation_url'] = $this->installation_url($name);
             $data['activation_url'] = $this->activation_url($name);
         }
-
-        // Debug output
-        error_log("Plugin: $name");
-        error_log(print_r($data, true));
 
         return $data;
     }
@@ -150,15 +150,15 @@ class Plugin_Installer
      */
     public function activation_url(string $pluginName): string
     {
-        return wp_nonce_url(
-            add_query_arg(
+        return \wp_nonce_url(
+            \add_query_arg(
                 array(
                     'action' => 'activate',
                     'plugin' => $pluginName,
                     'plugin_status' => 'all',
                     'paged' => '1&s',
                 ),
-                admin_url('plugins.php')
+                \admin_url( 'plugins.php' )
             ),
             'activate-plugin_' . $pluginName
         );
@@ -176,13 +176,13 @@ class Plugin_Installer
         $action = 'install-plugin';
         $pluginSlug = $this->get_plugin_slug($pluginName);
 
-        return wp_nonce_url(
-            add_query_arg(
+        return \wp_nonce_url(
+            \add_query_arg(
                 array(
                     'action' => $action,
                     'plugin' => $pluginSlug,
                 ),
-                admin_url('update.php')
+                \admin_url( 'update.php' )
             ),
             $action . '_' . $pluginSlug
         );

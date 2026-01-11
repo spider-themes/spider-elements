@@ -13,7 +13,7 @@
 
   // Accent Colors
   --spel-success: #22c55e;
-  --spel-success-light: #dcfce7;
+  --spel-success-light: #dcfce7b5;
   --spel-warning: #f59e0b;
   --spel-warning-light: #fef3c7;
   --spel-error: #ef4444;
@@ -1174,9 +1174,28 @@
       min-height: 50px;
     }
 
-    .dashboard_btn {
+    .action_buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
       margin-top: 20px;
-      width: 100%;
+
+      .dashboard_btn {
+        width: 100%;
+
+        &.learn_more_btn {
+          background: var(--spel-bg-tertiary);
+          color: var(--spel-text-secondary);
+          border: 1px solid var(--spel-border-light);
+
+          &:hover {
+            background: var(--spel-bg-primary);
+            color: #fff;
+            border-color: var(--spel-border);
+          }
+        }
+      }
     }
   }
 
