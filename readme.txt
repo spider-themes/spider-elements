@@ -3,7 +3,7 @@ Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajja
 Tags: elementor widgets, elementor addons, elementor, page builder, drag and drop
 Stable tag: 1.8.0
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,22 @@ Spider Elements provides the widgets you need to build professional websites fas
 - [🎥 Video Tutorials](https://spider-elements.spider-themes.net/#widgets)
 - [🚀 Live Demo](https://spider-elements.spider-themes.net/#widgets)
 - [⭐ Upgrade to Pro](https://spider-elements.spider-themes.net/pricing)
+
+## WHAT’S NEXT? 
+
+If you like Spider Elements, then consider checking out our other WordPress Plugins: 
+
+[EazyDocs](https://wordpress.org/plugins/eazydocs) – Powerful knowledge base plugin to easily create and manage professional documentation, wikis, and helpdesk sections.
+
+[Antimanual](https://wordpress.org/plugins/antimanual) – AI-powered assistant that automates content creation, documentation, and support, transforming static sites into dynamic experiences.
+
+[Advanced Accordion Block](https://wordpress.org/plugins/advanced-accordion-block) – Lightweight Gutenberg block for creating visually appealing, organized accordion sections with extensive styling options.
+
+[Changeloger](https://wordpress.org/plugins/changeloger) – Transform plain text changelogs into visually stunning, organized representations with pagination and version links.
+
+[Forumax](https://wordpress.org/plugins/bbp-core) – Standalone, feature-rich community forum plugin with voting, private replies, and Elementor integration.
+
+[Jobus](https://wordpress.org/plugins/jobus) – Comprehensive job board solution transforming your site into a recruitment platform with dashboards and ATS.
 
 == Screenshots ==
 
