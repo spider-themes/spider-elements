@@ -24,7 +24,7 @@
         font-weight: 600;
         margin-bottom: 30px;
         background: transparent;
-        color: rgb(29 39 70);
+        color: var(--black_900);
         text-decoration: none;
         margin-left: 8px;
         border: none;
@@ -59,7 +59,7 @@
   padding: 20px 20px 30px;
   margin-bottom: 0;
   transition: all 0.3s linear;
-  background: #ffffff;
+  background: var(--bs-white);
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 
   &:hover {
