@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+$widget_id = $this->get_id();
 ?>
 
 <section class="spel-video-playlist video-playlist-1 video_list_area">
@@ -9,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="ezd-lg-col-7">
             <div class="video_player">
-                <div class="tab-content video_tabs" id="<?php esc_attr( get_the_ID() ); ?>">
+                <div class="tab-content video_tabs" id="<?php echo esc_attr( get_the_ID() . '-' . $widget_id ); ?>">
 					<?php
 					$all_videos = $settings['tabs'] ?? '';
 					$i          = '0';
@@ -19,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						foreach ( $child_videos as $child_video ) {
                             ?>
                             <div class="tab-pane ezd-tab-box pt-0 <?php echo esc_attr( $active ); ?>"
-                                 id="video_<?php echo esc_attr( $i ++ ); ?>">
+                                 id="video_<?php echo esc_attr( $widget_id . '_' . $i ++ ); ?>">
                                 <div class="artplayer-app"
                                      data-src="<?php echo esc_url( $child_video['video_upload']['url'] ); ?>">
                                 </div>
@@ -64,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             }
                             ?>
                             <div class="card accordion-panel spe_accordion_inner">
-                                <div class="card spe-accordion" id="configuration<?php echo esc_attr( $count ); ?>-tab">
+                                <div class="card spe-accordion" id="configuration<?php echo esc_attr( $widget_id . '_' . $count ); ?>-tab">
                                     <div class="card-header">
                                         <button class="text-left accordion-header <?php echo esc_attr( $nav_collapse ); ?>">
                                             <span class="list_title"><?php echo esc_html( $video_item['title'] ); ?> </span>
@@ -88,7 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         </button>
                                     </div>
                                 </div>
-                                <div id="configuration<?php echo esc_attr( $count ); ?>" class="accordion-content collapse">
+                                <div id="configuration<?php echo esc_attr( $widget_id . '_' . $count ); ?>" class="accordion-content collapse">
                                     <div class="card-body">
                                         <ul class="nav nav-tabs ezd-tab-menu">
                                             <?php
@@ -98,7 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                                     ?>
                                                     <li class="nav-item">
                                                         <a class="nav-link<?php esc_attr( $is_active ); ?>"
-                                                           href="#video_<?php echo esc_attr( $i ++ ); ?>">
+                                                           href="#video_<?php echo esc_attr( $widget_id . '_' . $i ++ ); ?>">
                                                             <div class="media ezd-d-flex">
                                                                 <?php if ( ! empty( $child_video['thumbnail']['url'] ) ) : ?>
                                                                     <div class="ezd-d-flex">
@@ -199,7 +200,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-      let video = $('#video_0');
+      let video = $('#video_<?php echo esc_attr( $widget_id ); ?>_0');
       setTimeout(function() {
         $('.video_slider_area').addClass('loaded').css('height', 'auto');
       }, 3000);
