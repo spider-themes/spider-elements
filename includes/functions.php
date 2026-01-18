@@ -86,7 +86,26 @@ if ( ! function_exists( 'spel_button_link' ) ) {
                 if ( is_array( $attrs ) ) {
                     foreach ( $attrs as $data ) {
                         $data_attrs = explode( '|', $data );
-                        echo ' ' . esc_attr( $data_attrs[0] ) . '="' . esc_attr( $data_attrs[1] ) . '"';
+
+                        // Avoid undefined offset
+                        if ( count( $data_attrs ) < 2 ) {
+                            continue;
+                        }
+
+                        $key = trim( $data_attrs[0] );
+                        $val = trim( $data_attrs[1] );
+
+                        // Security: Block dangerous attributes (on*) and javascript:
+                        if ( preg_match( '/^on|^action$|^formaction$/i', $key ) ) {
+                            continue;
+                        }
+
+                        // Security: Prevent overriding controlled attributes
+                        if ( in_array( strtolower( $key ), [ 'href', 'src', 'rel', 'target' ], true ) ) {
+                            continue;
+                        }
+
+                        echo ' ' . esc_attr( $key ) . '="' . esc_attr( $val ) . '"';
                     }
                 }
             }
