@@ -309,10 +309,11 @@ if ( ! class_exists( 'SPEL' ) ) {
 			if ( is_admin() ) {
 				new SPEL\includes\Admin\Dashboard();
 				new SPEL\includes\Admin\Assets();
+				// Optimization: Only instantiate Plugin_Installer in admin to avoid expensive filesystem scans (get_plugins) on frontend.
+				new SPEL\includes\Admin\Plugin_Installer();
 			}
 
 			// Frontend UI
-			new SPEL\includes\Admin\Plugin_Installer();
 			new SPEL\includes\Frontend\Assets();
 		}
 
