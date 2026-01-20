@@ -1,0 +1,4 @@
+## 2024-03-24 - Unconditional filesystem scan in frontend context
+**Vulnerability:** The `Plugin_Installer` class was instantiated unconditionally in `spider-elements.php`'s `init_plugin`, causing `get_plugins()` (a filesystem scan) to run on every page load (frontend and backend).
+**Learning:** Classes placed under "Frontend UI" comments might still belong to Admin namespace and perform expensive/privileged operations. The location in the file doesn't guarantee the context it *should* run in.
+**Prevention:** Always verify if a class instantiation in `plugins_loaded` hook is guarded by `is_admin()` or restricted to specific pages, especially for classes dealing with plugin management or filesystem operations. Use singleton access patterns (like `instance()`) combined with lazy initialization to avoid side effects until the class is actually used.
