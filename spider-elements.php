@@ -312,7 +312,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 			}
 
 			// Frontend UI
-			new SPEL\includes\Admin\Plugin_Installer();
 			new SPEL\includes\Frontend\Assets();
 		}
 
