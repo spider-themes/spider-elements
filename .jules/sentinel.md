@@ -1,0 +1,4 @@
+## 2024-05-22 - XSS via Unsafe Custom Attribute Parsing
+**Vulnerability:** Unfiltered custom attributes allowed injection of event handlers (e.g., `onclick`) and overriding of critical attributes (e.g., `href`). The parsing logic in `spel_button_link` used `explode` without limits or validation, relying only on `esc_attr` which escapes values but not attribute names.
+**Learning:** `esc_attr()` is insufficient for sanitizing attribute *names* as it permits characters like `o`, `n`, `c`, `l`, `i`, `k`. Helper functions parsing "key|value" strings must explicitly validate keys against a blocklist (e.g., `on*`) and enforce structure limits.
+**Prevention:** Always validate attribute names against a blocklist (`on*`, critical attributes) and use strict parsing (explode limit, count check). Use `sanitize_key` or similar validation for attribute names.
