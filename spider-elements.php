@@ -56,7 +56,7 @@ if ( function_exists( 'spel_fs' ) ) {
 							'slug'       => 'spider_elements_settings',
 							'contact'    => false,
 							'support'    => false,
-							'first-path' => 'admin.php?page=spider_elements_settings',
+							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
 						'parallel_activation' => array(
 							'enabled'                  => true,
@@ -254,9 +254,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
 
-			// Admin and Frontend Scripts Loaded
-			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
-
 			$theme = wp_get_theme();
 			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
@@ -265,6 +262,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Admin UI
 			if ( is_admin() ) {
+				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Dashboard.php';
 			}
@@ -307,12 +305,12 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Admin UI
 			if ( is_admin() ) {
+				new SPEL\includes\Admin\Plugin_Installer();
 				new SPEL\includes\Admin\Dashboard();
 				new SPEL\includes\Admin\Assets();
 			}
 
 			// Frontend UI
-			new SPEL\includes\Admin\Plugin_Installer();
 			new SPEL\includes\Frontend\Assets();
 		}
 
@@ -367,8 +365,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
-					require_once __DIR__ . "/widgets/$widget.php";
+				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
+					require_once( __DIR__ . "/widgets/$widget.php" );
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
 				}
@@ -377,11 +375,10 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 
 		/**
-		 * Define plugin constants.
-		 *
+		 * @return void
 		 * @since  1.7.0
 		 * @access public
-		 * @return void
+		 * @static
 		 */
 		public function define_constants(): void {
 			//SPEL(Short form - Spider Elements)
