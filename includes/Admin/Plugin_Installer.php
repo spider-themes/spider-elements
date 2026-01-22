@@ -12,7 +12,6 @@ if (!defined('ABSPATH')) {
 class Plugin_Installer
 {
     private static $instance;
-    private $installed_plugins = [];
     private $activated_plugins = [];
     private $initialized = false;
 
@@ -51,22 +50,9 @@ class Plugin_Installer
      */
     public function init(): void
     {
-        $this->collect_installed_plugins();
         $this->collect_activated_plugins();
 
         $this->initialized = true;
-    }
-
-    /**
-     * Collects the list of installed plugins
-     */
-    private function collect_installed_plugins(): void
-    {
-        if ( ! \function_exists( 'get_plugins' ) ) {
-            require_once \ABSPATH . 'wp-admin/includes/plugin.php';
-        }
-
-        $this->installed_plugins = array_keys( \get_plugins() );
     }
 
     /**
@@ -86,7 +72,7 @@ class Plugin_Installer
      */
     public function check_installed_plugin(string $name): bool
     {
-        return in_array( $name, $this->installed_plugins, true );
+        return file_exists( WP_PLUGIN_DIR . '/' . $name );
     }
 
     /**
