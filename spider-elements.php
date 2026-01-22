@@ -56,7 +56,7 @@ if ( function_exists( 'spel_fs' ) ) {
 							'slug'       => 'spider_elements_settings',
 							'contact'    => false,
 							'support'    => false,
-							'first-path' => 'admin.php?page=spider_elements_settings'
+							'first-path' => 'admin.php?page=spider_elements_settings',
 						],
 						'parallel_activation' => array(
 							'enabled'                  => true,
@@ -367,8 +367,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
-					require_once( __DIR__ . "/widgets/$widget.php" );
+				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
+					require_once __DIR__ . "/widgets/$widget.php";
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
 				}
@@ -377,10 +377,11 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 
 		/**
-		 * @return void
+		 * Define plugin constants.
+		 *
 		 * @since  1.7.0
 		 * @access public
-		 * @static
+		 * @return void
 		 */
 		public function define_constants(): void {
 			//SPEL(Short form - Spider Elements)
