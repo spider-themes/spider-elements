@@ -1,4 +1,3 @@
-## 2024-05-23 - Admin Classes on Frontend
-**Learning:** Always check instantiation context for admin-specific classes.
-**Action:** Verify if classes in `includes/Admin/` are being instantiated unconditionally in the main plugin file.
-**Insight:** `Plugin_Installer` was running `get_plugins()` (filesystem scan) on every frontend request because it was instantiated globally, despite being an admin utility.
+## 2024-05-22 - Unconditional Filesystem Scans on Frontend
+**Learning:** Found `get_plugins()` being triggered on every frontend page load via an unconditionally instantiated `Plugin_Installer` class. This is a heavy operation as it scans the filesystem.
+**Action:** Always check where admin-related classes are instantiated. If they are in a global `init` hook, ensure they are wrapped in `is_admin()`, or better yet, lazy-load them only when their specific functionality is requested (e.g., via a singleton `instance()` call on the specific admin page).
