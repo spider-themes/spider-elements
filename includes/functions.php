@@ -115,25 +115,24 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 
 /**
  * Category IDs
+ *
  * @return array
  */
-if ( ! function_exists( 'spel_cat_ids') ) {
-    function spel_cat_ids() {
+if ( ! function_exists( 'spel_cat_ids' ) ) {
+	function spel_cat_ids() {
+		$taxonomys = get_terms( [
+			'taxonomy'   => 'category',
+			'hide_empty' => true,
+		] );
+		$taxonomy  = [];
+		if ( is_array( $taxonomys ) ) {
+			foreach ( $taxonomys as $cat_id ) {
+				$taxonomy[ $cat_id->term_id ] = $cat_id->name;
+			}
+		}
 
-        $taxonomys = get_terms( array(
-            'taxonomy'   => 'category',
-            'hide_empty' => true,
-        ) );
-        $taxonomy  = [];
-        if ( is_array( $taxonomys ) ) {
-            foreach ( $taxonomys as $cat_id ) {
-                $taxonomy[ $cat_id->term_id ] = $cat_id->name;
-            }
-        }
-
-        return $taxonomy;
-
-    }
+		return $taxonomy;
+	}
 }
 
 /**
@@ -174,16 +173,18 @@ function spel_get_title_length( array $settings, string $settings_key, int $defa
 /**
  * Post's excerpt text
  *
- * @param $settings_key
- * @param bool $echo
+ * @param array  $settings
+ * @param string $settings_key
+ * @param int    $default
  *
  * @return string
- **/
+ */
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
-    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
-        $excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-        return get_the_excerpt() ? wp_trim_words( get_the_excerpt(), $excerpt_length, '...' ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
-    }
+	function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
+		$excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
+
+		return get_the_excerpt() ? wp_trim_words( get_the_excerpt(), $excerpt_length, '...' ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
+	}
 }
 
 
@@ -314,34 +315,35 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
 /**
  * Get Default Image Elementor
  *
- * @param $settins_key
- * @param string $class
+ * @param array  $settings_key
  * @param string $alt
+ * @param string $class
+ * @param array  $atts
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
-    function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
-        if ( ! empty( $settings_key['id'] ) ) {
-            // WordPress handles escaping internally here
-            echo wp_get_attachment_image( $settings_key['id'], 'full', false, [ 'class' => esc_attr( $class ) ] );
-        } elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
-            $class_attr = ! empty( $class ) ? ' class="' . esc_attr( $class ) . '"' : '';
-            $atts_str   = '';
+	function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
+		if ( ! empty( $settings_key['id'] ) ) {
+			// WordPress handles escaping internally here
+			echo wp_get_attachment_image( $settings_key['id'], 'full', false, [ 'class' => esc_attr( $class ) ] );
+		} elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
+			$class_attr = ! empty( $class ) ? ' class="' . esc_attr( $class ) . '"' : '';
+			$atts_str   = '';
 
-            if ( ! empty( $atts ) ) {
-                foreach ( $atts as $k => $att ) {
-                    $atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
-                }
-            }
+			if ( ! empty( $atts ) ) {
+				foreach ( $atts as $k => $att ) {
+					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
+				}
+			}
 
-            printf(
-                '<img src="%1$s"%2$s alt="%3$s"%4$s />',
-                esc_url( $settings_key['url'] ),
-                wp_kses_post( $class_attr ), // Escape class attribute
-                esc_attr( $alt ),
-                wp_kses_post( $atts_str ) // Escape attributes string
-            );
-        }
-    }
+			printf(
+				'<img src="%1$s"%2$s alt="%3$s"%4$s />',
+				esc_url( $settings_key['url'] ),
+				wp_kses_post( $class_attr ), // Escape class attribute
+				esc_attr( $alt ),
+				wp_kses_post( $atts_str ) // Escape attributes string
+			);
+		}
+	}
 }
 
 
@@ -453,30 +455,29 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
 /**
  * Tab data
  *
- * @param $getCats
- * @param $schedule_cats
+ * @param array $getCats
+ * @param array $schedule_cats
  *
  * @return array
  */
 if ( ! function_exists( 'spel_get_tab_data' ) ) {
-    function spel_get_tab_data( $getCats, $schedule_cats ): array
-    {
-        $tab_data = [];
+	function spel_get_tab_data( $getCats, $schedule_cats ): array {
+		$tab_data = [];
 
-        foreach ( $getCats as $val ) {
-            $matching_data = [];
+		foreach ( $getCats as $val ) {
+			$matching_data = [];
 
-            foreach ( $schedule_cats as $data ) {
-                if ( $data['tab_title'] == $val ) {
-                    $matching_data[] = $data;
-                }
-            }
+			foreach ( $schedule_cats as $data ) {
+				if ( $val === $data['tab_title'] ) {
+					$matching_data[] = $data;
+				}
+			}
 
-            $tab_data[ $val ] = $matching_data;
-        }
+			$tab_data[ $val ] = $matching_data;
+		}
 
-        return $tab_data;
-    }
+		return $tab_data;
+	}
 }
 
 
@@ -734,12 +735,11 @@ if ( !function_exists('spel_pagination') ) {
 /**
  * Jobus pagination
  */
-if ( !function_exists('spel_archive_query') ) {
-    function spel_archive_query($query): void
-    {
-	    if ( $query->is_main_query() && !is_admin() && !is_home() ) {
-		    $query->set('posts_per_page', -1);
-	    }
-    }
-    add_action('pre_get_posts', 'spel_archive_query');
+if ( ! function_exists( 'spel_archive_query' ) ) {
+	function spel_archive_query( $query ): void {
+		if ( $query->is_main_query() && ! is_admin() && ! is_home() ) {
+			$query->set( 'posts_per_page', -1 );
+		}
+	}
+	add_action( 'pre_get_posts', 'spel_archive_query' );
 }
