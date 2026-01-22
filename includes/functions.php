@@ -729,11 +729,10 @@ if ( !function_exists('spel_pagination') ) {
 /**
  * Jobus pagination
  */
-if ( ! function_exists( 'spel_archive_query' ) ) {
-	function spel_archive_query( $query ): void {
-		if ( $query->is_main_query() && ! is_admin() && ! is_home() ) {
-			$query->set( 'posts_per_page', -1 );
-		}
-	}
-	add_action( 'pre_get_posts', 'spel_archive_query' );
+if ( !function_exists('spel_archive_query') ) {
+    function spel_archive_query($query): void
+    {
+	    // Optimization: Removed unbounded query override to prevent performance issues on archive pages
+    }
+    add_action('pre_get_posts', 'spel_archive_query');
 }
