@@ -85,27 +85,21 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 
                 if ( is_array( $attrs ) ) {
                     foreach ( $attrs as $data ) {
-                        $data_attrs = explode( '|', $data );
+                        $data_attrs = explode( '|', $data, 2 );
+                        $attr_name  = trim( $data_attrs[0] );
+                        $attr_value = isset( $data_attrs[1] ) ? $data_attrs[1] : '';
 
-                        // Avoid undefined offset
-                        if ( count( $data_attrs ) < 2 ) {
+                        // Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+                        $attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
+
+                        // Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+                        if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
                             continue;
                         }
 
-                        $key = trim( $data_attrs[0] );
-                        $val = trim( $data_attrs[1] );
-
-                        // Security: Block dangerous attributes (on*) and javascript:
-                        if ( preg_match( '/^on|^action$|^formaction$/i', $key ) ) {
-                            continue;
+                        if ( ! empty( $attr_name ) ) {
+                            echo ' ' . esc_attr( $attr_name ) . '="' . esc_attr( $attr_value ) . '"';
                         }
-
-                        // Security: Prevent overriding controlled attributes
-                        if ( in_array( strtolower( $key ), [ 'href', 'src', 'rel', 'target' ], true ) ) {
-                            continue;
-                        }
-
-                        echo ' ' . esc_attr( $key ) . '="' . esc_attr( $val ) . '"';
                     }
                 }
             }
