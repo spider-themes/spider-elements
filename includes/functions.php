@@ -73,26 +73,41 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
  * @param bool  $is_echo
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
-	function spel_button_link( $settings_key, $is_echo = true ): void {
-		if ( true === $is_echo ) {
-			echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
-			echo $settings_key['is_external'] ? ' target="_blank"' : '';
-			echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
+    function spel_button_link( $settings_key, $is_echo = true ): void
+    {
+        if ( $is_echo ) {
+            echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
+            echo $settings_key['is_external'] ? ' target="_blank"' : '';
+            echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
 
-			if ( ! empty( $settings_key['custom_attributes'] ) ) {
-				$attrs = explode( ',', $settings_key['custom_attributes'] );
+            if ( ! empty( $settings_key['custom_attributes'] ) ) {
+                $attrs = explode( ',', $settings_key['custom_attributes'] );
 
-				if ( is_array( $attrs ) ) {
-					foreach ( $attrs as $data ) {
-						$data_attrs = explode( '|', $data, 2 );
-						if ( count( $data_attrs ) === 2 ) {
-							echo ' ' . esc_attr( $data_attrs[0] ) . '="' . esc_attr( $data_attrs[1] ) . '"';
-						}
-					}
-				}
-			}
-		}
-	}
+                if ( is_array( $attrs ) ) {
+                    foreach ( $attrs as $data ) {
+                        $data_attrs = explode( '|', $data, 2 );
+
+                        if ( count( $data_attrs ) < 2 ) {
+                            continue;
+                        }
+
+                        $key = strtolower( trim( $data_attrs[0] ) );
+                        $val = trim( $data_attrs[1] );
+
+                        // Security: Block event handlers (on*) and critical attributes
+                        if (
+                            0 === strpos( $key, 'on' ) ||
+                            in_array( $key, [ 'href', 'src', 'rel', 'target', 'formaction' ], true )
+                        ) {
+                            continue;
+                        }
+
+                        echo ' ' . esc_attr( $key ) . '="' . esc_attr( $val ) . '"';
+                    }
+                }
+            }
+        }
+    }
 }
 
 /**
