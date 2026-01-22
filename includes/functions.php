@@ -85,8 +85,21 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 
                 if ( is_array( $attrs ) ) {
                     foreach ( $attrs as $data ) {
-                        $data_attrs = explode( '|', $data );
-                        echo ' ' . esc_attr( $data_attrs[0] ) . '="' . esc_attr( $data_attrs[1] ) . '"';
+                        $data_attrs = explode( '|', $data, 2 );
+                        $attr_name  = trim( $data_attrs[0] );
+                        $attr_value = isset( $data_attrs[1] ) ? $data_attrs[1] : '';
+
+                        // Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+                        $attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
+
+                        // Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+                        if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+                            continue;
+                        }
+
+                        if ( ! empty( $attr_name ) ) {
+                            echo ' ' . esc_attr( $attr_name ) . '="' . esc_attr( $attr_value ) . '"';
+                        }
                     }
                 }
             }
@@ -96,25 +109,24 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 
 /**
  * Category IDs
+ *
  * @return array
  */
-if ( ! function_exists( 'spel_cat_ids') ) {
-    function spel_cat_ids() {
+if ( ! function_exists( 'spel_cat_ids' ) ) {
+	function spel_cat_ids() {
+		$taxonomys = get_terms( [
+			'taxonomy'   => 'category',
+			'hide_empty' => true,
+		] );
+		$taxonomy  = [];
+		if ( is_array( $taxonomys ) ) {
+			foreach ( $taxonomys as $cat_id ) {
+				$taxonomy[ $cat_id->term_id ] = $cat_id->name;
+			}
+		}
 
-        $taxonomys = get_terms( array(
-            'taxonomy'   => 'category',
-            'hide_empty' => true,
-        ) );
-        $taxonomy  = [];
-        if ( is_array( $taxonomys ) ) {
-            foreach ( $taxonomys as $cat_id ) {
-                $taxonomy[ $cat_id->term_id ] = $cat_id->name;
-            }
-        }
-
-        return $taxonomy;
-
-    }
+		return $taxonomy;
+	}
 }
 
 /**
@@ -155,16 +167,18 @@ function spel_get_title_length( array $settings, string $settings_key, int $defa
 /**
  * Post's excerpt text
  *
- * @param $settings_key
- * @param bool $echo
+ * @param array  $settings
+ * @param string $settings_key
+ * @param int    $default
  *
  * @return string
- **/
+ */
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
-    function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
-        $excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
-        return get_the_excerpt() ? wp_trim_words( get_the_excerpt(), $excerpt_length, '...' ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
-    }
+	function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
+		$excerpt_length = ! empty( $settings[ $settings_key ] ) ? $settings[ $settings_key ] : $default;
+
+		return get_the_excerpt() ? wp_trim_words( get_the_excerpt(), $excerpt_length, '...' ) : wp_trim_words( get_the_content(), $excerpt_length, '...' );
+	}
 }
 
 
@@ -295,34 +309,35 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
 /**
  * Get Default Image Elementor
  *
- * @param $settins_key
- * @param string $class
+ * @param array  $settings_key
  * @param string $alt
+ * @param string $class
+ * @param array  $atts
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
-    function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
-        if ( ! empty( $settings_key['id'] ) ) {
-            // WordPress handles escaping internally here
-            echo wp_get_attachment_image( $settings_key['id'], 'full', false, [ 'class' => esc_attr( $class ) ] );
-        } elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
-            $class_attr = ! empty( $class ) ? ' class="' . esc_attr( $class ) . '"' : '';
-            $atts_str   = '';
+	function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
+		if ( ! empty( $settings_key['id'] ) ) {
+			// WordPress handles escaping internally here
+			echo wp_get_attachment_image( $settings_key['id'], 'full', false, [ 'class' => esc_attr( $class ) ] );
+		} elseif ( ! empty( $settings_key['url'] ) && empty( $settings_key['id'] ) ) {
+			$class_attr = ! empty( $class ) ? ' class="' . esc_attr( $class ) . '"' : '';
+			$atts_str   = '';
 
-            if ( ! empty( $atts ) ) {
-                foreach ( $atts as $k => $att ) {
-                    $atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
-                }
-            }
+			if ( ! empty( $atts ) ) {
+				foreach ( $atts as $k => $att ) {
+					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
+				}
+			}
 
-            printf(
-                '<img src="%1$s"%2$s alt="%3$s"%4$s />',
-                esc_url( $settings_key['url'] ),
-                wp_kses_post( $class_attr ), // Escape class attribute
-                esc_attr( $alt ),
-                wp_kses_post( $atts_str ) // Escape attributes string
-            );
-        }
-    }
+			printf(
+				'<img src="%1$s"%2$s alt="%3$s"%4$s />',
+				esc_url( $settings_key['url'] ),
+				wp_kses_post( $class_attr ), // Escape class attribute
+				esc_attr( $alt ),
+				wp_kses_post( $atts_str ) // Escape attributes string
+			);
+		}
+	}
 }
 
 
@@ -434,30 +449,29 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
 /**
  * Tab data
  *
- * @param $getCats
- * @param $schedule_cats
+ * @param array $getCats
+ * @param array $schedule_cats
  *
  * @return array
  */
 if ( ! function_exists( 'spel_get_tab_data' ) ) {
-    function spel_get_tab_data( $getCats, $schedule_cats ): array
-    {
-        $tab_data = [];
+	function spel_get_tab_data( $getCats, $schedule_cats ): array {
+		$tab_data = [];
 
-        foreach ( $getCats as $val ) {
-            $matching_data = [];
+		foreach ( $getCats as $val ) {
+			$matching_data = [];
 
-            foreach ( $schedule_cats as $data ) {
-                if ( $data['tab_title'] == $val ) {
-                    $matching_data[] = $data;
-                }
-            }
+			foreach ( $schedule_cats as $data ) {
+				if ( $val === $data['tab_title'] ) {
+					$matching_data[] = $data;
+				}
+			}
 
-            $tab_data[ $val ] = $matching_data;
-        }
+			$tab_data[ $val ] = $matching_data;
+		}
 
-        return $tab_data;
-    }
+		return $tab_data;
+	}
 }
 
 
