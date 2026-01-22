@@ -254,6 +254,9 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
 
+			// Admin and Frontend Scripts Loaded
+			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
+
 			$theme = wp_get_theme();
 			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
@@ -262,7 +265,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Admin UI
 			if ( is_admin() ) {
-				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Dashboard.php';
 			}
@@ -305,7 +307,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Admin UI
 			if ( is_admin() ) {
-				new SPEL\includes\Admin\Plugin_Installer();
 				new SPEL\includes\Admin\Dashboard();
 				new SPEL\includes\Admin\Assets();
 			}
