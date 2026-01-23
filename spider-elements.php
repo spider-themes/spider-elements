@@ -35,7 +35,7 @@ if ( function_exists( 'spel_fs' ) ) {
 			if ( ! isset( $spel_fs ) ) {
 
 				// Include Freemius SDK.
-				require_once dirname( __FILE__ ) . '/includes/freemius/start.php';
+				require_once __DIR__ . '/includes/freemius/start.php';
 
 				$spel_fs = fs_dynamic_init(
 					[
@@ -58,10 +58,10 @@ if ( function_exists( 'spel_fs' ) ) {
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
-						'parallel_activation' => array(
+						'parallel_activation' => [
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						),
+						],
 					]
 				);
 			}
@@ -152,7 +152,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			$this->define_constants();
 
 			// Init Plugin
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+			add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
 			// Load text domain for localization
 			add_action( 'init', [ $this, 'i18n' ] );
@@ -232,7 +232,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 * Load plugin localization files.
 		 */
 		public function i18n(): void {
-			load_plugin_textdomain( 'spider-elements', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+			load_plugin_textdomain( 'spider-elements', false, plugin_basename( __DIR__ ) . '/languages' );
 		}
 
 
@@ -258,7 +258,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 
 			$theme = wp_get_theme();
-			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
+			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
 				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
 			}
@@ -282,13 +282,14 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 *
 		 * Fired by `plugins_loaded` action hook.
 		 *
+		 * @return void
 		 * @access public
 		 */
 		public function init_plugin(): void {
 
 			$theme               = wp_get_theme();
 			$features_opt        = get_option( 'spel_features_settings' );
-			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
+			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
 
 			if ( $is_premium_or_theme ) {
 
@@ -366,7 +367,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
+				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
 					require_once( __DIR__ . "/widgets/$widget.php" );
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
@@ -376,6 +377,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 
 		/**
+		 * Define Constants
+		 *
 		 * @return void
 		 * @since  1.7.0
 		 * @access public
