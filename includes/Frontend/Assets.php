@@ -43,7 +43,7 @@ class Assets
         $features_opt   = get_option( 'spel_features_settings' );
         $is_premium_or_theme = spel_is_premium() || in_array($theme->get('Name'), ['jobi', 'Jobi', 'jobi-child', 'Jobi Child']);
 
-        if ( isset($features_opt['spel_smooth_animation']) && $features_opt[ 'spel_smooth_animation' ] == 'on' ) {
+        if ( isset( $features_opt['spel_smooth_animation'] ) && 'on' === $features_opt['spel_smooth_animation'] ) {
 
             // Define all the handlers in one string, separated by commas
             $handlers = [
@@ -74,10 +74,10 @@ class Assets
         }
 
         if ( $is_premium_or_theme ) {
-            if ( isset($features_opt['spel_heading_highlighted']) && $features_opt[ 'spel_heading_highlighted' ] == 'on' ) {
+            if ( isset( $features_opt['spel_heading_highlighted'] ) && 'on' === $features_opt['spel_heading_highlighted'] ) {
                 wp_enqueue_style('spel-extension');
             }
-            if ( isset($features_opt['spel_badge']) && $features_opt[ 'spel_badge' ] == 'on' ) {
+            if ( isset( $features_opt['spel_badge'] ) && 'on' === $features_opt['spel_badge'] ) {
                 wp_enqueue_style('spel-extension');
             }
         }
