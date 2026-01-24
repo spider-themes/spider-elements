@@ -325,6 +325,14 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 			if ( ! empty( $atts ) ) {
 				foreach ( $atts as $k => $att ) {
+					// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+					$k = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $k );
+
+					// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+					if ( empty( $k ) || preg_match( '/^(on|src$|formaction$)/i', $k ) ) {
+						continue;
+					}
+
 					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
 				}
 			}
