@@ -325,6 +325,13 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 			if ( ! empty( $atts ) ) {
 				foreach ( $atts as $k => $att ) {
+					// Security: Sanitize attribute name
+					$k = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $k );
+
+					// Security: Prevent XSS by blocking event handlers and critical attributes
+					if ( empty( $k ) || preg_match( '/^(on|formaction|action|href|src)/i', $k ) ) {
+						continue;
+					}
 					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
 				}
 			}
@@ -334,7 +341,7 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 				esc_url( $settings_key['url'] ),
 				wp_kses_post( $class_attr ), // Escape class attribute
 				esc_attr( $alt ),
-				wp_kses_post( $atts_str ) // Escape attributes string
+				$atts_str // Attributes are already sanitized and escaped
 			);
 		}
 	}
