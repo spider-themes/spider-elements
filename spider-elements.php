@@ -252,10 +252,13 @@ if ( ! class_exists( 'SPEL' ) ) {
 			//Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 
-			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+			if ( is_admin() ) {
+				// Optimization: Load Admin-only classes only in dashboard to reduce frontend memory/IO
+				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
 
-			// Admin and Frontend Scripts Loaded
-			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
+				// Admin and Frontend Scripts Loaded
+				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
+			}
 
 			$theme = wp_get_theme();
 			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
