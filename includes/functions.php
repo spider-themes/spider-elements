@@ -8,12 +8,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Check if the pro-plugin and plan is active
  *
  * @return bool
+ * @since 1.0.0
  */
 function spel_is_premium(): bool
 {
     return spel_fs()->is_plan('pro') && spel_fs()->can_use_premium_code();
 }
 
+/**
+ * Check if the Docy theme is active or if the user is premium
+ *
+ * @return bool
+ * @since 1.0.0
+ */
 function spel_unlock_docy_theme(): bool {
     $theme = wp_get_theme();
     $theme_name = $theme->get('Name');
@@ -23,14 +30,22 @@ function spel_unlock_docy_theme(): bool {
 }
 
 if ( ! function_exists( 'spel_rtl') ) {
+	/**
+	 * Check if RTL mode is active.
+	 *
+	 * @return string 'true' or 'false'
+	 * @since 1.0.0
+	 */
 	function spel_rtl(): string {
 		return is_rtl() ? 'true' : 'false';
 	}
 }
 
 /**
+ * Check if Elementor is in edit mode.
+ *
  * @return bool
- * Elementor is edit mode
+ * @since 1.0.0
  */
 function spider_elements_is_edit(): bool
 {
@@ -38,8 +53,10 @@ function spider_elements_is_edit(): bool
 }
 
 /**
+ * Check if Elementor is in preview mode.
+ *
  * @return bool
- * Elementor is preview mode
+ * @since 1.0.0
  */
 function spider_elements_is_preview(): bool
 {
@@ -48,6 +65,9 @@ function spider_elements_is_preview(): bool
 
 /**
  * Elementor Title tags
+ *
+ * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_title_tags' ) ) {
     function spel_get_title_tags(): array
@@ -69,8 +89,10 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
 /**
  * Echo button link attributes.
  *
- * @param array $settings_key
- * @param bool  $is_echo
+ * @param array $settings_key The settings array containing link attributes.
+ * @param bool  $is_echo      Whether to echo the attributes or not.
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
     function spel_button_link( $settings_key, $is_echo = true ): void
@@ -229,10 +251,10 @@ if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
 if ( ! function_exists( 'spel_get_categories' ) ) {
     function spel_get_categories( $term = 'category' ) {
 
-        $cats = get_terms( array(
+        $cats = get_terms( [
             'taxonomy'   => $term,
             'hide_empty' => true
-        ) );
+        ] );
 
         $cat_array        = [];
         $cat_array['all'] = esc_html__( 'All', 'spider-elements' );
@@ -263,7 +285,7 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
         if ( ! empty( $categories ) ) {
             echo '<span class="blog-category">';
 
-            $category_names = array();
+            $category_names = [];
 
             if ( is_array( $categories ) ) {
                 foreach ( $categories as $category ) {
@@ -354,13 +376,13 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
     {
         $img_attachment = get_post( $image_id );
 
-        return array(
+        return [
             'alt'     => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
             'caption' => $img_attachment->post_excerpt,
             'href'    => get_permalink( $img_attachment->ID ),
             'src'     => $img_attachment->guid,
             'title'   => $img_attachment->post_title
-        );
+        ];
     }
 }
 
@@ -373,7 +395,7 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
 if ( ! function_exists( 'spel_kses_post' ) ) {
     function spel_kses_post( $content ): string
     {
-        $allowed_tag = array(
+        $allowed_tag = [
             'strong' => [],
             'br'     => [],
             'p'      => [
@@ -439,7 +461,7 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
                 'alt'    => [],
             ],
 
-        );
+        ];
 
         return wp_kses( $content, $allowed_tag );
     }
@@ -478,9 +500,10 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
 /**
  * Get reading time
  *
- * @param string $term
+ * @param int $words_per_minute Words per minute count. Default 200.
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
     function spel_get_reading_time( $words_per_minute = 200 ): string
@@ -496,9 +519,12 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
 
 /**
  * Render Dynamic Image
- * @param $key
- * @param $class
+ *
+ * @param array  $key   Image settings/ID.
+ * @param string $size  Image size. Default 'full'.
+ * @param array  $atts  Additional attributes.
  * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_dynamic_image' ) ) {
     function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void
@@ -621,7 +647,7 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
             $wp_memory_limit = max( $wp_memory_limit, spel_readable_number( @ini_get( 'memory_limit' ) ) );
         }
 
-        return array(
+        return [
             'home_url'                  => get_option( 'home' ),
             'site_url'                  => get_option( 'siteurl' ),
             'version'                   => SPEL_VERSION,
@@ -646,7 +672,7 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
             'domdocument_enabled'       => class_exists( 'DOMDocument' ),
             'gzip_enabled'              => is_callable( 'gzopen' ),
             'mbstring_enabled'          => extension_loaded( 'mbstring' ),
-        );
+        ];
 
     }
 }
@@ -692,6 +718,16 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 
 
 if ( !function_exists('spel_pagination') ) {
+    /**
+     * Render pagination.
+     *
+     * @param \WP_Query $query The query object.
+     * @param string    $class CSS class for the pagination container.
+     * @param string    $prev  Previous page text/HTML.
+     * @param string    $next  Next page text/HTML.
+     * @return void
+     * @since 1.0.0
+     */
     function spel_pagination($query, $class = 'spel-pagination', $prev = '', $next = ''): void
     {
 
@@ -711,14 +747,14 @@ if ( !function_exists('spel_pagination') ) {
             $current = max(1, get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1));
 
             echo wp_kses_post(
-                paginate_links( array(
+                paginate_links( [
                     'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                     'format'    => '?paged=%#%',
                     'current'   => $current,
                     'total'     => $query->max_num_pages,
                     'prev_text' => $prev_text,
                     'next_text' => $next_text
-                ) )
+                ] )
             );
 
 
@@ -730,6 +766,13 @@ if ( !function_exists('spel_pagination') ) {
  * Jobus pagination
  */
 if ( !function_exists('spel_archive_query') ) {
+    /**
+     * Modify the archive query.
+     *
+     * @param \WP_Query $query The query object.
+     * @return void
+     * @since 1.0.0
+     */
     function spel_archive_query($query): void
     {
 	    // Optimization: Removed unbounded query override to prevent performance issues on archive pages

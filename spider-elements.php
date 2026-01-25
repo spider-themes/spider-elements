@@ -58,10 +58,10 @@ if ( function_exists( 'spel_fs' ) ) {
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
-						'parallel_activation' => array(
+						'parallel_activation' => [
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						),
+						],
 					]
 				);
 			}
@@ -152,7 +152,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			$this->define_constants();
 
 			// Init Plugin
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+			add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
 			// Load text domain for localization
 			add_action( 'init', [ $this, 'i18n' ] );
@@ -366,7 +366,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
+				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
 					require_once( __DIR__ . "/widgets/$widget.php" );
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
