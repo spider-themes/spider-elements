@@ -252,19 +252,10 @@ if ( ! class_exists( 'SPEL' ) ) {
 			//Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 
-			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
-
-			// Admin and Frontend Scripts Loaded
-			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
-
-			$theme = wp_get_theme();
-			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
-				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
-				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
-			}
-
 			// Admin UI
 			if ( is_admin() ) {
+				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Dashboard.php';
 			}
@@ -291,6 +282,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
 
 			if ( $is_premium_or_theme ) {
+				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
+				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
 
 				// Get the feature badge status
 				$heading_highlighted = $features_opt['spel_heading_highlighted'] ?? '';
