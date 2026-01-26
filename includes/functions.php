@@ -78,7 +78,17 @@ if ( ! function_exists( 'spel_button_link' ) ) {
         if ( $is_echo ) {
             echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
             echo $settings_key['is_external'] ? ' target="_blank"' : '';
-            echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
+
+            $rel_attributes = [];
+            if ( $settings_key['nofollow'] ) {
+                $rel_attributes[] = 'nofollow';
+            }
+            if ( $settings_key['is_external'] ) {
+                $rel_attributes[] = 'noopener';
+            }
+            if ( ! empty( $rel_attributes ) ) {
+                echo ' rel="' . esc_attr( implode( ' ', $rel_attributes ) ) . '"';
+            }
 
             if ( ! empty( $settings_key['custom_attributes'] ) ) {
                 $attrs = explode( ',', $settings_key['custom_attributes'] );
@@ -93,7 +103,8 @@ if ( ! function_exists( 'spel_button_link' ) ) {
                         $attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
 
                         // Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-                        if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+                        // Added style, rel, target to blocklist to prevent injection and overriding
+                        if ( preg_match( '/^(on|href|src|formaction|style|rel|target)/i', $attr_name ) ) {
                             continue;
                         }
 
