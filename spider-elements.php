@@ -56,12 +56,12 @@ if ( function_exists( 'spel_fs' ) ) {
 							'slug'       => 'spider_elements_settings',
 							'contact'    => false,
 							'support'    => false,
-							'first-path' => 'admin.php?page=spider_elements_settings'
+							'first-path' => 'admin.php?page=spider_elements_settings',
 						],
-						'parallel_activation' => array(
+						'parallel_activation' => [
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						),
+						],
 					]
 				);
 			}
@@ -85,7 +85,6 @@ if ( function_exists( 'spel_fs' ) ) {
  * SPEL class.
  *
  * The main class that initiates and runs the addon.
- *
  */
 if ( ! class_exists( 'SPEL' ) ) {
 
@@ -127,10 +126,9 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 *
 		 * @access public
 		 * @static
-		 *
 		 */
 		public static function instance() {
-			if ( is_null( self::$_instance ) ) {
+			if ( null === self::$_instance ) {
 				self::$_instance = new self();
 			}
 
@@ -141,10 +139,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 * Constructor
 		 *
 		 * Initialize the Spider Elements plugins.
-		 *
 		 */
 		public function __construct() {
-
 			// Include Files
 			$this->core_includes();
 
@@ -152,7 +148,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			$this->define_constants();
 
 			// Init Plugin
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+			add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
 			// Load text domain for localization
 			add_action( 'init', [ $this, 'i18n' ] );
@@ -165,7 +161,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register Icon
 			add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'elegant_icons' ] );
-
 		}
 
 
@@ -178,7 +173,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 * @since  1.7.0
 		 *
 		 * @access protected
-		 *
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden
@@ -195,7 +189,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 * @since  1.7.0
 		 *
 		 * @access protected
-		 *
 		 */
 		public function __wakeup() {
 			// Un-serializing instances of the class is forbidden.
@@ -258,7 +251,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 
 			$theme = wp_get_theme();
-			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
+			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
 				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
 			}
@@ -288,7 +281,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			$theme               = wp_get_theme();
 			$features_opt        = get_option( 'spel_features_settings' );
-			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
+			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
 
 			if ( $is_premium_or_theme ) {
 
@@ -366,7 +359,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
+				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
 					require_once( __DIR__ . "/widgets/$widget.php" );
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
@@ -401,7 +394,6 @@ if ( ! class_exists( 'SPEL' ) ) {
  * Initialize the main plugin class
  *
  * @return SPEL
- *
  */
 if ( ! function_exists( 'spel' ) ) {
 
