@@ -58,10 +58,10 @@ if ( function_exists( 'spel_fs' ) ) {
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
-						'parallel_activation' => array(
+						'parallel_activation' => [
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						),
+						],
 					]
 				);
 			}
@@ -253,7 +253,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			require_once __DIR__ . '/includes/filters.php';
 
 			$theme = wp_get_theme();
-			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
+			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
 				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
 			}
@@ -288,7 +288,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			$theme               = wp_get_theme();
 			$features_opt        = get_option( 'spel_features_settings' );
-			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
+			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
 
 			if ( $is_premium_or_theme ) {
 
