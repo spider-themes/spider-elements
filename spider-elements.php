@@ -381,9 +381,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 * Define plugin constants.
 		 *
 		 * @return void
-		 * @since  1.7.0
-		 * @access public
-		 * @static
 		 */
 		public function define_constants(): void {
 			//SPEL(Short form - Spider Elements)
