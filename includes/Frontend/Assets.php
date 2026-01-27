@@ -67,8 +67,15 @@ class Assets
             }
 
             // Enqueue all handlers pointing to the same file
-            foreach ($handlers as $handler) {
-                wp_enqueue_style($handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+            // Optimization: Load the file once via the first handler, and alias the rest.
+            if ( ! empty( $handlers ) ) {
+                $primary_handler = array_shift( $handlers );
+                wp_enqueue_style( $primary_handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+
+                foreach ( $handlers as $handler ) {
+                    wp_register_style( $handler, false, [ $primary_handler ], SPEL_VERSION );
+                    wp_enqueue_style( $handler );
+                }
             }
 
         }
