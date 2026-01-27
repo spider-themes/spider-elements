@@ -1,4 +1,13 @@
 <?php
+/**
+ * Plugin Filters and Actions
+ *
+ * This file handles various hooks, including image sizes, constants,
+ * and admin form submissions.
+ *
+ * @package SpiderElements
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -25,6 +34,9 @@ add_action( 'after_setup_theme', function () {
 }, 20 );
 
 
+/**
+ * Handle Element Settings Form Submission
+ */
 add_action( 'admin_init', function () {
 
 	// Retrieve the field values from the form
@@ -50,7 +62,7 @@ add_action( 'admin_init', function () {
 			'docy_blog_grid',
 			'spe_timeline_widget',
 			'spe_counter',
-			'spel_icon_box'
+			'spel_icon_box',
 		];
 
 		// Pro Widgets
@@ -65,7 +77,7 @@ add_action( 'admin_init', function () {
 			'docy_image_slides',
 			'spel_marquee_slider',
 			'spe_skill_showcase_widget',
-			'spel_stacked_image'
+			'spel_stacked_image',
 		];
 
 		// Docy Widgets
@@ -119,7 +131,9 @@ add_action( 'admin_init', function () {
 } );
 
 
-// Dashboard Features Setting Save Data
+/**
+ * Handle Features Settings Form Submission
+ */
 add_action( 'admin_init', function () {
 
 	if ( isset( $_POST['features-submit'] ) ) {
@@ -157,7 +171,7 @@ add_action( 'admin_init', function () {
 
 		// If the user is not on a pro-plan or Jobi theme, reset pro-widgets
 		$theme               = wp_get_theme();
-		$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
+		$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
 		if ( ! $is_premium_or_theme ) {
 			foreach ( $pro_features as $feature ) {
 				$data[ $feature ] = 'off';
