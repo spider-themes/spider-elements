@@ -57,6 +57,9 @@ function spider_elements_is_preview(): bool {
 
 /**
  * Elementor Title tags
+ *
+ * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_title_tags' ) ) {
 	function spel_get_title_tags(): array {
@@ -79,6 +82,8 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
  *
  * @param array $settings_key
  * @param bool  $is_echo
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
 	function spel_button_link( $settings_key, $is_echo = true ): void {
@@ -118,6 +123,7 @@ if ( ! function_exists( 'spel_button_link' ) ) {
  * Category IDs
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_cat_ids' ) ) {
 	function spel_cat_ids() {
@@ -138,14 +144,17 @@ if ( ! function_exists( 'spel_cat_ids' ) ) {
 
 /**
  * Day link to archive page
- **/
+ *
+ * @return void
+ * @since 1.0.0
+ */
 if ( ! function_exists( 'spel_day_link' ) ) {
 	function spel_day_link(): void {
-		$archive_year  = get_the_time( 'Y' );
-		$archive_month = get_the_time( 'm' );
-		$archive_day   = get_the_time( 'd' );
-		echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) );
-	}
+        $archive_year  = get_the_time( 'Y' );
+        $archive_month = get_the_time( 'm' );
+        $archive_day   = get_the_time( 'd' );
+        echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) );
+    }
 }
 
 /**
@@ -161,6 +170,7 @@ if ( ! function_exists( 'spel_day_link' ) ) {
  * @param int    $default      Default title length if no value is found in settings. Default 10.
  *
  * @return string The trimmed post title, or empty string if no title exists.
+ * @since 1.0.0
  */
 function spel_get_title_length( array $settings, string $settings_key, int $default = 10 ): string {
 	$title        = get_the_title();
@@ -178,6 +188,7 @@ function spel_get_title_length( array $settings, string $settings_key, int $defa
  * @param int    $default
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
 	function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
@@ -194,11 +205,12 @@ if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
  * @param string $term
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
 	function spel_get_first_taxonomy( $term = 'category' ): string {
-		$cats = get_the_terms( get_the_ID(), $term );
-		$cat  = is_array( $cats ) ? $cats[0]->name : '';
+        $cats = get_the_terms( get_the_ID(), $term );
+        $cat  = is_array( $cats ) ? $cats[0]->name : '';
 
 		return esc_html( $cat );
 	}
@@ -211,6 +223,7 @@ if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
  * @param string $term
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
 	function spel_get_first_taxonomy_link( $term = 'category' ): string {
@@ -229,14 +242,15 @@ if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
  * @param string $term
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_categories' ) ) {
 	function spel_get_categories( $term = 'category' ) {
 
-		$cats = get_terms( [
-			'taxonomy'   => $term,
-			'hide_empty' => true,
-		] );
+        $cats = get_terms( [
+            'taxonomy'   => $term,
+            'hide_empty' => true,
+        ] );
 
 		$cat_array        = [];
 		$cat_array['all'] = esc_html__( 'All', 'spider-elements' );
@@ -255,9 +269,8 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
 /**
  * Get a category list
  *
- * @param string $term
- *
- * @return string
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 	function spel_get_post_category_list(): void {
@@ -288,24 +301,23 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 /**
  * Get an author name array
  *
- * @param string $term
- *
- * @return array
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_post_author_name' ) ) {
 	function spel_get_post_author_name(): void {
-		global $post;
-		$byline = sprintf(
-		/* translators: %s: post author. */
-			esc_html_x( 'By: %s', 'post author', 'spider-elements' ),
-			'<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author ) ) . '">' . esc_html( get_the_author_meta(
-				'display_name',
-				$post->post_author
-			) ) . '</a></span>'
-		);
+        global $post;
+        $byline = sprintf(
+        /* translators: %s: post author. */
+            esc_html_x( 'By: %s', 'post author', 'spider-elements' ),
+            '<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author ) ) . '">' . esc_html( get_the_author_meta(
+                'display_name',
+                $post->post_author
+            ) ) . '</a></span>'
+        );
 
-		echo wp_kses_post( $byline ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	}
+        echo wp_kses_post( $byline ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
 }
 
 /**
@@ -315,6 +327,8 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
  * @param string $alt
  * @param string $class
  * @param array  $atts
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
 	function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
@@ -327,6 +341,14 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 			if ( ! empty( $atts ) ) {
 				foreach ( $atts as $k => $att ) {
+					// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+					$k = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $k );
+
+					// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+					if ( empty( $k ) || preg_match( '/^(on|style|formaction|src|href)/i', $k ) ) {
+						continue;
+					}
+
 					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
 				}
 			}
@@ -334,9 +356,11 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 			printf(
 				'<img src="%1$s"%2$s alt="%3$s"%4$s />',
 				esc_url( $settings_key['url'] ),
-				wp_kses_post( $class_attr ), // Escape class attribute
+				// $class_attr contains safe HTML attribute string
+				$class_attr, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				esc_attr( $alt ),
-				wp_kses_post( $atts_str ) // Escape attributes string
+				// $atts_str contains safe HTML attribute string
+				$atts_str // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			);
 		}
 	}
@@ -344,7 +368,7 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 
 /**
- * Get Default Image Elementor
+ * Get Default Image Elementor Caption
  *
  * @param $image_id
  *
@@ -366,82 +390,86 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
 
 
 /**
+ * Filter text content to allow only safe HTML.
+ *
  * @param string $content Text content to filter.
  *
  * @return string Filtered content containing only the allowed HTML.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_kses_post' ) ) {
-	function spel_kses_post( $content ): string {
-		$allowed_tag = [
-			'strong' => [],
-			'br'     => [],
-			'p'      => [
-				'class' => [],
-				'style' => [],
-			],
-			'i'      => [
-				'class' => [],
-				'style' => [],
-			],
-			'ul'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'li'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'span'   => [
-				'class' => [],
-				'style' => [],
-			],
-			'a'      => [
-				'href'  => [],
-				'class' => [],
-				'title' => [],
-			],
-			'div'    => [
-				'class' => [],
-				'style' => [],
-			],
-			'h1'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'h2'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'h3'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'h4'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'h5'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'h6'     => [
-				'class' => [],
-				'style' => [],
-			],
-			'img'    => [
-				'class'  => [],
-				'style'  => [],
-				'height' => [],
-				'width'  => [],
-				'src'    => [],
-				'srcset' => [],
-				'alt'    => [],
-			],
+    function spel_kses_post( $content ): string
+    {
+        $allowed_tag = [
+            'strong' => [],
+            'br'     => [],
+            'p'      => [
+                'class' => [],
+                'style' => [],
+            ],
+            'i'      => [
+                'class' => [],
+                'style' => [],
+            ],
+            'ul'     => [
+                'class' => [],
+                'style' => [],
+            ],
+            'li'     => [
+                'class' => [],
+                'style' => [],
+            ],
+            'span'   => [
+                'class' => [],
+                'style' => [],
+            ],
+            'a'      => [
+                'href'  => [],
+                'class' => [],
+                'title' => []
+            ],
+            'div'    => [
+                'class' => [],
+                'style' => [],
+            ],
+            'h1'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h2'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h3'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h4'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h5'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'h6'     => [
+                'class' => [],
+                'style' => []
+            ],
+            'img'    => [
+                'class'  => [],
+                'style'  => [],
+                'height' => [],
+                'width'  => [],
+                'src'    => [],
+                'srcset' => [],
+                'alt'    => [],
+            ],
 
-		];
+        ];
 
-		return wp_kses( $content, $allowed_tag );
-	}
+        return wp_kses( $content, $allowed_tag );
+    }
 }
 
 
@@ -452,6 +480,7 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
  * @param array $schedule_cats
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_tab_data' ) ) {
 	function spel_get_tab_data( $getCats, $schedule_cats ): array {
@@ -480,6 +509,7 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
  * @param int $words_per_minute
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
 	function spel_get_reading_time( $words_per_minute = 200 ): string {
@@ -498,6 +528,7 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
  * @param $size
  * @param $atts
  * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_dynamic_image' ) ) {
 	function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void {
@@ -525,6 +556,7 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
  * @param string $search    The search term for post-titles.
  *
  * @return array An associative array with post-IDs as keys and post-titles as values.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 	function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array {
@@ -555,9 +587,10 @@ if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 /**
  * Get all elementor page templates
  *
- * @param null $type
+ * @param string|null $type
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_el_templates' ) ) {
 	function spel_get_el_templates( $type = null ): array {
@@ -598,6 +631,7 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
  * Get information about the server environment.
  *
  * @return array Server environment information.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_environment_info' ) ) {
 	function spel_get_environment_info(): array {
@@ -699,8 +733,16 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 
 		echo '<ul class="' . esc_attr( $class ) . '">';
 
-		$big     = 999999999; // need an unlikely integer
-		$current = max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 ) );
+            echo wp_kses_post(
+                paginate_links( [
+                    'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                    'format'    => '?paged=%#%',
+                    'current'   => $current,
+                    'total'     => $query->max_num_pages,
+                    'prev_text' => $prev_text,
+                    'next_text' => $next_text,
+                ] )
+            );
 
 		echo wp_kses_post(
 			paginate_links( [
@@ -715,4 +757,19 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 
 		echo '</ul>';
 	}
+}
+
+/**
+ * Jobus pagination (Deprecated)
+ *
+ * @param WP_Query $query
+ * @return void
+ * @since 1.0.0
+ * @deprecated 1.8.0 No longer needed as we rely on native query handling.
+ */
+if ( ! function_exists( 'spel_archive_query' ) ) {
+	function spel_archive_query( $query ): void {
+		// Optimization: Removed unbounded query override to prevent performance issues on archive pages
+	}
+	// add_action('pre_get_posts', 'spel_archive_query');
 }

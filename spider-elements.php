@@ -35,7 +35,7 @@ if ( function_exists( 'spel_fs' ) ) {
 			if ( ! isset( $spel_fs ) ) {
 
 				// Include Freemius SDK.
-				require_once __DIR__ . '/includes/freemius/start.php';
+				require_once dirname( __FILE__ ) . '/includes/freemius/start.php';
 
 				$spel_fs = fs_dynamic_init(
 					[
@@ -56,12 +56,12 @@ if ( function_exists( 'spel_fs' ) ) {
 							'slug'       => 'spider_elements_settings',
 							'contact'    => false,
 							'support'    => false,
-							'first-path' => 'admin.php?page=spider_elements_settings',
+							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
-						'parallel_activation' => [
+						'parallel_activation' => array(
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						],
+						),
 					]
 				);
 			}
@@ -232,7 +232,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 * Load plugin localization files.
 		 */
 		public function i18n(): void {
-			load_plugin_textdomain( 'spider-elements', false, plugin_basename( __DIR__ ) . '/languages' );
+			load_plugin_textdomain( 'spider-elements', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 		}
 
 
@@ -252,19 +252,19 @@ if ( ! class_exists( 'SPEL' ) ) {
 			//Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 
-			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
-
-			// Admin and Frontend Scripts Loaded
-			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
-
 			$theme = wp_get_theme();
-			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true ) ) {
+			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
 				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
 			}
 
 			// Admin UI
 			if ( is_admin() ) {
+				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+
+				// Admin Scripts Loaded
+				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
+
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Dashboard.php';
 			}
@@ -288,7 +288,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			$theme               = wp_get_theme();
 			$features_opt        = get_option( 'spel_features_settings' );
-			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
+			$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
 
 			if ( $is_premium_or_theme ) {
 
@@ -366,7 +366,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
+				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
 					require_once( __DIR__ . "/widgets/$widget.php" );
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
