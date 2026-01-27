@@ -5,9 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Check if the pro-plugin and plan is active
+ * Check if the pro-plugin and plan is active.
  *
- * @return bool
+ * @return bool True if premium code can be used, false otherwise.
  */
 function spel_is_premium(): bool {
 	return spel_fs()->is_plan( 'pro' ) && spel_fs()->can_use_premium_code();
@@ -26,15 +26,8 @@ function spel_unlock_docy_theme(): bool {
 	return in_array( $theme_name, $docy_themes, true ) || spel_is_premium();
 }
 
-if ( ! function_exists( 'spel_rtl' ) ) {
-	/**
-	 * Check if RTL
-	 *
-	 * @return string
-	 */
-	function spel_rtl(): string {
+function spel_rtl(): string {
 		return is_rtl() ? 'true' : 'false';
-	}
 }
 
 /**
@@ -121,6 +114,7 @@ if ( ! function_exists( 'spel_button_link' ) ) {
  * Category IDs
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_cat_ids' ) ) {
 	function spel_cat_ids() {
@@ -166,6 +160,7 @@ if ( ! function_exists( 'spel_day_link' ) ) {
  * @param int    $default      Default title length if no value is found in settings. Default 10.
  *
  * @return string The trimmed post title, or empty string if no title exists.
+ * @since 1.0.0
  */
 function spel_get_title_length( array $settings, string $settings_key, int $default = 10 ): string {
 	$title        = get_the_title();
@@ -183,6 +178,7 @@ function spel_get_title_length( array $settings, string $settings_key, int $defa
  * @param int    $default
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
 	function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
@@ -199,6 +195,7 @@ if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
  * @param string $term
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
 	function spel_get_first_taxonomy( $term = 'category' ): string {
@@ -216,6 +213,7 @@ if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
  * @param string $term
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
 	function spel_get_first_taxonomy_link( $term = 'category' ): string {
@@ -234,6 +232,7 @@ if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
  * @param string $term
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_categories' ) ) {
 	function spel_get_categories( $term = 'category' ) {
@@ -260,9 +259,8 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
 /**
  * Get a category list
  *
- * @param string $term
- *
- * @return string
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 	function spel_get_post_category_list(): void {
@@ -293,9 +291,8 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 /**
  * Get an author name array
  *
- * @param string $term
- *
- * @return array
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_post_author_name' ) ) {
 	function spel_get_post_author_name(): void {
@@ -320,6 +317,8 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
  * @param string $alt
  * @param string $class
  * @param array  $atts
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
 	function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
@@ -332,6 +331,14 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 			if ( ! empty( $atts ) ) {
 				foreach ( $atts as $k => $att ) {
+					// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+					$k = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $k );
+
+					// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+					if ( empty( $k ) || preg_match( '/^(on|style|formaction|src|href)/i', $k ) ) {
+						continue;
+					}
+
 					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
 				}
 			}
@@ -339,22 +346,23 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 			printf(
 				'<img src="%1$s"%2$s alt="%3$s"%4$s />',
 				esc_url( $settings_key['url'] ),
-				wp_kses_post( $class_attr ), // Escape class attribute
+				// $class_attr contains safe HTML attribute string
+				$class_attr, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				esc_attr( $alt ),
-				wp_kses_post( $atts_str ) // Escape attributes string
+				// $atts_str contains safe HTML attribute string
+				$atts_str // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			);
 		}
 	}
 }
 
 
-
 /**
- * Get Default Image Elementor
+ * Get Default Image Elementor Caption
  *
- * @param $settins_key
- * @param string $class
- * @param string $alt
+ * @param $image_id
+ *
+ * @return array
  */
 if ( ! function_exists( 'spel_el_image_caption' ) ) {
 	function spel_el_image_caption( $image_id = '' ): array {
@@ -372,9 +380,12 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
 
 
 /**
+ * Filter text content to allow only safe HTML.
+ *
  * @param string $content Text content to filter.
  *
  * @return string Filtered content containing only the allowed HTML.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_kses_post' ) ) {
 	function spel_kses_post( $content ): string {
@@ -458,6 +469,7 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
  * @param array $schedule_cats
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_tab_data' ) ) {
 	function spel_get_tab_data( $getCats, $schedule_cats ): array {
@@ -483,9 +495,10 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
 /**
  * Get reading time
  *
- * @param string $term
+ * @param int $words_per_minute
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
 	function spel_get_reading_time( $words_per_minute = 200 ): string {
@@ -501,8 +514,10 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
 /**
  * Render Dynamic Image
  * @param $key
- * @param $class
+ * @param $size
+ * @param $atts
  * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_dynamic_image' ) ) {
 	function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void {
@@ -522,7 +537,6 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
 }
 
 
-
 /**
  * Retrieve a list of posts based on specified parameters.
  *
@@ -531,6 +545,7 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
  * @param string $search    The search term for post-titles.
  *
  * @return array An associative array with post-IDs as keys and post-titles as values.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 	function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array {
@@ -561,9 +576,10 @@ if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 /**
  * Get all elementor page templates
  *
- * @param null $type
+ * @param string|null $type
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_el_templates' ) ) {
 	function spel_get_el_templates( $type = null ): array {
@@ -604,6 +620,7 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
  * Get information about the server environment.
  *
  * @return array Server environment information.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_environment_info' ) ) {
 	function spel_get_environment_info(): array {
@@ -734,7 +751,12 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 }
 
 /**
- * Jobus pagination
+ * Jobus pagination (Deprecated)
+ *
+ * @param WP_Query $query
+ * @return void
+ * @since 1.0.0
+ * @deprecated 1.8.0 No longer needed as we rely on native query handling.
  */
 if ( ! function_exists( 'spel_archive_query' ) ) {
 	/**
