@@ -2,6 +2,10 @@
 **Learning:** Found `get_plugins()` being triggered on every frontend page load via an unconditionally instantiated `Plugin_Installer` class. This is a heavy operation as it scans the filesystem.
 **Action:** Always check where admin-related classes are instantiated. If they are in a global `init` hook, ensure they are wrapped in `is_admin()`, or better yet, lazy-load them only when their specific functionality is requested (e.g., via a singleton `instance()` call on the specific admin page).
 
-## 2024-05-23 - Specific Plugin Check Optimization
-**Learning:** `get_plugins()` scans and parses all plugin headers, which is O(N) and I/O heavy. When checking if a specific plugin is installed (e.g., for cross-promotion or dependency checks), `file_exists( WP_PLUGIN_DIR . '/path/to/plugin.php' )` is O(1) and significantly faster.
-**Action:** Replace `get_plugins()` usage with `file_exists()` when verifying the existence of known plugins.
+## 2024-10-25 - Unconditional Admin Class Loading
+**Learning:** The `Plugin_Installer` class, which performs a heavy `get_plugins()` filesystem scan, was being loaded on every request (including frontend) via `spider-elements.php`.
+**Action:** Always check main plugin file includes and wrap admin-specific classes (especially those in `includes/Admin/`) with `is_admin()` checks, verifying they aren't needed on the frontend.
+
+## 2024-10-24 - Unnecessary Admin File Loading
+**Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
+**Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.

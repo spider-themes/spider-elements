@@ -72,6 +72,16 @@ class Plugin_Installer
      */
     public function check_installed_plugin(string $name): bool
     {
+        if ( $this->check_activated_plugin( $name ) ) {
+            return true;
+        }
+
+        // Security: Prevent path traversal
+        if ( 0 !== validate_file( $name ) ) {
+            return false;
+        }
+
+        // Sentinel Fix: Use file check instead of heavy get_plugins() scan
         return file_exists( WP_PLUGIN_DIR . '/' . $name );
     }
 
