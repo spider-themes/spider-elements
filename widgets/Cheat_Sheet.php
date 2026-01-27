@@ -1020,7 +1020,7 @@ class Cheat_Sheet extends Widget_Base {
 
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
-		$allowed_styles = array( '1', '2', '3' );
+		$allowed_styles = [ '1', '2', '3' ];
 		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		include __DIR__ . "/templates/cheat-sheet/cheat-sheet-{$style}.php";
 	}

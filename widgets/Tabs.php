@@ -435,9 +435,9 @@ class Tabs extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .nav-tabs .nav-item .nav-link' => 'color: {{VALUE}}',
-				)
+				]
 			]
 		);
 
@@ -464,9 +464,9 @@ class Tabs extends Widget_Base {
 			'hover_tab_title_text_color', [
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .nav-tabs .nav-item .nav-link:hover' => 'color: {{VALUE}};',
-				)
+				]
 			]
 		);
 
@@ -493,9 +493,9 @@ class Tabs extends Widget_Base {
 			'active_tab_title_text_color', [
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .nav-tabs .nav-item .nav-link.active' => 'color: {{VALUE}};',
-				)
+				]
 			]
 		);
 
@@ -512,9 +512,9 @@ class Tabs extends Widget_Base {
 			'active_tab_title_border_color', [
 				'label'     => esc_html__( 'Top Border', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .nav-tabs .nav-item .nav-link:before' => 'background: {{VALUE}};',
-				),
+				],
 			]
 		);
 
@@ -675,9 +675,9 @@ class Tabs extends Widget_Base {
 			'tabs_content_text_color', [
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .tab-content .tab_style' => 'color: {{VALUE}}',
-				)
+				]
 			]
 		);
 
@@ -830,7 +830,7 @@ class Tabs extends Widget_Base {
 
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
-		$allowed_styles = array( '1', '2' );
+		$allowed_styles = [ '1', '2' ];
 		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		include __DIR__ . "/templates/tabs/tab-{$style}.php";
 

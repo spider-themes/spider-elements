@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
             foreach ( $tabs as $index => $item ) :
                 $tab_count = $index + 1;
                 $tab_title_setting_key = $this->get_repeater_setting_key('tab_title', 'tabs', $index);
-                $active = $tab_count == 1 ? 'active' : '';
+                $active = 1 === $tab_count ? 'active' : '';
                 $this->add_render_attribute($tab_title_setting_key, [
                     'class' => [ 'nav-link tab-item-title', $active ],
                     'data-rel' => 'tab-content-' . $id_int . $tab_count,
@@ -21,13 +21,13 @@ if (!defined('ABSPATH')) {
                 <li class="nav-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($i); ?>s">
                     <button <?php echo wp_kses_post( $this->get_render_attribute_string($tab_title_setting_key) ); ?>>
                         <?php
-                        if ( $is_auto_play == 'yes' ) { ?>
+                        if ( 'yes' === $is_auto_play ) { ?>
                             <div class="tab_progress">
                                 <div class="progress-bar"></div>
                             </div>
                             <?php
                         }
-                        if ( $is_auto_numb == 'yes' ) { ?>
+                        if ( 'yes' === $is_auto_numb ) { ?>
                             <span class="numb"><?php echo esc_html($tab_count) ?></span>
                             <?php
                         }
@@ -54,7 +54,7 @@ if (!defined('ABSPATH')) {
             <?php
             foreach ( $tabs as $index => $item ) {
                 $tab_count = $index + 1;
-                $active = $tab_count == 1 ? 'show active' : '';
+                $active = 1 === $tab_count ? 'show active' : '';
                 $tab_content_setting_key = $this->get_repeater_setting_key('tab_content', 'tabs', $index);
                 $this->add_render_attribute($tab_content_setting_key, [
                     'class' => [ 'tab-pane p-0 tab_style tab-box', 'fade', $active ],
@@ -63,9 +63,9 @@ if (!defined('ABSPATH')) {
                 ?>
                 <div <?php echo wp_kses_post( $this->get_render_attribute_string($tab_content_setting_key) ); ?>>
                     <?php
-                    if ('content' == $item[ 'tabs_content_type' ]) {
+                    if ('content' === $item[ 'tabs_content_type' ]) {
                         echo do_shortcode($item[ 'tab_content' ]);
-                    } elseif ('template' == $item[ 'tabs_content_type' ]) {
+                    } elseif ('template' === $item[ 'tabs_content_type' ]) {
                         if (!empty($item[ 'primary_templates' ])) {
                             echo \Elementor\Plugin::$instance->frontend->get_builder_content($item[ 'primary_templates' ], true);
                         }
@@ -75,7 +75,7 @@ if (!defined('ABSPATH')) {
                 <?php
             }
 
-            if ($is_navigation_arrow == 'yes') { ?>
+            if ('yes' === $is_navigation_arrow) { ?>
                 <button class="btn btn-info tab_arrow_btn previous"><i class="arrow_carrot-left"></i></button>
                 <button class="btn btn-info tab_arrow_btn next"><i class="arrow_carrot-right"></i></button>
                 <?php
@@ -88,7 +88,7 @@ if (!defined('ABSPATH')) {
 </div>
 
 <?php
-if ( $is_auto_play == 'yes' ) {
+if ( 'yes' === $is_auto_play ) {
     ?>
     <script>
         (function ($) {

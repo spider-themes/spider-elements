@@ -110,13 +110,13 @@ class Plugin_Installer
             $this->init();
         }
 
-        $data = array(
+        $data = [
             'url' => '',
             'activation_url' => '',
             'installation_url' => '',
             'title' => '',
             'status' => '',
-        );
+        ];
 
         if ($this->check_installed_plugin($name)) {
             if ($this->check_activated_plugin($name)) {
@@ -148,12 +148,12 @@ class Plugin_Installer
     {
         return \wp_nonce_url(
             \add_query_arg(
-                array(
+                [
                     'action' => 'activate',
                     'plugin' => $pluginName,
                     'plugin_status' => 'all',
                     'paged' => '1&s',
-                ),
+                ],
                 \admin_url( 'plugins.php' )
             ),
             'activate-plugin_' . $pluginName
@@ -174,10 +174,10 @@ class Plugin_Installer
 
         return \wp_nonce_url(
             \add_query_arg(
-                array(
+                [
                     'action' => $action,
                     'plugin' => $pluginSlug,
-                ),
+                ],
                 \admin_url( 'update.php' )
             ),
             $action . '_' . $pluginSlug
