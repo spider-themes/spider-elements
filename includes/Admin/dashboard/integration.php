@@ -3,56 +3,56 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$integrations = array(
-	array(
+$integrations = [
+	[
 		'slug'     => 'bbp-core',
 		'basename' => 'bbp-core/bbp-core.php',
 		'logo'     => SPEL_IMG . '/dashboard/bbp-core-logo.svg',
 		'title'    => esc_html__( 'Forumax', 'spider-elements' ),
 		'desc'     => esc_html__( 'A complete, self-contained platform for building support forums, or discussion communities.', 'spider-elements' ),
 		'category' => 'community',
-	),
-	array(
+	],
+	[
 		'slug'     => 'eazydocs',
 		'basename' => 'eazydocs/eazydocs.php',
 		'logo'     => SPEL_IMG . '/dashboard/eazydocs-logo.png',
 		'title'    => esc_html__( 'EazyDocs', 'spider-elements' ),
 		'desc'     => esc_html__( 'A powerful & beautiful documentation, knowledge base builder plugin.', 'spider-elements' ),
 		'category' => 'documentation',
-	),
-	array(
+	],
+	[
 		'slug'     => 'changeloger',
 		'basename' => 'changeloger/changeloger.php',
 		'logo'     => SPEL_IMG . '/dashboard/changeloger-logo-black.svg',
 		'title'    => esc_html__( 'Changeloger', 'spider-elements' ),
 		'desc'     => esc_html__( 'Auto-convert plain text changelogs into engaging visuals for WordPress.', 'spider-elements' ),
 		'category' => 'utility',
-	),
-	array(
+	],
+	[
 		'slug'     => 'advanced-accordion-block',
 		'basename' => 'advanced-accordion-block/advanced-accordion-block.php',
 		'logo'     => SPEL_IMG . '/dashboard/AAGB-logo.svg',
 		'title'    => esc_html__( 'Advanced Accordion Block', 'spider-elements' ),
 		'desc'     => esc_html__( '#1 WordPress plugin for creating professional FAQ sections, expandable content accordions.', 'spider-elements' ),
 		'category' => 'gutenberg',
-	),
-	array(
+	],
+	[
 		'slug'     => 'antimanual',
 		'basename' => 'antimanual/antimanual.php',
 		'logo'     => SPEL_IMG . '/dashboard/antimanual-logo.png',
 		'title'    => esc_html__( 'Antimanual', 'spider-elements' ),
 		'desc'     => esc_html__( 'The ultimate AI powerhouse for your website. Do automatically with AI instead of manually.', 'spider-elements' ),
 		'category' => 'ai',
-	),
-	array(
+	],
+	[
 		'slug'     => 'jobus',
 		'basename' => 'jobus/jobus.php',
 		'logo'     => SPEL_IMG . '/dashboard/jobus-logo.png',
 		'title'    => esc_html__( 'Jobus', 'spider-elements' ),
 		'desc'     => esc_html__( 'A modern and powerful plugin designed to transform your website into a fully functional Job portal.', 'spider-elements' ),
 		'category' => 'community',
-	),
-);
+	],
+];
 ?>
 
 <div id="integration" class="tab-box">
@@ -82,9 +82,9 @@ $integrations = array(
 
 				// Determine button icon based on status
 				$button_icon = 'icon-download';
-				if ( $plugin_status === 'activated' ) {
+				if ( 'activated' === $plugin_status ) {
 					$button_icon = 'icon-check';
-				} elseif ( $plugin_status === 'inactive' ) {
+				} elseif ( 'inactive' === $plugin_status ) {
 					$button_icon = 'icon-power';
 				}
 				?>
@@ -110,7 +110,7 @@ $integrations = array(
                             </div>',
                             esc_attr( $plugin_status ),
                             esc_url( $plugin_activation_url ),
-                            esc_url( $plugin_status === 'not_installed' ? $plugin_installation_url : $plugin_activation_url ),
+                            esc_url( 'not_installed' === $plugin_status ? $plugin_installation_url : $plugin_activation_url ),
                             esc_attr( $plugin_status_label ),
                             esc_attr( $button_icon ),
                             esc_html( $plugin_status_title ),
