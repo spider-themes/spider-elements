@@ -152,7 +152,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			$this->define_constants();
 
 			// Init Plugin
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+			add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
 			// Load text domain for localization
 			add_action( 'init', [ $this, 'i18n' ] );
@@ -260,8 +260,9 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Admin UI
 			if ( is_admin() ) {
-				// Admin Settings and Installer
 				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+
+				// Admin Scripts Loaded
 				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
 
 				require_once __DIR__ . '/includes/Admin/Assets.php';
@@ -375,10 +376,11 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 
 		/**
+		 * Define Constants
+		 *
+		 * Define plugin constants.
+		 *
 		 * @return void
-		 * @since  1.7.0
-		 * @access public
-		 * @static
 		 */
 		public function define_constants(): void {
 			//SPEL(Short form - Spider Elements)
