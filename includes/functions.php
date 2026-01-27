@@ -5,20 +5,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Check if the pro-plugin and plan is active
+ * Check if the pro-plugin and plan is active.
  *
- * @return bool
- * @since 1.0.0
+ * @return bool True if premium code can be used, false otherwise.
  */
 function spel_is_premium(): bool {
 	return spel_fs()->is_plan( 'pro' ) && spel_fs()->can_use_premium_code();
 }
 
 /**
- * Check if the Docy theme is active
+ * Check if the Docy theme is active or if the user has a premium plan.
  *
- * @return bool
- * @since 1.0.0
+ * @return bool True if Docy theme is active or premium plan is active.
  */
 function spel_unlock_docy_theme(): bool {
 	$theme       = wp_get_theme();
@@ -32,8 +30,7 @@ if ( ! function_exists( 'spel_rtl' ) ) {
 	/**
 	 * Check if RTL mode is active.
 	 *
-	 * @return string 'true' or 'false'
-	 * @since 1.0.0
+	 * @return string 'true' if RTL, 'false' otherwise.
 	 */
 	function spel_rtl(): string {
 		return is_rtl() ? 'true' : 'false';
@@ -41,20 +38,18 @@ if ( ! function_exists( 'spel_rtl' ) ) {
 }
 
 /**
- * Elementor is edit mode
+ * Check if Elementor is in edit mode.
  *
  * @return bool
- * @since 1.0.0
  */
 function spider_elements_is_edit(): bool {
 	return \Elementor\Plugin::$instance->editor->is_edit_mode();
 }
 
 /**
- * Elementor is preview mode
+ * Check if Elementor is in preview mode.
  *
  * @return bool
- * @since 1.0.0
  */
 function spider_elements_is_preview(): bool {
 	return \Elementor\Plugin::$instance->preview->is_preview_mode();
@@ -68,18 +63,18 @@ function spider_elements_is_preview(): bool {
  */
 if ( ! function_exists( 'spel_get_title_tags' ) ) {
 	function spel_get_title_tags(): array {
-        return [
-            'h1'   => esc_html__( 'H1', 'spider-elements' ),
-            'h2'   => esc_html__( 'H2', 'spider-elements' ),
-            'h3'   => esc_html__( 'H3', 'spider-elements' ),
-            'h4'   => esc_html__( 'H4', 'spider-elements' ),
-            'h5'   => esc_html__( 'H5', 'spider-elements' ),
-            'h6'   => esc_html__( 'H6', 'spider-elements' ),
-            'div'  => esc_html__( 'Div', 'spider-elements' ),
-            'span' => esc_html__( 'Span', 'spider-elements' ),
-            'p'    => esc_html__( 'Paragraph', 'spider-elements' ),
-        ];
-    }
+		return [
+			'h1'   => esc_html__( 'H1', 'spider-elements' ),
+			'h2'   => esc_html__( 'H2', 'spider-elements' ),
+			'h3'   => esc_html__( 'H3', 'spider-elements' ),
+			'h4'   => esc_html__( 'H4', 'spider-elements' ),
+			'h5'   => esc_html__( 'H5', 'spider-elements' ),
+			'h6'   => esc_html__( 'H6', 'spider-elements' ),
+			'div'  => esc_html__( 'Div', 'spider-elements' ),
+			'span' => esc_html__( 'Span', 'spider-elements' ),
+			'p'    => esc_html__( 'Paragraph', 'spider-elements' ),
+		];
+	}
 }
 
 /**
@@ -92,36 +87,36 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
 	function spel_button_link( $settings_key, $is_echo = true ): void {
-        if ( $is_echo ) {
-            echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
-            echo $settings_key['is_external'] ? ' target="_blank"' : '';
-            echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
+		if ( $is_echo ) {
+			echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
+			echo $settings_key['is_external'] ? ' target="_blank"' : '';
+			echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
 
-            if ( ! empty( $settings_key['custom_attributes'] ) ) {
-                $attrs = explode( ',', $settings_key['custom_attributes'] );
+			if ( ! empty( $settings_key['custom_attributes'] ) ) {
+				$attrs = explode( ',', $settings_key['custom_attributes'] );
 
-                if ( is_array( $attrs ) ) {
-                    foreach ( $attrs as $data ) {
-                        $data_attrs = explode( '|', $data, 2 );
-                        $attr_name  = trim( $data_attrs[0] );
-                        $attr_value = isset( $data_attrs[1] ) ? $data_attrs[1] : '';
+				if ( is_array( $attrs ) ) {
+					foreach ( $attrs as $data ) {
+						$data_attrs = explode( '|', $data, 2 );
+						$attr_name  = trim( $data_attrs[0] );
+						$attr_value = isset( $data_attrs[1] ) ? $data_attrs[1] : '';
 
-                        // Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
-                        $attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
+						// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+						$attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
 
-                        // Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-                        if ( preg_match( '/^(on|style|href|src|formaction)/i', $attr_name ) ) {
-                            continue;
-                        }
+						// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+						if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+							continue;
+						}
 
-                        if ( ! empty( $attr_name ) ) {
-                            echo ' ' . esc_attr( $attr_name ) . '="' . esc_attr( $attr_value ) . '"';
-                        }
-                    }
-                }
-            }
-        }
-    }
+						if ( ! empty( $attr_name ) ) {
+							echo ' ' . esc_attr( $attr_name ) . '="' . esc_attr( $attr_value ) . '"';
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /**
@@ -217,8 +212,8 @@ if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
         $cats = get_the_terms( get_the_ID(), $term );
         $cat  = is_array( $cats ) ? $cats[0]->name : '';
 
-        return esc_html( $cat );
-    }
+		return esc_html( $cat );
+	}
 }
 
 
@@ -233,11 +228,11 @@ if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
 if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
 	function spel_get_first_taxonomy_link( $term = 'category' ): string {
 
-        $cats = get_the_terms( get_the_ID(), $term );
-        $cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
+		$cats = get_the_terms( get_the_ID(), $term );
+		$cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
 
-        return esc_url( $cat );
-    }
+		return esc_url( $cat );
+	}
 }
 
 
@@ -257,17 +252,17 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
             'hide_empty' => true,
         ] );
 
-        $cat_array        = [];
-        $cat_array['all'] = esc_html__( 'All', 'spider-elements' );
+		$cat_array        = [];
+		$cat_array['all'] = esc_html__( 'All', 'spider-elements' );
 
-        if ( is_array( $cats ) ) {
-            foreach ( $cats as $cat ) {
-                $cat_array[ $cat->term_id ] = $cat->name;
-            }
-        }
+		if ( is_array( $cats ) ) {
+			foreach ( $cats as $cat ) {
+				$cat_array[ $cat->term_id ] = $cat->name;
+			}
+		}
 
-        return $cat_array;
-    }
+		return $cat_array;
+	}
 }
 
 
@@ -279,27 +274,27 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
  */
 if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 	function spel_get_post_category_list(): void {
-        $categories = get_categories();
+		$categories = get_categories();
 
-        if ( ! empty( $categories ) ) {
-            echo '<span class="blog-category">';
+		if ( ! empty( $categories ) ) {
+			echo '<span class="blog-category">';
 
-            $category_names = [];
+			$category_names = [];
 
-            if ( is_array( $categories ) ) {
-                foreach ( $categories as $category ) {
-                    $category_link    = get_category_link( $category->term_id );
-                    $category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
-                }
-            }
+			if ( is_array( $categories ) ) {
+				foreach ( $categories as $category ) {
+					$category_link    = get_category_link( $category->term_id );
+					$category_names[] = '<a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>';
+				}
+			}
 
-            echo esc_html( implode( ', ', $category_names ) );
+			echo esc_html( implode( ', ', $category_names ) );
 
-            echo '</span>';
-        } else {
-            echo esc_html__( 'No categories found.', 'spider-elements' );
-        }
-    }
+			echo '</span>';
+		} else {
+			echo esc_html__( 'No categories found.', 'spider-elements' );
+		}
+	}
 }
 
 
@@ -372,26 +367,25 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 }
 
 
-
 /**
  * Get Default Image Elementor Caption
  *
- * @param string $image_id
+ * @param $image_id
+ *
  * @return array
- * @since 1.0.0
  */
 if ( ! function_exists( 'spel_el_image_caption' ) ) {
 	function spel_el_image_caption( $image_id = '' ): array {
-        $img_attachment = get_post( $image_id );
+		$img_attachment = get_post( $image_id );
 
-        return [
-            'alt'     => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
-            'caption' => $img_attachment->post_excerpt,
-            'href'    => get_permalink( $img_attachment->ID ),
-            'src'     => $img_attachment->guid,
-            'title'   => $img_attachment->post_title,
-        ];
-    }
+		return [
+			'alt'     => get_post_meta( $img_attachment->ID, '_wp_attachment_image_alt', true ),
+			'caption' => $img_attachment->post_excerpt,
+			'href'    => get_permalink( $img_attachment->ID ),
+			'src'     => $img_attachment->guid,
+			'title'   => $img_attachment->post_title,
+		];
+	}
 }
 
 
@@ -519,41 +513,39 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
  */
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
 	function spel_get_reading_time( $words_per_minute = 200 ): string {
-        $content      = get_post_field( 'post_content', get_the_ID() );
-        $word_count   = str_word_count( wp_strip_all_tags( $content ) );
-        $reading_time = ceil( $word_count / $words_per_minute );
-        $timer        = _n( 'minute', 'minutes', $reading_time, 'spider-elements' );
+		$content      = get_post_field( 'post_content', get_the_ID() );
+		$word_count   = str_word_count( wp_strip_all_tags( $content ) );
+		$reading_time = ceil( $word_count / $words_per_minute );
+		$timer        = _n( 'minute', 'minutes', $reading_time, 'spider-elements' );
 
-        return sprintf( '%d %s', $reading_time, $timer );
-    }
+		return sprintf( '%d %s', $reading_time, $timer );
+	}
 }
 
 /**
  * Render Dynamic Image
- *
- * @param array  $key
- * @param string $size
- * @param array  $atts
+ * @param $key
+ * @param $size
+ * @param $atts
  * @return void
  * @since 1.0.0
  */
 if ( ! function_exists( 'spel_dynamic_image' ) ) {
 	function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void {
-        $image = wp_get_attachment_image( $key['id'], $size, '', $atts );
-        echo wp_kses( $image, [
-            'img'    => [
-                'class'  => [],
-                'style'  => [],
-                'height' => [],
-                'width'  => [],
-                'src'    => [],
-                'srcset' => [],
-                'alt'    => [],
-            ],
-        ]);
-    }
+		$image = wp_get_attachment_image( $key['id'], $size, '', $atts );
+		echo wp_kses( $image, [
+			'img' => [
+				'class'  => [],
+				'style'  => [],
+				'height' => [],
+				'width'  => [],
+				'src'    => [],
+				'srcset' => [],
+				'alt'    => [],
+			],
+		] );
+	}
 }
-
 
 
 /**
@@ -568,27 +560,27 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
  */
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 	function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array {
-        $args = [
-            'post_type' => $post_type,
-            'post_status' => 'publish',
-            'posts_per_page' => $limit,
-            's' => $search, // Search term
-        ];
+		$args = [
+			'post_type'      => $post_type,
+			'post_status'    => 'publish',
+			'posts_per_page' => $limit,
+			's'              => $search, // Search term
+		];
 
-        $query = new WP_Query( $args );
+		$query = new WP_Query( $args );
 
-        $data = [];
-        if ( $query->have_posts() ) {
-            while ( $query->have_posts() ) {
-                $query->the_post();
-                $data[ get_the_ID() ] = get_the_title();
-            }
-        }
+		$data = [];
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$data[ get_the_ID() ] = get_the_title();
+			}
+		}
 
-        wp_reset_postdata(); // Reset post data after custom query
+		wp_reset_postdata(); // Reset post data after custom query
 
-        return $data;
-    }
+		return $data;
+	}
 }
 
 
@@ -602,36 +594,36 @@ if ( ! function_exists( 'spel_get_query_post_list' ) ) {
  */
 if ( ! function_exists( 'spel_get_el_templates' ) ) {
 	function spel_get_el_templates( $type = null ): array {
-        $options = [];
+		$options = [];
 
-        if ( $type ) {
+		if ( $type ) {
 
-            $args              = [
-                'post_type'      => 'elementor_library',
-                'posts_per_page' => -1,
-            ];
+			$args = [
+				'post_type'      => 'elementor_library',
+				'posts_per_page' => -1,
+			];
 
-            $args['tax_query'] = [
-                [
-                    'taxonomy' => 'elementor_library_type',
-                    'field'    => 'slug',
-                    'terms'    => $type,
-                ],
-            ];
+			$args['tax_query'] = [
+				[
+					'taxonomy' => 'elementor_library_type',
+					'field'    => 'slug',
+					'terms'    => $type,
+				],
+			];
 
-            $page_templates = get_posts( $args );
+			$page_templates = get_posts( $args );
 
-            if ( ! empty( $page_templates ) && ! is_wp_error( $page_templates ) ) {
-                foreach ( $page_templates as $post ) {
-                    $options[ $post->ID ] = $post->post_title;
-                }
-            }
-        } else {
-            $options = spel_get_query_post_list( 'elementor_library' );
-        }
+			if ( ! empty( $page_templates ) && ! is_wp_error( $page_templates ) ) {
+				foreach ( $page_templates as $post ) {
+					$options[ $post->ID ] = $post->post_title;
+				}
+			}
+		} else {
+			$options = spel_get_query_post_list( 'elementor_library' );
+		}
 
-        return $options;
-    }
+		return $options;
+	}
 }
 
 
@@ -644,47 +636,47 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
 if ( ! function_exists( 'spel_get_environment_info' ) ) {
 	function spel_get_environment_info(): array {
 
-        // Figure out cURL version, if installed.
-        $curl_version = '';
-        if ( function_exists( 'curl_version' ) ) {
-            $curl_version = curl_version();
-            $curl_version = $curl_version['version'] . ', ' . $curl_version['ssl_version'];
-        }
+		// Figure out cURL version, if installed.
+		$curl_version = '';
+		if ( function_exists( 'curl_version' ) ) {
+			$curl_version = curl_version();
+			$curl_version = $curl_version['version'] . ', ' . $curl_version['ssl_version'];
+		}
 
-        // WP memory limit.
-        $wp_memory_limit = spel_readable_number(WP_MEMORY_LIMIT);
-        if ( function_exists( 'memory_get_usage' ) ) {
-            $wp_memory_limit = max( $wp_memory_limit, spel_readable_number( @ini_get( 'memory_limit' ) ) );
-        }
+		// WP memory limit.
+		$wp_memory_limit = spel_readable_number( WP_MEMORY_LIMIT );
+		if ( function_exists( 'memory_get_usage' ) ) {
+			$wp_memory_limit = max( $wp_memory_limit, spel_readable_number( @ini_get( 'memory_limit' ) ) );
+		}
 
-        return [
-            'home_url'                  => get_option( 'home' ),
-            'site_url'                  => get_option( 'siteurl' ),
-            'version'                   => SPEL_VERSION,
-            'wp_version'                => get_bloginfo( 'version' ),
-            'wp_multisite'              => is_multisite(),
-            'wp_memory_limit'           => $wp_memory_limit,
-            'wp_debug_mode'             => ( defined( 'WP_DEBUG' ) && WP_DEBUG ),
-            'wp_cron'                   => ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ),
-            'language'                  => get_locale(),
-            'external_object_cache'     => wp_using_ext_object_cache(),
-            'server_info'               => isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '',
-            'php_version'               => phpversion(),
-            'php_post_max_size'         => spel_readable_number( ini_get( 'post_max_size' ) ),
-            'php_max_execution_time'    => ini_get( 'max_execution_time' ),
-            'php_max_input_vars'        => ini_get( 'max_input_vars' ),
-            'curl_version'              => $curl_version,
-            'suhosin_installed'         => extension_loaded( 'suhosin' ),
-            'max_upload_size'           => wp_max_upload_size(),
-            'default_timezone'          => date_default_timezone_get(),
-            'fsockopen_or_curl_enabled' => ( function_exists( 'fsockopen' ) || function_exists( 'curl_init' ) ),
-            'soapclient_enabled'        => class_exists( 'SoapClient' ),
-            'domdocument_enabled'       => class_exists( 'DOMDocument' ),
-            'gzip_enabled'              => is_callable( 'gzopen' ),
-            'mbstring_enabled'          => extension_loaded( 'mbstring' ),
-        ];
+		return [
+			'home_url'                  => get_option( 'home' ),
+			'site_url'                  => get_option( 'siteurl' ),
+			'version'                   => SPEL_VERSION,
+			'wp_version'                => get_bloginfo( 'version' ),
+			'wp_multisite'              => is_multisite(),
+			'wp_memory_limit'           => $wp_memory_limit,
+			'wp_debug_mode'             => ( defined( 'WP_DEBUG' ) && WP_DEBUG ),
+			'wp_cron'                   => ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ),
+			'language'                  => get_locale(),
+			'external_object_cache'     => wp_using_ext_object_cache(),
+			'server_info'               => isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '',
+			'php_version'               => phpversion(),
+			'php_post_max_size'         => spel_readable_number( ini_get( 'post_max_size' ) ),
+			'php_max_execution_time'    => ini_get( 'max_execution_time' ),
+			'php_max_input_vars'        => ini_get( 'max_input_vars' ),
+			'curl_version'              => $curl_version,
+			'suhosin_installed'         => extension_loaded( 'suhosin' ),
+			'max_upload_size'           => wp_max_upload_size(),
+			'default_timezone'          => date_default_timezone_get(),
+			'fsockopen_or_curl_enabled' => ( function_exists( 'fsockopen' ) || function_exists( 'curl_init' ) ),
+			'soapclient_enabled'        => class_exists( 'SoapClient' ),
+			'domdocument_enabled'       => class_exists( 'DOMDocument' ),
+			'gzip_enabled'              => is_callable( 'gzopen' ),
+			'mbstring_enabled'          => extension_loaded( 'mbstring' ),
+		];
 
-    }
+	}
 }
 
 
@@ -696,65 +688,50 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
  */
 if ( ! function_exists( 'spel_readable_number' ) ) {
 	function spel_readable_number( $size ): int {
-		$size = trim( $size );
+
 		// Get the last character of the size string
 		$suffix = substr( $size, -1 );
+
 		// Remove the last character from the size string
 		$value = substr( $size, 0, -1 );
+
 		// Convert suffix to lowercase for case-insensitive comparison
 		$suffix = strtolower( $suffix );
 
-		switch ( $suffix ) {
-			case 'p':
-				$value *= 1024;
-				// Fallthrough
-			case 't':
-				$value *= 1024;
-				// Fallthrough
-			case 'g':
-				$value *= 1024;
-				// Fallthrough
-			case 'm':
-				$value *= 1024;
-				// Fallthrough
-			case 'k':
-				$value *= 1024;
-				break;
+		$multipliers = [
+			'p' => 1024,
+			't' => 1024,
+			'g' => 1024,
+			'm' => 1024,
+			'k' => 1024,
+		];
+
+		// Check if the suffix is a valid multiplier
+		if ( array_key_exists( $suffix, $multipliers ) ) {
+			$value *= $multipliers[ $suffix ];
 		}
 
 		// Return the result
 		return (int) $value;
+
 	}
 }
 
 
-/**
- * Render pagination
- *
- * @param WP_Query $query
- * @param string   $class
- * @param string   $prev
- * @param string   $next
- * @return void
- * @since 1.0.0
- */
 if ( ! function_exists( 'spel_pagination' ) ) {
 	function spel_pagination( $query, $class = 'spel-pagination', $prev = '', $next = '' ): void {
 
-        if ( $query->max_num_pages <= 1 ) {
-            return; // No pagination needed if only one page
-        }
+		if ( $query->max_num_pages <= 1 ) {
+			return; // No pagination needed if only one page
+		}
 
-        $default_prev = '<img src="' . esc_url(SPEL_IMG . '/icons/prev.svg') . '" alt="' . esc_attr__('arrow-left',  'spider-elements') . '" class="me-2" />' . esc_html__('Prev',  'spider-elements');
-        $default_next = esc_html__('Next',  'spider-elements') . '<img src="' . esc_url(SPEL_IMG . '/icons/next.svg') . '" alt="' . esc_attr__('arrow-right',  'spider-elements') . '" class="ms-2" />';
+		$default_prev = '<img src="' . esc_url( SPEL_IMG . '/icons/prev.svg' ) . '" alt="' . esc_attr__( 'arrow-left', 'spider-elements' ) . '" class="me-2" />' . esc_html__( 'Prev', 'spider-elements' );
+		$default_next = esc_html__( 'Next', 'spider-elements' ) . '<img src="' . esc_url( SPEL_IMG . '/icons/next.svg' ) . '" alt="' . esc_attr__( 'arrow-right', 'spider-elements' ) . '" class="ms-2" />';
 
-        $prev_text = !empty($prev) ? $prev : $default_prev;
-        $next_text = !empty($next) ? $next : $default_next;
+		$prev_text = ! empty( $prev ) ? $prev : $default_prev;
+		$next_text = ! empty( $next ) ? $next : $default_next;
 
-        echo '<ul class="' . esc_attr($class) . '">';
-
-            $big = 999999999; // need an unlikely integer
-            $current = max(1, get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1));
+		echo '<ul class="' . esc_attr( $class ) . '">';
 
             echo wp_kses_post(
                 paginate_links( [
@@ -767,9 +744,19 @@ if ( ! function_exists( 'spel_pagination' ) ) {
                 ] )
             );
 
+		echo wp_kses_post(
+			paginate_links( [
+				'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'    => '?paged=%#%',
+				'current'   => $current,
+				'total'     => $query->max_num_pages,
+				'prev_text' => $prev_text,
+				'next_text' => $next_text,
+			] )
+		);
 
-        echo '</ul>';
-    }
+		echo '</ul>';
+	}
 }
 
 /**

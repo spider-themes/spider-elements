@@ -1,3 +1,3 @@
-## 2026-01-22 - WPCS & Logic Fixes
-**Learning:** Found misuse of `wp_kses_post` for attribute escaping which potentially breaks `class` attributes containing spaces or special characters when constructed as a string. Also found broken logic in file size conversion.
-**Action:** Use `esc_attr()` for attributes and verify logic of helper functions during review.
+## 2024-05-23 - WPCS Baseline & Strict Comparisons
+**Learning:** This codebase had inconsistent array syntax (`array()` vs `[]`) and used loose `in_array` checks for theme validation.
+**Action:** Enforce `[]` array syntax, `__DIR__` over `dirname(__FILE__)`, and strict `in_array` checks (3rd param `true`) in all future PRs to maintain consistency and prevent loose comparison bugs.
