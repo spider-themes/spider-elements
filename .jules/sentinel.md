@@ -18,3 +18,15 @@ When parsing custom attributes from user input:
    - Or Whitelist: Only allow `data-*`, `aria-*`, `title`, `class`, `id`.
 2. **Handle Edge Cases:** Ensure `explode` has enough parts before accessing indexes to avoid PHP notices.
 3. **Defense in Depth:** Even if the input field is restricted to admins, protecting the output function guards against privilege escalation or DB compromises.
+
+## 2024-05-24 - CSS Injection and Reverse Tabnabbing
+**Vulnerability:**
+The `spel_button_link` function allowed `style` attributes in custom attributes, enabling potential site defacement. It also failed to add `rel="noopener"` to links with `target="_blank"`, exposing users to reverse tabnabbing attacks.
+
+**Learning:**
+1. `style` attributes can be used for defacement (e.g., covering the screen) even if XSS is blocked.
+2. `target="_blank"` requires `rel="noopener"` (or `noreferrer`) to prevent the new page from accessing the `window.opener` object. WordPress `esc_url` and `wp_kses` do not automatically enforce this context-dependent relationship.
+
+**Prevention:**
+1. Explicitly blacklist `style` in custom attribute parsers.
+2. Automatically inject `rel="noopener"` whenever `target="_blank"` is generated.
