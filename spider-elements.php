@@ -58,10 +58,10 @@ if ( function_exists( 'spel_fs' ) ) {
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
-						'parallel_activation' => [
+						'parallel_activation' => array(
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						],
+						),
 					]
 				);
 			}
@@ -130,7 +130,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 		 *
 		 */
 		public static function instance() {
-			if ( null === self::$_instance ) {
+			if ( is_null( self::$_instance ) ) {
 				self::$_instance = new self();
 			}
 
@@ -252,11 +252,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 			//Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 
-			require_once __DIR__ . '/includes/Admin/Module_Settings.php';
-
-			// Admin and Frontend Scripts Loaded
-			require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
-
 			$theme = wp_get_theme();
 			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
 				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
@@ -265,6 +260,11 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Admin UI
 			if ( is_admin() ) {
+				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
+
+				// Admin Scripts Loaded
+				require_once __DIR__ . '/includes/Admin/Plugin_Installer.php';
+
 				require_once __DIR__ . '/includes/Admin/Assets.php';
 				require_once __DIR__ . '/includes/Admin/Dashboard.php';
 			}
