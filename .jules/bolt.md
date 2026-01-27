@@ -5,3 +5,7 @@
 ## 2024-10-25 - Unconditional Admin Class Loading
 **Learning:** The `Plugin_Installer` class, which performs a heavy `get_plugins()` filesystem scan, was being loaded on every request (including frontend) via `spider-elements.php`.
 **Action:** Always check main plugin file includes and wrap admin-specific classes (especially those in `includes/Admin/`) with `is_admin()` checks, verifying they aren't needed on the frontend.
+
+## 2024-10-24 - Unnecessary Admin File Loading
+**Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
+**Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
