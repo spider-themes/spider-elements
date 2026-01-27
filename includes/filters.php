@@ -1,6 +1,9 @@
 <?php
 /**
- * Plugin filters and actions.
+ * Plugin Filters and Actions
+ *
+ * This file handles various hooks, including image sizes, constants,
+ * and admin form submissions.
  *
  * @package SpiderElements
  */
@@ -32,7 +35,7 @@ add_action( 'after_setup_theme', function () {
 
 
 /**
- * Handle elements settings form submission.
+ * Handle Element Settings Form Submission
  */
 add_action( 'admin_init', function () {
 
@@ -129,7 +132,7 @@ add_action( 'admin_init', function () {
 
 
 /**
- * Handle dashboard features settings form submission.
+ * Handle Features Settings Form Submission
  */
 add_action( 'admin_init', function () {
 

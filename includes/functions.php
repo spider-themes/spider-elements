@@ -14,9 +14,9 @@ function spel_is_premium(): bool {
 }
 
 /**
- * Check if the Docy theme is active or if the user has a premium plan.
+ * Check if the Docy theme is active
  *
- * @return bool True if Docy theme is active or premium plan is active.
+ * @return bool
  */
 function spel_unlock_docy_theme(): bool {
 	$theme       = wp_get_theme();
@@ -26,19 +26,12 @@ function spel_unlock_docy_theme(): bool {
 	return in_array( $theme_name, $docy_themes, true ) || spel_is_premium();
 }
 
-if ( ! function_exists( 'spel_rtl' ) ) {
-	/**
-	 * Check if RTL mode is active.
-	 *
-	 * @return string 'true' if RTL, 'false' otherwise.
-	 */
-	function spel_rtl(): string {
+function spel_rtl(): string {
 		return is_rtl() ? 'true' : 'false';
-	}
 }
 
 /**
- * Check if Elementor is in edit mode.
+ * Elementor is edit mode
  *
  * @return bool
  */
@@ -47,7 +40,7 @@ function spider_elements_is_edit(): bool {
 }
 
 /**
- * Check if Elementor is in preview mode.
+ * Elementor is preview mode
  *
  * @return bool
  */
@@ -59,7 +52,6 @@ function spider_elements_is_preview(): bool {
  * Elementor Title tags
  *
  * @return array
- * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_title_tags' ) ) {
 	function spel_get_title_tags(): array {
@@ -80,10 +72,9 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
 /**
  * Echo button link attributes.
  *
- * @param array $settings_key
- * @param bool  $is_echo
+ * @param array $settings_key Settings array.
+ * @param bool  $is_echo      Whether to echo the attributes.
  * @return void
- * @since 1.0.0
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
 	function spel_button_link( $settings_key, $is_echo = true ): void {
@@ -146,15 +137,14 @@ if ( ! function_exists( 'spel_cat_ids' ) ) {
  * Day link to archive page
  *
  * @return void
- * @since 1.0.0
- */
+ **/
 if ( ! function_exists( 'spel_day_link' ) ) {
 	function spel_day_link(): void {
-        $archive_year  = get_the_time( 'Y' );
-        $archive_month = get_the_time( 'm' );
-        $archive_day   = get_the_time( 'd' );
-        echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) );
-    }
+		$archive_year  = get_the_time( 'Y' );
+		$archive_month = get_the_time( 'm' );
+		$archive_day   = get_the_time( 'd' );
+		echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) );
+	}
 }
 
 /**
@@ -209,8 +199,8 @@ if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
  */
 if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
 	function spel_get_first_taxonomy( $term = 'category' ): string {
-        $cats = get_the_terms( get_the_ID(), $term );
-        $cat  = is_array( $cats ) ? $cats[0]->name : '';
+		$cats = get_the_terms( get_the_ID(), $term );
+		$cat  = is_array( $cats ) ? $cats[0]->name : '';
 
 		return esc_html( $cat );
 	}
@@ -247,10 +237,10 @@ if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
 if ( ! function_exists( 'spel_get_categories' ) ) {
 	function spel_get_categories( $term = 'category' ) {
 
-        $cats = get_terms( [
-            'taxonomy'   => $term,
-            'hide_empty' => true,
-        ] );
+		$cats = get_terms( [
+			'taxonomy'   => $term,
+			'hide_empty' => true
+		] );
 
 		$cat_array        = [];
 		$cat_array['all'] = esc_html__( 'All', 'spider-elements' );
@@ -306,18 +296,18 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
  */
 if ( ! function_exists( 'spel_get_post_author_name' ) ) {
 	function spel_get_post_author_name(): void {
-        global $post;
-        $byline = sprintf(
-        /* translators: %s: post author. */
-            esc_html_x( 'By: %s', 'post author', 'spider-elements' ),
-            '<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author ) ) . '">' . esc_html( get_the_author_meta(
-                'display_name',
-                $post->post_author
-            ) ) . '</a></span>'
-        );
+		global $post;
+		$byline = sprintf(
+		/* translators: %s: post author. */
+			esc_html_x( 'By: %s', 'post author', 'spider-elements' ),
+			'<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author ) ) . '">' . esc_html( get_the_author_meta(
+				'display_name',
+				$post->post_author
+			) ) . '</a></span>'
+		);
 
-        echo wp_kses_post( $byline ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-    }
+		echo wp_kses_post( $byline ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
 }
 
 /**
@@ -383,7 +373,7 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
 			'caption' => $img_attachment->post_excerpt,
 			'href'    => get_permalink( $img_attachment->ID ),
 			'src'     => $img_attachment->guid,
-			'title'   => $img_attachment->post_title,
+			'title'   => $img_attachment->post_title
 		];
 	}
 }
@@ -398,78 +388,77 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'spel_kses_post' ) ) {
-    function spel_kses_post( $content ): string
-    {
-        $allowed_tag = [
-            'strong' => [],
-            'br'     => [],
-            'p'      => [
-                'class' => [],
-                'style' => [],
-            ],
-            'i'      => [
-                'class' => [],
-                'style' => [],
-            ],
-            'ul'     => [
-                'class' => [],
-                'style' => [],
-            ],
-            'li'     => [
-                'class' => [],
-                'style' => [],
-            ],
-            'span'   => [
-                'class' => [],
-                'style' => [],
-            ],
-            'a'      => [
-                'href'  => [],
-                'class' => [],
-                'title' => []
-            ],
-            'div'    => [
-                'class' => [],
-                'style' => [],
-            ],
-            'h1'     => [
-                'class' => [],
-                'style' => []
-            ],
-            'h2'     => [
-                'class' => [],
-                'style' => []
-            ],
-            'h3'     => [
-                'class' => [],
-                'style' => []
-            ],
-            'h4'     => [
-                'class' => [],
-                'style' => []
-            ],
-            'h5'     => [
-                'class' => [],
-                'style' => []
-            ],
-            'h6'     => [
-                'class' => [],
-                'style' => []
-            ],
-            'img'    => [
-                'class'  => [],
-                'style'  => [],
-                'height' => [],
-                'width'  => [],
-                'src'    => [],
-                'srcset' => [],
-                'alt'    => [],
-            ],
+	function spel_kses_post( $content ): string {
+		$allowed_tag = [
+			'strong' => [],
+			'br'     => [],
+			'p'      => [
+				'class' => [],
+				'style' => [],
+			],
+			'i'      => [
+				'class' => [],
+				'style' => [],
+			],
+			'ul'     => [
+				'class' => [],
+				'style' => [],
+			],
+			'li'     => [
+				'class' => [],
+				'style' => [],
+			],
+			'span'   => [
+				'class' => [],
+				'style' => [],
+			],
+			'a'      => [
+				'href'  => [],
+				'class' => [],
+				'title' => []
+			],
+			'div'    => [
+				'class' => [],
+				'style' => [],
+			],
+			'h1'     => [
+				'class' => [],
+				'style' => []
+			],
+			'h2'     => [
+				'class' => [],
+				'style' => []
+			],
+			'h3'     => [
+				'class' => [],
+				'style' => []
+			],
+			'h4'     => [
+				'class' => [],
+				'style' => []
+			],
+			'h5'     => [
+				'class' => [],
+				'style' => []
+			],
+			'h6'     => [
+				'class' => [],
+				'style' => []
+			],
+			'img'    => [
+				'class'  => [],
+				'style'  => [],
+				'height' => [],
+				'width'  => [],
+				'src'    => [],
+				'srcset' => [],
+				'alt'    => [],
+			],
 
-        ];
+		];
 
-        return wp_kses( $content, $allowed_tag );
-    }
+		return wp_kses( $content, $allowed_tag );
+	}
 }
 
 
@@ -534,7 +523,7 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
 	function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void {
 		$image = wp_get_attachment_image( $key['id'], $size, '', $atts );
 		echo wp_kses( $image, [
-			'img' => [
+			'img'    => [
 				'class'  => [],
 				'style'  => [],
 				'height' => [],
@@ -719,6 +708,15 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 
 
 if ( ! function_exists( 'spel_pagination' ) ) {
+	/**
+	 * Pagination
+	 *
+	 * @param WP_Query $query
+	 * @param string   $class
+	 * @param string   $prev
+	 * @param string   $next
+	 * @return void
+	 */
 	function spel_pagination( $query, $class = 'spel-pagination', $prev = '', $next = '' ): void {
 
 		if ( $query->max_num_pages <= 1 ) {
@@ -733,16 +731,8 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 
 		echo '<ul class="' . esc_attr( $class ) . '">';
 
-            echo wp_kses_post(
-                paginate_links( [
-                    'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                    'format'    => '?paged=%#%',
-                    'current'   => $current,
-                    'total'     => $query->max_num_pages,
-                    'prev_text' => $prev_text,
-                    'next_text' => $next_text,
-                ] )
-            );
+		$big     = 999999999; // need an unlikely integer
+		$current = max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 ) );
 
 		echo wp_kses_post(
 			paginate_links( [
@@ -754,6 +744,7 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 				'next_text' => $next_text,
 			] )
 		);
+
 
 		echo '</ul>';
 	}
@@ -768,8 +759,15 @@ if ( ! function_exists( 'spel_pagination' ) ) {
  * @deprecated 1.8.0 No longer needed as we rely on native query handling.
  */
 if ( ! function_exists( 'spel_archive_query' ) ) {
+	/**
+	 * Archive Query
+	 *
+	 * @param WP_Query $query
+	 * @return void
+	 */
 	function spel_archive_query( $query ): void {
 		// Optimization: Removed unbounded query override to prevent performance issues on archive pages
 	}
-	// add_action('pre_get_posts', 'spel_archive_query');
+
+	add_action( 'pre_get_posts', 'spel_archive_query' );
 }
