@@ -8,50 +8,66 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Check if the pro-plugin and plan is active
  *
  * @return bool
+ * @since 1.0.0
  */
-function spel_is_premium(): bool
-{
-    return spel_fs()->is_plan('pro') && spel_fs()->can_use_premium_code();
+function spel_is_premium(): bool {
+	return spel_fs()->is_plan( 'pro' ) && spel_fs()->can_use_premium_code();
 }
 
+/**
+ * Check if the Docy theme is active
+ *
+ * @return bool
+ * @since 1.0.0
+ */
 function spel_unlock_docy_theme(): bool {
-    $theme = wp_get_theme();
-    $theme_name = $theme->get('Name');
-    $docy_themes = [ 'Docy', 'docy', 'Docy Child', 'docy-child' ];
+	$theme       = wp_get_theme();
+	$theme_name  = $theme->get( 'Name' );
+	$docy_themes = [ 'Docy', 'docy', 'Docy Child', 'docy-child' ];
 
-    return in_array($theme_name, $docy_themes, true) || spel_is_premium();
+	return in_array( $theme_name, $docy_themes, true ) || spel_is_premium();
 }
 
-if ( ! function_exists( 'spel_rtl') ) {
+if ( ! function_exists( 'spel_rtl' ) ) {
+	/**
+	 * Check if RTL mode is active.
+	 *
+	 * @return string 'true' or 'false'
+	 * @since 1.0.0
+	 */
 	function spel_rtl(): string {
 		return is_rtl() ? 'true' : 'false';
 	}
 }
 
 /**
- * @return bool
  * Elementor is edit mode
+ *
+ * @return bool
+ * @since 1.0.0
  */
-function spider_elements_is_edit(): bool
-{
+function spider_elements_is_edit(): bool {
 	return \Elementor\Plugin::$instance->editor->is_edit_mode();
 }
 
 /**
- * @return bool
  * Elementor is preview mode
+ *
+ * @return bool
+ * @since 1.0.0
  */
-function spider_elements_is_preview(): bool
-{
+function spider_elements_is_preview(): bool {
 	return \Elementor\Plugin::$instance->preview->is_preview_mode();
 }
 
 /**
  * Elementor Title tags
+ *
+ * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_title_tags' ) ) {
-    function spel_get_title_tags(): array
-    {
+	function spel_get_title_tags(): array {
         return [
             'h1'   => esc_html__( 'H1', 'spider-elements' ),
             'h2'   => esc_html__( 'H2', 'spider-elements' ),
@@ -71,10 +87,11 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
  *
  * @param array $settings_key
  * @param bool  $is_echo
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
-    function spel_button_link( $settings_key, $is_echo = true ): void
-    {
+	function spel_button_link( $settings_key, $is_echo = true ): void {
         if ( $is_echo ) {
             echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
             echo $settings_key['is_external'] ? ' target="_blank"' : '';
@@ -111,6 +128,7 @@ if ( ! function_exists( 'spel_button_link' ) ) {
  * Category IDs
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_cat_ids' ) ) {
 	function spel_cat_ids() {
@@ -131,10 +149,12 @@ if ( ! function_exists( 'spel_cat_ids' ) ) {
 
 /**
  * Day link to archive page
- **/
+ *
+ * @return void
+ * @since 1.0.0
+ */
 if ( ! function_exists( 'spel_day_link' ) ) {
-    function spel_day_link(): void
-    {
+	function spel_day_link(): void {
         $archive_year  = get_the_time( 'Y' );
         $archive_month = get_the_time( 'm' );
         $archive_day   = get_the_time( 'd' );
@@ -155,6 +175,7 @@ if ( ! function_exists( 'spel_day_link' ) ) {
  * @param int    $default      Default title length if no value is found in settings. Default 10.
  *
  * @return string The trimmed post title, or empty string if no title exists.
+ * @since 1.0.0
  */
 function spel_get_title_length( array $settings, string $settings_key, int $default = 10 ): string {
 	$title        = get_the_title();
@@ -172,6 +193,7 @@ function spel_get_title_length( array $settings, string $settings_key, int $defa
  * @param int    $default
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
 	function spel_get_excerpt_length( $settings, $settings_key, $default = 10 ): string {
@@ -188,10 +210,10 @@ if ( ! function_exists( 'spel_get_excerpt_length' ) ) {
  * @param string $term
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
-    function spel_get_first_taxonomy( $term = 'category' ): string
-    {
+	function spel_get_first_taxonomy( $term = 'category' ): string {
         $cats = get_the_terms( get_the_ID(), $term );
         $cat  = is_array( $cats ) ? $cats[0]->name : '';
 
@@ -206,10 +228,10 @@ if ( ! function_exists( 'spel_get_first_taxonomy' ) ) {
  * @param string $term
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
-    function spel_get_first_taxonomy_link( $term = 'category' ): string
-    {
+	function spel_get_first_taxonomy_link( $term = 'category' ): string {
 
         $cats = get_the_terms( get_the_ID(), $term );
         $cat  = is_array( $cats ) ? get_category_link( $cats[0]->term_id ) : '';
@@ -225,9 +247,10 @@ if ( ! function_exists( 'spel_get_first_taxonomy_link' ) ) {
  * @param string $term
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_categories' ) ) {
-    function spel_get_categories( $term = 'category' ) {
+	function spel_get_categories( $term = 'category' ) {
 
         $cats = get_terms( [
             'taxonomy'   => $term,
@@ -251,13 +274,11 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
 /**
  * Get a category list
  *
- * @param string $term
- *
- * @return string
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_post_category_list' ) ) {
-    function spel_get_post_category_list(): void
-    {
+	function spel_get_post_category_list(): void {
         $categories = get_categories();
 
         if ( ! empty( $categories ) ) {
@@ -285,13 +306,11 @@ if ( ! function_exists( 'spel_get_post_category_list' ) ) {
 /**
  * Get an author name array
  *
- * @param string $term
- *
- * @return array
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_post_author_name' ) ) {
-    function spel_get_post_author_name(): void
-    {
+	function spel_get_post_author_name(): void {
         global $post;
         $byline = sprintf(
         /* translators: %s: post author. */
@@ -313,6 +332,8 @@ if ( ! function_exists( 'spel_get_post_author_name' ) ) {
  * @param string $alt
  * @param string $class
  * @param array  $atts
+ * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_el_image' ) ) {
 	function spel_el_image( $settings_key = [], $alt = '', $class = '', $atts = [] ): void {
@@ -332,9 +353,11 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 			printf(
 				'<img src="%1$s"%2$s alt="%3$s"%4$s />',
 				esc_url( $settings_key['url'] ),
-				wp_kses_post( $class_attr ), // Escape class attribute
+				// $class_attr contains safe HTML attribute string
+				$class_attr, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				esc_attr( $alt ),
-				wp_kses_post( $atts_str ) // Escape attributes string
+				// $atts_str contains safe HTML attribute string
+				$atts_str // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			);
 		}
 	}
@@ -343,15 +366,14 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 
 /**
- * Get Default Image Elementor
+ * Get Default Image Elementor Caption
  *
- * @param $settins_key
- * @param string $class
- * @param string $alt
+ * @param string $image_id
+ * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_el_image_caption' ) ) {
-    function spel_el_image_caption( $image_id = '' ): array
-    {
+	function spel_el_image_caption( $image_id = '' ): array {
         $img_attachment = get_post( $image_id );
 
         return [
@@ -366,9 +388,12 @@ if ( ! function_exists( 'spel_el_image_caption' ) ) {
 
 
 /**
+ * Filter text content to allow only safe HTML.
+ *
  * @param string $content Text content to filter.
  *
  * @return string Filtered content containing only the allowed HTML.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_kses_post' ) ) {
     function spel_kses_post( $content ): string
@@ -453,6 +478,7 @@ if ( ! function_exists( 'spel_kses_post' ) ) {
  * @param array $schedule_cats
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_tab_data' ) ) {
 	function spel_get_tab_data( $getCats, $schedule_cats ): array {
@@ -478,13 +504,13 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
 /**
  * Get reading time
  *
- * @param string $term
+ * @param int $words_per_minute
  *
  * @return string
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_reading_time' ) ) {
-    function spel_get_reading_time( $words_per_minute = 200 ): string
-    {
+	function spel_get_reading_time( $words_per_minute = 200 ): string {
         $content      = get_post_field( 'post_content', get_the_ID() );
         $word_count   = str_word_count( wp_strip_all_tags( $content ) );
         $reading_time = ceil( $word_count / $words_per_minute );
@@ -496,13 +522,15 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
 
 /**
  * Render Dynamic Image
- * @param $key
- * @param $class
+ *
+ * @param array  $key
+ * @param string $size
+ * @param array  $atts
  * @return void
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_dynamic_image' ) ) {
-    function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void
-    {
+	function spel_dynamic_image( $key, $size = 'full', $atts = [] ): void {
         $image = wp_get_attachment_image( $key['id'], $size, '', $atts );
         echo wp_kses( $image, [
             'img'    => [
@@ -528,10 +556,10 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
  * @param string $search    The search term for post-titles.
  *
  * @return array An associative array with post-IDs as keys and post-titles as values.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
-    function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array
-    {
+	function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array {
         $args = [
             'post_type' => $post_type,
             'post_status' => 'publish',
@@ -559,13 +587,13 @@ if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 /**
  * Get all elementor page templates
  *
- * @param null $type
+ * @param string|null $type
  *
  * @return array
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_el_templates' ) ) {
-    function spel_get_el_templates( $type = null ): array
-    {
+	function spel_get_el_templates( $type = null ): array {
         $options = [];
 
         if ( $type ) {
@@ -603,10 +631,10 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
  * Get information about the server environment.
  *
  * @return array Server environment information.
+ * @since 1.0.0
  */
 if ( ! function_exists( 'spel_get_environment_info' ) ) {
-    function spel_get_environment_info(): array
-    {
+	function spel_get_environment_info(): array {
 
         // Figure out cURL version, if installed.
         $curl_version = '';
@@ -659,41 +687,51 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
  * @return int The equivalent size in bytes.
  */
 if ( ! function_exists( 'spel_readable_number' ) ) {
-    function spel_readable_number($size): int
-    {
+	function spel_readable_number( $size ): int {
+		$size = trim( $size );
+		// Get the last character of the size string
+		$suffix = substr( $size, -1 );
+		// Remove the last character from the size string
+		$value = substr( $size, 0, -1 );
+		// Convert suffix to lowercase for case-insensitive comparison
+		$suffix = strtolower( $suffix );
 
-        // Get the last character of the size string
-        $suffix = substr($size, -1);
+		switch ( $suffix ) {
+			case 'p':
+				$value *= 1024;
+				// Fallthrough
+			case 't':
+				$value *= 1024;
+				// Fallthrough
+			case 'g':
+				$value *= 1024;
+				// Fallthrough
+			case 'm':
+				$value *= 1024;
+				// Fallthrough
+			case 'k':
+				$value *= 1024;
+				break;
+		}
 
-        // Remove the last character from the size string
-        $value = substr($size, 0, -1);
-
-        // Convert suffix to lowercase for case-insensitive comparison
-        $suffix = strtolower($suffix);
-
-        $multipliers = [
-            'p' => 1024,
-            't' => 1024,
-            'g' => 1024,
-            'm' => 1024,
-            'k' => 1024,
-        ];
-
-        // Check if the suffix is a valid multiplier
-        if (array_key_exists($suffix, $multipliers)) {
-            $value *= $multipliers[$suffix];
-        }
-
-        // Return the result
-        return (int)$value;
-
-    }
+		// Return the result
+		return (int) $value;
+	}
 }
 
 
-if ( !function_exists('spel_pagination') ) {
-    function spel_pagination($query, $class = 'spel-pagination', $prev = '', $next = ''): void
-    {
+/**
+ * Render pagination
+ *
+ * @param WP_Query $query
+ * @param string   $class
+ * @param string   $prev
+ * @param string   $next
+ * @return void
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'spel_pagination' ) ) {
+	function spel_pagination( $query, $class = 'spel-pagination', $prev = '', $next = '' ): void {
 
         if ( $query->max_num_pages <= 1 ) {
             return; // No pagination needed if only one page
@@ -727,12 +765,16 @@ if ( !function_exists('spel_pagination') ) {
 }
 
 /**
- * Jobus pagination
+ * Jobus pagination (Deprecated)
+ *
+ * @param WP_Query $query
+ * @return void
+ * @since 1.0.0
+ * @deprecated 1.8.0 No longer needed as we rely on native query handling.
  */
-if ( !function_exists('spel_archive_query') ) {
-    function spel_archive_query($query): void
-    {
-	    // Optimization: Removed unbounded query override to prevent performance issues on archive pages
-    }
-    add_action('pre_get_posts', 'spel_archive_query');
+if ( ! function_exists( 'spel_archive_query' ) ) {
+	function spel_archive_query( $query ): void {
+		// Optimization: Removed unbounded query override to prevent performance issues on archive pages
+	}
+	// add_action('pre_get_posts', 'spel_archive_query');
 }
