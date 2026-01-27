@@ -152,7 +152,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			$this->define_constants();
 
 			// Init Plugin
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+			add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
 			// Load text domain for localization
 			add_action( 'init', [ $this, 'i18n' ] );
