@@ -110,7 +110,7 @@ if ( ! function_exists( 'spel_button_link' ) ) {
                         $attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
 
                         // Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-                        if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+                        if ( preg_match( '/^(on|style|href|src|formaction)/i', $attr_name ) ) {
                             continue;
                         }
 
@@ -346,6 +346,14 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 
 			if ( ! empty( $atts ) ) {
 				foreach ( $atts as $k => $att ) {
+					// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+					$k = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $k );
+
+					// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+					if ( empty( $k ) || preg_match( '/^(on|style|formaction|src|href)/i', $k ) ) {
+						continue;
+					}
+
 					$atts_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $att ) . '"';
 				}
 			}
