@@ -26,8 +26,13 @@ function spel_unlock_docy_theme(): bool {
 	return in_array( $theme_name, $docy_themes, true ) || spel_is_premium();
 }
 
+/**
+ * Check if the site is RTL.
+ *
+ * @return string 'true' if RTL, 'false' otherwise.
+ */
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
@@ -52,6 +57,7 @@ function spider_elements_is_preview(): bool {
  * Elementor Title tags
  *
  * @return array
+ * @since 1.8.0
  */
 if ( ! function_exists( 'spel_get_title_tags' ) ) {
 	function spel_get_title_tags(): array {
@@ -173,9 +179,9 @@ function spel_get_title_length( array $settings, string $settings_key, int $defa
 /**
  * Post's excerpt text
  *
- * @param array  $settings
- * @param string $settings_key
- * @param int    $default
+ * @param array  $settings     Settings array.
+ * @param string $settings_key Array key used to find the excerpt length inside settings.
+ * @param int    $default      Default excerpt length. Default 10.
  *
  * @return string
  * @since 1.0.0
