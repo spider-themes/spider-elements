@@ -2,7 +2,7 @@
 
 namespace SPEL\includes\Admin;
 
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
@@ -22,7 +22,7 @@ class Plugin_Installer
      */
     public static function instance()
     {
-        if (!static::$instance) {
+        if ( ! static::$instance ) {
             static::$instance = new static();
         }
 
@@ -110,28 +110,28 @@ class Plugin_Installer
             $this->init();
         }
 
-        $data = array(
+        $data = [
             'url' => '',
             'activation_url' => '',
             'installation_url' => '',
             'title' => '',
             'status' => '',
-        );
+        ];
 
-        if ($this->check_installed_plugin($name)) {
-            if ($this->check_activated_plugin($name)) {
+        if ( $this->check_installed_plugin( $name ) ) {
+            if ( $this->check_activated_plugin( $name ) ) {
                 $data['title'] = \esc_html__( 'Activated', 'spider-elements' );
                 $data['status'] = 'activated';
             } else {
                 $data['title'] = \esc_html__( 'Activate', 'spider-elements' );
                 $data['status'] = 'inactive';
-                $data['activation_url'] = $this->activation_url($name);
+                $data['activation_url'] = $this->activation_url( $name );
             }
         } else {
             $data['title'] = \esc_html__( 'Install Now', 'spider-elements' );
             $data['status'] = 'not_installed';
-            $data['installation_url'] = $this->installation_url($name);
-            $data['activation_url'] = $this->activation_url($name);
+            $data['installation_url'] = $this->installation_url( $name );
+            $data['activation_url'] = $this->activation_url( $name );
         }
 
         return $data;
@@ -148,12 +148,12 @@ class Plugin_Installer
     {
         return \wp_nonce_url(
             \add_query_arg(
-                array(
+                [
                     'action' => 'activate',
                     'plugin' => $pluginName,
                     'plugin_status' => 'all',
                     'paged' => '1&s',
-                ),
+                ],
                 \admin_url( 'plugins.php' )
             ),
             'activate-plugin_' . $pluginName
@@ -170,14 +170,14 @@ class Plugin_Installer
     public function installation_url(string $pluginName): string
     {
         $action = 'install-plugin';
-        $pluginSlug = $this->get_plugin_slug($pluginName);
+        $pluginSlug = $this->get_plugin_slug( $pluginName );
 
         return \wp_nonce_url(
             \add_query_arg(
-                array(
+                [
                     'action' => $action,
                     'plugin' => $pluginSlug,
-                ),
+                ],
                 \admin_url( 'update.php' )
             ),
             $action . '_' . $pluginSlug

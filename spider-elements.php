@@ -58,10 +58,10 @@ if ( function_exists( 'spel_fs' ) ) {
 							'support'    => false,
 							'first-path' => 'admin.php?page=spider_elements_settings'
 						],
-						'parallel_activation' => array(
+						'parallel_activation' => [
 							'enabled'                  => true,
 							'premium_version_basename' => 'spider-elements-pro/spider-elements.php',
-						),
+						],
 					]
 				);
 			}
@@ -249,7 +249,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 			// Extra functions
 			require_once __DIR__ . '/includes/functions.php';
 
-			//Action Filter
+			// Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 
 			$theme = wp_get_theme();
@@ -366,8 +366,8 @@ if ( ! class_exists( 'SPEL' ) ) {
 
 			// Register active widgets
 			foreach ( $widgets as $key => $widget ) {
-				if ( ! isset( $elements_opt[ $key ] ) || $elements_opt[ $key ] === 'on' ) {
-					require_once( __DIR__ . "/widgets/$widget.php" );
+				if ( ! isset( $elements_opt[ $key ] ) || 'on' === $elements_opt[ $key ] ) {
+					require_once __DIR__ . "/widgets/$widget.php";
 					$classname = "\\SPEL\\Widgets\\$widget";
 					$widgets_manager->register( new $classname() );
 				}
