@@ -66,9 +66,19 @@ class Assets
                 wp_deregister_style($handler);
             }
 
-            // Enqueue all handlers pointing to the same file
-            foreach ($handlers as $handler) {
-                wp_enqueue_style($handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+            // Bolt Optimization: Deduplicate CSS loading.
+            // Register the first handler as the source, and others as aliases.
+            $primary_handler = $handlers[0];
+
+            // Register primary handler
+            wp_register_style( $primary_handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+            wp_enqueue_style( $primary_handler );
+
+            // Register others as dependencies (aliases) to avoid duplicate <link> tags
+            $aliases = array_slice( $handlers, 1 );
+            foreach ( $aliases as $handler ) {
+                wp_register_style( $handler, false, [ $primary_handler ] );
+                wp_enqueue_style( $handler );
             }
 
         }
