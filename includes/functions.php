@@ -27,7 +27,7 @@ function spel_unlock_docy_theme(): bool {
 }
 
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
@@ -78,35 +78,47 @@ if ( ! function_exists( 'spel_get_title_tags' ) ) {
  */
 if ( ! function_exists( 'spel_button_link' ) ) {
 	function spel_button_link( $settings_key, $is_echo = true ): void {
-		if ( $is_echo ) {
-			echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
-			echo $settings_key['is_external'] ? ' target="_blank"' : '';
-			echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
+		if ( ! $is_echo ) {
+			return;
+		}
 
-			if ( ! empty( $settings_key['custom_attributes'] ) ) {
-				$attrs = explode( ',', $settings_key['custom_attributes'] );
+		$output = '';
 
-				if ( is_array( $attrs ) ) {
-					foreach ( $attrs as $data ) {
-						$data_attrs = explode( '|', $data, 2 );
-						$attr_name  = trim( $data_attrs[0] );
-						$attr_value = isset( $data_attrs[1] ) ? $data_attrs[1] : '';
+		if ( ! empty( $settings_key['url'] ) ) {
+			$output .= 'href="' . esc_url( $settings_key['url'] ) . '"';
+		}
 
-						// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
-						$attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
+		if ( ! empty( $settings_key['is_external'] ) ) {
+			$output .= ' target="_blank"';
+		}
 
-						// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-						if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
-							continue;
-						}
+		if ( ! empty( $settings_key['nofollow'] ) ) {
+			$output .= ' rel="nofollow"';
+		}
 
-						if ( ! empty( $attr_name ) ) {
-							echo ' ' . esc_attr( $attr_name ) . '="' . esc_attr( $attr_value ) . '"';
-						}
+		if ( ! empty( $settings_key['custom_attributes'] ) ) {
+			$attrs = explode( ',', $settings_key['custom_attributes'] );
+
+			if ( is_array( $attrs ) ) {
+				foreach ( $attrs as $data ) {
+					$data_attrs = explode( '|', $data, 2 );
+					$attr_name  = trim( $data_attrs[0] );
+					$attr_value = $data_attrs[1] ?? '';
+
+					// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
+					$attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
+
+					// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
+					if ( empty( $attr_name ) || preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+						continue;
 					}
+
+					$output .= ' ' . esc_attr( $attr_name ) . '="' . esc_attr( $attr_value ) . '"';
 				}
 			}
 		}
+
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
@@ -677,32 +689,29 @@ if ( ! function_exists( 'spel_get_environment_info' ) ) {
  */
 if ( ! function_exists( 'spel_readable_number' ) ) {
 	function spel_readable_number( $size ): int {
+		$size   = trim( $size );
+		$suffix = strtolower( substr( $size, -1 ) );
+		$value  = (int) $size;
 
-		// Get the last character of the size string
-		$suffix = substr( $size, -1 );
-
-		// Remove the last character from the size string
-		$value = substr( $size, 0, -1 );
-
-		// Convert suffix to lowercase for case-insensitive comparison
-		$suffix = strtolower( $suffix );
-
-		$multipliers = [
-			'p' => 1024,
-			't' => 1024,
-			'g' => 1024,
-			'm' => 1024,
-			'k' => 1024,
-		];
-
-		// Check if the suffix is a valid multiplier
-		if ( array_key_exists( $suffix, $multipliers ) ) {
-			$value *= $multipliers[ $suffix ];
+		switch ( $suffix ) {
+			case 'p':
+				$value *= 1024;
+				// fall-through
+			case 't':
+				$value *= 1024;
+				// fall-through
+			case 'g':
+				$value *= 1024;
+				// fall-through
+			case 'm':
+				$value *= 1024;
+				// fall-through
+			case 'k':
+				$value *= 1024;
+				break;
 		}
 
-		// Return the result
-		return (int) $value;
-
+		return $value;
 	}
 }
 
@@ -732,7 +741,8 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 		echo '<ul class="' . esc_attr( $class ) . '">';
 
 		$big     = 999999999; // need an unlikely integer
-		$current = max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 ) );
+		$current = get_query_var( 'paged' ) ?: get_query_var( 'page' );
+		$current = max( 1, (int) $current );
 
 		echo wp_kses_post(
 			paginate_links( [
@@ -766,8 +776,6 @@ if ( ! function_exists( 'spel_archive_query' ) ) {
 	 * @return void
 	 */
 	function spel_archive_query( $query ): void {
-		// Optimization: Removed unbounded query override to prevent performance issues on archive pages
+		_deprecated_function( __FUNCTION__, '1.8.0' );
 	}
-
-	add_action( 'pre_get_posts', 'spel_archive_query' );
 }
