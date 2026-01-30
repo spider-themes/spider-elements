@@ -10,8 +10,8 @@ $features = Module_Settings::get_widget_settings();
 // Global switcher
 $opt             = get_option( 'spel_features_settings' );
 $global_switcher = $opt['features_global_switcher'] ?? '';
-$is_checked      = ! empty ( $global_switcher == 'on' ) ? ' checked' : '';
-$checked         = ! isset ( $opt['features_global_switcher'] ) ? ' checked' : $is_checked;
+$is_checked      = 'on' === $global_switcher ? ' checked' : '';
+$checked         = ! isset( $opt['features_global_switcher'] ) ? ' checked' : $is_checked;
 
 // Get the current theme
 $theme = wp_get_theme();
@@ -93,12 +93,12 @@ $total_features = isset( $features['spider_elements_features'] ) ? count( $featu
 
 				// By default, only free features are checked
 				$opt_input = $opt[ $feature_name ] ?? '';
-				if ( $feature_type === 'pro' && ! spel_is_premium() && ! ( in_array( $item['name'], [ 'spel_badge', 'spel_heading_highlighted' ] ) && $theme ) ) {
+				if ( 'pro' === $feature_type && ! spel_is_premium() && ! ( in_array( $item['name'], [ 'spel_badge', 'spel_heading_highlighted' ], true ) && $theme ) ) {
 					// Pro feature: unchecked by default
-					$checked = ! isset( $opt[ $feature_name ] ) ? '' : ( ! empty( $opt_input == 'on' ) ? ' checked' : '' );
+					$checked = ! isset( $opt[ $feature_name ] ) ? '' : ( 'on' === $opt_input ? ' checked' : '' );
 				} else {
 					// Free feature or unlocked pro: checked by default
-					$is_checked = ! empty( $opt_input == 'on' ) ? ' checked' : '';
+					$is_checked = 'on' === $opt_input ? ' checked' : '';
 					$checked    = ! isset( $opt[ $feature_name ] ) ? ' checked' : $is_checked;
 				}
 				?>
