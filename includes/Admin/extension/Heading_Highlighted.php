@@ -20,8 +20,11 @@ class Heading_Highlighted {
 		add_action( 'elementor/frontend/before_render', [ $this, 'render_display_content' ], 99 );
 	}
 
-	/*
+	/**
 	 * Heading Widgets.
+	 *
+	 * @param Element_Base $element
+	 * @return void
 	 */
 	public function register_heading_widget_controls( Element_Base $element ): void {
 
@@ -188,17 +191,18 @@ class Heading_Highlighted {
 	}
 
 	/**
+	 * Render display content
+	 *
 	 * @param Element_Base $element
 	 *
 	 * @return void
-	 * Render display content
 	 */
 	public function render_display_content( Element_Base $element ): void {
 
 		$align_class = $element->get_settings_for_display( 'spe_highlighted_text_bg_select' );
 
 		// It's render adds class for a background
-		if ( ! empty( $align_class == 'bg' ) ) {
+		if ( 'bg' === $align_class ) {
 
 			//It's render elementor wrapper div
 			$element->add_render_attribute(

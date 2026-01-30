@@ -152,23 +152,24 @@ class Features_Badge {
 
 
     /**
+     * Render Display Content.
+     *
      * @param Element_Base $element
      *
      * @return void
      */
-    public function callback_render_display_content (Element_Base $element): void
-    {
+    public function callback_render_display_content( Element_Base $element ): void {
 
-        $feature_icon = $element->get_settings_for_display('spe_fb_icon');
+        $feature_icon = $element->get_settings_for_display( 'spe_fb_icon' );
 
         // It's render elementor wrapper div - Icon
-        if ($feature_icon && !empty($feature_icon[ 'value' ])) {
+        if ( $feature_icon && ! empty( $feature_icon['value'] ) ) {
 
             //It's render elementor wrapper div
             $element->add_render_attribute(
                 '_wrapper', [
                     'class' => 'spe-features-box-enable',
-                    'data-spe-element-icon' => $feature_icon[ 'value' ],
+                    'data-spe-element-icon' => $feature_icon['value'],
                 ]
             );
 
@@ -182,19 +183,18 @@ class Features_Badge {
      *
      * @param Element_Base $section The section, column, or container element.
      */
-    public function frontend_render_before (Element_Base $section): void
-    {
+    public function frontend_render_before( Element_Base $section ): void {
 
-        if ($section->get_name() === 'container' || $section->get_name() === 'column' || $section->get_name() === 'section') {
+        if ( 'container' === $section->get_name() || 'column' === $section->get_name() || 'section' === $section->get_name() ) {
             $settings = $section->get_settings_for_display();
 
-            if (isset($settings[ 'spe_fb_badge_enable' ]) && !empty($settings[ 'spe_fb_badge_enable' ] === 'yes')) {
-                $badge_text = !empty($settings[ 'spe_fb_badge_text' ]) ? $settings[ 'spe_fb_badge_text' ] : '';
+            if ( isset( $settings['spe_fb_badge_enable'] ) && 'yes' === $settings['spe_fb_badge_enable'] ) {
+                $badge_text = ! empty( $settings['spe_fb_badge_text'] ) ? $settings['spe_fb_badge_text'] : '';
                 ?>
                 <div class="wrapper_badge_text position-relative">
                 <span class="badge_text">
                     <span class="badge-element before"></span>
-                    <?php echo esc_html($badge_text) ?>
+                    <?php echo esc_html( $badge_text ); ?>
                     <span class="badge-element after"></span>
                 </span>
                 <?php
@@ -209,13 +209,12 @@ class Features_Badge {
      *
      * @param Element_Base $section The section, column, or container element.
      */
-    public function frontend_render_after (Element_Base $section): void
-    {
+    public function frontend_render_after( Element_Base $section ): void {
 
-        if ($section->get_name() === 'container' || $section->get_name() === 'column' || $section->get_name() === 'section') {
+        if ( 'container' === $section->get_name() || 'column' === $section->get_name() || 'section' === $section->get_name() ) {
             $settings = $section->get_settings_for_display();
 
-            if (isset($settings[ 'spe_fb_badge_enable' ]) && ($settings[ 'spe_fb_badge_enable' ] === 'yes')) {
+            if ( isset( $settings['spe_fb_badge_enable'] ) && 'yes' === $settings['spe_fb_badge_enable'] ) {
                 ?>
                 </div>
                 <?php
@@ -265,32 +264,31 @@ class Features_Badge {
      *
      * @return void
      */
-    public function add_custom_rules_to_css_file (Post $post_css_file, Element_Base $element): void
-    {
+    public function add_custom_rules_to_css_file( Post $post_css_file, Element_Base $element ): void {
 
         // Get the display settings for the element.
         $settings = $element->get_settings_for_display();
 
         // Check if the badge is enabled
-        if (isset($settings[ 'spe_fb_badge_enable' ]) && !empty($settings[ 'spe_fb_badge_enable' ] === 'yes')) {
+        if ( isset( $settings['spe_fb_badge_enable'] ) && 'yes' === $settings['spe_fb_badge_enable'] ) {
 
             // Add the custom CSS rules to the post's CSS file.
-            $text_color = !empty($settings[ 'spe_fb_badge_color' ]) ? $settings[ 'spe_fb_badge_color' ] : '';
-            $position_top = !empty($settings[ 'spe_fb_badge_position_top' ]) ? $settings[ 'spe_fb_badge_position_top' ][ 'size' ] . $settings[ 'spe_fb_badge_position_top' ][ 'unit' ] : '';
+            $text_color = ! empty( $settings['spe_fb_badge_color'] ) ? $settings['spe_fb_badge_color'] : '';
+            $position_top = ! empty( $settings['spe_fb_badge_position_top'] ) ? $settings['spe_fb_badge_position_top']['size'] . $settings['spe_fb_badge_position_top']['unit'] : '';
 
             $post_css_file->get_stylesheet()->add_rules(
                 '.wrapper_badge_text .badge_text',
                 [
                     'color' => $text_color,
-                    'top' => $position_top,
+                    'top'   => $position_top,
                 ],
             );
 
-            if (!empty($settings[ 'spe_fb_badge_bg_color' ])) {
+            if ( ! empty( $settings['spe_fb_badge_bg_color'] ) ) {
                 $post_css_file->get_stylesheet()->add_rules(
                     '.wrapper_badge_text .badge_text .badge-element',
                     [
-                        'background' => $settings[ 'spe_fb_badge_bg_color' ] . ' !important',
+                        'background' => $settings['spe_fb_badge_bg_color'] . ' !important',
                     ],
                 );
             }

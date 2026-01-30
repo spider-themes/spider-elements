@@ -50,51 +50,41 @@ class Tabs extends Widget_Base {
 	}
 
 	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
+	 * Register the required CSS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
-	public function get_style_depends(): array
-    {
+	public function get_style_depends(): array {
 		return [ 'elegant-icon', 'spel-main' ];
 	}
 
 	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
+	 * Register the required JS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
-	public function get_script_depends(): array
-    {
+	public function get_script_depends(): array {
 		return [ 'spel-el-widgets' ];
 	}
 
 
 	/**
-	 * Name: register_controls()
-	 * Desc: Register controls for these widgets
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register controls for these widgets.
+	 *
+	 * @return void
 	 */
-	protected function register_controls(): void
-    {
+	protected function register_controls(): void {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
 
 
 	/**
-	 * Name: elementor_content_control()
-	 * Desc: Register the Content Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Content Tab output on the Elementor editor.
+	 *
+	 * @return void
 	 */
-	public function elementor_content_control(): void
-    {
+	public function elementor_content_control(): void {
 
 		// ============================ Select Style  ===========================//
 		$this->start_controls_section(
@@ -303,16 +293,11 @@ class Tabs extends Widget_Base {
 
 
 	/**
-	 * Name: elementor_style_control()
-	 * Desc: Register the Style Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Style Tab output on the Elementor editor.
+	 *
+	 * @return void
 	 */
-	public function elementor_style_control(): void
-    {
+	public function elementor_style_control(): void {
 
 		//============================ Tab Title Style ============================//
 		$this->start_controls_section(
@@ -806,16 +791,11 @@ class Tabs extends Widget_Base {
 
 
 	/**
-	 * Name: elementor_render()
-	 * Desc: Render the widget output on the frontend.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Render the widget output on the frontend.
+	 *
+	 * @return void
 	 */
-	protected function render(): void
-    {
+	protected function render(): void {
 
 		$settings = $this->get_settings_for_display();
 		extract( $settings ); //extract all settings array to variables converted to name of key
@@ -823,15 +803,15 @@ class Tabs extends Widget_Base {
 		$tabs   = $this->get_settings_for_display( 'tabs' );
 		$id_int = substr( $this->get_id_int(), 0, 3 );
 
-		$navigation_arrow_class = ! empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
-		$sticky_tab_class       = ! empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
-        $tab_auto_class         = ! empty( $is_auto_play == 'yes' ) ? ' tab_auto_play' : '';
-        $data_auto_play         = ! empty( $is_auto_play == 'yes' ) ? ' data-autoplay=yes' : '';
+		$navigation_arrow_class = 'yes' === $is_navigation_arrow ? ' process_tab_shortcode' : '';
+		$sticky_tab_class       = 'yes' === $is_sticky_tab ? ' sticky_tab' : '';
+		$tab_auto_class         = 'yes' === $is_auto_play ? ' tab_auto_play' : '';
+		$data_auto_play         = 'yes' === $is_auto_play ? ' data-autoplay=yes' : '';
 
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
-		$allowed_styles = array( '1', '2' );
-		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
+		$allowed_styles = [ '1', '2' ];
+		$style          = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		include __DIR__ . "/templates/tabs/tab-{$style}.php";
 
 	}

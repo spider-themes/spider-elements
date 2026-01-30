@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! empty( $accordions ) ) {
         foreach ( $accordions as $index => $item ) {
             $is_collapsed_class  = $item['collapse_state'] ?? '';
-            $is_btn_collapse     = $is_collapsed_class == 'yes' ? 'collapsed ' : '';
-            $is_collapsed        = $is_collapsed_class == 'yes' ? 'true' : 'false';
+            $is_btn_collapse     = 'yes' === $is_collapsed_class ? 'collapsed ' : '';
+            $is_collapsed        = 'yes' === $is_collapsed_class ? 'true' : 'false';
             $id                  = 'toggle-' . $item['_id'] ?? '';
-            $is_show             = $is_collapsed_class == 'yes' ? ' show' : '';
-            $border_bottom_class = $index === array_key_last($accordions) ? ' border-bottom-none' : '';
-            $is_border_bottom    = !empty($settings['is_border_bottom'] == 'yes') ? '' : $border_bottom_class;
+            $is_show             = 'yes' === $is_collapsed_class ? ' show' : '';
+            $border_bottom_class = $index === array_key_last( $accordions ) ? ' border-bottom-none' : '';
+            $is_border_bottom    = 'yes' === $settings['is_border_bottom'] ? '' : $border_bottom_class;
             ?>
             <div class="card<?php echo esc_attr($is_border_bottom) ?> accordion_inner <?php echo esc_attr( $is_btn_collapse ).esc_attr( 'accord-item-'.$item['_id'] ); ?>">
 
@@ -44,9 +44,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div class="card-body">
                         <?php
                         $content_type = $item['content_type'] ?? '';
-                        if ( $content_type == 'content' ) {
+                        if ( 'content' === $content_type ) {
                             echo wp_kses_post( $item['normal_content'] );
-                        } elseif ( $content_type == 'el_template' ) {
+                        } elseif ( 'el_template' === $content_type ) {
                             if ( ! empty( $item['el_content'] ) ) {
                                 echo wp_kses_post(
                                     \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $item['el_content'] )

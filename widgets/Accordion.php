@@ -50,51 +50,41 @@ class Accordion extends Widget_Base {
 	}
 
 	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
+	 * Register the required CSS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
-	public function get_style_depends(): array
-    {
+	public function get_style_depends(): array {
 		return [ 'spel-main', 'elegant-icon' ];
 	}
 
 	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
+	 * Register the required JS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
-	public function get_script_depends(): array
-    {
+	public function get_script_depends(): array {
 		return [ 'spel-el-widgets' ];
 	}
 
 
 	/**
-	 * Name: register_controls()
-	 * Desc: Register controls for these widgets
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register controls for these widgets.
+	 *
+	 * @return void
 	 */
-	protected function register_controls(): void
-    {
+	protected function register_controls(): void {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
 
 
 	/**
-	 * Name: elementor_content_control()
-	 * Desc: Register the Content Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Content Tab output on the Elementor editor.
+	 *
+	 * @return void
 	 */
-	public function elementor_content_control(): void
-    {
+	public function elementor_content_control(): void {
 
 		//=================== Section Accordion ===================//
 		$this->start_controls_section(
@@ -298,16 +288,11 @@ class Accordion extends Widget_Base {
 
 
 	/**
-	 * Name: elementor_style_control()
-	 * Desc: Register the Style Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Style Tab output on the Elementor editor.
+	 *
+	 * @return void
 	 */
-	public function elementor_style_control(): void
-    {
+	public function elementor_style_control(): void {
 
 		//============================= Accordion Settings Style =============================//
 		$this->start_controls_section(
@@ -642,28 +627,23 @@ class Accordion extends Widget_Base {
 	//	==================End accordion all style controls===============
 
 	/**
-	 * Name: elementor_render()
-	 * Desc: Render the widget output on the frontend.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Render the widget output on the frontend.
+	 *
+	 * @return void
 	 */
-	protected function render(): void
-    {
-
-        $settings = $this->get_settings_for_display();
+	protected function render(): void {
+		$settings = $this->get_settings_for_display();
 		extract( $settings );
 
-		$title_tag 		  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
-		$accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
-		$icon_align       = ! empty ( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
-		$icon_align_class = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
+		$title_tag  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
+		$accordions = ! empty( $settings['accordions'] ) ? $settings['accordions'] : '';
+		$icon_align = ! empty( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
 
-		$is_toggle           = ! empty ( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
-		$toggle_id           = ! empty( $is_toggle == 'yes' ) ? 'id=accordionExample-' . $this->get_id() : '';
-		$toggle_bs_parent_id = ! empty( $is_toggle == 'yes' ) ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
+		$icon_align_class = 'left' === $icon_align ? ' icon-align-left' : '';
+
+		$is_toggle           = ! empty( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
+		$toggle_id           = 'yes' === $is_toggle ? 'id=accordionExample-' . $this->get_id() : '';
+		$toggle_bs_parent_id = 'yes' === $is_toggle ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
 
 		//======================== Template Parts ========================//
 		include "templates/accordion/accordion.php";
