@@ -435,11 +435,11 @@ class Counter extends Widget_Base {
 	 */
 	protected function render(): void {
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
+		$counter_value = $settings['counter_value'] ?? 0;
 
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
-		$allowed_styles = array( '1', '2' );
+		$allowed_styles = [ '1', '2' ];
 		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		if ( spel_is_premium() ) {
 			include __DIR__ . "/templates/counter/counter-{$style}.php";
