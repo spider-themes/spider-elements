@@ -818,7 +818,10 @@ class Tabs extends Widget_Base {
     {
 
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
+		$is_navigation_arrow = $settings['is_navigation_arrow'] ?? '';
+		$is_sticky_tab       = $settings['is_sticky_tab'] ?? '';
+		$is_auto_play        = $settings['is_auto_play'] ?? '';
+		$is_auto_numb        = $settings['is_auto_numb'] ?? '';
 
 		$tabs   = $this->get_settings_for_display( 'tabs' );
 		$id_int = substr( $this->get_id_int(), 0, 3 );
