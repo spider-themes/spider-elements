@@ -27,7 +27,7 @@ function spel_unlock_docy_theme(): bool {
 }
 
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
@@ -688,11 +688,11 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 		$suffix = strtolower( $suffix );
 
 		$multipliers = [
-			'p' => 1024,
-			't' => 1024,
-			'g' => 1024,
-			'm' => 1024,
-			'k' => 1024,
+			'p' => 1125899906842624, // 1024^5
+			't' => 1099511627776,    // 1024^4
+			'g' => 1073741824,       // 1024^3
+			'm' => 1048576,          // 1024^2
+			'k' => 1024,             // 1024^1
 		];
 
 		// Check if the suffix is a valid multiplier
