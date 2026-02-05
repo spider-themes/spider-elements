@@ -18,3 +18,15 @@ When parsing custom attributes from user input:
    - Or Whitelist: Only allow `data-*`, `aria-*`, `title`, `class`, `id`.
 2. **Handle Edge Cases:** Ensure `explode` has enough parts before accessing indexes to avoid PHP notices.
 3. **Defense in Depth:** Even if the input field is restricted to admins, protecting the output function guards against privilege escalation or DB compromises.
+
+## 2024-10-24 - Missing 'style' in Attribute Blacklist
+**Vulnerability:**
+While blocking `on*` events and `href` prevents direct XSS and link hijacking, omitting `style` from the blacklist allows for UI Redressing (Clickjacking) and Defacement.
+An attacker could inject `style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;opacity:0;"` to create an invisible overlay that intercepts clicks.
+
+**Learning:**
+Attribute blacklists must be comprehensive. `style` is often overlooked because it's "just CSS", but inline styles are powerful enough to break site usability or facilitate phishing attacks via overlays.
+Consistency across helper functions (e.g., `spel_el_image` blocked `style` but `spel_button_link` did not) is key to a secure codebase.
+
+**Prevention:**
+Always include `style` in attribute blacklists unless inline styling is a desired feature for the end user (which is rare for "Custom Attributes" fields intended for metadata).
