@@ -431,13 +431,25 @@ class Blog_Grid extends Widget_Base {
 		$options = [];
 		$count   = count( (array) $terms );
 		if ( $count > 0 ):
+			$parents  = [];
+			$children = [];
+
 			foreach ( $terms as $term ) {
 				if ( $term->parent == 0 ) {
-					$options[ $term->term_id ] = $term->name;
-					foreach ( $terms as $subcategory ) {
-						if ( $subcategory->parent == $term->term_id ) {
-							$options[ $subcategory->term_id ] = $subcategory->name;
-						}
+					$parents[] = $term;
+				} else {
+					if ( ! isset( $children[ $term->parent ] ) ) {
+						$children[ $term->parent ] = [];
+					}
+					$children[ $term->parent ][] = $term;
+				}
+			}
+
+			foreach ( $parents as $parent ) {
+				$options[ $parent->term_id ] = $parent->name;
+				if ( isset( $children[ $parent->term_id ] ) ) {
+					foreach ( $children[ $parent->term_id ] as $child ) {
+						$options[ $child->term_id ] = $child->name;
 					}
 				}
 			}
