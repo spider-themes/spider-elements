@@ -118,6 +118,7 @@
       border-radius: var(--spel-radius);
       overflow: hidden;
       position: relative;
+      box-shadow: none;
 
       &::before {
         content: "";
@@ -516,14 +517,14 @@
     border: 1px solid var(--spel-border-light);
     box-shadow: var(--spel-shadow);
     transition: all var(--spel-transition);
-    height: 100%;
+    // height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     .dashboard_btn {
-        margin-top: auto;
-        width: 100%;
+        // margin-top: auto;
+        // width: 100%;
     }
 
     &:hover {
@@ -583,6 +584,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 25px;
+    gap: 10px;
   }
 
   .badge_success {
