@@ -6,7 +6,7 @@
  * Description: Spider Elements is a hassle-free addon bundle with super useful widgets for building beautiful websites. Plug and play to create stunning designs effortlessly.
  * Version: 1.8.0
  * Requires at least: 5.0
- * Tested up to: 6.8
+ * Tested up to: 6.9
  * Requires PHP: 7.4
  * Author: spider-themes
  * Author URI: https://spider-elements.spider-themes.net

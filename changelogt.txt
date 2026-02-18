@@ -1,13 +1,23 @@
 == Changelog ==
 
-= 1.8.0 (11 January 2026) =
+= 1.8.0 (18 February 2026) =
 New: Revamped Dashboard UI with modern design system and quick stats
 New: Added Search functionality for Widgets and Features with real-time filtering
 New: Added Toast notification system for better user feedback on save
 New: Added keyboard shortcuts (Ctrl+S to save, Ctrl+F to search)
+New: Added Antimanual and Jobus plugins to the recommended plugins list in the dashboard.
 Improved: System Requirements section with zebra striping and better visibility
 Improved: Sidebar navigation active states and hover effects
-Tweaked: Refined typography, spacing, and micro-interactions across the dashboard
+Improved: Refined typography, spacing, and micro-interactions across the dashboard
+Improved: Dashboard page redesigned with enhanced UI and overall user experience.
+Improved: Dashboard now remembers and keeps the last opened tab active for smoother navigation.
+Improved: Admin classes now load conditionally to reduce unnecessary frontend overhead.
+Improved: Plugin installer optimized to avoid heavy filesystem scans and reduce load time.
+Improved: Removed unconditional Plugin_Installer loading on the frontend for better performance.
+Improved: Archive queries optimized by removing unbounded posts_per_page overrides.
+Improved: Extensive backend performance optimizations applied across core plugin components for faster execution and lower resource usage.
+Fixed: XSS vulnerability in the image helper function by properly sanitizing attribute inputs.
+Fixed: Logic issues resolved and internal documentation improved with WPCS coding standards compliance.
 
 = 1.7.0 (11 December 2025) =
 New: Added submenu items for improved dashboard navigation

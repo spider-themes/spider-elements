@@ -33,8 +33,8 @@ Spider Elements is the most comprehensive Elementor addons collection, featuring
 ## 🔗 USEFUL LINKS ##
 - [📚 Full Documentation](https://helpdesk.spider-themes.net/docs/spider-elements)
 - [🎥 Live Demo & Widget Showcase](https://spider-elements.spider-themes.net/#widgets)
-- [⭐ Upgrade to Pro](https://spider-elements.spider-themes.net/pricing)
 - [🌐 Visit Spider Themes](https://spider-themes.net)
+- [⭐ Upgrade to Pro](https://spider-elements.spider-themes.net/pricing)
 
 **Essential Tools for Web Designers & Developers**
 
@@ -42,14 +42,16 @@ Spider Elements provides the widgets you need to build professional websites fas
 
 ## Core Widgets Available (Free Version)
 
-**Content & Layout Widgets**
+***Content & Layout Widgets:***
+
 - [**Accordion**](https://spider-elements.spider-themes.net/accordion) – Organize and manage content with smooth collapsible sections, perfect for FAQs, guides, and comprehensive resource documentation. Enhance user experience with elegant accordion functionality.
 - [**Blog Grid**](https://spider-elements.spider-themes.net/blog-grid) – Display your WordPress posts beautifully with multiple customizable layouts, built-in pagination, and responsive design. Perfect for showcasing blog content across all devices.
 - [**Timeline**](https://spider-elements.spider-themes.net/timeline) – Show important events and milestones in chronological order with an intuitive visual timeline. Ideal for company history, project phases, and journey storytelling.
 - [**List Items**](https://spider-elements.spider-themes.net/list-item) – Create organized, stylish lists with custom icons and detailed descriptions. Perfect for services, features, advantages, and organized content presentation.
 - [**Icon Box**](https://spider-elements.spider-themes.net/icon-box) – Highlight key features and services with eye-catching custom icons and compelling text. Great for showcasing features, benefits, and value propositions elegantly.
 
-**Visual & Media Widgets**
+***Visual & Media Widgets:***
+
 - [**Video Popup**](https://spider-elements.spider-themes.net/video-popup) – Embed videos in sleek, professional pop-up windows without page reload. Enhance user engagement with smooth video experiences and modal presentation.
 - [**Team Carousel**](https://spider-elements.spider-themes.net/team-carousel) – Showcase team members in dynamic, interactive carousels with smooth transitions. Perfect for displaying staff, employees, and team introductions professionally.
 - [**Testimonials**](https://spider-elements.spider-themes.net/testimonials) – Display customer reviews, feedback, and success stories in elegant, responsive designs. Build trust with visitor testimonials and compelling social proof.
@@ -58,14 +60,16 @@ Spider Elements provides the widgets you need to build professional websites fas
 
 ## Premium Widgets (Pro Version)
 
-**Interactive & Animation Widgets**
+***Interactive & Animation Widgets:***
+
 - [**Box Hover**](https://spider-elements.spider-themes.net/box-hover) – Add stylish hover effects with smooth animations and transitions. Enhance user engagement and interactivity with professional animation effects.
 - [**Flip Box**](https://spider-elements.spider-themes.net/flipbox) – Create dynamic flip effects that reveal hidden content on interaction. Perfect for showcasing before-after, features, or additional information creatively.
 - [**Image Hover**](https://spider-elements.spider-themes.net/image-hover) – Bring images to life with engaging and professional hover effects. Perfect for portfolios, galleries, and visual content enhancement.
 - [**Feature Box**](https://spider-elements.spider-themes.net/feature-box) – Showcase key features and services in attention-grabbing layouts. Ideal for highlighting product features and service benefits prominently.
 - [**Hotspot**](https://spider-elements.spider-themes.net/hotspot) – Add interactive points on images to highlight details and provide information. Great for product demos, educational content, and interactive presentations.
 
-**Advanced Content Widgets**
+***Advanced Content Widgets:***
+
 - [**Image Slider**](https://spider-elements.spider-themes.net/image-slider) – Create beautiful, responsive image slideshows with smooth transitions. Perfect for galleries, portfolios, and showcasing multiple images effectively.
 - [**Video Playlist**](https://spider-elements.spider-themes.net/video-playlist) – Organize and play multiple videos in an interactive playlist. Ideal for tutorials, video content libraries, and multimedia presentations.
 - [**Marquee Slider**](https://spider-elements.spider-themes.net/marquee-slider) – Display scrolling content in visually appealing ways with continuous movement. Perfect for announcements, testimonials, and dynamic content display.
@@ -78,17 +82,20 @@ Spider Elements provides the widgets you need to build professional websites fas
 
 ### Quick Features Overview
 
-**User-Friendly Design**
+***User-Friendly Design:***
+
 - Intuitive controls and settings
 - Real-time preview while editing
 - Drag-and-drop simplicity
 
-**Performance Optimized**
+***Performance Optimized:***
+
 - Fast loading times
 - Lightweight code
 - Optimized for all devices
 
-**Developer Friendly**
+***Developer Friendly:***
+
 - Clean, well-documented code
 - Easy customization hooks
 - Regular updates and support
@@ -99,12 +106,6 @@ Spider Elements provides the widgets you need to build professional websites fas
 3. Search for "Spider Elements" in the widget panel
 4. Drag widgets onto your page
 5. Customize with live preview
-
-**Need Help?**
-- [📚 Full Documentation](https://helpdesk.spider-themes.net/docs/spider-elements)
-- [🎥 Video Tutorials](https://spider-elements.spider-themes.net/#widgets)
-- [🚀 Live Demo](https://spider-elements.spider-themes.net/#widgets)
-- [⭐ Upgrade to Pro](https://spider-elements.spider-themes.net/pricing)
 
 ## WHAT’S NEXT? 
 
@@ -217,48 +218,55 @@ Spider Elements is developed by [Spider Themes](https://spider-themes.net), a de
 
 == Changelog ==
 
-= 1.8.0 (11 January 2026) =
-New: Revamped Dashboard UI with modern design system and quick stats
-New: Added Search functionality for Widgets and Features with real-time filtering
-New: Added Toast notification system for better user feedback on save
-New: Added keyboard shortcuts (Ctrl+S to save, Ctrl+F to search)
-Improved: System Requirements section with zebra striping and better visibility
-Improved: Sidebar navigation active states and hover effects
-Tweaked: Refined typography, spacing, and micro-interactions across the dashboard
+= 1.8.0 (18 February 2026) =
+*   New: Revamped Dashboard UI with modern design system and quick stats
+*   New: Added Search functionality for Widgets and Features with real-time filtering
+*   New: Added Toast notification system for better user feedback on save
+*   New: Added keyboard shortcuts (Ctrl+S to save, Ctrl+F to search)
+*   New: Added Antimanual and Jobus plugins to the recommended plugins list in the dashboard.
+*   Improved: System Requirements section with zebra striping and better visibility
+*   Improved: Sidebar navigation active states and hover effects
+*   Improved: Refined typography, spacing, and micro-interactions across the dashboard
+*   Improved: Dashboard page redesigned with enhanced UI and overall user experience.
+*   Improved: Dashboard now remembers and keeps the last opened tab active for smoother navigation.
+*   Improved: Admin classes now load conditionally to reduce unnecessary frontend overhead.
+*   Improved: Plugin installer optimized to avoid heavy filesystem scans and reduce load time.
+*   Improved: Removed unconditional Plugin_Installer loading on the frontend for better performance.
+*   Improved: Archive queries optimized by removing unbounded posts_per_page overrides.
+*   Improved: Extensive backend performance optimizations applied across core plugin components for faster execution and lower resource usage.
+*   Fixed: XSS vulnerability in the image helper function by properly sanitizing attribute inputs.
+*   Fixed: Logic issues resolved and internal documentation improved with WPCS coding standards compliance.
 
 = 1.7.0 (11 December 2025) =
-New: Added submenu items for improved dashboard navigation
-Fixed: Tab switcher functionality issue in the Spider Elements dashboard
-Tweaked: Minor UI enhancements and general performance improvements across the dashboard
-Improved: Enhanced RTL dashboard layout for better usability
-Security: Implemented LFI (Local File Inclusion) protection to prevent unauthorized file access
-Updated: Freemius SDK updated to 2.13.0
+*   New: Added submenu items for improved dashboard navigation
+*   Fixed: Tab switcher functionality issue in the Spider Elements dashboard
+*   Tweaked: Minor UI enhancements and general performance improvements across the dashboard
+*   Improved: Enhanced RTL dashboard layout for better usability
+*   Security: Implemented LFI (Local File Inclusion) protection to prevent unauthorized file access
+*   Updated: Freemius SDK updated to 2.13.0
 
 = 1.6.7 (11 November 2025) =
-Fixed: Blog title function issue resolved to ensure proper display
-Fixed: Nonce field name mismatch corrected in filters.php for secure form handling
-Fixed: Missing Elementor Utils class import causing fatal error in Video Playlist widget rendering
-Fixed: Video Playlist widget showing raw paragraph tags in description by replacing esc_html with wp_kses_post
-Tweaked: Adjusted alert margins in CSS for improved visual spacing
-Secured: Added nonce verification for form submissions to strengthen security
-Secured: Added proper sanitization in nonce verification for safer data validation
-Updated: Dashboard templates modified to maintain consistent field naming conventions
+*   Fixed: Blog title function issue resolved to ensure proper display
+*   Fixed: Nonce field name mismatch corrected in filters.php for secure form handling
+*   Fixed: Missing Elementor Utils class import causing fatal error in Video Playlist widget rendering
+*   Fixed: Video Playlist widget showing raw paragraph tags in description by replacing esc_html with wp_kses_post
+*   Tweaked: Adjusted alert margins in CSS for improved visual spacing
+*   Secured: Added nonce verification for form submissions to strengthen security
+*   Secured: Added proper sanitization in nonce verification for safer data validation
+*   Updated: Dashboard templates modified to maintain consistent field naming conventions
 
 = 1.6.6 (1 October 2025) =
-Fixed: Vulnerability issues
-Tweaked: Spider Elements widget prefix (SE) has been removed
-Updated: Freemius SDK updated to 2.12.2
+*   Fixed: Vulnerability issues
+*   Tweaked: Spider Elements widget prefix (SE) has been removed
+*   Updated: Freemius SDK updated to 2.12.2
 
 = 1.6.5 (23 Jun 2025) =
-New: Added pagination and show/hide options to presets 1, 2, 3, and 4 of the Blog Grid widget
-Fixed: Free and Pro Widget and features checked issue on Dashboard
-Fixed: Testimonials ratting issue layout 3,4 and 6
-Fixed: Tabs widget dark mood issue
-Tweaked: Blog carousel nav arrow
-Tweaked: ID added in the sticky tabs
-Tweaked: SE prefix added before Widgets name
+*   New: Added pagination and show/hide options to presets 1, 2, 3, and 4 of the Blog Grid widget
+*   Fixed: Free and Pro Widget and features checked issue on Dashboard
+*   Fixed: Testimonials ratting issue layout 3,4 and 6
+*   Fixed: Tabs widget dark mood issue
+*   Tweaked: Blog carousel nav arrow
+*   Tweaked: ID added in the sticky tabs
+*   Tweaked: SE prefix added before Widgets name
 
-= 1.6.4 (15 May 2025) =
-Fixed: Resolved Pagination issue of Blog grid widget
-Tweaked: Compatibility with docy dark mode
-Updated: Freemius SDK updated to 2.12.0
+[See changelog for all versions](https://spider-elements.spider-themes.net/changelog/)
