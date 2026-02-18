@@ -284,18 +284,16 @@
                 return;
             }
 
-            // Priority 1: Check for active tab from localStorage (user's last selection)
-            let activeTab = getActiveTab();
+            // Priority 1: Server-side data-active-tab (URL-based, from WordPress submenu navigation)
+            // This MUST take priority so that clicking a WordPress submenu always
+            // navigates to the correct tab, regardless of what localStorage says.
+            let serverTab = spelDashboard.data('active-tab');
+            let activeTab = serverTab || 'welcome';
 
-            // Priority 2: Fallback to server-side data attribute
-            if (!activeTab) {
-                activeTab = spelDashboard.data('active-tab');
-            }
-
-            // Priority 3: Default to 'welcome' tab
-            if (!activeTab) {
-                activeTab = 'welcome';
-            }
+            // Clear localStorage to keep it in sync with the current submenu page.
+            // This prevents stale localStorage values from overriding the URL on
+            // subsequent page loads.
+            saveActiveTab(activeTab);
 
             // Update sidebar tab-menu active state
             $('.tab-menu .tab-menu-link').removeClass('active');
