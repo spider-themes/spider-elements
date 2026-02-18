@@ -12,8 +12,15 @@ $opt             = get_option( 'spel_features_settings' );
 $checked_global  = ( ! isset( $opt['features_global_switcher'] ) || $opt['features_global_switcher'] === 'on' ) ? ' checked' : '';
 
 // Get the current theme
-$theme = wp_get_theme();
-$theme = in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] );
+$theme_obj  = wp_get_theme();
+$theme_name = $theme_obj->get( 'Name' );
+$is_jobi    = in_array( $theme_name, [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
+$is_docy    = spel_unlock_docy_theme();
+$is_docly   = in_array( $theme_name, [ 'Docly', 'docly', 'Docly Child', 'docly-child' ], true );
+$is_ama     = in_array( $theme_name, [ 'Ama', 'ama', 'Ama Child', 'ama-child' ], true );
+
+// Smooth Animation is unlocked for Docy, Jobi, Docly, or Ama theme users
+$is_smooth_anim_unlocked = $is_docy || $is_jobi || $is_docly || $is_ama;
 
 // Count features for search placeholder
 $total_features = isset( $features['spider_elements_features'] ) ? count( $features['spider_elements_features'] ) : 0;
@@ -84,13 +91,22 @@ $total_features = isset( $features['spider_elements_features'] ) ? count( $featu
 				$is_pro_feature_enabled = $feature_type === 'pro' ? ' disabled' : '';
 
 				// Unlock specific features for Jobi theme users
-				if ( in_array( $item['name'], [ 'spel_badge', 'spel_heading_highlighted' ] ) && $theme || spel_is_premium() ) {
+				if ( ( in_array( $item['name'], [ 'spel_badge', 'spel_heading_highlighted' ], true ) && $is_jobi ) || spel_is_premium() ) {
 					$is_pro_feature         = ''; // Remove pro_popup class
 					$is_pro_feature_enabled = ''; // Enable widget
 				}
 
-				// By default, only free features are checked
-				if ( $feature_type === 'pro' && ! spel_is_premium() && ! ( in_array( $item['name'], [ 'spel_badge', 'spel_heading_highlighted' ] ) && $theme ) ) {
+				// Unlock Smooth Animation for Docy, Jobi, or Docly theme users
+				if ( $item['name'] === 'spel_smooth_animation' && $is_smooth_anim_unlocked ) {
+					$is_pro_feature         = ''; // Remove pro_popup class
+					$is_pro_feature_enabled = ''; // Enable widget
+				}
+
+				// Determine if this feature is unlocked via theme
+				$is_jobi_unlocked = in_array( $item['name'], [ 'spel_badge', 'spel_heading_highlighted' ], true ) && $is_jobi;
+				$is_smooth_unlocked = $item['name'] === 'spel_smooth_animation' && $is_smooth_anim_unlocked;
+
+				if ( $feature_type === 'pro' && ! spel_is_premium() && ! $is_jobi_unlocked && ! $is_smooth_unlocked ) {
 					// Pro feature: unchecked by default
 					$checked = ! isset( $opt[ $feature_name ] ) ? '' : ( $opt[ $feature_name ] === 'on' ? ' checked' : '' );
 				} else {

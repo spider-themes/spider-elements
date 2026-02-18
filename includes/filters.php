@@ -169,11 +169,23 @@ add_action( 'admin_init', function () {
 		// Save the data in the option table using update_option
 		update_option( 'spel_features_settings', $data );
 
-		// If the user is not on a pro-plan or Jobi theme, reset pro-widgets
+		// If the user is not on a pro-plan or Jobi theme, reset pro-features
 		$theme               = wp_get_theme();
-		$is_premium_or_theme = spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
+		$theme_name          = $theme->get( 'Name' );
+		$is_premium_or_theme = spel_is_premium() || in_array( $theme_name, [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true );
+
+		// Smooth Animation is unlocked for Docy, Jobi, Docly, or Ama theme users
+		$is_smooth_anim_unlocked = spel_unlock_docy_theme()
+			|| in_array( $theme_name, [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ], true )
+			|| in_array( $theme_name, [ 'Docly', 'docly', 'Docly Child', 'docly-child' ], true )
+			|| in_array( $theme_name, [ 'Ama', 'ama', 'Ama Child', 'ama-child' ], true );
+
 		if ( ! $is_premium_or_theme ) {
 			foreach ( $pro_features as $feature ) {
+				// Keep Smooth Animation enabled for Docy, Jobi, or Docly theme users
+				if ( $feature === 'spel_smooth_animation' && $is_smooth_anim_unlocked ) {
+					continue;
+				}
 				$data[ $feature ] = 'off';
 			}
 			update_option( 'spel_features_settings', $data );
