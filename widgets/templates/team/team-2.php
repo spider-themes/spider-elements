@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="expert-slider-two" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 	<?php
-	if ( ! empty( $team_slider_item ) ) {
-		foreach ( $team_slider_item as $item ) { ?>
+	if ( ! empty( $settings['team_slider_item'] ) ) {
+		foreach ( $settings['team_slider_item'] as $item ) { ?>
             <div class="item">
                 <div class="card-style-eight">
 					<?php

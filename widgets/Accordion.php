@@ -654,18 +654,17 @@ class Accordion extends Widget_Base {
     {
 
         $settings = $this->get_settings_for_display();
-		extract( $settings );
 
 		$title_tag 		  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
-		$accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
-		$icon_align       = ! empty ( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
-		$icon_align_class = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
+		$accordions       = $settings['accordions'] ?? [];
+		$icon_align       = $settings['icon_align'] ?? 'right';
+		$icon_align_class = 'left' === $icon_align ? ' icon-align-left' : '';
 
-		$is_toggle           = ! empty ( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
-		$toggle_id           = ! empty( $is_toggle == 'yes' ) ? 'id=accordionExample-' . $this->get_id() : '';
-		$toggle_bs_parent_id = ! empty( $is_toggle == 'yes' ) ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
+		$is_toggle           = $settings['is_toggle'] ?? 'no';
+		$toggle_id           = 'yes' === $is_toggle ? 'id=accordionExample-' . $this->get_id() : '';
+		$toggle_bs_parent_id = 'yes' === $is_toggle ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
 
 		//======================== Template Parts ========================//
-		include "templates/accordion/accordion.php";
+		include __DIR__ . "/templates/accordion/accordion.php";
 	}
 }
