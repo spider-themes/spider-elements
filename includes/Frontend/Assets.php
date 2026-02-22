@@ -61,14 +61,14 @@ class Assets
                 'e-animation-grow',
             ];
 
-            // Deregister all styles for the handlers
+            // Register the shared animation file once
+            wp_register_style('spel-animate', SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION);
+
+            // Deregister Elementor handlers and re-register them as aliases depending on spel-animate
             foreach ($handlers as $handler) {
                 wp_deregister_style($handler);
-            }
-
-            // Enqueue all handlers pointing to the same file
-            foreach ($handlers as $handler) {
-                wp_enqueue_style($handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+                wp_register_style($handler, false, ['spel-animate']);
+                wp_enqueue_style($handler);
             }
 
         }
