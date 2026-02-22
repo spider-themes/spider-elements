@@ -9,3 +9,7 @@
 ## 2024-10-24 - Unnecessary Admin File Loading
 **Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
 **Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
+
+## 2025-02-18 - Duplicate CSS Resources
+**Learning:** The plugin was registering and enqueuing the same `animate.css` file 12 times with different handles (e.g., `e-animations`, `e-animation-fadeIn`) to override Elementor defaults. This resulted in 12 separate `<link>` tags pointing to the same file, bloating the DOM and potentially triggering multiple network requests.
+**Action:** Optimized by registering the file once under a primary handle and aliasing the other handles as dependencies (using `wp_register_style($alias, false, [$primary])`). This ensures the file is loaded only once while satisfying all handle requirements.
