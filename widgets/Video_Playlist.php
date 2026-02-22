@@ -851,7 +851,7 @@ class Video_Playlist extends Widget_Base {
     {
 
         $settings = $this->get_settings();
-		extract( $settings ); //extract all settings array to variables converted to name of a key
+		// extract( $settings ); // Removed
 
 		// Whitelist valid style values to prevent Local File Inclusion
 		$allowed_styles = array( '1', '2' );
