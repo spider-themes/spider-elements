@@ -978,7 +978,6 @@ class Icon_Box extends Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
 		$box_title_tag = Utils::validate_html_tag( $settings['box_title_tag'] ?? 'h6' );
 
 		//================= Template Parts =================//
