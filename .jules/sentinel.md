@@ -18,3 +18,19 @@ When parsing custom attributes from user input:
    - Or Whitelist: Only allow `data-*`, `aria-*`, `title`, `class`, `id`.
 2. **Handle Edge Cases:** Ensure `explode` has enough parts before accessing indexes to avoid PHP notices.
 3. **Defense in Depth:** Even if the input field is restricted to admins, protecting the output function guards against privilege escalation or DB compromises.
+
+## 2024-10-24 - Unsafe Link Attributes & Missing Noopener
+**Vulnerability:**
+While `spel_button_link` had some protections, it failed to block `style`, `target`, and `rel` attributes in custom attributes.
+This allowed:
+1.  **CSS Injection:** via `style|...`.
+2.  **Tabnabbing:** `target="_blank"` was used without `rel="noopener"`, allowing the opened page to control the parent window.
+3.  **Attribute Override:** Users could override the secure `target="_blank"` with `target="_self"` or vice versa via custom attributes.
+
+**Learning:**
+Blocklists must be comprehensive. If you control `target` and `rel` via checkboxes (e.g., "Open in new window"), you must explicitly block them in custom attribute parsing to prevent overrides.
+Also, any time `target="_blank"` is output, `rel="noopener"` (and ideally `noreferrer`) must be included to prevent reverse tabnabbing attacks.
+
+**Prevention:**
+1.  **Strict Blocklist:** Added `style`, `target`, `rel` to the blocked regex.
+2.  **Secure Defaults:** Automatically append `noopener` to `rel` when `is_external` is true.
