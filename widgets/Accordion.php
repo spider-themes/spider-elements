@@ -24,77 +24,64 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Accordion extends Widget_Base {
 
-	public function get_name(): string
-    {
+	public function get_name(): string {
 		return 'spel_accordion'; // ID of the widget (Don't change this name)
 	}
 
-	public function get_title(): string
-    {
+	public function get_title(): string {
 		return esc_html__( 'Accordion', 'spider-elements' );
 	}
 
-	public function get_icon(): string
-    {
+	public function get_icon(): string {
 		return 'eicon-accordion spel-icon';
 	}
 
-	public function get_keywords(): array
-    {
+	public function get_keywords(): array {
 		return [ 'spider', 'spider elements', 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab', ];
 	}
 
-	public function get_categories(): array
-    {
+	public function get_categories(): array {
 		return [ 'spider-elements' ];
 	}
 
 	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
+	 * Register the required CSS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
-	public function get_style_depends(): array
-    {
+	public function get_style_depends(): array {
 		return [ 'spel-main', 'elegant-icon' ];
 	}
 
 	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
+	 * Register the required JS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
-	public function get_script_depends(): array
-    {
+	public function get_script_depends(): array {
 		return [ 'spel-el-widgets' ];
 	}
 
 
 	/**
-	 * Name: register_controls()
-	 * Desc: Register controls for these widgets
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register controls for these widgets
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	protected function register_controls(): void
-    {
+	protected function register_controls(): void {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
 
 
 	/**
-	 * Name: elementor_content_control()
-	 * Desc: Register the Content Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Content Tab output on the Elementor editor.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	public function elementor_content_control(): void
-    {
+	public function elementor_content_control(): void {
 
 		//=================== Section Accordion ===================//
 		$this->start_controls_section(
@@ -298,16 +285,12 @@ class Accordion extends Widget_Base {
 
 
 	/**
-	 * Name: elementor_style_control()
-	 * Desc: Register the Style Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Style Tab output on the Elementor editor.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	public function elementor_style_control(): void
-    {
+	public function elementor_style_control(): void {
 
 		//============================= Accordion Settings Style =============================//
 		$this->start_controls_section(
@@ -378,7 +361,7 @@ class Accordion extends Widget_Base {
 		$this->end_controls_section();
 
 
-        //=============Accordion Title Style Section===============
+		//=============Accordion Title Style Section===============
 		$this->start_controls_section(
 			'section_toggle_style_title',
 			[
@@ -453,7 +436,7 @@ class Accordion extends Widget_Base {
 
 		$this->end_controls_section(); //End Accordion title
 
-        //================= Content Style ===================
+		//================= Content Style ===================
 		$this->start_controls_section(
 			'section_toggle_style_content',
 			[
@@ -524,114 +507,114 @@ class Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => esc_html__( 'Size', 'spider-elements' ),
-				'type' => Controls_Manager::SLIDER,
+				'label'      => esc_html__( 'Size', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'range' => [
+				'range'      => [
 					'px' => [
 						'min' => 6,
 						'max' => 300,
 					],
 				],
-				'selectors' => [
-					'{{WRAPPER}} .expanded-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+				'selectors'  => [
+					'{{WRAPPER}} .expanded-icon'  => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .collapsed-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
-	    // Accordion icon Normal/Active/ State
-	    $this->start_controls_tabs(
-		    'style_accordion_icon_tabs'
-	    );
+		// Accordion icon Normal/Active/ State
+		$this->start_controls_tabs(
+			'style_accordion_icon_tabs'
+		);
 
-	    //=== Normal icon
-	    $this->start_controls_tab(
-		    'style_accordion_icon_normal', [
-			    'label' => esc_html__( 'Normal', 'spider-elements' ),
-		    ]
-	    );
+		//=== Normal icon
+		$this->start_controls_tab(
+			'style_accordion_icon_normal', [
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
 
-	    $this->add_control(
-		    'acc_icon_color',
-		    [
-			    'label'     => esc_html__( 'Color', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
+		$this->add_control(
+			'acc_icon_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
 
-			    ],
-		    ]
-	    );
+				],
+			]
+		);
 
-	    $this->add_control(
-		    'acc_icon_bg_color',
-		    [
-			    'label'     => esc_html__( 'Background', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card .card-header button .expanded-icon' => 'background: {{VALUE}};',
+		$this->add_control(
+			'acc_icon_bg_color',
+			[
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card .card-header button .expanded-icon' => 'background: {{VALUE}};',
 
-			    ],
-		    ]
-	    );
+				],
+			]
+		);
 
-	    $this->end_controls_tab(); //End Normal icon
-
-
-	    //=== Active icon====
-	    $this->start_controls_tab(
-		    'acc_icon_active', [
-			    'label' => esc_html__( 'Active', 'spider-elements' ),
-		    ]
-	    );
-
-	    $this->add_control(
-		    'icon_active_color', [
-			    'label'     => esc_html__( 'Color', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card-header button .collapsed-icon' => 'color: {{VALUE}};',
-			    ],
-		    ]
-	    );
-
-	    $this->add_control(
-		    'icon_active_bg_color', [
-			    'label'     => esc_html__( 'Background', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card .card-header button .collapsed-icon' => 'background: {{VALUE}};',
-			    ],
-		    ]
-	    );
+		$this->end_controls_tab(); //End Normal icon
 
 
-	    $this->end_controls_tab(); // End Active Tab Title
-	    $this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+		//=== Active icon====
+		$this->start_controls_tab(
+			'acc_icon_active', [
+				'label' => esc_html__( 'Active', 'spider-elements' ),
+			]
+		);
 
-	    $this->add_responsive_control(
-		    'acc_padding', [
-			    'label'      => esc_html__( 'Padding', 'spider-elements' ),
-			    'type'       => Controls_Manager::DIMENSIONS,
-			    'size_units' => [ 'px', '%', 'em' ],
+		$this->add_control(
+			'icon_active_color', [
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card-header button .collapsed-icon' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_active_bg_color', [
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card .card-header button .collapsed-icon' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+
+		$this->end_controls_tab(); // End Active Tab Title
+		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+
+		$this->add_responsive_control(
+			'acc_padding', [
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
 				'separator'  => 'before',
-			    'selectors'  => [
-				    '{{WRAPPER}} .expanded-icon'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				    '{{WRAPPER}} .collapsed-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-			    ],
-		    ]
-	    );
+				'selectors'  => [
+					'{{WRAPPER}} .expanded-icon'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .collapsed-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->add_responsive_control(
 			'acc_border_radius', [
 				'label'      => esc_html__( 'Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .expanded-icon'  => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .collapsed-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
+				'selectors'  => [
+					'{{WRAPPER}} .expanded-icon'  => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .collapsed-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -642,28 +625,26 @@ class Accordion extends Widget_Base {
 	//	==================End accordion all style controls===============
 
 	/**
-	 * Name: elementor_render()
-	 * Desc: Render the widget output on the frontend.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Render the widget output on the frontend.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	protected function render(): void
-    {
+	protected function render(): void {
 
-        $settings = $this->get_settings_for_display();
-		extract( $settings );
+		$settings = $this->get_settings_for_display();
 
-		$title_tag 		  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
-		$accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
-		$icon_align       = ! empty ( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
-		$icon_align_class = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
+		$title_tag = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
 
-		$is_toggle           = ! empty ( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
-		$toggle_id           = ! empty( $is_toggle == 'yes' ) ? 'id=accordionExample-' . $this->get_id() : '';
-		$toggle_bs_parent_id = ! empty( $is_toggle == 'yes' ) ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
+		$accordions = ! empty( $settings['accordions'] ) ? $settings['accordions'] : [];
+		$icon_align = ! empty( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
+
+		$icon_align_class = ( 'left' === $icon_align ) ? ' icon-align-left' : '';
+
+		$is_toggle = ! empty( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
+
+		$toggle_id           = ( 'yes' === $is_toggle ) ? 'id=accordionExample-' . $this->get_id() : '';
+		$toggle_bs_parent_id = ( 'yes' === $is_toggle ) ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
 
 		//======================== Template Parts ========================//
 		include "templates/accordion/accordion.php";
