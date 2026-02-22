@@ -96,7 +96,7 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 						$attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
 
 						// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-						if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+						if ( preg_match( '/^(on|style|formaction|src|href|target|rel)/i', $attr_name ) ) {
 							continue;
 						}
 
