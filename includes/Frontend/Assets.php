@@ -61,14 +61,16 @@ class Assets
                 'e-animation-grow',
             ];
 
-            // Deregister all styles for the handlers
-            foreach ($handlers as $handler) {
-                wp_deregister_style($handler);
-            }
+            // Register the primary handle once
+            wp_register_style( 'spel-animate', SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
 
-            // Enqueue all handlers pointing to the same file
-            foreach ($handlers as $handler) {
-                wp_enqueue_style($handler, SPEL_VEND . '/animation/animate.css', [], SPEL_VERSION );
+            // Deregister all styles for the handlers and re-register as aliases
+            foreach ( $handlers as $handler ) {
+                wp_deregister_style( $handler );
+                // Register as alias (dependency on primary)
+                wp_register_style( $handler, false, [ 'spel-animate' ] );
+                // Enqueue to ensure the dependency is loaded if this handle is requested
+                wp_enqueue_style( $handler );
             }
 
         }
