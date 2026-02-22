@@ -457,7 +457,7 @@ class List_Item extends Widget_Base {
 			};
 		}
 
-		if ( $settings['style'] == 'unordered_list' ) {
+		if ( 'unordered_list' === $settings['style'] ) {
 			?>
             <div class="spel-steps-panel">
                 <ul class="item-list unordered">
@@ -485,7 +485,7 @@ class List_Item extends Widget_Base {
                 </ul>
             </div>
 			<?php
-		} elseif ( $settings['style'] == 'order_list' ) {
+		} elseif ( 'order_list' === $settings['style'] ) {
 			?>
             <div class="spel-steps-panel">
                 <ol class="item-list ordered<?php echo esc_attr( $list_class ); ?> ?>">

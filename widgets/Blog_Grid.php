@@ -27,13 +27,13 @@ class Blog_Grid extends Widget_Base {
 		$post_cat = self::_get_terms( $cate );
 
 		$tag   = isset( $post_cat[ $type ] ) && ! empty( $post_cat[ $type ] ) ? $post_cat[ $type ] : 'category';
-		$terms = get_terms( array(
+		$terms = get_terms( [
 			'taxonomy'   => $tag,
 			'orderby'    => 'name',
 			'order'      => 'DESC',
 			'hide_empty' => false,
-			'number'     => 1500
-		) );
+			'number'     => 1500,
+		] );
 
 		return $terms;
 	}
@@ -430,34 +430,32 @@ class Blog_Grid extends Widget_Base {
 
 		$options = [];
 		$count   = count( (array) $terms );
-		if ( $count > 0 ):
+		if ( $count > 0 ) {
 			foreach ( $terms as $term ) {
-				if ( $term->parent == 0 ) {
+				if ( 0 === $term->parent ) {
 					$options[ $term->term_id ] = $term->name;
 					foreach ( $terms as $subcategory ) {
-						if ( $subcategory->parent == $term->term_id ) {
+						if ( $subcategory->parent === $term->term_id ) {
 							$options[ $subcategory->term_id ] = $subcategory->name;
 						}
 					}
 				}
 			}
-		endif;
+		}
 
 		return $options;
 	}
 
 	public static function _get_terms( $post = 'post' ) {
-		$taxonomy_objects = get_object_taxonomies( $post );
-
-		return $taxonomy_objects;
+		return get_object_taxonomies( $post );
 	}
 
 	public static function get_posts() {
 		$post_args = get_posts(
-			array(
+			[
 				'posts_per_page' => - 1,
 				'post_status'    => 'publish',
-			)
+			]
 		);
 
 		$posts      = get_posts( $post_args );
@@ -473,13 +471,13 @@ class Blog_Grid extends Widget_Base {
 
 	public static function get_posttype() {
 		$post_types = get_post_types(
-			array(
+			[
 				'public' => true,
-			),
+			],
 			'objects'
 		);
 
-		$options = array();
+		$options = [];
 
 		if ( is_array( $post_types ) ) {
 			foreach ( $post_types as $post_type ) {
@@ -1529,8 +1527,8 @@ class Blog_Grid extends Widget_Base {
 
 		//============ Template Part =============//
 		// Whitelist valid style values to prevent Local File Inclusion
-		$allowed_styles = array( '1', '2', '3', '4', '5' );
-		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
+		$allowed_styles = [ '1', '2', '3', '4', '5' ];
+		$style          = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		include __DIR__ . "/templates/blog-grid/blog-{$style}.php";
 	}
 
