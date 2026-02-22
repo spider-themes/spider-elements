@@ -13,99 +13,122 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Class Accordion
+ *
  * @package spider\Widgets
  */
 class Accordion extends Widget_Base {
 
-	public function get_name(): string
-    {
-		return 'spel_accordion'; // ID of the widget (Don't change this name)
+	/**
+	 * Get widget name.
+	 *
+	 * @return string Widget name.
+	 */
+	public function get_name(): string {
+		return 'spel_accordion'; // ID of the widget (Don't change this name).
 	}
 
-	public function get_title(): string
-    {
+	/**
+	 * Get widget title.
+	 *
+	 * @return string Widget title.
+	 */
+	public function get_title(): string {
 		return esc_html__( 'Accordion', 'spider-elements' );
 	}
 
-	public function get_icon(): string
-    {
+	/**
+	 * Get widget icon.
+	 *
+	 * @return string Widget icon.
+	 */
+	public function get_icon(): string {
 		return 'eicon-accordion spel-icon';
 	}
 
-	public function get_keywords(): array
-    {
-		return [ 'spider', 'spider elements', 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab', ];
+	/**
+	 * Get widget keywords.
+	 *
+	 * @return array Widget keywords.
+	 */
+	public function get_keywords(): array {
+		return [ 'spider', 'spider elements', 'toggle', 'accordion', 'collapse', 'faq', 'tabs', 'tab' ];
 	}
 
-	public function get_categories(): array
-    {
+	/**
+	 * Get widget categories.
+	 *
+	 * @return array Widget categories.
+	 */
+	public function get_categories(): array {
 		return [ 'spider-elements' ];
 	}
 
 	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
+	 * Get style dependencies.
+	 *
+	 * Register the required CSS dependencies for the frontend.
+	 *
+	 * @return array Style dependencies.
 	 */
-	public function get_style_depends(): array
-    {
+	public function get_style_depends(): array {
 		return [ 'spel-main', 'elegant-icon' ];
 	}
 
 	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
+	 * Get script dependencies.
+	 *
+	 * Register the required JS dependencies for the frontend.
+	 *
+	 * @return array Script dependencies.
 	 */
-	public function get_script_depends(): array
-    {
+	public function get_script_depends(): array {
 		return [ 'spel-el-widgets' ];
 	}
 
 
 	/**
-	 * Name: register_controls()
-	 * Desc: Register controls for these widgets
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register controls.
+	 *
+	 * Register controls for these widgets.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	protected function register_controls(): void
-    {
+	protected function register_controls(): void {
 		$this->elementor_content_control();
 		$this->elementor_style_control();
 	}
 
 
 	/**
-	 * Name: elementor_content_control()
-	 * Desc: Register the Content Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register content controls.
+	 *
+	 * Register the Content Tab output on the Elementor editor.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	public function elementor_content_control(): void
-    {
+	public function elementor_content_control(): void {
 
 		//=================== Section Accordion ===================//
 		$this->start_controls_section(
-			'sec_accordion', [
+			'sec_accordion',
+			[
 				'label' => esc_html__( 'Accordion', 'spider-elements' ),
 			]
 		);
 
 		$repeater = new Repeater();
 		$repeater->add_control(
-			'collapse_state', [
+			'collapse_state',
+			[
 				'label'        => esc_html__( 'Expanded', 'spider-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
@@ -117,7 +140,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$repeater->add_control(
-			'title', [
+			'title',
+			[
 				'label'       => esc_html__( 'Title', 'spider-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => esc_html__( 'Accordion Title', 'spider-elements' ),
@@ -129,7 +153,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$repeater->add_control(
-			'content_type', [
+			'content_type',
+			[
 				'label'   => esc_html__( 'Content Type', 'spider-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
@@ -141,51 +166,51 @@ class Accordion extends Widget_Base {
 		);
 
 		$repeater->add_control(
-			'normal_content', [
+			'normal_content',
+			[
 				'label'       => esc_html__( 'Content Text', 'spider-elements' ),
 				'type'        => Controls_Manager::WYSIWYG,
 				'label_block' => true,
 				'default'     => esc_html__( 'Accordion Content', 'spider-elements' ),
 				'condition'   => [
-					'content_type' => 'content'
-				]
+					'content_type' => 'content',
+				],
 			]
 
 		);
 
 		$repeater->add_control(
-			'el_content', [
+			'el_content',
+			[
 				'label'       => esc_html__( 'Select Template', 'spider-elements' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => spel_get_el_templates(),
 				'label_block' => true,
 				'default'     => esc_html__( 'Accordion Content', 'spider-elements' ),
 				'condition'   => [
-					'content_type' => 'el_template'
-				]
+					'content_type' => 'el_template',
+				],
 			]
 		);
 
 		$this->add_control(
-			'accordions', [
+			'accordions',
+			[
 				'label'       => 'Accordion Items',
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
 						'title'       => esc_html__( 'Accordion #1', 'spider-elements' ),
-						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
-							'spider-elements' ),
+						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
 					],
 					[
 						'title'       => esc_html__( 'Accordion #2', 'spider-elements' ),
-						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
-							'spider-elements' ),
+						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
 					],
 					[
 						'title'       => esc_html__( 'Accordion #3', 'spider-elements' ),
-						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
-							'spider-elements' ),
+						'tab_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'spider-elements' ),
 					],
 				],
 				'title_field' => '{{{ title }}}',
@@ -193,7 +218,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_control(
-			'plus-icon', [
+			'plus-icon',
+			[
 				'label'       => esc_html__( 'Icon', 'spider-elements' ),
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
@@ -201,18 +227,19 @@ class Accordion extends Widget_Base {
 					'value'   => 'icon_plus',
 					'library' => 'solid',
 				],
-				'separator'   => 'before'
+				'separator'   => 'before',
 			]
 		);
 
 		$this->add_control(
-			'minus-icon', [
+			'minus-icon',
+			[
 				'label'   => esc_html__( 'Active Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
 					'value'   => 'icon_minus-06',
 					'library' => 'solid',
-				]
+				],
 			]
 		);
 
@@ -224,11 +251,11 @@ class Accordion extends Widget_Base {
 				'options' => [
 					'left'  => [
 						'title' => esc_html__( 'Start', 'spider-elements' ),
-						'icon'  => 'eicon-h-align-left'
+						'icon'  => 'eicon-h-align-left',
 					],
 					'right' => [
 						'title' => esc_html__( 'End', 'spider-elements' ),
-						'icon'  => 'eicon-h-align-right'
+						'icon'  => 'eicon-h-align-right',
 					],
 				],
 				'default' => is_rtl() ? 'left' : 'right',
@@ -262,7 +289,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_control(
-			'is_toggle', [
+			'is_toggle',
+			[
 				'label'        => esc_html__( 'Toggle', 'spider-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'separator'    => 'before',
@@ -283,7 +311,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title_tag', [
+			'title_tag',
+			[
 				'label'     => esc_html__( 'Title Tag', 'spider-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'separator' => 'before',
@@ -292,40 +321,41 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_section(); // End Accordion Settings
+		$this->end_controls_section(); // End Accordion Settings.
 
 	}
 
 
 	/**
-	 * Name: elementor_style_control()
-	 * Desc: Register the Style Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register style controls.
+	 *
+	 * Register the Style Tab output on the Elementor editor.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	public function elementor_style_control(): void
-    {
+	public function elementor_style_control(): void {
 
 		//============================= Accordion Settings Style =============================//
 		$this->start_controls_section(
-			'sec_title_style', [
+			'sec_title_style',
+			[
 				'label' => esc_html__( 'Accordion', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Border::get_type(), [
+			\Elementor\Group_Control_Border::get_type(),
+			[
 				'name'     => 'accordion_border',
 				'selector' => '{{WRAPPER}} .spel-accordion .card',
 			]
 		);
 
 		$this->add_responsive_control(
-			'acc_item_border_radius', [
+			'acc_item_border_radius',
+			[
 				'label'      => esc_html__( 'Border Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
@@ -336,7 +366,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_control(
-			'is_border_bottom', [
+			'is_border_bottom',
+			[
 				'label'        => esc_html__( 'Border Bottom', 'spider-elements' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
@@ -356,7 +387,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'accordion_bottom_spacing', [
+			'accordion_bottom_spacing',
+			[
 				'label'       => esc_html__( 'Spacing', 'spider-elements' ),
 				'description' => esc_html__( 'Spacing between the accordions', 'spider-elements' ),
 				'type'        => Controls_Manager::SLIDER,
@@ -377,8 +409,7 @@ class Accordion extends Widget_Base {
 
 		$this->end_controls_section();
 
-
-        //=============Accordion Title Style Section===============
+		//=============Accordion Title Style Section===============
 		$this->start_controls_section(
 			'section_toggle_style_title',
 			[
@@ -388,14 +419,16 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(),
+			[
 				'name'     => 'title_typography',
 				'selector' => '{{WRAPPER}} .card .card-header button.collapsed, {{WRAPPER}} .card .card-header button',
 			]
 		);
 
 		$this->add_control(
-			'title_color', [
+			'title_color',
+			[
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
@@ -405,7 +438,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_control(
-			'tab_active_color', [
+			'tab_active_color',
+			[
 				'label'     => esc_html__( 'Active Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
@@ -415,7 +449,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(), [
+			\Elementor\Group_Control_Background::get_type(),
+			[
 				'name'     => 'accordion_title_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
@@ -424,7 +459,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			Group_Control_Text_Stroke::get_type(), [
+			Group_Control_Text_Stroke::get_type(),
+			[
 				'name'     => 'text_stroke',
 				'selector' => '{{WRAPPER}} .card .card-header button.collapsed, {{WRAPPER}} .card .card-header button',
 			]
@@ -451,9 +487,9 @@ class Accordion extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_section(); //End Accordion title
+		$this->end_controls_section(); // End Accordion title.
 
-        //================= Content Style ===================
+		//================= Content Style ===================
 		$this->start_controls_section(
 			'section_toggle_style_content',
 			[
@@ -463,14 +499,16 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			Group_Control_Typography::get_type(), [
+			Group_Control_Typography::get_type(),
+			[
 				'name'     => 'content_typography',
 				'selector' => '{{WRAPPER}} .spel-accordion .card .card-body p',
 			]
 		);
 
 		$this->add_control(
-			'content_color', [
+			'content_color',
+			[
 				'label'     => esc_html__( 'Text Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
@@ -480,7 +518,8 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Background::get_type(), [
+			\Elementor\Group_Control_Background::get_type(),
+			[
 				'name'     => 'accordion_content_bg_color',
 				'types'    => [ 'classic', 'gradient' ],
 				'exclude'  => [ 'image' ],
@@ -509,7 +548,7 @@ class Accordion extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		//end accordion content style section//
+		// end accordion content style section//
 
 
 		//		============Accordion Icon Style Section==============
@@ -517,153 +556,157 @@ class Accordion extends Widget_Base {
 			'section_toggle_style_icon',
 			[
 				'label' => esc_html__( 'Icon', 'spider-elements' ),
-				'tab'   => Controls_Manager::TAB_STYLE
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => esc_html__( 'Size', 'spider-elements' ),
-				'type' => Controls_Manager::SLIDER,
+				'label'      => esc_html__( 'Size', 'spider-elements' ),
+				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
-				'range' => [
+				'range'      => [
 					'px' => [
 						'min' => 6,
 						'max' => 300,
 					],
 				],
-				'selectors' => [
-					'{{WRAPPER}} .expanded-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+				'selectors'  => [
+					'{{WRAPPER}} .expanded-icon'  => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .collapsed-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
-	    // Accordion icon Normal/Active/ State
-	    $this->start_controls_tabs(
-		    'style_accordion_icon_tabs'
-	    );
+		// Accordion icon Normal/Active/ State.
+		$this->start_controls_tabs(
+			'style_accordion_icon_tabs'
+		);
 
-	    //=== Normal icon
-	    $this->start_controls_tab(
-		    'style_accordion_icon_normal', [
-			    'label' => esc_html__( 'Normal', 'spider-elements' ),
-		    ]
-	    );
+		//=== Normal icon
+		$this->start_controls_tab(
+			'style_accordion_icon_normal',
+			[
+				'label' => esc_html__( 'Normal', 'spider-elements' ),
+			]
+		);
 
-	    $this->add_control(
-		    'acc_icon_color',
-		    [
-			    'label'     => esc_html__( 'Color', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
+		$this->add_control(
+			'acc_icon_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card-header button .expanded-icon' => 'color: {{VALUE}};',
 
-			    ],
-		    ]
-	    );
+				],
+			]
+		);
 
-	    $this->add_control(
-		    'acc_icon_bg_color',
-		    [
-			    'label'     => esc_html__( 'Background', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card .card-header button .expanded-icon' => 'background: {{VALUE}};',
+		$this->add_control(
+			'acc_icon_bg_color',
+			[
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card .card-header button .expanded-icon' => 'background: {{VALUE}};',
 
-			    ],
-		    ]
-	    );
+				],
+			]
+		);
 
-	    $this->end_controls_tab(); //End Normal icon
-
-
-	    //=== Active icon====
-	    $this->start_controls_tab(
-		    'acc_icon_active', [
-			    'label' => esc_html__( 'Active', 'spider-elements' ),
-		    ]
-	    );
-
-	    $this->add_control(
-		    'icon_active_color', [
-			    'label'     => esc_html__( 'Color', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card-header button .collapsed-icon' => 'color: {{VALUE}};',
-			    ],
-		    ]
-	    );
-
-	    $this->add_control(
-		    'icon_active_bg_color', [
-			    'label'     => esc_html__( 'Background', 'spider-elements' ),
-			    'type'      => Controls_Manager::COLOR,
-			    'selectors' => [
-				    '{{WRAPPER}} .card .card-header button .collapsed-icon' => 'background: {{VALUE}};',
-			    ],
-		    ]
-	    );
+		$this->end_controls_tab(); // End Normal icon.
 
 
-	    $this->end_controls_tab(); // End Active Tab Title
-	    $this->end_controls_tabs(); // End Accordion icon Normal/Active/ State
+		//=== Active icon====
+		$this->start_controls_tab(
+			'acc_icon_active',
+			[
+				'label' => esc_html__( 'Active', 'spider-elements' ),
+			]
+		);
 
-	    $this->add_responsive_control(
-		    'acc_padding', [
-			    'label'      => esc_html__( 'Padding', 'spider-elements' ),
-			    'type'       => Controls_Manager::DIMENSIONS,
-			    'size_units' => [ 'px', '%', 'em' ],
-				'separator'  => 'before',
-			    'selectors'  => [
-				    '{{WRAPPER}} .expanded-icon'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				    '{{WRAPPER}} .collapsed-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-			    ],
-		    ]
-	    );
+		$this->add_control(
+			'icon_active_color',
+			[
+				'label'     => esc_html__( 'Color', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card-header button .collapsed-icon' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_active_bg_color',
+			[
+				'label'     => esc_html__( 'Background', 'spider-elements' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .card .card-header button .collapsed-icon' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+
+		$this->end_controls_tab(); // End Active Tab Title.
+		$this->end_controls_tabs(); // End Accordion icon Normal/Active/ State.
 
 		$this->add_responsive_control(
-			'acc_border_radius', [
+			'acc_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'spider-elements' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'separator'  => 'before',
+				'selectors'  => [
+					'{{WRAPPER}} .expanded-icon'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .collapsed-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'acc_border_radius',
+			[
 				'label'      => esc_html__( 'Radius', 'spider-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .expanded-icon'  => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .collapsed-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
+				'selectors'  => [
+					'{{WRAPPER}} .expanded-icon'  => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .collapsed-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
 		$this->end_controls_section();
-		//end accordion icon style section//
+		// end accordion icon style section//
 
 	}
 	//	==================End accordion all style controls===============
 
 	/**
-	 * Name: elementor_render()
-	 * Desc: Render the widget output on the frontend.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Render widget.
+	 *
+	 * Render the widget output on the frontend.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
-	protected function render(): void
-    {
+	protected function render(): void {
 
-        $settings = $this->get_settings_for_display();
-		extract( $settings );
+		$settings = $this->get_settings_for_display();
 
-		$title_tag 		  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
-		$accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
-		$icon_align       = ! empty ( $settings['icon_align'] ) ? $settings['icon_align'] : 'right';
-		$icon_align_class = ! empty ( $icon_align == 'left' ) ? ' icon-align-left' : '';
+		$title_tag = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
+		$accordions = ! empty( $settings['accordions'] ) ? $settings['accordions'] : [];
 
-		$is_toggle           = ! empty ( $settings['is_toggle'] ) ? $settings['is_toggle'] : '';
-		$toggle_id           = ! empty( $is_toggle == 'yes' ) ? 'id=accordionExample-' . $this->get_id() : '';
-		$toggle_bs_parent_id = ! empty( $is_toggle == 'yes' ) ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
+		$icon_align = $settings['icon_align'] ?? 'right';
+		$icon_align_class = 'left' === $icon_align ? ' icon-align-left' : '';
+
+		$is_toggle = $settings['is_toggle'] ?? '';
+		$toggle_id = 'yes' === $is_toggle ? 'id=accordionExample-' . $this->get_id() : '';
+		$toggle_bs_parent_id = 'yes' === $is_toggle ? 'data-bs-parent=#accordionExample-' . $this->get_id() : '';
 
 		//======================== Template Parts ========================//
 		include "templates/accordion/accordion.php";
