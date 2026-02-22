@@ -583,6 +583,14 @@ if ( ! function_exists( 'spel_get_query_post_list' ) ) {
  */
 if ( ! function_exists( 'spel_get_el_templates' ) ) {
 	function spel_get_el_templates( $type = null ): array {
+
+		$cache_key = 'spel_el_templates_' . ( $type ?: 'all' );
+		$options   = get_transient( $cache_key );
+
+		if ( false !== $options ) {
+			return $options;
+		}
+
 		$options = [];
 
 		if ( $type ) {
@@ -611,8 +619,39 @@ if ( ! function_exists( 'spel_get_el_templates' ) ) {
 			$options = spel_get_query_post_list( 'elementor_library' );
 		}
 
+		set_transient( $cache_key, $options, HOUR_IN_SECONDS );
+
 		return $options;
 	}
+}
+
+/**
+ * Clear Elementor templates cache
+ *
+ * @param int $post_id
+ * @return void
+ */
+if ( ! function_exists( 'spel_clear_el_templates_cache' ) ) {
+	function spel_clear_el_templates_cache( $post_id ): void {
+		if ( 'elementor_library' !== get_post_type( $post_id ) ) {
+			return;
+		}
+
+		delete_transient( 'spel_el_templates_all' );
+
+		$terms = get_terms( [
+			'taxonomy'   => 'elementor_library_type',
+			'hide_empty' => false,
+		] );
+
+		if ( $terms && ! is_wp_error( $terms ) ) {
+			foreach ( $terms as $term ) {
+				delete_transient( 'spel_el_templates_' . $term->slug );
+			}
+		}
+	}
+	add_action( 'save_post', 'spel_clear_el_templates_cache' );
+	add_action( 'before_delete_post', 'spel_clear_el_templates_cache' );
 }
 
 
