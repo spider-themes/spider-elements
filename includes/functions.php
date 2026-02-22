@@ -27,7 +27,7 @@ function spel_unlock_docy_theme(): bool {
 }
 
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
@@ -113,7 +113,7 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 /**
  * Category IDs
  *
- * @return array
+ * @return array List of category IDs and names.
  * @since 1.0.0
  */
 if ( ! function_exists( 'spel_cat_ids' ) ) {
