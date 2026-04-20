@@ -9,3 +9,7 @@
 ## 2024-10-24 - Unnecessary Admin File Loading
 **Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
 **Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
+
+## 2024-10-26 - Optimized Conditional File Loading in Bootstrap
+**Learning:** `Heading_Highlighted.php` and `Features_Badge.php` were being required unconditionally in `core_includes` (during `__construct`) if the theme matched, even if the features were disabled. This triggered unnecessary `wp_get_theme()` calls and file parsing.
+**Action:** Removed the early require and moved `require_once` into `init_plugin` (hooked to `plugins_loaded`), nesting it inside the specific feature enablement check. This ensures files are only loaded when actually needed and avoids one `wp_get_theme()` call on bootstrap.
