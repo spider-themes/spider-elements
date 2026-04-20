@@ -26,8 +26,13 @@ function spel_unlock_docy_theme(): bool {
 	return in_array( $theme_name, $docy_themes, true ) || spel_is_premium();
 }
 
+/**
+ * Check if RTL.
+ *
+ * @return string 'true' if RTL, 'false' otherwise.
+ */
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
