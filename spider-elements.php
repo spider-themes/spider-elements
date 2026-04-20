@@ -252,12 +252,6 @@ if ( ! class_exists( 'SPEL' ) ) {
 			//Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 
-			$theme = wp_get_theme();
-			if ( spel_is_premium() || in_array( $theme->get( 'Name' ), [ 'jobi', 'Jobi', 'jobi-child', 'Jobi Child' ] ) ) {
-				require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
-				require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
-			}
-
 			// Admin UI
 			if ( is_admin() ) {
 				require_once __DIR__ . '/includes/Admin/Module_Settings.php';
@@ -295,11 +289,13 @@ if ( ! class_exists( 'SPEL' ) ) {
 				// Get the feature badge status
 				$heading_highlighted = $features_opt['spel_heading_highlighted'] ?? '';
 				if ( $heading_highlighted ) {
+					require_once __DIR__ . '/includes/Admin/extension/Heading_Highlighted.php';
 					new SPEL\includes\Admin\extension\Heading_Highlighted();
 				}
 
 				$badge = $features_opt['spel_badge'] ?? '';
 				if ( $badge ) {
+					require_once __DIR__ . '/includes/Admin/extension/Features_Badge.php';
 					new SPEL\includes\Admin\extension\Features_Badge();
 				}
 
