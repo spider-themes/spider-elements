@@ -348,8 +348,9 @@ class Team_Carousel extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
 		$team_id = $this->get_id();
+		$team_slider_item = $settings['team_slider_item'] ?? [];
+
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
 		$allowed_styles = array( '1', '2' );
