@@ -435,7 +435,7 @@ class Counter extends Widget_Base {
 	 */
 	protected function render(): void {
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
+		// extract( $settings ); // Removed
 
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
