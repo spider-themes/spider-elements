@@ -26,8 +26,13 @@ function spel_unlock_docy_theme(): bool {
 	return in_array( $theme_name, $docy_themes, true ) || spel_is_premium();
 }
 
+/**
+ * Check if RTL
+ *
+ * @return string
+ */
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
@@ -239,7 +244,7 @@ if ( ! function_exists( 'spel_get_categories' ) ) {
 
 		$cats = get_terms( [
 			'taxonomy'   => $term,
-			'hide_empty' => true
+			'hide_empty' => true,
 		] );
 
 		$cat_array        = [];
@@ -335,7 +340,7 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 					$k = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $k );
 
 					// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-					if ( empty( $k ) || preg_match( '/^(on|style|formaction|src|href)/i', $k ) ) {
+					if ( empty( $k ) || preg_match( '/^on|^(style|formaction|src|href)$/i', $k ) ) {
 						continue;
 					}
 
@@ -360,7 +365,7 @@ if ( ! function_exists( 'spel_el_image' ) ) {
 /**
  * Get Default Image Elementor Caption
  *
- * @param $image_id
+ * @param int $image_id
  *
  * @return array
  */
@@ -479,6 +484,7 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
 			$matching_data = [];
 
 			foreach ( $schedule_cats as $data ) {
+				// Fix Yoda condition
 				if ( $val === $data['tab_title'] ) {
 					$matching_data[] = $data;
 				}
@@ -513,9 +519,9 @@ if ( ! function_exists( 'spel_get_reading_time' ) ) {
 
 /**
  * Render Dynamic Image
- * @param $key
- * @param $size
- * @param $atts
+ * @param array  $key
+ * @param string $size
+ * @param array  $atts
  * @return void
  * @since 1.0.0
  */
@@ -679,29 +685,35 @@ if ( ! function_exists( 'spel_readable_number' ) ) {
 	function spel_readable_number( $size ): int {
 
 		// Get the last character of the size string
+		$size = trim( $size );
 		$suffix = substr( $size, -1 );
 
 		// Remove the last character from the size string
-		$value = substr( $size, 0, -1 );
+		$value = (int) substr( $size, 0, -1 );
 
 		// Convert suffix to lowercase for case-insensitive comparison
 		$suffix = strtolower( $suffix );
 
-		$multipliers = [
-			'p' => 1024,
-			't' => 1024,
-			'g' => 1024,
-			'm' => 1024,
-			'k' => 1024,
-		];
-
-		// Check if the suffix is a valid multiplier
-		if ( array_key_exists( $suffix, $multipliers ) ) {
-			$value *= $multipliers[ $suffix ];
+		switch ( $suffix ) {
+			case 'p':
+				$value *= 1024;
+				// Fallthrough intended
+			case 't':
+				$value *= 1024;
+				// Fallthrough intended
+			case 'g':
+				$value *= 1024;
+				// Fallthrough intended
+			case 'm':
+				$value *= 1024;
+				// Fallthrough intended
+			case 'k':
+				$value *= 1024;
+				break;
 		}
 
 		// Return the result
-		return (int) $value;
+		return $value;
 
 	}
 }
