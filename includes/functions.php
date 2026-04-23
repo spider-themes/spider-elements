@@ -81,7 +81,19 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 		if ( $is_echo ) {
 			echo ! empty( $settings_key['url'] ) ? 'href="' . esc_url( $settings_key['url'] ) . '"' : '';
 			echo $settings_key['is_external'] ? ' target="_blank"' : '';
-			echo $settings_key['nofollow'] ? ' rel="nofollow"' : '';
+
+			// Sentinel: Enhanced security for external links and attribute blocking
+			$rel_attributes = [];
+			if ( $settings_key['nofollow'] ) {
+				$rel_attributes[] = 'nofollow';
+			}
+			if ( $settings_key['is_external'] ) {
+				$rel_attributes[] = 'noopener';
+			}
+
+			if ( ! empty( $rel_attributes ) ) {
+				echo ' rel="' . esc_attr( implode( ' ', $rel_attributes ) ) . '"';
+			}
 
 			if ( ! empty( $settings_key['custom_attributes'] ) ) {
 				$attrs = explode( ',', $settings_key['custom_attributes'] );
@@ -95,8 +107,8 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 						// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
 						$attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
 
-						// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-						if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+						// Security: Prevent XSS by blocking event handlers (on*), style, and critical attributes
+						if ( preg_match( '/^(on|href|src|formaction|style|target|rel|action)/i', $attr_name ) ) {
 							continue;
 						}
 
