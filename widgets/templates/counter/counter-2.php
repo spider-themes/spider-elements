@@ -85,7 +85,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 requestAnimationFrame(updateCounter);
             }
 
-            //animateCounter(document.querySelector(".skill_item_two .counter"), <?php echo esc_html( $counter_value ) ?>, 1000
+            //animateCounter(document.querySelector(".skill_item_two .counter"), <?php echo esc_html( $settings['counter_value'] ); ?>, 1000
 
             window.addEventListener("scroll", function () {
                 radialProgressElements.forEach(function (element) {
