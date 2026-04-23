@@ -18,3 +18,19 @@ When parsing custom attributes from user input:
    - Or Whitelist: Only allow `data-*`, `aria-*`, `title`, `class`, `id`.
 2. **Handle Edge Cases:** Ensure `explode` has enough parts before accessing indexes to avoid PHP notices.
 3. **Defense in Depth:** Even if the input field is restricted to admins, protecting the output function guards against privilege escalation or DB compromises.
+
+## 2024-05-25 - Reverse Tabnabbing and Attribute Override via Custom Attributes
+**Vulnerability:**
+The `spel_button_link` function generated `target="_blank"` for external links without adding `rel="noopener"`, exposing users to Reverse Tabnabbing attacks (phishing via `window.opener`).
+Additionally, the function allowed `custom_attributes` to inject `target` and `rel`, potentially overriding the secure defaults or removing `nofollow`.
+It also allowed `style` attribute injection, enabling CSS-based attacks.
+
+**Learning:**
+1.  **Implicit Trust in Defaults:** Developers often assume `target="_blank"` is safe or that browsers handle it, but explicit `rel="noopener"` is required for full security.
+2.  **Attribute Overriding:** When merging "Custom Attributes" with standard settings, users can inadvertently (or maliciously) override critical security attributes like `rel` or `target` if they are not explicitly blocked.
+3.  **Inconsistent Sanitization:** Different helper functions (`spel_el_image` vs `spel_button_link`) had different blacklists, leaving one vulnerable while the other was secure.
+
+**Prevention:**
+1.  **Enforce Noopener:** Always append `noopener` to `rel` when `target="_blank"` is used.
+2.  **Strict Blocking:** In custom attribute parsers, explicitly block `target`, `rel`, and `style` in addition to XSS vectors (`on*`, `href`, `src`).
+3.  **Centralize Logic:** Use a shared function for attribute generation to ensure consistent security policies across all widgets.
