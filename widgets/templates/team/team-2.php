@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="expert-slider-two" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
 	<?php
+    $team_slider_item = $settings['team_slider_item'] ?? [];
 	if ( ! empty( $team_slider_item ) ) {
 		foreach ( $team_slider_item as $item ) { ?>
             <div class="item">

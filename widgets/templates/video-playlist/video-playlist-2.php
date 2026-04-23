@@ -82,8 +82,8 @@ if ( $is_preloader == '1' ) {
                         <div class="item">
                             <div class="gallery_inner_thumb">
                                 <?php
-                                if ( ! empty ( $get_img ) ) :
-                                    wp_get_attachment_image( $img_id, 'spel_270x152' );
+                                if ( ! empty ( $settings['get_img'] ) ) :
+                                    echo wp_get_attachment_image( $img_id, 'spel_270x152' );
                                 else : ?>
                                 <img src="<?php echo esc_url( $child_video['thumbnail']['url'] ); ?>"
                                     alt="<?php esc_attr_e( 'Video Poster Image', 'spider-elements' ); ?>" />
