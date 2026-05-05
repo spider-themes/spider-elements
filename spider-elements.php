@@ -352,6 +352,7 @@ if ( ! class_exists( 'SPEL' ) ) {
 				'spe_timeline_widget' => 'Timeline',
 				'spe_counter'         => 'Counter',
 				'spel_icon_box'       => 'Icon_Box',
+				'spel_dynamic_faq'    => 'Dynamic_Faq',
 			];
 
 			// Conditionally load Docy theme widgets

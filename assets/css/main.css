@@ -10023,4 +10023,220 @@ svg .incomplete {
   text-decoration: none !important;
 }
 
+/*============ Start dynamic faq css ==========*/
+.spel-faq-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.spel-faq-item {
+  background: #fff;
+  border: 1px solid var(--line, #ecdfc9);
+  border-radius: var(--radius, 14px);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.spel-faq-item[open] {
+  border-color: var(--line-strong, #dcc8a8);
+  box-shadow: var(--shadow-md, 0 8px 24px -8px rgba(90, 50, 20, 0.14), 0 2px 4px rgba(90, 50, 20, 0.04));
+}
+
+.spel-faq-item[open] .spel-faq-chev {
+  transform: rotate(180deg);
+  color: var(--accent, #c2410c);
+}
+
+.spel-faq-summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  cursor: pointer;
+  list-style: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.spel-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.spel-faq-summary:focus-visible {
+  outline: 2px solid var(--accent, #c2410c);
+  outline-offset: -2px;
+}
+
+.spel-faq-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--accent-wash, #fef0e0);
+  color: var(--accent, #c2410c);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.spel-faq-ico img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.spel-faq-ico svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.spel-faq-ico i {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.spel-faq-summary-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.spel-faq-summary-text h3 {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--ink, #1a1410);
+  white-space: normal;
+}
+
+.spel-faq-summary-meta {
+  font-size: 12px;
+  color: var(--ink-mute, #a08674);
+  font-weight: 500;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.spel-faq-chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ink-mute, #a08674);
+  transition: transform 0.25s ease, color 0.2s;
+}
+
+.spel-faq-chev svg {
+  width: 18px;
+  height: 18px;
+}
+
+.spel-faq-chev i {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.spel-faq-body {
+  padding: 0 22px 22px 78px;
+  color: var(--ink-soft, #5a4a3e);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.spel-faq-body p {
+  margin: 0 0 10px;
+}
+
+.spel-faq-body p:last-child {
+  margin-bottom: 0;
+}
+
+.spel-faq-item--no-icon .spel-faq-body {
+  padding-left: 22px;
+}
+
+.spel-faq-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent, #c2410c);
+  text-decoration: none;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.spel-faq-read-more svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.spel-faq-read-more:hover {
+  color: var(--accent-deep, #9a2f08);
+  gap: 8px;
+}
+
+.spel-faq-read-more:hover svg {
+  transform: translateX(2px);
+}
+
+.spel-faq-reply {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--ink-mute, #a08674);
+  flex-wrap: wrap;
+}
+
+.spel-avatar-stack {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.spel-avatar-stack span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -6px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--line, #ecdfc9);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.spel-avatar-stack span:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 960px) {
+  .spel-faq-body {
+    padding-left: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spel-faq-summary {
+    gap: 12px;
+    padding: 16px;
+  }
+  .spel-faq-body {
+    padding: 0 16px 18px;
+  }
+  .spel-faq-summary-text h3 {
+    font-size: 14.5px;
+  }
+}
+/*============ End dynamic faq css ==========*/
+
 /*# sourceMappingURL=main.css.map */
