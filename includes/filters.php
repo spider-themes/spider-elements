@@ -86,6 +86,7 @@ add_action( 'admin_init', function () {
 			'spel_videos_playlist',
 			'docy_tabs',
 			'docly_alerts_box',
+			'spel_dynamic_faq',
 		];
 
 		// Collect Free Widgets Values

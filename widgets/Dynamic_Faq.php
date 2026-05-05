@@ -55,17 +55,19 @@ class Dynamic_Faq extends Widget_Base {
 
 	public function elementor_content_control(): void {
 
+		// =========================================================
+		// 1. QUERY SETTINGS — Data source & retrieval
+		// =========================================================
 		$this->start_controls_section(
-			'content_section',
+			'query_section',
 			[
-				'label' => esc_html__( 'Content Settings', 'spider-elements' ),
+				'label' => esc_html__( 'Query Settings', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
-		// Build post type options from all public CPTs.
 		$post_types = get_post_types( [ 'public' => true ], 'objects' );
-		$pt_options  = [];
+		$pt_options = [];
 		foreach ( $post_types as $pt ) {
 			$pt_options[ $pt->name ] = $pt->labels->singular_name;
 		}
@@ -83,11 +85,11 @@ class Dynamic_Faq extends Widget_Base {
 		$this->add_control(
 			'posts_per_page',
 			[
-				'label'   => esc_html__( 'Number of Items', 'spider-elements' ),
-				'type'    => Controls_Manager::NUMBER,
+				'label' => esc_html__( 'Number of Items', 'spider-elements' ),
+				'type'  => Controls_Manager::NUMBER,
 				'default' => 5,
-				'min'     => 1,
-				'max'     => 50,
+				'min'    => 1,
+				'max'    => 50,
 			]
 		);
 
@@ -98,10 +100,10 @@ class Dynamic_Faq extends Widget_Base {
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'date',
 				'options' => [
-					'date'     => esc_html__( 'Date', 'spider-elements' ),
-					'modified' => esc_html__( 'Last Modified', 'spider-elements' ),
-					'title'    => esc_html__( 'Title', 'spider-elements' ),
-					'rand'     => esc_html__( 'Random', 'spider-elements' ),
+					'date'         => esc_html__( 'Date', 'spider-elements' ),
+					'modified'     => esc_html__( 'Last Modified', 'spider-elements' ),
+					'title'        => esc_html__( 'Title', 'spider-elements' ),
+					'rand'         => esc_html__( 'Random', 'spider-elements' ),
 					'comment_count' => esc_html__( 'Comment Count', 'spider-elements' ),
 				],
 			]
@@ -120,27 +122,39 @@ class Dynamic_Faq extends Widget_Base {
 			]
 		);
 
+		$this->end_controls_section();
+
+		// =========================================================
+		// 2. DISPLAY SETTINGS — Content & visual options
+		// =========================================================
+		$this->start_controls_section(
+			'display_section',
+			[
+				'label'     => esc_html__( 'Display Settings', 'spider-elements' ),
+				'tab'       => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
 		$this->add_control(
 			'open_first',
 			[
-				'label'        => esc_html__( 'First Item Open', 'spider-elements' ),
+				'label'        => esc_html__( 'Initially Expanded', 'spider-elements' ),
+				'description'  => esc_html__( 'Keep the first FAQ item expanded when the page loads', 'spider-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => esc_html__( 'Yes', 'spider-elements' ),
 				'label_off'    => esc_html__( 'No', 'spider-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
-				'separator'    => 'before',
 			]
 		);
 
 		$this->add_control(
 			'content_source',
 			[
-				'label'     => esc_html__( 'Content Source', 'spider-elements' ),
-				'type'      => Controls_Manager::SELECT,
-				'default'   => 'content',
-				'separator' => 'before',
-				'options'   => [
+				'label'   => esc_html__( 'Content to Display', 'spider-elements' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'content',
+				'options' => [
 					'excerpt' => esc_html__( 'Excerpt', 'spider-elements' ),
 					'content' => esc_html__( 'Full Content', 'spider-elements' ),
 				],
@@ -151,9 +165,9 @@ class Dynamic_Faq extends Widget_Base {
 			'limit_number',
 			[
 				'label'       => esc_html__( 'Word Limit', 'spider-elements' ),
-				'type'        => Controls_Manager::NUMBER,
-				'default'     => -1,
 				'description' => esc_html__( 'Maximum number of words to display. Set to -1 to show all content without truncation.', 'spider-elements' ),
+				'type'        => Controls_Manager::NUMBER,
+				'default'     => 10,
 			]
 		);
 
@@ -331,8 +345,8 @@ class Dynamic_Faq extends Widget_Base {
 				'label'     => esc_html__( 'Icon Color', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .spel-faq-ico'     => 'color: {{VALUE}};',
-					'{{WRAPPER}} .spel-faq-ico svg' => 'stroke: {{VALUE}}; fill: {{VALUE}};',
+					'{{WRAPPER}} .spel-faq-icon'     => 'color: {{VALUE}};',
+					'{{WRAPPER}} .spel-faq-icon svg' => 'stroke: {{VALUE}}; fill: {{VALUE}};',
 				],
 			]
 		);
@@ -343,7 +357,7 @@ class Dynamic_Faq extends Widget_Base {
 				'label'     => esc_html__( 'Background', 'spider-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .spel-faq-ico' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .spel-faq-icon' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -358,7 +372,7 @@ class Dynamic_Faq extends Widget_Base {
 					'px' => [ 'min' => 24, 'max' => 80 ],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .spel-faq-ico' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .spel-faq-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -373,8 +387,8 @@ class Dynamic_Faq extends Widget_Base {
 					'px' => [ 'min' => 10, 'max' => 48 ],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .spel-faq-ico i'   => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .spel-faq-ico svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .spel-faq-icon i'   => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .spel-faq-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -386,7 +400,7 @@ class Dynamic_Faq extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem' ],
 				'selectors'  => [
-					'{{WRAPPER}} .spel-faq-ico' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .spel-faq-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -399,7 +413,7 @@ class Dynamic_Faq extends Widget_Base {
 		$this->start_controls_section(
 			'style_content_section',
 			[
-				'label' => esc_html__( 'Typography', 'spider-elements' ),
+				'label' => esc_html__( 'Content', 'spider-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -571,10 +585,22 @@ class Dynamic_Faq extends Widget_Base {
 		$this->add_control(
 			'chev_icon',
 			[
-				'label'   => esc_html__( 'Icon', 'spider-elements' ),
+				'label'   => esc_html__( 'Collapsed Icon', 'spider-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
 					'value'   => 'fas fa-chevron-down',
+					'library' => 'fa-solid',
+				],
+			]
+		);
+
+		$this->add_control(
+			'chev_icon_active',
+			[
+				'label'   => esc_html__( 'Expanded Icon', 'spider-elements' ),
+				'type'    => Controls_Manager::ICONS,
+				'default' => [
+					'value'   => 'fas fa-chevron-up',
 					'library' => 'fa-solid',
 				],
 			]
@@ -588,6 +614,10 @@ class Dynamic_Faq extends Widget_Base {
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range'      => [
 					'px' => [ 'min' => 10, 'max' => 36 ],
+				],
+				'default'    => [
+					'size' => 14,
+					'unit' => 'px',
 				],
 				'selectors'  => [
 					'{{WRAPPER}} .spel-faq-chev i'   => 'font-size: {{SIZE}}{{UNIT}};',
@@ -736,7 +766,7 @@ class Dynamic_Faq extends Widget_Base {
 			<details class="<?php echo esc_attr( $item_classes ); ?>"<?php echo ( $open_first && 0 === $index ) ? ' open' : ''; ?>>
 				<summary class="spel-faq-summary">
 					<?php if ( $has_thumb ) : ?>
-					<span class="spel-faq-ico">
+					<span class="spel-faq-icon">
 						<?php the_post_thumbnail( [ 38, 38 ] ); ?>
 					</span>
 					<?php endif; ?>
@@ -750,9 +780,18 @@ class Dynamic_Faq extends Widget_Base {
 					</div>
 					<span class="spel-faq-chev" aria-hidden="true">
 						<?php if ( ! empty( $settings['chev_icon']['value'] ) ) : ?>
-							<?php Icons_Manager::render_icon( $settings['chev_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+							<span class="spel-faq-chev-icon spel-faq-chev-collapsed">
+								<?php Icons_Manager::render_icon( $settings['chev_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+							</span>
 						<?php else : ?>
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+							<svg class="spel-faq-chev-icon spel-faq-chev-collapsed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+						<?php endif; ?>
+						<?php if ( ! empty( $settings['chev_icon_active']['value'] ) ) : ?>
+							<span class="spel-faq-chev-icon spel-faq-chev-active">
+								<?php Icons_Manager::render_icon( $settings['chev_icon_active'], [ 'aria-hidden' => 'true' ] ); ?>
+							</span>
+						<?php else : ?>
+							<svg class="spel-faq-chev-icon spel-faq-chev-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6-6 6 6"/></svg>
 						<?php endif; ?>
 					</span>
 				</summary>

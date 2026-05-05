@@ -1,4 +1,8 @@
 /*============ Start dynamic faq css ==========*/
+.spel-faq-wrap {
+  max-width: 100%;
+}
+
 .spel-faq-item {
   background: #fff;
   border: 1px solid var(--line, #ecdfc9);
@@ -10,11 +14,6 @@
   &[open] {
     border-color: var(--line-strong, #dcc8a8);
     box-shadow: var(--shadow-md, 0 8px 24px -8px rgba(90, 50, 20, 0.14), 0 2px 4px rgba(90, 50, 20, 0.04));
-
-    .spel-faq-chev {
-      transform: rotate(180deg);
-      color: var(--accent, #c2410c);
-    }
   }
 }
 
@@ -35,9 +34,14 @@
     outline: 2px solid var(--accent, #c2410c);
     outline-offset: -2px;
   }
+
+  @media (max-width: 480px) {
+    gap: 12px;
+    padding: 16px;
+  }
 }
 
-.spel-faq-ico {
+.spel-faq-icon {
   width: 38px;
   height: 38px;
   border-radius: 10px;
@@ -48,7 +52,6 @@
   flex-shrink: 0;
   overflow: hidden;
 
-  // Thumbnail image fills the box.
   img {
     width: 100%;
     height: 100%;
@@ -57,7 +60,6 @@
     display: block;
   }
 
-  // Inline SVG or icon font stays at icon size.
   svg {
     width: 18px;
     height: 18px;
@@ -82,6 +84,10 @@
     letter-spacing: -0.005em;
     color: var(--ink, #1a1410);
     white-space: normal;
+
+    @media (max-width: 480px) {
+      font-size: 14.5px;
+    }
   }
 }
 
@@ -99,11 +105,33 @@
   justify-content: center;
   flex-shrink: 0;
   color: var(--ink-mute, #a08674);
-  transition: transform 0.25s ease, color 0.2s;
+  transition: color 0.2s;
 
-  // Default size for the fallback SVG or a font icon.
-  svg { width: 18px; height: 18px; }
-  i   { font-size: 14px; line-height: 1; }
+  .spel-faq-chev-icon {
+    display: none;
+  }
+
+  svg,
+  i {
+    width: 14px;
+    height: 14px;
+  }
+
+  i {
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+.spel-faq-item[open] .spel-faq-chev {
+  color: var(--accent, #c2410c);
+}
+
+.spel-faq-item:not([open]) .spel-faq-chev .spel-faq-chev-collapsed,
+.spel-faq-item[open] .spel-faq-chev .spel-faq-chev-active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spel-faq-body {
@@ -111,6 +139,14 @@
   color: var(--ink-soft, #5a4a3e);
   font-size: 14.5px;
   line-height: 1.65;
+
+  @media (max-width: 960px) {
+    padding-left: 22px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 16px 18px;
+  }
 
   p {
     margin: 0 0 10px;
@@ -121,7 +157,6 @@
   }
 }
 
-// When no featured image exists, drop the indent so content aligns with the title.
 .spel-faq-item--no-icon .spel-faq-body {
   padding-left: 22px;
 }
@@ -182,28 +217,6 @@
     &:first-child {
       margin-left: 0;
     }
-  }
-}
-
-/* ---- Responsive ---- */
-@media (max-width: 960px) {
-  .spel-faq-body {
-    padding-left: 22px;
-  }
-}
-
-@media (max-width: 480px) {
-  .spel-faq-summary {
-    gap: 12px;
-    padding: 16px 16px;
-  }
-
-  .spel-faq-body {
-    padding: 0 16px 18px;
-  }
-
-  .spel-faq-summary-text h3 {
-    font-size: 14.5px;
   }
 }
 

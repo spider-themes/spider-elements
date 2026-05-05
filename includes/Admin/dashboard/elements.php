@@ -9,7 +9,7 @@ use SPEL\includes\Admin\Module_Settings;
 $elements         = Module_Settings::get_widget_settings();
 $element_opt      = get_option( 'spe_widget_settings' );
 $checked_global   = ( ! isset( $element_opt['element_global_switcher'] ) || $element_opt['element_global_switcher'] === 'on' ) ? ' checked' : '';
-$docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 'docly_alerts_box' ];
+$docy_widget_list = [ 'docly_cheatsheet', 'spel_videos_playlist', 'docy_tabs', 'docly_alerts_box', 'spel_dynamic_faq' ];
 
 // Count widgets for search placeholder
 $total_widgets = isset( $elements['spider_elements_widgets'] ) ? count( $elements['spider_elements_widgets'] ) : 0;

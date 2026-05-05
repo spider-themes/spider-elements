@@ -27,6 +27,17 @@ class Module_Settings {
                     'icon'         => 'eicon-accordion',
                 ],
                 [
+                    'name'         => 'spel_dynamic_faq',
+                    'className'    => 'Dynamic_Faq',
+                    'label'        => esc_html__('Dynamic FAQ', 'spider-elements'),
+                    'type'         => 'checkbox',
+                    'default'      => 'off',
+                    'widget_type'  => 'pro',
+                    'demo_url'     => '#',
+                    'docs_url'     => '#',
+                    'icon'         => 'eicon-help',
+                ],
+                [
                     'name'         => 'docy_testimonial',
                     'className'    => 'Testimonial', // widget class name
                     'label'        => esc_html__('Testimonials', 'spider-elements'),

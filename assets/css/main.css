@@ -10044,7 +10044,6 @@ svg .incomplete {
 }
 
 .spel-faq-item[open] .spel-faq-chev {
-  transform: rotate(180deg);
   color: var(--accent, #c2410c);
 }
 
@@ -10068,7 +10067,7 @@ svg .incomplete {
   outline-offset: -2px;
 }
 
-.spel-faq-ico {
+.spel-faq-icon {
   width: 38px;
   height: 38px;
   border-radius: 10px;
@@ -10080,7 +10079,7 @@ svg .incomplete {
   overflow: hidden;
 }
 
-.spel-faq-ico img {
+.spel-faq-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -10088,13 +10087,13 @@ svg .incomplete {
   display: block;
 }
 
-.spel-faq-ico svg {
+.spel-faq-icon svg {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
 }
 
-.spel-faq-ico i {
+.spel-faq-icon i {
   font-size: 16px;
   line-height: 1;
 }
@@ -10128,12 +10127,23 @@ svg .incomplete {
   justify-content: center;
   flex-shrink: 0;
   color: var(--ink-mute, #a08674);
-  transition: transform 0.25s ease, color 0.2s;
+  transition: color 0.2s;
+}
+
+.spel-faq-chev .spel-faq-chev-icon {
+  display: none;
+}
+
+.spel-faq-item:not([open]) .spel-faq-chev .spel-faq-chev-collapsed,
+.spel-faq-item[open] .spel-faq-chev .spel-faq-chev-active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spel-faq-chev svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 }
 
 .spel-faq-chev i {
