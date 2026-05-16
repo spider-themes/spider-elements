@@ -550,23 +550,24 @@ if ( ! function_exists( 'spel_dynamic_image' ) ) {
 if ( ! function_exists( 'spel_get_query_post_list' ) ) {
 	function spel_get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ): array {
 		$args = [
-			'post_type'      => $post_type,
-			'post_status'    => 'publish',
-			'posts_per_page' => $limit,
-			's'              => $search, // Search term
+			'post_type'              => $post_type,
+			'post_status'            => 'publish',
+			'posts_per_page'         => $limit,
+			's'                      => $search, // Search term
+			'no_found_rows'          => true, // Optimization: Skip pagination calculation
+			'update_post_meta_cache' => false, // Optimization: We only need ID and Title
+			'update_post_term_cache' => false, // Optimization: We only need ID and Title
+			'ignore_sticky_posts'    => true, // Optimization: Ignore sticky posts logic
 		];
 
 		$query = new WP_Query( $args );
 
 		$data = [];
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$data[ get_the_ID() ] = get_the_title();
+		if ( ! empty( $query->posts ) ) {
+			foreach ( $query->posts as $post ) {
+				$data[ $post->ID ] = get_the_title( $post );
 			}
 		}
-
-		wp_reset_postdata(); // Reset post data after custom query
 
 		return $data;
 	}
