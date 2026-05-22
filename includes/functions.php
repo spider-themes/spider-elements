@@ -90,13 +90,14 @@ if ( ! function_exists( 'spel_button_link' ) ) {
 					foreach ( $attrs as $data ) {
 						$data_attrs = explode( '|', $data, 2 );
 						$attr_name  = trim( $data_attrs[0] );
-						$attr_value = isset( $data_attrs[1] ) ? $data_attrs[1] : '';
+						$attr_value = isset( $data_attrs[1] ) ? trim( $data_attrs[1] ) : '';
 
 						// Security: Sanitize attribute name (allow alphanumeric, dashes, colons)
 						$attr_name = preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $attr_name );
 
-						// Security: Prevent XSS by blocking event handlers (on*) and critical attributes
-						if ( preg_match( '/^(on|href|src|formaction)/i', $attr_name ) ) {
+						// Security: Prevent XSS — block event handlers (on*), style injection,
+						// and attributes that can execute scripts or hijack navigation/tracking.
+						if ( preg_match( '/^(on|href|src|formaction|style|ping)/i', $attr_name ) ) {
 							continue;
 						}
 
