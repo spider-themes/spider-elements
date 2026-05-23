@@ -1,5 +1,11 @@
 == Changelog ==
 
+
+= 1.9.0 (23 May 2026) (Upcoming) =
+New: Dynamic FAQ Widget
+Fixed: Fixed stored XSS vulnerability in Icon Box widget
+
+
 = 1.8.0 (18 February 2026) =
 New: Revamped Dashboard UI with modern design system and quick stats
 New: Added Search functionality for Widgets and Features with real-time filtering
