@@ -3,12 +3,12 @@ Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajja
 Tags: elementor widgets, elementor addons, elementor, page builder, drag and drop
 Stable tag: 1.9.0
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor requires at least: 3.0.0
-Elementor tested up to: 3.20.3
+Elementor tested up to: 4.0.9
 
 24+ Elementor widgets for stunning websites. Blog, Accordion, Testimonials, Timeline & more without coding.
 
