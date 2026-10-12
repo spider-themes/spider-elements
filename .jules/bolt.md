@@ -9,3 +9,7 @@
 ## 2024-10-24 - Unnecessary Admin File Loading
 **Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
 **Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
+
+## 2024-10-25 - Early Theme Initialization
+**Learning:** `wp_get_theme()` was called in the plugin's `__construct` (via `core_includes`), forcing theme initialization before `plugins_loaded`. This is premature and adds overhead on every request.
+**Action:** Moved the logic dependent on `wp_get_theme()` to the `init_plugin` method (hooked to `plugins_loaded`) and lazy-loaded the dependent classes (`Heading_Highlighted`, `Features_Badge`) only when their specific features are enabled.
