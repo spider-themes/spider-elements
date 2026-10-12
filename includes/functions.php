@@ -27,7 +27,7 @@ function spel_unlock_docy_theme(): bool {
 }
 
 function spel_rtl(): string {
-		return is_rtl() ? 'true' : 'false';
+	return is_rtl() ? 'true' : 'false';
 }
 
 /**
@@ -480,7 +480,7 @@ if ( ! function_exists( 'spel_get_tab_data' ) ) {
 			$matching_data = [];
 
 			foreach ( $schedule_cats as $data ) {
-				if ( $val === $data['tab_title'] ) {
+				if ( $data['tab_title'] === $val ) {
 					$matching_data[] = $data;
 				}
 			}
@@ -720,7 +720,7 @@ if ( ! function_exists( 'spel_pagination' ) ) {
 	 */
 	function spel_pagination( $query, $class = 'spel-pagination', $prev = '', $next = '' ): void {
 
-		if ( $query->max_num_pages <= 1 ) {
+		if ( 1 >= $query->max_num_pages ) {
 			return; // No pagination needed if only one page
 		}
 
