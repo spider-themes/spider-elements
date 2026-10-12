@@ -7,8 +7,8 @@ if (!defined('ABSPATH')) {
 <div class="expert-section-one">
     <div class="expert-slider-one slider-<?php echo esc_attr($team_id); ?>" data-rtl="<?php echo esc_attr(spel_rtl()) ?>">
         <?php
-        if (!empty($team_slider_item) && is_array($team_slider_item)) {
-            foreach ( $team_slider_item as $item ) { ?>
+        if (!empty($settings['team_slider_item']) && is_array($settings['team_slider_item'])) {
+            foreach ( $settings['team_slider_item'] as $item ) { ?>
                 <div class="item">
                     <div class="card-style-three ezd-text-center">
                         <?php

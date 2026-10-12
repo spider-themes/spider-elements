@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! empty( $accordions ) ) {
         foreach ( $accordions as $index => $item ) {
             $is_collapsed_class  = $item['collapse_state'] ?? '';
-            $is_btn_collapse     = $is_collapsed_class == 'yes' ? 'collapsed ' : '';
-            $is_collapsed        = $is_collapsed_class == 'yes' ? 'true' : 'false';
+            $is_btn_collapse     = 'yes' === $is_collapsed_class ? 'collapsed ' : '';
+            $is_collapsed        = 'yes' === $is_collapsed_class ? 'true' : 'false';
             $id                  = 'toggle-' . $item['_id'] ?? '';
-            $is_show             = $is_collapsed_class == 'yes' ? ' show' : '';
+            $is_show             = 'yes' === $is_collapsed_class ? ' show' : '';
             $border_bottom_class = $index === array_key_last($accordions) ? ' border-bottom-none' : '';
-            $is_border_bottom    = !empty($settings['is_border_bottom'] == 'yes') ? '' : $border_bottom_class;
+            $is_border_bottom    = ( isset($settings['is_border_bottom']) && 'yes' === $settings['is_border_bottom'] ) ? '' : $border_bottom_class;
             ?>
             <div class="card<?php echo esc_attr($is_border_bottom) ?> accordion_inner <?php echo esc_attr( $is_btn_collapse ).esc_attr( 'accord-item-'.$item['_id'] ); ?>">
 
