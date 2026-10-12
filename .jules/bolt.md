@@ -9,3 +9,7 @@
 ## 2024-10-24 - Unnecessary Admin File Loading
 **Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
 **Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
+
+## 2024-10-25 - CSS Deduplication via Dependency Aliasing
+**Learning:** Found multiple style handles enqueuing the exact same file URL, causing duplicate DOM elements.
+**Action:** Use `wp_register_style( 'main-handle', ... )` for the file, and register other handles with `src=false` and `deps=['main-handle']` to create aliases. This ensures the file is loaded once while keeping all handles valid.
