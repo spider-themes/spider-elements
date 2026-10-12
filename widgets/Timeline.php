@@ -316,26 +316,26 @@ class Timeline extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-        if ( !empty( $settings['timeline_items'] ) ) {
-            echo '<div class="timeline-widget">';
-            $is_inverted = false;
-            foreach ( $settings[ 'timeline_items' ] as $item ) {
-                $timestamp = !empty($item[ 'timestamp' ]) ? $item[ 'timestamp' ] : '';
-                $title = !empty($item[ 'title' ]) ? $item[ 'title' ] : '';
-                $location = !empty($item[ 'location' ]) ? $item[ 'location' ] : '';
-                $content = !empty($item[ 'content' ]) ? $item[ 'content' ] : '';
-                echo '<div class="timeline-wrapper wow fadeInUp' . ($is_inverted ? ' timeline-inverted' : '') . '" data-wow-delay="0.1s">';
-                echo '<div class="timestamp">' . esc_html($timestamp) . '</div>';
-                echo '<div class="timeline-panel">';
-                echo '<h3>' . esc_html($title) . '</h3>';
-                echo '<span>' . esc_html($location) . '</span>';
-                echo spel_kses_post(wpautop($content));
-                echo '</div>';
-                echo '</div>';
-                $is_inverted = !$is_inverted;
-            }
-            echo '</div>';
-            echo '</div>';
-        }
+		if ( ! empty( $settings['timeline_items'] ) ) {
+			echo '<div class="timeline-widget">';
+			$is_inverted = false;
+			foreach ( $settings['timeline_items'] as $item ) {
+				$timestamp = ! empty( $item['timestamp'] ) ? $item['timestamp'] : '';
+				$title     = ! empty( $item['title'] ) ? $item['title'] : '';
+				$location  = ! empty( $item['location'] ) ? $item['location'] : '';
+				$content   = ! empty( $item['content'] ) ? $item['content'] : '';
+				echo '<div class="timeline-wrapper wow fadeInUp' . ( $is_inverted ? ' timeline-inverted' : '' ) . '" data-wow-delay="0.1s">';
+				echo '<div class="timestamp">' . esc_html( $timestamp ) . '</div>';
+				echo '<div class="timeline-panel">';
+				echo '<h3>' . esc_html( $title ) . '</h3>';
+				echo '<span>' . esc_html( $location ) . '</span>';
+				echo spel_kses_post( wpautop( $content ) );
+				echo '</div>';
+				echo '</div>';
+				$is_inverted = ! $is_inverted;
+			}
+			echo '</div>';
+			echo '</div>';
+		}
 	}
 }
