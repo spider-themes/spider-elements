@@ -261,7 +261,7 @@ $free_widgets = $total_widgets - $pro_widgets;
 				<span class="icon icon-documentation"></span>
 				<h2 class="dashboard_title"><?php esc_html_e( 'Documentation', 'spider-elements' ); ?></h2>
 				<p><?php esc_html_e( 'Get detailed and guided instruction to level up your website with the necessary set up.', 'spider-elements' ); ?></p>
-				<a href="https://helpdesk.spider-themes.net/docs/spider-elements" class="dashboard_btn" target="_blank">
+				<a href="https://helpdesk.spiderthemes.net/docs/spider-elements" class="dashboard_btn" target="_blank">
 					<i class="icon-document"></i>
 					<?php esc_html_e( 'Read Documentation', 'spider-elements' ); ?>
 				</a>

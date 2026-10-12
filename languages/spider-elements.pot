@@ -2273,7 +2273,7 @@ msgid ".Know About MY Self. By A Quick Video"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://wordpress-plugins.spider-themes.net/spider-elements/"
+msgid "https://wordpress-plugins.spiderthemes.net/spider-elements/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -2288,5 +2288,5 @@ msgid "spider-themes"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://spider-elements.spider-themes.net"
+msgid "https://spider-elements.spiderthemes.net"
 msgstr ""

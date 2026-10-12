@@ -31,10 +31,10 @@ Spider Elements is the most comprehensive Elementor addons collection, featuring
 [youtube https://www.youtube.com/watch?v=m51PQ2FhXvA]
 
 ## 🔗 USEFUL LINKS ##
-- [📚 Full Documentation](https://helpdesk.spider-themes.net/docs/spider-elements)
-- [🎥 Live Demo & Widget Showcase](https://spider-elements.spider-themes.net/#widgets)
-- [🌐 Visit Spider Themes](https://spider-themes.net)
-- [⭐ Upgrade to Pro](https://spider-elements.spider-themes.net/pricing)
+- [📚 Full Documentation](https://helpdesk.spiderthemes.net/docs/spider-elements)
+- [🎥 Live Demo & Widget Showcase](https://spider-elements.spiderthemes.net/#widgets)
+- [🌐 Visit Spider Themes](https://spiderthemes.net)
+- [⭐ Upgrade to Pro](https://spider-elements.spiderthemes.net/pricing)
 
 **Essential Tools for Web Designers & Developers**
 
@@ -44,41 +44,41 @@ Spider Elements provides the widgets you need to build professional websites fas
 
 ***Content & Layout Widgets:***
 
-- [**Accordion**](https://spider-elements.spider-themes.net/accordion) – Organize and manage content with smooth collapsible sections, perfect for FAQs, guides, and comprehensive resource documentation. Enhance user experience with elegant accordion functionality.
-- [**Blog Grid**](https://spider-elements.spider-themes.net/blog-grid) – Display your WordPress posts beautifully with multiple customizable layouts, built-in pagination, and responsive design. Perfect for showcasing blog content across all devices.
-- [**Timeline**](https://spider-elements.spider-themes.net/timeline) – Show important events and milestones in chronological order with an intuitive visual timeline. Ideal for company history, project phases, and journey storytelling.
-- [**List Items**](https://spider-elements.spider-themes.net/list-item) – Create organized, stylish lists with custom icons and detailed descriptions. Perfect for services, features, advantages, and organized content presentation.
-- [**Icon Box**](https://spider-elements.spider-themes.net/icon-box) – Highlight key features and services with eye-catching custom icons and compelling text. Great for showcasing features, benefits, and value propositions elegantly.
+- [**Accordion**](https://spider-elements.spiderthemes.net/accordion) – Organize and manage content with smooth collapsible sections, perfect for FAQs, guides, and comprehensive resource documentation. Enhance user experience with elegant accordion functionality.
+- [**Blog Grid**](https://spider-elements.spiderthemes.net/blog-grid) – Display your WordPress posts beautifully with multiple customizable layouts, built-in pagination, and responsive design. Perfect for showcasing blog content across all devices.
+- [**Timeline**](https://spider-elements.spiderthemes.net/timeline) – Show important events and milestones in chronological order with an intuitive visual timeline. Ideal for company history, project phases, and journey storytelling.
+- [**List Items**](https://spider-elements.spiderthemes.net/list-item) – Create organized, stylish lists with custom icons and detailed descriptions. Perfect for services, features, advantages, and organized content presentation.
+- [**Icon Box**](https://spider-elements.spiderthemes.net/icon-box) – Highlight key features and services with eye-catching custom icons and compelling text. Great for showcasing features, benefits, and value propositions elegantly.
 
 ***Visual & Media Widgets:***
 
-- [**Video Popup**](https://spider-elements.spider-themes.net/video-popup) – Embed videos in sleek, professional pop-up windows without page reload. Enhance user engagement with smooth video experiences and modal presentation.
-- [**Team Carousel**](https://spider-elements.spider-themes.net/team-carousel) – Showcase team members in dynamic, interactive carousels with smooth transitions. Perfect for displaying staff, employees, and team introductions professionally.
-- [**Testimonials**](https://spider-elements.spider-themes.net/testimonials) – Display customer reviews, feedback, and success stories in elegant, responsive designs. Build trust with visitor testimonials and compelling social proof.
-- [**Counter**](https://spider-elements.spider-themes.net/counter) – Animate impressive statistics and achievement numbers with engaging visual effects. Perfect for displaying metrics, achievements, and impressive business accomplishments.
-- [**Integrations**](https://spider-elements.spider-themes.net/integration) – Highlight compatible tools, platforms, and partner integrations with professional styling. Showcase technology partnerships and supported services effectively.
+- [**Video Popup**](https://spider-elements.spiderthemes.net/video-popup) – Embed videos in sleek, professional pop-up windows without page reload. Enhance user engagement with smooth video experiences and modal presentation.
+- [**Team Carousel**](https://spider-elements.spiderthemes.net/team-carousel) – Showcase team members in dynamic, interactive carousels with smooth transitions. Perfect for displaying staff, employees, and team introductions professionally.
+- [**Testimonials**](https://spider-elements.spiderthemes.net/testimonials) – Display customer reviews, feedback, and success stories in elegant, responsive designs. Build trust with visitor testimonials and compelling social proof.
+- [**Counter**](https://spider-elements.spiderthemes.net/counter) – Animate impressive statistics and achievement numbers with engaging visual effects. Perfect for displaying metrics, achievements, and impressive business accomplishments.
+- [**Integrations**](https://spider-elements.spiderthemes.net/integration) – Highlight compatible tools, platforms, and partner integrations with professional styling. Showcase technology partnerships and supported services effectively.
 
 ## Premium Widgets (Pro Version)
 
 ***Interactive & Animation Widgets:***
 
-- [**Box Hover**](https://spider-elements.spider-themes.net/box-hover) – Add stylish hover effects with smooth animations and transitions. Enhance user engagement and interactivity with professional animation effects.
-- [**Flip Box**](https://spider-elements.spider-themes.net/flipbox) – Create dynamic flip effects that reveal hidden content on interaction. Perfect for showcasing before-after, features, or additional information creatively.
-- [**Image Hover**](https://spider-elements.spider-themes.net/image-hover) – Bring images to life with engaging and professional hover effects. Perfect for portfolios, galleries, and visual content enhancement.
-- [**Feature Box**](https://spider-elements.spider-themes.net/feature-box) – Showcase key features and services in attention-grabbing layouts. Ideal for highlighting product features and service benefits prominently.
-- [**Hotspot**](https://spider-elements.spider-themes.net/hotspot) – Add interactive points on images to highlight details and provide information. Great for product demos, educational content, and interactive presentations.
+- [**Box Hover**](https://spider-elements.spiderthemes.net/box-hover) – Add stylish hover effects with smooth animations and transitions. Enhance user engagement and interactivity with professional animation effects.
+- [**Flip Box**](https://spider-elements.spiderthemes.net/flipbox) – Create dynamic flip effects that reveal hidden content on interaction. Perfect for showcasing before-after, features, or additional information creatively.
+- [**Image Hover**](https://spider-elements.spiderthemes.net/image-hover) – Bring images to life with engaging and professional hover effects. Perfect for portfolios, galleries, and visual content enhancement.
+- [**Feature Box**](https://spider-elements.spiderthemes.net/feature-box) – Showcase key features and services in attention-grabbing layouts. Ideal for highlighting product features and service benefits prominently.
+- [**Hotspot**](https://spider-elements.spiderthemes.net/hotspot) – Add interactive points on images to highlight details and provide information. Great for product demos, educational content, and interactive presentations.
 
 ***Advanced Content Widgets:***
 
-- [**Image Slider**](https://spider-elements.spider-themes.net/image-slider) – Create beautiful, responsive image slideshows with smooth transitions. Perfect for galleries, portfolios, and showcasing multiple images effectively.
-- [**Video Playlist**](https://spider-elements.spider-themes.net/video-playlist) – Organize and play multiple videos in an interactive playlist. Ideal for tutorials, video content libraries, and multimedia presentations.
-- [**Marquee Slider**](https://spider-elements.spider-themes.net/marquee-slider) – Display scrolling content in visually appealing ways with continuous movement. Perfect for announcements, testimonials, and dynamic content display.
-- [**Stack Image**](https://spider-elements.spider-themes.net/stack-image) – Display images in creative stacked layouts with impressive visual effects. Great for before-after comparisons and artistic image presentations.
-- [**Cheat Sheet**](https://spider-elements.spider-themes.net/cheatsheet) – Create quick reference guides and cheat sheets for easy navigation. Perfect for organizing complex information in an accessible format.
-- [**Skill Showcase**](https://spider-elements.spider-themes.net/skill-showcase) – Highlight skills, services, and expertise with sleek professional designs. Ideal for portfolios, resumes, and professional showcases.
-- [**Accordion Articles**](https://spider-elements.spider-themes.net/accordion-articles) – Advanced collapsible content organization for complex articles. Perfect for organizing extensive content with improved readability.
-- [**Tabs**](https://spider-elements.spider-themes.net/tabs) – Keep content organized with tabbed navigation and smooth transitions. Ideal for organizing information into manageable, interactive sections.
-- [**Alerts Box**](https://spider-elements.spider-themes.net/notice-message) – Display important announcements with custom styling and visual emphasis. Perfect for alerts, notices, messages, and urgent information display.
+- [**Image Slider**](https://spider-elements.spiderthemes.net/image-slider) – Create beautiful, responsive image slideshows with smooth transitions. Perfect for galleries, portfolios, and showcasing multiple images effectively.
+- [**Video Playlist**](https://spider-elements.spiderthemes.net/video-playlist) – Organize and play multiple videos in an interactive playlist. Ideal for tutorials, video content libraries, and multimedia presentations.
+- [**Marquee Slider**](https://spider-elements.spiderthemes.net/marquee-slider) – Display scrolling content in visually appealing ways with continuous movement. Perfect for announcements, testimonials, and dynamic content display.
+- [**Stack Image**](https://spider-elements.spiderthemes.net/stack-image) – Display images in creative stacked layouts with impressive visual effects. Great for before-after comparisons and artistic image presentations.
+- [**Cheat Sheet**](https://spider-elements.spiderthemes.net/cheatsheet) – Create quick reference guides and cheat sheets for easy navigation. Perfect for organizing complex information in an accessible format.
+- [**Skill Showcase**](https://spider-elements.spiderthemes.net/skill-showcase) – Highlight skills, services, and expertise with sleek professional designs. Ideal for portfolios, resumes, and professional showcases.
+- [**Accordion Articles**](https://spider-elements.spiderthemes.net/accordion-articles) – Advanced collapsible content organization for complex articles. Perfect for organizing extensive content with improved readability.
+- [**Tabs**](https://spider-elements.spiderthemes.net/tabs) – Keep content organized with tabbed navigation and smooth transitions. Ideal for organizing information into manageable, interactive sections.
+- [**Alerts Box**](https://spider-elements.spiderthemes.net/notice-message) – Display important announcements with custom styling and visual emphasis. Perfect for alerts, notices, messages, and urgent information display.
 
 ### Quick Features Overview
 
@@ -172,7 +172,7 @@ This is usually a server PHP memory issue. Try increasing your PHP memory limit 
 * max_execution_time = 300
 
 = Where can I get support? =
-Visit our [Documentation](https://helpdesk.spider-themes.net/docs/spider-elements) or check our [Demo & Tutorials](https://spider-elements.spider-themes.net/#widgets).
+Visit our [Documentation](https://helpdesk.spiderthemes.net/docs/spider-elements) or check our [Demo & Tutorials](https://spider-elements.spiderthemes.net/#widgets).
 
 = Can I get a refund if I'm not satisfied? =
 Yes, we offer a 30-day money-back guarantee on Pro purchases.
@@ -214,7 +214,7 @@ After installation, you'll see a "Spider Elements" category in your Elementor wi
 
 == About Spider Elements ==
 
-Spider Elements is developed by [Spider Themes](https://spider-themes.net), a dedicated team of WordPress developers passionate about creating high-quality Elementor addons and tools.
+Spider Elements is developed by [Spider Themes](https://spiderthemes.net), a dedicated team of WordPress developers passionate about creating high-quality Elementor addons and tools.
 
 == Changelog ==
 
@@ -273,4 +273,4 @@ Spider Elements is developed by [Spider Themes](https://spider-themes.net), a de
 *   Tweaked: ID added in the sticky tabs
 *   Tweaked: SE prefix added before Widgets name
 
-[See changelog for all versions](https://spider-elements.spider-themes.net/changelog/)
+[See changelog for all versions](https://spider-elements.spiderthemes.net/changelog/)
