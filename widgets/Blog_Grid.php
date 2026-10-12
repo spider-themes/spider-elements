@@ -453,14 +453,13 @@ class Blog_Grid extends Widget_Base {
 	}
 
 	public static function get_posts() {
-		$post_args = get_posts(
+		$posts = get_posts(
 			array(
-				'posts_per_page' => - 1,
+				'posts_per_page' => 50,
 				'post_status'    => 'publish',
 			)
 		);
 
-		$posts      = get_posts( $post_args );
 		$posts_list = [];
 		if ( is_array( $posts ) ) {
 			foreach ( $posts as $_key => $object ) {
