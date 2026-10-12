@@ -654,7 +654,6 @@ class Accordion extends Widget_Base {
     {
 
         $settings = $this->get_settings_for_display();
-		extract( $settings );
 
 		$title_tag 		  = Utils::validate_html_tag( $settings['title_tag'] ?? 'h6' );
 		$accordions       = ! empty ( $settings['accordions'] ) ? $settings['accordions'] : '';
