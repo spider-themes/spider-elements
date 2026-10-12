@@ -9,3 +9,7 @@
 ## 2024-10-24 - Unnecessary Admin File Loading
 **Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
 **Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
+
+## 2024-05-23 - Redundant CSS Enqueues via Loop
+**Learning:** Found a loop in `includes/Frontend/Assets.php` that deregistered 12 Elementor animation handles and re-enqueued each one pointing to the same `animate.css` file. This caused the same file to be requested multiple times (or at least clutter the DOM with duplicate link tags).
+**Action:** When replacing multiple handles with a single resource, register the resource once with a primary handle, and register the others as aliases (dependencies) with `src = false`.
