@@ -818,15 +818,19 @@ class Tabs extends Widget_Base {
     {
 
 		$settings = $this->get_settings_for_display();
-		extract( $settings ); //extract all settings array to variables converted to name of key
 
-		$tabs   = $this->get_settings_for_display( 'tabs' );
+		$is_navigation_arrow = $settings['is_navigation_arrow'] ?? 'no';
+		$is_sticky_tab       = $settings['is_sticky_tab'] ?? 'no';
+		$is_auto_play        = $settings['is_auto_play'] ?? 'no';
+		$is_auto_numb        = $settings['is_auto_numb'] ?? 'no';
+
+		$tabs   = $settings['tabs'] ?? [];
 		$id_int = substr( $this->get_id_int(), 0, 3 );
 
-		$navigation_arrow_class = ! empty( $is_navigation_arrow == 'yes' ) ? ' process_tab_shortcode' : '';
-		$sticky_tab_class       = ! empty( $is_sticky_tab == 'yes' ) ? ' sticky_tab' : '';
-        $tab_auto_class         = ! empty( $is_auto_play == 'yes' ) ? ' tab_auto_play' : '';
-        $data_auto_play         = ! empty( $is_auto_play == 'yes' ) ? ' data-autoplay=yes' : '';
+		$navigation_arrow_class = ( 'yes' === $is_navigation_arrow ) ? ' process_tab_shortcode' : '';
+		$sticky_tab_class       = ( 'yes' === $is_sticky_tab ) ? ' sticky_tab' : '';
+        $tab_auto_class         = ( 'yes' === $is_auto_play ) ? ' tab_auto_play' : '';
+        $data_auto_play         = ( 'yes' === $is_auto_play ) ? ' data-autoplay=yes' : '';
 
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion

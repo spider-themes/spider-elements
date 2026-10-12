@@ -9,3 +9,7 @@
 ## 2025-01-23 - Filters File Responsibility
 **Learning:** `includes/filters.php` is misnamed; it contains admin controller logic (form handling on `admin_init`).
 **Action:** Be aware that "filter" changes might actually involve admin form processing logic.
+
+## 2025-01-23 - Widget Rendering Pattern
+**Learning:** Widgets heavily relied on `extract( $settings )`, polluting the symbol table and obscuring variable origins. Render methods have been refactored to use direct array access (e.g., `$settings['key']`).
+**Action:** When adding or modifying widgets, avoid `extract()`. Explicitly define variables derived from settings to maintain clarity and security.
