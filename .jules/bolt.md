@@ -9,3 +9,7 @@
 ## 2024-10-24 - Unnecessary Admin File Loading
 **Learning:** `includes/Admin/Module_Settings.php` and `includes/Admin/Plugin_Installer.php` were loaded unconditionally. Even without instantiation, parsing these files adds overhead.
 **Action:** Wrapped the `require_once` calls in `if ( is_admin() )` to ensure they are only loaded when needed.
+
+## 2024-10-25 - Efficient WP_Query for Lists
+**Learning:** `WP_Query` defaults to `SQL_CALC_FOUND_ROWS` and priming meta/term caches, which is wasteful for simple ID/Title dropdown lists. This is especially impactful when querying all posts (`posts_per_page => -1`).
+**Action:** Use `'no_found_rows' => true`, `'update_post_meta_cache' => false`, and `'update_post_term_cache' => false` when only IDs and titles are needed. Also iterate `$query->posts` directly to avoid `the_post()` global state overhead.
