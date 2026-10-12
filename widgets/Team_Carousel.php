@@ -43,16 +43,18 @@ class Team_Carousel extends Widget_Base {
 	}
 
 	/**
-	 * Name: get_style_depends()
-	 * Desc: Register the required CSS dependencies for the frontend.
+	 * Register the required CSS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
 	public function get_style_depends() {
 		return [ 'elegant-icon', 'slick', 'slick-theme', 'spel-main' ];
 	}
 
 	/**
-	 * Name: get_script_depends()
-	 * Desc: Register the required JS dependencies for the frontend.
+	 * Register the required JS dependencies for the frontend.
+	 *
+	 * @return array
 	 */
 	public function get_script_depends() {
 		return [ 'slick', 'spel-el-widgets' ];
@@ -60,13 +62,10 @@ class Team_Carousel extends Widget_Base {
 
 
 	/**
-	 * Name: register_controls()
-	 * Desc: Register controls for these widgets
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register controls for these widgets.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
 	protected function register_controls() {
 		$this->elementor_content_control();
@@ -76,13 +75,10 @@ class Team_Carousel extends Widget_Base {
 
 
 	/**
-	 * Name: elementor_content_control()
-	 * Desc: Register the Content Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Content Tab output on the Elementor editor.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
 
 	public function elementor_content_control() {
@@ -209,13 +205,10 @@ class Team_Carousel extends Widget_Base {
 
 
 	/**
-	 * Name: elementor_style_control()
-	 * Desc: Register the Style Tab output on the Elementor editor.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Register the Style Tab output on the Elementor editor.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
 	public function team_style_control() {
 
@@ -338,13 +331,10 @@ class Team_Carousel extends Widget_Base {
 	}
 
 	/**
-	 * Name: elementor_render()
-	 * Desc: Render the widget output on the frontend.
-	 * Params: no params
-	 * Return: @void
-	 * Since: @1.0.0
-	 * Package: @spider-elements
-	 * Author: spider-themes
+	 * Render the widget output on the frontend.
+	 *
+	 * @return void
+	 * @since 1.0.0
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
@@ -352,7 +342,7 @@ class Team_Carousel extends Widget_Base {
 		$team_id = $this->get_id();
 		//================= Template Parts =================//
 		// Whitelist valid style values to prevent Local File Inclusion
-		$allowed_styles = array( '1', '2' );
+		$allowed_styles = [ '1', '2' ];
 		$style = isset( $settings['style'] ) && in_array( $settings['style'], $allowed_styles, true ) ? $settings['style'] : '1';
 		include __DIR__ . "/templates/team/team-{$style}.php";
 	}
