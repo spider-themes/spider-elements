@@ -1,14 +1,14 @@
 === Spider Elements - Premium Elementor Widgets & Addons Library ===
 Contributors: mdjwel, spiderdevs, arifrahman1, alimran01, delweratjk, codersajjad, akramhossain
 Tags: elementor widgets, elementor addons, elementor, page builder, drag and drop
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.1.3
 Requires PHP: 7.4
 License: GPL2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor requires at least: 3.0.0
-Elementor tested up to: 4.0.9
+Elementor tested up to: 4.3.4
 
 24+ Elementor widgets for stunning websites. Blog, Accordion, Testimonials, Timeline & more without coding.
 
@@ -217,6 +217,9 @@ After installation, you'll see a "Spider Elements" category in your Elementor wi
 Spider Elements is developed by [Spider Themes](https://spiderthemes.net), a dedicated team of WordPress developers passionate about creating high-quality Elementor addons and tools.
 
 == Changelog ==
+
+= 1.9.1 (13 October 2026) =
+* Updated: Updated Freemius SDK to the latest version.
 
 = 1.9.0 (23 May 2026) =
 *   New: Dynamic FAQ Widget
