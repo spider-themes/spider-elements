@@ -267,10 +267,12 @@ $free_widgets = $total_widgets - $pro_widgets;
 						<a href="https://spiderthemes.net/privacy-policy/" target="_blank" rel="noopener noreferrer" style="color: #7460FF; text-decoration: underline; margin-left: 4px;"><?php esc_html_e( 'Privacy Policy', 'spider-elements' ); ?></a>
 					</p>
 				</div>
-				<div class="plugin_active_switcher" style="margin: 0; flex-shrink: 0;">
-					<div class="toggle">
-						<input type="checkbox" id="spel_telemetry_switcher" name="share_anonymous_usage" class="check" <?php echo function_exists( 'spel_share_usage_enabled' ) && spel_share_usage_enabled() ? 'checked' : ''; ?>>
-						<label class="b switch" for="spel_telemetry_switcher"></label>
+				<div class="filter_content" style="margin: 0; padding: 0; flex-shrink: 0;">
+					<div class="element_switch" style="margin: 0; padding: 0; border: none; background: transparent;">
+						<label for="spel_telemetry_switcher" class="switch_label" style="cursor: pointer; display: block; margin: 0;">
+							<input type="checkbox" id="spel_telemetry_switcher" name="share_anonymous_usage" class="check" style="display: none;" <?php echo function_exists( 'spel_share_usage_enabled' ) && spel_share_usage_enabled() ? 'checked' : ''; ?>>
+							<span class="widget_switcher"></span>
+						</label>
 					</div>
 				</div>
 			</div>
