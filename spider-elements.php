@@ -249,6 +249,9 @@ if ( ! class_exists( 'SPEL' ) ) {
 			// Extra functions
 			require_once __DIR__ . '/includes/functions.php';
 
+			// Anonymous usage telemetry
+			require_once __DIR__ . '/includes/telemetry.php';
+
 			//Action Filter
 			require_once __DIR__ . '/includes/filters.php';
 

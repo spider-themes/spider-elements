@@ -216,6 +216,18 @@ After installation, you'll see a "Spider Elements" category in your Elementor wi
 
 Spider Elements is developed by [Spider Themes](https://spiderthemes.net), a dedicated team of WordPress developers passionate about creating high-quality Elementor addons and tools.
 
+== External services ==
+
+= Spider Themes Telemetry (anonymous usage tracking) =
+
+Spider Elements can send anonymous usage counts to Spider Themes so we can see which Elementor widgets and features are in use. Reporting stays off until you allow Freemius tracking or turn on Share anonymous usage under Spider Elements -> Dashboard.
+
+The report includes active widget and feature counts, Elementor version, and general environment info. It never includes page content, design layouts, form submissions, or personal data.
+
+Turn it off with the Share anonymous usage switch, or add `define( 'SPIDER_ELEMENTS_DISABLE_TELEMETRY', true );` to wp-config.php. `define( 'SPIDER_DISABLE_TELEMETRY', true );` stops it as well.
+
+* [Spider Themes](https://spiderthemes.net) — [Terms](https://spiderthemes.net/terms) — [Privacy](https://spiderthemes.net/privacy)
+
 == Changelog ==
 
 = 1.9.1 (13 October 2026) =

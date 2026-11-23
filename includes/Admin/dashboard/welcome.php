@@ -254,6 +254,55 @@ $free_widgets = $total_widgets - $pro_widgets;
 		</div>
 	</div>
 
+	<!-- Telemetry Opt-in Section -->
+	<div class="ezd-grid ezd-grid-cols-12" style="margin-bottom: 24px;">
+		<div class="ezd-lg-col-12">
+			<div class="support_item" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 28px;">
+				<div style="flex: 1;">
+					<div class="section_header has_flex" style="margin-bottom: 8px;">
+						<h2 class="dashboard_title" style="margin: 0; font-size: 18px;"><?php esc_html_e( 'Share Anonymous Usage Data', 'spider-elements' ); ?></h2>
+					</div>
+					<p style="margin: 0; font-size: 13px; color: #5c6774; line-height: 1.6; max-width: 780px;">
+						<?php esc_html_e( 'Help make Spider Elements better by sharing anonymous widget and feature usage counts. No sensitive data, layout contents, or personal information is ever collected.', 'spider-elements' ); ?>
+						<a href="https://spiderthemes.net/privacy-policy/" target="_blank" rel="noopener noreferrer" style="color: #7460FF; text-decoration: underline; margin-left: 4px;"><?php esc_html_e( 'Privacy Policy', 'spider-elements' ); ?></a>
+					</p>
+				</div>
+				<div class="plugin_active_switcher" style="margin: 0; flex-shrink: 0;">
+					<div class="toggle">
+						<input type="checkbox" id="spel_telemetry_switcher" name="share_anonymous_usage" class="check" <?php echo function_exists( 'spel_share_usage_enabled' ) && spel_share_usage_enabled() ? 'checked' : ''; ?>>
+						<label class="b switch" for="spel_telemetry_switcher"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var switcher = document.getElementById('spel_telemetry_switcher');
+			if (switcher) {
+				switcher.addEventListener('change', function() {
+					var enabled = this.checked ? 1 : 0;
+					var formData = new FormData();
+					formData.append('action', 'spel_telemetry_toggle');
+					formData.append('enabled', enabled);
+					formData.append('nonce', '<?php echo esc_js( wp_create_nonce( 'spel_telemetry_toggle' ) ); ?>');
+
+					fetch(ajaxurl, { method: 'POST', body: formData })
+						.then(function(res) { return res.json(); })
+						.then(function(data) {
+							if (window.SpelToast && data.data && data.data.message) {
+								window.SpelToast.show(
+									enabled ? '<?php echo esc_js( __( 'Usage Sharing Enabled', 'spider-elements' ) ); ?>' : '<?php echo esc_js( __( 'Usage Sharing Disabled', 'spider-elements' ) ); ?>',
+									data.data.message,
+									'success'
+								);
+							}
+						});
+				});
+			}
+		});
+	</script>
+
 	<!-- Quick Links Section -->
 	<div class="ezd-grid ezd-grid-cols-12 quick_links_grid">
 		<div class="ezd-lg-col-6">
