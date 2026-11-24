@@ -25,9 +25,14 @@ body {
 .spel_dashboard .tab_contents .element_box .element_right .link {
   margin-left: 5px;
 }
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch .telemetry_slider::before {
+  left: auto;
+  right: 3px;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch input:checked + .telemetry_slider::before {
+  transform: translateX(-22px);
+}
 
 .dashboard_banner.integration_banner {
   text-align: right !important;
 }
-
-/*# sourceMappingURL=admin-rtl.css.map */

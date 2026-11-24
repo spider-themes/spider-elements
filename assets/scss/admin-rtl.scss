@@ -58,6 +58,21 @@ body {
       }
     }
 
+    .spel_telemetry_card {
+      .telemetry_action {
+        .telemetry_switch {
+          .telemetry_slider::before {
+            left: auto;
+            right: 3px;
+          }
+
+          input:checked + .telemetry_slider::before {
+            transform: translateX(-22px);
+          }
+        }
+      }
+    }
+
   }
 }
 

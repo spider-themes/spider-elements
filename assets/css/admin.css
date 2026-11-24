@@ -1839,6 +1839,192 @@ Table of Content:
 .spel_dashboard .tab_contents .quick_links_grid .ezd-lg-col-6 {
   margin-bottom: 24px;
 }
+.spel_dashboard .tab_contents .spel_telemetry_section {
+  margin-top: 6px;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card {
+  background: var(--spel-bg-secondary);
+  border-radius: var(--spel-radius-md);
+  padding: 22px 28px;
+  border: 1px solid var(--spel-border);
+  box-shadow: var(--spel-shadow);
+  transition: all var(--spel-transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card:hover {
+  box-shadow: var(--spel-shadow-md);
+  border-color: rgba(116, 96, 255, 0.3);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card:hover .telemetry_icon {
+  transform: scale(1.05);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_content_wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(116, 96, 255, 0.12) 0%, rgba(157, 112, 255, 0.06) 100%);
+  border-radius: var(--spel-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--spel-primary);
+  transition: transform var(--spel-transition);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_icon svg {
+  display: block;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text {
+  flex: 1;
+  min-width: 0;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_title_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_title_row .telemetry_title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--spel-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_title_row .telemetry_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 10px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--spel-success);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  line-height: 1.4;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_title_row .telemetry_badge svg {
+  display: inline-block;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_desc {
+  font-size: 13px;
+  color: var(--spel-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_desc .telemetry_link {
+  color: var(--spel-primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: color var(--spel-transition);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_desc .telemetry_link:hover {
+  color: var(--spel-primary-dark);
+  text-decoration: underline;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_text .telemetry_desc .telemetry_link svg {
+  display: inline-block;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_status_text {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 58px;
+  text-align: right;
+  transition: color var(--spel-transition);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_status_text.status_enabled {
+  color: var(--spel-success);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_status_text.status_disabled {
+  color: var(--spel-text-muted);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin: 0;
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch .telemetry_slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--spel-text-muted);
+  border-radius: 50px;
+  transition: background var(--spel-transition);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch .telemetry_slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: var(--spel-shadow-sm);
+  transition: transform var(--spel-transition);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch input:checked + .telemetry_slider {
+  background: linear-gradient(90deg, var(--spel-success) 0%, #34d399 100%);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch input:checked + .telemetry_slider::before {
+  transform: translateX(22px);
+}
+.spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action .telemetry_switch input:focus-visible + .telemetry_slider {
+  outline: 2px solid var(--spel-primary);
+  outline-offset: 2px;
+}
+@media (max-width: 768px) {
+  .spel_dashboard .tab_contents .spel_telemetry_card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .spel_dashboard .tab_contents .spel_telemetry_card .telemetry_content_wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .spel_dashboard .tab_contents .spel_telemetry_card .telemetry_action {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--spel-border);
+  }
+}
 .spel_dashboard .tab_contents .section_header.has_flex {
   display: flex;
   align-items: center;
@@ -2511,5 +2697,3 @@ Table of Content:
     flex-wrap: wrap;
   }
 }
-
-/*# sourceMappingURL=admin.css.map */
