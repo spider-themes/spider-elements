@@ -1,7 +1,9 @@
 body.body_dark {
 
-//testimonial css
+  //testimonial css
   .feedback-block-one {
+    background-color: var(--bs-white);
+
     .logo {
       img {
         filter: invert(1) !important;
@@ -11,6 +13,7 @@ body.body_dark {
 
   .big-circle {
     background: var(--bs-white) !important;
+
     .brand-icon {
       .lazy-img {
         filter: invert(1) !important;
